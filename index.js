@@ -609,7 +609,7 @@ function getResponseToUserForPostback(request_key, recipient, sender) {
                 if (request_key.indexOf("_") > -1) {
                     var prefix = request_key.split('_');
                     var p_prefix = prefix[0];
-                    if (!(p_prefix === 'BOT') || !(p_prefix === 'SHARE')){
+                    if (p_prefix !== 'BOT' && p_prefix !== 'SHARE'){
                         var message = {"text": request_key};
                         var js_ = JSON.stringify(message);
                         var myEscapedJSONString = js_.escapeSpecialChars();

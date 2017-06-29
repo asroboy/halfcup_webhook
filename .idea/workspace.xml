@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="8c0fd527-5667-4e03-89ee-e95c0bdc3c27" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.js" afterPath="$PROJECT_DIR$/index.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -23,8 +24,8 @@
       <file leaf-file-name="index.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="497">
-              <caret line="607" column="115" lean-forward="false" selection-start-line="607" selection-start-column="115" selection-end-line="607" selection-end-column="115" />
+            <state relative-caret-position="412">
+              <caret line="611" column="24" lean-forward="false" selection-start-line="611" selection-start-column="24" selection-end-line="611" selection-end-column="24" />
               <folding>
                 <element signature="e#1990#2212#0" expanded="false" />
                 <element signature="e#2393#2752#0" expanded="false" />
@@ -38,9 +39,9 @@
                 <element signature="n#!!block;n#getAdsResponseToUser#0" expanded="false" />
                 <element signature="e#24511#24579#0" expanded="false" />
                 <element signature="n#!!block;n#sendMessagePostback#0" expanded="false" />
-                <marker date="1498780018666" expanded="false" signature="28162:29426" ph="{...}" />
-                <marker date="1498780018666" expanded="false" signature="29465:29744" ph="{...}" />
-                <marker date="1498780018666" expanded="false" signature="29794:30194" ph="{...}" />
+                <marker date="1498780321858" expanded="false" signature="28172:29436" ph="{...}" />
+                <marker date="1498780321858" expanded="false" signature="29475:29754" ph="{...}" />
+                <marker date="1498780321858" expanded="false" signature="29804:30204" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -364,12 +365,12 @@
       <workItem from="1497597051362" duration="723000" />
       <workItem from="1498117658807" duration="3089000" />
       <workItem from="1498144157918" duration="1443000" />
-      <workItem from="1498777308385" duration="2283000" />
+      <workItem from="1498777308385" duration="2520000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="175117000" />
+    <option name="totallyTimeSpent" value="175354000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -381,7 +382,8 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="754" extended-state="7" />
+    <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17708333" sideWeight="0.43032786" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32850242" sideWeight="0.49702382" order="6" side_tool="false" content_ui="tabs" />
@@ -390,7 +392,7 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.52495974" sideWeight="0.4940476" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.17708333" sideWeight="0.5696721" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.48638132" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.8357488" sideWeight="0.4940476" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.8357488" sideWeight="0.4940476" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -432,9 +434,9 @@
             <element signature="n#!!block;n#getAdsResponseToUser#0" expanded="false" />
             <element signature="e#24511#24579#0" expanded="false" />
             <element signature="n#!!block;n#sendMessagePostback#0" expanded="false" />
-            <marker date="1498780018666" expanded="false" signature="28162:29426" ph="{...}" />
-            <marker date="1498780018666" expanded="false" signature="29465:29744" ph="{...}" />
-            <marker date="1498780018666" expanded="false" signature="29794:30194" ph="{...}" />
+            <marker date="1498780321858" expanded="false" signature="28172:29436" ph="{...}" />
+            <marker date="1498780321858" expanded="false" signature="29475:29754" ph="{...}" />
+            <marker date="1498780321858" expanded="false" signature="29804:30204" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -474,9 +476,9 @@
             <element signature="n#!!block;n#getAdsResponseToUser#0" expanded="false" />
             <element signature="e#24511#24579#0" expanded="false" />
             <element signature="n#!!block;n#sendMessagePostback#0" expanded="false" />
-            <marker date="1498780018666" expanded="false" signature="28162:29426" ph="{...}" />
-            <marker date="1498780018666" expanded="false" signature="29465:29744" ph="{...}" />
-            <marker date="1498780018666" expanded="false" signature="29794:30194" ph="{...}" />
+            <marker date="1498780321858" expanded="false" signature="28172:29436" ph="{...}" />
+            <marker date="1498780321858" expanded="false" signature="29475:29754" ph="{...}" />
+            <marker date="1498780321858" expanded="false" signature="29804:30204" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -516,9 +518,9 @@
             <element signature="n#!!block;n#getAdsResponseToUser#0" expanded="false" />
             <element signature="e#24511#24579#0" expanded="false" />
             <element signature="n#!!block;n#sendMessagePostback#0" expanded="false" />
-            <marker date="1498780018666" expanded="false" signature="28162:29426" ph="{...}" />
-            <marker date="1498780018666" expanded="false" signature="29465:29744" ph="{...}" />
-            <marker date="1498780018666" expanded="false" signature="29794:30194" ph="{...}" />
+            <marker date="1498780321858" expanded="false" signature="28172:29436" ph="{...}" />
+            <marker date="1498780321858" expanded="false" signature="29475:29754" ph="{...}" />
+            <marker date="1498780321858" expanded="false" signature="29804:30204" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -558,9 +560,9 @@
             <element signature="n#!!block;n#getAdsResponseToUser#0" expanded="false" />
             <element signature="e#24511#24579#0" expanded="false" />
             <element signature="n#!!block;n#sendMessagePostback#0" expanded="false" />
-            <marker date="1498780018666" expanded="false" signature="28162:29426" ph="{...}" />
-            <marker date="1498780018666" expanded="false" signature="29465:29744" ph="{...}" />
-            <marker date="1498780018666" expanded="false" signature="29794:30194" ph="{...}" />
+            <marker date="1498780321858" expanded="false" signature="28172:29436" ph="{...}" />
+            <marker date="1498780321858" expanded="false" signature="29475:29754" ph="{...}" />
+            <marker date="1498780321858" expanded="false" signature="29804:30204" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -600,9 +602,9 @@
             <element signature="n#!!block;n#getAdsResponseToUser#0" expanded="false" />
             <element signature="e#24511#24579#0" expanded="false" />
             <element signature="n#!!block;n#sendMessagePostback#0" expanded="false" />
-            <marker date="1498780018666" expanded="false" signature="28162:29426" ph="{...}" />
-            <marker date="1498780018666" expanded="false" signature="29465:29744" ph="{...}" />
-            <marker date="1498780018666" expanded="false" signature="29794:30194" ph="{...}" />
+            <marker date="1498780321858" expanded="false" signature="28172:29436" ph="{...}" />
+            <marker date="1498780321858" expanded="false" signature="29475:29754" ph="{...}" />
+            <marker date="1498780321858" expanded="false" signature="29804:30204" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -642,9 +644,9 @@
             <element signature="n#!!block;n#getAdsResponseToUser#0" expanded="false" />
             <element signature="e#24511#24579#0" expanded="false" />
             <element signature="n#!!block;n#sendMessagePostback#0" expanded="false" />
-            <marker date="1498780018666" expanded="false" signature="28162:29426" ph="{...}" />
-            <marker date="1498780018666" expanded="false" signature="29465:29744" ph="{...}" />
-            <marker date="1498780018666" expanded="false" signature="29794:30194" ph="{...}" />
+            <marker date="1498780321858" expanded="false" signature="28172:29436" ph="{...}" />
+            <marker date="1498780321858" expanded="false" signature="29475:29754" ph="{...}" />
+            <marker date="1498780321858" expanded="false" signature="29804:30204" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -684,9 +686,9 @@
             <element signature="n#!!block;n#getAdsResponseToUser#0" expanded="false" />
             <element signature="e#24511#24579#0" expanded="false" />
             <element signature="n#!!block;n#sendMessagePostback#0" expanded="false" />
-            <marker date="1498780018666" expanded="false" signature="28162:29426" ph="{...}" />
-            <marker date="1498780018666" expanded="false" signature="29465:29744" ph="{...}" />
-            <marker date="1498780018666" expanded="false" signature="29794:30194" ph="{...}" />
+            <marker date="1498780321858" expanded="false" signature="28172:29436" ph="{...}" />
+            <marker date="1498780321858" expanded="false" signature="29475:29754" ph="{...}" />
+            <marker date="1498780321858" expanded="false" signature="29804:30204" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -726,9 +728,9 @@
             <element signature="n#!!block;n#getAdsResponseToUser#0" expanded="false" />
             <element signature="e#24511#24579#0" expanded="false" />
             <element signature="n#!!block;n#sendMessagePostback#0" expanded="false" />
-            <marker date="1498780018666" expanded="false" signature="28162:29426" ph="{...}" />
-            <marker date="1498780018666" expanded="false" signature="29465:29744" ph="{...}" />
-            <marker date="1498780018666" expanded="false" signature="29794:30194" ph="{...}" />
+            <marker date="1498780321858" expanded="false" signature="28172:29436" ph="{...}" />
+            <marker date="1498780321858" expanded="false" signature="29475:29754" ph="{...}" />
+            <marker date="1498780321858" expanded="false" signature="29804:30204" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -768,9 +770,9 @@
             <element signature="n#!!block;n#getAdsResponseToUser#0" expanded="false" />
             <element signature="e#24511#24579#0" expanded="false" />
             <element signature="n#!!block;n#sendMessagePostback#0" expanded="false" />
-            <marker date="1498780018666" expanded="false" signature="28162:29426" ph="{...}" />
-            <marker date="1498780018666" expanded="false" signature="29465:29744" ph="{...}" />
-            <marker date="1498780018666" expanded="false" signature="29794:30194" ph="{...}" />
+            <marker date="1498780321858" expanded="false" signature="28172:29436" ph="{...}" />
+            <marker date="1498780321858" expanded="false" signature="29475:29754" ph="{...}" />
+            <marker date="1498780321858" expanded="false" signature="29804:30204" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -810,9 +812,9 @@
             <element signature="n#!!block;n#getAdsResponseToUser#0" expanded="false" />
             <element signature="e#24511#24579#0" expanded="false" />
             <element signature="n#!!block;n#sendMessagePostback#0" expanded="false" />
-            <marker date="1498780018666" expanded="false" signature="28162:29426" ph="{...}" />
-            <marker date="1498780018666" expanded="false" signature="29465:29744" ph="{...}" />
-            <marker date="1498780018666" expanded="false" signature="29794:30194" ph="{...}" />
+            <marker date="1498780321858" expanded="false" signature="28172:29436" ph="{...}" />
+            <marker date="1498780321858" expanded="false" signature="29475:29754" ph="{...}" />
+            <marker date="1498780321858" expanded="false" signature="29804:30204" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -852,9 +854,9 @@
             <element signature="n#!!block;n#getAdsResponseToUser#0" expanded="false" />
             <element signature="e#24511#24579#0" expanded="false" />
             <element signature="n#!!block;n#sendMessagePostback#0" expanded="false" />
-            <marker date="1498780018666" expanded="false" signature="28162:29426" ph="{...}" />
-            <marker date="1498780018666" expanded="false" signature="29465:29744" ph="{...}" />
-            <marker date="1498780018666" expanded="false" signature="29794:30194" ph="{...}" />
+            <marker date="1498780321858" expanded="false" signature="28172:29436" ph="{...}" />
+            <marker date="1498780321858" expanded="false" signature="29475:29754" ph="{...}" />
+            <marker date="1498780321858" expanded="false" signature="29804:30204" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -901,9 +903,9 @@
             <element signature="n#!!block;n#getAdsResponseToUser#0" expanded="false" />
             <element signature="e#24511#24579#0" expanded="false" />
             <element signature="n#!!block;n#sendMessagePostback#0" expanded="false" />
-            <marker date="1498780018666" expanded="false" signature="28162:29426" ph="{...}" />
-            <marker date="1498780018666" expanded="false" signature="29465:29744" ph="{...}" />
-            <marker date="1498780018666" expanded="false" signature="29794:30194" ph="{...}" />
+            <marker date="1498780321858" expanded="false" signature="28172:29436" ph="{...}" />
+            <marker date="1498780321858" expanded="false" signature="29475:29754" ph="{...}" />
+            <marker date="1498780321858" expanded="false" signature="29804:30204" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -950,9 +952,9 @@
             <element signature="n#!!block;n#getAdsResponseToUser#0" expanded="false" />
             <element signature="e#24511#24579#0" expanded="false" />
             <element signature="n#!!block;n#sendMessagePostback#0" expanded="false" />
-            <marker date="1498780018666" expanded="false" signature="28162:29426" ph="{...}" />
-            <marker date="1498780018666" expanded="false" signature="29465:29744" ph="{...}" />
-            <marker date="1498780018666" expanded="false" signature="29794:30194" ph="{...}" />
+            <marker date="1498780321858" expanded="false" signature="28172:29436" ph="{...}" />
+            <marker date="1498780321858" expanded="false" signature="29475:29754" ph="{...}" />
+            <marker date="1498780321858" expanded="false" signature="29804:30204" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -999,9 +1001,9 @@
             <element signature="n#!!block;n#getAdsResponseToUser#0" expanded="false" />
             <element signature="e#24511#24579#0" expanded="false" />
             <element signature="n#!!block;n#sendMessagePostback#0" expanded="false" />
-            <marker date="1498780018666" expanded="false" signature="28162:29426" ph="{...}" />
-            <marker date="1498780018666" expanded="false" signature="29465:29744" ph="{...}" />
-            <marker date="1498780018666" expanded="false" signature="29794:30194" ph="{...}" />
+            <marker date="1498780321858" expanded="false" signature="28172:29436" ph="{...}" />
+            <marker date="1498780321858" expanded="false" signature="29475:29754" ph="{...}" />
+            <marker date="1498780321858" expanded="false" signature="29804:30204" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -1062,8 +1064,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="497">
-          <caret line="607" column="115" lean-forward="false" selection-start-line="607" selection-start-column="115" selection-end-line="607" selection-end-column="115" />
+        <state relative-caret-position="412">
+          <caret line="611" column="24" lean-forward="false" selection-start-line="611" selection-start-column="24" selection-end-line="611" selection-end-column="24" />
           <folding>
             <element signature="e#1990#2212#0" expanded="false" />
             <element signature="e#2393#2752#0" expanded="false" />
@@ -1077,9 +1079,9 @@
             <element signature="n#!!block;n#getAdsResponseToUser#0" expanded="false" />
             <element signature="e#24511#24579#0" expanded="false" />
             <element signature="n#!!block;n#sendMessagePostback#0" expanded="false" />
-            <marker date="1498780018666" expanded="false" signature="28162:29426" ph="{...}" />
-            <marker date="1498780018666" expanded="false" signature="29465:29744" ph="{...}" />
-            <marker date="1498780018666" expanded="false" signature="29794:30194" ph="{...}" />
+            <marker date="1498780321858" expanded="false" signature="28172:29436" ph="{...}" />
+            <marker date="1498780321858" expanded="false" signature="29475:29754" ph="{...}" />
+            <marker date="1498780321858" expanded="false" signature="29804:30204" ph="{...}" />
           </folding>
         </state>
       </provider>
