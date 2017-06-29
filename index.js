@@ -606,8 +606,8 @@ function getResponseToUserForPostback(request_key, recipient, sender) {
                 var token = obj.messenger_data.pageAccessToken;
                 // getResponseToUserWithNoKey(recipient, sender);
                 // if (!(request_key.indexOf("BOT") > -1) && !(request_key.indexOf("USER_DEFINED_PAYLOAD") > -1)) {
-                if (key.indexOf("_") > -1) {
-                    var prefix = key.split('_');
+                if (request_key.indexOf("_") > -1) {
+                    var prefix = request_key.split('_');
                     var p_prefix = prefix[0];
                     if (!(p_prefix === 'BOT') || !(p_prefix === 'SHARE')){
                         var message = {"text": request_key};
