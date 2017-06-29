@@ -626,8 +626,6 @@ function getResponseToUserForPostback(request_key, recipient, sender) {
                     sendMessage(recipient, myEscapedJSONString, token);
                 }
 
-                // }
-
             }
 
         }
