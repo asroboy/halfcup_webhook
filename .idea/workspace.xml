@@ -24,8 +24,8 @@
       <file leaf-file-name="index.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="412">
-              <caret line="611" column="24" lean-forward="false" selection-start-line="611" selection-start-column="24" selection-end-line="611" selection-end-column="24" />
+            <state relative-caret-position="409">
+              <caret line="736" column="32" lean-forward="false" selection-start-line="736" selection-start-column="32" selection-end-line="736" selection-end-column="32" />
               <folding>
                 <element signature="e#1990#2212#0" expanded="false" />
                 <element signature="e#2393#2752#0" expanded="false" />
@@ -33,15 +33,14 @@
                 <element signature="e#3549#4033#0" expanded="false" />
                 <element signature="e#6272#7089#0" expanded="false" />
                 <element signature="e#7654#7985#0" expanded="false" />
-                <element signature="n#!!block;n#pixel#0" expanded="false" />
                 <element signature="n#!!block;n#logAction#0" expanded="false" />
                 <element signature="n#!!block;n#getUserInfo#0" expanded="false" />
                 <element signature="n#!!block;n#getAdsResponseToUser#0" expanded="false" />
                 <element signature="e#24511#24579#0" expanded="false" />
+                <element signature="n#!!block;n#getResponseToUserWithNoKey#0" expanded="false" />
+                <element signature="e#29475#29754#0" expanded="false" />
+                <element signature="e#29804#30204#0" expanded="false" />
                 <element signature="n#!!block;n#sendMessagePostback#0" expanded="false" />
-                <marker date="1498780321858" expanded="false" signature="28172:29436" ph="{...}" />
-                <marker date="1498780321858" expanded="false" signature="29475:29754" ph="{...}" />
-                <marker date="1498780321858" expanded="false" signature="29804:30204" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -90,7 +89,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>pixel</find>
       <find>halfcup.com</find>
       <find>Analytics</find>
       <find>analytics</find>
@@ -106,6 +104,8 @@
       <find>PIXEL</find>
       <find>getResponseToUserRef</find>
       <find>getToken</find>
+      <find>!==</find>
+      <find>pixel</find>
     </findStrings>
     <replaceStrings>
       <replace>localhost:8080</replace>
@@ -162,6 +162,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -177,13 +178,12 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="nodejs_interpreter_path" value="C:/Program Files/nodejs/node" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Documents/Kerjaan/Virtua/Bifza/app/src/main/assets" />
     <property name="settings.editor.selected.configurable" value="settings.phonegap" />
     <property name="HbShouldOpenHtmlAsHb" value="" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
@@ -365,12 +365,17 @@
       <workItem from="1497597051362" duration="723000" />
       <workItem from="1498117658807" duration="3089000" />
       <workItem from="1498144157918" duration="1443000" />
-      <workItem from="1498777308385" duration="2520000" />
+      <workItem from="1498777308385" duration="3781000" />
+      <workItem from="1499151770321" duration="1504000" />
+      <workItem from="1499171387886" duration="680000" />
+      <workItem from="1499224015314" duration="2265000" />
+      <workItem from="1499661363475" duration="17000" />
+      <workItem from="1500015645275" duration="66000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="175354000" />
+    <option name="totallyTimeSpent" value="181147000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -389,10 +394,10 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32850242" sideWeight="0.49702382" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32850242" sideWeight="0.5029762" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32569557" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.52495974" sideWeight="0.4940476" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.17708333" sideWeight="0.5696721" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.52495974" sideWeight="0.4940476" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.48638132" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.8357488" sideWeight="0.4940476" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.547504" sideWeight="0.4940476" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -428,15 +433,14 @@
             <element signature="e#3549#4033#0" expanded="false" />
             <element signature="e#6272#7089#0" expanded="false" />
             <element signature="e#7654#7985#0" expanded="false" />
-            <element signature="n#!!block;n#pixel#0" expanded="false" />
             <element signature="n#!!block;n#logAction#0" expanded="false" />
             <element signature="n#!!block;n#getUserInfo#0" expanded="false" />
             <element signature="n#!!block;n#getAdsResponseToUser#0" expanded="false" />
             <element signature="e#24511#24579#0" expanded="false" />
+            <element signature="n#!!block;n#getResponseToUserWithNoKey#0" expanded="false" />
+            <element signature="e#29475#29754#0" expanded="false" />
+            <element signature="e#29804#30204#0" expanded="false" />
             <element signature="n#!!block;n#sendMessagePostback#0" expanded="false" />
-            <marker date="1498780321858" expanded="false" signature="28172:29436" ph="{...}" />
-            <marker date="1498780321858" expanded="false" signature="29475:29754" ph="{...}" />
-            <marker date="1498780321858" expanded="false" signature="29804:30204" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -470,15 +474,14 @@
             <element signature="e#3549#4033#0" expanded="false" />
             <element signature="e#6272#7089#0" expanded="false" />
             <element signature="e#7654#7985#0" expanded="false" />
-            <element signature="n#!!block;n#pixel#0" expanded="false" />
             <element signature="n#!!block;n#logAction#0" expanded="false" />
             <element signature="n#!!block;n#getUserInfo#0" expanded="false" />
             <element signature="n#!!block;n#getAdsResponseToUser#0" expanded="false" />
             <element signature="e#24511#24579#0" expanded="false" />
+            <element signature="n#!!block;n#getResponseToUserWithNoKey#0" expanded="false" />
+            <element signature="e#29475#29754#0" expanded="false" />
+            <element signature="e#29804#30204#0" expanded="false" />
             <element signature="n#!!block;n#sendMessagePostback#0" expanded="false" />
-            <marker date="1498780321858" expanded="false" signature="28172:29436" ph="{...}" />
-            <marker date="1498780321858" expanded="false" signature="29475:29754" ph="{...}" />
-            <marker date="1498780321858" expanded="false" signature="29804:30204" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -512,15 +515,14 @@
             <element signature="e#3549#4033#0" expanded="false" />
             <element signature="e#6272#7089#0" expanded="false" />
             <element signature="e#7654#7985#0" expanded="false" />
-            <element signature="n#!!block;n#pixel#0" expanded="false" />
             <element signature="n#!!block;n#logAction#0" expanded="false" />
             <element signature="n#!!block;n#getUserInfo#0" expanded="false" />
             <element signature="n#!!block;n#getAdsResponseToUser#0" expanded="false" />
             <element signature="e#24511#24579#0" expanded="false" />
+            <element signature="n#!!block;n#getResponseToUserWithNoKey#0" expanded="false" />
+            <element signature="e#29475#29754#0" expanded="false" />
+            <element signature="e#29804#30204#0" expanded="false" />
             <element signature="n#!!block;n#sendMessagePostback#0" expanded="false" />
-            <marker date="1498780321858" expanded="false" signature="28172:29436" ph="{...}" />
-            <marker date="1498780321858" expanded="false" signature="29475:29754" ph="{...}" />
-            <marker date="1498780321858" expanded="false" signature="29804:30204" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -554,15 +556,14 @@
             <element signature="e#3549#4033#0" expanded="false" />
             <element signature="e#6272#7089#0" expanded="false" />
             <element signature="e#7654#7985#0" expanded="false" />
-            <element signature="n#!!block;n#pixel#0" expanded="false" />
             <element signature="n#!!block;n#logAction#0" expanded="false" />
             <element signature="n#!!block;n#getUserInfo#0" expanded="false" />
             <element signature="n#!!block;n#getAdsResponseToUser#0" expanded="false" />
             <element signature="e#24511#24579#0" expanded="false" />
+            <element signature="n#!!block;n#getResponseToUserWithNoKey#0" expanded="false" />
+            <element signature="e#29475#29754#0" expanded="false" />
+            <element signature="e#29804#30204#0" expanded="false" />
             <element signature="n#!!block;n#sendMessagePostback#0" expanded="false" />
-            <marker date="1498780321858" expanded="false" signature="28172:29436" ph="{...}" />
-            <marker date="1498780321858" expanded="false" signature="29475:29754" ph="{...}" />
-            <marker date="1498780321858" expanded="false" signature="29804:30204" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -596,15 +597,14 @@
             <element signature="e#3549#4033#0" expanded="false" />
             <element signature="e#6272#7089#0" expanded="false" />
             <element signature="e#7654#7985#0" expanded="false" />
-            <element signature="n#!!block;n#pixel#0" expanded="false" />
             <element signature="n#!!block;n#logAction#0" expanded="false" />
             <element signature="n#!!block;n#getUserInfo#0" expanded="false" />
             <element signature="n#!!block;n#getAdsResponseToUser#0" expanded="false" />
             <element signature="e#24511#24579#0" expanded="false" />
+            <element signature="n#!!block;n#getResponseToUserWithNoKey#0" expanded="false" />
+            <element signature="e#29475#29754#0" expanded="false" />
+            <element signature="e#29804#30204#0" expanded="false" />
             <element signature="n#!!block;n#sendMessagePostback#0" expanded="false" />
-            <marker date="1498780321858" expanded="false" signature="28172:29436" ph="{...}" />
-            <marker date="1498780321858" expanded="false" signature="29475:29754" ph="{...}" />
-            <marker date="1498780321858" expanded="false" signature="29804:30204" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -638,15 +638,14 @@
             <element signature="e#3549#4033#0" expanded="false" />
             <element signature="e#6272#7089#0" expanded="false" />
             <element signature="e#7654#7985#0" expanded="false" />
-            <element signature="n#!!block;n#pixel#0" expanded="false" />
             <element signature="n#!!block;n#logAction#0" expanded="false" />
             <element signature="n#!!block;n#getUserInfo#0" expanded="false" />
             <element signature="n#!!block;n#getAdsResponseToUser#0" expanded="false" />
             <element signature="e#24511#24579#0" expanded="false" />
+            <element signature="n#!!block;n#getResponseToUserWithNoKey#0" expanded="false" />
+            <element signature="e#29475#29754#0" expanded="false" />
+            <element signature="e#29804#30204#0" expanded="false" />
             <element signature="n#!!block;n#sendMessagePostback#0" expanded="false" />
-            <marker date="1498780321858" expanded="false" signature="28172:29436" ph="{...}" />
-            <marker date="1498780321858" expanded="false" signature="29475:29754" ph="{...}" />
-            <marker date="1498780321858" expanded="false" signature="29804:30204" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -680,15 +679,14 @@
             <element signature="e#3549#4033#0" expanded="false" />
             <element signature="e#6272#7089#0" expanded="false" />
             <element signature="e#7654#7985#0" expanded="false" />
-            <element signature="n#!!block;n#pixel#0" expanded="false" />
             <element signature="n#!!block;n#logAction#0" expanded="false" />
             <element signature="n#!!block;n#getUserInfo#0" expanded="false" />
             <element signature="n#!!block;n#getAdsResponseToUser#0" expanded="false" />
             <element signature="e#24511#24579#0" expanded="false" />
+            <element signature="n#!!block;n#getResponseToUserWithNoKey#0" expanded="false" />
+            <element signature="e#29475#29754#0" expanded="false" />
+            <element signature="e#29804#30204#0" expanded="false" />
             <element signature="n#!!block;n#sendMessagePostback#0" expanded="false" />
-            <marker date="1498780321858" expanded="false" signature="28172:29436" ph="{...}" />
-            <marker date="1498780321858" expanded="false" signature="29475:29754" ph="{...}" />
-            <marker date="1498780321858" expanded="false" signature="29804:30204" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -722,15 +720,14 @@
             <element signature="e#3549#4033#0" expanded="false" />
             <element signature="e#6272#7089#0" expanded="false" />
             <element signature="e#7654#7985#0" expanded="false" />
-            <element signature="n#!!block;n#pixel#0" expanded="false" />
             <element signature="n#!!block;n#logAction#0" expanded="false" />
             <element signature="n#!!block;n#getUserInfo#0" expanded="false" />
             <element signature="n#!!block;n#getAdsResponseToUser#0" expanded="false" />
             <element signature="e#24511#24579#0" expanded="false" />
+            <element signature="n#!!block;n#getResponseToUserWithNoKey#0" expanded="false" />
+            <element signature="e#29475#29754#0" expanded="false" />
+            <element signature="e#29804#30204#0" expanded="false" />
             <element signature="n#!!block;n#sendMessagePostback#0" expanded="false" />
-            <marker date="1498780321858" expanded="false" signature="28172:29436" ph="{...}" />
-            <marker date="1498780321858" expanded="false" signature="29475:29754" ph="{...}" />
-            <marker date="1498780321858" expanded="false" signature="29804:30204" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -764,15 +761,14 @@
             <element signature="e#3549#4033#0" expanded="false" />
             <element signature="e#6272#7089#0" expanded="false" />
             <element signature="e#7654#7985#0" expanded="false" />
-            <element signature="n#!!block;n#pixel#0" expanded="false" />
             <element signature="n#!!block;n#logAction#0" expanded="false" />
             <element signature="n#!!block;n#getUserInfo#0" expanded="false" />
             <element signature="n#!!block;n#getAdsResponseToUser#0" expanded="false" />
             <element signature="e#24511#24579#0" expanded="false" />
+            <element signature="n#!!block;n#getResponseToUserWithNoKey#0" expanded="false" />
+            <element signature="e#29475#29754#0" expanded="false" />
+            <element signature="e#29804#30204#0" expanded="false" />
             <element signature="n#!!block;n#sendMessagePostback#0" expanded="false" />
-            <marker date="1498780321858" expanded="false" signature="28172:29436" ph="{...}" />
-            <marker date="1498780321858" expanded="false" signature="29475:29754" ph="{...}" />
-            <marker date="1498780321858" expanded="false" signature="29804:30204" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -806,15 +802,14 @@
             <element signature="e#3549#4033#0" expanded="false" />
             <element signature="e#6272#7089#0" expanded="false" />
             <element signature="e#7654#7985#0" expanded="false" />
-            <element signature="n#!!block;n#pixel#0" expanded="false" />
             <element signature="n#!!block;n#logAction#0" expanded="false" />
             <element signature="n#!!block;n#getUserInfo#0" expanded="false" />
             <element signature="n#!!block;n#getAdsResponseToUser#0" expanded="false" />
             <element signature="e#24511#24579#0" expanded="false" />
+            <element signature="n#!!block;n#getResponseToUserWithNoKey#0" expanded="false" />
+            <element signature="e#29475#29754#0" expanded="false" />
+            <element signature="e#29804#30204#0" expanded="false" />
             <element signature="n#!!block;n#sendMessagePostback#0" expanded="false" />
-            <marker date="1498780321858" expanded="false" signature="28172:29436" ph="{...}" />
-            <marker date="1498780321858" expanded="false" signature="29475:29754" ph="{...}" />
-            <marker date="1498780321858" expanded="false" signature="29804:30204" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -848,15 +843,14 @@
             <element signature="e#3549#4033#0" expanded="false" />
             <element signature="e#6272#7089#0" expanded="false" />
             <element signature="e#7654#7985#0" expanded="false" />
-            <element signature="n#!!block;n#pixel#0" expanded="false" />
             <element signature="n#!!block;n#logAction#0" expanded="false" />
             <element signature="n#!!block;n#getUserInfo#0" expanded="false" />
             <element signature="n#!!block;n#getAdsResponseToUser#0" expanded="false" />
             <element signature="e#24511#24579#0" expanded="false" />
+            <element signature="n#!!block;n#getResponseToUserWithNoKey#0" expanded="false" />
+            <element signature="e#29475#29754#0" expanded="false" />
+            <element signature="e#29804#30204#0" expanded="false" />
             <element signature="n#!!block;n#sendMessagePostback#0" expanded="false" />
-            <marker date="1498780321858" expanded="false" signature="28172:29436" ph="{...}" />
-            <marker date="1498780321858" expanded="false" signature="29475:29754" ph="{...}" />
-            <marker date="1498780321858" expanded="false" signature="29804:30204" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -897,15 +891,14 @@
             <element signature="e#3549#4033#0" expanded="false" />
             <element signature="e#6272#7089#0" expanded="false" />
             <element signature="e#7654#7985#0" expanded="false" />
-            <element signature="n#!!block;n#pixel#0" expanded="false" />
             <element signature="n#!!block;n#logAction#0" expanded="false" />
             <element signature="n#!!block;n#getUserInfo#0" expanded="false" />
             <element signature="n#!!block;n#getAdsResponseToUser#0" expanded="false" />
             <element signature="e#24511#24579#0" expanded="false" />
+            <element signature="n#!!block;n#getResponseToUserWithNoKey#0" expanded="false" />
+            <element signature="e#29475#29754#0" expanded="false" />
+            <element signature="e#29804#30204#0" expanded="false" />
             <element signature="n#!!block;n#sendMessagePostback#0" expanded="false" />
-            <marker date="1498780321858" expanded="false" signature="28172:29436" ph="{...}" />
-            <marker date="1498780321858" expanded="false" signature="29475:29754" ph="{...}" />
-            <marker date="1498780321858" expanded="false" signature="29804:30204" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -946,15 +939,14 @@
             <element signature="e#3549#4033#0" expanded="false" />
             <element signature="e#6272#7089#0" expanded="false" />
             <element signature="e#7654#7985#0" expanded="false" />
-            <element signature="n#!!block;n#pixel#0" expanded="false" />
             <element signature="n#!!block;n#logAction#0" expanded="false" />
             <element signature="n#!!block;n#getUserInfo#0" expanded="false" />
             <element signature="n#!!block;n#getAdsResponseToUser#0" expanded="false" />
             <element signature="e#24511#24579#0" expanded="false" />
+            <element signature="n#!!block;n#getResponseToUserWithNoKey#0" expanded="false" />
+            <element signature="e#29475#29754#0" expanded="false" />
+            <element signature="e#29804#30204#0" expanded="false" />
             <element signature="n#!!block;n#sendMessagePostback#0" expanded="false" />
-            <marker date="1498780321858" expanded="false" signature="28172:29436" ph="{...}" />
-            <marker date="1498780321858" expanded="false" signature="29475:29754" ph="{...}" />
-            <marker date="1498780321858" expanded="false" signature="29804:30204" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -995,15 +987,14 @@
             <element signature="e#3549#4033#0" expanded="false" />
             <element signature="e#6272#7089#0" expanded="false" />
             <element signature="e#7654#7985#0" expanded="false" />
-            <element signature="n#!!block;n#pixel#0" expanded="false" />
             <element signature="n#!!block;n#logAction#0" expanded="false" />
             <element signature="n#!!block;n#getUserInfo#0" expanded="false" />
             <element signature="n#!!block;n#getAdsResponseToUser#0" expanded="false" />
             <element signature="e#24511#24579#0" expanded="false" />
+            <element signature="n#!!block;n#getResponseToUserWithNoKey#0" expanded="false" />
+            <element signature="e#29475#29754#0" expanded="false" />
+            <element signature="e#29804#30204#0" expanded="false" />
             <element signature="n#!!block;n#sendMessagePostback#0" expanded="false" />
-            <marker date="1498780321858" expanded="false" signature="28172:29436" ph="{...}" />
-            <marker date="1498780321858" expanded="false" signature="29475:29754" ph="{...}" />
-            <marker date="1498780321858" expanded="false" signature="29804:30204" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -1064,8 +1055,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="412">
-          <caret line="611" column="24" lean-forward="false" selection-start-line="611" selection-start-column="24" selection-end-line="611" selection-end-column="24" />
+        <state relative-caret-position="409">
+          <caret line="736" column="32" lean-forward="false" selection-start-line="736" selection-start-column="32" selection-end-line="736" selection-end-column="32" />
           <folding>
             <element signature="e#1990#2212#0" expanded="false" />
             <element signature="e#2393#2752#0" expanded="false" />
@@ -1073,15 +1064,14 @@
             <element signature="e#3549#4033#0" expanded="false" />
             <element signature="e#6272#7089#0" expanded="false" />
             <element signature="e#7654#7985#0" expanded="false" />
-            <element signature="n#!!block;n#pixel#0" expanded="false" />
             <element signature="n#!!block;n#logAction#0" expanded="false" />
             <element signature="n#!!block;n#getUserInfo#0" expanded="false" />
             <element signature="n#!!block;n#getAdsResponseToUser#0" expanded="false" />
             <element signature="e#24511#24579#0" expanded="false" />
+            <element signature="n#!!block;n#getResponseToUserWithNoKey#0" expanded="false" />
+            <element signature="e#29475#29754#0" expanded="false" />
+            <element signature="e#29804#30204#0" expanded="false" />
             <element signature="n#!!block;n#sendMessagePostback#0" expanded="false" />
-            <marker date="1498780321858" expanded="false" signature="28172:29436" ph="{...}" />
-            <marker date="1498780321858" expanded="false" signature="29475:29754" ph="{...}" />
-            <marker date="1498780321858" expanded="false" signature="29804:30204" ph="{...}" />
           </folding>
         </state>
       </provider>

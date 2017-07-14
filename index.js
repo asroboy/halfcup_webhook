@@ -729,6 +729,14 @@ app.get('/send_multiple', function (req, res) {
     res.send('OK, Sent to :' + req.query.user_ids);
 });
 
+
+
+
+// Facebook Webhook
+app.get('/fallback', function (req, res) {
+    console.log('res - fallback ', res);
+});
+
 // generic function sending messages
 function sendMessage(recipientId, message, token) {
     //console.log(process); process.env.PAGE_ACCESS_TOKEN
