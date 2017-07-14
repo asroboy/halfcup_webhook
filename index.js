@@ -734,7 +734,8 @@ app.get('/send_multiple', function (req, res) {
 
 // Facebook Webhook
 app.get('/fallback', function (req, res) {
-    console.log('res - fallback ', res);
+    console.log('res - fallback ', res.body.event);
+    res.send('Wellcome to fallback');
 });
 
 // generic function sending messages
