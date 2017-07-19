@@ -34,15 +34,23 @@ app.post('/webhook', function (req, res) {
             console.log("=======EVENT CHECK=======");
             //console.log('Sender ID: ', event.sender.id);
             console.log('Event ' + i + ': ', JSON.stringify(event));
+            var hc_token = 'EAABqJD84pmIBABjewVhyAuMwDLFaI7YT7fsJLzeh63mhOwdZAgMKClvFfZBvHhFR35dIok3YQAxeZCuDbiLCaWVOpQxWVRHZBahsQOy9ZCTn4e4wdWcZA0VmGU6x0CFzv6dRcCzrlSZA87EPcI3b0KCDkedjLc37lZCvnu47iTTAwgZDZD';
 
-            if (event.sender.id === '912070908830063' && event.message.text === 'Hi, I\'m Halfcup'){
+            if (event.sender.id === '912070908830063') {
+                if (event.message.text === 'Hi, I\'m Halfcup') {
+                     var message = {"text": "I can help you to remind food time at anytime u want"}
+                    sendMessage(event.recipient.id, message, hc_token);
+                }
 
-                var hc_token = 'EAABqJD84pmIBABjewVhyAuMwDLFaI7YT7fsJLzeh63mhOwdZAgMKClvFfZBvHhFR35dIok3YQAxeZCuDbiLCaWVOpQxWVRHZBahsQOy9ZCTn4e4wdWcZA0VmGU6x0CFzv6dRcCzrlSZA87EPcI3b0KCDkedjLc37lZCvnu47iTTAwgZDZD';
-                var message = {"text": "I can help you to remind food time at anytime u want"}
+                if (event.message.text === 'I can help you to remind food time at anytime u want') {
+                    var message = {"text": "Yeah .. I know u're busy person"}
+                    sendMessage(event.recipient.id, message, hc_token);
+                }
+            }
+            if (event.recipient.id === '912070908830063'){
+                var message = {"text": "Yeah .. I know u're busy person"}
                 sendMessage(event.recipient.id, message, hc_token);
             }
-
-
 
             if (event.message && event.message.text && event.sender) {
                 //console.log("=======MESSAGE=======");
@@ -261,8 +269,8 @@ app.post('/webhook', function (req, res) {
                 var keys = ref.split("|");
 
                 // if (keys[0] === 'MESSAGE_ME') {
-                    // getResponseToUser(ref,event.sender.id, event.recipient.id );
-                    getToken(ref, event.recipient.id, event.sender.id);
+                // getResponseToUser(ref,event.sender.id, event.recipient.id );
+                getToken(ref, event.recipient.id, event.sender.id);
                 // }
             }
         }
@@ -618,7 +626,7 @@ function getResponseToUserForPostback(request_key, recipient, sender) {
                 if (request_key.indexOf("_") > -1) {
                     var prefix = request_key.split('_');
                     var p_prefix = prefix[0];
-                    if (p_prefix !== 'BOT' && p_prefix !== 'SHARE'){
+                    if (p_prefix !== 'BOT' && p_prefix !== 'SHARE') {
                         var message = {"text": request_key};
                         var js_ = JSON.stringify(message);
                         var myEscapedJSONString = js_.escapeSpecialChars();
@@ -626,7 +634,7 @@ function getResponseToUserForPostback(request_key, recipient, sender) {
                         console.log("TEXT ==> " + myEscapedJSONString);
                         sendMessage(recipient, myEscapedJSONString, token);
                     }
-                }else{
+                } else {
                     var message = {"text": request_key};
                     var js_ = JSON.stringify(message);
                     var myEscapedJSONString = js_.escapeSpecialChars();
@@ -737,8 +745,6 @@ app.get('/send_multiple', function (req, res) {
     }
     res.send('OK, Sent to :' + req.query.user_ids);
 });
-
-
 
 
 // Facebook Webhook
