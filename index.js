@@ -43,7 +43,17 @@ app.post('/webhook', function (req, res) {
                         var message = {"text": "I can help you to remind food time at anytime u want"}
                         sendMessage(event.recipient.id, message, hc_token);
                     }
-
+                    if (msg === 'OK, I will guide you') {
+                        var message = {
+                            "text": 'Do you need me to remind your breakfast time',
+                            "quick_replies": [{
+                                "content_type": "text",
+                                "title": "Yes",
+                                "payload": "DEVELOPER_SETUP_YES"
+                            }, {"content_type": "text", "title": "No", "payload": "DEVELOPER_SETUP_NO"}]
+                        }
+                        sendMessage(event.recipient.id, message, hc_token);
+                    }
                 }
 
                 if (event.recipient.id === '912070908830063') {
@@ -65,6 +75,17 @@ app.post('/webhook', function (req, res) {
                                 "title": "Yes",
                                 "payload": "DEVELOPER_SETUP_YES"
                             }, {"content_type": "text", "title": "No", "payload": "DEVELOPER_SETUP_NO"}]
+                        }
+                        sendMessage(event.sender.id, message, hc_token);
+                    }
+
+                    if(msg.indexOf('start') !== -1 || msg.indexOf('Start') !== -1){
+
+                    }
+
+                    if((msg.indexOf('How') !== -1 || msg.indexOf('how') !== -1) && (msg.indexOf('do') !== -1 || msg.indexOf('Do') !== -1)){
+                        var message = {
+                            "text": 'OK, I will guide you'
                         }
                         sendMessage(event.sender.id, message, hc_token);
                     }
