@@ -35,6 +35,15 @@ app.post('/webhook', function (req, res) {
             //console.log('Sender ID: ', event.sender.id);
             console.log('Event ' + i + ': ', JSON.stringify(event));
 
+            if (event.sender.id === '912070908830063' && event.message.text === 'Hi, I\'m Halfcup'){
+
+                var hc_token = '';
+                var message = {"text": "I can help you to remind food time at anytime u want"}
+                sendMessage(event.recipient.id, message, hc_token);
+            }
+
+
+
             if (event.message && event.message.text && event.sender) {
                 //console.log("=======MESSAGE=======");
                 //console.log('Message : ', event.message.text);
