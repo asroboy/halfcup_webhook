@@ -36,7 +36,7 @@ app.post('/webhook', function (req, res) {
             console.log('Event ' + i + ': ', JSON.stringify(event));
             var hc_token = 'EAABqJD84pmIBABjewVhyAuMwDLFaI7YT7fsJLzeh63mhOwdZAgMKClvFfZBvHhFR35dIok3YQAxeZCuDbiLCaWVOpQxWVRHZBahsQOy9ZCTn4e4wdWcZA0VmGU6x0CFzv6dRcCzrlSZA87EPcI3b0KCDkedjLc37lZCvnu47iTTAwgZDZD';
 
-            if(event.message){
+            if (event.message) {
                 var msg = event.message.text;
                 if (event.sender.id === '912070908830063') {
                     if (msg === 'Hi, I\'m Halfcup') {
@@ -49,10 +49,27 @@ app.post('/webhook', function (req, res) {
                         sendMessage(event.recipient.id, message, hc_token);
                     }
                 }
+
                 if (event.recipient.id === '912070908830063') {
                     console.log("=======Reply check 912070908830063=======");
                     if (msg === 'Hi' || msg === 'hi' || msg === 'hallo' || msg === 'halo' || msg === 'Hallo') {
-                        var message = {"text": 'Hi, I\'m Halfcup'}
+                        var message = {
+                            "text": 'Hi, You can start setup your remind time',
+                            "quick_replies": [{"content_type": "text", "title": "Setup", "payload": "SETUP"}]
+                        }
+                        sendMessage(event.sender.id, message, hc_token);
+                    }
+
+                    if (msg === 'setup' || msg === 'Setup') {
+
+                        var message = {
+                            "text": 'OK, do you need me to remind your breakfast time',
+                            "quick_replies": [{
+                                "content_type": "text",
+                                "title": "Yes",
+                                "payload": "SETUP_YES"
+                            }, {"content_type": "text", "title": "No", "payload": "SETUP_NO"}]
+                        }
                         sendMessage(event.sender.id, message, hc_token);
                     }
                     // if(event.message.text !== 'GET_STARTED_PAYLOAD '){

@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8c0fd527-5667-4e03-89ee-e95c0bdc3c27" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.js" afterPath="$PROJECT_DIR$/index.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -24,21 +23,21 @@
       <file leaf-file-name="index.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="415">
-              <caret line="55" column="72" lean-forward="true" selection-start-line="55" selection-start-column="72" selection-end-line="55" selection-end-column="72" />
+            <state relative-caret-position="412">
+              <caret line="72" column="72" lean-forward="false" selection-start-line="72" selection-start-column="72" selection-end-line="72" selection-end-column="72" />
               <folding>
-                <element signature="e#3585#3807#0" expanded="false" />
-                <element signature="e#3988#4347#0" expanded="false" />
-                <element signature="e#4532#4891#0" expanded="false" />
-                <element signature="e#5144#5628#0" expanded="false" />
-                <element signature="e#7867#8684#0" expanded="false" />
+                <element signature="e#4392#4614#0" expanded="false" />
+                <element signature="e#4795#5154#0" expanded="false" />
+                <element signature="e#5339#5698#0" expanded="false" />
+                <element signature="e#5951#6435#0" expanded="false" />
+                <element signature="e#8674#9491#0" expanded="false" />
                 <element signature="n#!!block;n#logAction#0" expanded="false" />
                 <element signature="n#!!block;n#getUserInfo#0" expanded="false" />
                 <element signature="n#!!block;n#getAdsResponseToUser#0" expanded="false" />
-                <element signature="e#26098#26166#0" expanded="false" />
+                <element signature="e#26905#26973#0" expanded="false" />
                 <element signature="n#!!block;n#getResponseToUserWithNoKey#0" expanded="false" />
-                <element signature="e#31065#31344#0" expanded="false" />
-                <element signature="e#31394#31794#0" expanded="false" />
+                <element signature="e#31872#32151#0" expanded="false" />
+                <element signature="e#32201#32601#0" expanded="false" />
                 <element signature="n#!!block;n#sendMessagePostback#0" expanded="false" />
               </folding>
             </state>
@@ -106,6 +105,7 @@
       <find>pixel</find>
       <find>TEXT ==&gt;</find>
       <find>referral</find>
+      <find>quick_replies</find>
     </findStrings>
     <replaceStrings>
       <replace>localhost:8080</replace>
@@ -375,12 +375,12 @@
       <workItem from="1500337842627" duration="3845000" />
       <workItem from="1500360867151" duration="614000" />
       <workItem from="1500364620737" duration="69000" />
-      <workItem from="1500420378519" duration="7409000" />
+      <workItem from="1500420378519" duration="7868000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="194801000" />
+    <option name="totallyTimeSpent" value="195260000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -432,18 +432,18 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#3585#3807#0" expanded="false" />
-            <element signature="e#3988#4347#0" expanded="false" />
-            <element signature="e#4532#4891#0" expanded="false" />
-            <element signature="e#5144#5628#0" expanded="false" />
-            <element signature="e#7867#8684#0" expanded="false" />
+            <element signature="e#4392#4614#0" expanded="false" />
+            <element signature="e#4795#5154#0" expanded="false" />
+            <element signature="e#5339#5698#0" expanded="false" />
+            <element signature="e#5951#6435#0" expanded="false" />
+            <element signature="e#8674#9491#0" expanded="false" />
             <element signature="n#!!block;n#logAction#0" expanded="false" />
             <element signature="n#!!block;n#getUserInfo#0" expanded="false" />
             <element signature="n#!!block;n#getAdsResponseToUser#0" expanded="false" />
-            <element signature="e#26098#26166#0" expanded="false" />
+            <element signature="e#26905#26973#0" expanded="false" />
             <element signature="n#!!block;n#getResponseToUserWithNoKey#0" expanded="false" />
-            <element signature="e#31065#31344#0" expanded="false" />
-            <element signature="e#31394#31794#0" expanded="false" />
+            <element signature="e#31872#32151#0" expanded="false" />
+            <element signature="e#32201#32601#0" expanded="false" />
             <element signature="n#!!block;n#sendMessagePostback#0" expanded="false" />
           </folding>
         </state>
@@ -472,18 +472,18 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#3585#3807#0" expanded="false" />
-            <element signature="e#3988#4347#0" expanded="false" />
-            <element signature="e#4532#4891#0" expanded="false" />
-            <element signature="e#5144#5628#0" expanded="false" />
-            <element signature="e#7867#8684#0" expanded="false" />
+            <element signature="e#4392#4614#0" expanded="false" />
+            <element signature="e#4795#5154#0" expanded="false" />
+            <element signature="e#5339#5698#0" expanded="false" />
+            <element signature="e#5951#6435#0" expanded="false" />
+            <element signature="e#8674#9491#0" expanded="false" />
             <element signature="n#!!block;n#logAction#0" expanded="false" />
             <element signature="n#!!block;n#getUserInfo#0" expanded="false" />
             <element signature="n#!!block;n#getAdsResponseToUser#0" expanded="false" />
-            <element signature="e#26098#26166#0" expanded="false" />
+            <element signature="e#26905#26973#0" expanded="false" />
             <element signature="n#!!block;n#getResponseToUserWithNoKey#0" expanded="false" />
-            <element signature="e#31065#31344#0" expanded="false" />
-            <element signature="e#31394#31794#0" expanded="false" />
+            <element signature="e#31872#32151#0" expanded="false" />
+            <element signature="e#32201#32601#0" expanded="false" />
             <element signature="n#!!block;n#sendMessagePostback#0" expanded="false" />
           </folding>
         </state>
@@ -512,18 +512,18 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#3585#3807#0" expanded="false" />
-            <element signature="e#3988#4347#0" expanded="false" />
-            <element signature="e#4532#4891#0" expanded="false" />
-            <element signature="e#5144#5628#0" expanded="false" />
-            <element signature="e#7867#8684#0" expanded="false" />
+            <element signature="e#4392#4614#0" expanded="false" />
+            <element signature="e#4795#5154#0" expanded="false" />
+            <element signature="e#5339#5698#0" expanded="false" />
+            <element signature="e#5951#6435#0" expanded="false" />
+            <element signature="e#8674#9491#0" expanded="false" />
             <element signature="n#!!block;n#logAction#0" expanded="false" />
             <element signature="n#!!block;n#getUserInfo#0" expanded="false" />
             <element signature="n#!!block;n#getAdsResponseToUser#0" expanded="false" />
-            <element signature="e#26098#26166#0" expanded="false" />
+            <element signature="e#26905#26973#0" expanded="false" />
             <element signature="n#!!block;n#getResponseToUserWithNoKey#0" expanded="false" />
-            <element signature="e#31065#31344#0" expanded="false" />
-            <element signature="e#31394#31794#0" expanded="false" />
+            <element signature="e#31872#32151#0" expanded="false" />
+            <element signature="e#32201#32601#0" expanded="false" />
             <element signature="n#!!block;n#sendMessagePostback#0" expanded="false" />
           </folding>
         </state>
@@ -552,18 +552,18 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#3585#3807#0" expanded="false" />
-            <element signature="e#3988#4347#0" expanded="false" />
-            <element signature="e#4532#4891#0" expanded="false" />
-            <element signature="e#5144#5628#0" expanded="false" />
-            <element signature="e#7867#8684#0" expanded="false" />
+            <element signature="e#4392#4614#0" expanded="false" />
+            <element signature="e#4795#5154#0" expanded="false" />
+            <element signature="e#5339#5698#0" expanded="false" />
+            <element signature="e#5951#6435#0" expanded="false" />
+            <element signature="e#8674#9491#0" expanded="false" />
             <element signature="n#!!block;n#logAction#0" expanded="false" />
             <element signature="n#!!block;n#getUserInfo#0" expanded="false" />
             <element signature="n#!!block;n#getAdsResponseToUser#0" expanded="false" />
-            <element signature="e#26098#26166#0" expanded="false" />
+            <element signature="e#26905#26973#0" expanded="false" />
             <element signature="n#!!block;n#getResponseToUserWithNoKey#0" expanded="false" />
-            <element signature="e#31065#31344#0" expanded="false" />
-            <element signature="e#31394#31794#0" expanded="false" />
+            <element signature="e#31872#32151#0" expanded="false" />
+            <element signature="e#32201#32601#0" expanded="false" />
             <element signature="n#!!block;n#sendMessagePostback#0" expanded="false" />
           </folding>
         </state>
@@ -592,18 +592,18 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#3585#3807#0" expanded="false" />
-            <element signature="e#3988#4347#0" expanded="false" />
-            <element signature="e#4532#4891#0" expanded="false" />
-            <element signature="e#5144#5628#0" expanded="false" />
-            <element signature="e#7867#8684#0" expanded="false" />
+            <element signature="e#4392#4614#0" expanded="false" />
+            <element signature="e#4795#5154#0" expanded="false" />
+            <element signature="e#5339#5698#0" expanded="false" />
+            <element signature="e#5951#6435#0" expanded="false" />
+            <element signature="e#8674#9491#0" expanded="false" />
             <element signature="n#!!block;n#logAction#0" expanded="false" />
             <element signature="n#!!block;n#getUserInfo#0" expanded="false" />
             <element signature="n#!!block;n#getAdsResponseToUser#0" expanded="false" />
-            <element signature="e#26098#26166#0" expanded="false" />
+            <element signature="e#26905#26973#0" expanded="false" />
             <element signature="n#!!block;n#getResponseToUserWithNoKey#0" expanded="false" />
-            <element signature="e#31065#31344#0" expanded="false" />
-            <element signature="e#31394#31794#0" expanded="false" />
+            <element signature="e#31872#32151#0" expanded="false" />
+            <element signature="e#32201#32601#0" expanded="false" />
             <element signature="n#!!block;n#sendMessagePostback#0" expanded="false" />
           </folding>
         </state>
@@ -632,18 +632,18 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#3585#3807#0" expanded="false" />
-            <element signature="e#3988#4347#0" expanded="false" />
-            <element signature="e#4532#4891#0" expanded="false" />
-            <element signature="e#5144#5628#0" expanded="false" />
-            <element signature="e#7867#8684#0" expanded="false" />
+            <element signature="e#4392#4614#0" expanded="false" />
+            <element signature="e#4795#5154#0" expanded="false" />
+            <element signature="e#5339#5698#0" expanded="false" />
+            <element signature="e#5951#6435#0" expanded="false" />
+            <element signature="e#8674#9491#0" expanded="false" />
             <element signature="n#!!block;n#logAction#0" expanded="false" />
             <element signature="n#!!block;n#getUserInfo#0" expanded="false" />
             <element signature="n#!!block;n#getAdsResponseToUser#0" expanded="false" />
-            <element signature="e#26098#26166#0" expanded="false" />
+            <element signature="e#26905#26973#0" expanded="false" />
             <element signature="n#!!block;n#getResponseToUserWithNoKey#0" expanded="false" />
-            <element signature="e#31065#31344#0" expanded="false" />
-            <element signature="e#31394#31794#0" expanded="false" />
+            <element signature="e#31872#32151#0" expanded="false" />
+            <element signature="e#32201#32601#0" expanded="false" />
             <element signature="n#!!block;n#sendMessagePostback#0" expanded="false" />
           </folding>
         </state>
@@ -672,18 +672,18 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#3585#3807#0" expanded="false" />
-            <element signature="e#3988#4347#0" expanded="false" />
-            <element signature="e#4532#4891#0" expanded="false" />
-            <element signature="e#5144#5628#0" expanded="false" />
-            <element signature="e#7867#8684#0" expanded="false" />
+            <element signature="e#4392#4614#0" expanded="false" />
+            <element signature="e#4795#5154#0" expanded="false" />
+            <element signature="e#5339#5698#0" expanded="false" />
+            <element signature="e#5951#6435#0" expanded="false" />
+            <element signature="e#8674#9491#0" expanded="false" />
             <element signature="n#!!block;n#logAction#0" expanded="false" />
             <element signature="n#!!block;n#getUserInfo#0" expanded="false" />
             <element signature="n#!!block;n#getAdsResponseToUser#0" expanded="false" />
-            <element signature="e#26098#26166#0" expanded="false" />
+            <element signature="e#26905#26973#0" expanded="false" />
             <element signature="n#!!block;n#getResponseToUserWithNoKey#0" expanded="false" />
-            <element signature="e#31065#31344#0" expanded="false" />
-            <element signature="e#31394#31794#0" expanded="false" />
+            <element signature="e#31872#32151#0" expanded="false" />
+            <element signature="e#32201#32601#0" expanded="false" />
             <element signature="n#!!block;n#sendMessagePostback#0" expanded="false" />
           </folding>
         </state>
@@ -712,18 +712,18 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#3585#3807#0" expanded="false" />
-            <element signature="e#3988#4347#0" expanded="false" />
-            <element signature="e#4532#4891#0" expanded="false" />
-            <element signature="e#5144#5628#0" expanded="false" />
-            <element signature="e#7867#8684#0" expanded="false" />
+            <element signature="e#4392#4614#0" expanded="false" />
+            <element signature="e#4795#5154#0" expanded="false" />
+            <element signature="e#5339#5698#0" expanded="false" />
+            <element signature="e#5951#6435#0" expanded="false" />
+            <element signature="e#8674#9491#0" expanded="false" />
             <element signature="n#!!block;n#logAction#0" expanded="false" />
             <element signature="n#!!block;n#getUserInfo#0" expanded="false" />
             <element signature="n#!!block;n#getAdsResponseToUser#0" expanded="false" />
-            <element signature="e#26098#26166#0" expanded="false" />
+            <element signature="e#26905#26973#0" expanded="false" />
             <element signature="n#!!block;n#getResponseToUserWithNoKey#0" expanded="false" />
-            <element signature="e#31065#31344#0" expanded="false" />
-            <element signature="e#31394#31794#0" expanded="false" />
+            <element signature="e#31872#32151#0" expanded="false" />
+            <element signature="e#32201#32601#0" expanded="false" />
             <element signature="n#!!block;n#sendMessagePostback#0" expanded="false" />
           </folding>
         </state>
@@ -752,18 +752,18 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#3585#3807#0" expanded="false" />
-            <element signature="e#3988#4347#0" expanded="false" />
-            <element signature="e#4532#4891#0" expanded="false" />
-            <element signature="e#5144#5628#0" expanded="false" />
-            <element signature="e#7867#8684#0" expanded="false" />
+            <element signature="e#4392#4614#0" expanded="false" />
+            <element signature="e#4795#5154#0" expanded="false" />
+            <element signature="e#5339#5698#0" expanded="false" />
+            <element signature="e#5951#6435#0" expanded="false" />
+            <element signature="e#8674#9491#0" expanded="false" />
             <element signature="n#!!block;n#logAction#0" expanded="false" />
             <element signature="n#!!block;n#getUserInfo#0" expanded="false" />
             <element signature="n#!!block;n#getAdsResponseToUser#0" expanded="false" />
-            <element signature="e#26098#26166#0" expanded="false" />
+            <element signature="e#26905#26973#0" expanded="false" />
             <element signature="n#!!block;n#getResponseToUserWithNoKey#0" expanded="false" />
-            <element signature="e#31065#31344#0" expanded="false" />
-            <element signature="e#31394#31794#0" expanded="false" />
+            <element signature="e#31872#32151#0" expanded="false" />
+            <element signature="e#32201#32601#0" expanded="false" />
             <element signature="n#!!block;n#sendMessagePostback#0" expanded="false" />
           </folding>
         </state>
@@ -792,18 +792,18 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#3585#3807#0" expanded="false" />
-            <element signature="e#3988#4347#0" expanded="false" />
-            <element signature="e#4532#4891#0" expanded="false" />
-            <element signature="e#5144#5628#0" expanded="false" />
-            <element signature="e#7867#8684#0" expanded="false" />
+            <element signature="e#4392#4614#0" expanded="false" />
+            <element signature="e#4795#5154#0" expanded="false" />
+            <element signature="e#5339#5698#0" expanded="false" />
+            <element signature="e#5951#6435#0" expanded="false" />
+            <element signature="e#8674#9491#0" expanded="false" />
             <element signature="n#!!block;n#logAction#0" expanded="false" />
             <element signature="n#!!block;n#getUserInfo#0" expanded="false" />
             <element signature="n#!!block;n#getAdsResponseToUser#0" expanded="false" />
-            <element signature="e#26098#26166#0" expanded="false" />
+            <element signature="e#26905#26973#0" expanded="false" />
             <element signature="n#!!block;n#getResponseToUserWithNoKey#0" expanded="false" />
-            <element signature="e#31065#31344#0" expanded="false" />
-            <element signature="e#31394#31794#0" expanded="false" />
+            <element signature="e#31872#32151#0" expanded="false" />
+            <element signature="e#32201#32601#0" expanded="false" />
             <element signature="n#!!block;n#sendMessagePostback#0" expanded="false" />
           </folding>
         </state>
@@ -832,18 +832,18 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#3585#3807#0" expanded="false" />
-            <element signature="e#3988#4347#0" expanded="false" />
-            <element signature="e#4532#4891#0" expanded="false" />
-            <element signature="e#5144#5628#0" expanded="false" />
-            <element signature="e#7867#8684#0" expanded="false" />
+            <element signature="e#4392#4614#0" expanded="false" />
+            <element signature="e#4795#5154#0" expanded="false" />
+            <element signature="e#5339#5698#0" expanded="false" />
+            <element signature="e#5951#6435#0" expanded="false" />
+            <element signature="e#8674#9491#0" expanded="false" />
             <element signature="n#!!block;n#logAction#0" expanded="false" />
             <element signature="n#!!block;n#getUserInfo#0" expanded="false" />
             <element signature="n#!!block;n#getAdsResponseToUser#0" expanded="false" />
-            <element signature="e#26098#26166#0" expanded="false" />
+            <element signature="e#26905#26973#0" expanded="false" />
             <element signature="n#!!block;n#getResponseToUserWithNoKey#0" expanded="false" />
-            <element signature="e#31065#31344#0" expanded="false" />
-            <element signature="e#31394#31794#0" expanded="false" />
+            <element signature="e#31872#32151#0" expanded="false" />
+            <element signature="e#32201#32601#0" expanded="false" />
             <element signature="n#!!block;n#sendMessagePostback#0" expanded="false" />
           </folding>
         </state>
@@ -879,18 +879,18 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#3585#3807#0" expanded="false" />
-            <element signature="e#3988#4347#0" expanded="false" />
-            <element signature="e#4532#4891#0" expanded="false" />
-            <element signature="e#5144#5628#0" expanded="false" />
-            <element signature="e#7867#8684#0" expanded="false" />
+            <element signature="e#4392#4614#0" expanded="false" />
+            <element signature="e#4795#5154#0" expanded="false" />
+            <element signature="e#5339#5698#0" expanded="false" />
+            <element signature="e#5951#6435#0" expanded="false" />
+            <element signature="e#8674#9491#0" expanded="false" />
             <element signature="n#!!block;n#logAction#0" expanded="false" />
             <element signature="n#!!block;n#getUserInfo#0" expanded="false" />
             <element signature="n#!!block;n#getAdsResponseToUser#0" expanded="false" />
-            <element signature="e#26098#26166#0" expanded="false" />
+            <element signature="e#26905#26973#0" expanded="false" />
             <element signature="n#!!block;n#getResponseToUserWithNoKey#0" expanded="false" />
-            <element signature="e#31065#31344#0" expanded="false" />
-            <element signature="e#31394#31794#0" expanded="false" />
+            <element signature="e#31872#32151#0" expanded="false" />
+            <element signature="e#32201#32601#0" expanded="false" />
             <element signature="n#!!block;n#sendMessagePostback#0" expanded="false" />
           </folding>
         </state>
@@ -926,18 +926,18 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#3585#3807#0" expanded="false" />
-            <element signature="e#3988#4347#0" expanded="false" />
-            <element signature="e#4532#4891#0" expanded="false" />
-            <element signature="e#5144#5628#0" expanded="false" />
-            <element signature="e#7867#8684#0" expanded="false" />
+            <element signature="e#4392#4614#0" expanded="false" />
+            <element signature="e#4795#5154#0" expanded="false" />
+            <element signature="e#5339#5698#0" expanded="false" />
+            <element signature="e#5951#6435#0" expanded="false" />
+            <element signature="e#8674#9491#0" expanded="false" />
             <element signature="n#!!block;n#logAction#0" expanded="false" />
             <element signature="n#!!block;n#getUserInfo#0" expanded="false" />
             <element signature="n#!!block;n#getAdsResponseToUser#0" expanded="false" />
-            <element signature="e#26098#26166#0" expanded="false" />
+            <element signature="e#26905#26973#0" expanded="false" />
             <element signature="n#!!block;n#getResponseToUserWithNoKey#0" expanded="false" />
-            <element signature="e#31065#31344#0" expanded="false" />
-            <element signature="e#31394#31794#0" expanded="false" />
+            <element signature="e#31872#32151#0" expanded="false" />
+            <element signature="e#32201#32601#0" expanded="false" />
             <element signature="n#!!block;n#sendMessagePostback#0" expanded="false" />
           </folding>
         </state>
@@ -973,18 +973,18 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#3585#3807#0" expanded="false" />
-            <element signature="e#3988#4347#0" expanded="false" />
-            <element signature="e#4532#4891#0" expanded="false" />
-            <element signature="e#5144#5628#0" expanded="false" />
-            <element signature="e#7867#8684#0" expanded="false" />
+            <element signature="e#4392#4614#0" expanded="false" />
+            <element signature="e#4795#5154#0" expanded="false" />
+            <element signature="e#5339#5698#0" expanded="false" />
+            <element signature="e#5951#6435#0" expanded="false" />
+            <element signature="e#8674#9491#0" expanded="false" />
             <element signature="n#!!block;n#logAction#0" expanded="false" />
             <element signature="n#!!block;n#getUserInfo#0" expanded="false" />
             <element signature="n#!!block;n#getAdsResponseToUser#0" expanded="false" />
-            <element signature="e#26098#26166#0" expanded="false" />
+            <element signature="e#26905#26973#0" expanded="false" />
             <element signature="n#!!block;n#getResponseToUserWithNoKey#0" expanded="false" />
-            <element signature="e#31065#31344#0" expanded="false" />
-            <element signature="e#31394#31794#0" expanded="false" />
+            <element signature="e#31872#32151#0" expanded="false" />
+            <element signature="e#32201#32601#0" expanded="false" />
             <element signature="n#!!block;n#sendMessagePostback#0" expanded="false" />
           </folding>
         </state>
@@ -1046,21 +1046,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="415">
-          <caret line="55" column="72" lean-forward="true" selection-start-line="55" selection-start-column="72" selection-end-line="55" selection-end-column="72" />
+        <state relative-caret-position="412">
+          <caret line="72" column="72" lean-forward="false" selection-start-line="72" selection-start-column="72" selection-end-line="72" selection-end-column="72" />
           <folding>
-            <element signature="e#3585#3807#0" expanded="false" />
-            <element signature="e#3988#4347#0" expanded="false" />
-            <element signature="e#4532#4891#0" expanded="false" />
-            <element signature="e#5144#5628#0" expanded="false" />
-            <element signature="e#7867#8684#0" expanded="false" />
+            <element signature="e#4392#4614#0" expanded="false" />
+            <element signature="e#4795#5154#0" expanded="false" />
+            <element signature="e#5339#5698#0" expanded="false" />
+            <element signature="e#5951#6435#0" expanded="false" />
+            <element signature="e#8674#9491#0" expanded="false" />
             <element signature="n#!!block;n#logAction#0" expanded="false" />
             <element signature="n#!!block;n#getUserInfo#0" expanded="false" />
             <element signature="n#!!block;n#getAdsResponseToUser#0" expanded="false" />
-            <element signature="e#26098#26166#0" expanded="false" />
+            <element signature="e#26905#26973#0" expanded="false" />
             <element signature="n#!!block;n#getResponseToUserWithNoKey#0" expanded="false" />
-            <element signature="e#31065#31344#0" expanded="false" />
-            <element signature="e#31394#31794#0" expanded="false" />
+            <element signature="e#31872#32151#0" expanded="false" />
+            <element signature="e#32201#32601#0" expanded="false" />
             <element signature="n#!!block;n#sendMessagePostback#0" expanded="false" />
           </folding>
         </state>
