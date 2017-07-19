@@ -48,8 +48,8 @@ app.post('/webhook', function (req, res) {
                 }
             }
             if (event.recipient.id === '912070908830063'){
-                var message = {"text": "Yeah .. I know u're busy person"}
-                sendMessage(event.sender.id, message, hc_token);
+                // var message = {"text": "Yeah .. I know u're busy person"}
+                // sendMessage(event.sender.id, message, hc_token);
             }
 
             if (event.message && event.message.text && event.sender) {
