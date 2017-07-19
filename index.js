@@ -35,21 +35,21 @@ app.post('/webhook', function (req, res) {
             //console.log('Sender ID: ', event.sender.id);
             console.log('Event ' + i + ': ', JSON.stringify(event));
             var hc_token = 'EAABqJD84pmIBABjewVhyAuMwDLFaI7YT7fsJLzeh63mhOwdZAgMKClvFfZBvHhFR35dIok3YQAxeZCuDbiLCaWVOpQxWVRHZBahsQOy9ZCTn4e4wdWcZA0VmGU6x0CFzv6dRcCzrlSZA87EPcI3b0KCDkedjLc37lZCvnu47iTTAwgZDZD';
-            var msg = event.message.text;
+
             if (event.sender.id === '912070908830063') {
-                if (msg === 'Hi, I\'m Halfcup') {
+                if (event.message.text === 'Hi, I\'m Halfcup') {
                     var message = {"text": "I can help you to remind food time at anytime u want"}
                     sendMessage(event.recipient.id, message, hc_token);
                 }
 
-                if (msg === 'I can help you to remind food time at anytime u want') {
+                if (event.message.text === 'I can help you to remind food time at anytime u want') {
                     var message = {"text": "I know u're busy person"}
                     sendMessage(event.recipient.id, message, hc_token);
                 }
             }
             if (event.recipient.id === '912070908830063') {
                 console.log("=======Reply check 912070908830063=======");
-                if (msg === 'Hi' || msg === 'hi' || msg === 'hallo' || msg === 'halo' || msg === 'Hallo') {
+                if (event.message.text === 'Hi' || event.message.text === 'hi' || event.message.text === 'hallo' || event.message.text === 'halo' || event.message.text === 'Hallo') {
                     var message = {"text": 'Hi, I\'m Halfcup'}
                     sendMessage(event.sender.id, message, hc_token);
                 }
