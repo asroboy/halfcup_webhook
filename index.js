@@ -43,13 +43,17 @@ app.post('/webhook', function (req, res) {
                 }
 
                 if (event.message.text === 'I can help you to remind food time at anytime u want') {
-                    var message = {"text": "Yeah .. I know u're busy person"}
+                    var message = {"text": "I know u're busy person"}
                     sendMessage(event.recipient.id, message, hc_token);
                 }
             }
             if (event.recipient.id === '912070908830063'){
-                // var message = {"text": "Yeah .. I know u're busy person"}
-                // sendMessage(event.sender.id, message, hc_token);
+                console.log("=======Reply check 912070908830063=======");
+                // if(event.message.text !== 'GET_STARTED_PAYLOAD '){
+                //     var message = {"text": "Yeah .. I know u're busy person"}
+                //     sendMessage(event.sender.id, message, hc_token);
+                // }
+
             }
 
             if (event.message && event.message.text && event.sender) {
