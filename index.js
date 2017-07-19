@@ -44,18 +44,14 @@ app.post('/webhook', function (req, res) {
                         sendMessage(event.recipient.id, message, hc_token);
                     }
 
-                    if (msg === 'I can help you to remind food time at anytime u want') {
-                        var message = {"text": "I know u're busy person"}
-                        sendMessage(event.recipient.id, message, hc_token);
-                    }
                 }
 
                 if (event.recipient.id === '912070908830063') {
                     console.log("=======Reply check 912070908830063=======");
                     if (msg === 'Hi' || msg === 'hi' || msg === 'hallo' || msg === 'halo' || msg === 'Hallo') {
                         var message = {
-                            "text": 'Hi, You can start setup your remind time',
-                            "quick_replies": [{"content_type": "text", "title": "Setup", "payload": "SETUP"}]
+                            "text": 'Hi, are you ready to setup your remider',
+                            "quick_replies": [{"content_type": "text", "title": "Setup", "payload": "DEVELOPER_SETUP"}]
                         }
                         sendMessage(event.sender.id, message, hc_token);
                     }
@@ -67,8 +63,8 @@ app.post('/webhook', function (req, res) {
                             "quick_replies": [{
                                 "content_type": "text",
                                 "title": "Yes",
-                                "payload": "SETUP_YES"
-                            }, {"content_type": "text", "title": "No", "payload": "SETUP_NO"}]
+                                "payload": "DEVELOPER_SETUP_YES"
+                            }, {"content_type": "text", "title": "No", "payload": "DEVELOPER_SETUP_NO"}]
                         }
                         sendMessage(event.sender.id, message, hc_token);
                     }
