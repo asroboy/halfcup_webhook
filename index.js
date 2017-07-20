@@ -187,7 +187,7 @@ app.post('/webhook', function (req, res) {
                         //var token = "";
                         //this is to handle print PAYLOAD to msgr room
                         pixel('QuickReply', event.message.text, event.message.quick_reply.payload, event.sender.id, event.recipient.id);
-                        getToken(event.message.quick_reply.payload, event.recipient.id, event.sender.id);
+                        getToken(event.message.quick_reply.payload, event.recipient.id, event.sender.id, false);
                     }
                 }
 
@@ -303,7 +303,7 @@ app.post('/webhook', function (req, res) {
 
                     // if (keys[0] === 'MESSAGE_ME') {
                     // getResponseToUser(ref,event.sender.id, event.recipient.id );
-                    getToken(ref, event.recipient.id, event.sender.id);
+                    getToken(ref, event.recipient.id, event.sender.id, true);
                     // }
                 }
 
@@ -316,7 +316,7 @@ app.post('/webhook', function (req, res) {
 
                 // if (keys[0] === 'MESSAGE_ME') {
                 // getResponseToUser(ref,event.sender.id, event.recipient.id );
-                getToken(ref, event.recipient.id, event.sender.id);
+                getToken(ref, event.recipient.id, event.sender.id, true);
                 // }
             }
         }
@@ -358,7 +358,7 @@ function keyIndexAction(key, event, action_name, event_name) {
             }
         } else {
             if (reply_text !== "")
-                getToken(reply_text, event.recipient.id, event.sender.id);
+                getToken(reply_text, event.recipient.id, event.sender.id, false);
         }
 
     } else {
@@ -387,7 +387,7 @@ function keyIndexAction(key, event, action_name, event_name) {
             }
         } else {
             if (key !== "")
-                getToken(key, event.recipient.id, event.sender.id);
+                getToken(key, event.recipient.id, event.sender.id, false);
         }
     }
 }
@@ -525,7 +525,7 @@ function getUserInfo(user_msg_id, page_token) {
     });
 }
 
-function getToken(m_payload, sender, recipient) {
+function getToken(m_payload, sender, recipient, isMessageUs) {
     var url = 'http://halfcup.com/social_rebates_system/api/getPageMessengerToken?messenger_id=' + sender + '&messenger_uid=' + recipient;
     console.log('url', url);
     request({
@@ -557,6 +557,12 @@ function getToken(m_payload, sender, recipient) {
 
                     // m_payload.replace(/\n/g, "\\\\n");
                     var message = {"text": m_payload};
+                    if(isMessageUs)
+                        message = {"text": m_payload, "quick_replies": [{
+                            "content_type": "text",
+                            "title": "Hi",
+                            "payload": "DEVELOPER_USER_HI"
+                        }]};
                     var js_ = JSON.stringify(message);
                     var myEscapedJSONString = js_.escapeSpecialChars();
                     myEscapedJSONString = myEscapedJSONString.replace(/\\\\n/g, "\\n");
