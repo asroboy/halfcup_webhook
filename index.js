@@ -577,8 +577,9 @@ function getPageAccessTokenForLead(sender, message, recipientId) {
                 var code = obj.code;
                 if (code == 1) {
                     var token = obj.messenger_data.pageAccessToken;
+                    var msg = {"text": message};
                     console.log("LEAD FROM RECIEVED ==== >" + message);
-                    sendMessage(recipientId, message, token);
+                    sendMessage(recipientId, msg, token);
                     return token;
 
                 }
