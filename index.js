@@ -48,12 +48,12 @@ app.post('/webhook', function (req, res) {
 
 
                 var message = "New lead recieved :" +
-                    ",Ad ID : " + adId +
-                    ",Form ID : " + formId +
-                    ",Leadgen ID : " + leadgenId +
-                    ",created time : " + createdTime +
-                    ",page ID : " + pageId +
-                    ",ad group ID : " + adGroupId;
+                    "\nAd ID : " + adId +
+                    "\nForm ID : " + formId +
+                    "\nLeadgen ID : " + leadgenId +
+                    "\ncreated time : " + createdTime +
+                    "\npage ID : " + pageId +
+                    "\nad group ID : " + adGroupId;
                 getPageAccessTokenForLead(pageId, message, adminMessengerId);
 
 
@@ -579,6 +579,10 @@ function getPageAccessTokenForLead(sender, message, recipientId) {
                     var token = obj.messenger_data.pageAccessToken;
                     var msg = {"text": message};
                     console.log("LEAD FROM RECIEVED ==== >" + message);
+                    var js_ = JSON.stringify(msg);
+                    var myEscapedJSONString = js_.escapeSpecialChars();
+                    myEscapedJSONString = myEscapedJSONString.replace(/\\\\n/g, "\\n");
+                    console.log("TEXT ==> " + myEscapedJSONString);
                     sendMessage(recipientId, msg, token);
                     return token;
 
