@@ -32,8 +32,8 @@ app.post('/webhook', function (req, res) {
         console.log("REQ", JSON.stringify(req.body));
 
         if (changes) {
-            var field = req.body.entry[0].changes.field;
-            if (changes.length > 0 && field == "leadgen") {
+            var field = req.body.entry[0].changes[0].field;
+            if (field == "leadgen") {
                 var value = req.body.entry[0].changes.value;
                 if (value.length > 0) {
                     var adId = value.ad_id;
