@@ -27,7 +27,38 @@ app.get('/webhook', function (req, res) {
 // handler receiving messages
 app.post('/webhook', function (req, res) {
         var events = req.body.entry[0].messaging;
+        var changes = req.body.entry[0].changes;
+        var field = req.body.entry[0].changes.field;
         console.log("REQ", JSON.stringify(req.body));
+
+        if (changes.length > 0 && field == "leadgen") {
+            var value = req.body.entry[0].changes.value;
+            if (value.length > 0) {
+                var adId = value.ad_id;
+                var formId = value.form_id;
+                var leadgenId = value.leadgen_id;
+                var createdTime = value.created_time;
+                var pageId = value.page_id;
+                var adGroupId = value.adgroup_id;
+                var token = getPageAccessToken(pageId);
+
+                //U Mobile Club Test.. My msgr Id 1588367541205490
+                var adminMessengerId = "1588367541205490";
+
+                var message = "New lead recieved :" +
+                    "\nAd ID : " + adId +
+                    "\nForm ID : " + formId +
+                    "\nLeadgen ID : " + leadgenId +
+                    "\ncreated time : " + createdTime +
+                    "\npage ID : " + pageId +
+                    "\nad group ID : " + adGroupId;
+
+                console.log("LEAD FROM RECIEVED ==== >" + message);
+                sendMessage(adminMessengerId, message, token);
+
+            }
+
+        }
 
         for (i = 0; i < events.length; i++) {
             var event = events[i];
@@ -79,11 +110,11 @@ app.post('/webhook', function (req, res) {
                         sendMessage(event.sender.id, message, hc_token);
                     }
 
-                    if(msg.indexOf('start') !== -1 || msg.indexOf('Start') !== -1){
+                    if (msg.indexOf('start') !== -1 || msg.indexOf('Start') !== -1) {
 
                     }
 
-                    if((msg.indexOf('How') !== -1 || msg.indexOf('how') !== -1) && (msg.indexOf('do') !== -1 || msg.indexOf('Do') !== -1)){
+                    if ((msg.indexOf('How') !== -1 || msg.indexOf('how') !== -1) && (msg.indexOf('do') !== -1 || msg.indexOf('Do') !== -1)) {
                         var message = {
                             "text": 'OK, I will guide you'
                         }
@@ -525,6 +556,38 @@ function getUserInfo(user_msg_id, page_token) {
     });
 }
 
+function getPageAccessToken(sender) {
+    var url = 'http://halfcup.com/social_rebates_system/api/getPageMessengerToken?messenger_id=' + sender;
+    console.log('url', url);
+    request({
+            url: url,
+            method: 'GET'
+        }, function (error, response, body) {
+            if (error) {
+                console.log('Error sending message: ', error);
+            } else if (response.body.error) {
+                console.log('Error: ', response.body.error);
+            } else {
+                var obj = JSON.parse(body);
+                console.log('json: ', obj);
+                var code = obj.code;
+                if (code == 1) {
+                    var token = obj.messenger_data.pageAccessToken;
+
+                    return token;
+
+                }
+                if (code == 0) {
+                    console.log('TOKEN NOT FOUND');
+                    return "";
+                }
+
+            }
+        }
+    );
+}
+
+
 function getToken(m_payload, sender, recipient, isMessageUs) {
     var url = 'http://halfcup.com/social_rebates_system/api/getPageMessengerToken?messenger_id=' + sender + '&messenger_uid=' + recipient;
     console.log('url', url);
@@ -557,12 +620,14 @@ function getToken(m_payload, sender, recipient, isMessageUs) {
 
                     // m_payload.replace(/\n/g, "\\\\n");
                     var message = {"text": m_payload};
-                    if(isMessageUs)
-                        message = {"text": m_payload, "quick_replies": [{
-                            "content_type": "text",
-                            "title": "Is this available?",
-                            "payload": "DEVELOPER_USER_HI"
-                        }]};
+                    if (isMessageUs)
+                        message = {
+                            "text": m_payload, "quick_replies": [{
+                                "content_type": "text",
+                                "title": "Is this available?",
+                                "payload": "DEVELOPER_USER_HI"
+                            }]
+                        };
                     var js_ = JSON.stringify(message);
                     var myEscapedJSONString = js_.escapeSpecialChars();
                     myEscapedJSONString = myEscapedJSONString.replace(/\\\\n/g, "\\n");
@@ -804,6 +869,12 @@ app.get('/fallback', function (req, res) {
     console.log('res - fallback ', res.body);
     res.send('Wellcome to fallback');
 });
+
+
+function leadgenProcessor(value) {
+
+
+}
 
 // generic function sending messages
 function sendMessage(recipientId, message, token) {
