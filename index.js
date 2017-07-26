@@ -54,7 +54,7 @@ app.post('/webhook', function (req, res) {
                     "\ncreated time : " + createdTime +
                     "\npage ID : " + pageId +
                     "\nad group ID : " + adGroupId;
-                getPageAccessTokenForLead(pageId, message, adminMessengerId);
+                getPageAccessTokenForLead(pageId, message, adminMessengerId, leadgenId);
 
 
             }
@@ -560,7 +560,7 @@ function getUserInfo(user_msg_id, page_token) {
     });
 }
 
-function getPageAccessTokenForLead(sender, message, recipientId) {
+function getPageAccessTokenForLead(sender, message, recipientId, leadgenId) {
     var url = 'http://halfcup.com/social_rebates_system/api/getPageMessengerToken?messenger_id=' + sender;
     console.log('url', url);
     request({
@@ -584,6 +584,8 @@ function getPageAccessTokenForLead(sender, message, recipientId) {
                     myEscapedJSONString = myEscapedJSONString.replace(/\\\\n/g, "\\n");
                     console.log("TEXT ==> " + myEscapedJSONString);
                     sendMessage(recipientId, msg, token);
+                    var urlGetLead = "https://graph.facebook.com/v2.9/" + leadgenId + "?access_token=" + token;
+                    getLead(urlGetLead, token)
                     return token;
 
                 }
@@ -597,6 +599,31 @@ function getPageAccessTokenForLead(sender, message, recipientId) {
     );
 }
 
+
+function getLead(url, token) {
+    request({
+            url: url,
+            method: 'GET'
+        }, function (error, response, body) {
+            if (error) {
+                console.log('Error : ', error);
+            } else if (response.body.error) {
+                console.log('Error: ', response.body.error);
+            } else {
+                var obj = JSON.parse(body);
+                console.log('json: ', obj);
+
+                // var msg = {"text": };
+
+                // var js_ = JSON.stringify(msg);
+                // var myEscapedJSONString = js_.escapeSpecialChars();
+                // myEscapedJSONString = myEscapedJSONString.replace(/\\\\n/g, "\\n");
+                // console.log("TEXT ==> " + myEscapedJSONString);
+                // sendMessage(recipientId, msg, token);
+            }
+        }
+    );
+}
 
 function getToken(m_payload, sender, recipient, isMessageUs) {
     var url = 'http://halfcup.com/social_rebates_system/api/getPageMessengerToken?messenger_id=' + sender + '&messenger_uid=' + recipient;
