@@ -41,13 +41,13 @@ app.post('/webhook', function (req, res) {
                 var createdTime = value.created_time;
                 var pageId = value.page_id;
                 var adGroupId = value.adgroup_id;
-                var token = getPageAccessToken(pageId);
-
                 //U Mobile Club Test.. My msgr Id 1588367541205490
                 var adminMessengerId = "1588367541205490";
 
                 if (pageId == 444444444444)
                     pageId = 228431964255924;
+
+                var token = getPageAccessToken(pageId);
                 var message = "New lead recieved :" +
                     "\nAd ID : " + adId +
                     "\nForm ID : " + formId +
