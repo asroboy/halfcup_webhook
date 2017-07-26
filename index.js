@@ -33,7 +33,7 @@ app.post('/webhook', function (req, res) {
 
         if (changes) {
             var field = req.body.entry[0].changes[0].field;
-            if (field == "leadgen") {
+            if (changes.length > 0 && field == "leadgen") {
                 var value = req.body.entry[0].changes.value;
                 if (value.length > 0) {
                     var adId = value.ad_id;
@@ -66,276 +66,290 @@ app.post('/webhook', function (req, res) {
 
         }
 
-        for (i = 0; i < events.length; i++) {
-            var event = events[i];
-            console.log("=======EVENT CHECK=======");
-            //console.log('Sender ID: ', event.sender.id);
-            console.log('Event ' + i + ': ', JSON.stringify(event));
-            var hc_token = 'EAABqJD84pmIBABjewVhyAuMwDLFaI7YT7fsJLzeh63mhOwdZAgMKClvFfZBvHhFR35dIok3YQAxeZCuDbiLCaWVOpQxWVRHZBahsQOy9ZCTn4e4wdWcZA0VmGU6x0CFzv6dRcCzrlSZA87EPcI3b0KCDkedjLc37lZCvnu47iTTAwgZDZD';
+        if(events){
+            for (i = 0; i < events.length; i++) {
+                var event = events[i];
+                console.log("=======EVENT CHECK=======");
+                //console.log('Sender ID: ', event.sender.id);
+                console.log('Event ' + i + ': ', JSON.stringify(event));
+                var hc_token = 'EAABqJD84pmIBABjewVhyAuMwDLFaI7YT7fsJLzeh63mhOwdZAgMKClvFfZBvHhFR35dIok3YQAxeZCuDbiLCaWVOpQxWVRHZBahsQOy9ZCTn4e4wdWcZA0VmGU6x0CFzv6dRcCzrlSZA87EPcI3b0KCDkedjLc37lZCvnu47iTTAwgZDZD';
 
-            if (event.message) {
-                var msg = event.message.text;
-                if (event.sender.id === '912070908830063') {
-                    if (msg === 'Hi, I\'m Halfcup') {
-                        var message = {"text": "I can help you to remind food time at anytime u want"}
-                        sendMessage(event.recipient.id, message, hc_token);
-                    }
-                    if (msg === 'OK, I will guide you') {
-                        var message = {
-                            "text": 'Do you need me to remind your breakfast time',
-                            "quick_replies": [{
-                                "content_type": "text",
-                                "title": "Yes",
-                                "payload": "DEVELOPER_SETUP_YES"
-                            }, {"content_type": "text", "title": "No", "payload": "DEVELOPER_SETUP_NO"}]
+                if (event.message) {
+                    var msg = event.message.text;
+                    if (event.sender.id === '912070908830063') {
+                        if (msg === 'Hi, I\'m Halfcup') {
+                            var message = {"text": "I can help you to remind food time at anytime u want"}
+                            sendMessage(event.recipient.id, message, hc_token);
                         }
-                        sendMessage(event.recipient.id, message, hc_token);
+                        if (msg === 'OK, I will guide you') {
+                            var message = {
+                                "text": 'Do you need me to remind your breakfast time',
+                                "quick_replies": [{
+                                    "content_type": "text",
+                                    "title": "Yes",
+                                    "payload": "DEVELOPER_SETUP_YES"
+                                }, {"content_type": "text", "title": "No", "payload": "DEVELOPER_SETUP_NO"}]
+                            }
+                            sendMessage(event.recipient.id, message, hc_token);
+                        }
+                    }
+
+                    if (event.recipient.id === '912070908830063') {
+                        console.log("=======Reply check 912070908830063=======");
+                        if (msg === 'Hi' || msg === 'hi' || msg === 'hallo' || msg === 'halo' || msg === 'Hallo') {
+                            var message = {
+                                "text": 'Hi, are you ready to setup your remider',
+                                "quick_replies": [{"content_type": "text", "title": "Setup", "payload": "DEVELOPER_SETUP"}]
+                            }
+                            sendMessage(event.sender.id, message, hc_token);
+                        }
+
+                        if (msg === 'setup' || msg === 'Setup') {
+
+                            var message = {
+                                "text": 'OK, do you need me to remind your breakfast time',
+                                "quick_replies": [{
+                                    "content_type": "text",
+                                    "title": "Yes",
+                                    "payload": "DEVELOPER_SETUP_YES"
+                                }, {"content_type": "text", "title": "No", "payload": "DEVELOPER_SETUP_NO"}]
+                            }
+                            sendMessage(event.sender.id, message, hc_token);
+                        }
+
+                        if (msg.indexOf('start') !== -1 || msg.indexOf('Start') !== -1) {
+
+                        }
+
+                        if ((msg.indexOf('How') !== -1 || msg.indexOf('how') !== -1) && (msg.indexOf('do') !== -1 || msg.indexOf('Do') !== -1)) {
+                            var message = {
+                                "text": 'OK, I will guide you'
+                            }
+                            sendMessage(event.sender.id, message, hc_token);
+                        }
+                        // if(event.message.text !== 'GET_STARTED_PAYLOAD '){
+                        //     var message = {"text": "Yeah .. I know u're busy person"}
+                        //     sendMessage(event.sender.id, message, hc_token);
+                        // }
+
                     }
                 }
 
-                if (event.recipient.id === '912070908830063') {
-                    console.log("=======Reply check 912070908830063=======");
-                    if (msg === 'Hi' || msg === 'hi' || msg === 'hallo' || msg === 'halo' || msg === 'Hallo') {
-                        var message = {
-                            "text": 'Hi, are you ready to setup your remider',
-                            "quick_replies": [{"content_type": "text", "title": "Setup", "payload": "DEVELOPER_SETUP"}]
+
+                if (event.message && event.message.text && event.sender) {
+                    //console.log("=======MESSAGE=======");
+                    //console.log('Message : ', event.message.text);
+
+                    /**
+                     * ACTIONS FOR QUICK REPLY
+                     */
+                    if (event.message.quick_reply) {
+                        console.log("=======QUICK REPLY=======");
+
+                        var find_prefix = event.message.quick_reply.payload.split('_');
+                        var payload_prefix = find_prefix[0];
+                        console.log("payload_prefix", payload_prefix);
+
+                        /**
+                         * Check if payload REGISTER_PAYLOAD (old Get started) button
+                         */
+                        if (event.message.quick_reply.payload === 'REGISTER_PAYLOAD') {
+                            console.log("Payload ", event.message.quick_reply.payload);
+                            getResponseToUser(event.message.quick_reply.payload, event.sender.id, event.recipient.id);
                         }
-                        sendMessage(event.sender.id, message, hc_token);
-                    }
-
-                    if (msg === 'setup' || msg === 'Setup') {
-
-                        var message = {
-                            "text": 'OK, do you need me to remind your breakfast time',
-                            "quick_replies": [{
-                                "content_type": "text",
-                                "title": "Yes",
-                                "payload": "DEVELOPER_SETUP_YES"
-                            }, {"content_type": "text", "title": "No", "payload": "DEVELOPER_SETUP_NO"}]
+                        /**
+                         * Check if payload DEVELOPER (Get started) button
+                         */
+                        else if (payload_prefix === 'DEVELOPER') {
+                            console.log("Payload ", event.message.quick_reply.payload);
+                            pixel('QuickReply', event.message.text, event.message.quick_reply.payload, event.sender.id, event.recipient.id);
+                            getResponseToUser(event.message.quick_reply.payload, event.sender.id, event.recipient.id);
                         }
-                        sendMessage(event.sender.id, message, hc_token);
-                    }
-
-                    if (msg.indexOf('start') !== -1 || msg.indexOf('Start') !== -1) {
-
-                    }
-
-                    if ((msg.indexOf('How') !== -1 || msg.indexOf('how') !== -1) && (msg.indexOf('do') !== -1 || msg.indexOf('Do') !== -1)) {
-                        var message = {
-                            "text": 'OK, I will guide you'
+                        /**
+                         * Check if payload is BOT key
+                         */
+                        else if (payload_prefix === 'BOT' || payload_prefix === 'SHARE') {
+                            console.log("Payload ", event.message.quick_reply.payload);
+                            pixel('QuickReply', event.message.text, event.message.quick_reply.payload, event.sender.id, event.recipient.id);
+                            getResponseToUser(event.message.quick_reply.payload, event.sender.id, event.recipient.id);
                         }
-                        sendMessage(event.sender.id, message, hc_token);
+                        /**
+                         * Check if payload is Multi BOT key(s)
+                         */
+                        else if ((payload_prefix === 'BOT' || payload_prefix === 'SHARE') && event.message.quick_reply.payload.indexOf(",") !== -1) {
+                            var payloads = event.message.quick_reply.payload.split(",");
+                            for (i = 0; i < payloads.length; i++) {
+                                console.log("Payload " + i, payloads[i]);
+                                pixel('QuickReply', event.message.text, payloads[i], event.sender.id, event.recipient.id);
+                                getResponseToUser(payloads[i], event.sender.id, event.recipient.id);
+                            }
+                        }
+                        /**
+                         * MULTI KEY FORMAT [A]|[B]|BOT_xxxx_xxxx
+                         */
+                        else if (event.message.quick_reply.payload.indexOf("|") > -1) {
+                            /**
+                             * Split Payload marked with |
+                             * @type {*}
+                             */
+                            var keys = event.message.quick_reply.payload.split("|");
+                            console.log("Payload ", event.message.quick_reply.payload);
+                            var action_name = keys[0];
+                            action_name = action_name.replace("[", "");
+                            action_name = action_name.replace("]", "");
+
+
+                            if (keys.length == 2) {
+                                keyIndexAction(keys[1], event, action_name, "QuickReply");
+                            }
+                            if (keys.length == 3) {
+                                keyIndexAction(keys[1], event, action_name, "QuickReply");
+                                keyIndexAction(keys[2], event, action_name, "QuickReply");
+                            }
+
+                            if (keys.length == 4) {
+                                keyIndexAction(keys[1], event, action_name, "QuickReply");
+                                keyIndexAction(keys[2], event, action_name, "QuickReply");
+                                keyIndexAction(keys[3], event, action_name, "QuickReply");
+
+                            }
+
+                        }
+
+                        //=====
+                        /**
+                         * if Payload is only text
+                         */
+                        else if (event.message.quick_reply.payload) {
+                            console.log("QuickReply ", event.message.quick_reply.payload);
+                            //var token = "";
+                            //this is to handle print PAYLOAD to msgr room
+                            pixel('QuickReply', event.message.text, event.message.quick_reply.payload, event.sender.id, event.recipient.id);
+                            getToken(event.message.quick_reply.payload, event.recipient.id, event.sender.id, false);
+                        }
                     }
-                    // if(event.message.text !== 'GET_STARTED_PAYLOAD '){
-                    //     var message = {"text": "Yeah .. I know u're busy person"}
-                    //     sendMessage(event.sender.id, message, hc_token);
-                    // }
+
+                    /**
+                     * ACTIONS FOR OTHERS
+                     */
+                    else {
+                        if (event.message.metadata) {
+                            var jsonMeta = JSON.parse(event.message.metadata);
+                            console.log('json meta', jsonMeta);
+                            if (jsonMeta.ad_id) {
+                                console.log("=======ADS REPLY=======");
+                                getAdsResponseToUser(event.recipient.id, event.sender.id, jsonMeta.ad_id)
+                            }
+                        } else {
+                            if (event.message.text) {
+                                var request_key = event.message.text;
+                                console.log("===== event.message.text ========");
+                                // getResponseToUser(request_key, event.sender.id, event.recipient.id);
+                            }
+                        }
+                    }
 
                 }
-            }
-
-
-            if (event.message && event.message.text && event.sender) {
-                //console.log("=======MESSAGE=======");
-                //console.log('Message : ', event.message.text);
 
                 /**
-                 * ACTIONS FOR QUICK REPLY
+                 * ACTIONS FOR OPTIN
                  */
-                if (event.message.quick_reply) {
-                    console.log("=======QUICK REPLY=======");
+                if (event.optin) {
+                    var key = event.optin.ref;
+                    console.log(key)
+                    if (event.optin.user_ref) {
+                        console.log(key)
+                        // getResponseToUserRef(key, event.optin.user_ref, event.recipient.id);
+                    } else {
+                        // getResponseToUser(key, event.sender.id, event.recipient.id);
+                    }
 
-                    var find_prefix = event.message.quick_reply.payload.split('_');
+                }
+
+                if (event.message && event.message.attachments) {
+                    console.log("===== event.message.text ========");
+                    console.log("===== NOTHING HERE ========");
+                    //var arr = JSON.parse(event.message.attachments);
+                    //getResponseToUser(event.message.attachments[0].payload.sticker_id, event.sender.id, event.recipient.id);
+                }
+
+                /**
+                 * ACTIONS FOR POSTBACK
+                 */
+                if (event.postback) {
+                    console.log("===== event.postback ========");
+                    var find_prefix = event.postback.payload.split('_');
                     var payload_prefix = find_prefix[0];
-                    console.log("payload_prefix", payload_prefix);
-
-                    /**
-                     * Check if payload REGISTER_PAYLOAD (old Get started) button
-                     */
-                    if (event.message.quick_reply.payload === 'REGISTER_PAYLOAD') {
-                        console.log("Payload ", event.message.quick_reply.payload);
-                        getResponseToUser(event.message.quick_reply.payload, event.sender.id, event.recipient.id);
-                    }
-                    /**
-                     * Check if payload DEVELOPER (Get started) button
-                     */
-                    else if (payload_prefix === 'DEVELOPER') {
-                        console.log("Payload ", event.message.quick_reply.payload);
-                        pixel('QuickReply', event.message.text, event.message.quick_reply.payload, event.sender.id, event.recipient.id);
-                        getResponseToUser(event.message.quick_reply.payload, event.sender.id, event.recipient.id);
-                    }
-                    /**
-                     * Check if payload is BOT key
-                     */
-                    else if (payload_prefix === 'BOT' || payload_prefix === 'SHARE') {
-                        console.log("Payload ", event.message.quick_reply.payload);
-                        pixel('QuickReply', event.message.text, event.message.quick_reply.payload, event.sender.id, event.recipient.id);
-                        getResponseToUser(event.message.quick_reply.payload, event.sender.id, event.recipient.id);
-                    }
-                    /**
-                     * Check if payload is Multi BOT key(s)
-                     */
-                    else if ((payload_prefix === 'BOT' || payload_prefix === 'SHARE') && event.message.quick_reply.payload.indexOf(",") !== -1) {
-                        var payloads = event.message.quick_reply.payload.split(",");
+                    // console.log("Index of , " + event.postback.payload.indexOf(","));
+                    if ((payload_prefix === 'BOT' || payload_prefix === 'SHARE') && (event.postback.payload.indexOf(",") > -1)) {
+                        var payloads = event.postback.payload.split(",");
                         for (i = 0; i < payloads.length; i++) {
                             console.log("Payload " + i, payloads[i]);
-                            pixel('QuickReply', event.message.text, payloads[i], event.sender.id, event.recipient.id);
+                            pixel('PostBack', payloads[i], payloads[i], event.sender.id, event.recipient.id);
                             getResponseToUser(payloads[i], event.sender.id, event.recipient.id);
                         }
                     }
+
+
                     /**
                      * MULTI KEY FORMAT [A]|[B]|BOT_xxxx_xxxx
+                     * MULTI KEY FORMAT [A]|[B]|[BOT_xxxx_xxxx]|BOT_xxx_xxx
                      */
-                    else if (event.message.quick_reply.payload.indexOf("|") > -1) {
+                    else if (event.postback.payload.indexOf("|") > -1) {
                         /**
                          * Split Payload marked with |
                          * @type {*}
                          */
-                        var keys = event.message.quick_reply.payload.split("|");
-                        console.log("Payload ", event.message.quick_reply.payload);
-                        var action_name = keys[0];
+                        var keys = event.postback.payload.split("|");
+                        console.log("Payload ", event.postback.payload);
+                        console.log("PAYLOAD KEY SIZE ", keys.length);
+
+                        var action_name = keys[0]; //action name
                         action_name = action_name.replace("[", "");
                         action_name = action_name.replace("]", "");
 
-
                         if (keys.length == 2) {
-                            keyIndexAction(keys[1], event, action_name, "QuickReply");
+                            keyIndexAction(keys[1], event, action_name, "PostBack");
                         }
                         if (keys.length == 3) {
-                            keyIndexAction(keys[1], event, action_name, "QuickReply");
-                            keyIndexAction(keys[2], event, action_name, "QuickReply");
+                            keyIndexAction(keys[1], event, action_name, "PostBack");
+                            keyIndexAction(keys[2], event, action_name, "PostBack");
                         }
 
                         if (keys.length == 4) {
-                            keyIndexAction(keys[1], event, action_name, "QuickReply");
-                            keyIndexAction(keys[2], event, action_name, "QuickReply");
-                            keyIndexAction(keys[3], event, action_name, "QuickReply");
-
+                            keyIndexAction(keys[1], event, action_name, "PostBack");
+                            keyIndexAction(keys[2], event, action_name, "PostBack");
+                            keyIndexAction(keys[3], event, action_name, "PostBack");
+                            // index_1_action(action_name, reply_text_or_bot_key, keys[2], "PostBack", event);
                         }
 
                     }
 
-                    //=====
-                    /**
-                     * if Payload is only text
-                     */
-                    else if (event.message.quick_reply.payload) {
-                        console.log("QuickReply ", event.message.quick_reply.payload);
-                        //var token = "";
-                        //this is to handle print PAYLOAD to msgr room
-                        pixel('QuickReply', event.message.text, event.message.quick_reply.payload, event.sender.id, event.recipient.id);
-                        getToken(event.message.quick_reply.payload, event.recipient.id, event.sender.id, false);
-                    }
-                }
-
-                /**
-                 * ACTIONS FOR OTHERS
-                 */
-                else {
-                    if (event.message.metadata) {
-                        var jsonMeta = JSON.parse(event.message.metadata);
-                        console.log('json meta', jsonMeta);
-                        if (jsonMeta.ad_id) {
-                            console.log("=======ADS REPLY=======");
-                            getAdsResponseToUser(event.recipient.id, event.sender.id, jsonMeta.ad_id)
-                        }
+                    //***************
+                    else if (event.postback.payload === "USER_DEFINED_PAYLOAD") {
+                        pixel('PostBack', "Get Started", event.postback.payload, event.sender.id, event.recipient.id);
+                        getResponseToUser(event.postback.payload, event.sender.id, event.recipient.id);
                     } else {
-                        if (event.message.text) {
-                            var request_key = event.message.text;
-                            console.log("===== event.message.text ========");
-                            // getResponseToUser(request_key, event.sender.id, event.recipient.id);
-                        }
-                    }
-                }
-
-            }
-
-            /**
-             * ACTIONS FOR OPTIN
-             */
-            if (event.optin) {
-                var key = event.optin.ref;
-                console.log(key)
-                if (event.optin.user_ref) {
-                    console.log(key)
-                    // getResponseToUserRef(key, event.optin.user_ref, event.recipient.id);
-                } else {
-                    // getResponseToUser(key, event.sender.id, event.recipient.id);
-                }
-
-            }
-
-            if (event.message && event.message.attachments) {
-                console.log("===== event.message.text ========");
-                console.log("===== NOTHING HERE ========");
-                //var arr = JSON.parse(event.message.attachments);
-                //getResponseToUser(event.message.attachments[0].payload.sticker_id, event.sender.id, event.recipient.id);
-            }
-
-            /**
-             * ACTIONS FOR POSTBACK
-             */
-            if (event.postback) {
-                console.log("===== event.postback ========");
-                var find_prefix = event.postback.payload.split('_');
-                var payload_prefix = find_prefix[0];
-                // console.log("Index of , " + event.postback.payload.indexOf(","));
-                if ((payload_prefix === 'BOT' || payload_prefix === 'SHARE') && (event.postback.payload.indexOf(",") > -1)) {
-                    var payloads = event.postback.payload.split(",");
-                    for (i = 0; i < payloads.length; i++) {
-                        console.log("Payload " + i, payloads[i]);
-                        pixel('PostBack', payloads[i], payloads[i], event.sender.id, event.recipient.id);
-                        getResponseToUser(payloads[i], event.sender.id, event.recipient.id);
-                    }
-                }
-
-
-                /**
-                 * MULTI KEY FORMAT [A]|[B]|BOT_xxxx_xxxx
-                 * MULTI KEY FORMAT [A]|[B]|[BOT_xxxx_xxxx]|BOT_xxx_xxx
-                 */
-                else if (event.postback.payload.indexOf("|") > -1) {
-                    /**
-                     * Split Payload marked with |
-                     * @type {*}
-                     */
-                    var keys = event.postback.payload.split("|");
-                    console.log("Payload ", event.postback.payload);
-                    console.log("PAYLOAD KEY SIZE ", keys.length);
-
-                    var action_name = keys[0]; //action name
-                    action_name = action_name.replace("[", "");
-                    action_name = action_name.replace("]", "");
-
-                    if (keys.length == 2) {
-                        keyIndexAction(keys[1], event, action_name, "PostBack");
-                    }
-                    if (keys.length == 3) {
-                        keyIndexAction(keys[1], event, action_name, "PostBack");
-                        keyIndexAction(keys[2], event, action_name, "PostBack");
+                        pixel('PostBack', event.postback.payload, event.postback.payload, event.sender.id, event.recipient.id);
+                        getResponseToUserForPostback(event.postback.payload, event.sender.id, event.recipient.id);
                     }
 
-                    if (keys.length == 4) {
-                        keyIndexAction(keys[1], event, action_name, "PostBack");
-                        keyIndexAction(keys[2], event, action_name, "PostBack");
-                        keyIndexAction(keys[3], event, action_name, "PostBack");
-                        // index_1_action(action_name, reply_text_or_bot_key, keys[2], "PostBack", event);
+
+                    if (event.postback.referral) {
+                        var ref = event.postback.referral.ref;
+                        var keys = ref.split("|");
+
+                        // if (keys[0] === 'MESSAGE_ME') {
+                        // getResponseToUser(ref,event.sender.id, event.recipient.id );
+                        getToken(ref, event.recipient.id, event.sender.id, true);
+                        // }
                     }
 
                 }
 
-                //***************
-                else if (event.postback.payload === "USER_DEFINED_PAYLOAD") {
-                    pixel('PostBack', "Get Started", event.postback.payload, event.sender.id, event.recipient.id);
-                    getResponseToUser(event.postback.payload, event.sender.id, event.recipient.id);
-                } else {
-                    pixel('PostBack', event.postback.payload, event.postback.payload, event.sender.id, event.recipient.id);
-                    getResponseToUserForPostback(event.postback.payload, event.sender.id, event.recipient.id);
-                }
 
-
-                if (event.postback.referral) {
-                    var ref = event.postback.referral.ref;
+                if (event.referral) {
+                    var ref = event.referral.ref;
                     var keys = ref.split("|");
 
                     // if (keys[0] === 'MESSAGE_ME') {
@@ -343,20 +357,9 @@ app.post('/webhook', function (req, res) {
                     getToken(ref, event.recipient.id, event.sender.id, true);
                     // }
                 }
-
-            }
-
-
-            if (event.referral) {
-                var ref = event.referral.ref;
-                var keys = ref.split("|");
-
-                // if (keys[0] === 'MESSAGE_ME') {
-                // getResponseToUser(ref,event.sender.id, event.recipient.id );
-                getToken(ref, event.recipient.id, event.sender.id, true);
-                // }
             }
         }
+
         res.sendStatus(200);
     }
 );
