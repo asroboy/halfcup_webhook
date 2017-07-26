@@ -33,40 +33,38 @@ app.post('/webhook', function (req, res) {
 
         if (changes) {
             var field = req.body.entry[0].changes[0].field;
-            if (changes.length > 0 && field == "leadgen") {
-                var value = req.body.entry[0].changes.value;
-                if (value.length > 0) {
-                    var adId = value.ad_id;
-                    var formId = value.form_id;
-                    var leadgenId = value.leadgen_id;
-                    var createdTime = value.created_time;
-                    var pageId = value.page_id;
-                    var adGroupId = value.adgroup_id;
-                    var token = getPageAccessToken(pageId);
+            if (field == "leadgen") {
+                var value = req.body.entry[0].changes[0].value;
+                var adId = value.ad_id;
+                var formId = value.form_id;
+                var leadgenId = value.leadgen_id;
+                var createdTime = value.created_time;
+                var pageId = value.page_id;
+                var adGroupId = value.adgroup_id;
+                var token = getPageAccessToken(pageId);
 
-                    //U Mobile Club Test.. My msgr Id 1588367541205490
-                    var adminMessengerId = "1588367541205490";
+                //U Mobile Club Test.. My msgr Id 1588367541205490
+                var adminMessengerId = "1588367541205490";
 
-                    if (pageId == 444444444444)
-                        pageId = 228431964255924;
-                    var message = "New lead recieved :" +
-                        "\nAd ID : " + adId +
-                        "\nForm ID : " + formId +
-                        "\nLeadgen ID : " + leadgenId +
-                        "\ncreated time : " + createdTime +
-                        "\npage ID : " + pageId +
-                        "\nad group ID : " + adGroupId;
+                if (pageId == 444444444444)
+                    pageId = 228431964255924;
+                var message = "New lead recieved :" +
+                    "\nAd ID : " + adId +
+                    "\nForm ID : " + formId +
+                    "\nLeadgen ID : " + leadgenId +
+                    "\ncreated time : " + createdTime +
+                    "\npage ID : " + pageId +
+                    "\nad group ID : " + adGroupId;
 
-                    console.log("LEAD FROM RECIEVED ==== >" + message);
-                    sendMessage(adminMessengerId, message, token);
+                console.log("LEAD FROM RECIEVED ==== >" + message);
+                sendMessage(adminMessengerId, message, token);
 
-                }
 
             }
 
         }
 
-        if(events){
+        if (events) {
             for (i = 0; i < events.length; i++) {
                 var event = events[i];
                 console.log("=======EVENT CHECK=======");
