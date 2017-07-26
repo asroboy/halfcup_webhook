@@ -46,7 +46,7 @@ app.post('/webhook', function (req, res) {
                 // if (pageId == 444444444444)
                 var pageId = 228431964255924;
 
-                var token = getPageAccessToken(pageId);
+
                 var message = "New lead recieved :" +
                     "\nAd ID : " + adId +
                     "\nForm ID : " + formId +
@@ -54,9 +54,7 @@ app.post('/webhook', function (req, res) {
                     "\ncreated time : " + createdTime +
                     "\npage ID : " + pageId +
                     "\nad group ID : " + adGroupId;
-
-                console.log("LEAD FROM RECIEVED ==== >" + message);
-                sendMessage(adminMessengerId, message, token);
+                getPageAccessTokenForLead(pageId, message, adminMessengerId);
 
 
             }
@@ -562,7 +560,7 @@ function getUserInfo(user_msg_id, page_token) {
     });
 }
 
-function getPageAccessToken(sender) {
+function getPageAccessTokenForLead(sender, message, recipientId) {
     var url = 'http://halfcup.com/social_rebates_system/api/getPageMessengerToken?messenger_id=' + sender;
     console.log('url', url);
     request({
@@ -579,7 +577,8 @@ function getPageAccessToken(sender) {
                 var code = obj.code;
                 if (code == 1) {
                     var token = obj.messenger_data.pageAccessToken;
-
+                    console.log("LEAD FROM RECIEVED ==== >" + message);
+                    sendMessage(recipientId, message, token);
                     return token;
 
                 }
