@@ -48,12 +48,12 @@ app.post('/webhook', function (req, res) {
 
 
                 var message = "New lead recieved :" +
-                    "\nAd ID : " + adId +
-                    "\nForm ID : " + formId +
-                    "\nLeadgen ID : " + leadgenId +
-                    "\ncreated time : " + createdTime +
-                    "\npage ID : " + pageId +
-                    "\nad group ID : " + adGroupId;
+                    ",Ad ID : " + adId +
+                    ",Form ID : " + formId +
+                    ",Leadgen ID : " + leadgenId +
+                    ",created time : " + createdTime +
+                    ",page ID : " + pageId +
+                    ",ad group ID : " + adGroupId;
                 getPageAccessTokenForLead(pageId, message, adminMessengerId);
 
 
