@@ -39,22 +39,17 @@ app.post('/webhook', function (req, res) {
                 var formId = value.form_id;
                 var leadgenId = value.leadgen_id;
                 var createdTime = value.created_time;
-                // var pageId = value.page_id;
+                var pageId = value.page_id;
                 var adGroupId = value.adgroup_id;
                 //U Mobile Club Test.. My msgr Id 1588367541205490
                 var adminMessengerId = "1588367541205490";
                 // if (pageId == 444444444444)
-                var pageId = 228431964255924;
+                // var pageId = 228431964255924;
 
 
                 var message = "New lead recieved :" +
-                    "\nAd ID : " + adId +
-                    "\nForm ID : " + formId +
-                    "\nLeadgen ID : " + leadgenId +
-                    "\ncreated time : " + createdTime +
-                    "\npage ID : " + pageId +
-                    "\nad group ID : " + adGroupId;
-                getPageAccessTokenForLead(pageId, message, adminMessengerId, leadgenId);
+                    "\n=====================" +
+                    getPageAccessTokenForLead(pageId, message, adminMessengerId, leadgenId);
 
 
             }
@@ -577,15 +572,9 @@ function getPageAccessTokenForLead(sender, message, recipientId, leadgenId) {
                 var code = obj.code;
                 if (code == 1) {
                     var token = obj.messenger_data.pageAccessToken;
-                    var msg = {"text": message};
-                    console.log("LEAD FROM RECIEVED ==== >" + message);
-                    var js_ = JSON.stringify(msg);
-                    var myEscapedJSONString = js_.escapeSpecialChars();
-                    myEscapedJSONString = myEscapedJSONString.replace(/\\\\n/g, "\\n");
-                    console.log("TEXT ==> " + myEscapedJSONString);
-                    sendMessage(recipientId, msg, token);
-                    var urlGetLead = "https://graph.facebook.com/v2.9/" + leadgenId + "?access_token=" + token;
-                    getLead(urlGetLead, token)
+                    var longLiveToken = "EAABqJD84pmIBAP4xtPj3NTLfCzWp17iZByoFndpbnEq79ZAOGs7XdF5YMO5i1GgQ3zHex200f2uvLHWqzFxRk0RrC1jV7RZBZAqtU2mLluefhmexnX7SSnTP63Hy2x3AAvv5FgkU48FE95fpj7c8ZBREHJIVBYg4ZD";
+                    var urlGetLead = "https://graph.facebook.com/v2.9/" + leadgenId + "?access_token=" + longLiveToken;
+                    getLead(urlGetLead, token, message, recipientId)
                     return token;
 
                 }
@@ -600,7 +589,7 @@ function getPageAccessTokenForLead(sender, message, recipientId, leadgenId) {
 }
 
 
-function getLead(url, token) {
+function getLead(url, token, message, recipientId) {
     request({
             url: url,
             method: 'GET'
@@ -613,13 +602,29 @@ function getLead(url, token) {
                 var obj = JSON.parse(body);
                 console.log('json: ', obj);
 
-                // var msg = {"text": };
+                var createdTime = obj.created_time;
+                var id = obj.id;
+                var field_data = obj.field_data;
+                var mData = "";
 
-                // var js_ = JSON.stringify(msg);
-                // var myEscapedJSONString = js_.escapeSpecialChars();
-                // myEscapedJSONString = myEscapedJSONString.replace(/\\\\n/g, "\\n");
-                // console.log("TEXT ==> " + myEscapedJSONString);
-                // sendMessage(recipientId, msg, token);
+
+                for (var i = 0; i < field_data.length; i++) {
+                    mData = mData + field_data[i].name + ": " + field_data[i].values + "\n";
+                }
+
+
+                message = message + "id : " + id
+                    + "\ntime : " + createdTime +
+                    "\n" + mData;
+
+                var msg = {"text": message};
+                console.log("LEAD FROM RECIEVED ==== >" + message);
+                var js_ = JSON.stringify(msg);
+                var myEscapedJSONString = js_.escapeSpecialChars();
+                myEscapedJSONString = myEscapedJSONString.replace(/\\\\n/g, "\\n");
+                console.log("TEXT ==> " + myEscapedJSONString);
+                sendMessage(recipientId, msg, token);
+
             }
         }
     );
