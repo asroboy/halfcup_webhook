@@ -558,6 +558,7 @@ function getUserInfo(user_msg_id, page_token) {
 function getPageAccessTokenForLead(sender, message, recipientId, leadgenId) {
     var url = 'http://halfcup.com/social_rebates_system/api/getPageMessengerToken?messenger_id=' + sender;
     console.log('url', url);
+
     request({
             url: url,
             method: 'GET'
