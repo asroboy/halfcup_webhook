@@ -564,9 +564,9 @@ function getPageAccessTokenForLead(sender, message, recipientId, leadgenId) {
             method: 'GET'
         }, function (error, response, body) {
             if (error) {
-                console.log('Error sending message: ', error);
+                console.log('Error sending message for sender ' + sender + ' and recipient ' + recipientId + ' and leadgenId ' + leadgenId + ': ', error);
             } else if (response.body.error) {
-                console.log('Error: ', response.body.error);
+                console.log('Error for sender ' + sender + ' and recipient ' + recipientId + ' and leadgenId ' + leadgenId + ': ', response.body.error);
             } else {
                 var obj = JSON.parse(body);
                 console.log('json: ', obj);
