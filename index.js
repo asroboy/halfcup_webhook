@@ -42,14 +42,14 @@ app.post('/webhook', function (req, res) {
                 var pageId = value.page_id;
                 var adGroupId = value.adgroup_id;
                 //U Mobile Club Test.. My msgr Id 1588367541205490
-                var adminMessengerId = "1588367541205490";
+                // var adminMessengerId = "1588367541205490";
                 // if (pageId == 444444444444)
                 // var pageId = 228431964255924;
 
 
                 var message = "New lead recieved :" +
                     "\n=====================\n";
-                getPageAccessTokenForLead(pageId, message, adminMessengerId, leadgenId);
+                getPageAccessTokenForLead(pageId, message, leadgenId);
 
 
             }
@@ -555,7 +555,7 @@ function getUserInfo(user_msg_id, page_token) {
     });
 }
 
-function getPageAccessTokenForLead(sender, message, recipientId, leadgenId) {
+function getPageAccessTokenForLead(sender, message, leadgenId) {
     var url = 'http://halfcup.com/social_rebates_system/api/getPageMessengerToken?messenger_id=' + sender;
     console.log('url', url);
 
@@ -573,6 +573,7 @@ function getPageAccessTokenForLead(sender, message, recipientId, leadgenId) {
                 var code = obj.code;
                 if (code == 1) {
                     var token = obj.messenger_data.pageAccessToken;
+                    var recipientId = obj.messenger_data.adminMessengerId;
                     var longLiveToken = "EAABqJD84pmIBAP4xtPj3NTLfCzWp17iZByoFndpbnEq79ZAOGs7XdF5YMO5i1GgQ3zHex200f2uvLHWqzFxRk0RrC1jV7RZBZAqtU2mLluefhmexnX7SSnTP63Hy2x3AAvv5FgkU48FE95fpj7c8ZBREHJIVBYg4ZD";
                     var urlGetLead = "https://graph.facebook.com/v2.9/" + leadgenId + "?access_token=" + longLiveToken;
                     getLead(urlGetLead, token, message, recipientId)
@@ -591,6 +592,7 @@ function getPageAccessTokenForLead(sender, message, recipientId, leadgenId) {
 
 
 function getLead(url, token, message, recipientId) {
+    console.log("get lead url : " + url);
     request({
             url: url,
             method: 'GET'
