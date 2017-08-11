@@ -362,7 +362,7 @@ app.post('/webhook', function (req, res) {
 
 
 function saveMessengerAdmin(sender, recipient) {
-    var url = 'http://halfcup.com/social_rebates_system/messengerPage/saveAdminMessengerId?page_id=' + recipient + '&admin_msg_id=' + sender;
+    var url = 'http://halfcup.com/social_rebates_system/api/saveAdminMessengerId?page_id=' + recipient + '&admin_msg_id=' + sender + "&token=1234567890";
     console.log('url', url);
     request({
             url: url,
