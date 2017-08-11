@@ -373,8 +373,8 @@ function saveMessengerAdmin(sender, recipient) {
             } else if (response.body.error) {
                 console.log('Error: ', response.body.error);
             } else {
-                var obj = JSON.parse(body);
-                console.log('json: ', obj);
+                // var obj = JSON.parse(body);
+                console.log('response : ', body);
             }
         }
     );
