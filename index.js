@@ -340,12 +340,18 @@ app.post('/webhook', function (req, res) {
 
                 if (event.referral) {
                     var ref = event.referral.ref;
-                    var keys = ref.split("|");
+                    if (ref === "setting_up_push") {
+                        var adminMsgrID = event.sender.id;
+                        var pageId = event.recipient.id;
+                        saveMessengerAdmin(adminMsgrID, pageId);
+                    } else {
+                        var keys = ref.split("|");
+                        // if (keys[0] === 'MESSAGE_ME') {
+                        // getResponseToUser(ref,event.sender.id, event.recipient.id );
+                        getToken(ref, event.recipient.id, event.sender.id, true);
+                        // }
+                    }
 
-                    // if (keys[0] === 'MESSAGE_ME') {
-                    // getResponseToUser(ref,event.sender.id, event.recipient.id );
-                    getToken(ref, event.recipient.id, event.sender.id, true);
-                    // }
                 }
             }
         }
@@ -354,6 +360,25 @@ app.post('/webhook', function (req, res) {
     }
 );
 
+
+function saveMessengerAdmin(sender, recipient) {
+    var url = 'http://halfcup.com/social_rebates_system/messengerPage/saveAdminMessengerId?page_id=' + recipient + '&admin_msg_id=' + sender;
+    console.log('url', url);
+    request({
+            url: url,
+            method: 'GET'
+        }, function (error, response, body) {
+            if (error) {
+                console.log('Error sending message: ', error);
+            } else if (response.body.error) {
+                console.log('Error: ', response.body.error);
+            } else {
+                var obj = JSON.parse(body);
+                console.log('json: ', obj);
+            }
+        }
+    );
+}
 
 function keyIndexAction(key, event, action_name, event_name) {
     // var key_1 = keys[1]; //reply text or maybe bot key  INDEX 1
