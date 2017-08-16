@@ -344,6 +344,8 @@ app.post('/webhook', function (req, res) {
                         var adminMsgrID = event.sender.id;
                         var pageId = event.recipient.id;
                         saveMessengerAdmin(adminMsgrID, pageId);
+                    } else if (ref === null) {
+
                     } else {
                         var keys = ref.split("|");
                         // if (keys[0] === 'MESSAGE_ME') {
