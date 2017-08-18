@@ -327,18 +327,25 @@ app.post('/webhook', function (req, res) {
 
                     if (event.postback.referral) {
                         var ref = event.postback.referral.ref;
-                        var keys = ref.split("|");
+                        console.log("event.postback.referral");
+                        if(ref === null){
 
-                        // if (keys[0] === 'MESSAGE_ME') {
-                        // getResponseToUser(ref,event.sender.id, event.recipient.id );
-                        getToken(ref, event.recipient.id, event.sender.id, true);
-                        // }
+                        }else{
+                            var keys = ref.split("|");
+
+                            // if (keys[0] === 'MESSAGE_ME') {
+                            // getResponseToUser(ref,event.sender.id, event.recipient.id );
+                            getToken(ref, event.recipient.id, event.sender.id, true);
+                            // }
+                        }
+
                     }
 
                 }
 
 
                 if (event.referral) {
+                    console.log("event.referral");
                     var ref = event.referral.ref;
                     if (ref === "setting_up_push") {
                         var adminMsgrID = event.sender.id;
