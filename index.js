@@ -705,16 +705,12 @@ function getToken(m_payload, sender, recipient, isMessageUs) {
                     var message = {"text": m_payload};
                     if (isMessageUs)
                         message = {
-                            "text": m_payload]
+                            "text": m_payload
                         };
 
 
 
-                // , "quick_replies": [{
-                //         "content_type": "text",
-                //         "title": "Is this available?",
-                //         "payload": "DEVELOPER_USER_HI"
-                //     }
+
                     var js_ = JSON.stringify(message);
                     var myEscapedJSONString = js_.escapeSpecialChars();
                     myEscapedJSONString = myEscapedJSONString.replace(/\\\\n/g, "\\n");
