@@ -252,6 +252,8 @@ app.post('/webhook', function (req, res) {
                         // getResponseToUserRef(key, event.optin.user_ref, event.recipient.id);
                     } else if (key === null) {
 
+                    }else if (ref === 'null') {
+
                     }
                     // getResponseToUser(key, event.sender.id, event.recipient.id);
                     else {
@@ -334,7 +336,9 @@ app.post('/webhook', function (req, res) {
                         console.log("event.postback.referral");
                         if (ref === null) {
 
-                        } else {
+                        } else if (ref === 'null') {
+
+                        }else {
                             var keys = ref.split("|");
 
                             // if (keys[0] === 'MESSAGE_ME') {
@@ -356,6 +360,8 @@ app.post('/webhook', function (req, res) {
                         var pageId = event.recipient.id;
                         saveMessengerAdmin(adminMsgrID, pageId);
                     } else if (ref === null) {
+
+                    } else if (ref === 'null') {
 
                     } else {
                         var keys = ref.split("|");
@@ -707,8 +713,6 @@ function getToken(m_payload, sender, recipient, isMessageUs) {
                         message = {
                             "text": m_payload
                         };
-
-
 
 
                     var js_ = JSON.stringify(message);
