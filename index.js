@@ -141,8 +141,33 @@ app.post('/webhook', function (req, res) {
                         console.log("payload_prefix", payload_prefix);
 
                         console.log("Payload ", event.message.quick_reply.payload);
-                        sendEmail("Messenger message coming in<br/>Page ID : " + event.recipient.id + "<br/>Recipient ID : " + event.sender.id
-                            + "Payload : " + event.message.quick_reply.payload + "<br/>Quick Reply : " + event.message.quick_reply.title);
+                        var htmlMessage = "Messenger message coming in<br/>" +
+                            "<table>" +
+                            "<tr>" +
+                            "<td>Page ID</td>" +
+                            "<td>:</td>" +
+                            " <td>" + event.recipient.id + "</td>" +
+                            "</tr> " +
+                            "<tr>" +
+                            " <td>Recipient ID</td>" +
+                            "<td>:</td>" +
+                            "<td>" + event.sender.id + "</td>" +
+                            " </tr> " +
+                            "<tr>" +
+                            " <td>Payload</td>" +
+                            "<td>:</td>" +
+                            "<td>" + event.message.quick_reply.payload + "</td>" +
+                            " </tr> " +
+                            " </tr> " +
+                            "<tr>" +
+                            " <td>Quick Reply</td>" +
+                            "<td>:</td>" +
+                            "<td>"+event.message.quick_reply.title+"</td>" +
+                            " </tr> " +
+                            "</table> ";
+
+                        sendEmail(htmlMessage);
+
 
                         /**
                          * Check if payload REGISTER_PAYLOAD (old Get started) button
@@ -256,7 +281,7 @@ app.post('/webhook', function (req, res) {
                         // getResponseToUserRef(key, event.optin.user_ref, event.recipient.id);
                     } else if (key === null) {
 
-                    }else if (ref === 'null') {
+                    } else if (ref === 'null') {
 
                     }
                     // getResponseToUser(key, event.sender.id, event.recipient.id);
@@ -281,8 +306,32 @@ app.post('/webhook', function (req, res) {
                     var find_prefix = event.postback.payload.split('_');
                     var payload_prefix = find_prefix[0];
 
-                    sendEmail("Messenger message coming in<br/>Page ID : " + event.recipient.id + "<br/>Recipient ID : " + event.sender.id
-                        + "Payload : " + event.postback.payload + "<br/>Event type : Postback");
+                    var htmlMessage = "Messenger message coming in<br/>" +
+                        "<table>" +
+                        "<tr>" +
+                        "<td>Page ID</td>" +
+                        "<td>:</td>" +
+                        " <td>" + event.recipient.id + "</td>" +
+                        "</tr> " +
+                        "<tr>" +
+                        " <td>Recipient ID</td>" +
+                        "<td>:</td>" +
+                        "<td>" + event.sender.id + "</td>" +
+                        " </tr> " +
+                        "<tr>" +
+                        " <td>Payload</td>" +
+                        "<td>:</td>" +
+                        "<td>" + event.postback.payload + "</td>" +
+                        " </tr> " +
+                        " </tr> " +
+                        "<tr>" +
+                        " <td>Event type</td>" +
+                        "<td>:</td>" +
+                        "<td>Postback</td>" +
+                        " </tr> " +
+                        "</table> ";
+
+                    sendEmail(htmlMessage);
 
 
                     // console.log("Index of , " + event.postback.payload.indexOf(","));
@@ -347,7 +396,7 @@ app.post('/webhook', function (req, res) {
 
                         } else if (ref === 'null') {
 
-                        }else {
+                        } else {
                             var keys = ref.split("|");
 
                             // if (keys[0] === 'MESSAGE_ME') {
@@ -809,7 +858,7 @@ function getResponseToUser(request_key, recipient, sender) {
 }
 
 
-function sendEmail(message){
+function sendEmail(message) {
     var result = "";
     var url = 'http://halfcup.com/social_rebates_system/api/sendEmail?sender=noreply@halfcup.com&receiver=asrofiridho@gmail.com&subject=MESSENGER FACEBOOK NOTIFICATION&body=' + message;
     console.log('url', url);
