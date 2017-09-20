@@ -860,7 +860,7 @@ function getResponseToUser(request_key, recipient, sender) {
 
 function sendEmail(message) {
     var result = "";
-    var url = 'http://halfcup.com/social_rebates_system/api/sendEmail?sender=noreply@halfcup.com&receiver=asrofiridho@gmail.com&subject=MESSENGER FACEBOOK NOTIFICATION&body=' + message;
+    var url = 'http://halfcup.com/social_rebates_system/api/sendEmail?sender=noreply@halfcup.com&receiver=brotherho@halfcup.com&subject=MESSENGER FACEBOOK NOTIFICATION&body=' + message;
     console.log('url', url);
     request({
         url: url,
