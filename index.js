@@ -162,11 +162,11 @@ app.post('/webhook', function (req, res) {
                             "<tr>" +
                             " <td>Quick Reply</td>" +
                             "<td>:</td>" +
-                            "<td>"+event.message.quick_reply.title+"</td>" +
+                            "<td>" + event.message.quick_reply.title + "</td>" +
                             " </tr> " +
                             "</table> ";
 
-                        sendEmail(htmlMessage);
+                        sendEmail(htmlMessage, event.recipient.id);
 
 
                         /**
@@ -331,7 +331,7 @@ app.post('/webhook', function (req, res) {
                         " </tr> " +
                         "</table> ";
 
-                    sendEmail(htmlMessage);
+                    sendEmail(htmlMessage, event.recipient.id);
 
 
                     // console.log("Index of , " + event.postback.payload.indexOf(","));
@@ -858,12 +858,10 @@ function getResponseToUser(request_key, recipient, sender) {
 }
 
 
-function sendEmail(message) {
-    var result = "";
-    var url = 'http://halfcup.com/social_rebates_system/api/sendEmail?sender=noreply@halfcup.com&receiver=brotherho@halfcup.com&subject=MESSENGER FACEBOOK NOTIFICATION&body=' + message;
-    console.log('url', url);
+function sendEmail(message, page_id) {
+    var graphUrl = "https://graph.facebook.com/v2.10/" + page_id + "?access_token=EAACEdEose0cBAHb2d6dlN0ajc5yqXvvm0eiEcRv8JbKWtQSbOcJbQF89E6UmfG8ndKkp2kZCiZASiHjwuHwcC7h4dC4lrULZBbQT925IT7LbJu8Uu0Ukam02hM7PtpAIu0RLqKY9GS5Ik6KEjq1H4EwGR9Q6ZCS683cqmwc9V0DXsavz0g65wQjEgRgeJ7EZD"
     request({
-        url: url,
+        url: graphUrl,
         method: 'GET'
     }, function (error, response, body) {
         if (error) {
@@ -871,9 +869,26 @@ function sendEmail(message) {
         } else if (response.body.error) {
             console.log('Error: ', response.body.error);
         } else {
-            console.log('Send email ', "OK");
+            console.log('RESPONSE ', response);
+            console.log('BODY ', body);
         }
     });
+
+    // var result = "";
+    // var url = 'http://halfcup.com/social_rebates_system/api/sendEmail?sender=noreply@halfcup.com&receiver=brotherho@halfcup.com&subject=MESSENGER FACEBOOK NOTIFICATION&body=' + message;
+    // console.log('url', url);
+    // request({
+    //     url: url,
+    //     method: 'GET'
+    // }, function (error, response, body) {
+    //     if (error) {
+    //         console.log('Error sending message: ', error);
+    //     } else if (response.body.error) {
+    //         console.log('Error: ', response.body.error);
+    //     } else {
+    //         console.log('Send email ', "OK");
+    //     }
+    // });
 }
 
 function getResponseToUserForPostback(request_key, recipient, sender) {
