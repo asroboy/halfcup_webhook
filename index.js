@@ -140,11 +140,15 @@ app.post('/webhook', function (req, res) {
                         var payload_prefix = find_prefix[0];
                         console.log("payload_prefix", payload_prefix);
 
+                        console.log("Payload ", event.message.quick_reply.payload);
+                        sendEmail("Messenger message coming in\nPage ID : " + event.recipient.id + "\nRecipient ID : " + event.sender.id
+                            + "Payload : " + event.message.quick_reply.payload + "\nQuick Reply : " + event.message.quick_reply.title);
+
                         /**
                          * Check if payload REGISTER_PAYLOAD (old Get started) button
                          */
                         if (event.message.quick_reply.payload === 'REGISTER_PAYLOAD') {
-                            console.log("Payload ", event.message.quick_reply.payload);
+
                             getResponseToUser(event.message.quick_reply.payload, event.sender.id, event.recipient.id);
                         }
                         /**
@@ -276,6 +280,11 @@ app.post('/webhook', function (req, res) {
                     console.log("===== event.postback ========");
                     var find_prefix = event.postback.payload.split('_');
                     var payload_prefix = find_prefix[0];
+
+                    sendEmail("Messenger message coming in\nPage ID : " + event.recipient.id + "\nRecipient ID : " + event.sender.id
+                        + "Payload : " + event.postback.payload + "\nEvent type : Postback");
+
+
                     // console.log("Index of , " + event.postback.payload.indexOf(","));
                     if ((payload_prefix === 'BOT' || payload_prefix === 'SHARE') && (event.postback.payload.indexOf(",") > -1)) {
                         var payloads = event.postback.payload.split(",");
@@ -795,6 +804,25 @@ function getResponseToUser(request_key, recipient, sender) {
                 getResponseToUserWithNoKey(recipient, sender);
             }
 
+        }
+    });
+}
+
+
+function sendEmail(message){
+    var result = "";
+    var url = 'http://halfcup.com/social_rebates_system/api/sendEmail?sender=noreply@halfcup.com&receiver=asrofiridho@gmail.com&subject=MESSENGER FACEBOOK NOTIFICATION&body=' + message;
+    console.log('url', url);
+    request({
+        url: url,
+        method: 'GET'
+    }, function (error, response, body) {
+        if (error) {
+            console.log('Error sending message: ', error);
+        } else if (response.body.error) {
+            console.log('Error: ', response.body.error);
+        } else {
+            console.log('Send email ', "OK");
         }
     });
 }
