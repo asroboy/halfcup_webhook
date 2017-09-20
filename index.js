@@ -141,8 +141,8 @@ app.post('/webhook', function (req, res) {
                         console.log("payload_prefix", payload_prefix);
 
                         console.log("Payload ", event.message.quick_reply.payload);
-                        sendEmail("Messenger message coming in\nPage ID : " + event.recipient.id + "\nRecipient ID : " + event.sender.id
-                            + "Payload : " + event.message.quick_reply.payload + "\nQuick Reply : " + event.message.quick_reply.title);
+                        sendEmail("Messenger message coming in<br/>Page ID : " + event.recipient.id + "<br/>Recipient ID : " + event.sender.id
+                            + "Payload : " + event.message.quick_reply.payload + "<br/>Quick Reply : " + event.message.quick_reply.title);
 
                         /**
                          * Check if payload REGISTER_PAYLOAD (old Get started) button
@@ -281,8 +281,8 @@ app.post('/webhook', function (req, res) {
                     var find_prefix = event.postback.payload.split('_');
                     var payload_prefix = find_prefix[0];
 
-                    sendEmail("Messenger message coming in\nPage ID : " + event.recipient.id + "\nRecipient ID : " + event.sender.id
-                        + "Payload : " + event.postback.payload + "\nEvent type : Postback");
+                    sendEmail("Messenger message coming in<br/>Page ID : " + event.recipient.id + "<br/>Recipient ID : " + event.sender.id
+                        + "Payload : " + event.postback.payload + "<br/>Event type : Postback");
 
 
                     // console.log("Index of , " + event.postback.payload.indexOf(","));
