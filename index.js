@@ -866,12 +866,12 @@ function sendEmail(message, page_id) {
             console.log('Error: ', response.body.error);
         } else {
             console.log('BODY ', body);
-            var result = "Messenger message coming in<br/><br/>" +
+            var result = "Messenger message coming in<br/><br/>>" +
                 "<table>" +
                 "<tr>" +
                 " <td>PAGE</td>" +
                 "<td>:</td>" +
-                "<td>" + body.name + "</td>" +
+                "<td>" + JSON.parse(body).name + "</td>" +
                 " </tr> ";
 
             message = result + message;
