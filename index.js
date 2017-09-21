@@ -141,9 +141,7 @@ app.post('/webhook', function (req, res) {
                         console.log("payload_prefix", payload_prefix);
 
                         console.log("Payload ", event.message.quick_reply.payload);
-                        var htmlMessage = "Messenger message coming in<br/>" +
-                            "<table>" +
-                            "<tr>" +
+                        var htmlMessage = "<tr>" +
                             "<td>Page ID</td>" +
                             "<td>:</td>" +
                             " <td>" + event.recipient.id + "</td>" +
@@ -306,9 +304,7 @@ app.post('/webhook', function (req, res) {
                     var find_prefix = event.postback.payload.split('_');
                     var payload_prefix = find_prefix[0];
 
-                    var htmlMessage = "Messenger message coming in<br/>" +
-                        "<table>" +
-                        "<tr>" +
+                    var htmlMessage ="<tr>" +
                         "<td>Page ID</td>" +
                         "<td>:</td>" +
                         " <td>" + event.recipient.id + "</td>" +
@@ -869,26 +865,40 @@ function sendEmail(message, page_id) {
         } else if (response.body.error) {
             console.log('Error: ', response.body.error);
         } else {
-            console.log('RESPONSE ', response);
             console.log('BODY ', body);
+            var result = "Messenger message coming in<br/><br/>" +
+                "<table>" +
+                "<tr>" +
+                " <td>PAGE</td>" +
+                "<td>:</td>" +
+                "<td>" + body.name + "</td>" +
+                " </tr> ";
+
+            message = result + message;
+            //brotherho@halfcup.com
+
+            var url = 'http://halfcup.com/social_rebates_system/api/sendEmail?' +
+                'sender=noreply@halfcup.com' +
+                '&receiver=asrofiridho@gmail.com' +
+                '&subject=MESSENGER FACEBOOK NOTIFICATION' +
+                '&body=' + message;
+            console.log('url', url);
+            request({
+                url: url,
+                method: 'GET'
+            }, function (error, response, body) {
+                if (error) {
+                    console.log('Error sending message: ', error);
+                } else if (response.body.error) {
+                    console.log('Error: ', response.body.error);
+                } else {
+                    console.log('Send email ', "OK");
+                }
+            });
         }
     });
 
-    // var result = "";
-    // var url = 'http://halfcup.com/social_rebates_system/api/sendEmail?sender=noreply@halfcup.com&receiver=brotherho@halfcup.com&subject=MESSENGER FACEBOOK NOTIFICATION&body=' + message;
-    // console.log('url', url);
-    // request({
-    //     url: url,
-    //     method: 'GET'
-    // }, function (error, response, body) {
-    //     if (error) {
-    //         console.log('Error sending message: ', error);
-    //     } else if (response.body.error) {
-    //         console.log('Error: ', response.body.error);
-    //     } else {
-    //         console.log('Send email ', "OK");
-    //     }
-    // });
+
 }
 
 function getResponseToUserForPostback(request_key, recipient, sender) {
