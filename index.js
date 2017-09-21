@@ -304,7 +304,7 @@ app.post('/webhook', function (req, res) {
                     var find_prefix = event.postback.payload.split('_');
                     var payload_prefix = find_prefix[0];
 
-                    var htmlMessage ="<tr>" +
+                    var htmlMessage = "<tr>" +
                         "<td>Page ID</td>" +
                         "<td>:</td>" +
                         " <td>" + event.recipient.id + "</td>" +
@@ -866,7 +866,7 @@ function sendEmail(message, page_id) {
             console.log('Error: ', response.body.error);
         } else {
             console.log('BODY ', body);
-            var result = "Messenger message coming in<br/><br/>>" +
+            var result = "Messenger message coming in<br/><br/>" +
                 "<table>" +
                 "<tr>" +
                 " <td>PAGE</td>" +
@@ -880,7 +880,7 @@ function sendEmail(message, page_id) {
             var url = 'http://halfcup.com/social_rebates_system/api/sendEmail?' +
                 'sender=noreply@halfcup.com' +
                 '&receiver=asrofiridho@gmail.com' +
-                '&subject=MESSENGER FACEBOOK NOTIFICATION' +
+                '&subject=MESSENGER FACEBOOK ' + JSON.parse(body).name +
                 '&body=' + message;
             console.log('url', url);
             request({
