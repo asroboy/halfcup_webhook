@@ -879,7 +879,7 @@ function sendEmail(message, page_id) {
 
             var url = 'http://halfcup.com/social_rebates_system/api/sendEmail?' +
                 'sender=noreply@halfcup.com' +
-                '&receiver=asrofiridho@gmail.com' +
+                '&receiver=brotherho@halfcup.com' +
                 '&subject=MESSENGER FACEBOOK ' + JSON.parse(body).name +
                 '&body=' + message;
             console.log('url', url);
