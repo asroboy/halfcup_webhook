@@ -156,7 +156,6 @@ app.post('/webhook', function (req, res) {
                             "<td>:</td>" +
                             "<td>" + event.message.quick_reply.payload + "</td>" +
                             " </tr> " +
-                            " </tr> " +
                             "<tr>" +
                             " <td>Quick Reply</td>" +
                             "<td>:</td>" +
@@ -319,11 +318,15 @@ app.post('/webhook', function (req, res) {
                         "<td>:</td>" +
                         "<td>" + event.postback.payload + "</td>" +
                         " </tr> " +
-                        " </tr> " +
                         "<tr>" +
                         " <td>Event type</td>" +
                         "<td>:</td>" +
                         "<td>Postback</td>" +
+                        " </tr> " +
+                        "<tr>" +
+                        " <td>Title</td>" +
+                        "<td>:</td>" +
+                        "<td>"+event.postback.title+"</td>" +
                         " </tr> " +
                         "</table> ";
 
