@@ -858,7 +858,8 @@ function getResponseToUser(request_key, recipient, sender) {
 
 
 function sendEmail(message, page_id) {
-    var graphUrl = "https://graph.facebook.com/v2.10/" + page_id + "?access_token=EAACEdEose0cBAHb2d6dlN0ajc5yqXvvm0eiEcRv8JbKWtQSbOcJbQF89E6UmfG8ndKkp2kZCiZASiHjwuHwcC7h4dC4lrULZBbQT925IT7LbJu8Uu0Ukam02hM7PtpAIu0RLqKY9GS5Ik6KEjq1H4EwGR9Q6ZCS683cqmwc9V0DXsavz0g65wQjEgRgeJ7EZD"
+    var longLiveToken = "EAABqJD84pmIBAP4xtPj3NTLfCzWp17iZByoFndpbnEq79ZAOGs7XdF5YMO5i1GgQ3zHex200f2uvLHWqzFxRk0RrC1jV7RZBZAqtU2mLluefhmexnX7SSnTP63Hy2x3AAvv5FgkU48FE95fpj7c8ZBREHJIVBYg4ZD";
+    var graphUrl = "https://graph.facebook.com/v2.10/" + page_id + "?access_token="+longLiveToken;
     request({
         url: graphUrl,
         method: 'GET'
