@@ -35,8 +35,8 @@ function isGroup(jsonMessage) {
     return jsonMessage[0] && jsonMessage[0].group;
 }
 
-function isChatBot(jsonMessage) {
-    return jsonMessage[0] && jsonMessage[0].message;
+function isChatBot(jsonMessage, index) {
+    return jsonMessage[index] && jsonMessage[index].message;
 }
 
 
@@ -67,7 +67,7 @@ function getChatBot(key, sender, recipient) {
             } else if (response.body.error) {
                 console.log('Error: ', response.body.error);
             } else {
-                respond(body, sender, recipient);
+                respond(body, sender, recipient, 0);
             }
         }
     );
@@ -87,7 +87,11 @@ function getGroupBot(key, sender, recipient) {
             } else if (response.body.error) {
                 console.log('Error: ', response.body.error);
             } else {
-                respond(body, sender, recipient);
+                var jsonMessage = JSON.parse(obj[0].json);
+                var randomIndex = randomIntFromInterval(0, jsonMessage.length);
+                console.log("randomIndex : " + randomIndex);
+                console.log("jsonMessage.length : " + jsonMessage.length);
+                respond(jsonMessage, sender, recipient, randomIndex);
             }
         }
     );
@@ -98,18 +102,15 @@ function randomIntFromInterval(min, max) {
     return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
-function respond(body, sender, recipient) {
+function respond(body, sender, recipient, index) {
     var obj = JSON.parse(body);
     var jsonMessage = JSON.parse(obj[0].json);
     if (isGroup(jsonMessage)) {
-        var randomIndex = randomIntFromInterval(0, jsonMessage.length);
-        console.log("randomIndex : " + randomIndex);
-        console.log("jsonMessage.length : " + jsonMessage.length);
-        var key = jsonMessage[randomIndex].group.key;
+        var key = jsonMessage[0].group.key;
         getGroupBot(key, sender, recipient, false);
     }
     console.log('json: ', obj);
-    if (isChatBot(jsonMessage)) {
+    if (isChatBot(jsonMessage, index)) {
         var message = jsonMessage[0].message.text;
         getToken(message, sender, recipient, false);
     }
