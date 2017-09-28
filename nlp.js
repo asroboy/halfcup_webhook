@@ -251,7 +251,7 @@ function getUserInfo(m_payload, messengerId, token) {
                 var myEscapedJSONString = js_.escapeSpecialChars();
                 myEscapedJSONString = myEscapedJSONString.replace(/\\\\n/g, "\\n");
                 console.log("TEXT ==> " + myEscapedJSONString);
-                sendMessage(recipient, myEscapedJSONString, token);
+                sendMessage(messengerId, myEscapedJSONString, token);
             }
         }
     );
