@@ -137,13 +137,12 @@ function randomIntFromInterval(min, max) {
 
 function respond(jsonMessage, sender, recipient, index) {
     index = index - 1;
+    console.log('json: ', jsonMessage);
     if (isGroup(jsonMessage, index)) {
         var json = JSON.parse(jsonMessage[0].json);
         var key = json[0].group.key;
         getGroupBot(key, sender, recipient, false);
-    }
-    console.log('json: ', jsonMessage);
-   else if (isChatBot(jsonMessage, index)) {
+    } else if (isChatBot(jsonMessage, index)) {
         var json = JSON.parse(jsonMessage[0].json);
         var message = json[index].message.text;
         getToken(message, sender, recipient, false);
