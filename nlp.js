@@ -92,7 +92,7 @@ function getGroupBot(key, sender, recipient) {
                 var randomIndex = randomIntFromInterval(0, jsonMessage.length);
                 console.log("randomIndex : " + randomIndex);
                 console.log("jsonMessage.length : " + jsonMessage.length);
-                respond(jsonMessage, sender, recipient, randomIndex);
+                respond(obj[0].json, sender, recipient, randomIndex);
             }
         }
     );
