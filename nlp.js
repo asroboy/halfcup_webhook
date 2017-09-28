@@ -231,7 +231,7 @@ function sendMessage(recipientId, message, token) {
 };
 
 
-function getUserInfo(m_payload, messengerId, token, ) {
+function getUserInfo(m_payload, messengerId, token) {
     var url = "https://graph.facebook.com/v2.6/" + messengerId + "?access_token=" + token;
     request({
             url: url,
