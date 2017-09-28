@@ -175,7 +175,7 @@ function getToken(m_payload, sender, recipient, isMessageUs) {
                 var code = obj.code;
                 if (code == 1) {
                     var token = obj.messenger_data.pageAccessToken;
-                    if(m_payload.contains('{{')){
+                    if (m_payload.indexOf('{{') > -1) {
                         getUserInfo(recipient, token);
                     }
                     var message = {"text": m_payload};
