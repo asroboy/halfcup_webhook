@@ -34,7 +34,8 @@ function firstEntity(nlp, name) {
 function handleMessage(event, message) {
     // check greeting is here and is confident
     const greeting = firstEntity(message.nlp, 'greetings');
-    if (greeting && greeting.confidence > 0.8) {
+    // if (greeting && greeting.confidence > 0.8) {
+    if (greeting) {
         //getToken("Hi, im testing", event.recipient.id, event.sender.id, false);
         getChatBot(message.text, event.recipient.id, event.sender.id);
         // sendMessage(event.recipient.id, reply, token);
