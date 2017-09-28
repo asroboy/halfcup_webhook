@@ -43,7 +43,6 @@ function handleMessage(event, message) {
 }
 
 
-
 // {"sender":{"id":"877390472364218"},"recipient":{"id":"228431964255924"},"timestamp":1506613480324,"message":{"mid":"mid.$cAADPwbeT
 //     p-xk-m6ThFeySlGmsmqQ","seq":23478,"text":"Hi","nlp":{"entities":{"intent":[{"confidence":1,"value":"Good morning","type":"value"}],"greetings":[{"confidence":0.99994528293428,"value":"t
 //     rue"}]}}}}
@@ -64,6 +63,10 @@ function getChatBot(key, sender, recipient) {
             } else {
                 var obj = JSON.parse(body);
                 console.log('json: ', obj);
+                if (obj[0].message) {
+                    var message = obj[0].message.text;
+                    getToken(message, sender, recipient, false);
+                }
             }
         }
     );
