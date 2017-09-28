@@ -31,9 +31,9 @@ function firstEntity(nlp, name) {
     return nlp && nlp.entities;
 }
 
-function isGroup(jsonMessage) {
+function isGroup(jsonMessage, index) {
     var json = JSON.parse(jsonMessage[0].json);
-    return json[0] && json[0].group;
+    return json[index] && json[index].group;
 }
 
 function isChatBot(jsonMessage, index) {
@@ -107,15 +107,13 @@ function randomIntFromInterval(min, max) {
 }
 
 function respond(jsonMessage, sender, recipient, index) {
-    // var obj = JSON.parse(body);
-    // var jsonMessage =  JSON.parse(body[0].json);
-    if (isGroup(jsonMessage)) {
+    index = index - 1;
+    if (isGroup(jsonMessage, index)) {
         var json = JSON.parse(jsonMessage[0].json);
         var key = json[0].group.key;
         getGroupBot(key, sender, recipient, false);
     }
     console.log('json: ', jsonMessage);
-    index = index - 1;
     if (isChatBot(jsonMessage, index)) {
         var json = JSON.parse(jsonMessage[0].json);
         var message = json[index].message.text;
