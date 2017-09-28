@@ -231,7 +231,7 @@ function sendMessage(recipientId, message, token) {
 };
 
 
-function getUserInfo(m_payload, messengerId, token) {
+function getUserInfo(m_payload, messengerId, token, ) {
     var url = "https://graph.facebook.com/v2.6/" + messengerId + "?access_token=" + token;
     request({
             url: url,
@@ -247,11 +247,6 @@ function getUserInfo(m_payload, messengerId, token) {
                 var firstName = body.first_name;
                 m_payload = m_payload.replace("{{first_name}}", firstName);
                 var message = {"text": m_payload};
-                if (isMessageUs)
-                    message = {
-                        "text": m_payload
-                    };
-
                 var js_ = JSON.stringify(message);
                 var myEscapedJSONString = js_.escapeSpecialChars();
                 myEscapedJSONString = myEscapedJSONString.replace(/\\\\n/g, "\\n");
