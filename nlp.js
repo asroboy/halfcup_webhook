@@ -67,7 +67,7 @@ function getChatBot(key, sender, recipient) {
             } else if (response.body.error) {
                 console.log('Error: ', response.body.error);
             } else {
-                respond(body,sender, recipient);
+                respond(body, sender, recipient);
             }
         }
     );
@@ -76,7 +76,7 @@ function getChatBot(key, sender, recipient) {
 
 function getGroupBot(key, sender, recipient) {
     var url = 'http://halfcup.com/social_rebates_system/wapi/read?token=1234567890&api_name=GROUP&key=' + key;
-        // + '&page_id=' + sender;
+    // + '&page_id=' + sender;
     console.log('url', url);
     request({
             url: url,
@@ -94,11 +94,16 @@ function getGroupBot(key, sender, recipient) {
 }
 
 
+function randomIntFromInterval(min, max) {
+    return Math.floor(Math.random() * (max - min + 1) + min);
+}
+
 function respond(body, sender, recipient) {
     var obj = JSON.parse(body);
     var jsonMessage = JSON.parse(obj[0].json);
     if (isGroup(jsonMessage)) {
-        var key = jsonMessage[0].group.key;
+        var randomIndex = randomIntFromInterval(0, jsonMessage.length);
+        var key = jsonMessage[randomIndex].group.key;
         getGroupBot(key, sender, recipient, false);
     }
     console.log('json: ', obj);
