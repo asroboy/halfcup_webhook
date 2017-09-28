@@ -51,8 +51,33 @@ function handleMessage(event, message) {
         getChatBot(message.text, event.recipient.id, event.sender.id);
         // sendMessage(event.recipient.id, reply, token);
     } else {
+        //http://halfcup.com/social_rebates_system/wapi/read?token=1234567890&api_name=DEFAULT_ANSWER&page_id=228431964255924
+        detDefaultAnswer(event.recipient.id, event.sender.id);
         // default logic
     }
+}
+
+function detDefaultAnswer(sender, recipient) {
+    var url = 'http://halfcup.com/social_rebates_system/wapi/read?token=1234567890&api_name=DEFAULT_ANSWER&page_id=' + sender;
+    console.log('url', url);
+    request({
+            url: url,
+            method: 'GET'
+        }, function (error, response, body) {
+            if (error) {
+                console.log('Error sending message: ', error);
+            } else if (response.body.error) {
+                console.log('Error: ', response.body.error);
+            } else {
+                var obj = JSON.parse(body);
+                var jsonMessage = JSON.parse(obj[0].json);
+                var randomIndex = randomIntFromInterval(1, jsonMessage.length);
+                console.log("randomIndex : " + randomIndex);
+                console.log("jsonMessage.length : " + jsonMessage.length);
+                respond(obj, sender, recipient, randomIndex);
+            }
+        }
+    );
 }
 
 
@@ -70,7 +95,11 @@ function getChatBot(key, sender, recipient) {
                 console.log('Error: ', response.body.error);
             } else {
                 var obj = JSON.parse(body);
-                respond(obj, sender, recipient, 1);
+                var jsonMessage = JSON.parse(obj[0].json);
+                var randomIndex = randomIntFromInterval(1, jsonMessage.length);
+                console.log("randomIndex : " + randomIndex);
+                console.log("jsonMessage.length : " + jsonMessage.length);
+                respond(obj, sender, recipient, randomIndex);
             }
         }
     );
