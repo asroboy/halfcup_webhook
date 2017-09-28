@@ -27,7 +27,8 @@ function firstEntity(nlp, name) {
     console.log('nlp.entities[' + name + ']', nlp.entities[name]);
     //console.log('nlp.entities[' + name + '][0]', JSON.parse(nlp.entities).name[0]);
     // && nlp.entities.get(name)[0]
-    return nlp && nlp.entities && nlp.entities[name] && nlp.entities[name][0];
+    // return nlp && nlp.entities && nlp.entities[name] && nlp.entities[name][0];
+    return nlp && nlp.entities;
 }
 
 function handleMessage(event, message) {

@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8c0fd527-5667-4e03-89ee-e95c0bdc3c27" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nlp.js" afterPath="$PROJECT_DIR$/nlp.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -24,8 +23,8 @@
       <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="13855">
-              <caret line="1118" column="2" lean-forward="true" selection-start-line="1089" selection-start-column="0" selection-end-line="1118" selection-end-column="2" />
+            <state relative-caret-position="391">
+              <caret line="76" column="35" lean-forward="false" selection-start-line="76" selection-start-column="35" selection-end-line="76" selection-end-column="35" />
               <folding>
                 <element signature="e#1096#1969#0" expanded="false" />
                 <element signature="e#6696#15065#0" expanded="false" />
@@ -53,8 +52,8 @@
       <file leaf-file-name="nlp.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/nlp.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="232">
-              <caret line="67" column="48" lean-forward="false" selection-start-line="67" selection-start-column="48" selection-end-line="67" selection-end-column="48" />
+            <state relative-caret-position="374">
+              <caret line="30" column="30" lean-forward="false" selection-start-line="30" selection-start-column="30" selection-end-line="30" selection-end-column="30" />
               <folding>
                 <element signature="e#0#41#0" expanded="false" />
                 <element signature="n#!!block;n#sendMessage#0" expanded="false" />
@@ -401,12 +400,12 @@
       <workItem from="1505948574898" duration="6199000" />
       <workItem from="1506132426092" duration="594000" />
       <workItem from="1506308875779" duration="11000" />
-      <workItem from="1506567102348" duration="14231000" />
+      <workItem from="1506567102348" duration="14370000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="274426000" />
+    <option name="totallyTimeSpent" value="274565000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1058,8 +1057,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="13855">
-          <caret line="1118" column="2" lean-forward="true" selection-start-line="1089" selection-start-column="0" selection-end-line="1118" selection-end-column="2" />
+        <state relative-caret-position="391">
+          <caret line="76" column="35" lean-forward="false" selection-start-line="76" selection-start-column="35" selection-end-line="76" selection-end-column="35" />
           <folding>
             <element signature="e#1096#1969#0" expanded="false" />
             <element signature="e#6696#15065#0" expanded="false" />
@@ -1085,8 +1084,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/nlp.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="232">
-          <caret line="67" column="48" lean-forward="false" selection-start-line="67" selection-start-column="48" selection-end-line="67" selection-end-column="48" />
+        <state relative-caret-position="374">
+          <caret line="30" column="30" lean-forward="false" selection-start-line="30" selection-start-column="30" selection-end-line="30" selection-end-column="30" />
           <folding>
             <element signature="e#0#41#0" expanded="false" />
             <element signature="n#!!block;n#sendMessage#0" expanded="false" />
