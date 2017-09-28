@@ -37,7 +37,7 @@ function isGroup(jsonMessage) {
 }
 
 function isChatBot(jsonMessage, index) {
-    return jsonMessage[index] && jsonMessage[index].message;
+    return jsonMessage[index - 1] && jsonMessage[index - 1].message;
 }
 
 
@@ -91,10 +91,10 @@ function getGroupBot(key, sender, recipient) {
             } else {
                 var obj = JSON.parse(body);
                 var jsonMessage = JSON.parse(obj[0].json);
-                var randomIndex = randomIntFromInterval(0, jsonMessage.length);
+                var randomIndex = randomIntFromInterval(1, jsonMessage.length);
                 console.log("randomIndex : " + randomIndex);
                 console.log("jsonMessage.length : " + jsonMessage.length);
-                respond(jsonMessage, sender, recipient, randomIndex);
+                respond(obj, sender, recipient, randomIndex);
             }
         }
     );
