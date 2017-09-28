@@ -67,7 +67,8 @@ function getChatBot(key, sender, recipient) {
             } else if (response.body.error) {
                 console.log('Error: ', response.body.error);
             } else {
-                respond(body, sender, recipient, 0);
+                var obj = JSON.parse(body);
+                respond(obj, sender, recipient, 0);
             }
         }
     );
@@ -92,7 +93,7 @@ function getGroupBot(key, sender, recipient) {
                 var randomIndex = randomIntFromInterval(0, jsonMessage.length);
                 console.log("randomIndex : " + randomIndex);
                 console.log("jsonMessage.length : " + jsonMessage.length);
-                respond(obj[0].json, sender, recipient, randomIndex);
+                respond(jsonMessage, sender, recipient, randomIndex);
             }
         }
     );
@@ -104,7 +105,7 @@ function randomIntFromInterval(min, max) {
 }
 
 function respond(body, sender, recipient, index) {
-    var obj = JSON.parse(body);
+    // var obj = JSON.parse(body);
     var jsonMessage = JSON.parse(obj[0].json);
     if (isGroup(jsonMessage)) {
         var key = jsonMessage[0].group.key;
