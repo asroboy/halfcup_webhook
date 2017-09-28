@@ -58,7 +58,7 @@ function handleMessage(event, message) {
 }
 
 function getDefaultAnswer(sender, recipient) {
-    var url = 'http://halfcup.com/social_rebates_system/wapi/read?token=1234567890&api_name=DEFAULT_ANSWER&page_id=' + sender;
+    var url = 'http://halfcup.com/social_rebates_system/wapi/read?token=1234567890&api_name=DEFAULT_ANSWER&page_id=' + sender +'&is_on=true';
     console.log('url', url);
     request({
             url: url,
