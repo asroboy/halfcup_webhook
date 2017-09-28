@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8c0fd527-5667-4e03-89ee-e95c0bdc3c27" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nlp.js" afterPath="$PROJECT_DIR$/nlp.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -52,8 +53,8 @@
       <file leaf-file-name="nlp.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/nlp.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="385">
-              <caret line="105" column="41" lean-forward="false" selection-start-line="105" selection-start-column="41" selection-end-line="105" selection-end-column="41" />
+            <state relative-caret-position="223">
+              <caret line="106" column="64" lean-forward="false" selection-start-line="106" selection-start-column="64" selection-end-line="106" selection-end-column="64" />
               <folding>
                 <element signature="e#0#41#0" expanded="false" />
                 <element signature="n#!!block;n#sendMessage#0" expanded="false" />
@@ -74,7 +75,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>Analytics</find>
       <find>analytics</find>
       <find>localhost:8080</find>
       <find>logAction</find>
@@ -104,6 +104,7 @@
       <find>access_token</find>
       <find>Event</find>
       <find>handleMessage</find>
+      <find>randomIndex</find>
     </findStrings>
     <replaceStrings>
       <replace>localhost:8080</replace>
@@ -400,12 +401,12 @@
       <workItem from="1505948574898" duration="6199000" />
       <workItem from="1506132426092" duration="594000" />
       <workItem from="1506308875779" duration="11000" />
-      <workItem from="1506567102348" duration="16961000" />
+      <workItem from="1506567102348" duration="17194000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="277156000" />
+    <option name="totallyTimeSpent" value="277389000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1084,8 +1085,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/nlp.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="385">
-          <caret line="105" column="41" lean-forward="false" selection-start-line="105" selection-start-column="41" selection-end-line="105" selection-end-column="41" />
+        <state relative-caret-position="223">
+          <caret line="106" column="64" lean-forward="false" selection-start-line="106" selection-start-column="64" selection-end-line="106" selection-end-column="64" />
           <folding>
             <element signature="e#0#41#0" expanded="false" />
             <element signature="n#!!block;n#sendMessage#0" expanded="false" />

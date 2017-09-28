@@ -103,6 +103,8 @@ function respond(body, sender, recipient) {
     var jsonMessage = JSON.parse(obj[0].json);
     if (isGroup(jsonMessage)) {
         var randomIndex = randomIntFromInterval(0, jsonMessage.length);
+        console.log("randomIndex : " + randomIndex);
+        console.log("jsonMessage.length : " + jsonMessage.length);
         var key = jsonMessage[randomIndex].group.key;
         getGroupBot(key, sender, recipient, false);
     }
