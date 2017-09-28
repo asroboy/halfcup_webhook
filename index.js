@@ -65,9 +65,9 @@ app.post('/webhook', function (req, res) {
                 var hc_token = 'EAABqJD84pmIBABjewVhyAuMwDLFaI7YT7fsJLzeh63mhOwdZAgMKClvFfZBvHhFR35dIok3YQAxeZCuDbiLCaWVOpQxWVRHZBahsQOy9ZCTn4e4wdWcZA0VmGU6x0CFzv6dRcCzrlSZA87EPcI3b0KCDkedjLc37lZCvnu47iTTAwgZDZD';
 
 
-                if (event.message.nlp) {
-                    handleMessage(event.message);
-                } else {
+                // if (event.nlp) {
+                //     handleMessage(event.message);
+                // } else {
                     if (event.message) {
                         var msg = event.message.text;
                         if (event.sender.id === '912070908830063') {
@@ -437,7 +437,7 @@ app.post('/webhook', function (req, res) {
                         }
 
                     }
-                }
+                // }
 
 
             }
