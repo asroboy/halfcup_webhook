@@ -104,9 +104,9 @@ function randomIntFromInterval(min, max) {
     return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
-function respond(body, sender, recipient, index) {
+function respond(jsonMessage, sender, recipient, index) {
     // var obj = JSON.parse(body);
-    var jsonMessage = JSON.parse(obj[0].json);
+    // var jsonMessage =  JSON.parse(body[0].json);
     if (isGroup(jsonMessage)) {
         var key = jsonMessage[0].group.key;
         getGroupBot(key, sender, recipient, false);
