@@ -5,6 +5,8 @@ var app = express();
 var Analytics = require('analytics-node');
 var analytics = new Analytics('kngf8THjj5e2QnLTdjfprebBW1KdQQbx');
 
+var nlp = require('./nlp');
+
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 app.listen((process.env.PORT || 3000));
@@ -23,6 +25,10 @@ app.get('/webhook', function (req, res) {
     }
 });
 
+// Facebook Webhook
+app.get('/nlp', function (req, res) {
+    nlp.foo(res)
+});
 
 // handler receiving messages
 app.post('/webhook', function (req, res) {
@@ -68,7 +74,7 @@ app.post('/webhook', function (req, res) {
                 if (event.message) {
                     //NLP Handling
                     if (event.message.nlp) {
-                        handleMessage(event, event.message);
+                        nlp.handleMessage(event, event.message);
 
                         //NON NLP Handling
                     } else {
@@ -449,27 +455,6 @@ app.post('/webhook', function (req, res) {
         res.sendStatus(200);
     }
 );
-
-
-function firstEntity(nlp, name) {
-    console.log('nlp', nlp);
-    console.log('nlp.entities', nlp.entities);
-    console.log('nlp.entities[' + name + ']', nlp.entities[name]);
-    //console.log('nlp.entities[' + name + '][0]', JSON.parse(nlp.entities).name[0]);
-    // && nlp.entities.get(name)[0]
-    return nlp && nlp.entities && nlp.entities[name] && nlp.entities[name][0];
-}
-
-function handleMessage(event, message) {
-    // check greeting is here and is confident
-    const greeting = firstEntity(message.nlp, 'greetings');
-    if (greeting && greeting.confidence > 0.8) {
-        getToken("Hi, im testing", event.recipient.id, event.sender.id, false);
-        // sendMessage(event.recipient.id, reply, token);
-    } else {
-        // default logic
-    }
-}
 
 function saveMessengerAdmin(sender, recipient) {
     var url = 'http://halfcup.com/social_rebates_system/api/saveAdminMessengerId?page_id=' + recipient + '&admin_msg_id=' + sender + "&token=1234567890";
