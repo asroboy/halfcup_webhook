@@ -70,11 +70,13 @@ function getDefaultAnswer(sender, recipient) {
                 console.log('Error: ', response.body.error);
             } else {
                 var obj = JSON.parse(body);
-                var jsonMessage = JSON.parse(obj[0].json);
-                var randomIndex = randomIntFromInterval(1, jsonMessage.length);
-                console.log("randomIndex : " + randomIndex);
-                console.log("jsonMessage.length : " + jsonMessage.length);
-                respond(obj, sender, recipient, randomIndex);
+                if(obj.length > 0){
+                    var jsonMessage = JSON.parse(obj[0].json);
+                    var randomIndex = randomIntFromInterval(1, jsonMessage.length);
+                    console.log("randomIndex : " + randomIndex);
+                    console.log("jsonMessage.length : " + jsonMessage.length);
+                    respond(obj, sender, recipient, randomIndex);
+                }
             }
         }
     );
@@ -95,11 +97,16 @@ function getChatBot(key, sender, recipient) {
                 console.log('Error: ', response.body.error);
             } else {
                 var obj = JSON.parse(body);
-                var jsonMessage = JSON.parse(obj[0].json);
-                var randomIndex = randomIntFromInterval(1, jsonMessage.length);
-                console.log("randomIndex : " + randomIndex);
-                console.log("jsonMessage.length : " + jsonMessage.length);
-                respond(obj, sender, recipient, randomIndex);
+                if(obj.length > 0){
+                    var jsonMessage = JSON.parse(obj[0].json);
+                    var randomIndex = randomIntFromInterval(1, jsonMessage.length);
+                    console.log("randomIndex : " + randomIndex);
+                    console.log("jsonMessage.length : " + jsonMessage.length);
+                    respond(obj, sender, recipient, randomIndex);
+                }else{
+                    getDefaultAnswer(sender, recipient);
+                }
+
             }
         }
     );
@@ -147,7 +154,7 @@ function respond(jsonMessage, sender, recipient, index) {
         var message = json[index].message.text;
         getToken(message, sender, recipient, false);
     } else{
-        getDefaultAnswer(sender, recipient);
+        // getDefaultAnswer(sender, recipient);
     }
 }
 
