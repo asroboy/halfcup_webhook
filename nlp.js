@@ -8,8 +8,8 @@ module.exports = {
         console.log("From nlp");
         res.send(halo());
     },
-    handleMessage: function(event, message){
-        handleMessage(event,  message)
+    handleMessage: function (event, message) {
+        handleMessage(event, message)
     }
 };
 
@@ -34,13 +34,40 @@ function handleMessage(event, message) {
     // check greeting is here and is confident
     const greeting = firstEntity(message.nlp, 'greetings');
     if (greeting && greeting.confidence > 0.8) {
-        getToken("Hi, im testing", event.recipient.id, event.sender.id, false);
+        //getToken("Hi, im testing", event.recipient.id, event.sender.id, false);
+        getChatBot(message.text, event.recipient.id, event.sender.id);
         // sendMessage(event.recipient.id, reply, token);
     } else {
         // default logic
     }
 }
 
+
+
+// {"sender":{"id":"877390472364218"},"recipient":{"id":"228431964255924"},"timestamp":1506613480324,"message":{"mid":"mid.$cAADPwbeT
+//     p-xk-m6ThFeySlGmsmqQ","seq":23478,"text":"Hi","nlp":{"entities":{"intent":[{"confidence":1,"value":"Good morning","type":"value"}],"greetings":[{"confidence":0.99994528293428,"value":"t
+//     rue"}]}}}}
+
+
+function getChatBot(key, sender, recipient) {
+    var url = 'http://halfcup.com/social_rebates_system/wapi/read?token=1234567890&api_name=CHATBOT&key=' + key
+        + '&page_id=' + sender;
+    console.log('url', url);
+    request({
+            url: url,
+            method: 'GET'
+        }, function (error, response, body) {
+            if (error) {
+                console.log('Error sending message: ', error);
+            } else if (response.body.error) {
+                console.log('Error: ', response.body.error);
+            } else {
+                var obj = JSON.parse(body);
+                console.log('json: ', obj);
+            }
+        }
+    );
+}
 
 function getToken(m_payload, sender, recipient, isMessageUs) {
     var url = 'http://halfcup.com/social_rebates_system/api/getPageMessengerToken?messenger_id=' + sender + '&messenger_uid=' + recipient;
@@ -59,48 +86,25 @@ function getToken(m_payload, sender, recipient, isMessageUs) {
                 var code = obj.code;
                 if (code == 1) {
                     var token = obj.messenger_data.pageAccessToken;
-                    // if (m_payload.indexOf("\n") > -1) {
-                    //     var msgs = m_payload.split("\n");
-                    //     for (i = 0; i < msgs.length; i++) {
-                    //         // var m = msgs[i].replace(/\n/g, "\\\\n")
-                    //         var message = {"text": msgs[i]};
-                    //         var js_ = JSON.stringify(message);
-                    //         var myEscapedJSONString = js_.escapeSpecialChars();
-                    //         myEscapedJSONString = myEscapedJSONString.replace(/\\\\n/g, "\\n");
-                    //         console.log("TEXT ==> " + myEscapedJSONString);
-                    //         sendMessage(recipient, myEscapedJSONString, token);
-                    //     }
-                    // } else {
-
-                    // m_payload.replace(/\n/g, "\\\\n");
                     var message = {"text": m_payload};
                     if (isMessageUs)
                         message = {
                             "text": m_payload
                         };
 
-
                     var js_ = JSON.stringify(message);
                     var myEscapedJSONString = js_.escapeSpecialChars();
                     myEscapedJSONString = myEscapedJSONString.replace(/\\\\n/g, "\\n");
                     console.log("TEXT ==> " + myEscapedJSONString);
                     sendMessage(recipient, myEscapedJSONString, token);
-                    // }
-
                 }
                 if (code == 0) {
-                    console.log('Can\'t send message, TOKEN NOT FOUND, Get page access token from facebook developer page and register to http://halfcup.com/social_rebates_system');
+                    console.log('NLP : Can\'t send message, TOKEN NOT FOUND, Get page access token from facebook developer page and register to http://halfcup.com/social_rebates_system');
                 }
-
             }
         }
     );
-
-
 }
-
-
-
 // generic function sending messages
 function sendMessage(recipientId, message, token) {
     //console.log(process); process.env.PAGE_ACCESS_TOKEN
@@ -130,3 +134,6 @@ function sendMessage(recipientId, message, token) {
         }
     });
 };
+
+
+//
