@@ -32,7 +32,8 @@ function firstEntity(nlp, name) {
 }
 
 function isGroup(jsonMessage) {
-    return jsonMessage[0] && jsonMessage[0].group;
+    var json = JSON.parse(jsonMessage[0].json);
+    return json[0] && json[0].group;
 }
 
 function isChatBot(jsonMessage, index) {
@@ -113,7 +114,7 @@ function respond(jsonMessage, sender, recipient, index) {
     }
     console.log('json: ', jsonMessage);
     if (isChatBot(jsonMessage, index)) {
-        var message = jsonMessage[0].message.text;
+        var message = jsonMessage[index].message.text;
         getToken(message, sender, recipient, false);
     }
 }
