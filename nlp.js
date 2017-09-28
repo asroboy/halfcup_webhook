@@ -245,7 +245,7 @@ function getUserInfo(m_payload, messengerId, token) {
                 console.log('FB PROFILE', body);
 
                 var firstName = body.first_name;
-                m_payload = m_payload.replace("{{first_name}}", firstName);
+                m_payload = m_payload.replace("{{first name}}", firstName);
                 var message = {"text": m_payload};
                 var js_ = JSON.stringify(message);
                 var myEscapedJSONString = js_.escapeSpecialChars();
