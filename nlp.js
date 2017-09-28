@@ -51,13 +51,13 @@ function handleMessage(event, message) {
         getChatBot(message.text, event.recipient.id, event.sender.id);
         // sendMessage(event.recipient.id, reply, token);
     } else {
-        //http://halfcup.com/social_rebates_system/wapi/read?token=1234567890&api_name=DEFAULT_ANSWER&page_id=228431964255924
+        //getDefaultAnswer://halfcup.com/social_rebates_system/wapi/read?token=1234567890&api_name=DEFAULT_ANSWER&page_id=228431964255924
         detDefaultAnswer(event.recipient.id, event.sender.id);
         // default logic
     }
 }
 
-function detDefaultAnswer(sender, recipient) {
+function getDefaultAnswer(sender, recipient) {
     var url = 'http://halfcup.com/social_rebates_system/wapi/read?token=1234567890&api_name=DEFAULT_ANSWER&page_id=' + sender;
     console.log('url', url);
     request({
@@ -143,10 +143,12 @@ function respond(jsonMessage, sender, recipient, index) {
         getGroupBot(key, sender, recipient, false);
     }
     console.log('json: ', jsonMessage);
-    if (isChatBot(jsonMessage, index)) {
+   else if (isChatBot(jsonMessage, index)) {
         var json = JSON.parse(jsonMessage[0].json);
         var message = json[index].message.text;
         getToken(message, sender, recipient, false);
+    } else{
+        getDefaultAnswer(sender, recipient);
     }
 }
 
