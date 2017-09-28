@@ -58,7 +58,7 @@ function handleMessage(event, message) {
 }
 
 function getDefaultAnswer(sender, recipient) {
-    var url = 'http://halfcup.com/social_rebates_system/wapi/read?token=1234567890&api_name=DEFAULT_ANSWER&page_id=' + sender +'&is_on=true';
+    var url = 'http://halfcup.com/social_rebates_system/wapi/read?token=1234567890&api_name=DEFAULT_ANSWER&page_id=' + sender + '&is_on=true';
     console.log('url', url);
     request({
             url: url,
@@ -70,7 +70,7 @@ function getDefaultAnswer(sender, recipient) {
                 console.log('Error: ', response.body.error);
             } else {
                 var obj = JSON.parse(body);
-                if(obj.length > 0){
+                if (obj.length > 0) {
                     var jsonMessage = JSON.parse(obj[0].json);
                     var randomIndex = randomIntFromInterval(1, jsonMessage.length);
                     console.log("randomIndex : " + randomIndex);
@@ -97,13 +97,13 @@ function getChatBot(key, sender, recipient) {
                 console.log('Error: ', response.body.error);
             } else {
                 var obj = JSON.parse(body);
-                if(obj.length > 0){
+                if (obj.length > 0) {
                     var jsonMessage = JSON.parse(obj[0].json);
                     var randomIndex = randomIntFromInterval(1, jsonMessage.length);
                     console.log("randomIndex : " + randomIndex);
                     console.log("jsonMessage.length : " + jsonMessage.length);
                     respond(obj, sender, recipient, randomIndex);
-                }else{
+                } else {
                     getDefaultAnswer(sender, recipient);
                 }
 
@@ -153,7 +153,7 @@ function respond(jsonMessage, sender, recipient, index) {
         var json = JSON.parse(jsonMessage[0].json);
         var message = json[index].message.text;
         getToken(message, sender, recipient, false);
-    } else{
+    } else {
         // getDefaultAnswer(sender, recipient);
     }
 }
@@ -175,6 +175,9 @@ function getToken(m_payload, sender, recipient, isMessageUs) {
                 var code = obj.code;
                 if (code == 1) {
                     var token = obj.messenger_data.pageAccessToken;
+                    if(m_payload.contains('{{')){
+                        getUserInfo(recipient, token);
+                    }
                     var message = {"text": m_payload};
                     if (isMessageUs)
                         message = {
@@ -224,5 +227,28 @@ function sendMessage(recipientId, message, token) {
     });
 };
 
+
+function getUserInfo(messengerId, token) {
+    var url = "https://graph.facebook.com/v2.6/" + messengerId + "?access_token=" + token;
+    request({
+            url: url,
+            method: 'GET'
+        }, function (error, response, body) {
+            if (error) {
+                console.log('Error sending message: ', error);
+            } else if (response.body.error) {
+                console.log('Error: ', response.body.error);
+            } else {
+                console.log('FB PROFILE', body);
+                // var obj = JSON.parse(body);
+                // var jsonMessage = JSON.parse(obj[0].json);
+                // var randomIndex = randomIntFromInterval(1, jsonMessage.length);
+                // console.log("randomIndex : " + randomIndex);
+                // console.log("jsonMessage.length : " + jsonMessage.length);
+                // respond(obj, sender, recipient, randomIndex);
+            }
+        }
+    );
+}
 
 //
