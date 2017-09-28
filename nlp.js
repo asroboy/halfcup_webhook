@@ -111,7 +111,7 @@ function respond(jsonMessage, sender, recipient, index) {
         var key = jsonMessage[0].group.key;
         getGroupBot(key, sender, recipient, false);
     }
-    console.log('json: ', obj);
+    console.log('json: ', jsonMessage);
     if (isChatBot(jsonMessage, index)) {
         var message = jsonMessage[0].message.text;
         getToken(message, sender, recipient, false);

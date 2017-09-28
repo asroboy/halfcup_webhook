@@ -52,8 +52,8 @@
       <file leaf-file-name="nlp.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/nlp.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="104">
-              <caret line="109" column="25" lean-forward="false" selection-start-line="109" selection-start-column="25" selection-end-line="109" selection-end-column="25" />
+            <state relative-caret-position="70">
+              <caret line="113" column="37" lean-forward="false" selection-start-line="113" selection-start-column="37" selection-end-line="113" selection-end-column="37" />
               <folding>
                 <element signature="e#0#41#0" expanded="false" />
                 <element signature="n#!!block;n#sendMessage#0" expanded="false" />
@@ -400,12 +400,12 @@
       <workItem from="1505948574898" duration="6199000" />
       <workItem from="1506132426092" duration="594000" />
       <workItem from="1506308875779" duration="11000" />
-      <workItem from="1506567102348" duration="18688000" />
+      <workItem from="1506567102348" duration="18835000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="278883000" />
+    <option name="totallyTimeSpent" value="279030000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1084,8 +1084,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/nlp.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="104">
-          <caret line="109" column="25" lean-forward="false" selection-start-line="109" selection-start-column="25" selection-end-line="109" selection-end-column="25" />
+        <state relative-caret-position="70">
+          <caret line="113" column="37" lean-forward="false" selection-start-line="113" selection-start-column="37" selection-end-line="113" selection-end-column="37" />
           <folding>
             <element signature="e#0#41#0" expanded="false" />
             <element signature="n#!!block;n#sendMessage#0" expanded="false" />
