@@ -62,9 +62,10 @@ function getChatBot(key, sender, recipient) {
                 console.log('Error: ', response.body.error);
             } else {
                 var obj = JSON.parse(body);
+                var jsonMessage = JSON.parse(obj[0].json);
                 console.log('json: ', obj);
-                if (obj[0].json[0].message) {
-                    var message = obj[0].json[0].message.text;
+                if (jsonMessage[0].message) {
+                    var message = jsonMessage[0].message.text;
                     getToken(message, sender, recipient, false);
                 }
             }
