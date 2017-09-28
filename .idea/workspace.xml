@@ -23,8 +23,8 @@
       <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="33" />
+            <state relative-caret-position="342">
+              <caret line="1118" column="2" lean-forward="true" selection-start-line="1089" selection-start-column="0" selection-end-line="1118" selection-end-column="2" />
               <folding>
                 <element signature="e#1096#1969#0" expanded="false" />
                 <element signature="e#6696#15065#0" expanded="false" />
@@ -52,10 +52,11 @@
       <file leaf-file-name="nlp.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/nlp.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="16" column="33" lean-forward="false" selection-start-line="16" selection-start-column="33" selection-end-line="16" selection-end-column="33" />
+            <state relative-caret-position="562">
+              <caret line="131" column="2" lean-forward="false" selection-start-line="131" selection-start-column="2" selection-end-line="131" selection-end-column="2" />
               <folding>
                 <element signature="e#0#41#0" expanded="false" />
+                <element signature="n#!!block;n#getToken#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -399,12 +400,12 @@
       <workItem from="1505948574898" duration="6199000" />
       <workItem from="1506132426092" duration="594000" />
       <workItem from="1506308875779" duration="11000" />
-      <workItem from="1506567102348" duration="11961000" />
+      <workItem from="1506567102348" duration="12182000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="272156000" />
+    <option name="totallyTimeSpent" value="272377000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1056,8 +1057,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="33" />
+        <state relative-caret-position="342">
+          <caret line="1118" column="2" lean-forward="true" selection-start-line="1089" selection-start-column="0" selection-end-line="1118" selection-end-column="2" />
           <folding>
             <element signature="e#1096#1969#0" expanded="false" />
             <element signature="e#6696#15065#0" expanded="false" />
@@ -1083,10 +1084,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/nlp.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="16" column="33" lean-forward="false" selection-start-line="16" selection-start-column="33" selection-end-line="16" selection-end-column="33" />
+        <state relative-caret-position="562">
+          <caret line="131" column="2" lean-forward="false" selection-start-line="131" selection-start-column="2" selection-end-line="131" selection-end-column="2" />
           <folding>
             <element signature="e#0#41#0" expanded="false" />
+            <element signature="n#!!block;n#getToken#0" expanded="false" />
           </folding>
         </state>
       </provider>

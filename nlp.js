@@ -95,4 +95,38 @@ function getToken(m_payload, sender, recipient, isMessageUs) {
             }
         }
     );
+
+
 }
+
+
+
+// generic function sending messages
+function sendMessage(recipientId, message, token) {
+    //console.log(process); process.env.PAGE_ACCESS_TOKEN
+
+    var result = "";
+    request({
+        url: 'https://graph.facebook.com/v2.6/me/messages',
+        qs: {access_token: token},
+        method: 'POST',
+        json: {
+            recipient: {id: recipientId},
+            message: message,
+        }
+    }, function (error, response, body) {
+        if (error) {
+            console.log('Error sending message: ', error);
+            result = 'Error sending message: ' + error;
+            return result;
+        } else if (response.body.error) {
+            console.log('Error: ', response.body.error);
+            result = 'Error: ' + response.body.error;
+            return result;
+        } else {
+            // console.log('============ ' + response + ' =========== ');
+            result = JSON.stringify(response);
+            return result;
+        }
+    });
+};
