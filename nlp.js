@@ -175,20 +175,23 @@ function getToken(m_payload, sender, recipient, isMessageUs) {
                 var code = obj.code;
                 if (code == 1) {
                     var token = obj.messenger_data.pageAccessToken;
-                    if (m_payload.indexOf('{{') > -1) {
-                        getUserInfo(recipient, token);
-                    }
-                    var message = {"text": m_payload};
-                    if (isMessageUs)
-                        message = {
-                            "text": m_payload
-                        };
 
-                    var js_ = JSON.stringify(message);
-                    var myEscapedJSONString = js_.escapeSpecialChars();
-                    myEscapedJSONString = myEscapedJSONString.replace(/\\\\n/g, "\\n");
-                    console.log("TEXT ==> " + myEscapedJSONString);
-                    sendMessage(recipient, myEscapedJSONString, token);
+                    if (m_payload.indexOf('{{') > -1) {
+                        getUserInfo(m_payload,recipient, token);
+                    }else{
+                        var message = {"text": m_payload};
+                        if (isMessageUs)
+                            message = {
+                                "text": m_payload
+                            };
+
+                        var js_ = JSON.stringify(message);
+                        var myEscapedJSONString = js_.escapeSpecialChars();
+                        myEscapedJSONString = myEscapedJSONString.replace(/\\\\n/g, "\\n");
+                        console.log("TEXT ==> " + myEscapedJSONString);
+                        sendMessage(recipient, myEscapedJSONString, token);
+                    }
+
                 }
                 if (code == 0) {
                     console.log('NLP : Can\'t send message, TOKEN NOT FOUND, Get page access token from facebook developer page and register to http://halfcup.com/social_rebates_system');
@@ -228,7 +231,7 @@ function sendMessage(recipientId, message, token) {
 };
 
 
-function getUserInfo(messengerId, token) {
+function getUserInfo(m_payload, messengerId, token) {
     var url = "https://graph.facebook.com/v2.6/" + messengerId + "?access_token=" + token;
     request({
             url: url,
@@ -240,12 +243,20 @@ function getUserInfo(messengerId, token) {
                 console.log('Error: ', response.body.error);
             } else {
                 console.log('FB PROFILE', body);
-                // var obj = JSON.parse(body);
-                // var jsonMessage = JSON.parse(obj[0].json);
-                // var randomIndex = randomIntFromInterval(1, jsonMessage.length);
-                // console.log("randomIndex : " + randomIndex);
-                // console.log("jsonMessage.length : " + jsonMessage.length);
-                // respond(obj, sender, recipient, randomIndex);
+
+                var firstName = body.first_name;
+                m_payload = m_payload.replace("{{first_name}}", firstName);
+                var message = {"text": m_payload};
+                if (isMessageUs)
+                    message = {
+                        "text": m_payload
+                    };
+
+                var js_ = JSON.stringify(message);
+                var myEscapedJSONString = js_.escapeSpecialChars();
+                myEscapedJSONString = myEscapedJSONString.replace(/\\\\n/g, "\\n");
+                console.log("TEXT ==> " + myEscapedJSONString);
+                sendMessage(recipient, myEscapedJSONString, token);
             }
         }
     );
