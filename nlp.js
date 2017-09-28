@@ -31,6 +31,15 @@ function firstEntity(nlp, name) {
     return nlp && nlp.entities;
 }
 
+function isGroup(jsonMessage) {
+    return jsonMessage[0] && jsonMessage[0].group;
+}
+
+function isChatBot(jsonMessage) {
+    return jsonMessage[0] && jsonMessage[0].message;
+}
+
+
 function handleMessage(event, message) {
     // check greeting is here and is confident
     const greeting = firstEntity(message.nlp, 'greetings');
@@ -43,11 +52,6 @@ function handleMessage(event, message) {
         // default logic
     }
 }
-
-
-// {"sender":{"id":"877390472364218"},"recipient":{"id":"228431964255924"},"timestamp":1506613480324,"message":{"mid":"mid.$cAADPwbeT
-//     p-xk-m6ThFeySlGmsmqQ","seq":23478,"text":"Hi","nlp":{"entities":{"intent":[{"confidence":1,"value":"Good morning","type":"value"}],"greetings":[{"confidence":0.99994528293428,"value":"t
-//     rue"}]}}}}
 
 
 function getChatBot(key, sender, recipient) {
@@ -63,16 +67,45 @@ function getChatBot(key, sender, recipient) {
             } else if (response.body.error) {
                 console.log('Error: ', response.body.error);
             } else {
-                var obj = JSON.parse(body);
-                var jsonMessage = JSON.parse(obj[0].json);
-                console.log('json: ', obj);
-                if (jsonMessage[0].message) {
-                    var message = jsonMessage[0].message.text;
-                    getToken(message, sender, recipient, false);
-                }
+                respond(body,sender, recipient);
             }
         }
     );
+}
+
+
+function getGroupBot(key, sender, recipient) {
+    var url = 'http://halfcup.com/social_rebates_system/wapi/read?token=1234567890&api_name=GROUP&key=' + key;
+        // + '&page_id=' + sender;
+    console.log('url', url);
+    request({
+            url: url,
+            method: 'GET'
+        }, function (error, response, body) {
+            if (error) {
+                console.log('Error sending message: ', error);
+            } else if (response.body.error) {
+                console.log('Error: ', response.body.error);
+            } else {
+                respond(body, sender, recipient);
+            }
+        }
+    );
+}
+
+
+function respond(body, sender, recipient) {
+    var obj = JSON.parse(body);
+    var jsonMessage = JSON.parse(obj[0].json);
+    if (isGroup(jsonMessage)) {
+        var key = jsonMessage[0].group.key;
+        getGroupBot(key, sender, recipient, false);
+    }
+    console.log('json: ', obj);
+    if (isChatBot(jsonMessage)) {
+        var message = jsonMessage[0].message.text;
+        getToken(message, sender, recipient, false);
+    }
 }
 
 function getToken(m_payload, sender, recipient, isMessageUs) {
