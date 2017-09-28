@@ -68,7 +68,7 @@ app.post('/webhook', function (req, res) {
                 if (event.message) {
                     //NLP Handling
                     if (event.message.nlp) {
-                        handleMessage(event.message);
+                        handleMessage(event, event.message, hc_token);
 
                         //NON NLP Handling
                     } else {
@@ -454,17 +454,18 @@ app.post('/webhook', function (req, res) {
 function firstEntity(nlp, name) {
     console.log('nlp', nlp);
     console.log('nlp.entities', nlp.entities);
-    console.log('nlp.entities[' + name + ']', nlp.entities.greetings[0]);
+    console.log('nlp.entities[' + name + ']', nlp.entities[name]);
     //console.log('nlp.entities[' + name + '][0]', JSON.parse(nlp.entities).name[0]);
     // && nlp.entities.get(name)[0]
     return nlp && nlp.entities && nlp.entities.grretings;
 }
 
-function handleMessage(message) {
+function handleMessage(event, message, token) {
     // check greeting is here and is confident
-    const greeting = firstEntity(message.nlp, 'greeting');
+    const greeting = firstEntity(message.nlp, 'greetings');
     if (greeting && greeting.confidence > 0.8) {
-        sendResponse('Hi there!');
+        var reply = {"text": "Hi, im testing"};
+        sendMessage(event.recipient.id, reply, token);
     } else {
         // default logic
     }
