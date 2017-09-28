@@ -70,7 +70,7 @@ function getChatBot(key, sender, recipient) {
                 console.log('Error: ', response.body.error);
             } else {
                 var obj = JSON.parse(body);
-                respond(obj, sender, recipient, 0);
+                respond(obj, sender, recipient, 1);
             }
         }
     );
