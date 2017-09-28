@@ -37,7 +37,8 @@ function isGroup(jsonMessage) {
 }
 
 function isChatBot(jsonMessage, index) {
-    return jsonMessage[index - 1] && jsonMessage[index - 1].message;
+    var json = JSON.parse(jsonMessage[0].json);
+    return json[index] && json[index].message;
 }
 
 
@@ -114,8 +115,10 @@ function respond(jsonMessage, sender, recipient, index) {
         getGroupBot(key, sender, recipient, false);
     }
     console.log('json: ', jsonMessage);
+    index = index - 1;
     if (isChatBot(jsonMessage, index)) {
-        var message = jsonMessage[index].message.text;
+        var json = JSON.parse(jsonMessage[0].json);
+        var message = json[index].message.text;
         getToken(message, sender, recipient, false);
     }
 }

@@ -52,8 +52,8 @@
       <file leaf-file-name="nlp.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/nlp.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="203">
-              <caret line="96" column="27" lean-forward="false" selection-start-line="96" selection-start-column="27" selection-end-line="96" selection-end-column="27" />
+            <state relative-caret-position="206">
+              <caret line="39" column="39" lean-forward="false" selection-start-line="39" selection-start-column="39" selection-end-line="39" selection-end-column="39" />
               <folding>
                 <element signature="e#0#41#0" expanded="false" />
                 <element signature="n#!!block;n#sendMessage#0" expanded="false" />
@@ -101,9 +101,9 @@
       <find>Event</find>
       <find>handleMessage</find>
       <find>randomIndex</find>
-      <find>isChatBot</find>
       <find>isGroup</find>
       <find>respond</find>
+      <find>isChatBot</find>
     </findStrings>
     <replaceStrings>
       <replace>localhost:8080</replace>
@@ -400,12 +400,12 @@
       <workItem from="1505948574898" duration="6199000" />
       <workItem from="1506132426092" duration="594000" />
       <workItem from="1506308875779" duration="11000" />
-      <workItem from="1506567102348" duration="20191000" />
+      <workItem from="1506567102348" duration="20411000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="280386000" />
+    <option name="totallyTimeSpent" value="280606000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -427,7 +427,7 @@
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.17708333" sideWeight="0.56785715" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.52495974" sideWeight="0.4940476" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.48638132" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.42351046" sideWeight="0.4940476" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.42351046" sideWeight="0.4940476" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.17708333" sideWeight="0.5426731" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -1084,8 +1084,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/nlp.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="203">
-          <caret line="96" column="27" lean-forward="false" selection-start-line="96" selection-start-column="27" selection-end-line="96" selection-end-column="27" />
+        <state relative-caret-position="206">
+          <caret line="39" column="39" lean-forward="false" selection-start-line="39" selection-start-column="39" selection-end-line="39" selection-end-column="39" />
           <folding>
             <element signature="e#0#41#0" expanded="false" />
             <element signature="n#!!block;n#sendMessage#0" expanded="false" />
