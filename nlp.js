@@ -109,7 +109,8 @@ function respond(jsonMessage, sender, recipient, index) {
     // var obj = JSON.parse(body);
     // var jsonMessage =  JSON.parse(body[0].json);
     if (isGroup(jsonMessage)) {
-        var key = jsonMessage[0].group.key;
+        var json = JSON.parse(jsonMessage[0].json);
+        var key = json[0].group.key;
         getGroupBot(key, sender, recipient, false);
     }
     console.log('json: ', jsonMessage);
