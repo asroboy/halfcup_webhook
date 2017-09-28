@@ -14,6 +14,8 @@ module.exports = {
 };
 
 
+var request = require('request');
+
 function halo() {
     return "halo polisi";
 }
