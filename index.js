@@ -68,7 +68,7 @@ app.post('/webhook', function (req, res) {
                 if (event.message) {
                     //NLP Handling
                     if (event.message.nlp) {
-                        handleMessage(event, event.message, hc_token);
+                        handleMessage(event, event.message);
 
                         //NON NLP Handling
                     } else {
@@ -460,12 +460,12 @@ function firstEntity(nlp, name) {
     return nlp && nlp.entities && nlp.entities[name] && nlp.entities[name][0];
 }
 
-function handleMessage(event, message, token) {
+function handleMessage(event, message) {
     // check greeting is here and is confident
     const greeting = firstEntity(message.nlp, 'greetings');
     if (greeting && greeting.confidence > 0.8) {
-        var reply = {"text": "Hi, im testing"};
-        sendMessage(event.recipient.id, reply, token);
+        getToken("Hi, im testing", event.recipient.id, event.sender.id, false);
+        // sendMessage(event.recipient.id, reply, token);
     } else {
         // default logic
     }
