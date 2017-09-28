@@ -454,9 +454,10 @@ app.post('/webhook', function (req, res) {
 function firstEntity(nlp, name) {
     console.log('nlp', nlp);
     console.log('nlp.entities', nlp.entities);
-    console.log('nlp.entities[' + name + ']', JSON.parse(nlp.entities).getNamedItem(String.valueOf(name)));
+    console.log('nlp.entities[' + name + ']', JSON.parse(nlp.entities).greetings);
     //console.log('nlp.entities[' + name + '][0]', JSON.parse(nlp.entities).name[0]);
-    return nlp && nlp.entities && nlp.entities.get(name) && nlp.entities.get(name)[0];
+    // && nlp.entities.get(name)[0]
+    return nlp && nlp.entities && nlp.entities.grretings;
 }
 
 function handleMessage(message) {
