@@ -131,7 +131,7 @@ function getGroupBot(key, sender, recipient) {
                 var randomIndex = randomIntFromInterval(1, jsonMessage.length);
                 console.log("randomIndex : " + randomIndex);
                 console.log("jsonMessage.length : " + jsonMessage.length);
-                respond(obj, sender, recipient, randomIndex);
+                respondFromGroup(obj, sender, recipient, jsonMessage.length);
             }
         }
     );
@@ -140,6 +140,16 @@ function getGroupBot(key, sender, recipient) {
 
 function randomIntFromInterval(min, max) {
     return Math.floor(Math.random() * (max - min + 1) + min);
+}
+
+function respondFromGroup(jsonMessage, sender, recipient, size) {
+    for (i = 0; i < size; i++) {
+        if (isChatBot(jsonMessage, i)){
+            var json = JSON.parse(jsonMessage[0].json);
+            var message = json[index].message.text;
+            getToken(message, sender, recipient, false);
+        }
+    }
 }
 
 function respond(jsonMessage, sender, recipient, index) {
@@ -177,8 +187,8 @@ function getToken(m_payload, sender, recipient, isMessageUs) {
                     var token = obj.messenger_data.pageAccessToken;
 
                     if (m_payload.indexOf('{{') > -1) {
-                        getUserInfo(m_payload,recipient, token);
-                    }else{
+                        getUserInfo(m_payload, recipient, token);
+                    } else {
                         var message = {"text": m_payload};
                         if (isMessageUs)
                             message = {
