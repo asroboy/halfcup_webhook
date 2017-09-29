@@ -146,7 +146,7 @@ function respondFromGroup(jsonMessage, sender, recipient, size) {
     for (i = 0; i < size; i++) {
         if (isChatBot(jsonMessage, i)){
             var json = JSON.parse(jsonMessage[0].json);
-            var message = json[index].message.text;
+            var message = json[i].message.text;
             getToken(message, sender, recipient, false);
         }
     }
