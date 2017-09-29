@@ -146,12 +146,12 @@ function respondFromGroup(jsonMessage, sender, recipient, size) {
     for (i = 0; i < size; i++) {
         if (isChatBot(jsonMessage, i)) {
             var json = JSON.parse(jsonMessage[0].json);
-            respondToTextOrAttacment(json, i)
+            respondToTextOrAttacment(json,sender, recipient, i)
         }
     }
 }
 
-function respondToTextOrAttacment(json, index){
+function respondToTextOrAttacment(json, sender, recipient, index) {
     if (json[index].message.text) {
         var message = json[index].message.text;
         getToken(message, sender, recipient, false);
@@ -171,7 +171,7 @@ function respond(jsonMessage, sender, recipient, index) {
         getGroupBot(key, sender, recipient, false);
     } else if (isChatBot(jsonMessage, index)) {
         var json = JSON.parse(jsonMessage[0].json);
-        respondToTextOrAttacment(json, index)
+        respondToTextOrAttacment(json,sender, recipient, index)
     } else {
         // getDefaultAnswer(sender, recipient);
     }
