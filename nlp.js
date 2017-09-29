@@ -157,7 +157,8 @@ function respond(jsonMessage, sender, recipient, index) {
     console.log('json: ', jsonMessage);
     if (isGroup(jsonMessage, index)) {
         var json = JSON.parse(jsonMessage[0].json);
-        var key = json[0].group.key;
+        var key = json[index].group.key;
+        console.log('key: ', key);
         getGroupBot(key, sender, recipient, false);
     } else if (isChatBot(jsonMessage, index)) {
         var json = JSON.parse(jsonMessage[0].json);
