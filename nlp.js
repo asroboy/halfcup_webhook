@@ -144,11 +144,20 @@ function randomIntFromInterval(min, max) {
 
 function respondFromGroup(jsonMessage, sender, recipient, size) {
     for (i = 0; i < size; i++) {
-        if (isChatBot(jsonMessage, i)){
+        if (isChatBot(jsonMessage, i)) {
             var json = JSON.parse(jsonMessage[0].json);
-            var message = json[i].message.text;
-            getToken(message, sender, recipient, false);
+            respondToTextOrAttacment(json, i)
         }
+    }
+}
+
+function respondToTextOrAttacment(json, index){
+    if (json[index].message.text) {
+        var message = json[index].message.text;
+        getToken(message, sender, recipient, false);
+    } else {
+        var message = json[index].message;
+        getToken(message, sender, recipient, false);
     }
 }
 
@@ -162,8 +171,7 @@ function respond(jsonMessage, sender, recipient, index) {
         getGroupBot(key, sender, recipient, false);
     } else if (isChatBot(jsonMessage, index)) {
         var json = JSON.parse(jsonMessage[0].json);
-        var message = json[index].message.text;
-        getToken(message, sender, recipient, false);
+        respondToTextOrAttacment(json, index)
     } else {
         // getDefaultAnswer(sender, recipient);
     }
@@ -187,21 +195,29 @@ function getToken(m_payload, sender, recipient, isMessageUs) {
                 if (code == 1) {
                     var token = obj.messenger_data.pageAccessToken;
 
-                    if (m_payload.indexOf('{{') > -1) {
-                        getUserInfo(m_payload, recipient, token);
-                    } else {
-                        var message = {"text": m_payload};
-                        if (isMessageUs)
-                            message = {
-                                "text": m_payload
-                            };
-
-                        var js_ = JSON.stringify(message);
-                        var myEscapedJSONString = js_.escapeSpecialChars();
+                    if (m_payload.attachment) {
+                        var myEscapedJSONString = m_payload.escapeSpecialChars();
                         myEscapedJSONString = myEscapedJSONString.replace(/\\\\n/g, "\\n");
                         console.log("TEXT ==> " + myEscapedJSONString);
                         sendMessage(recipient, myEscapedJSONString, token);
+                    } else {
+                        if (m_payload.indexOf('{{') > -1) {
+                            getUserInfo(m_payload, recipient, token);
+                        } else {
+                            var message = {"text": m_payload};
+                            if (isMessageUs)
+                                message = {
+                                    "text": m_payload
+                                };
+
+                            var js_ = JSON.stringify(message);
+                            var myEscapedJSONString = js_.escapeSpecialChars();
+                            myEscapedJSONString = myEscapedJSONString.replace(/\\\\n/g, "\\n");
+                            console.log("TEXT ==> " + myEscapedJSONString);
+                            sendMessage(recipient, myEscapedJSONString, token);
+                        }
                     }
+
 
                 }
                 if (code == 0) {
