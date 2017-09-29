@@ -196,10 +196,10 @@ function getToken(m_payload, sender, recipient, isMessageUs) {
                     var token = obj.messenger_data.pageAccessToken;
 
                     if (m_payload.attachment) {
-                        var myEscapedJSONString = m_payload.escapeSpecialChars();
-                        myEscapedJSONString = myEscapedJSONString.replace(/\\\\n/g, "\\n");
-                        console.log("TEXT ==> " + myEscapedJSONString);
-                        sendMessage(recipient, myEscapedJSONString, token);
+                        // var myEscapedJSONString = m_payload.escapeSpecialChars();
+                        // myEscapedJSONString = myEscapedJSONString.replace(/\\\\n/g, "\\n");
+                        // console.log("TEXT ==> " + myEscapedJSONString);
+                        sendMessage(recipient, m_payload, token);
                     } else {
                         if (m_payload.indexOf('{{') > -1) {
                             getUserInfo(m_payload, recipient, token);
