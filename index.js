@@ -511,6 +511,8 @@ function keyIndexAction(key, event, action_name, event_name) {
                 getToken(reply_text, event.recipient.id, event.sender.id, false);
         }
 
+    } else if (key.indexOf("{{")) {
+        validateSamples(key.replace("{{", "").replace("}}", ""));
     } else {
         if (key.indexOf("_") > -1) {
             var prefix = key.split('_');
@@ -540,6 +542,22 @@ function keyIndexAction(key, event, action_name, event_name) {
                 getToken(key, event.recipient.id, event.sender.id, false);
         }
     }
+}
+}
+
+
+function validateSamples(key) {
+    return fetch('https://api.wit.ai/samples?v=20170307&q=' + key, {
+        method: 'GET',
+        headers: {
+            Authorization: `Bearer VYDNMLAK5Z74PEDNVJXCOKU7SROGOJIU`,
+            'Content-Type': 'application/json',
+        },
+        // body: JSON.stringify(samples),
+    })
+
+
+        .then(res => res.json())
 }
 
 
