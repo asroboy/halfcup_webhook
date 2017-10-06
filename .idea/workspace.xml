@@ -24,7 +24,7 @@
       <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="189">
+            <state relative-caret-position="3094">
               <caret line="213" column="39" lean-forward="false" selection-start-line="213" selection-start-column="36" selection-end-line="213" selection-end-column="39" />
               <folding>
                 <element signature="e#1096#1969#0" expanded="false" />
@@ -50,8 +50,8 @@
       <file leaf-file-name="nlp.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/nlp.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="155">
-              <caret line="198" column="21" lean-forward="false" selection-start-line="198" selection-start-column="21" selection-end-line="200" selection-end-column="74" />
+            <state relative-caret-position="189">
+              <caret line="35" column="44" lean-forward="false" selection-start-line="35" selection-start-column="44" selection-end-line="35" selection-end-column="44" />
               <folding>
                 <element signature="e#0#41#0" expanded="false" />
               </folding>
@@ -79,7 +79,6 @@
       <find>!==</find>
       <find>pixel</find>
       <find>quick_replies</find>
-      <find>getToken</find>
       <find>hi</find>
       <find>Hi</find>
       <find>REQ</find>
@@ -101,6 +100,7 @@
       <find>for</find>
       <find>getUserInfo</find>
       <find>respondToTextOrAttacment</find>
+      <find>getToken</find>
     </findStrings>
     <replaceStrings>
       <replace>localhost:8080</replace>
@@ -159,8 +159,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -175,12 +173,14 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="nodejs_interpreter_path" value="C:/Program Files/nodejs/node" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Documents/Kerjaan/Virtua/Bifza/app/src/main/assets" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../witai" />
     <property name="settings.editor.selected.configurable" value="settings.phonegap" />
     <property name="HbShouldOpenHtmlAsHb" value="" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
@@ -398,12 +398,15 @@
       <workItem from="1506132426092" duration="594000" />
       <workItem from="1506308875779" duration="11000" />
       <workItem from="1506567102348" duration="24574000" />
-      <workItem from="1506668895791" duration="5199000" />
+      <workItem from="1506668895791" duration="7821000" />
+      <workItem from="1506997652530" duration="105000" />
+      <workItem from="1506997799258" duration="600000" />
+      <workItem from="1507290665955" duration="1262000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="289968000" />
+    <option name="totallyTimeSpent" value="294557000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1016,7 +1019,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
+        <state relative-caret-position="3094">
           <caret line="213" column="39" lean-forward="false" selection-start-line="213" selection-start-column="36" selection-end-line="213" selection-end-column="39" />
           <folding>
             <element signature="e#1096#1969#0" expanded="false" />
@@ -1040,8 +1043,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/nlp.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="155">
-          <caret line="198" column="21" lean-forward="false" selection-start-line="198" selection-start-column="21" selection-end-line="200" selection-end-column="74" />
+        <state relative-caret-position="189">
+          <caret line="35" column="44" lean-forward="false" selection-start-line="35" selection-start-column="44" selection-end-line="35" selection-end-column="44" />
           <folding>
             <element signature="e#0#41#0" expanded="false" />
           </folding>

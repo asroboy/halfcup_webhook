@@ -27,8 +27,8 @@ function firstEntity(nlp, name) {
     console.log('nlp.entities[' + name + ']', nlp.entities[name]);
     //console.log('nlp.entities[' + name + '][0]', JSON.parse(nlp.entities).name[0]);
     // && nlp.entities.get(name)[0]
-    // return nlp && nlp.entities && nlp.entities[name] && nlp.entities[name][0];
-    return nlp && nlp.entities;
+    return nlp && nlp.entities && nlp.entities[name] && nlp.entities[name][0];
+    // return nlp && nlp.entities;
 }
 
 function isGroup(jsonMessage, index) {
@@ -45,15 +45,19 @@ function isChatBot(jsonMessage, index) {
 function handleMessage(event, message) {
     // check greeting is here and is confident
     const greeting = firstEntity(message.nlp, 'greetings');
+    const intent = firstEntity(message.nlp, 'intent');
     // if (greeting && greeting.confidence > 0.8) {
     if (greeting) {
         //getToken("Hi, im testing", event.recipient.id, event.sender.id, false);
         getChatBot(message.text, event.recipient.id, event.sender.id);
         // sendMessage(event.recipient.id, reply, token);
+    } else if (intent && intent.confidence > 0.8) {
+        getToken(message.nlp.intent.value, event.recipient.id, event.sender.id, false)
     } else {
         //getDefaultAnswer://halfcup.com/social_rebates_system/wapi/read?token=1234567890&api_name=DEFAULT_ANSWER&page_id=228431964255924
         detDefaultAnswer(event.recipient.id, event.sender.id);
         // default logic
+
     }
 }
 
@@ -146,7 +150,7 @@ function respondFromGroup(jsonMessage, sender, recipient, size) {
     for (i = 0; i < size; i++) {
         if (isChatBot(jsonMessage, i)) {
             var json = JSON.parse(jsonMessage[0].json);
-            respondToTextOrAttacment(json,sender, recipient, i)
+            respondToTextOrAttacment(json, sender, recipient, i)
         }
     }
 }
@@ -171,7 +175,7 @@ function respond(jsonMessage, sender, recipient, index) {
         getGroupBot(key, sender, recipient, false);
     } else if (isChatBot(jsonMessage, index)) {
         var json = JSON.parse(jsonMessage[0].json);
-        respondToTextOrAttacment(json,sender, recipient, index)
+        respondToTextOrAttacment(json, sender, recipient, index)
     } else {
         // getDefaultAnswer(sender, recipient);
     }
