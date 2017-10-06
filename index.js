@@ -563,7 +563,7 @@ function validateSamples(key) {
             result = "error";
             return result;
         } else {
-            console.log(response);
+            console.log(body);
             result = "oke";
             return result;
         }
