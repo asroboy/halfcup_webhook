@@ -511,7 +511,7 @@ function keyIndexAction(key, event, action_name, event_name) {
                 getToken(reply_text, event.recipient.id, event.sender.id, false);
         }
 
-    } else if (key.indexOf("{{")) {
+    } else if (key.indexOf("{{") >-1) {
         validateSamples(key.replace("{{", "").replace("}}", ""));
     } else {
         if (key.indexOf("_") > -1) {
