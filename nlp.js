@@ -46,9 +46,7 @@ function handleMessage(event, message) {
     // check greeting is here and is confident
     const greetings = firstEntity(message.nlp, 'greetings');
     const intent = firstEntity(message.nlp, 'intent');
-    const datetime
-:
-    = firstEntity(message.nlp, 'datetime:');
+    const datetime = firstEntity(message.nlp, 'datetime:');
     // if (greeting && greeting.confidence > 0.8) {
     if (greetings) {
         // getToken("Hi, nice to see you", event.recipient.id, event.sender.id, false);
