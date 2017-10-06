@@ -546,17 +546,28 @@ function keyIndexAction(key, event, action_name, event_name) {
 
 
 function validateSamples(key) {
-    return fetch('https://api.wit.ai/samples?v=20170307&q=' + key, {
+    request({
+        url: 'https://api.wit.ai/samples?v=20170307&q=' + key,
         method: 'GET',
         headers: {
             Authorization: `Bearer VYDNMLAK5Z74PEDNVJXCOKU7SROGOJIU`,
             'Content-Type': 'application/json',
-        },
-        // body: JSON.stringify(samples),
-    })
-
-
-        .then(res => res.json())
+        }
+    }, function (error, response, body) {
+        if (error) {
+            console.log('Error sending message: ', error);
+            result = "error";
+            return result;
+        } else if (response.body.error) {
+            console.log('Error: ', response.body.error);
+            result = "error";
+            return result;
+        } else {
+            console.log(response);
+            result = "oke";
+            return result;
+        }
+    });
 }
 
 
