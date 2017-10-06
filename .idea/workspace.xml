@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8c0fd527-5667-4e03-89ee-e95c0bdc3c27" name="Default" comment="" />
+    <list default="true" id="8c0fd527-5667-4e03-89ee-e95c0bdc3c27" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+    </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -47,8 +49,8 @@
       <file leaf-file-name="nlp.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/nlp.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-83">
-              <caret line="34" column="47" lean-forward="true" selection-start-line="34" selection-start-column="47" selection-end-line="34" selection-end-column="47" />
+            <state relative-caret-position="186">
+              <caret line="62" column="24" lean-forward="false" selection-start-line="62" selection-start-column="24" selection-end-line="62" selection-end-column="24" />
               <folding>
                 <element signature="e#0#41#0" expanded="false" />
               </folding>
@@ -68,7 +70,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>keykey</find>
       <find>keyIndexAction</find>
       <find>sendMessage</find>
       <find>PIXEL</find>
@@ -98,6 +99,7 @@
       <find>getUserInfo</find>
       <find>respondToTextOrAttacment</find>
       <find>getToken</find>
+      <find>detDefaultAnswer</find>
     </findStrings>
     <replaceStrings>
       <replace>localhost:8080</replace>
@@ -398,12 +400,12 @@
       <workItem from="1506668895791" duration="7821000" />
       <workItem from="1506997652530" duration="105000" />
       <workItem from="1506997799258" duration="600000" />
-      <workItem from="1507290665955" duration="3519000" />
+      <workItem from="1507290665955" duration="5615000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="296814000" />
+    <option name="totallyTimeSpent" value="298910000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1040,8 +1042,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/nlp.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-83">
-          <caret line="34" column="47" lean-forward="true" selection-start-line="34" selection-start-column="47" selection-end-line="34" selection-end-column="47" />
+        <state relative-caret-position="186">
+          <caret line="62" column="24" lean-forward="false" selection-start-line="62" selection-start-column="24" selection-end-line="62" selection-end-column="24" />
           <folding>
             <element signature="e#0#41#0" expanded="false" />
           </folding>
