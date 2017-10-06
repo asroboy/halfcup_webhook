@@ -538,7 +538,7 @@ function keyIndexAction(key, event, action_name, event_name) {
         } else if (key.indexOf('{{') > -1) {
             key = key.replace('{{', "")
             key = key.replace('}}', "")
-            getChatBot(key, event.sender.id, event.recipient.id);
+            nlp.getChatBot(key, event.sender.id, event.recipient.id);
         } else {
             if (key !== "") {
                 getToken(key, event.recipient.id, event.sender.id, false);
