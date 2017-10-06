@@ -543,7 +543,6 @@ function keyIndexAction(key, event, action_name, event_name) {
         }
     }
 }
-}
 
 
 function validateSamples(key) {
