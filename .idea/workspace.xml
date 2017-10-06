@@ -21,21 +21,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="index.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="291">
-              <caret line="540" column="17" lean-forward="false" selection-start-line="540" selection-start-column="17" selection-end-line="540" selection-end-column="17" />
+            <state relative-caret-position="393">
+              <caret line="540" column="63" lean-forward="false" selection-start-line="540" selection-start-column="63" selection-end-line="540" selection-end-column="63" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="nlp.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="nlp.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/nlp.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="187">
-              <caret line="13" column="4" lean-forward="false" selection-start-line="13" selection-start-column="4" selection-end-line="13" selection-end-column="4" />
+              <caret line="13" column="14" lean-forward="false" selection-start-line="13" selection-start-column="4" selection-end-line="13" selection-end-column="14" />
               <folding>
                 <element signature="e#0#41#0" expanded="false" />
               </folding>
@@ -55,7 +55,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>keyIndexAction</find>
       <find>sendMessage</find>
       <find>PIXEL</find>
       <find>getResponseToUserRef</find>
@@ -85,6 +84,7 @@
       <find>getToken</find>
       <find>detDefaultAnswer</find>
       <find>handleMessage</find>
+      <find>{{</find>
     </findStrings>
     <replaceStrings>
       <replace>localhost:8080</replace>
@@ -386,12 +386,12 @@
       <workItem from="1506668895791" duration="7821000" />
       <workItem from="1506997652530" duration="105000" />
       <workItem from="1506997799258" duration="600000" />
-      <workItem from="1507290665955" duration="10249000" />
+      <workItem from="1507290665955" duration="10588000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="303544000" />
+    <option name="totallyTimeSpent" value="303883000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -797,21 +797,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="291">
-          <caret line="540" column="17" lean-forward="false" selection-start-line="540" selection-start-column="17" selection-end-line="540" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/nlp.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
-          <caret line="13" column="4" lean-forward="false" selection-start-line="13" selection-start-column="4" selection-end-line="13" selection-end-column="4" />
+          <caret line="13" column="14" lean-forward="false" selection-start-line="13" selection-start-column="4" selection-end-line="13" selection-end-column="14" />
           <folding>
             <element signature="e#0#41#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="393">
+          <caret line="540" column="63" lean-forward="false" selection-start-line="540" selection-start-column="63" selection-end-line="540" selection-end-column="63" />
+          <folding />
         </state>
       </provider>
     </entry>

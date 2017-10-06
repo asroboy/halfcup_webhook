@@ -9,10 +9,10 @@ module.exports = {
         res.send(halo());
     },
     handleMessage: function (event, message) {
-        handleMessage(event, message)
+        handleMessage(event, message);
     },
     getChatBot: function (key, sender, recipient) {
-        getChatBot(key, sender, recipient)
+        getChatBot(key, sender, recipient);
     }
 };
 

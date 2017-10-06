@@ -535,10 +535,10 @@ function keyIndexAction(key, event, action_name, event_name) {
                     console.log("GET RESPONSE TO USER : ", resp);
                 }
             }
-        } else if (key.indexOf("{") > -1) {
-            key = key.replace("{{", "")
-            key = key.replace("}}", "")
-            getChatBot(key);
+        } else if (key.indexOf('{{') > -1) {
+            key = key.replace('{{', "")
+            key = key.replace('}}', "")
+            getChatBot(key, event.sender.id, event.recipient.id);
         } else {
             if (key !== "") {
                 getToken(key, event.recipient.id, event.sender.id, false);
@@ -573,8 +573,6 @@ function validateSamples(key) {
         }
     });
 }
-
-
 
 
 app.get('/callback', function (req, res) {
