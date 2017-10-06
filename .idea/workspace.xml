@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="8c0fd527-5667-4e03-89ee-e95c0bdc3c27" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.js" afterPath="$PROJECT_DIR$/index.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nlp.js" afterPath="$PROJECT_DIR$/nlp.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -20,23 +21,23 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="index.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
-              <caret line="538" column="30" lean-forward="true" selection-start-line="538" selection-start-column="30" selection-end-line="538" selection-end-column="30" />
+            <state relative-caret-position="291">
+              <caret line="540" column="17" lean-forward="false" selection-start-line="540" selection-start-column="17" selection-end-line="540" selection-end-column="17" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="nlp.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="nlp.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/nlp.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1228">
-              <caret line="274" column="42" lean-forward="false" selection-start-line="274" selection-start-column="38" selection-end-line="274" selection-end-column="42" />
+            <state relative-caret-position="187">
+              <caret line="13" column="4" lean-forward="false" selection-start-line="13" selection-start-column="4" selection-end-line="13" selection-end-column="4" />
               <folding>
-                <marker date="1507323501136" expanded="false" signature="0:41" ph="/** Created by Ridho on 9/28/2017. ...*/" />
+                <element signature="e#0#41#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -78,12 +79,12 @@
       <find>respond</find>
       <find>isChatBot</find>
       <find>isGroup</find>
-      <find>handleMessage</find>
       <find>for</find>
       <find>getUserInfo</find>
       <find>respondToTextOrAttacment</find>
       <find>getToken</find>
       <find>detDefaultAnswer</find>
+      <find>handleMessage</find>
     </findStrings>
     <replaceStrings>
       <replace>localhost:8080</replace>
@@ -99,8 +100,8 @@
       <list>
         <option value="$PROJECT_DIR$/test.html" />
         <option value="$PROJECT_DIR$/node_modules/email.html" />
-        <option value="$PROJECT_DIR$/nlp.js" />
         <option value="$PROJECT_DIR$/witapi.js" />
+        <option value="$PROJECT_DIR$/nlp.js" />
         <option value="$PROJECT_DIR$/index.js" />
       </list>
     </option>
@@ -385,12 +386,12 @@
       <workItem from="1506668895791" duration="7821000" />
       <workItem from="1506997652530" duration="105000" />
       <workItem from="1506997799258" duration="600000" />
-      <workItem from="1507290665955" duration="9642000" />
+      <workItem from="1507290665955" duration="10249000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="302937000" />
+    <option name="totallyTimeSpent" value="303544000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -796,21 +797,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/nlp.js">
+    <entry file="file://$PROJECT_DIR$/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1228">
-          <caret line="274" column="42" lean-forward="false" selection-start-line="274" selection-start-column="38" selection-end-line="274" selection-end-column="42" />
-          <folding>
-            <marker date="1507323501136" expanded="false" signature="0:41" ph="/** Created by Ridho on 9/28/2017. ...*/" />
-          </folding>
+        <state relative-caret-position="291">
+          <caret line="540" column="17" lean-forward="false" selection-start-line="540" selection-start-column="17" selection-end-line="540" selection-end-column="17" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.js">
+    <entry file="file://$PROJECT_DIR$/nlp.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="538" column="30" lean-forward="true" selection-start-line="538" selection-start-column="30" selection-end-line="538" selection-end-column="30" />
-          <folding />
+        <state relative-caret-position="187">
+          <caret line="13" column="4" lean-forward="false" selection-start-line="13" selection-start-column="4" selection-end-line="13" selection-end-column="4" />
+          <folding>
+            <element signature="e#0#41#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>

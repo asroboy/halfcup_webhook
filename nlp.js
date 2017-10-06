@@ -10,6 +10,9 @@ module.exports = {
     },
     handleMessage: function (event, message) {
         handleMessage(event, message)
+    },
+    getChatBot: function (key, sender, recipient) {
+        getChatBot(key, sender, recipient)
     }
 };
 
