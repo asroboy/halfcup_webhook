@@ -52,7 +52,7 @@ function handleMessage(event, message) {
         getChatBot(message.text, event.recipient.id, event.sender.id);
         // sendMessage(event.recipient.id, reply, token);
     } else if (intent && intent.confidence > 0.8) {
-        getToken(message.nlp.intent[0].value, event.recipient.id, event.sender.id, false)
+        getToken(message.nlp.entities['intent'][0].value, event.recipient.id, event.sender.id, false)
     } else {
         //getDefaultAnswer://halfcup.com/social_rebates_system/wapi/read?token=1234567890&api_name=DEFAULT_ANSWER&page_id=228431964255924
         detDefaultAnswer(event.recipient.id, event.sender.id);
