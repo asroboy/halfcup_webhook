@@ -56,7 +56,7 @@ function handleMessage(event, message) {
         getToken(message.nlp.entities['intent'][0].value, event.recipient.id, event.sender.id, false)
 
     } else if (datetime && datetime.confidence > 0.8) {
-        var msg = 'Today is ' + message.nlp.entities['intent'][0].value;
+        var msg = 'Today is ' + message.nlp.entities['datetime'][0].value;
         getToken(msg, event.recipient.id, event.sender.id, false)
     } else {
         //getDefaultAnswer://halfcup.com/social_rebates_system/wapi/read?token=1234567890&api_name=DEFAULT_ANSWER&page_id=228431964255924
