@@ -46,13 +46,23 @@ function handleMessage(event, message) {
     // check greeting is here and is confident
     const greetings = firstEntity(message.nlp, 'greetings');
     const intent = firstEntity(message.nlp, 'intent');
+    const datetime
+:
+    = firstEntity(message.nlp, 'datetime:');
     // if (greeting && greeting.confidence > 0.8) {
     if (greetings) {
-        getToken("Hi, nice to see you", event.recipient.id, event.sender.id, false);
-        // getChatBot(message.text, event.recipient.id, event.sender.id);
+        // getToken("Hi, nice to see you", event.recipient.id, event.sender.id, false);
+        getChatBot(message.text, event.recipient.id, event.sender.id);
         // sendMessage(event.recipient.id, reply, token);
     } else if (intent && intent.confidence > 0.8) {
         getToken(message.nlp.entities['intent'][0].value, event.recipient.id, event.sender.id, false)
+
+    } else if (datetime && datetime.confidence > 0.8) {
+        if(grain == 'day'){
+            var msg = 'Today is ' + message.nlp.entities['intent'][0].value;
+            getToken(msg, event.recipient.id, event.sender.id, false)
+        }
+
     } else {
         //getDefaultAnswer://halfcup.com/social_rebates_system/wapi/read?token=1234567890&api_name=DEFAULT_ANSWER&page_id=228431964255924
         detDefaultAnswer(event.recipient.id, event.sender.id);
