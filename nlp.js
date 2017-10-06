@@ -44,12 +44,12 @@ function isChatBot(jsonMessage, index) {
 
 function handleMessage(event, message) {
     // check greeting is here and is confident
-    const greeting = firstEntity(message.nlp, 'greetings');
+    const greetings = firstEntity(message.nlp, 'greetings');
     const intent = firstEntity(message.nlp, 'intent');
     // if (greeting && greeting.confidence > 0.8) {
-    if (greeting) {
-        //getToken("Hi, im testing", event.recipient.id, event.sender.id, false);
-        getChatBot(message.text, event.recipient.id, event.sender.id);
+    if (greetings) {
+        getToken("Hi, nice to see you", event.recipient.id, event.sender.id, false);
+        // getChatBot(message.text, event.recipient.id, event.sender.id);
         // sendMessage(event.recipient.id, reply, token);
     } else if (intent && intent.confidence > 0.8) {
         getToken(message.nlp.entities['intent'][0].value, event.recipient.id, event.sender.id, false)
