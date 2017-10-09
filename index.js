@@ -506,9 +506,14 @@ function keyIndexAction(key, event, action_name, event_name) {
 
                 }
             }
+        }else if (reply_text.indexOf('{{') > -1) {
+            reply_text = reply_text.replace('{{', "")
+            reply_text = reply_text.replace('}}', "")
+            nlp.getChatBot(reply_text, event.recipient.id, event.sender.id);
         } else {
-            if (reply_text !== "")
+            if (reply_text !== "") {
                 getToken(reply_text, event.recipient.id, event.sender.id, false);
+            }
         }
 
     } else {
