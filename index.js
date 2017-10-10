@@ -733,6 +733,7 @@ function getPageAccessTokenForLead(sender, message, leadgenId) {
                     var recipientId = obj.messenger_data.adminMessengerId;
                     var longLiveToken = "EAABqJD84pmIBAP4xtPj3NTLfCzWp17iZByoFndpbnEq79ZAOGs7XdF5YMO5i1GgQ3zHex200f2uvLHWqzFxRk0RrC1jV7RZBZAqtU2mLluefhmexnX7SSnTP63Hy2x3AAvv5FgkU48FE95fpj7c8ZBREHJIVBYg4ZD";
                     var urlGetLead = "https://graph.facebook.com/v2.9/" + leadgenId + "?access_token=" + longLiveToken;
+                    console.log("LEAD URL " + urlGetLead);
                     getLead(urlGetLead, token, message, recipientId)
                     return token;
 
