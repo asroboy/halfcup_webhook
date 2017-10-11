@@ -52,14 +52,10 @@ app.post('/webhook', function (req, res) {
                 // if (pageId == 444444444444)
                 // var pageId = 228431964255924;
 
-
                 var message = "New lead recieved :" +
                     "\n=====================\n";
-                getPageAccessTokenForLead(pageId, message, leadgenId);
-
-
+                getPageIdForLead(pageId, message, leadgenId, formId);
             }
-
         }
 
         if (events) {
@@ -506,7 +502,7 @@ function keyIndexAction(key, event, action_name, event_name) {
 
                 }
             }
-        }else if (reply_text.indexOf('{{') > -1) {
+        } else if (reply_text.indexOf('{{') > -1) {
             reply_text = reply_text.replace('{{', "")
             reply_text = reply_text.replace('}}', "")
             nlp.getChatBot(reply_text, event.recipient.id, event.sender.id);
@@ -634,7 +630,6 @@ function helooTest(callback) {
 
 }
 
-
 function pixel(event_name, name, key, messenger_id, page_id) {
     var url = 'http://halfcup.com/social_rebates_system/pixel/index?name=' + name + '&event_name=' + event_name + '&key=' + key + '&messenger_id=' + messenger_id + '&page_id=' + page_id;
 
@@ -711,6 +706,36 @@ function getUserInfo(user_msg_id, page_token) {
         }
     });
 }
+
+function getPageIdForLead(pageId, message, leadgenId, formId) {
+    var url = 'http://halfcup.com/social_rebates_system/wapi/read?api_name=LEAD_FORM_PAGE_ID&page_id=' + pageId + '&token=1234567890&lead_form_id=' + formId;
+    console.log('url', url);
+
+    request({
+            url: url,
+            method: 'GET'
+        }, function (error, response, body) {
+            if (error) {
+                console.log('Error sending message for sender ' + pageId + ': ', error);
+            } else if (response.body.error) {
+                console.log('Error for sender ' + pageId + ': ', response.body.error);
+            } else {
+                var obj = JSON.parse(body);
+                console.log('json: ', obj);
+                var code = obj.code;
+                if (code == 1) {
+                    getPageAccessTokenForLead(obj.pageId, message, leadgenId)
+                }
+                if (code == 0) {
+                    console.log('TOKEN NOT FOUND');
+                    return "";
+                }
+
+            }
+        }
+    );
+}
+
 
 function getPageAccessTokenForLead(sender, message, leadgenId) {
     var url = 'http://halfcup.com/social_rebates_system/api/getPageMessengerToken?messenger_id=' + sender;
