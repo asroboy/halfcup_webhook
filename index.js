@@ -54,7 +54,10 @@ app.post('/webhook', function (req, res) {
 
                 var message = "New lead recieved :" +
                     "\n=====================\n";
-                getPageIdForLead(pageId, message, leadgenId, formId);
+
+                var emailMessage = "New lead recieved :" +
+                    "<br> ===================== <br>";
+                getPageIdForLead(pageId, message, leadgenId, formId, emailMessage);
             }
         }
 
@@ -707,7 +710,7 @@ function getUserInfo(user_msg_id, page_token) {
     });
 }
 
-function getPageIdForLead(pageId, message, leadgenId, formId) {
+function getPageIdForLead(pageId, message, leadgenId, formId, emailMessage) {
     var url = 'http://halfcup.com/social_rebates_system/wapi/read?api_name=LEAD_FORM_PAGE_ID&page_id=' + pageId + '&token=1234567890&lead_form_id=' + formId;
     console.log('url', url);
 
@@ -724,7 +727,7 @@ function getPageIdForLead(pageId, message, leadgenId, formId) {
                 console.log('json: ', obj);
                 var code = obj.code;
                 if (code == 1) {
-                    getPageAccessTokenForLead(obj.pageId, message, leadgenId)
+                    getPageAccessTokenForLead(obj.pageId, message, leadgenId, emailMessage)
                 }
                 if (code == 0) {
                     console.log('TOKEN NOT FOUND');
@@ -737,7 +740,7 @@ function getPageIdForLead(pageId, message, leadgenId, formId) {
 }
 
 
-function getPageAccessTokenForLead(sender, message, leadgenId) {
+function getPageAccessTokenForLead(sender, message, leadgenId, emailMessage) {
     var url = 'http://halfcup.com/social_rebates_system/api/getPageMessengerToken?messenger_id=' + sender;
     console.log('url', url);
 
@@ -759,7 +762,7 @@ function getPageAccessTokenForLead(sender, message, leadgenId) {
                     var longLiveToken = "EAABqJD84pmIBAP4xtPj3NTLfCzWp17iZByoFndpbnEq79ZAOGs7XdF5YMO5i1GgQ3zHex200f2uvLHWqzFxRk0RrC1jV7RZBZAqtU2mLluefhmexnX7SSnTP63Hy2x3AAvv5FgkU48FE95fpj7c8ZBREHJIVBYg4ZD";
                     var urlGetLead = "https://graph.facebook.com/v2.9/" + leadgenId + "?access_token=" + longLiveToken;
                     console.log("LEAD URL " + urlGetLead);
-                    getLead(urlGetLead, token, message, recipientId, sender)
+                    getLead(urlGetLead, token, message, recipientId, sender, emailMessage)
                     return token;
 
                 }
@@ -774,7 +777,7 @@ function getPageAccessTokenForLead(sender, message, leadgenId) {
 }
 
 
-function getLead(url, token, message, recipientId, sender) {
+function getLead(url, token, message, recipientId, sender, emailMessage) {
     console.log("get lead url : " + url);
     request({
             url: url,
@@ -804,7 +807,7 @@ function getLead(url, token, message, recipientId, sender) {
                     + "\ntime : " + createdTime +
                     "\n" + mData;
 
-                var emailMessage = message + "<br>id : " + id + "<br>time : " + createdTime + "<br>" + emailData;
+                emailMessage = emailMessage + "<br>id : " + id + "<br>time : " + createdTime + "<br>" + emailData;
 
                 var msg = {"text": message};
                 console.log("LEAD FROM RECIEVED ==== >" + message);
@@ -1012,13 +1015,13 @@ function sendEmailForLead(message, page_id) {
             //     "<td>" + JSON.parse(body).name + "</td>" +
             //     " </tr> ";
 
-            message = "PAGE : " + JSON.parse(body).name + "<br>" + message;
+            message = "PAGE : " + JSON.parse(body).name + " <br> " + message;
             //brotherho@halfcup.com
 
             var url = 'http://halfcup.com/social_rebates_system/api/sendEmail?' +
                 'sender=noreply@halfcup.com' +
                 '&receiver=asrofiridho@gmail.com' +
-                '&subject=NEW LEAD RECIEVED' + JSON.parse(body).name +
+                '&subject=NEW LEAD RECIEVED : ' + JSON.parse(body).name +
                 '&body=' + message;
             console.log('url', url);
             request({
