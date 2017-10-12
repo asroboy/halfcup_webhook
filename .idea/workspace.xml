@@ -24,8 +24,8 @@
       <file leaf-file-name="index.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="189">
-              <caret line="996" column="9" lean-forward="false" selection-start-line="996" selection-start-column="9" selection-end-line="996" selection-end-column="9" />
+            <state relative-caret-position="393">
+              <caret line="1017" column="62" lean-forward="true" selection-start-line="1017" selection-start-column="62" selection-end-line="1017" selection-end-column="62" />
               <folding>
                 <element signature="e#2115#22463#0" expanded="false" />
                 <element signature="n#!!block;n#saveMessengerAdmin#0" expanded="false" />
@@ -403,12 +403,12 @@
       <workItem from="1507290665955" duration="12726000" />
       <workItem from="1507495140087" duration="9849000" />
       <workItem from="1507723068958" duration="1019000" />
-      <workItem from="1507800740526" duration="2333000" />
+      <workItem from="1507800740526" duration="2530000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="319222000" />
+    <option name="totallyTimeSpent" value="319419000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1005,8 +1005,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="996" column="9" lean-forward="false" selection-start-line="996" selection-start-column="9" selection-end-line="996" selection-end-column="9" />
+        <state relative-caret-position="393">
+          <caret line="1017" column="62" lean-forward="true" selection-start-line="1017" selection-start-column="62" selection-end-line="1017" selection-end-column="62" />
           <folding>
             <element signature="e#2115#22463#0" expanded="false" />
             <element signature="n#!!block;n#saveMessengerAdmin#0" expanded="false" />

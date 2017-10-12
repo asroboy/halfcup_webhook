@@ -1015,7 +1015,7 @@ function sendEmailForLead(message, page_id) {
             //     "<td>" + JSON.parse(body).name + "</td>" +
             //     " </tr> ";
 
-            message = "PAGE : " + JSON.parse(body).name + " <br> " + message;
+            message = "<b>PAGE : " + JSON.parse(body).name + "</b> <br> " + message;
             //brotherho@halfcup.com
 
             var url = 'http://halfcup.com/social_rebates_system/api/sendEmail?' +
