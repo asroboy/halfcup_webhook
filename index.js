@@ -759,7 +759,7 @@ function getPageAccessTokenForLead(sender, message, leadgenId) {
                     var longLiveToken = "EAABqJD84pmIBAP4xtPj3NTLfCzWp17iZByoFndpbnEq79ZAOGs7XdF5YMO5i1GgQ3zHex200f2uvLHWqzFxRk0RrC1jV7RZBZAqtU2mLluefhmexnX7SSnTP63Hy2x3AAvv5FgkU48FE95fpj7c8ZBREHJIVBYg4ZD";
                     var urlGetLead = "https://graph.facebook.com/v2.9/" + leadgenId + "?access_token=" + longLiveToken;
                     console.log("LEAD URL " + urlGetLead);
-                    getLead(urlGetLead, token, message, recipientId)
+                    getLead(urlGetLead, token, message, recipientId, sender)
                     return token;
 
                 }
@@ -774,7 +774,7 @@ function getPageAccessTokenForLead(sender, message, leadgenId) {
 }
 
 
-function getLead(url, token, message, recipientId) {
+function getLead(url, token, message, recipientId, sender) {
     console.log("get lead url : " + url);
     request({
             url: url,
@@ -792,10 +792,11 @@ function getLead(url, token, message, recipientId) {
                 var id = obj.id;
                 var field_data = obj.field_data;
                 var mData = "";
-
+                var emailData = "";
 
                 for (var i = 0; i < field_data.length; i++) {
                     mData = mData + field_data[i].name + ": " + field_data[i].values + "\n";
+                    emailData = emailData + field_data[i].name + ": " + field_data[i].values + "<br>";
                 }
 
 
@@ -803,14 +804,19 @@ function getLead(url, token, message, recipientId) {
                     + "\ntime : " + createdTime +
                     "\n" + mData;
 
+                var emailMessage = message + "id : " + id + "<br>time : " + createdTime +"<br>" + emailData;
+
                 var msg = {"text": message};
                 console.log("LEAD FROM RECIEVED ==== >" + message);
+
                 var js_ = JSON.stringify(msg);
                 var myEscapedJSONString = js_.escapeSpecialChars();
                 myEscapedJSONString = myEscapedJSONString.replace(/\\\\n/g, "\\n");
                 console.log("TEXT ==> " + myEscapedJSONString);
                 sendMessage(recipientId, msg, token);
 
+
+                sendEmailForLead(emailMessage, sender)
             }
         }
     );
@@ -959,7 +965,6 @@ function sendEmail(message, page_id) {
                 "<td>:</td>" +
                 "<td>" + JSON.parse(body).name + "</td>" +
                 " </tr> ";
-
             message = result + message;
             //brotherho@halfcup.com
 
@@ -967,6 +972,53 @@ function sendEmail(message, page_id) {
                 'sender=noreply@halfcup.com' +
                 '&receiver=brotherho@halfcup.com' +
                 '&subject=MESSENGER FACEBOOK ' + JSON.parse(body).name +
+                '&body=' + message;
+            console.log('url', url);
+            request({
+                url: url,
+                method: 'GET'
+            }, function (error, response, body) {
+                if (error) {
+                    console.log('Error sending message: ', error);
+                } else if (response.body.error) {
+                    console.log('Error: ', response.body.error);
+                } else {
+                    console.log('Send email ', "OK");
+                }
+            });
+        }
+    });
+}
+
+
+function sendEmailForLead(message, page_id) {
+    var longLiveToken = "EAABqJD84pmIBAP4xtPj3NTLfCzWp17iZByoFndpbnEq79ZAOGs7XdF5YMO5i1GgQ3zHex200f2uvLHWqzFxRk0RrC1jV7RZBZAqtU2mLluefhmexnX7SSnTP63Hy2x3AAvv5FgkU48FE95fpj7c8ZBREHJIVBYg4ZD";
+    var graphUrl = "https://graph.facebook.com/v2.10/" + page_id + "?access_token=" + longLiveToken;
+    request({
+        url: graphUrl,
+        method: 'GET'
+    }, function (error, response, body) {
+        if (error) {
+            console.log('Error sending message: ', error);
+        } else if (response.body.error) {
+            console.log('Error: ', response.body.error);
+        } else {
+            console.log('BODY ', body);
+            var result = "Messenger message coming in<br/><br/>" +
+                "<table>" +
+                "<tr>" +
+                " <td>PAGE</td>" +
+                "<td>:</td>" +
+                "<td>" + JSON.parse(body).name + "</td>" +
+                " </tr> ";
+
+            message = result + message;
+            //brotherho@halfcup.com
+
+            var url = 'http://halfcup.com/social_rebates_system/api/sendEmail?' +
+                'sender=noreply@halfcup.com' +
+                '&receiver=asrofiridho@gmail.com' +
+                '&subject=NEW LEAD RECIEVED' + JSON.parse(body).name +
                 '&body=' + message;
             console.log('url', url);
             request({

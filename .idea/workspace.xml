@@ -24,8 +24,8 @@
       <file leaf-file-name="index.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-910">
-              <caret line="52" column="48" lean-forward="false" selection-start-line="52" selection-start-column="48" selection-end-line="52" selection-end-column="48" />
+            <state relative-caret-position="308">
+              <caret line="1015" column="35" lean-forward="true" selection-start-line="1015" selection-start-column="35" selection-end-line="1015" selection-end-column="35" />
               <folding>
                 <element signature="e#1986#22334#0" expanded="false" />
                 <element signature="n#!!block;n#saveMessengerAdmin#0" expanded="false" />
@@ -39,6 +39,7 @@
                 <element signature="n#!!block;n#pixel#0" expanded="false" />
                 <element signature="n#!!block;n#logAction#0" expanded="false" />
                 <element signature="n#!!block;n#getUserInfo#0" expanded="false" />
+                <element signature="n#!!block;n#getToken#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -157,7 +158,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -173,6 +173,7 @@
         </subPane>
       </pane>
       <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -400,12 +401,14 @@
       <workItem from="1506997652530" duration="105000" />
       <workItem from="1506997799258" duration="600000" />
       <workItem from="1507290665955" duration="12726000" />
-      <workItem from="1507495140087" duration="7618000" />
+      <workItem from="1507495140087" duration="9849000" />
+      <workItem from="1507723068958" duration="1019000" />
+      <workItem from="1507800740526" duration="999000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="313639000" />
+    <option name="totallyTimeSpent" value="317888000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -468,6 +471,7 @@
             <element signature="n#!!block;n#pixel#0" expanded="false" />
             <element signature="n#!!block;n#logAction#0" expanded="false" />
             <element signature="n#!!block;n#getUserInfo#0" expanded="false" />
+            <element signature="n#!!block;n#getToken#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -503,6 +507,7 @@
             <element signature="n#!!block;n#pixel#0" expanded="false" />
             <element signature="n#!!block;n#logAction#0" expanded="false" />
             <element signature="n#!!block;n#getUserInfo#0" expanded="false" />
+            <element signature="n#!!block;n#getToken#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -538,6 +543,7 @@
             <element signature="n#!!block;n#pixel#0" expanded="false" />
             <element signature="n#!!block;n#logAction#0" expanded="false" />
             <element signature="n#!!block;n#getUserInfo#0" expanded="false" />
+            <element signature="n#!!block;n#getToken#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -573,6 +579,7 @@
             <element signature="n#!!block;n#pixel#0" expanded="false" />
             <element signature="n#!!block;n#logAction#0" expanded="false" />
             <element signature="n#!!block;n#getUserInfo#0" expanded="false" />
+            <element signature="n#!!block;n#getToken#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -608,6 +615,7 @@
             <element signature="n#!!block;n#pixel#0" expanded="false" />
             <element signature="n#!!block;n#logAction#0" expanded="false" />
             <element signature="n#!!block;n#getUserInfo#0" expanded="false" />
+            <element signature="n#!!block;n#getToken#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -643,6 +651,7 @@
             <element signature="n#!!block;n#pixel#0" expanded="false" />
             <element signature="n#!!block;n#logAction#0" expanded="false" />
             <element signature="n#!!block;n#getUserInfo#0" expanded="false" />
+            <element signature="n#!!block;n#getToken#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -678,6 +687,7 @@
             <element signature="n#!!block;n#pixel#0" expanded="false" />
             <element signature="n#!!block;n#logAction#0" expanded="false" />
             <element signature="n#!!block;n#getUserInfo#0" expanded="false" />
+            <element signature="n#!!block;n#getToken#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -713,6 +723,7 @@
             <element signature="n#!!block;n#pixel#0" expanded="false" />
             <element signature="n#!!block;n#logAction#0" expanded="false" />
             <element signature="n#!!block;n#getUserInfo#0" expanded="false" />
+            <element signature="n#!!block;n#getToken#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -748,6 +759,7 @@
             <element signature="n#!!block;n#pixel#0" expanded="false" />
             <element signature="n#!!block;n#logAction#0" expanded="false" />
             <element signature="n#!!block;n#getUserInfo#0" expanded="false" />
+            <element signature="n#!!block;n#getToken#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -783,6 +795,7 @@
             <element signature="n#!!block;n#pixel#0" expanded="false" />
             <element signature="n#!!block;n#logAction#0" expanded="false" />
             <element signature="n#!!block;n#getUserInfo#0" expanded="false" />
+            <element signature="n#!!block;n#getToken#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -825,6 +838,7 @@
             <element signature="n#!!block;n#pixel#0" expanded="false" />
             <element signature="n#!!block;n#logAction#0" expanded="false" />
             <element signature="n#!!block;n#getUserInfo#0" expanded="false" />
+            <element signature="n#!!block;n#getToken#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -867,6 +881,7 @@
             <element signature="n#!!block;n#pixel#0" expanded="false" />
             <element signature="n#!!block;n#logAction#0" expanded="false" />
             <element signature="n#!!block;n#getUserInfo#0" expanded="false" />
+            <element signature="n#!!block;n#getToken#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -909,6 +924,7 @@
             <element signature="n#!!block;n#pixel#0" expanded="false" />
             <element signature="n#!!block;n#logAction#0" expanded="false" />
             <element signature="n#!!block;n#getUserInfo#0" expanded="false" />
+            <element signature="n#!!block;n#getToken#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -988,8 +1004,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-910">
-          <caret line="52" column="48" lean-forward="false" selection-start-line="52" selection-start-column="48" selection-end-line="52" selection-end-column="48" />
+        <state relative-caret-position="308">
+          <caret line="1015" column="35" lean-forward="true" selection-start-line="1015" selection-start-column="35" selection-end-line="1015" selection-end-column="35" />
           <folding>
             <element signature="e#1986#22334#0" expanded="false" />
             <element signature="n#!!block;n#saveMessengerAdmin#0" expanded="false" />
@@ -1003,6 +1019,7 @@
             <element signature="n#!!block;n#pixel#0" expanded="false" />
             <element signature="n#!!block;n#logAction#0" expanded="false" />
             <element signature="n#!!block;n#getUserInfo#0" expanded="false" />
+            <element signature="n#!!block;n#getToken#0" expanded="false" />
           </folding>
         </state>
       </provider>
