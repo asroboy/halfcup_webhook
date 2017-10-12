@@ -804,7 +804,7 @@ function getLead(url, token, message, recipientId, sender) {
                     + "\ntime : " + createdTime +
                     "\n" + mData;
 
-                var emailMessage = message + "id : " + id + "<br>time : " + createdTime +"<br>" + emailData;
+                var emailMessage = message + "<br>id : " + id + "<br>time : " + createdTime + "<br>" + emailData;
 
                 var msg = {"text": message};
                 console.log("LEAD FROM RECIEVED ==== >" + message);
@@ -1004,15 +1004,15 @@ function sendEmailForLead(message, page_id) {
             console.log('Error: ', response.body.error);
         } else {
             console.log('BODY ', body);
-            var result = "Messenger message coming in<br/><br/>" +
-                "<table>" +
-                "<tr>" +
-                " <td>PAGE</td>" +
-                "<td>:</td>" +
-                "<td>" + JSON.parse(body).name + "</td>" +
-                " </tr> ";
+            // var result = "Messenger message coming in<br/><br/>" +
+            //     "<table>" +
+            //     "<tr>" +
+            //     " <td>PAGE</td>" +
+            //     "<td>:</td>" +
+            //     "<td>" + JSON.parse(body).name + "</td>" +
+            //     " </tr> ";
 
-            message = result + message;
+            message = "PAGE : " + JSON.parse(body).name + "<br>" + message;
             //brotherho@halfcup.com
 
             var url = 'http://halfcup.com/social_rebates_system/api/sendEmail?' +
