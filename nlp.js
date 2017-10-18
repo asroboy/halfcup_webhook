@@ -25,9 +25,9 @@ function halo() {
 
 
 function firstEntity(nlp, name) {
-    console.log('nlp', nlp);
-    console.log('nlp.entities', nlp.entities);
-    console.log('nlp.entities[' + name + ']', nlp.entities[name]);
+    // console.log('nlp', nlp);
+    // console.log('nlp.entities', nlp.entities);
+    // console.log('nlp.entities[' + name + ']', nlp.entities[name]);
     //console.log('nlp.entities[' + name + '][0]', JSON.parse(nlp.entities).name[0]);
     // && nlp.entities.get(name)[0]
     return nlp && nlp.entities && nlp.entities[name] && nlp.entities[name][0];
@@ -52,13 +52,16 @@ function handleMessage(event, message) {
     const datetime = firstEntity(message.nlp, 'datetime');
     // if (greeting && greeting.confidence > 0.8) {
     if (greetings) {
+        console.log('greetings ', greetings);
         // getToken("Hi, nice to see you", event.recipient.id, event.sender.id, false);
         getChatBot(message.text, event.recipient.id, event.sender.id);
         // sendMessage(event.recipient.id, reply, token);
     } else if (intent && intent.confidence > 0.8) {
+        console.log('intent ', intent);
         getToken(message.nlp.entities['intent'][0].value, event.recipient.id, event.sender.id, false)
 
     } else if (datetime && datetime.confidence > 0.8) {
+        console.log('datetime ', datetime);
         var msg = 'Today is ' + message.nlp.entities['datetime'][0].value;
         getToken(msg, event.recipient.id, event.sender.id, false)
     } else {
