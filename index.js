@@ -275,6 +275,7 @@ app.post('/webhook', function (req, res) {
                                 } else {
                                     if (event.message.text) {
                                         var request_key = event.message.text;
+                                        nlp.getMerchantId(event.recipient.id, event.sender.id, request_key);
                                         console.log("===== event.message.text ========");
                                         // getResponseToUser(request_key, event.sender.id, event.recipient.id);
                                     }

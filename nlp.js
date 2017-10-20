@@ -6,14 +6,22 @@ module.exports = {
     foo: function (res) {
         // whatever
         console.log("From nlp");
-        res.send(halo());
+        getMerchantId('912070908830063', '');
+        // getAiToken();
     },
     handleMessage: function (event, message) {
         handleMessage(event, message);
     },
     getChatBot: function (key, sender, recipient) {
         getChatBot(key, sender, recipient);
-    }
+    },
+    getMerchantId: function (pageId, recipient) {
+        getMerchantId(pageId, recipient);
+    },
+    /*,
+     getAiKey: function (sender) {
+     getAiKey(sender);
+     }*/
 };
 
 
@@ -22,7 +30,6 @@ var request = require('request');
 function halo() {
     return "halo polisi";
 }
-
 
 function firstEntity(nlp, name) {
     // console.log('nlp', nlp);
@@ -47,29 +54,33 @@ function isChatBot(jsonMessage, index) {
 
 function handleMessage(event, message) {
     // check greeting is here and is confident
-    const greetings = firstEntity(message.nlp, 'greetings');
-    const intent = firstEntity(message.nlp, 'intent');
-    const datetime = firstEntity(message.nlp, 'datetime');
-    // if (greeting && greeting.confidence > 0.8) {
-    if (greetings) {
-        console.log('greetings ', greetings);
-        // getToken("Hi, nice to see you", event.recipient.id, event.sender.id, false);
-        getChatBot(message.text, event.recipient.id, event.sender.id);
-        // sendMessage(event.recipient.id, reply, token);
-    } else if (intent && intent.confidence > 0.8) {
-        console.log('intent ', intent);
-        getToken(message.nlp.entities['intent'][0].value, event.recipient.id, event.sender.id, false)
+    // const greetings = firstEntity(message.nlp, 'greetings');
+    // const intent = firstEntity(message.nlp, 'intent');
+    // const datetime = firstEntity(message.nlp, 'datetime');
+    // // if (greeting && greeting.confidence > 0.8) {
+    // if (greetings) {
+    //     console.log('greetings ', greetings);
+    //     // getToken("Hi, nice to see you", event.recipient.id, event.sender.id, false);
+    //     getChatBot(message.text, event.recipient.id, event.sender.id);
+    //     // sendMessage(event.recipient.id, reply, token);
+    // } else if (intent && intent.confidence > 0.8) {
+    //     console.log('intent ', intent);
+    //     getToken(message.nlp.entities['intent'][0].value, event.recipient.id, event.sender.id, false)
+    //
+    // } else if (datetime && datetime.confidence > 0.8) {
+    //     console.log('datetime ', datetime);
+    //     var msg = 'Today is ' + message.nlp.entities['datetime'][0].value;
+    //     getToken(msg, event.recipient.id, event.sender.id, false)
+    // } else {
+    //     //getDefaultAnswer://halfcup.com/social_rebates_system/wapi/read?token=1234567890&api_name=DEFAULT_ANSWER&page_id=228431964255924
+    //     getDefaultAnswer(event.recipient.id, event.sender.id);
+    //     // default logic
+    //
+    // }
 
-    } else if (datetime && datetime.confidence > 0.8) {
-        console.log('datetime ', datetime);
-        var msg = 'Today is ' + message.nlp.entities['datetime'][0].value;
-        getToken(msg, event.recipient.id, event.sender.id, false)
-    } else {
-        //getDefaultAnswer://halfcup.com/social_rebates_system/wapi/read?token=1234567890&api_name=DEFAULT_ANSWER&page_id=228431964255924
-        getDefaultAnswer(event.recipient.id, event.sender.id);
-        // default logic
-
-    }
+    var pageId = event.recipient.id;
+    var userId = event.sender.id;
+    getMerchantId(pageId, userId, message.text);
 }
 
 function getDefaultAnswer(sender, recipient) {
@@ -96,7 +107,113 @@ function getDefaultAnswer(sender, recipient) {
         }
     );
 }
+//==============
 
+function getMerchantId(pageId, recipient, text) {
+    var url = 'http://halfcup.com/social_rebates_system/wapi/read?api_name=GET_RESTAURANT&token=1234567890&page_id=' + pageId;
+    console.log('url', url);
+    request({
+            url: url,
+            method: 'GET'
+        }, function (error, response, body) {
+            if (error) {
+                console.log('Error : ', error);
+            } else if (response.body.error) {
+                console.log('Error: ', response.body.error);
+            } else {
+                var obj = JSON.parse(body);
+                console.log('obj: ', obj);
+                if (obj.restaurant_id !== null)
+                    getAiToken(pageId, recipient, recipient, obj.restaurant_id, text);
+            }
+        }
+    );
+}
+
+function getAiToken(sender, recipient, restaurantId, text) {
+    var url = 'http://aileadsbooster.com/backend/getEnvironment?page_id=' + sender + '&merchant_id=' + restaurantId + '&lang=en';
+    console.log('url', url);
+    request({
+            url: url,
+            method: 'GET'
+        }, function (error, response, body) {
+            if (error) {
+                console.log('Error : ', error);
+            } else if (response.body.error) {
+                console.log('Error: ', response.body.error);
+            } else {
+                var obj = JSON.parse(body);
+                console.log('obj: ', obj);
+                if (obj.access_token !== '') {
+                    var pageId = sender;
+                    getAiKeyFromDB(obj.access_token, pageId, recipient);
+                }
+
+            }
+        }
+    );
+}
+
+function getAiKeyFromDB(token, pageId, recipient, text) {
+    var url = 'http://halfcup.com/social_rebates_system/wapi/read?api_name=AI_PREV_KEYS&token=1234567890&page_id=' + pageId;
+    console.log('url', url);
+    request({
+            url: url,
+            method: 'GET'
+        }, function (error, response, body) {
+            if (error) {
+                console.log('Error : ', error);
+            } else if (response.body.error) {
+                console.log('Error: ', response.body.error);
+            } else {
+                var obj = JSON.parse(body);
+                console.log('obj: ', obj);
+                getAiKey(text, token, pageId, JSON.stringify(obj.keys), recipient);
+            }
+        }
+    );
+}
+
+function getAiKey(text, token, pageId, prevKeys, recipient) {
+    var url = 'http://aileadsbooster.com/backend/query?q=' + text + '&access_token=' + token + '&prev_key=' + prevKeys;
+    console.log('url', url);
+    request({
+            url: url,
+            method: 'GET'
+        }, function (error, response, body) {
+            if (error) {
+                console.log('Error : ', error);
+            } else if (response.body.error) {
+                console.log('Error: ', response.body.error);
+            } else {
+                var obj = JSON.parse(body);
+                console.log('obj: ', obj);
+                saveAiKey(obj.key, pageId, recipient);
+            }
+        }
+    );
+}
+
+function saveAiKey(key, pageId, recipient) {
+    var url = 'http://halfcup.com/social_rebates_system/wapi/save?api_name=AI_PREV_KEYS&key=' + key + '&token=1234567890&page_id=' + pageId;
+    console.log('url', url);
+    request({
+            url: url,
+            method: 'POST'
+        }, function (error, response, body) {
+            if (error) {
+                console.log('Error : ', error);
+            } else if (response.body.error) {
+                console.log('Error: ', response.body.error);
+            } else {
+                var obj = JSON.parse(body);
+                console.log('obj: ', obj);
+                // return obj.message
+                getChatBot(key, pageId, recipient)
+            }
+        }
+    );
+}
 
 function getChatBot(key, sender, recipient) {
     var url = 'http://halfcup.com/social_rebates_system/wapi/read?token=1234567890&api_name=CHATBOT&key=' + key
@@ -127,7 +244,6 @@ function getChatBot(key, sender, recipient) {
     );
 }
 
-
 function getGroupBot(key, sender, recipient) {
     var url = 'http://halfcup.com/social_rebates_system/wapi/read?token=1234567890&api_name=GROUP&key=' + key;
     // + '&page_id=' + sender;
@@ -151,7 +267,6 @@ function getGroupBot(key, sender, recipient) {
         }
     );
 }
-
 
 function randomIntFromInterval(min, max) {
     return Math.floor(Math.random() * (max - min + 1) + min);
