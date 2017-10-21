@@ -278,9 +278,7 @@ function respondFromGroup(jsonMessage, sender, recipient, size) {
     for (i = 0; i < size; i++) {
         var vars = [json, sender, recipient, i]
         if (isChatBot(jsonMessage, i)) {
-            setTimeout(function () {
-                respondToTextOrAttacment(vars[0], vars[1], vars[2], vars[3]);
-            }.bind(this, vars), 400);
+            setTimeout("respondToTextOrAttacment(json, sender, recipient, i)", 400);
         }
 
         // setTimeout( function (i, jsonMessage) {
