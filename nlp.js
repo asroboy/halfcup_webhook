@@ -124,7 +124,7 @@ function getMerchantId(pageId, recipient, text) {
                 var obj = JSON.parse(body);
                 console.log('obj: ', obj);
                 if (obj.restaurant_id !== null)
-                    getAiToken(pageId, recipient, recipient, obj.restaurant_id, text);
+                    getAiToken(pageId, recipient, obj.restaurant_id, text);
             }
         }
     );
@@ -146,7 +146,7 @@ function getAiToken(sender, recipient, restaurantId, text) {
                 console.log('obj: ', obj);
                 if (obj.access_token !== '') {
                     var pageId = sender;
-                    getAiKeyFromDB(obj.access_token, pageId, recipient);
+                    getAiKeyFromDB(obj.access_token, pageId, recipient, text);
                 }
 
             }
