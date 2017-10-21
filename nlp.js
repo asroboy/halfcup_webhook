@@ -354,11 +354,11 @@ function getToken(m_payload, sender, recipient, isMessageUs) {
                 console.log('Error: ', response.body.error);
             } else {
                 var obj = JSON.parse(body);
-                console.log('json: ', obj);
+
                 var code = obj.code;
                 if (code == 1) {
                     var token = obj.messenger_data.pageAccessToken;
-
+                    console.log('token: ', token);
                     if (m_payload.attachment) {
                         // var myEscapedJSONString = m_payload.escapeSpecialChars();
                         // myEscapedJSONString = myEscapedJSONString.replace(/\\\\n/g, "\\n");
