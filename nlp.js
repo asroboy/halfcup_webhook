@@ -280,7 +280,7 @@ function respondFromGroup(jsonMessage, sender, recipient, size) {
             var index = i;
             console.log('index ' + index);
 
-            setTimeout(function () {
+            setTimeout(function (json, sender, recipient, index) {
                 respondToTextOrAttacment(json, sender, recipient, index);
             }, 500);
 
