@@ -312,13 +312,15 @@ function respondFromGroup(jsonMessage, sender, recipient, size) {
 }
 
 function respondToTextOrAttacment(json, sender, recipient, index) {
-    console.log(json);
+
     console.log(index);
     if (json[index].message.text) {
         var message = json[index].message.text;
+        console.log(message);
         getToken(message, sender, recipient, false);
     } else {
         var message = json[index].message;
+        console.log(message);
         getToken(message, sender, recipient, false);
     }
 }
