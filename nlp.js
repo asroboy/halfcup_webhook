@@ -277,11 +277,8 @@ function respondFromGroup(jsonMessage, sender, recipient, size) {
     for (i = 0; i < size; i++) {
         if (isChatBot(jsonMessage, i)) {
             // respondToTextOrAttacment(json, sender, recipient, i);
-            setTimeout(function () {
-                var json = JSON.parse(jsonMessage[0].json);
-                var index = i;
-                respondToTextOrAttacment(json, sender, recipient, index);
-            }, 400);
+            respondToTextOrAttacment(json, sender, recipient, index);
+
         }
     }
 }
@@ -296,6 +293,9 @@ function respondToTextOrAttacment(json, sender, recipient, index) {
         var message = json[index].message;
         getToken(message, sender, recipient, false);
     }
+    setTimeout(function () {
+        console.log('delay 4 sec');
+    }, 400);
 }
 
 function respond(jsonMessage, sender, recipient, index) {
