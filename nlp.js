@@ -276,15 +276,17 @@ function randomIntFromInterval(min, max) {
 function respondFromGroup(jsonMessage, sender, recipient, size) {
     var json = JSON.parse(jsonMessage[0].json);
     for (i = 0; i < size; i++) {
-        setTimeout( function (i, jsonMessage) {
-            console.log('check at ' + i);
-            if (isChatBot(jsonMessage, i)) {
-                // respondToTextOrAttacment(json, sender, recipient, i);
-                var index = i;
-                console.log('delay at ' + i);
-                respondToTextOrAttacment(json, sender, recipient, index);
-            }
-        }, 400);
+
+        setTimeout(respondToTextOrAttacment.bind(json, sender, recipient, i), 400)
+        // setTimeout( function (i, jsonMessage) {
+        //     console.log('check at ' + i);
+        //     if (isChatBot(jsonMessage, i)) {
+        //         // respondToTextOrAttacment(json, sender, recipient, i);
+        //         var index = i;
+        //         console.log('delay at ' + i);
+        //         respondToTextOrAttacment(json, sender, recipient, index);
+        //     }
+        // }, 400);
 
         // setTimeout(function () {
         //     console.log('delay 0,7 sec');
