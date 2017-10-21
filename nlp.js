@@ -176,7 +176,8 @@ function getAiKeyFromDB(token, pageId, recipient, text) {
 }
 
 function getAiKey(text, token, pageId, prevKeys, recipient) {
-    var url = 'http://aileadsbooster.com/backend/query?q=' + text + '&access_token=' + token + '&prev_key=' + prevKeys;
+    var url = 'http://aileadsbooster.com/backend/query?q=' + text + '&access_token=' + token + '&prev_key=';
+    // + prevKeys;
     console.log('url', url);
     request({
             url: url,
