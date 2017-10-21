@@ -50,8 +50,8 @@
       <file leaf-file-name="nlp.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/nlp.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="392">
-              <caret line="289" column="19" lean-forward="true" selection-start-line="287" selection-start-column="6" selection-end-line="289" selection-end-column="19" />
+            <state relative-caret-position="239">
+              <caret line="280" column="72" lean-forward="false" selection-start-line="280" selection-start-column="72" selection-end-line="280" selection-end-column="72" />
               <folding>
                 <element signature="e#0#41#0" expanded="false" />
                 <element signature="e#4158#4217#0" expanded="false" />
@@ -63,7 +63,7 @@
                 <element signature="e#6485#6544#0" expanded="false" />
                 <element signature="e#6604#6667#0" expanded="false" />
                 <element signature="e#6698#6774#0" expanded="false" />
-                <marker date="1508556754512" expanded="true" signature="10378:10473" ph="..." />
+                <marker date="1508556821293" expanded="true" signature="10362:10457" ph="..." />
               </folding>
             </state>
           </provider>
@@ -417,12 +417,12 @@
       <workItem from="1507495140087" duration="9849000" />
       <workItem from="1507723068958" duration="1019000" />
       <workItem from="1507800740526" duration="4469000" />
-      <workItem from="1508322942352" duration="19928000" />
+      <workItem from="1508322942352" duration="19994000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="341286000" />
+    <option name="totallyTimeSpent" value="341352000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1073,8 +1073,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/nlp.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="392">
-          <caret line="289" column="19" lean-forward="true" selection-start-line="287" selection-start-column="6" selection-end-line="289" selection-end-column="19" />
+        <state relative-caret-position="239">
+          <caret line="280" column="72" lean-forward="false" selection-start-line="280" selection-start-column="72" selection-end-line="280" selection-end-column="72" />
           <folding>
             <element signature="e#0#41#0" expanded="false" />
             <element signature="e#4158#4217#0" expanded="false" />
@@ -1086,7 +1086,7 @@
             <element signature="e#6485#6544#0" expanded="false" />
             <element signature="e#6604#6667#0" expanded="false" />
             <element signature="e#6698#6774#0" expanded="false" />
-            <marker date="1508556754512" expanded="true" signature="10378:10473" ph="..." />
+            <marker date="1508556821293" expanded="true" signature="10362:10457" ph="..." />
           </folding>
         </state>
       </provider>

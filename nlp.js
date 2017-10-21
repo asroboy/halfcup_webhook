@@ -275,11 +275,10 @@ function randomIntFromInterval(min, max) {
 
 function respondFromGroup(jsonMessage, sender, recipient, size) {
     for (i = 0; i < size; i++) {
-
-        setTimeout( function (i, jsonMessage, sender, recipient) {
+        var json = JSON.parse(jsonMessage[0].json);
+        setTimeout( function (i, json, sender, recipient) {
             if (isChatBot(jsonMessage, i)) {
                 // respondToTextOrAttacment(json, sender, recipient, i);
-                var json = JSON.parse(jsonMessage[0].json);
                 var index = i;
                 respondToTextOrAttacment(json, sender, recipient, index);
             }
