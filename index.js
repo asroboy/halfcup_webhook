@@ -270,7 +270,8 @@ app.post('/webhook', function (req, res) {
                                     console.log('json meta', jsonMeta);
                                     if (jsonMeta.ad_id) {
                                         console.log("=======ADS REPLY=======");
-                                        getAdsResponseToUser(event.recipient.id, event.sender.id, jsonMeta.ad_id)
+                                        nlp.getMerchantId(event.recipient.id, event.sender.id, event.message.text);
+                                        // getAdsResponseToUser(event.recipient.id, event.sender.id, jsonMeta.ad_id)
                                     }
                                 } else {
                                     if (event.message.text) {
