@@ -282,7 +282,7 @@ function test() {
 function doSetTimeout(json, sender, recipient, i) {
     setTimeout(function () {
         respondToTextOrAttacment(json, sender, recipient, i);
-    }, 400);
+    }, 700);
 }
 
 
