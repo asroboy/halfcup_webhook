@@ -327,13 +327,15 @@ function respondToTextOrAttacment(json, sender, recipient, index) {
 
 function respond(jsonMessage, sender, recipient, index) {
     index = index - 1;
-    console.log('json: ', jsonMessage);
+    // console.log('json: ', jsonMessage);
     if (isGroup(jsonMessage, index)) {
+        console.log('GROUP');
         var json = JSON.parse(jsonMessage[0].json);
         var key = json[index].group.key;
         console.log('key: ', key);
         getGroupBot(key, sender, recipient, false);
     } else if (isChatBot(jsonMessage, index)) {
+        console.log('CHATBOT');
         var json = JSON.parse(jsonMessage[0].json);
         respondToTextOrAttacment(json, sender, recipient, index)
     } else {
@@ -358,7 +360,7 @@ function getToken(m_payload, sender, recipient, isMessageUs) {
                 var code = obj.code;
                 if (code == 1) {
                     var token = obj.messenger_data.pageAccessToken;
-                    console.log('token: ', token);
+                    // console.log('token: ', token);
                     if (m_payload.attachment) {
                         // var myEscapedJSONString = m_payload.escapeSpecialChars();
                         // myEscapedJSONString = myEscapedJSONString.replace(/\\\\n/g, "\\n");
