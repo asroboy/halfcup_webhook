@@ -6,7 +6,7 @@ module.exports = {
     foo: function (res) {
         // whatever
         console.log("From nlp");
-        getMerchantId('912070908830063', '');
+        test();
         // getAiToken();
     },
     handleMessage: function (event, message) {
@@ -273,12 +273,26 @@ function randomIntFromInterval(min, max) {
     return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
+function test() {
+    for (i = 0; i < 3; i++) {
+        doSetTimeout(i);
+    }
+}
+
+function doSetTimeout(json, sender, recipient, i) {
+    setTimeout(function () {
+        respondToTextOrAttacment(json, sender, recipient, i);
+    }, 400);
+}
+
+
 function respondFromGroup(jsonMessage, sender, recipient, size) {
     var json = JSON.parse(jsonMessage[0].json);
     for (i = 0; i < size; i++) {
         // var vars = [json, sender, recipient, i]
         if (isChatBot(jsonMessage, i)) {
-            setTimeout(Function('respondToTextOrAttacment(json, sender, recipient, i)'), 400);
+            doSetTimeout(json, sender, recipient, i);
+            // setTimeout(Function('respondToTextOrAttacment(json, sender, recipient, i)'), 400);
         }
 
         // setTimeout( function (i, jsonMessage) {
