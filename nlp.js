@@ -296,8 +296,8 @@ function respondToTextOrAttacment(json, sender, recipient, index) {
         getToken(message, sender, recipient, false);
     }
     setTimeout(function () {
-        console.log('delay 4 sec');
-    }, 400);
+        console.log('delay 0,7 sec');
+    }, 700);
 }
 
 function respond(jsonMessage, sender, recipient, index) {
