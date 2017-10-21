@@ -288,7 +288,7 @@ function respondFromGroup(jsonMessage, sender, recipient, size) {
 
 function respondToTextOrAttacment(json, sender, recipient, index) {
     console.log(json);
-    console.log(index;
+    console.log(index);
     if (json[index].message.text) {
         var message = json[index].message.text;
         getToken(message, sender, recipient, false);
