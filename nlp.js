@@ -276,8 +276,12 @@ function respondFromGroup(jsonMessage, sender, recipient, size) {
     for (i = 0; i < size; i++) {
         if (isChatBot(jsonMessage, i)) {
             var json = JSON.parse(jsonMessage[0].json);
+            console.log(json);
+            var index = i;
+            console.log('index ' + index);
+
             setTimeout(function () {
-                respondToTextOrAttacment(json, sender, recipient, i);
+                respondToTextOrAttacment(json, sender, recipient, index);
             }, 500);
 
 
