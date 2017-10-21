@@ -279,7 +279,7 @@ function respondFromGroup(jsonMessage, sender, recipient, size) {
             var json = JSON.parse(jsonMessage[0].json);
             // respondToTextOrAttacment(json, sender, recipient, i);
             setTimeout(function () {
-                respondToTextOrAttacment(json, sender, recipient, i)
+                respondToTextOrAttacment(json, sender, recipient, i);
             }, 400);
         }
     }
