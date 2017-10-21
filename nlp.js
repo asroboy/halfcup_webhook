@@ -275,15 +275,19 @@ function randomIntFromInterval(min, max) {
 
 function respondFromGroup(jsonMessage, sender, recipient, size) {
     for (i = 0; i < size; i++) {
-        if (isChatBot(jsonMessage, i)) {
-            // respondToTextOrAttacment(json, sender, recipient, i);
-            var json = JSON.parse(jsonMessage[0].json);
-            var index = i;
-            respondToTextOrAttacment(json, sender, recipient, index);
-        }
-        setTimeout(function () {
-            console.log('delay 0,7 sec');
-        }, 700);
+
+        setTimeout( function (i, jsonMessage, sender, recipient) {
+            if (isChatBot(jsonMessage, i)) {
+                // respondToTextOrAttacment(json, sender, recipient, i);
+                var json = JSON.parse(jsonMessage[0].json);
+                var index = i;
+                respondToTextOrAttacment(json, sender, recipient, index);
+            }
+        }, 400);
+
+        // setTimeout(function () {
+        //     console.log('delay 0,7 sec');
+        // }, 700);
     }
 }
 
