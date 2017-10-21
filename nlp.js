@@ -123,7 +123,7 @@ function getMerchantId(pageId, recipient, text) {
                 console.log('Error: ', response.body.error);
             } else {
                 var obj = JSON.parse(body);
-                console.log('obj: ', obj);
+                // console.log('obj: ', obj);
                 if (obj.restaurant_id !== null)
                     getAiToken(pageId, recipient, obj.restaurant_id, text);
             }
@@ -144,7 +144,7 @@ function getAiToken(sender, recipient, restaurantId, text) {
                 console.log('Error: ', response.body.error);
             } else {
                 var obj = JSON.parse(body);
-                console.log('obj: ', obj);
+                // console.log('obj: ', obj);
                 if (obj.access_token !== '') {
                     var pageId = sender;
                     getAiKeyFromDB(obj.access_token, pageId, recipient, text);
@@ -168,7 +168,7 @@ function getAiKeyFromDB(token, pageId, recipient, text) {
                 console.log('Error: ', response.body.error);
             } else {
                 var obj = JSON.parse(body);
-                console.log('obj: ', obj);
+                // console.log('obj: ', obj);
                 getAiKey(text, token, pageId, JSON.stringify(obj.keys), recipient);
             }
         }
@@ -188,7 +188,7 @@ function getAiKey(text, token, pageId, prevKeys, recipient) {
                 console.log('Error: ', response.body.error);
             } else {
                 var obj = JSON.parse(body);
-                console.log('obj: ', obj);
+                // console.log('obj: ', obj);
                 saveAiKey(obj.key, pageId, recipient);
             }
         }
@@ -208,7 +208,7 @@ function saveAiKey(key, pageId, recipient) {
                 console.log('Error: ', response.body.error);
             } else {
                 var obj = JSON.parse(body);
-                console.log('obj: ', obj);
+                // console.log('obj: ', obj);
                 // return obj.message
                 getChatBot(key, pageId, recipient)
             }
