@@ -280,6 +280,7 @@ function respondFromGroup(jsonMessage, sender, recipient, size) {
             if (isChatBot(jsonMessage, i)) {
                 // respondToTextOrAttacment(json, sender, recipient, i);
                 var index = i;
+                console.log('delay at ' + i);
                 respondToTextOrAttacment(json, sender, recipient, index);
             }
         }, 400);
