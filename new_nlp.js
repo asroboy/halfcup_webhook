@@ -296,6 +296,31 @@ function respondFromGroup(jsonMessage, sender, recipient, size, token, res) {
 }
 
 
+function getDefaultAnswer(sender, recipient) {
+    var url = 'http://halfcup.com/social_rebates_system/wapi/read?token=1234567890&api_name=DEFAULT_ANSWER&page_id=' + sender + '&is_on=true';
+    console.log('url', url);
+    request({
+            url: url,
+            method: 'GET'
+        }, function (error, response, body) {
+            if (error) {
+                console.log('Error sending message: ', error);
+            } else if (response.body.error) {
+                console.log('Error: ', response.body.error);
+            } else {
+                var obj = JSON.parse(body);
+                if (obj.length > 0) {
+                    var jsonMessage = JSON.parse(obj[0].json);
+                    var randomIndex = randomIntFromInterval(1, jsonMessage.length);
+                    console.log("randomIndex : " + randomIndex);
+                    console.log("jsonMessage.length : " + jsonMessage.length);
+                    respond(obj, sender, recipient, randomIndex);
+                }
+            }
+        }
+    );
+}
+
 //HELPER
 function randomIntFromInterval(min, max) {
     return Math.floor(Math.random() * (max - min + 1) + min);
