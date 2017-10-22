@@ -6,6 +6,7 @@ var Analytics = require('analytics-node');
 var analytics = new Analytics('kngf8THjj5e2QnLTdjfprebBW1KdQQbx');
 
 var nlp = require('./nlp');
+var new_nlp = require('./new_nlp');
 var test = require('./test');
 
 app.use(bodyParser.urlencoded({extended: false}));
@@ -29,6 +30,10 @@ app.get('/webhook', function (req, res) {
 // Facebook Webhook
 app.get('/nlp', function (req, res) {
     nlp.foo(res)
+});
+
+app.get('/new_nlp', function (req, res) {
+    new_nlp.foo(res)
 });
 
 
@@ -81,7 +86,7 @@ app.post('/webhook', function (req, res) {
                 if (event.message) {
                     //NLP Handling
                     if (event.message.nlp) {
-                        nlp.handleMessage(event, event.message);
+                        new_nlp.handleMessage(event, event.message, res);
 
                         //NON NLP Handling
                     } else {
@@ -278,13 +283,13 @@ app.post('/webhook', function (req, res) {
                                     console.log('json meta', jsonMeta);
                                     if (jsonMeta.ad_id) {
                                         console.log("=======ADS REPLY=======");
-                                        nlp.getMerchantId(event.sender.id, event.recipient.id, event.message.text);
+                                        new_nlp.getMerchantId(event.sender.id, event.recipient.id, event.message.text);
                                         // getAdsResponseToUser(event.recipient.id, event.sender.id, jsonMeta.ad_id)
                                     }
                                 } else {
                                     if (event.message.text) {
                                         var request_key = event.message.text;
-                                        nlp.getMerchantId(event.recipient.id, event.sender.id, request_key);
+                                        new_nlp.getMerchantId(event.recipient.id, event.sender.id, request_key);
                                         console.log("===== event.message.text ========");
                                         // getResponseToUser(request_key, event.sender.id, event.recipient.id);
                                     }
@@ -518,7 +523,7 @@ function keyIndexAction(key, event, action_name, event_name) {
         } else if (reply_text.indexOf('{{') > -1) {
             reply_text = reply_text.replace('{{', "")
             reply_text = reply_text.replace('}}', "")
-            nlp.getChatBot(reply_text, event.recipient.id, event.sender.id);
+            new_nlp.getChatBot(reply_text, event.recipient.id, event.sender.id, res);
         } else {
             if (reply_text !== "") {
                 getToken(reply_text, event.recipient.id, event.sender.id, false);
@@ -552,7 +557,7 @@ function keyIndexAction(key, event, action_name, event_name) {
         } else if (key.indexOf('{{') > -1) {
             key = key.replace('{{', "")
             key = key.replace('}}', "")
-            nlp.getChatBot(key, event.recipient.id, event.sender.id);
+            new_nlp.getChatBot(key, event.recipient.id, event.sender.id, res);
         } else {
             if (key !== "") {
                 getToken(key, event.recipient.id, event.sender.id, false);

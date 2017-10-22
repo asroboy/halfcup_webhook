@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8c0fd527-5667-4e03-89ee-e95c0bdc3c27" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/new_nlp.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nlp.js" afterPath="$PROJECT_DIR$/nlp.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.js" afterPath="$PROJECT_DIR$/index.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -21,21 +22,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="index.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="359">
-              <caret line="39" column="0" lean-forward="false" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
+            <state relative-caret-position="119">
+              <caret line="7" column="24" lean-forward="false" selection-start-line="7" selection-start-column="21" selection-end-line="7" selection-end-column="24" />
               <folding>
-                <element signature="e#1210#2207#0" expanded="false" />
-                <element signature="e#3159#4253#0" expanded="false" />
-                <element signature="e#4329#6825#0" expanded="false" />
-                <element signature="e#7260#14130#0" expanded="false" />
+                <element signature="e#1314#2311#0" expanded="false" />
+                <element signature="e#3272#4366#0" expanded="false" />
+                <element signature="e#4442#6938#0" expanded="false" />
+                <element signature="e#7373#14243#0" expanded="false" />
                 <element signature="n#!!block;n#saveMessengerAdmin#0" expanded="false" />
                 <element signature="n#!!block;n#keyIndexAction#0" expanded="false" />
                 <element signature="n#!!block;n#validateSamples#0" expanded="false" />
-                <element signature="e#27962#28092#0" expanded="false" />
-                <element signature="e#28133#28297#0" expanded="false" />
+                <element signature="e#28101#28231#0" expanded="false" />
+                <element signature="e#28272#28436#0" expanded="false" />
                 <element signature="n#!!block;n#looper#0" expanded="false" />
                 <element signature="n#!!block;n#callback#0" expanded="false" />
                 <element signature="n#!!block;n#helooTest#0" expanded="false" />
@@ -48,28 +49,45 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="nlp.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="nlp.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/nlp.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="307" column="8" lean-forward="false" selection-start-line="307" selection-start-column="8" selection-end-line="307" selection-end-column="8" />
+            <state relative-caret-position="238">
+              <caret line="16" column="6" lean-forward="false" selection-start-line="14" selection-start-column="3" selection-end-line="16" selection-end-column="6" />
               <folding>
                 <element signature="e#0#41#0" expanded="false" />
-                <element signature="n#!!block;n#getMerchantId#0" expanded="false" />
                 <element signature="e#4945#5004#0" expanded="false" />
                 <element signature="e#5064#5127#0" expanded="false" />
                 <element signature="e#5158#5234#0" expanded="false" />
-                <element signature="n#!!block;n#getAiToken#0" expanded="false" />
                 <element signature="e#5722#5781#0" expanded="false" />
                 <element signature="e#5841#5904#0" expanded="false" />
                 <element signature="e#5935#6011#0" expanded="false" />
-                <element signature="n#!!block;n#getAiKeyFromDB#0" expanded="false" />
-                <element signature="n#!!block;n#getAiKey#0" expanded="false" />
                 <element signature="e#7300#7359#0" expanded="false" />
                 <element signature="e#7419#7482#0" expanded="false" />
                 <element signature="e#7513#7589#0" expanded="false" />
-                <element signature="n#!!block;n#saveAiKey#0" expanded="false" />
                 <marker date="1508651513843" expanded="true" signature="12061:12156" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="new_nlp.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/new_nlp.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="189">
+              <caret line="16" column="4" lean-forward="false" selection-start-line="16" selection-start-column="4" selection-end-line="16" selection-end-column="4" />
+              <folding>
+                <element signature="e#0#42#0" expanded="false" />
+                <element signature="e#3719#3778#0" expanded="false" />
+                <element signature="e#3838#3901#0" expanded="false" />
+                <element signature="e#3932#4008#0" expanded="false" />
+                <element signature="e#4614#4673#0" expanded="false" />
+                <element signature="e#4733#4796#0" expanded="false" />
+                <element signature="e#4827#4903#0" expanded="false" />
+                <element signature="e#6240#6299#0" expanded="false" />
+                <element signature="e#6359#6422#0" expanded="false" />
+                <element signature="e#6453#6529#0" expanded="false" />
+                <element signature="e#11427#11675#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -109,11 +127,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>isGroup</find>
-      <find>for</find>
-      <find>getUserInfo</find>
-      <find>respondToTextOrAttacment</find>
-      <find>detDefaultAnswer</find>
       <find>handleMessage</find>
       <find>Payload</find>
       <find>sendEmailForLead</find>
@@ -125,20 +138,25 @@
       <find>getAiKey</find>
       <find>http://halfcup.com/social_rebates_system/wapi/read?</find>
       <find>CHATBOT</find>
-      <find>token</find>
       <find>ADS  REPLY</find>
       <find>TEXT ==&gt;</find>
       <find>q</find>
-      <find>getToken</find>
       <find>getChatBot</find>
       <find>{{</find>
       <find>replace</find>
       <find>DEFAULT_ANSWER</find>
       <find>getMerchantId</find>
       <find>getDefaultAnswer</find>
-      <find>nlp</find>
       <find>token:</find>
       <find>isMessageUs</find>
+      <find>token</find>
+      <find>isGroup</find>
+      <find>respondToTextOrAttacment</find>
+      <find>sendMessage</find>
+      <find>res</find>
+      <find>getToken</find>
+      <find>res.send</find>
+      <find>nlp</find>
     </findStrings>
     <replaceStrings>
       <replace>localhost:8080</replace>
@@ -156,10 +174,11 @@
         <option value="$PROJECT_DIR$/node_modules/email.html" />
         <option value="$PROJECT_DIR$/witapi.js" />
         <option value="$PROJECT_DIR$/node_modules/test.js" />
-        <option value="$PROJECT_DIR$/index.js" />
         <option value="$PROJECT_DIR$/test.js" />
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/nlp.js" />
+        <option value="$PROJECT_DIR$/new_nlp.js" />
+        <option value="$PROJECT_DIR$/index.js" />
       </list>
     </option>
   </component>
@@ -449,12 +468,12 @@
       <workItem from="1507723068958" duration="1019000" />
       <workItem from="1507800740526" duration="4469000" />
       <workItem from="1508322942352" duration="26823000" />
-      <workItem from="1508639902058" duration="11415000" />
+      <workItem from="1508639902058" duration="21763000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="359596000" />
+    <option name="totallyTimeSpent" value="369944000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -496,32 +515,25 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="8" />
+      <option name="time" value="9" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/node_modules/raw-body/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4437">
-          <caret line="261" column="15" lean-forward="false" selection-start-line="261" selection-start-column="15" selection-end-line="261" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#1210#2207#0" expanded="false" />
-            <element signature="e#3159#4253#0" expanded="false" />
-            <element signature="e#4329#6825#0" expanded="false" />
-            <element signature="e#7260#14130#0" expanded="false" />
+            <element signature="e#1314#2311#0" expanded="false" />
+            <element signature="e#3272#4366#0" expanded="false" />
+            <element signature="e#4442#6938#0" expanded="false" />
+            <element signature="e#7373#14243#0" expanded="false" />
             <element signature="n#!!block;n#saveMessengerAdmin#0" expanded="false" />
             <element signature="n#!!block;n#keyIndexAction#0" expanded="false" />
             <element signature="n#!!block;n#validateSamples#0" expanded="false" />
-            <element signature="e#27962#28092#0" expanded="false" />
-            <element signature="e#28133#28297#0" expanded="false" />
+            <element signature="e#28101#28231#0" expanded="false" />
+            <element signature="e#28272#28436#0" expanded="false" />
             <element signature="n#!!block;n#looper#0" expanded="false" />
             <element signature="n#!!block;n#callback#0" expanded="false" />
             <element signature="n#!!block;n#helooTest#0" expanded="false" />
@@ -552,15 +564,15 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#1210#2207#0" expanded="false" />
-            <element signature="e#3159#4253#0" expanded="false" />
-            <element signature="e#4329#6825#0" expanded="false" />
-            <element signature="e#7260#14130#0" expanded="false" />
+            <element signature="e#1314#2311#0" expanded="false" />
+            <element signature="e#3272#4366#0" expanded="false" />
+            <element signature="e#4442#6938#0" expanded="false" />
+            <element signature="e#7373#14243#0" expanded="false" />
             <element signature="n#!!block;n#saveMessengerAdmin#0" expanded="false" />
             <element signature="n#!!block;n#keyIndexAction#0" expanded="false" />
             <element signature="n#!!block;n#validateSamples#0" expanded="false" />
-            <element signature="e#27962#28092#0" expanded="false" />
-            <element signature="e#28133#28297#0" expanded="false" />
+            <element signature="e#28101#28231#0" expanded="false" />
+            <element signature="e#28272#28436#0" expanded="false" />
             <element signature="n#!!block;n#looper#0" expanded="false" />
             <element signature="n#!!block;n#callback#0" expanded="false" />
             <element signature="n#!!block;n#helooTest#0" expanded="false" />
@@ -591,15 +603,15 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#1210#2207#0" expanded="false" />
-            <element signature="e#3159#4253#0" expanded="false" />
-            <element signature="e#4329#6825#0" expanded="false" />
-            <element signature="e#7260#14130#0" expanded="false" />
+            <element signature="e#1314#2311#0" expanded="false" />
+            <element signature="e#3272#4366#0" expanded="false" />
+            <element signature="e#4442#6938#0" expanded="false" />
+            <element signature="e#7373#14243#0" expanded="false" />
             <element signature="n#!!block;n#saveMessengerAdmin#0" expanded="false" />
             <element signature="n#!!block;n#keyIndexAction#0" expanded="false" />
             <element signature="n#!!block;n#validateSamples#0" expanded="false" />
-            <element signature="e#27962#28092#0" expanded="false" />
-            <element signature="e#28133#28297#0" expanded="false" />
+            <element signature="e#28101#28231#0" expanded="false" />
+            <element signature="e#28272#28436#0" expanded="false" />
             <element signature="n#!!block;n#looper#0" expanded="false" />
             <element signature="n#!!block;n#callback#0" expanded="false" />
             <element signature="n#!!block;n#helooTest#0" expanded="false" />
@@ -630,15 +642,15 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#1210#2207#0" expanded="false" />
-            <element signature="e#3159#4253#0" expanded="false" />
-            <element signature="e#4329#6825#0" expanded="false" />
-            <element signature="e#7260#14130#0" expanded="false" />
+            <element signature="e#1314#2311#0" expanded="false" />
+            <element signature="e#3272#4366#0" expanded="false" />
+            <element signature="e#4442#6938#0" expanded="false" />
+            <element signature="e#7373#14243#0" expanded="false" />
             <element signature="n#!!block;n#saveMessengerAdmin#0" expanded="false" />
             <element signature="n#!!block;n#keyIndexAction#0" expanded="false" />
             <element signature="n#!!block;n#validateSamples#0" expanded="false" />
-            <element signature="e#27962#28092#0" expanded="false" />
-            <element signature="e#28133#28297#0" expanded="false" />
+            <element signature="e#28101#28231#0" expanded="false" />
+            <element signature="e#28272#28436#0" expanded="false" />
             <element signature="n#!!block;n#looper#0" expanded="false" />
             <element signature="n#!!block;n#callback#0" expanded="false" />
             <element signature="n#!!block;n#helooTest#0" expanded="false" />
@@ -669,15 +681,15 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#1210#2207#0" expanded="false" />
-            <element signature="e#3159#4253#0" expanded="false" />
-            <element signature="e#4329#6825#0" expanded="false" />
-            <element signature="e#7260#14130#0" expanded="false" />
+            <element signature="e#1314#2311#0" expanded="false" />
+            <element signature="e#3272#4366#0" expanded="false" />
+            <element signature="e#4442#6938#0" expanded="false" />
+            <element signature="e#7373#14243#0" expanded="false" />
             <element signature="n#!!block;n#saveMessengerAdmin#0" expanded="false" />
             <element signature="n#!!block;n#keyIndexAction#0" expanded="false" />
             <element signature="n#!!block;n#validateSamples#0" expanded="false" />
-            <element signature="e#27962#28092#0" expanded="false" />
-            <element signature="e#28133#28297#0" expanded="false" />
+            <element signature="e#28101#28231#0" expanded="false" />
+            <element signature="e#28272#28436#0" expanded="false" />
             <element signature="n#!!block;n#looper#0" expanded="false" />
             <element signature="n#!!block;n#callback#0" expanded="false" />
             <element signature="n#!!block;n#helooTest#0" expanded="false" />
@@ -708,15 +720,15 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#1210#2207#0" expanded="false" />
-            <element signature="e#3159#4253#0" expanded="false" />
-            <element signature="e#4329#6825#0" expanded="false" />
-            <element signature="e#7260#14130#0" expanded="false" />
+            <element signature="e#1314#2311#0" expanded="false" />
+            <element signature="e#3272#4366#0" expanded="false" />
+            <element signature="e#4442#6938#0" expanded="false" />
+            <element signature="e#7373#14243#0" expanded="false" />
             <element signature="n#!!block;n#saveMessengerAdmin#0" expanded="false" />
             <element signature="n#!!block;n#keyIndexAction#0" expanded="false" />
             <element signature="n#!!block;n#validateSamples#0" expanded="false" />
-            <element signature="e#27962#28092#0" expanded="false" />
-            <element signature="e#28133#28297#0" expanded="false" />
+            <element signature="e#28101#28231#0" expanded="false" />
+            <element signature="e#28272#28436#0" expanded="false" />
             <element signature="n#!!block;n#looper#0" expanded="false" />
             <element signature="n#!!block;n#callback#0" expanded="false" />
             <element signature="n#!!block;n#helooTest#0" expanded="false" />
@@ -747,15 +759,15 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#1210#2207#0" expanded="false" />
-            <element signature="e#3159#4253#0" expanded="false" />
-            <element signature="e#4329#6825#0" expanded="false" />
-            <element signature="e#7260#14130#0" expanded="false" />
+            <element signature="e#1314#2311#0" expanded="false" />
+            <element signature="e#3272#4366#0" expanded="false" />
+            <element signature="e#4442#6938#0" expanded="false" />
+            <element signature="e#7373#14243#0" expanded="false" />
             <element signature="n#!!block;n#saveMessengerAdmin#0" expanded="false" />
             <element signature="n#!!block;n#keyIndexAction#0" expanded="false" />
             <element signature="n#!!block;n#validateSamples#0" expanded="false" />
-            <element signature="e#27962#28092#0" expanded="false" />
-            <element signature="e#28133#28297#0" expanded="false" />
+            <element signature="e#28101#28231#0" expanded="false" />
+            <element signature="e#28272#28436#0" expanded="false" />
             <element signature="n#!!block;n#looper#0" expanded="false" />
             <element signature="n#!!block;n#callback#0" expanded="false" />
             <element signature="n#!!block;n#helooTest#0" expanded="false" />
@@ -786,15 +798,15 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#1210#2207#0" expanded="false" />
-            <element signature="e#3159#4253#0" expanded="false" />
-            <element signature="e#4329#6825#0" expanded="false" />
-            <element signature="e#7260#14130#0" expanded="false" />
+            <element signature="e#1314#2311#0" expanded="false" />
+            <element signature="e#3272#4366#0" expanded="false" />
+            <element signature="e#4442#6938#0" expanded="false" />
+            <element signature="e#7373#14243#0" expanded="false" />
             <element signature="n#!!block;n#saveMessengerAdmin#0" expanded="false" />
             <element signature="n#!!block;n#keyIndexAction#0" expanded="false" />
             <element signature="n#!!block;n#validateSamples#0" expanded="false" />
-            <element signature="e#27962#28092#0" expanded="false" />
-            <element signature="e#28133#28297#0" expanded="false" />
+            <element signature="e#28101#28231#0" expanded="false" />
+            <element signature="e#28272#28436#0" expanded="false" />
             <element signature="n#!!block;n#looper#0" expanded="false" />
             <element signature="n#!!block;n#callback#0" expanded="false" />
             <element signature="n#!!block;n#helooTest#0" expanded="false" />
@@ -825,15 +837,15 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#1210#2207#0" expanded="false" />
-            <element signature="e#3159#4253#0" expanded="false" />
-            <element signature="e#4329#6825#0" expanded="false" />
-            <element signature="e#7260#14130#0" expanded="false" />
+            <element signature="e#1314#2311#0" expanded="false" />
+            <element signature="e#3272#4366#0" expanded="false" />
+            <element signature="e#4442#6938#0" expanded="false" />
+            <element signature="e#7373#14243#0" expanded="false" />
             <element signature="n#!!block;n#saveMessengerAdmin#0" expanded="false" />
             <element signature="n#!!block;n#keyIndexAction#0" expanded="false" />
             <element signature="n#!!block;n#validateSamples#0" expanded="false" />
-            <element signature="e#27962#28092#0" expanded="false" />
-            <element signature="e#28133#28297#0" expanded="false" />
+            <element signature="e#28101#28231#0" expanded="false" />
+            <element signature="e#28272#28436#0" expanded="false" />
             <element signature="n#!!block;n#looper#0" expanded="false" />
             <element signature="n#!!block;n#callback#0" expanded="false" />
             <element signature="n#!!block;n#helooTest#0" expanded="false" />
@@ -871,15 +883,15 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#1210#2207#0" expanded="false" />
-            <element signature="e#3159#4253#0" expanded="false" />
-            <element signature="e#4329#6825#0" expanded="false" />
-            <element signature="e#7260#14130#0" expanded="false" />
+            <element signature="e#1314#2311#0" expanded="false" />
+            <element signature="e#3272#4366#0" expanded="false" />
+            <element signature="e#4442#6938#0" expanded="false" />
+            <element signature="e#7373#14243#0" expanded="false" />
             <element signature="n#!!block;n#saveMessengerAdmin#0" expanded="false" />
             <element signature="n#!!block;n#keyIndexAction#0" expanded="false" />
             <element signature="n#!!block;n#validateSamples#0" expanded="false" />
-            <element signature="e#27962#28092#0" expanded="false" />
-            <element signature="e#28133#28297#0" expanded="false" />
+            <element signature="e#28101#28231#0" expanded="false" />
+            <element signature="e#28272#28436#0" expanded="false" />
             <element signature="n#!!block;n#looper#0" expanded="false" />
             <element signature="n#!!block;n#callback#0" expanded="false" />
             <element signature="n#!!block;n#helooTest#0" expanded="false" />
@@ -917,15 +929,15 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#1210#2207#0" expanded="false" />
-            <element signature="e#3159#4253#0" expanded="false" />
-            <element signature="e#4329#6825#0" expanded="false" />
-            <element signature="e#7260#14130#0" expanded="false" />
+            <element signature="e#1314#2311#0" expanded="false" />
+            <element signature="e#3272#4366#0" expanded="false" />
+            <element signature="e#4442#6938#0" expanded="false" />
+            <element signature="e#7373#14243#0" expanded="false" />
             <element signature="n#!!block;n#saveMessengerAdmin#0" expanded="false" />
             <element signature="n#!!block;n#keyIndexAction#0" expanded="false" />
             <element signature="n#!!block;n#validateSamples#0" expanded="false" />
-            <element signature="e#27962#28092#0" expanded="false" />
-            <element signature="e#28133#28297#0" expanded="false" />
+            <element signature="e#28101#28231#0" expanded="false" />
+            <element signature="e#28272#28436#0" expanded="false" />
             <element signature="n#!!block;n#looper#0" expanded="false" />
             <element signature="n#!!block;n#callback#0" expanded="false" />
             <element signature="n#!!block;n#helooTest#0" expanded="false" />
@@ -963,15 +975,15 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#1210#2207#0" expanded="false" />
-            <element signature="e#3159#4253#0" expanded="false" />
-            <element signature="e#4329#6825#0" expanded="false" />
-            <element signature="e#7260#14130#0" expanded="false" />
+            <element signature="e#1314#2311#0" expanded="false" />
+            <element signature="e#3272#4366#0" expanded="false" />
+            <element signature="e#4442#6938#0" expanded="false" />
+            <element signature="e#7373#14243#0" expanded="false" />
             <element signature="n#!!block;n#saveMessengerAdmin#0" expanded="false" />
             <element signature="n#!!block;n#keyIndexAction#0" expanded="false" />
             <element signature="n#!!block;n#validateSamples#0" expanded="false" />
-            <element signature="e#27962#28092#0" expanded="false" />
-            <element signature="e#28133#28297#0" expanded="false" />
+            <element signature="e#28101#28231#0" expanded="false" />
+            <element signature="e#28272#28436#0" expanded="false" />
             <element signature="n#!!block;n#looper#0" expanded="false" />
             <element signature="n#!!block;n#callback#0" expanded="false" />
             <element signature="n#!!block;n#helooTest#0" expanded="false" />
@@ -1056,31 +1068,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="359">
-          <caret line="39" column="0" lean-forward="false" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
-          <folding>
-            <element signature="e#1210#2207#0" expanded="false" />
-            <element signature="e#3159#4253#0" expanded="false" />
-            <element signature="e#4329#6825#0" expanded="false" />
-            <element signature="e#7260#14130#0" expanded="false" />
-            <element signature="n#!!block;n#saveMessengerAdmin#0" expanded="false" />
-            <element signature="n#!!block;n#keyIndexAction#0" expanded="false" />
-            <element signature="n#!!block;n#validateSamples#0" expanded="false" />
-            <element signature="e#27962#28092#0" expanded="false" />
-            <element signature="e#28133#28297#0" expanded="false" />
-            <element signature="n#!!block;n#looper#0" expanded="false" />
-            <element signature="n#!!block;n#callback#0" expanded="false" />
-            <element signature="n#!!block;n#helooTest#0" expanded="false" />
-            <element signature="n#!!block;n#pixel#0" expanded="false" />
-            <element signature="n#!!block;n#logAction#0" expanded="false" />
-            <element signature="n#!!block;n#getUserInfo#0" expanded="false" />
-            <element signature="n#!!block;n#getToken#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/test.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
@@ -1093,25 +1080,65 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/nlp.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="307" column="8" lean-forward="false" selection-start-line="307" selection-start-column="8" selection-end-line="307" selection-end-column="8" />
+        <state relative-caret-position="238">
+          <caret line="16" column="6" lean-forward="false" selection-start-line="14" selection-start-column="3" selection-end-line="16" selection-end-column="6" />
           <folding>
             <element signature="e#0#41#0" expanded="false" />
-            <element signature="n#!!block;n#getMerchantId#0" expanded="false" />
             <element signature="e#4945#5004#0" expanded="false" />
             <element signature="e#5064#5127#0" expanded="false" />
             <element signature="e#5158#5234#0" expanded="false" />
-            <element signature="n#!!block;n#getAiToken#0" expanded="false" />
             <element signature="e#5722#5781#0" expanded="false" />
             <element signature="e#5841#5904#0" expanded="false" />
             <element signature="e#5935#6011#0" expanded="false" />
-            <element signature="n#!!block;n#getAiKeyFromDB#0" expanded="false" />
-            <element signature="n#!!block;n#getAiKey#0" expanded="false" />
             <element signature="e#7300#7359#0" expanded="false" />
             <element signature="e#7419#7482#0" expanded="false" />
             <element signature="e#7513#7589#0" expanded="false" />
-            <element signature="n#!!block;n#saveAiKey#0" expanded="false" />
             <marker date="1508651513843" expanded="true" signature="12061:12156" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/new_nlp.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="16" column="4" lean-forward="false" selection-start-line="16" selection-start-column="4" selection-end-line="16" selection-end-column="4" />
+          <folding>
+            <element signature="e#0#42#0" expanded="false" />
+            <element signature="e#3719#3778#0" expanded="false" />
+            <element signature="e#3838#3901#0" expanded="false" />
+            <element signature="e#3932#4008#0" expanded="false" />
+            <element signature="e#4614#4673#0" expanded="false" />
+            <element signature="e#4733#4796#0" expanded="false" />
+            <element signature="e#4827#4903#0" expanded="false" />
+            <element signature="e#6240#6299#0" expanded="false" />
+            <element signature="e#6359#6422#0" expanded="false" />
+            <element signature="e#6453#6529#0" expanded="false" />
+            <element signature="e#11427#11675#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="24" lean-forward="false" selection-start-line="7" selection-start-column="21" selection-end-line="7" selection-end-column="24" />
+          <folding>
+            <element signature="e#1314#2311#0" expanded="false" />
+            <element signature="e#3272#4366#0" expanded="false" />
+            <element signature="e#4442#6938#0" expanded="false" />
+            <element signature="e#7373#14243#0" expanded="false" />
+            <element signature="n#!!block;n#saveMessengerAdmin#0" expanded="false" />
+            <element signature="n#!!block;n#keyIndexAction#0" expanded="false" />
+            <element signature="n#!!block;n#validateSamples#0" expanded="false" />
+            <element signature="e#28101#28231#0" expanded="false" />
+            <element signature="e#28272#28436#0" expanded="false" />
+            <element signature="n#!!block;n#looper#0" expanded="false" />
+            <element signature="n#!!block;n#callback#0" expanded="false" />
+            <element signature="n#!!block;n#helooTest#0" expanded="false" />
+            <element signature="n#!!block;n#pixel#0" expanded="false" />
+            <element signature="n#!!block;n#logAction#0" expanded="false" />
+            <element signature="n#!!block;n#getUserInfo#0" expanded="false" />
+            <element signature="n#!!block;n#getToken#0" expanded="false" />
           </folding>
         </state>
       </provider>
