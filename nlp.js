@@ -18,7 +18,7 @@ module.exports = {
     getMerchantId: function (pageId, recipient, text) {
         if (text.indexOf('{{') > -1) {
             var key = text.replace("{{", "").replace("}}", "");
-            getChatBot(text, pageId, recipient);
+            getChatBot(key, pageId, recipient);
         } else {
             getMerchantId(pageId, recipient, text);
         }
