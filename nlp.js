@@ -308,7 +308,7 @@ function doSetTimeout(json, sender, recipient, i) {
             console.log('finished processing');
         });
 
-    }, 1200);
+    }, 2000);
 }
 
 
@@ -324,7 +324,6 @@ function respondFromGroup(jsonMessage, sender, recipient, size) {
     for (i = 0; i < size; i++) {
         // var vars = [json, sender, recipient, i]
         if (isChatBot(jsonMessage, i)) {
-
             doSetTimeout(json, sender, recipient, i);
             // setTimeout(Function('respondToTextOrAttacment(json, sender, recipient, i)'), 400);
         }
