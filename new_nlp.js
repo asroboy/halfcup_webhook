@@ -12,7 +12,7 @@ module.exports = {
         var userId = event.sender.id;
         getToken(message, pageId, userId, false, res);
     }, getMerchantId: function (pageId, recipient, text, res) {
-        getToken(text, recipient, pageId, false, res);
+        getToken(text, pageId, recipient, false, res);
     },
     getChatBot: function (key, sender, recipient, res) {
         getToken(key, sender, recipient, false, res);
