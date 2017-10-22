@@ -111,7 +111,7 @@ function getDefaultAnswer(sender, recipient) {
 //==============
 
 function getMerchantId(pageId, recipient, text) {
-    console.log("TEXT ========================================> " + message.text);
+    console.log("TEXT ========================================> " + text);
     var url = 'http://halfcup.com/social_rebates_system/wapi/read?api_name=GET_RESTAURANT&token=1234567890&page_id=' + pageId;
     console.log('url', url);
     request({
