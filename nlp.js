@@ -81,6 +81,7 @@ function handleMessage(event, message) {
 
     var pageId = event.recipient.id;
     var userId = event.sender.id;
+    console.log("TEXT ========================================> " + message.text);
     getMerchantId(pageId, userId, message.text);
 }
 
@@ -176,7 +177,7 @@ function getAiKeyFromDB(token, pageId, recipient, text) {
 }
 
 function getAiKey(text, token, pageId, prevKeys, recipient) {
-    var url = 'http://aileadsbooster.com/backend/query?q=' + text + '&access_token=' + token + '&prev_key=';
+    var url = 'http://aileadsbooster.com/backend/query?q=' + text + '&access_token=' + token + '&prev_key=' + prevKeys;
     // + prevKeys;
     console.log('url', url);
     request({
