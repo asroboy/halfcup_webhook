@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8c0fd527-5667-4e03-89ee-e95c0bdc3c27" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/new_nlp.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.js" afterPath="$PROJECT_DIR$/index.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/new_nlp.js" afterPath="$PROJECT_DIR$/new_nlp.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -22,11 +20,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="index.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="7" column="24" lean-forward="false" selection-start-line="7" selection-start-column="21" selection-end-line="7" selection-end-column="24" />
+            <state relative-caret-position="206">
+              <caret line="285" column="56" lean-forward="false" selection-start-line="285" selection-start-column="56" selection-end-line="285" selection-end-column="56" />
               <folding>
                 <element signature="e#1314#2311#0" expanded="false" />
                 <element signature="e#3272#4366#0" expanded="false" />
@@ -71,23 +69,23 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="new_nlp.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="new_nlp.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/new_nlp.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="189">
-              <caret line="16" column="4" lean-forward="false" selection-start-line="16" selection-start-column="4" selection-end-line="16" selection-end-column="4" />
+            <state relative-caret-position="204">
+              <caret line="14" column="40" lean-forward="false" selection-start-line="14" selection-start-column="40" selection-end-line="14" selection-end-column="40" />
               <folding>
                 <element signature="e#0#42#0" expanded="false" />
-                <element signature="e#3719#3778#0" expanded="false" />
-                <element signature="e#3838#3901#0" expanded="false" />
-                <element signature="e#3932#4008#0" expanded="false" />
-                <element signature="e#4614#4673#0" expanded="false" />
-                <element signature="e#4733#4796#0" expanded="false" />
-                <element signature="e#4827#4903#0" expanded="false" />
-                <element signature="e#6240#6299#0" expanded="false" />
-                <element signature="e#6359#6422#0" expanded="false" />
-                <element signature="e#6453#6529#0" expanded="false" />
-                <element signature="e#11427#11675#0" expanded="false" />
+                <element signature="e#3722#3781#0" expanded="false" />
+                <element signature="e#3841#3904#0" expanded="false" />
+                <element signature="e#3935#4011#0" expanded="false" />
+                <element signature="e#4617#4676#0" expanded="false" />
+                <element signature="e#4736#4799#0" expanded="false" />
+                <element signature="e#4830#4906#0" expanded="false" />
+                <element signature="e#6243#6302#0" expanded="false" />
+                <element signature="e#6362#6425#0" expanded="false" />
+                <element signature="e#6456#6532#0" expanded="false" />
+                <element signature="e#11430#11678#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -127,7 +125,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>handleMessage</find>
       <find>Payload</find>
       <find>sendEmailForLead</find>
       <find>getLead</find>
@@ -155,8 +152,9 @@
       <find>sendMessage</find>
       <find>res</find>
       <find>getToken</find>
-      <find>res.send</find>
       <find>nlp</find>
+      <find>res.send</find>
+      <find>ADS</find>
     </findStrings>
     <replaceStrings>
       <replace>localhost:8080</replace>
@@ -177,8 +175,8 @@
         <option value="$PROJECT_DIR$/test.js" />
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/nlp.js" />
-        <option value="$PROJECT_DIR$/new_nlp.js" />
         <option value="$PROJECT_DIR$/index.js" />
+        <option value="$PROJECT_DIR$/new_nlp.js" />
       </list>
     </option>
   </component>
@@ -468,12 +466,12 @@
       <workItem from="1507723068958" duration="1019000" />
       <workItem from="1507800740526" duration="4469000" />
       <workItem from="1508322942352" duration="26823000" />
-      <workItem from="1508639902058" duration="21763000" />
+      <workItem from="1508639902058" duration="21851000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="369944000" />
+    <option name="totallyTimeSpent" value="370032000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1098,30 +1096,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/new_nlp.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="16" column="4" lean-forward="false" selection-start-line="16" selection-start-column="4" selection-end-line="16" selection-end-column="4" />
-          <folding>
-            <element signature="e#0#42#0" expanded="false" />
-            <element signature="e#3719#3778#0" expanded="false" />
-            <element signature="e#3838#3901#0" expanded="false" />
-            <element signature="e#3932#4008#0" expanded="false" />
-            <element signature="e#4614#4673#0" expanded="false" />
-            <element signature="e#4733#4796#0" expanded="false" />
-            <element signature="e#4827#4903#0" expanded="false" />
-            <element signature="e#6240#6299#0" expanded="false" />
-            <element signature="e#6359#6422#0" expanded="false" />
-            <element signature="e#6453#6529#0" expanded="false" />
-            <element signature="e#11427#11675#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="24" lean-forward="false" selection-start-line="7" selection-start-column="21" selection-end-line="7" selection-end-column="24" />
+        <state relative-caret-position="206">
+          <caret line="285" column="56" lean-forward="false" selection-start-line="285" selection-start-column="56" selection-end-line="285" selection-end-column="56" />
           <folding>
             <element signature="e#1314#2311#0" expanded="false" />
             <element signature="e#3272#4366#0" expanded="false" />
@@ -1139,6 +1117,26 @@
             <element signature="n#!!block;n#logAction#0" expanded="false" />
             <element signature="n#!!block;n#getUserInfo#0" expanded="false" />
             <element signature="n#!!block;n#getToken#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/new_nlp.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="14" column="40" lean-forward="false" selection-start-line="14" selection-start-column="40" selection-end-line="14" selection-end-column="40" />
+          <folding>
+            <element signature="e#0#42#0" expanded="false" />
+            <element signature="e#3722#3781#0" expanded="false" />
+            <element signature="e#3841#3904#0" expanded="false" />
+            <element signature="e#3935#4011#0" expanded="false" />
+            <element signature="e#4617#4676#0" expanded="false" />
+            <element signature="e#4736#4799#0" expanded="false" />
+            <element signature="e#4830#4906#0" expanded="false" />
+            <element signature="e#6243#6302#0" expanded="false" />
+            <element signature="e#6362#6425#0" expanded="false" />
+            <element signature="e#6456#6532#0" expanded="false" />
+            <element signature="e#11430#11678#0" expanded="false" />
           </folding>
         </state>
       </provider>
