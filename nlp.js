@@ -303,10 +303,26 @@ function doSetTimeout(json, sender, recipient, i) {
 
 function respondFromGroup(jsonMessage, sender, recipient, size) {
     var json = JSON.parse(jsonMessage[0].json);
+
+    var q = async.queue(function (task, callback) {
+        // console.log('hello ' + task.name + ' task.number ' + task.number);
+        respondToTextOrAttacment(task.json, task.sender, task.recipient, task.i);
+        callback();
+    }, 1);
+
+    // assign a callback
+    q.drain = function () {
+        console.log('all items have been processed');
+    };
+
+
     for (i = 0; i < size; i++) {
         // var vars = [json, sender, recipient, i]
         if (isChatBot(jsonMessage, i)) {
-            doSetTimeout(json, sender, recipient, i);
+            q.push({json: json, sender: sender, recipient: recipient, i: i}, function (err) {
+                console.log('finished processing' + i);
+            });
+            // doSetTimeout(json, sender, recipient, i);
             // setTimeout(Function('respondToTextOrAttacment(json, sender, recipient, i)'), 400);
         }
 

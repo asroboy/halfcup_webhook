@@ -6,6 +6,7 @@ var Analytics = require('analytics-node');
 var analytics = new Analytics('kngf8THjj5e2QnLTdjfprebBW1KdQQbx');
 
 var nlp = require('./nlp');
+var test = require('./test');
 
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
@@ -29,6 +30,13 @@ app.get('/webhook', function (req, res) {
 app.get('/nlp', function (req, res) {
     nlp.foo(res)
 });
+
+
+// Facebook Webhook
+app.get('/test', function (req, res) {
+    test.foo(res)
+});
+
 
 // handler receiving messages
 app.post('/webhook', function (req, res) {
