@@ -10,12 +10,12 @@ module.exports = {
     handleMessage: function (event, message, res) {
         var pageId = event.recipient.id;
         var userId = event.sender.id;
-        getToken(message, pageId, userId, false, res);
+        getToken(message.text, pageId, userId, false, res);
     }, getMerchantId: function (pageId, recipient, text, res) {
         getToken(text, pageId, recipient, false, res);
     },
     getChatBot: function (key, sender, recipient, res) {
-        getTokenForChatBot(key, sender, recipient, false, res);
+        getToken(key, sender, recipient, false, res);
     },
 };
 
@@ -57,33 +57,6 @@ function getToken(text, sender, recipient, isMessageUs, res) {
     );
 }
 
-function getTokenForChatBot(text, sender, recipient, isMessageUs, res) {
-    var url = 'http://halfcup.com/social_rebates_system/api/getPageMessengerToken?messenger_id=' + sender + '&messenger_uid=' + recipient;
-    console.log('url', url);
-    request({
-            url: url,
-            method: 'GET'
-        }, function (error, response, body) {
-            if (error) {
-                console.log('Error sending message: ', error);
-            } else if (response.body.error) {
-                console.log('Error: ', response.body.error);
-            } else {
-                var obj = JSON.parse(body);
-                var code = obj.code;
-
-                if (code == 1) {
-                    var token = obj.messenger_data.pageAccessToken;
-                    console.log('token : ' + token);
-                    getChatBot(text, sender, recipient, token, res);
-                }
-                if (code == 0) {
-                    console.log('NLP : Can\'t send message, TOKEN NOT FOUND, Get page access token from facebook developer page and register to http://halfcup.com/social_rebates_system');
-                }
-            }
-        }
-    );
-}
 
 function getChatBot(key, sender, recipient, token, res) {
     var url = 'http://halfcup.com/social_rebates_system/wapi/read?token=1234567890&api_name=CHATBOT&key=' + key + '&page_id=' + sender;
