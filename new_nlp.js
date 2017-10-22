@@ -217,7 +217,7 @@ function respond(jsonMessage, sender, recipient, index, token, res) {
         // res.send(json);
         respondToTextOrAttacment(json, sender, recipient, token, index)
     } else {
-        getDefaultAnswer(sender, recipient);
+        getDefaultAnswer(sender, recipient,  token, res);
     }
 }
 
@@ -292,7 +292,7 @@ function respondFromGroup(jsonMessage, sender, recipient, size, token, res) {
 }
 
 
-function getDefaultAnswer(sender, recipient) {
+function getDefaultAnswer(sender, recipient, token, res) {
     var url = 'http://halfcup.com/social_rebates_system/wapi/read?token=1234567890&api_name=DEFAULT_ANSWER&page_id=' + sender + '&is_on=true';
     console.log('url', url);
     request({
@@ -310,7 +310,7 @@ function getDefaultAnswer(sender, recipient) {
                     var randomIndex = randomIntFromInterval(1, jsonMessage.length);
                     console.log("randomIndex : " + randomIndex);
                     console.log("jsonMessage.length : " + jsonMessage.length);
-                    respond(obj, sender, recipient, randomIndex);
+                    respond(obj, sender, recipient, randomIndex, token, res);
                 }
             }
         }
