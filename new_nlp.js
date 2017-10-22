@@ -249,10 +249,6 @@ function sendMorA(m_payload, recipient, token) {
             getUserInfo(m_payload, recipient, token);
         } else {
             var message = {"text": m_payload};
-            if (isMessageUs)
-                message = {
-                    "text": m_payload
-                };
 
             var js_ = JSON.stringify(message);
             var myEscapedJSONString = js_.escapeSpecialChars();

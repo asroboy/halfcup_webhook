@@ -72,8 +72,8 @@
       <file leaf-file-name="new_nlp.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/new_nlp.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="191">
-              <caret line="321" column="1" lean-forward="false" selection-start-line="321" selection-start-column="1" selection-end-line="321" selection-end-column="1" />
+            <state relative-caret-position="106">
+              <caret line="250" column="46" lean-forward="false" selection-start-line="250" selection-start-column="46" selection-end-line="250" selection-end-column="46" />
               <folding>
                 <element signature="e#0#42#0" expanded="false" />
                 <element signature="e#3720#3779#0" expanded="false" />
@@ -85,7 +85,7 @@
                 <element signature="e#6261#6320#0" expanded="false" />
                 <element signature="e#6380#6443#0" expanded="false" />
                 <element signature="e#6474#6550#0" expanded="false" />
-                <element signature="e#12482#12730#0" expanded="false" />
+                <element signature="e#12368#12616#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -153,8 +153,8 @@
       <find>handleMessage</find>
       <find>ADS</find>
       <find>q</find>
-      <find>getDefaultAnswer</find>
       <find>getToken</find>
+      <find>getDefaultAnswer</find>
     </findStrings>
     <replaceStrings>
       <replace>localhost:8080</replace>
@@ -466,12 +466,12 @@
       <workItem from="1507723068958" duration="1019000" />
       <workItem from="1507800740526" duration="4469000" />
       <workItem from="1508322942352" duration="26823000" />
-      <workItem from="1508639902058" duration="24951000" />
+      <workItem from="1508639902058" duration="25022000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="373132000" />
+    <option name="totallyTimeSpent" value="373203000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1123,8 +1123,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/new_nlp.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="191">
-          <caret line="321" column="1" lean-forward="false" selection-start-line="321" selection-start-column="1" selection-end-line="321" selection-end-column="1" />
+        <state relative-caret-position="106">
+          <caret line="250" column="46" lean-forward="false" selection-start-line="250" selection-start-column="46" selection-end-line="250" selection-end-column="46" />
           <folding>
             <element signature="e#0#42#0" expanded="false" />
             <element signature="e#3720#3779#0" expanded="false" />
@@ -1136,7 +1136,7 @@
             <element signature="e#6261#6320#0" expanded="false" />
             <element signature="e#6380#6443#0" expanded="false" />
             <element signature="e#6474#6550#0" expanded="false" />
-            <element signature="e#12482#12730#0" expanded="false" />
+            <element signature="e#12368#12616#0" expanded="false" />
           </folding>
         </state>
       </provider>
