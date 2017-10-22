@@ -17,6 +17,7 @@ module.exports = {
     },
     getMerchantId: function (pageId, recipient, text) {
         if (text.indexOf('{{') > -1) {
+            var key = text.replace("{{", "").replace("}}", "");
             getChatBot(text, pageId, recipient);
         } else {
             getMerchantId(pageId, recipient, text);
@@ -87,7 +88,8 @@ function handleMessage(event, message) {
     var pageId = event.recipient.id;
     var userId = event.sender.id;
     if (text.indexOf('{{') > -1) {
-        getChatBot(message.text, pageId, userId);
+        var key = text.replace("{{", "").replace("}}", "");
+        getChatBot(key, pageId, userId);
     } else {
         getMerchantId(pageId, userId, message.text);
     }
