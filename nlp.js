@@ -305,7 +305,7 @@ function respondFromGroup(jsonMessage, sender, recipient, size) {
     var json = JSON.parse(jsonMessage[0].json);
 
     var q = async.queue(function (task, callback) {
-        // console.log('hello ' + task.name + ' task.number ' + task.number);
+        console.log('hello async task');
         respondToTextOrAttacment(task.json, task.sender, task.recipient, task.i);
         callback();
     }, 1);
