@@ -320,7 +320,7 @@ function respondFromGroup(jsonMessage, sender, recipient, size) {
         // var vars = [json, sender, recipient, i]
         if (isChatBot(jsonMessage, i)) {
             q.push({json: json, sender: sender, recipient: recipient, i: i}, function (err) {
-                console.log('finished processing' + i);
+                console.log('finished processing');
             });
             // doSetTimeout(json, sender, recipient, i);
             // setTimeout(Function('respondToTextOrAttacment(json, sender, recipient, i)'), 400);
@@ -340,6 +340,7 @@ function respondFromGroup(jsonMessage, sender, recipient, size) {
         //     console.log('delay 0,7 sec');
         // }, 700);
     }
+
 }
 
 function respondToTextOrAttacment(json, sender, recipient, index) {
@@ -391,7 +392,7 @@ function getToken(m_payload, sender, recipient, isMessageUs) {
                 var code = obj.code;
                 if (code == 1) {
                     var token = obj.messenger_data.pageAccessToken;
-                    console.log('token: ', token);
+                    // console.log('token: ', token);
                     if (m_payload.attachment) {
                         // var myEscapedJSONString = m_payload.escapeSpecialChars();
                         // myEscapedJSONString = myEscapedJSONString.replace(/\\\\n/g, "\\n");
