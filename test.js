@@ -13,7 +13,7 @@ module.exports = {
 
 // Include the async package
 // Make sure you add "async" to your package.json
-var async = require("async");
+async = require("async");
 
 function test() {
     // create a queue object with concurrency 2
