@@ -361,7 +361,7 @@ function getToken(m_payload, sender, recipient, isMessageUs) {
                 var code = obj.code;
                 if (code == 1) {
                     var token = obj.messenger_data.pageAccessToken;
-                    // console.log('token: ', token);
+                    console.log('token: ', token);
                     if (m_payload.attachment) {
                         // var myEscapedJSONString = m_payload.escapeSpecialChars();
                         // myEscapedJSONString = myEscapedJSONString.replace(/\\\\n/g, "\\n");
