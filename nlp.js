@@ -15,8 +15,8 @@ module.exports = {
     getChatBot: function (key, sender, recipient) {
         getChatBot(key, sender, recipient);
     },
-    getMerchantId: function (pageId, recipient) {
-        getMerchantId(pageId, recipient);
+    getMerchantId: function (pageId, recipient, text) {
+        getMerchantId(pageId, recipient, text);
     },
     /*,
      getAiKey: function (sender) {
