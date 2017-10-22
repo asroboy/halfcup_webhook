@@ -296,19 +296,22 @@ function test() {
 
 function doSetTimeout(json, sender, recipient, i) {
     setTimeout(function () {
-        respondToTextOrAttacment(json, sender, recipient, i);
+        // respondToTextOrAttacment(json, sender, recipient, i);
+        q.push({json: json, sender: sender, recipient: recipient, i: i}, function (err) {
+            console.log('finished processing');
+        });
+
     }, 700);
 }
 
+var q = async.queue(function (task, callback) {
+    console.log('hello async task ' + task.i + " JSON " + task.json);
+    respondToTextOrAttacment(task.json, task.sender, task.recipient, task.i);
+    callback();
+}, 1);
 
 function respondFromGroup(jsonMessage, sender, recipient, size) {
     var json = JSON.parse(jsonMessage[0].json);
-
-    var q = async.queue(function (task, callback) {
-        console.log('hello async task');
-        respondToTextOrAttacment(task.json, task.sender, task.recipient, task.i);
-        callback();
-    }, 1);
 
     // assign a callback
     q.drain = function () {
@@ -319,10 +322,8 @@ function respondFromGroup(jsonMessage, sender, recipient, size) {
     for (i = 0; i < size; i++) {
         // var vars = [json, sender, recipient, i]
         if (isChatBot(jsonMessage, i)) {
-            q.push({json: json, sender: sender, recipient: recipient, i: i}, function (err) {
-                console.log('finished processing');
-            });
-            // doSetTimeout(json, sender, recipient, i);
+
+            doSetTimeout(json, sender, recipient, i);
             // setTimeout(Function('respondToTextOrAttacment(json, sender, recipient, i)'), 400);
         }
 
