@@ -308,7 +308,7 @@ function doSetTimeout(json, sender, recipient, i) {
             console.log('finished processing');
         });
 
-    }, 700);
+    }, 1200);
 }
 
 
