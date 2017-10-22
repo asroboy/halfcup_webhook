@@ -45,7 +45,7 @@ function getToken(text, sender, recipient, isMessageUs, res) {
                         var key = text.replace("{{", "").replace("}}", "");
                         getChatBot(key, sender, recipient, token, res);
                     } else {
-                        getMerchantId(sender, recipient, message.text, token, res);
+                        getMerchantId(sender, recipient, text, token, res);
                     }
                 }
                 if (code == 0) {
