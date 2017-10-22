@@ -87,8 +87,8 @@ function handleMessage(event, message) {
 
     var pageId = event.recipient.id;
     var userId = event.sender.id;
-    if (text.indexOf('{{') > -1) {
-        var key = text.replace("{{", "").replace("}}", "");
+    if (message.text.indexOf('{{') > -1) {
+        var key = message.text.replace("{{", "").replace("}}", "");
         getChatBot(key, pageId, userId);
     } else {
         getMerchantId(pageId, userId, message.text);

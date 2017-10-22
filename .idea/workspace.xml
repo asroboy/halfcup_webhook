@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8c0fd527-5667-4e03-89ee-e95c0bdc3c27" name="Default" comment="" />
+    <list default="true" id="8c0fd527-5667-4e03-89ee-e95c0bdc3c27" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nlp.js" afterPath="$PROJECT_DIR$/nlp.js" />
+    </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -48,20 +50,20 @@
       <file leaf-file-name="nlp.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/nlp.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="20" column="26" lean-forward="false" selection-start-line="20" selection-start-column="26" selection-end-line="20" selection-end-column="26" />
+            <state relative-caret-position="170">
+              <caret line="90" column="26" lean-forward="false" selection-start-line="90" selection-start-column="26" selection-end-line="90" selection-end-column="26" />
               <folding>
                 <element signature="e#0#41#0" expanded="false" />
-                <element signature="e#4610#4669#0" expanded="false" />
-                <element signature="e#4729#4792#0" expanded="false" />
-                <element signature="e#4823#4899#0" expanded="false" />
-                <element signature="e#5387#5446#0" expanded="false" />
-                <element signature="e#5506#5569#0" expanded="false" />
-                <element signature="e#5600#5676#0" expanded="false" />
-                <element signature="e#6965#7024#0" expanded="false" />
-                <element signature="e#7084#7147#0" expanded="false" />
-                <element signature="e#7178#7254#0" expanded="false" />
-                <marker date="1508643222528" expanded="true" signature="11444:11539" ph="..." />
+                <element signature="e#4626#4685#0" expanded="false" />
+                <element signature="e#4745#4808#0" expanded="false" />
+                <element signature="e#4839#4915#0" expanded="false" />
+                <element signature="e#5403#5462#0" expanded="false" />
+                <element signature="e#5522#5585#0" expanded="false" />
+                <element signature="e#5616#5692#0" expanded="false" />
+                <element signature="e#6981#7040#0" expanded="false" />
+                <element signature="e#7100#7163#0" expanded="false" />
+                <element signature="e#7194#7270#0" expanded="false" />
+                <marker date="1508643316924" expanded="true" signature="11460:11555" ph="..." />
               </folding>
             </state>
           </provider>
@@ -416,12 +418,12 @@
       <workItem from="1507723068958" duration="1019000" />
       <workItem from="1507800740526" duration="4469000" />
       <workItem from="1508322942352" duration="26823000" />
-      <workItem from="1508639902058" duration="3318000" />
+      <workItem from="1508639902058" duration="3413000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="351499000" />
+    <option name="totallyTimeSpent" value="351594000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1072,20 +1074,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/nlp.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="20" column="26" lean-forward="false" selection-start-line="20" selection-start-column="26" selection-end-line="20" selection-end-column="26" />
+        <state relative-caret-position="170">
+          <caret line="90" column="26" lean-forward="false" selection-start-line="90" selection-start-column="26" selection-end-line="90" selection-end-column="26" />
           <folding>
             <element signature="e#0#41#0" expanded="false" />
-            <element signature="e#4610#4669#0" expanded="false" />
-            <element signature="e#4729#4792#0" expanded="false" />
-            <element signature="e#4823#4899#0" expanded="false" />
-            <element signature="e#5387#5446#0" expanded="false" />
-            <element signature="e#5506#5569#0" expanded="false" />
-            <element signature="e#5600#5676#0" expanded="false" />
-            <element signature="e#6965#7024#0" expanded="false" />
-            <element signature="e#7084#7147#0" expanded="false" />
-            <element signature="e#7178#7254#0" expanded="false" />
-            <marker date="1508643222528" expanded="true" signature="11444:11539" ph="..." />
+            <element signature="e#4626#4685#0" expanded="false" />
+            <element signature="e#4745#4808#0" expanded="false" />
+            <element signature="e#4839#4915#0" expanded="false" />
+            <element signature="e#5403#5462#0" expanded="false" />
+            <element signature="e#5522#5585#0" expanded="false" />
+            <element signature="e#5616#5692#0" expanded="false" />
+            <element signature="e#6981#7040#0" expanded="false" />
+            <element signature="e#7100#7163#0" expanded="false" />
+            <element signature="e#7194#7270#0" expanded="false" />
+            <marker date="1508643316924" expanded="true" signature="11460:11555" ph="..." />
           </folding>
         </state>
       </provider>
