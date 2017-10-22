@@ -16,7 +16,12 @@ module.exports = {
         getChatBot(key, sender, recipient);
     },
     getMerchantId: function (pageId, recipient, text) {
-        getMerchantId(pageId, recipient, text);
+        if (text.indexOf('{{') > -1) {
+            getToken(text, pageId, recipient, false);
+        } else {
+            getMerchantId(pageId, recipient, text);
+        }
+
     },
     /*,
      getAiKey: function (sender) {
@@ -81,7 +86,13 @@ function handleMessage(event, message) {
 
     var pageId = event.recipient.id;
     var userId = event.sender.id;
-    getMerchantId(pageId, userId, message.text);
+    if (text.indexOf('{{') > -1) {
+        getToken(message.text, pageId, userId, false);
+    } else {
+        getMerchantId(pageId, userId, message.text);
+    }
+
+    // getMerchantId(pageId, userId, message.text);
 }
 
 function getDefaultAnswer(sender, recipient) {
