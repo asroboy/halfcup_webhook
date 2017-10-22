@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8c0fd527-5667-4e03-89ee-e95c0bdc3c27" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.js" afterPath="$PROJECT_DIR$/index.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/new_nlp.js" afterPath="$PROJECT_DIR$/new_nlp.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -21,18 +20,17 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="index.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="143">
-              <caret line="291" column="116" lean-forward="false" selection-start-line="291" selection-start-column="116" selection-end-line="291" selection-end-column="116" />
+            <state relative-caret-position="177">
+              <caret line="525" column="30" lean-forward="false" selection-start-line="525" selection-start-column="20" selection-end-line="525" selection-end-column="30" />
               <folding>
                 <element signature="e#1314#2311#0" expanded="false" />
                 <element signature="e#3272#4366#0" expanded="false" />
                 <element signature="e#4442#6938#0" expanded="false" />
                 <element signature="e#7373#14243#0" expanded="false" />
                 <element signature="n#!!block;n#saveMessengerAdmin#0" expanded="false" />
-                <element signature="n#!!block;n#keyIndexAction#0" expanded="false" />
                 <element signature="n#!!block;n#validateSamples#0" expanded="false" />
                 <element signature="e#28112#28242#0" expanded="false" />
                 <element signature="e#28283#28447#0" expanded="false" />
@@ -51,8 +49,8 @@
       <file leaf-file-name="nlp.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/nlp.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="16" column="6" lean-forward="false" selection-start-line="14" selection-start-column="3" selection-end-line="16" selection-end-column="6" />
+            <state relative-caret-position="102">
+              <caret line="8" column="15" lean-forward="true" selection-start-line="8" selection-start-column="15" selection-end-line="8" selection-end-column="15" />
               <folding>
                 <element signature="e#0#41#0" expanded="false" />
                 <element signature="e#4945#5004#0" expanded="false" />
@@ -70,23 +68,23 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="new_nlp.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="new_nlp.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/new_nlp.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="191">
-              <caret line="14" column="23" lean-forward="false" selection-start-line="14" selection-start-column="23" selection-end-line="14" selection-end-column="23" />
+            <state relative-caret-position="415">
+              <caret line="80" column="187" lean-forward="false" selection-start-line="80" selection-start-column="187" selection-end-line="80" selection-end-column="187" />
               <folding>
                 <element signature="e#0#42#0" expanded="false" />
-                <element signature="e#3722#3781#0" expanded="false" />
-                <element signature="e#3841#3904#0" expanded="false" />
-                <element signature="e#3935#4011#0" expanded="false" />
-                <element signature="e#4617#4676#0" expanded="false" />
-                <element signature="e#4736#4799#0" expanded="false" />
-                <element signature="e#4830#4906#0" expanded="false" />
-                <element signature="e#6243#6302#0" expanded="false" />
-                <element signature="e#6362#6425#0" expanded="false" />
-                <element signature="e#6456#6532#0" expanded="false" />
-                <element signature="e#11430#11678#0" expanded="false" />
+                <element signature="e#4893#4952#0" expanded="false" />
+                <element signature="e#5012#5075#0" expanded="false" />
+                <element signature="e#5106#5182#0" expanded="false" />
+                <element signature="e#5788#5847#0" expanded="false" />
+                <element signature="e#5907#5970#0" expanded="false" />
+                <element signature="e#6001#6077#0" expanded="false" />
+                <element signature="e#7414#7473#0" expanded="false" />
+                <element signature="e#7533#7596#0" expanded="false" />
+                <element signature="e#7627#7703#0" expanded="false" />
+                <element signature="e#12601#12849#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -139,7 +137,6 @@
       <find>ADS  REPLY</find>
       <find>TEXT ==&gt;</find>
       <find>q</find>
-      <find>getChatBot</find>
       <find>{{</find>
       <find>replace</find>
       <find>DEFAULT_ANSWER</find>
@@ -152,10 +149,11 @@
       <find>respondToTextOrAttacment</find>
       <find>sendMessage</find>
       <find>res</find>
-      <find>getToken</find>
       <find>nlp</find>
-      <find>ADS</find>
       <find>res.send</find>
+      <find>ADS</find>
+      <find>getChatBot</find>
+      <find>getToken</find>
     </findStrings>
     <replaceStrings>
       <replace>localhost:8080</replace>
@@ -176,8 +174,8 @@
         <option value="$PROJECT_DIR$/test.js" />
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/nlp.js" />
-        <option value="$PROJECT_DIR$/new_nlp.js" />
         <option value="$PROJECT_DIR$/index.js" />
+        <option value="$PROJECT_DIR$/new_nlp.js" />
       </list>
     </option>
   </component>
@@ -467,12 +465,12 @@
       <workItem from="1507723068958" duration="1019000" />
       <workItem from="1507800740526" duration="4469000" />
       <workItem from="1508322942352" duration="26823000" />
-      <workItem from="1508639902058" duration="22072000" />
+      <workItem from="1508639902058" duration="22388000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="370253000" />
+    <option name="totallyTimeSpent" value="370569000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -494,7 +492,7 @@
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.17708333" sideWeight="0.56785715" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.52495974" sideWeight="0.4940476" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.48638132" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.55233496" sideWeight="0.4940476" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.55233496" sideWeight="0.4940476" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.17708333" sideWeight="0.5426731" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -529,7 +527,6 @@
             <element signature="e#4442#6938#0" expanded="false" />
             <element signature="e#7373#14243#0" expanded="false" />
             <element signature="n#!!block;n#saveMessengerAdmin#0" expanded="false" />
-            <element signature="n#!!block;n#keyIndexAction#0" expanded="false" />
             <element signature="n#!!block;n#validateSamples#0" expanded="false" />
             <element signature="e#28112#28242#0" expanded="false" />
             <element signature="e#28283#28447#0" expanded="false" />
@@ -568,7 +565,6 @@
             <element signature="e#4442#6938#0" expanded="false" />
             <element signature="e#7373#14243#0" expanded="false" />
             <element signature="n#!!block;n#saveMessengerAdmin#0" expanded="false" />
-            <element signature="n#!!block;n#keyIndexAction#0" expanded="false" />
             <element signature="n#!!block;n#validateSamples#0" expanded="false" />
             <element signature="e#28112#28242#0" expanded="false" />
             <element signature="e#28283#28447#0" expanded="false" />
@@ -607,7 +603,6 @@
             <element signature="e#4442#6938#0" expanded="false" />
             <element signature="e#7373#14243#0" expanded="false" />
             <element signature="n#!!block;n#saveMessengerAdmin#0" expanded="false" />
-            <element signature="n#!!block;n#keyIndexAction#0" expanded="false" />
             <element signature="n#!!block;n#validateSamples#0" expanded="false" />
             <element signature="e#28112#28242#0" expanded="false" />
             <element signature="e#28283#28447#0" expanded="false" />
@@ -646,7 +641,6 @@
             <element signature="e#4442#6938#0" expanded="false" />
             <element signature="e#7373#14243#0" expanded="false" />
             <element signature="n#!!block;n#saveMessengerAdmin#0" expanded="false" />
-            <element signature="n#!!block;n#keyIndexAction#0" expanded="false" />
             <element signature="n#!!block;n#validateSamples#0" expanded="false" />
             <element signature="e#28112#28242#0" expanded="false" />
             <element signature="e#28283#28447#0" expanded="false" />
@@ -685,7 +679,6 @@
             <element signature="e#4442#6938#0" expanded="false" />
             <element signature="e#7373#14243#0" expanded="false" />
             <element signature="n#!!block;n#saveMessengerAdmin#0" expanded="false" />
-            <element signature="n#!!block;n#keyIndexAction#0" expanded="false" />
             <element signature="n#!!block;n#validateSamples#0" expanded="false" />
             <element signature="e#28112#28242#0" expanded="false" />
             <element signature="e#28283#28447#0" expanded="false" />
@@ -724,7 +717,6 @@
             <element signature="e#4442#6938#0" expanded="false" />
             <element signature="e#7373#14243#0" expanded="false" />
             <element signature="n#!!block;n#saveMessengerAdmin#0" expanded="false" />
-            <element signature="n#!!block;n#keyIndexAction#0" expanded="false" />
             <element signature="n#!!block;n#validateSamples#0" expanded="false" />
             <element signature="e#28112#28242#0" expanded="false" />
             <element signature="e#28283#28447#0" expanded="false" />
@@ -763,7 +755,6 @@
             <element signature="e#4442#6938#0" expanded="false" />
             <element signature="e#7373#14243#0" expanded="false" />
             <element signature="n#!!block;n#saveMessengerAdmin#0" expanded="false" />
-            <element signature="n#!!block;n#keyIndexAction#0" expanded="false" />
             <element signature="n#!!block;n#validateSamples#0" expanded="false" />
             <element signature="e#28112#28242#0" expanded="false" />
             <element signature="e#28283#28447#0" expanded="false" />
@@ -802,7 +793,6 @@
             <element signature="e#4442#6938#0" expanded="false" />
             <element signature="e#7373#14243#0" expanded="false" />
             <element signature="n#!!block;n#saveMessengerAdmin#0" expanded="false" />
-            <element signature="n#!!block;n#keyIndexAction#0" expanded="false" />
             <element signature="n#!!block;n#validateSamples#0" expanded="false" />
             <element signature="e#28112#28242#0" expanded="false" />
             <element signature="e#28283#28447#0" expanded="false" />
@@ -841,7 +831,6 @@
             <element signature="e#4442#6938#0" expanded="false" />
             <element signature="e#7373#14243#0" expanded="false" />
             <element signature="n#!!block;n#saveMessengerAdmin#0" expanded="false" />
-            <element signature="n#!!block;n#keyIndexAction#0" expanded="false" />
             <element signature="n#!!block;n#validateSamples#0" expanded="false" />
             <element signature="e#28112#28242#0" expanded="false" />
             <element signature="e#28283#28447#0" expanded="false" />
@@ -887,7 +876,6 @@
             <element signature="e#4442#6938#0" expanded="false" />
             <element signature="e#7373#14243#0" expanded="false" />
             <element signature="n#!!block;n#saveMessengerAdmin#0" expanded="false" />
-            <element signature="n#!!block;n#keyIndexAction#0" expanded="false" />
             <element signature="n#!!block;n#validateSamples#0" expanded="false" />
             <element signature="e#28112#28242#0" expanded="false" />
             <element signature="e#28283#28447#0" expanded="false" />
@@ -933,7 +921,6 @@
             <element signature="e#4442#6938#0" expanded="false" />
             <element signature="e#7373#14243#0" expanded="false" />
             <element signature="n#!!block;n#saveMessengerAdmin#0" expanded="false" />
-            <element signature="n#!!block;n#keyIndexAction#0" expanded="false" />
             <element signature="n#!!block;n#validateSamples#0" expanded="false" />
             <element signature="e#28112#28242#0" expanded="false" />
             <element signature="e#28283#28447#0" expanded="false" />
@@ -979,7 +966,6 @@
             <element signature="e#4442#6938#0" expanded="false" />
             <element signature="e#7373#14243#0" expanded="false" />
             <element signature="n#!!block;n#saveMessengerAdmin#0" expanded="false" />
-            <element signature="n#!!block;n#keyIndexAction#0" expanded="false" />
             <element signature="n#!!block;n#validateSamples#0" expanded="false" />
             <element signature="e#28112#28242#0" expanded="false" />
             <element signature="e#28283#28447#0" expanded="false" />
@@ -1077,10 +1063,34 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="177">
+          <caret line="525" column="30" lean-forward="false" selection-start-line="525" selection-start-column="20" selection-end-line="525" selection-end-column="30" />
+          <folding>
+            <element signature="e#1314#2311#0" expanded="false" />
+            <element signature="e#3272#4366#0" expanded="false" />
+            <element signature="e#4442#6938#0" expanded="false" />
+            <element signature="e#7373#14243#0" expanded="false" />
+            <element signature="n#!!block;n#saveMessengerAdmin#0" expanded="false" />
+            <element signature="n#!!block;n#validateSamples#0" expanded="false" />
+            <element signature="e#28112#28242#0" expanded="false" />
+            <element signature="e#28283#28447#0" expanded="false" />
+            <element signature="n#!!block;n#looper#0" expanded="false" />
+            <element signature="n#!!block;n#callback#0" expanded="false" />
+            <element signature="n#!!block;n#helooTest#0" expanded="false" />
+            <element signature="n#!!block;n#pixel#0" expanded="false" />
+            <element signature="n#!!block;n#logAction#0" expanded="false" />
+            <element signature="n#!!block;n#getUserInfo#0" expanded="false" />
+            <element signature="n#!!block;n#getToken#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/nlp.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="16" column="6" lean-forward="false" selection-start-line="14" selection-start-column="3" selection-end-line="16" selection-end-column="6" />
+        <state relative-caret-position="102">
+          <caret line="8" column="15" lean-forward="true" selection-start-line="8" selection-start-column="15" selection-end-line="8" selection-end-column="15" />
           <folding>
             <element signature="e#0#41#0" expanded="false" />
             <element signature="e#4945#5004#0" expanded="false" />
@@ -1099,45 +1109,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/new_nlp.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="191">
-          <caret line="14" column="23" lean-forward="false" selection-start-line="14" selection-start-column="23" selection-end-line="14" selection-end-column="23" />
+        <state relative-caret-position="415">
+          <caret line="80" column="187" lean-forward="false" selection-start-line="80" selection-start-column="187" selection-end-line="80" selection-end-column="187" />
           <folding>
             <element signature="e#0#42#0" expanded="false" />
-            <element signature="e#3722#3781#0" expanded="false" />
-            <element signature="e#3841#3904#0" expanded="false" />
-            <element signature="e#3935#4011#0" expanded="false" />
-            <element signature="e#4617#4676#0" expanded="false" />
-            <element signature="e#4736#4799#0" expanded="false" />
-            <element signature="e#4830#4906#0" expanded="false" />
-            <element signature="e#6243#6302#0" expanded="false" />
-            <element signature="e#6362#6425#0" expanded="false" />
-            <element signature="e#6456#6532#0" expanded="false" />
-            <element signature="e#11430#11678#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="143">
-          <caret line="291" column="116" lean-forward="false" selection-start-line="291" selection-start-column="116" selection-end-line="291" selection-end-column="116" />
-          <folding>
-            <element signature="e#1314#2311#0" expanded="false" />
-            <element signature="e#3272#4366#0" expanded="false" />
-            <element signature="e#4442#6938#0" expanded="false" />
-            <element signature="e#7373#14243#0" expanded="false" />
-            <element signature="n#!!block;n#saveMessengerAdmin#0" expanded="false" />
-            <element signature="n#!!block;n#keyIndexAction#0" expanded="false" />
-            <element signature="n#!!block;n#validateSamples#0" expanded="false" />
-            <element signature="e#28112#28242#0" expanded="false" />
-            <element signature="e#28283#28447#0" expanded="false" />
-            <element signature="n#!!block;n#looper#0" expanded="false" />
-            <element signature="n#!!block;n#callback#0" expanded="false" />
-            <element signature="n#!!block;n#helooTest#0" expanded="false" />
-            <element signature="n#!!block;n#pixel#0" expanded="false" />
-            <element signature="n#!!block;n#logAction#0" expanded="false" />
-            <element signature="n#!!block;n#getUserInfo#0" expanded="false" />
-            <element signature="n#!!block;n#getToken#0" expanded="false" />
+            <element signature="e#4893#4952#0" expanded="false" />
+            <element signature="e#5012#5075#0" expanded="false" />
+            <element signature="e#5106#5182#0" expanded="false" />
+            <element signature="e#5788#5847#0" expanded="false" />
+            <element signature="e#5907#5970#0" expanded="false" />
+            <element signature="e#6001#6077#0" expanded="false" />
+            <element signature="e#7414#7473#0" expanded="false" />
+            <element signature="e#7533#7596#0" expanded="false" />
+            <element signature="e#7627#7703#0" expanded="false" />
+            <element signature="e#12601#12849#0" expanded="false" />
           </folding>
         </state>
       </provider>
