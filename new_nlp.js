@@ -138,7 +138,7 @@ function getAiToken(sender, recipient, restaurantId, text, token, res) {
     );
 }
 
-function getAiKeyFromDB(token, pageId, recipient, text, token, res) {
+function getAiKeyFromDB(wang_token, pageId, recipient, text, token, res) {
     var url = 'http://halfcup.com/social_rebates_system/wapi/read?api_name=AI_PREV_KEYS&token=1234567890&page_id=' + pageId;
     console.log('url', url);
     request({
@@ -152,14 +152,14 @@ function getAiKeyFromDB(token, pageId, recipient, text, token, res) {
             } else {
                 var obj = JSON.parse(body);
                 // console.log('obj: ', obj);
-                getAiKey(text, token, pageId, JSON.stringify(obj.keys), recipient, token, res);
+                getAiKey(text, wang_token, pageId, JSON.stringify(obj.keys), recipient, token, res);
             }
         }
     );
 }
 
-function getAiKey(text, token, pageId, prevKeys, recipient, token, res) {
-    var url = 'http://aileadsbooster.com/backend/query?q=' + text + '&access_token=' + token + '&prev_key=' + prevKeys;
+function getAiKey(text, wang_token, pageId, prevKeys, recipient, token, res) {
+    var url = 'http://aileadsbooster.com/backend/query?q=' + text + '&access_token=' + wang_token + '&prev_key=' + prevKeys;
     // + prevKeys;
     console.log('url', url);
     request({
