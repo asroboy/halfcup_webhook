@@ -30,9 +30,16 @@ module.exports = {
      }*/
 };
 
-
+var async = require("async");
 var request = require('request');
 // var sleep = require('sleep');
+
+var q = async.queue(function (task, callback) {
+    console.log('hello async task ' + task.i + " JSON " + task.json);
+    respondToTextOrAttacment(task.json, task.sender, task.recipient, task.i);
+    callback();
+}, 1);
+
 
 function halo() {
     return "halo polisi";
@@ -304,11 +311,6 @@ function doSetTimeout(json, sender, recipient, i) {
     }, 700);
 }
 
-var q = async.queue(function (task, callback) {
-    console.log('hello async task ' + task.i + " JSON " + task.json);
-    respondToTextOrAttacment(task.json, task.sender, task.recipient, task.i);
-    callback();
-}, 1);
 
 function respondFromGroup(jsonMessage, sender, recipient, size) {
     var json = JSON.parse(jsonMessage[0].json);
