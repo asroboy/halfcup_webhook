@@ -80,7 +80,7 @@ function getChatBot(key, sender, recipient, token, res) {
                     console.log("jsonMessage.length : " + jsonMessage.length);
                     respond(obj, sender, recipient, randomIndex, token, res);
                 } else {
-                    getDefaultAnswer(sender, recipient);
+                    getDefaultAnswer(sender, recipient, token, res);
                 }
 
             }
@@ -160,7 +160,6 @@ function getAiKeyFromDB(wang_token, pageId, recipient, text, token, res) {
 
 function getAiKey(text, wang_token, pageId, prevKeys, recipient, token, res) {
     var url = 'http://aileadsbooster.com/backend/query?q=' + text + '&access_token=' + wang_token + '&prev_key=' + prevKeys;
-    // + prevKeys;
     console.log('url', url);
     request({
             url: url,
