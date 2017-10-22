@@ -216,7 +216,7 @@ function respond(jsonMessage, sender, recipient, index, token, res) {
         // res.send(json);
         respondToTextOrAttacment(json, sender, recipient, token, index)
     } else {
-        getDefaultAnswer(sender, recipient,  token, res);
+        getDefaultAnswer(sender, recipient, token, res);
     }
 }
 
@@ -337,7 +337,12 @@ function sendM(messages, recipient, token) {
     function getOneM(messages) {
         console.log('i ' + i);
         var message = messages[i];
-        var m = {"text": message.message.text};
+        var m = '';
+        if (message.message.attachment) {
+            m = message.message;
+        } else {
+            m = {"text": message.message.text};
+        }
         console.log('m ' + JSON.stringify(m));
         request({
             url: 'https://graph.facebook.com/v2.6/me/messages',
