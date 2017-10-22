@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8c0fd527-5667-4e03-89ee-e95c0bdc3c27" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nlp.js" afterPath="$PROJECT_DIR$/nlp.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -50,20 +51,25 @@
       <file leaf-file-name="nlp.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/nlp.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="307" column="13" lean-forward="true" selection-start-line="307" selection-start-column="13" selection-end-line="307" selection-end-column="13" />
+            <state relative-caret-position="408">
+              <caret line="307" column="8" lean-forward="false" selection-start-line="307" selection-start-column="8" selection-end-line="307" selection-end-column="8" />
               <folding>
                 <element signature="e#0#41#0" expanded="false" />
+                <element signature="n#!!block;n#getMerchantId#0" expanded="false" />
                 <element signature="e#4945#5004#0" expanded="false" />
                 <element signature="e#5064#5127#0" expanded="false" />
                 <element signature="e#5158#5234#0" expanded="false" />
+                <element signature="n#!!block;n#getAiToken#0" expanded="false" />
                 <element signature="e#5722#5781#0" expanded="false" />
                 <element signature="e#5841#5904#0" expanded="false" />
                 <element signature="e#5935#6011#0" expanded="false" />
+                <element signature="n#!!block;n#getAiKeyFromDB#0" expanded="false" />
+                <element signature="n#!!block;n#getAiKey#0" expanded="false" />
                 <element signature="e#7300#7359#0" expanded="false" />
                 <element signature="e#7419#7482#0" expanded="false" />
                 <element signature="e#7513#7589#0" expanded="false" />
-                <marker date="1508649220009" expanded="true" signature="12062:12157" ph="..." />
+                <element signature="n#!!block;n#saveAiKey#0" expanded="false" />
+                <marker date="1508651513843" expanded="true" signature="12061:12156" ph="..." />
               </folding>
             </state>
           </provider>
@@ -103,7 +109,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>isChatBot</find>
       <find>isGroup</find>
       <find>for</find>
       <find>getUserInfo</find>
@@ -133,6 +138,7 @@
       <find>getDefaultAnswer</find>
       <find>nlp</find>
       <find>token:</find>
+      <find>isMessageUs</find>
     </findStrings>
     <replaceStrings>
       <replace>localhost:8080</replace>
@@ -443,12 +449,12 @@
       <workItem from="1507723068958" duration="1019000" />
       <workItem from="1507800740526" duration="4469000" />
       <workItem from="1508322942352" duration="26823000" />
-      <workItem from="1508639902058" duration="9311000" />
+      <workItem from="1508639902058" duration="11415000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="357492000" />
+    <option name="totallyTimeSpent" value="359596000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1087,20 +1093,25 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/nlp.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="307" column="13" lean-forward="true" selection-start-line="307" selection-start-column="13" selection-end-line="307" selection-end-column="13" />
+        <state relative-caret-position="408">
+          <caret line="307" column="8" lean-forward="false" selection-start-line="307" selection-start-column="8" selection-end-line="307" selection-end-column="8" />
           <folding>
             <element signature="e#0#41#0" expanded="false" />
+            <element signature="n#!!block;n#getMerchantId#0" expanded="false" />
             <element signature="e#4945#5004#0" expanded="false" />
             <element signature="e#5064#5127#0" expanded="false" />
             <element signature="e#5158#5234#0" expanded="false" />
+            <element signature="n#!!block;n#getAiToken#0" expanded="false" />
             <element signature="e#5722#5781#0" expanded="false" />
             <element signature="e#5841#5904#0" expanded="false" />
             <element signature="e#5935#6011#0" expanded="false" />
+            <element signature="n#!!block;n#getAiKeyFromDB#0" expanded="false" />
+            <element signature="n#!!block;n#getAiKey#0" expanded="false" />
             <element signature="e#7300#7359#0" expanded="false" />
             <element signature="e#7419#7482#0" expanded="false" />
             <element signature="e#7513#7589#0" expanded="false" />
-            <marker date="1508649220009" expanded="true" signature="12062:12157" ph="..." />
+            <element signature="n#!!block;n#saveAiKey#0" expanded="false" />
+            <marker date="1508651513843" expanded="true" signature="12061:12156" ph="..." />
           </folding>
         </state>
       </provider>

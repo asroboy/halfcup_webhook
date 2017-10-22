@@ -36,8 +36,8 @@ var request = require('request');
 
 var q = async.queue(function (task, callback) {
     console.log('hello async task ' + task.i + " JSON " + task.json);
-    doSetTimeout(task.json, task.sender, task.recipient, task.i);
-    // respondToTextOrAttacment(task.json, task.sender, task.recipient, task.i);
+    // doSetTimeout(task.json, task.sender, task.recipient, task.i);
+    respondToTextOrAttacment(task.json, task.sender, task.recipient, task.i);
     callback();
 }, 1);
 
@@ -305,7 +305,7 @@ function test() {
 function doSetTimeout(json, sender, recipient, i) {
     setTimeout(function () {
         respondToTextOrAttacment(json, sender, recipient, i);
-    }, 2000);
+    }, 200);
 }
 
 
