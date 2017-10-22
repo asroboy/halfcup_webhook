@@ -283,13 +283,14 @@ app.post('/webhook', function (req, res) {
                                     console.log('json meta', jsonMeta);
                                     if (jsonMeta.ad_id) {
                                         console.log("=======ADS REPLY=======");
-                                        new_nlp.getMerchantId(event.sender.id, event.recipient.id, event.message.text, res);
+                                        if (event.message.text.indexOf('{{') > 0)
+                                            new_nlp.getMerchantId(event.sender.id, event.recipient.id, event.message.text, res);
                                         // getAdsResponseToUser(event.recipient.id, event.sender.id, jsonMeta.ad_id)
                                     }
                                 } else {
                                     if (event.message.text) {
                                         var request_key = event.message.text;
-                                        new_nlp.getMerchantId(event.recipient.id, event.sender.id, request_key , res);
+                                        new_nlp.getMerchantId(event.recipient.id, event.sender.id, request_key, res);
                                         console.log("===== event.message.text ========");
                                         // getResponseToUser(request_key, event.sender.id, event.recipient.id);
                                     }
