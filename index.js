@@ -283,7 +283,7 @@ app.post('/webhook', function (req, res) {
                                     console.log('json meta', jsonMeta);
                                     if (jsonMeta.ad_id) {
                                         console.log("=======ADS REPLY=======");
-                                        if (event.message.text.indexOf('{{') > 0)
+                                        if (event.message.text.indexOf('{{') > -1)
                                             new_nlp.getMerchantId(event.sender.id, event.recipient.id, event.message.text, res);
                                         // getAdsResponseToUser(event.recipient.id, event.sender.id, jsonMeta.ad_id)
                                     }
