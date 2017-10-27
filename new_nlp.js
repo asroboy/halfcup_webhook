@@ -23,6 +23,7 @@ var async = require("async");
 var request = require('request');
 var http = require('http');
 
+
 function getToken(text, sender, recipient, isMessageUs, res) {
     var url = 'http://halfcup.com/social_rebates_system/api/getPageMessengerToken?messenger_id=' + sender + '&messenger_uid=' + recipient;
     console.log('url', url);
@@ -171,8 +172,13 @@ function getAiKey(text, wang_token, pageId, prevKeys, recipient, token, res) {
                 console.log('Error: ', response.body.error);
             } else {
                 var obj = JSON.parse(body);
-                // console.log('obj: ', obj);
-                saveAiKey(obj.key, pageId, recipient, token, res);
+                if(obj.key === ''){
+                    getDefaultAnswer(sender, recipient, token, res);
+                }else{
+                    // console.log('obj: ', obj);
+                    saveAiKey(obj.key, pageId, recipient, token, res);
+                }
+
             }
         }
     );
