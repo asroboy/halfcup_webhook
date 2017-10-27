@@ -54,6 +54,8 @@ app.post('/webhook', function (req, res) {
             var field = req.body.entry[0].changes[0].field;
             if (field == "leadgen") {
                 var value = req.body.entry[0].changes[0].value;
+
+                console.log("leadgen value " + value);
                 var adId = value.ad_id;
                 var formId = value.form_id;
                 var leadgenId = value.leadgen_id;
@@ -66,10 +68,10 @@ app.post('/webhook', function (req, res) {
                 // var pageId = 228431964255924;
 
                 var message = "New lead recieved :" +
-                    "\n=====================\n";
+                    "\n=====================\n" + "ADS ID : " + adId + "\nAD GROUP ID : " + adGroupId;
 
                 var emailMessage = "New lead recieved :" +
-                    "<br> ===================== <br>";
+                    "<br> ===================== <br>" + "ADS ID : " + adId + " <br>AD GROUP ID : " + adGroupId;
                 getPageIdForLead(pageId, message, leadgenId, formId, emailMessage);
             }
         }
@@ -1033,10 +1035,11 @@ function sendEmailForLead(message, page_id) {
 
             message = "<b>PAGE : " + JSON.parse(body).name + "</b> <br/><br/> " + message;
             //brotherho@halfcup.com
+            //asrofiridho@gmail.com
 
             var url = 'http://halfcup.com/social_rebates_system/api/sendEmail?' +
                 'sender=noreply@halfcup.com' +
-                '&receiver=brotherho@halfcup.com' +
+                '&receiver=asrofiridho@gmail.com' +
                 '&subject=NEW LEAD RECIEVED : ' + JSON.parse(body).name +
                 '&body=' + message;
             console.log('url', url);
