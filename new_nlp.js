@@ -173,7 +173,7 @@ function getAiKey(text, wang_token, pageId, prevKeys, recipient, token, res) {
             } else {
                 var obj = JSON.parse(body);
                 if(obj.key === ''){
-                    getDefaultAnswer(sender, recipient, token, res);
+                    getDefaultAnswer(pageId, recipient, token, res);
                 }else{
                     // console.log('obj: ', obj);
                     saveAiKey(obj.key, pageId, recipient, token, res);
