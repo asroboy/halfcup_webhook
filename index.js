@@ -809,7 +809,10 @@ function getLead(url, token, message, recipientId, sender, emailMessage) {
                 var obj = JSON.parse(body);
                 console.log('json: ', obj);
 
-                var createdTime = obj.created_time.replace(/T/, ' ').replace(/\..+/, '');
+                var createdTime = obj.created_time
+                if(createdTime){
+                    createdTime = createdTime.replace(/T/, ' ').replace(/\..+/, '');
+                }
                 var id = obj.id;
                 var field_data = obj.field_data;
                 var mData = "";
