@@ -808,39 +808,41 @@ function getLead(url, token, message, recipientId, sender, emailMessage) {
             } else {
                 var obj = JSON.parse(body);
                 console.log('json: ', obj);
+                if(!obj.error){
+                    var createdTime = obj.created_time
+                    if(createdTime){
+                        createdTime = createdTime.replace(/T/, ' ').replace(/\..+/, '');
+                    }
+                    var id = obj.id;
+                    var field_data = obj.field_data;
+                    var mData = "";
+                    var emailData = "";
 
-                var createdTime = obj.created_time
-                if(createdTime){
-                    createdTime = createdTime.replace(/T/, ' ').replace(/\..+/, '');
+                    for (var i = 0; i < field_data.length; i++) {
+                        mData = mData + field_data[i].name + ": " + field_data[i].values + "\n";
+                        emailData = emailData + field_data[i].name + ": " + field_data[i].values + "<br>";
+                    }
+
+
+                    message = message + "id : " + id
+                        + "\ntime : " + createdTime +
+                        "\n" + mData;
+
+                    emailMessage = emailMessage + "<br>id : " + id + "<br>time : " + createdTime + "<br>" + emailData;
+
+                    var msg = {"text": message};
+                    console.log("LEAD FROM RECIEVED ==== >" + message);
+
+                    var js_ = JSON.stringify(msg);
+                    var myEscapedJSONString = js_.escapeSpecialChars();
+                    myEscapedJSONString = myEscapedJSONString.replace(/\\\\n/g, "\\n");
+                    console.log("TEXT ==> " + myEscapedJSONString);
+                    sendMessage(recipientId, msg, token);
+
+
+                    sendEmailForLead(emailMessage, sender)
                 }
-                var id = obj.id;
-                var field_data = obj.field_data;
-                var mData = "";
-                var emailData = "";
 
-                for (var i = 0; i < field_data.length; i++) {
-                    mData = mData + field_data[i].name + ": " + field_data[i].values + "\n";
-                    emailData = emailData + field_data[i].name + ": " + field_data[i].values + "<br>";
-                }
-
-
-                message = message + "id : " + id
-                    + "\ntime : " + createdTime +
-                    "\n" + mData;
-
-                emailMessage = emailMessage + "<br>id : " + id + "<br>time : " + createdTime + "<br>" + emailData;
-
-                var msg = {"text": message};
-                console.log("LEAD FROM RECIEVED ==== >" + message);
-
-                var js_ = JSON.stringify(msg);
-                var myEscapedJSONString = js_.escapeSpecialChars();
-                myEscapedJSONString = myEscapedJSONString.replace(/\\\\n/g, "\\n");
-                console.log("TEXT ==> " + myEscapedJSONString);
-                sendMessage(recipientId, msg, token);
-
-
-                sendEmailForLead(emailMessage, sender)
             }
         }
     );
