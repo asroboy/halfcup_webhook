@@ -4,8 +4,9 @@
 module.exports = {
     foo: function (res) {
         // whatever
-        console.log("NEW N L P");
-        var token = getToken('{{greetings}}', '1965520413734063', '1676161905789453', false, res);
+        test(res);
+        // console.log("NEW N L P");
+        // var token = getToken('{{greetings}}', '1965520413734063', '1676161905789453', false, res);
     },
     handleMessage: function (event, message, res) {
         var pageId = event.recipient.id;
@@ -159,6 +160,61 @@ function getAiKeyFromDB(wang_token, pageId, recipient, text, token, res) {
     );
 }
 
+
+function test(res) {
+    var url = 'http://aileadsbooster.com/Backend/query?access_token=0ddb61601a8bcd5b822994fdc4e061a4&q=collect';
+    console.log('url', url);
+    request({
+            url: url,
+            method: 'GET'
+        }, function (error, response, body) {
+            if (error) {
+                console.log('Error : ', error);
+            } else if (response.body.error) {
+                console.log('Error: ', response.body.error);
+            } else {
+                var obj = JSON.parse(body);
+                // console.log(obj)
+                if (obj.aggregation.length > 0) {
+                    getIndexAggregate();
+                } else {
+
+                }
+
+
+            }
+        }
+    );
+}
+
+function getIndexAggregate(size, pageId, key, aggreationData, recipient, token) {
+    var url = 'http://halfcup.com/social_rebates_system/wapi/save?api_name=AGGREGATE_AI&size=' + size + '&page_id=' + pageId + '&key=' + key + '&token=1234567890';
+    request({
+            url: url,
+            method: 'POST'
+        }, function (error, response, body) {
+            if (error) {
+                console.log('Error : ', error);
+            } else if (response.body.error) {
+                console.log('Error: ', response.body.error);
+            } else {
+                var obj = JSON.parse(body);
+                console.log('mIndex = ' + obj.data.mIndex);
+
+                var message = aggreationData[obj.data.mIndex];
+
+                var js_ = JSON.stringify(message);
+                var myEscapedJSONString = js_.escapeSpecialChars();
+                myEscapedJSONString = myEscapedJSONString.replace(/\\\\n/g, "\\n");
+                console.log("TEXT ==> " + myEscapedJSONString);
+                sendMessage(recipient, myEscapedJSONString, token);
+
+                // res.send(JSON.stringify(obj))
+            }
+        }
+    );
+}
+
 function getAiKey(text, wang_token, pageId, prevKeys, recipient, token, res) {
     var url = 'http://aileadsbooster.com/backend/query?q=' + text + '&access_token=' + wang_token + '&prev_key=' + prevKeys;
     console.log('url', url);
@@ -172,12 +228,17 @@ function getAiKey(text, wang_token, pageId, prevKeys, recipient, token, res) {
                 console.log('Error: ', response.body.error);
             } else {
                 var obj = JSON.parse(body);
-                if(obj.key === ''){
-                    getDefaultAnswer(pageId, recipient, token, res);
-                }else{
-                    // console.log('obj: ', obj);
-                    saveAiKey(obj.key, pageId, recipient, token, res);
+                if (obj.aggregation.length > 0) {
+                    getIndexAggregate(obj.aggregation.length, pageId, text, obj.aggregation, recipient, token)
+                } else {
+                    if (obj.key === '') {
+                        getDefaultAnswer(pageId, recipient, token, res);
+                    } else {
+                        // console.log('obj: ', obj);
+                        saveAiKey(obj.key, pageId, recipient, token, res);
+                    }
                 }
+
 
             }
         }
