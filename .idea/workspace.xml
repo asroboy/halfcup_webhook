@@ -72,8 +72,8 @@
       <file leaf-file-name="new_nlp.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/new_nlp.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="266">
-              <caret line="203" column="62" lean-forward="true" selection-start-line="203" selection-start-column="62" selection-end-line="203" selection-end-column="62" />
+            <state relative-caret-position="300">
+              <caret line="218" column="42" lean-forward="false" selection-start-line="218" selection-start-column="42" selection-end-line="218" selection-end-column="42" />
               <folding>
                 <element signature="e#0#42#0" expanded="false" />
                 <element signature="e#3758#3817#0" expanded="false" />
@@ -465,12 +465,12 @@
       <workItem from="1509018776745" duration="3792000" />
       <workItem from="1509073464902" duration="9036000" />
       <workItem from="1509331511591" duration="1545000" />
-      <workItem from="1509375868833" duration="3425000" />
+      <workItem from="1509375868833" duration="4031000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="414669000" />
+    <option name="totallyTimeSpent" value="415275000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1083,8 +1083,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/new_nlp.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="203" column="62" lean-forward="true" selection-start-line="203" selection-start-column="62" selection-end-line="203" selection-end-column="62" />
+        <state relative-caret-position="300">
+          <caret line="218" column="42" lean-forward="false" selection-start-line="218" selection-start-column="42" selection-end-line="218" selection-end-column="42" />
           <folding>
             <element signature="e#0#42#0" expanded="false" />
             <element signature="e#3758#3817#0" expanded="false" />
