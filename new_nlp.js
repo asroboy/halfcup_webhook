@@ -228,7 +228,7 @@ function getAiKey(text, wang_token, pageId, prevKeys, recipient, token, res) {
                 console.log('Error: ', response.body.error);
             } else {
                 var obj = JSON.parse(body);
-                if (obj.aggregation.length > 0) {
+                if (obj.hasOwnProperty('aggregation')) {
                     getIndexAggregate(obj.aggregation.length, pageId, text, obj.aggregation, recipient, token)
                 } else {
                     if (obj.key === '') {
