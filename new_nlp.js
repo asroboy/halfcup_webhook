@@ -176,12 +176,10 @@ function test(res) {
                 var obj = JSON.parse(body);
                 // console.log(obj)
                 if (obj.aggregation.length > 0) {
-                    getIndexAggregate();
+                    getIndexAggregate(obj.aggregation.length, '', 'collect', obj.aggregation,'', '');
                 } else {
 
                 }
-
-
             }
         }
     );
@@ -229,7 +227,7 @@ function getAiKey(text, wang_token, pageId, prevKeys, recipient, token, res) {
             } else {
                 var obj = JSON.parse(body);
                 if (obj.hasOwnProperty('aggregation')) {
-                    getIndexAggregate(obj.aggregation.length, pageId, text, obj.aggregation, recipient, token)
+                    getIndexAggregate(obj.aggregation.length, pageId, obj.key, obj.aggregation, recipient, token)
                 } else {
                     if (obj.key === '') {
                         getDefaultAnswer(pageId, recipient, token, res);
