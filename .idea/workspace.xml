@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8c0fd527-5667-4e03-89ee-e95c0bdc3c27" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/new_nlp.js" afterPath="$PROJECT_DIR$/new_nlp.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -72,8 +71,8 @@
       <file leaf-file-name="new_nlp.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/new_nlp.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="342">
-              <caret line="242" column="44" lean-forward="false" selection-start-line="242" selection-start-column="44" selection-end-line="242" selection-end-column="44" />
+            <state relative-caret-position="461">
+              <caret line="242" column="60" lean-forward="false" selection-start-line="242" selection-start-column="60" selection-end-line="242" selection-end-column="60" />
               <folding>
                 <element signature="e#0#42#0" expanded="false" />
                 <element signature="e#3758#3817#0" expanded="false" />
@@ -84,9 +83,9 @@
                 <element signature="e#4866#4942#0" expanded="false" />
                 <element signature="e#6330#6393#0" expanded="false" />
                 <element signature="e#6424#6500#0" expanded="false" />
-                <element signature="e#8607#8666#0" expanded="false" />
-                <element signature="e#8726#8789#0" expanded="false" />
-                <element signature="e#8820#8896#0" expanded="false" />
+                <element signature="e#8563#8622#0" expanded="false" />
+                <element signature="e#8682#8745#0" expanded="false" />
+                <element signature="e#8776#8852#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -465,12 +464,12 @@
       <workItem from="1509018776745" duration="3792000" />
       <workItem from="1509073464902" duration="9036000" />
       <workItem from="1509331511591" duration="1545000" />
-      <workItem from="1509375868833" duration="6927000" />
+      <workItem from="1509375868833" duration="7149000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="418171000" />
+    <option name="totallyTimeSpent" value="418393000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1083,8 +1082,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/new_nlp.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="242" column="44" lean-forward="false" selection-start-line="242" selection-start-column="44" selection-end-line="242" selection-end-column="44" />
+        <state relative-caret-position="461">
+          <caret line="242" column="60" lean-forward="false" selection-start-line="242" selection-start-column="60" selection-end-line="242" selection-end-column="60" />
           <folding>
             <element signature="e#0#42#0" expanded="false" />
             <element signature="e#3758#3817#0" expanded="false" />
@@ -1095,9 +1094,9 @@
             <element signature="e#4866#4942#0" expanded="false" />
             <element signature="e#6330#6393#0" expanded="false" />
             <element signature="e#6424#6500#0" expanded="false" />
-            <element signature="e#8607#8666#0" expanded="false" />
-            <element signature="e#8726#8789#0" expanded="false" />
-            <element signature="e#8820#8896#0" expanded="false" />
+            <element signature="e#8563#8622#0" expanded="false" />
+            <element signature="e#8682#8745#0" expanded="false" />
+            <element signature="e#8776#8852#0" expanded="false" />
           </folding>
         </state>
       </provider>

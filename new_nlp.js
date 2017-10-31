@@ -198,7 +198,7 @@ function getIndexAggregate(size, pageId, key, aggreationData, recipient, token) 
             } else {
                 var obj = JSON.parse(body);
                 console.log('mIndex = ' + obj.data.mIndex);
-                console.log('obj = ' + obj);
+
 
                 var message = aggreationData[obj.data.mIndex];
 
@@ -240,7 +240,7 @@ function getAiKey(text, wang_token, pageId, prevKeys, recipient, token, res) {
                 console.log('Error: ', response.body.error);
             } else {
                 var obj = JSON.parse(body);
-                console.log('obj = ' + obj);
+                console.log('obj = ' + JSON.stringify(obj));
                 if (obj.hasOwnProperty('aggregation')) {
                     getIndexAggregate(obj.aggregation.length, pageId, obj.key, obj.aggregation, recipient, token)
                 } else {
