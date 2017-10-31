@@ -133,6 +133,8 @@ function getAiToken(sender, recipient, restaurantId, text, token, res) {
                 if (obj.access_token !== '') {
                     var pageId = sender;
                     getAiKeyFromDB(obj.access_token, pageId, recipient, text, token, res);
+                }else{
+                    getResponseToUser(text, sender, recipient);
                 }
 
             }
