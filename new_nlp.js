@@ -215,18 +215,6 @@ function getIndexAggregate(size, pageId, key, aggreationData, recipient, token) 
 }
 
 
-String.prototype.escapeSpecialChars = function () {
-    return this.replace(/\\n/g, "\\n")
-        .replace(/\\'/g, "\\'")
-        .replace(/\\"/g, '\\"')
-        .replace(/\\&/g, "\\&")
-        .replace(/\\r/g, "\\r")
-        .replace(/\\t/g, "\\t")
-        .replace(/\r|\n/g, "\\n")
-        .replace(/\\b/g, "\\b")
-        .replace(/\\f/g, "\\f");
-};
-
 function getAiKey(text, wang_token, pageId, prevKeys, recipient, token, res) {
     var url = 'http://aileadsbooster.com/Backend/query?q=' + text + '&access_token=' + wang_token + '&prev_key=' + prevKeys;
     console.log('url', url);
@@ -242,7 +230,17 @@ function getAiKey(text, wang_token, pageId, prevKeys, recipient, token, res) {
                 var obj = JSON.parse(body);
                 console.log('obj = ' + JSON.stringify(obj));
                 if (obj.hasOwnProperty('aggregation')) {
-                    getIndexAggregate(obj.aggregation.length, pageId, obj.key, obj.aggregation, recipient, token)
+                    if(obj.aggregation.length > 0){
+                        getIndexAggregate(obj.aggregation.length, pageId, obj.key, obj.aggregation, recipient, token);
+                    }else{
+                        if (obj.key === '') {
+                            getDefaultAnswer(pageId, recipient, token, res);
+                        } else {
+                            // console.log('obj: ', obj);
+                            saveAiKey(obj.key, pageId, recipient, token, res);
+                        }
+                    }
+
                 } else {
                     if (obj.key === '') {
                         getDefaultAnswer(pageId, recipient, token, res);
