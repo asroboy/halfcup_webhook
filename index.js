@@ -319,6 +319,8 @@ app.post('/webhook', function (req, res) {
                     if (event.optin.user_ref) {
                         console.log(key)
                         // getResponseToUserRef(key, event.optin.user_ref, event.recipient.id);
+                    } else if (ref.indexOf("{{") > -1) {
+                        new_nlp.getChatBot(ref, event.recipient.id, event.sender.id, res);
                     } else if (key === null) {
 
                     } else if (ref === 'null') {
@@ -423,12 +425,15 @@ app.post('/webhook', function (req, res) {
                         getResponseToUserForPostback(event.postback.payload, event.sender.id, event.recipient.id);
                     }
 
+                    nkivli
 
                     if (event.postback.referral) {
                         var ref = event.postback.referral.ref;
                         console.log("event.postback.referral");
                         if (ref === null) {
 
+                        } else if (ref.indexOf("{{") > -1) {
+                            new_nlp.getChatBot(ref, event.recipient.id, event.sender.id, res);
                         } else if (ref === 'null') {
 
                         } else {
