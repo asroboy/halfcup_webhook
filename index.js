@@ -420,12 +420,13 @@ app.post('/webhook', function (req, res) {
                     else if (event.postback.payload === "USER_DEFINED_PAYLOAD") {
                         pixel('PostBack', "Get Started", event.postback.payload, event.sender.id, event.recipient.id);
                         getResponseToUser(event.postback.payload, event.sender.id, event.recipient.id);
+                    } else if (event.postback.payload.indexOf("{{")){
+                        new_nlp.getChatBot(ref, event.recipient.id, event.sender.id, res);
                     } else {
+
                         pixel('PostBack', event.postback.payload, event.postback.payload, event.sender.id, event.recipient.id);
                         getResponseToUserForPostback(event.postback.payload, event.sender.id, event.recipient.id);
                     }
-
-                    nkivli
 
                     if (event.postback.referral) {
                         var ref = event.postback.referral.ref;
