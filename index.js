@@ -452,6 +452,8 @@ app.post('/webhook', function (req, res) {
                         var adminMsgrID = event.sender.id;
                         var pageId = event.recipient.id;
                         saveMessengerAdmin(adminMsgrID, pageId);
+                    } else if (ref.indexOf("{{") > -1) {
+                        new_nlp.getChatBot(ref, event.sender.id, event.recipient.id, res);
                     } else if (ref === null) {
 
                     } else if (ref === 'null') {
@@ -809,9 +811,9 @@ function getLead(url, token, message, recipientId, sender, emailMessage) {
             } else {
                 var obj = JSON.parse(body);
                 console.log('json: ', obj);
-                if(!obj.error){
+                if (!obj.error) {
                     var createdTime = obj.created_time
-                    if(createdTime){
+                    if (createdTime) {
                         createdTime = createdTime.replace(/T/, ' ').replace(/\..+/, '');
                     }
                     var id = obj.id;
