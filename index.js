@@ -453,7 +453,7 @@ app.post('/webhook', function (req, res) {
                         var pageId = event.recipient.id;
                         saveMessengerAdmin(adminMsgrID, pageId);
                     } else if (ref.indexOf("{{") > -1) {
-                        new_nlp.getChatBot(ref, event.sender.id, event.recipient.id, res);
+                        new_nlp.getChatBot(ref, event.recipient.id, event.sender.id, res);
                     } else if (ref === null) {
 
                     } else if (ref === 'null') {
