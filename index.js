@@ -36,12 +36,10 @@ app.get('/new_nlp', function (req, res) {
     new_nlp.foo(res)
 });
 
-
 // Facebook Webhook
 app.get('/test', function (req, res) {
     test.foo(res)
 });
-
 
 // handler receiving messages
 app.post('/webhook', function (req, res) {
@@ -316,19 +314,19 @@ app.post('/webhook', function (req, res) {
                 if (event.optin) {
                     var key = event.optin.ref;
                     console.log(key)
-                    if (event.optin.user_ref) {
-                        console.log(key)
-                        // getResponseToUserRef(key, event.optin.user_ref, event.recipient.id);
-                    } else if (ref.indexOf("{{") > -1) {
-                        new_nlp.getChatBot(ref, event.recipient.id, event.sender.id, res);
-                    } else if (key === null) {
+                    if (key === null) {
 
-                    } else if (ref === 'null') {
+                    } else {
+                        if (event.optin.user_ref) {
+                            console.log(key)
+                            // getResponseToUserRef(key, event.optin.user_ref, event.recipient.id);
+                        } else if (ref.indexOf("{{") > -1) {
+                            new_nlp.getChatBot(ref, event.recipient.id, event.sender.id, res);
+                        } else if (ref === 'null') {
 
-                    }
-                    // getResponseToUser(key, event.sender.id, event.recipient.id);
-                    else {
+                        } else {
 
+                        }
                     }
 
                 }
@@ -381,6 +379,10 @@ app.post('/webhook', function (req, res) {
                         }
                     }
 
+                    if(payload_prefix === 'AGGREGATION'){
+                        new_nlp.getChatBot(event.postback.payload, event.recipient.id, event.sender.id, res)
+                    }
+
 
                     /**
                      * MULTI KEY FORMAT [A]|[B]|BOT_xxxx_xxxx
@@ -420,7 +422,7 @@ app.post('/webhook', function (req, res) {
                     else if (event.postback.payload === "USER_DEFINED_PAYLOAD") {
                         pixel('PostBack', "Get Started", event.postback.payload, event.sender.id, event.recipient.id);
                         getResponseToUser(event.postback.payload, event.sender.id, event.recipient.id);
-                    } else if (event.postback.payload.indexOf("{{")){
+                    } else if (event.postback.payload.indexOf("{{")) {
                         new_nlp.getChatBot(ref, event.recipient.id, event.sender.id, res);
                     } else {
 
@@ -433,17 +435,20 @@ app.post('/webhook', function (req, res) {
                         console.log("event.postback.referral");
                         if (ref === null) {
 
-                        } else if (ref.indexOf("{{") > -1) {
-                            new_nlp.getChatBot(ref, event.recipient.id, event.sender.id, res);
-                        } else if (ref === 'null') {
-
                         } else {
-                            var keys = ref.split("|");
+                            if (ref.indexOf("{{") > -1) {
+                                new_nlp.getChatBot(ref, event.recipient.id, event.sender.id, res);
+                            } else if (ref === 'null') {
 
-                            // if (keys[0] === 'MESSAGE_ME') {
-                            // getResponseToUser(ref,event.sender.id, event.recipient.id );
-                            getToken(ref, event.recipient.id, event.sender.id, true);
-                            // }
+                            } else {
+                                var keys = ref.split("|");
+
+                                // if (keys[0] === 'MESSAGE_ME') {
+                                // getResponseToUser(ref,event.sender.id, event.recipient.id );
+                                getToken(ref, event.recipient.id, event.sender.id, true);
+                                // }
+                            }
+
                         }
 
                     }
@@ -454,22 +459,25 @@ app.post('/webhook', function (req, res) {
                 if (event.referral) {
                     console.log("event.referral");
                     var ref = event.referral.ref;
-                    if (ref === "setting_up_push") {
-                        var adminMsgrID = event.sender.id;
-                        var pageId = event.recipient.id;
-                        saveMessengerAdmin(adminMsgrID, pageId);
-                    } else if (ref.indexOf("{{") > -1) {
-                        new_nlp.getChatBot(ref, event.recipient.id, event.sender.id, res);
-                    } else if (ref === null) {
-
-                    } else if (ref === 'null') {
+                    if (ref === null) {
 
                     } else {
-                        var keys = ref.split("|");
-                        // if (keys[0] === 'MESSAGE_ME') {
-                        // getResponseToUser(ref,event.sender.id, event.recipient.id );
-                        getToken(ref, event.recipient.id, event.sender.id, true);
-                        // }
+                        if (ref === "setting_up_push") {
+                            var adminMsgrID = event.sender.id;
+                            var pageId = event.recipient.id;
+                            saveMessengerAdmin(adminMsgrID, pageId);
+                        } else if (ref.indexOf("{{") > -1) {
+                            new_nlp.getChatBot(ref, event.recipient.id, event.sender.id, res);
+                        } else if (ref === 'null') {
+
+                        } else {
+                            var keys = ref.split("|");
+                            // if (keys[0] === 'MESSAGE_ME') {
+                            // getResponseToUser(ref,event.sender.id, event.recipient.id );
+                            getToken(ref, event.recipient.id, event.sender.id, true);
+                            // }
+                        }
+
                     }
 
                 }
@@ -478,8 +486,7 @@ app.post('/webhook', function (req, res) {
         }
 
         res.sendStatus(200);
-    }
-);
+    });
 
 function saveMessengerAdmin(sender, recipient) {
     var url = 'http://halfcup.com/social_rebates_system/api/saveAdminMessengerId?page_id=' + recipient + '&admin_msg_id=' + sender + "&token=1234567890";
@@ -578,7 +585,6 @@ function keyIndexAction(key, event, action_name, event_name) {
     }
 }
 
-
 function validateSamples(key) {
     request({
         url: 'https://api.wit.ai/samples?v=20170307&q=' + key,
@@ -604,7 +610,6 @@ function validateSamples(key) {
     });
 }
 
-
 app.get('/callback', function (req, res) {
     if (req.query['token'] === 'test') {
         res.send('OKE');
@@ -621,7 +626,6 @@ app.get('/test', function (req, res) {
         res.send('Invalid verify token');
     }
 });
-
 
 function looper() {
     var z = 0;
@@ -979,7 +983,6 @@ function getResponseToUser(request_key, recipient, sender) {
     });
 }
 
-
 function sendEmail(message, page_id) {
     var longLiveToken = "EAABqJD84pmIBAP6U37LseOrNLP6Xt13zCRR8dUCcNS4T1tKFQd8JZAyGQJOPq4mOfHazyppWRGYQaO2aaT1vQA4HNSEu10D6CgH220ND9ecweec3WOMGsvbIMv1gzJI5NrYXRKf5Nqmc8o9cfJdG9eBeU1UZBuOK2iSZCBlogZDZD";
     var graphUrl = "https://graph.facebook.com/v2.10/" + page_id + "?access_token=" + longLiveToken;
@@ -1024,7 +1027,6 @@ function sendEmail(message, page_id) {
         }
     });
 }
-
 
 function sendEmailForLead(message, page_id) {
     var longLiveToken = "EAABqJD84pmIBAP6U37LseOrNLP6Xt13zCRR8dUCcNS4T1tKFQd8JZAyGQJOPq4mOfHazyppWRGYQaO2aaT1vQA4HNSEu10D6CgH220ND9ecweec3WOMGsvbIMv1gzJI5NrYXRKf5Nqmc8o9cfJdG9eBeU1UZBuOK2iSZCBlogZDZD";
@@ -1226,13 +1228,11 @@ app.get('/send_multiple', function (req, res) {
     res.send('OK, Sent to :' + req.query.user_ids);
 });
 
-
 // Facebook Webhook
 app.get('/fallback', function (req, res) {
     console.log('res - fallback ', res.body);
     res.send('Wellcome to fallback');
 });
-
 
 function leadgenProcessor(value) {
 
@@ -1268,6 +1268,7 @@ function sendMessage(recipientId, message, token) {
         }
     });
 };
+
 // generic function sending messages
 function sendMessageUserRef(recipientId, message, token) {
     //console.log(process); process.env.PAGE_ACCESS_TOKEN
@@ -1287,6 +1288,7 @@ function sendMessageUserRef(recipientId, message, token) {
         }
     });
 };
+
 // generic function sending messages
 function sendMessagePostback(recipientId, message, token) {
     //console.log(process); process.env.PAGE_ACCESS_TOKEN

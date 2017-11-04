@@ -4,7 +4,9 @@
 module.exports = {
     foo: function (res) {
         // whatever
-        test(res);
+        // test(res);
+        getAggregationObject('AGGREGATION_object=street&query=agent=Ang Mo Kio||bedroom=2||street=street 21', '228431964255924', '877390472364218', 'EAABqJD84pmIBAKZBPiJ12rk2OoZBJQzy4CcoT2CG4ZBzCKyJkRL2OMqcmuGvfryINB79U8qWx1DiV21FAZBUsHZCIsGQvId6SoCg4UqoCGxVk2FZBMZAszgVX02ZAWwoWUecALj0KycDq88ZBBN6WgeKG0QbZAXrql7IZAGX1jE2XHVmgZDZD', res);
+        // getToken('AGGREGATION_object=main', '228431964255924', '877390472364218', false, res);
         // console.log("NEW N L P");
         // var token = getToken('{{greetings}}', '1965520413734063', '1676161905789453', false, res);
     },
@@ -43,7 +45,13 @@ function getToken(text, sender, recipient, isMessageUs, res) {
                 if (code == 1) {
                     var token = obj.messenger_data.pageAccessToken;
                     console.log('token : ' + token);
-                    if (text.indexOf('{{') > -1) {
+                    if (text.indexOf('AGGREGATION_')) {
+
+                        getAggregationObject(text, sender, recipient, token, res);
+
+                        saveAggregationObj(text, sender);
+
+                    } else if (text.indexOf('{{') > -1) {
                         var key = text.replace("{{", "").replace("}}", "");
                         getChatBot(key, sender, recipient, token, res);
                     } else {
@@ -54,6 +62,64 @@ function getToken(text, sender, recipient, isMessageUs, res) {
                     console.log('NLP : Can\'t send message, TOKEN NOT FOUND, Get page access token from facebook developer page and register to http://halfcup.com/social_rebates_system');
 
                 }
+            }
+        }
+    );
+}
+
+function getAggregationObject(key, sender, recipient, token, res) {
+    if (key.indexOf('AGGREGATION_') > -1) {
+        var mKey = key.replace('AGGREGATION_', '');
+        var url = 'http://aileadsbooster.com/Backend/aggregation?' + mKey;
+        console.log('url', url);
+        request({
+                url: url,
+                method: 'GET'
+            }, function (error, response, body) {
+                if (error) {
+                    console.log('Error sending message: ', error);
+                } else if (response.body.error) {
+                    console.log('Error: ', response.body.error);
+                } else {
+                    var obj = JSON.parse(body);
+                    console.log('getChatBot RESULT: ', obj.aggregation);
+                    // res.send(obj);
+
+                    if (obj.aggregation.length > 0) {
+                        // var jsonMessage = JSON.parse(obj);
+                        var randomIndex = randomIntFromInterval(1, obj.aggregation.length);
+                        console.log("randomIndex : " + randomIndex);
+                        console.log("jsonMessage.length : " + obj.aggregation.length);
+                        // res.send("DONE, randomIndex " + randomIndex);
+                        // respond(obj.aggregation, sender, recipient, randomIndex, token, res);
+                        randomIndex = randomIndex - 1
+                        respondToTextOrAttacment(obj.aggregation, sender, recipient, token, randomIndex)
+                    } else {
+                        getDefaultAnswer(sender, recipient, token, res);
+                    }
+
+                }
+            }
+        );
+    }
+
+}
+
+
+function saveAggregationObj(key, sender) {
+    var url = 'http://halfcup.com/social_rebates_system/wapi/save?token=1234567890&api_name=AGGREGATE_OBJ&aggr_key=' + key + '&page_id=' + sender;
+    console.log('url', url);
+    request({
+            url: url,
+            method: 'POST'
+        }, function (error, response, body) {
+            if (error) {
+                console.log('Error sending message: ', error);
+            } else if (response.body.error) {
+                console.log('Error: ', response.body.error);
+            } else {
+                var obj = JSON.parse(body);
+                console.log('getChatBot RESULT: ', obj);
             }
         }
     );
@@ -90,7 +156,6 @@ function getChatBot(key, sender, recipient, token, res) {
     );
 }
 
-
 function getMerchantId(pageId, recipient, text, token, res) {
     console.log("TEXT ========================================> " + text);
     var url = 'http://halfcup.com/social_rebates_system/wapi/read?api_name=GET_RESTAURANT&token=1234567890&page_id=' + pageId;
@@ -115,7 +180,6 @@ function getMerchantId(pageId, recipient, text, token, res) {
     );
 }
 
-
 function getAiToken(sender, recipient, restaurantId, text, token, res) {
     var url = 'http://aileadsbooster.com/backend/getEnvironment?page_id=' + sender + '&merchant_id=' + restaurantId + '&lang=en';
     console.log('url', url);
@@ -133,7 +197,7 @@ function getAiToken(sender, recipient, restaurantId, text, token, res) {
                 if (obj.access_token !== '') {
                     var pageId = sender;
                     getAiKeyFromDB(obj.access_token, pageId, recipient, text, token, res);
-                }else{
+                } else {
                     // getResponseToUser(text, sender, recipient);
                 }
 
@@ -156,12 +220,11 @@ function getAiKeyFromDB(wang_token, pageId, recipient, text, token, res) {
             } else {
                 var obj = JSON.parse(body);
                 // console.log('obj: ', obj);
-                getAiKey(text, wang_token, pageId, JSON.stringify(obj.keys), recipient, token, res);
+                getAiKey(text, wang_token, pageId, JSON.stringify(obj.keys), recipient, token, res, obj.aggregation);
             }
         }
     );
 }
-
 
 function test(res) {
     var url = 'http://aileadsbooster.com/Backend/query?access_token=0ddb61601a8bcd5b822994fdc4e061a4&q=collect';
@@ -178,7 +241,7 @@ function test(res) {
                 var obj = JSON.parse(body);
                 // console.log(obj)
                 if (obj.aggregation.length > 0) {
-                    getIndexAggregate(obj.aggregation.length, '', 'collect', obj.aggregation,'', '');
+                    getIndexAggregate(obj.aggregation.length, '', 'collect', obj.aggregation, '', '');
                 } else {
 
                 }
@@ -216,9 +279,8 @@ function getIndexAggregate(size, pageId, key, aggreationData, recipient, token) 
     );
 }
 
-
-function getAiKey(text, wang_token, pageId, prevKeys, recipient, token, res) {
-    var url = 'http://aileadsbooster.com/Backend/query?q=' + text + '&access_token=' + wang_token + '&prev_key=' + prevKeys;
+function getAiKey(text, wang_token, pageId, prevKeys, recipient, token, res, aggregateObj) {
+    var url = 'http://aileadsbooster.com/Backend/query?q=' + text + '&access_token=' + wang_token + '&prev_key=' + prevKeys + '&ggregation=' + aggregateObj;
     console.log('url', url);
     request({
             url: url,
@@ -232,9 +294,9 @@ function getAiKey(text, wang_token, pageId, prevKeys, recipient, token, res) {
                 var obj = JSON.parse(body);
                 console.log('obj = ' + JSON.stringify(obj));
                 if (obj.hasOwnProperty('aggregation')) {
-                    if(obj.aggregation.length > 0){
+                    if (obj.aggregation.length > 0) {
                         getIndexAggregate(obj.aggregation.length, pageId, obj.key, obj.aggregation, recipient, token);
-                    }else{
+                    } else {
                         if (obj.key === '') {
                             getDefaultAnswer(pageId, recipient, token, res);
                         } else {
@@ -257,7 +319,6 @@ function getAiKey(text, wang_token, pageId, prevKeys, recipient, token, res) {
         }
     );
 }
-
 
 function saveAiKey(key, pageId, recipient, token, res) {
     var url = 'http://halfcup.com/social_rebates_system/wapi/save?api_name=AI_PREV_KEYS&key=' + key + '&token=1234567890&page_id=' + pageId;
@@ -282,7 +343,7 @@ function saveAiKey(key, pageId, recipient, token, res) {
 
 function respond(jsonMessage, sender, recipient, index, token, res) {
     index = index - 1;
-    // console.log('json: ', jsonMessage);
+    console.log('json: ', jsonMessage);
     if (isGroup(jsonMessage, index)) {
         console.log('GROUP');
         var json = JSON.parse(jsonMessage[0].json);
@@ -299,7 +360,6 @@ function respond(jsonMessage, sender, recipient, index, token, res) {
         getDefaultAnswer(sender, recipient, token, res);
     }
 }
-
 
 function respondToTextOrAttacment(json, sender, recipient, token, index) {
 
