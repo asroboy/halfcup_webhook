@@ -432,50 +432,22 @@ app.post('/webhook', function (req, res) {
                     }
                 }
             }
-
-
-            if (event.postback.hasOwnProperty('referral')) {
-                var ref = event.postback.referral.ref;
-                console.log("event.postback.referral");
-                if (ref === null) {
-
-                } else {
-                    if (ref.indexOf("{{") > -1) {
-                        new_nlp.getChatBot(ref, event.recipient.id, event.sender.id, res);
-                    } else if (ref === 'null') {
-
-                    } else {
-                        var keys = ref.split("|");
-
-                        // if (keys[0] === 'MESSAGE_ME') {
-                        // getResponseToUser(ref,event.sender.id, event.recipient.id );
-                        getToken(ref, event.recipient.id, event.sender.id, true);
-                        // }
-                    }
-
-                }
-
-            }
-
         }
 
 
-        if (event.referral) {
-            console.log("event.referral");
-            var ref = event.referral.ref;
+        if (event.postback.hasOwnProperty('referral')) {
+            var ref = event.postback.referral.ref;
+            console.log("event.postback.referral.ref");
             if (ref === null) {
 
             } else {
-                if (ref === "setting_up_push") {
-                    var adminMsgrID = event.sender.id;
-                    var pageId = event.recipient.id;
-                    saveMessengerAdmin(adminMsgrID, pageId);
-                } else if (ref.indexOf("{{") > -1) {
+                if (ref.indexOf("{{") > -1) {
                     new_nlp.getChatBot(ref, event.recipient.id, event.sender.id, res);
                 } else if (ref === 'null') {
 
                 } else {
                     var keys = ref.split("|");
+
                     // if (keys[0] === 'MESSAGE_ME') {
                     // getResponseToUser(ref,event.sender.id, event.recipient.id );
                     getToken(ref, event.recipient.id, event.sender.id, true);
@@ -487,11 +459,10 @@ app.post('/webhook', function (req, res) {
         }
 
     }
-}
 
-res.sendStatus(200);
-})
-;
+
+    res.sendStatus(200);
+});
 
 function saveMessengerAdmin(sender, recipient) {
     var url = 'http://halfcup.com/social_rebates_system/api/saveAdminMessengerId?page_id=' + recipient + '&admin_msg_id=' + sender + "&token=1234567890";
