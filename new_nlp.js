@@ -46,7 +46,7 @@ function getToken(text, sender, recipient, isMessageUs, res) {
                     var token = obj.messenger_data.pageAccessToken;
                     console.log('token : ' + token);
 
-                    if (text.indexOf('AGGREGATION_')) {
+                    if (text.indexOf('AGGREGATION_') > -1) {
                         getAggregationObject(text, sender, recipient, token, res);
                         saveAggregationObj(text, sender);
                     } else if (text.indexOf('{{') > -1) {
