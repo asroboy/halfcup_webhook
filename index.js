@@ -335,143 +335,119 @@ app.post('/webhook', function (req, res) {
              * ACTIONS FOR POSTBACK
              */
             if (event.postback) {
-                console.log("===== event.postback ========");
-                var find_prefix = event.postback.payload.split('_');
-                var payload_prefix = find_prefix[0];
 
-                var htmlMessage = "<tr>" +
-                    "<td>Page ID</td>" +
-                    "<td>:</td>" +
-                    " <td>" + event.recipient.id + "</td>" +
-                    "</tr> " +
-                    "<tr>" +
-                    " <td>Recipient ID</td>" +
-                    "<td>:</td>" +
-                    "<td>" + event.sender.id + "</td>" +
-                    " </tr> " +
-                    "<tr>" +
-                    " <td>Payload</td>" +
-                    "<td>:</td>" +
-                    "<td>" + event.postback.payload + "</td>" +
-                    " </tr> " +
-                    "<tr>" +
-                    " <td>Event type</td>" +
-                    "<td>:</td>" +
-                    "<td>Postback</td>" +
-                    " </tr> " +
-                    "<tr>" +
-                    " <td>Title</td>" +
-                    "<td>:</td>" +
-                    "<td>" + event.postback.title + "</td>" +
-                    " </tr> " +
-                    "</table> ";
+                if (event.postback.hasOwnProperty('payload')) {
+                    console.log("===== event.postback.payload ========");
+                    var find_prefix = event.postback.payload.split('_');
+                    var payload_prefix = find_prefix[0];
 
-                sendEmail(htmlMessage, event.recipient.id);
+                    var htmlMessage = "<tr>" +
+                        "<td>Page ID</td>" +
+                        "<td>:</td>" +
+                        " <td>" + event.recipient.id + "</td>" +
+                        "</tr> " +
+                        "<tr>" +
+                        " <td>Recipient ID</td>" +
+                        "<td>:</td>" +
+                        "<td>" + event.sender.id + "</td>" +
+                        " </tr> " +
+                        "<tr>" +
+                        " <td>Payload</td>" +
+                        "<td>:</td>" +
+                        "<td>" + event.postback.payload + "</td>" +
+                        " </tr> " +
+                        "<tr>" +
+                        " <td>Event type</td>" +
+                        "<td>:</td>" +
+                        "<td>Postback</td>" +
+                        " </tr> " +
+                        "<tr>" +
+                        " <td>Title</td>" +
+                        "<td>:</td>" +
+                        "<td>" + event.postback.title + "</td>" +
+                        " </tr> " +
+                        "</table> ";
+
+                    sendEmail(htmlMessage, event.recipient.id);
 
 
-                // console.log("Index of , " + event.postback.payload.indexOf(","));
-                if ((payload_prefix === 'BOT' || payload_prefix === 'SHARE') && (event.postback.payload.indexOf(",") > -1)) {
-                    var payloads = event.postback.payload.split(",");
-                    for (i = 0; i < payloads.length; i++) {
-                        console.log("Payload " + i, payloads[i]);
-                        pixel('PostBack', payloads[i], payloads[i], event.sender.id, event.recipient.id);
-                        getResponseToUser(payloads[i], event.sender.id, event.recipient.id);
+                    // console.log("Index of , " + event.postback.payload.indexOf(","));
+                    if ((payload_prefix === 'BOT' || payload_prefix === 'SHARE') && (event.postback.payload.indexOf(",") > -1)) {
+                        var payloads = event.postback.payload.split(",");
+                        for (i = 0; i < payloads.length; i++) {
+                            console.log("Payload " + i, payloads[i]);
+                            pixel('PostBack', payloads[i], payloads[i], event.sender.id, event.recipient.id);
+                            getResponseToUser(payloads[i], event.sender.id, event.recipient.id);
+                        }
                     }
-                }
 
-                else if (payload_prefix === 'AGGREGATION') {
-                    new_nlp.getChatBot(event.postback.payload, event.recipient.id, event.sender.id, res)
-                }
+                    else if (payload_prefix === 'AGGREGATION') {
+                        new_nlp.getChatBot(event.postback.payload, event.recipient.id, event.sender.id, res)
+                    }
 
 
-                /**
-                 * MULTI KEY FORMAT [A]|[B]|BOT_xxxx_xxxx
-                 * MULTI KEY FORMAT [A]|[B]|[BOT_xxxx_xxxx]|BOT_xxx_xxx
-                 */
-                else if (event.postback.payload.indexOf("|") > -1) {
                     /**
-                     * Split Payload marked with |
-                     * @type {*}
+                     * MULTI KEY FORMAT [A]|[B]|BOT_xxxx_xxxx
+                     * MULTI KEY FORMAT [A]|[B]|[BOT_xxxx_xxxx]|BOT_xxx_xxx
                      */
-                    var keys = event.postback.payload.split("|");
-                    console.log("Payload ", event.postback.payload);
-                    console.log("PAYLOAD KEY SIZE ", keys.length);
+                    else if (event.postback.payload.indexOf("|") > -1) {
+                        /**
+                         * Split Payload marked with |
+                         * @type {*}
+                         */
+                        var keys = event.postback.payload.split("|");
+                        console.log("Payload ", event.postback.payload);
+                        console.log("PAYLOAD KEY SIZE ", keys.length);
 
-                    var action_name = keys[0]; //action name
-                    action_name = action_name.replace("[", "");
-                    action_name = action_name.replace("]", "");
+                        var action_name = keys[0]; //action name
+                        action_name = action_name.replace("[", "");
+                        action_name = action_name.replace("]", "");
 
-                    if (keys.length == 2) {
-                        keyIndexAction(keys[1], event, action_name, "PostBack");
-                    }
-                    if (keys.length == 3) {
-                        keyIndexAction(keys[1], event, action_name, "PostBack");
-                        keyIndexAction(keys[2], event, action_name, "PostBack");
-                    }
+                        if (keys.length == 2) {
+                            keyIndexAction(keys[1], event, action_name, "PostBack");
+                        }
+                        if (keys.length == 3) {
+                            keyIndexAction(keys[1], event, action_name, "PostBack");
+                            keyIndexAction(keys[2], event, action_name, "PostBack");
+                        }
 
-                    if (keys.length == 4) {
-                        keyIndexAction(keys[1], event, action_name, "PostBack");
-                        keyIndexAction(keys[2], event, action_name, "PostBack");
-                        keyIndexAction(keys[3], event, action_name, "PostBack");
-                        // index_1_action(action_name, reply_text_or_bot_key, keys[2], "PostBack", event);
-                    }
-
-                }
-
-                //***************
-                else if (event.postback.payload === "USER_DEFINED_PAYLOAD") {
-                    pixel('PostBack', "Get Started", event.postback.payload, event.sender.id, event.recipient.id);
-                    getResponseToUser(event.postback.payload, event.sender.id, event.recipient.id);
-                } else if (event.postback.payload.indexOf("{{") > -1) {
-                    new_nlp.getChatBot(ref, event.recipient.id, event.sender.id, res);
-                } else {
-
-                    pixel('PostBack', event.postback.payload, event.postback.payload, event.sender.id, event.recipient.id);
-                    getResponseToUserForPostback(event.postback.payload, event.sender.id, event.recipient.id);
-                }
-
-                if (event.postback.referral) {
-                    var ref = event.postback.referral.ref;
-                    console.log("event.postback.referral");
-                    if (ref === null) {
-
-                    } else {
-                        if (ref.indexOf("{{") > -1) {
-                            new_nlp.getChatBot(ref, event.recipient.id, event.sender.id, res);
-                        } else if (ref === 'null') {
-
-                        } else {
-                            var keys = ref.split("|");
-
-                            // if (keys[0] === 'MESSAGE_ME') {
-                            // getResponseToUser(ref,event.sender.id, event.recipient.id );
-                            getToken(ref, event.recipient.id, event.sender.id, true);
-                            // }
+                        if (keys.length == 4) {
+                            keyIndexAction(keys[1], event, action_name, "PostBack");
+                            keyIndexAction(keys[2], event, action_name, "PostBack");
+                            keyIndexAction(keys[3], event, action_name, "PostBack");
+                            // index_1_action(action_name, reply_text_or_bot_key, keys[2], "PostBack", event);
                         }
 
                     }
 
-                }
+                    //***************
+                    else if (event.postback.payload === "USER_DEFINED_PAYLOAD") {
+                        pixel('PostBack', "Get Started", event.postback.payload, event.sender.id, event.recipient.id);
+                        getResponseToUser(event.postback.payload, event.sender.id, event.recipient.id);
+                    } else if (event.postback.payload.indexOf("{{") > -1) {
+                        new_nlp.getChatBot(ref, event.recipient.id, event.sender.id, res);
+                    } else {
 
+                        pixel('PostBack', event.postback.payload, event.postback.payload, event.sender.id, event.recipient.id);
+                        getResponseToUserForPostback(event.postback.payload, event.sender.id, event.recipient.id);
+                    }
+                }
             }
 
 
-            if (event.referral) {
-                console.log("event.referral");
-                var ref = event.referral.ref;
+            if (event.postback.referral) {
+                var ref = event.postback.referral.ref;
+                console.log("event.postback.referral");
                 if (ref === null) {
 
                 } else {
-                    if (ref === "setting_up_push") {
-                        var adminMsgrID = event.sender.id;
-                        var pageId = event.recipient.id;
-                        saveMessengerAdmin(adminMsgrID, pageId);
-                    } else if (ref.indexOf("{{") > -1) {
+                    if (ref.indexOf("{{") > -1) {
                         new_nlp.getChatBot(ref, event.recipient.id, event.sender.id, res);
                     } else if (ref === 'null') {
 
                     } else {
                         var keys = ref.split("|");
+
                         // if (keys[0] === 'MESSAGE_ME') {
                         // getResponseToUser(ref,event.sender.id, event.recipient.id );
                         getToken(ref, event.recipient.id, event.sender.id, true);
@@ -483,10 +459,40 @@ app.post('/webhook', function (req, res) {
             }
 
         }
-    }
 
-    res.sendStatus(200);
-});
+
+        if (event.referral) {
+            console.log("event.referral");
+            var ref = event.referral.ref;
+            if (ref === null) {
+
+            } else {
+                if (ref === "setting_up_push") {
+                    var adminMsgrID = event.sender.id;
+                    var pageId = event.recipient.id;
+                    saveMessengerAdmin(adminMsgrID, pageId);
+                } else if (ref.indexOf("{{") > -1) {
+                    new_nlp.getChatBot(ref, event.recipient.id, event.sender.id, res);
+                } else if (ref === 'null') {
+
+                } else {
+                    var keys = ref.split("|");
+                    // if (keys[0] === 'MESSAGE_ME') {
+                    // getResponseToUser(ref,event.sender.id, event.recipient.id );
+                    getToken(ref, event.recipient.id, event.sender.id, true);
+                    // }
+                }
+
+            }
+
+        }
+
+    }
+}
+
+res.sendStatus(200);
+})
+;
 
 function saveMessengerAdmin(sender, recipient) {
     var url = 'http://halfcup.com/social_rebates_system/api/saveAdminMessengerId?page_id=' + recipient + '&admin_msg_id=' + sender + "&token=1234567890";
