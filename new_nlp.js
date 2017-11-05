@@ -5,7 +5,7 @@ module.exports = {
     foo: function (res) {
         // whatever
         // test(res);
-        getAggregationObject('AGGREGATION_object=street&query=agent=Ang Mo Kio||bedroom=2||street=street 21', '228431964255924', '877390472364218', 'EAABqJD84pmIBAKZBPiJ12rk2OoZBJQzy4CcoT2CG4ZBzCKyJkRL2OMqcmuGvfryINB79U8qWx1DiV21FAZBUsHZCIsGQvId6SoCg4UqoCGxVk2FZBMZAszgVX02ZAWwoWUecALj0KycDq88ZBBN6WgeKG0QbZAXrql7IZAGX1jE2XHVmgZDZD', res);
+        getAggregationObject('AGGREGATION_object=agent&query=agent=Ang%20Mo%20Kio', '228431964255924', '877390472364218', 'EAABqJD84pmIBAKZBPiJ12rk2OoZBJQzy4CcoT2CG4ZBzCKyJkRL2OMqcmuGvfryINB79U8qWx1DiV21FAZBUsHZCIsGQvId6SoCg4UqoCGxVk2FZBMZAszgVX02ZAWwoWUecALj0KycDq88ZBBN6WgeKG0QbZAXrql7IZAGX1jE2XHVmgZDZD', res);
         // getToken('AGGREGATION_object=main', '228431964255924', '877390472364218', false, res);
         // console.log("NEW N L P");
         // var token = getToken('{{greetings}}', '1965520413734063', '1676161905789453', false, res);
