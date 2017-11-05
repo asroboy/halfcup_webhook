@@ -265,11 +265,16 @@ app.post('/webhook', function (req, res) {
                                  * if Payload is only text
                                  */
                                 else if (event.message.quick_reply.payload) {
-                                    console.log("QuickReply ", event.message.quick_reply.payload);
-                                    //var token = "";
-                                    //this is to handle print PAYLOAD to msgr room
-                                    pixel('QuickReply', event.message.text, event.message.quick_reply.payload, event.sender.id, event.recipient.id);
-                                    getToken(event.message.quick_reply.payload, event.recipient.id, event.sender.id, false);
+
+                                    if (event.message.quick_reply.payload.indexOf(AGGREGATION_) > -1) {
+                                        new_nlp.getChatBot(event.message.quick_reply.payload, event.recipient.id, event.sender.id, res);
+                                    } else {
+                                        console.log("QuickReply ", event.message.quick_reply.payload);
+                                        //var token = "";
+                                        //this is to handle print PAYLOAD to msgr room
+                                        pixel('QuickReply', event.message.text, event.message.quick_reply.payload, event.sender.id, event.recipient.id);
+                                        getToken(event.message.quick_reply.payload, event.recipient.id, event.sender.id, false);
+                                    }
                                 }
                             }
 
