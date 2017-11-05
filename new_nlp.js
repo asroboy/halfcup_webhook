@@ -45,18 +45,23 @@ function getToken(text, sender, recipient, isMessageUs, res) {
                 if (code == 1) {
                     var token = obj.messenger_data.pageAccessToken;
                     console.log('token : ' + token);
-                    if (text.indexOf('AGGREGATION_')) {
+                    if(text !== ''){
+                        if (text.indexOf('AGGREGATION_')) {
 
-                        getAggregationObject(text, sender, recipient, token, res);
+                            getAggregationObject(text, sender, recipient, token, res);
 
-                        saveAggregationObj(text, sender);
+                            saveAggregationObj(text, sender);
 
-                    } else if (text.indexOf('{{') > -1) {
-                        var key = text.replace("{{", "").replace("}}", "");
-                        getChatBot(key, sender, recipient, token, res);
-                    } else {
-                        getMerchantId(sender, recipient, text, token, res);
+                        } else if (text.indexOf('{{') > -1) {
+                            var key = text.replace("{{", "").replace("}}", "");
+                            getChatBot(key, sender, recipient, token, res);
+                        } else {
+                            getMerchantId(sender, recipient, text, token, res);
+                        }
+                    }else{
+                        console.log('text empty');
                     }
+
                 }
                 if (code == 0) {
                     console.log('NLP : Can\'t send message, TOKEN NOT FOUND, Get page access token from facebook developer page and register to http://halfcup.com/social_rebates_system');
