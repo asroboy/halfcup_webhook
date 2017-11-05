@@ -320,9 +320,9 @@ app.post('/webhook', function (req, res) {
                     if (event.optin.user_ref) {
                         console.log(key)
                         // getResponseToUserRef(key, event.optin.user_ref, event.recipient.id);
-                    } else if (ref.indexOf("{{") > -1) {
-                        new_nlp.getChatBot(ref, event.recipient.id, event.sender.id, res);
-                    } else if (ref === 'null') {
+                    } else if (key.indexOf("{{") > -1) {
+                        new_nlp.getChatBot(key, event.recipient.id, event.sender.id, res);
+                    } else if (key === 'null') {
 
                     } else {
 
@@ -381,6 +381,7 @@ app.post('/webhook', function (req, res) {
                     }
 
                     else if (payload_prefix === 'AGGREGATION') {
+                        console.log('call new_nlp AGGREGATION');
                         new_nlp.getChatBot(event.postback.payload, event.recipient.id, event.sender.id, res)
                     }
 
@@ -424,9 +425,9 @@ app.post('/webhook', function (req, res) {
                         pixel('PostBack', "Get Started", event.postback.payload, event.sender.id, event.recipient.id);
                         getResponseToUser(event.postback.payload, event.sender.id, event.recipient.id);
                     } else if (event.postback.payload.indexOf("{{") > -1) {
-                        new_nlp.getChatBot(ref, event.recipient.id, event.sender.id, res);
+                        console.log('call new_nlp event.postback.payload {{');
+                        new_nlp.getChatBot(event.postback.payload, event.recipient.id, event.sender.id, res);
                     } else {
-
                         pixel('PostBack', event.postback.payload, event.postback.payload, event.sender.id, event.recipient.id);
                         getResponseToUserForPostback(event.postback.payload, event.sender.id, event.recipient.id);
                     }
