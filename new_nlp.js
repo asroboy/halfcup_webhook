@@ -47,13 +47,12 @@ function getToken(text, sender, recipient, isMessageUs, res) {
                     console.log('token : ' + token);
 
                     if (text.indexOf('AGGREGATION_')) {
-
                         getAggregationObject(text, sender, recipient, token, res);
-
                         saveAggregationObj(text, sender);
-
                     } else if (text.indexOf('{{') > -1) {
+
                         var key = text.replace("{{", "").replace("}}", "");
+                        console.log('{{ after get token &  key = ' + key);
                         getChatBot(key, sender, recipient, token, res);
                     } else {
                         getMerchantId(sender, recipient, text, token, res);

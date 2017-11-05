@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8c0fd527-5667-4e03-89ee-e95c0bdc3c27" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.js" afterPath="$PROJECT_DIR$/index.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/new_nlp.js" afterPath="$PROJECT_DIR$/new_nlp.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -100,24 +98,24 @@
         <entry file="file://$PROJECT_DIR$/new_nlp.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="461">
-              <caret line="60" column="20" lean-forward="false" selection-start-line="60" selection-start-column="20" selection-end-line="60" selection-end-column="20" />
+              <caret line="54" column="72" lean-forward="false" selection-start-line="54" selection-start-column="72" selection-end-line="54" selection-end-column="72" />
               <folding>
                 <element signature="e#0#42#0" expanded="false" />
-                <element signature="e#6745#6804#0" expanded="false" />
-                <element signature="e#6864#6927#0" expanded="false" />
-                <element signature="e#6958#7034#0" expanded="false" />
+                <element signature="e#6798#6857#0" expanded="false" />
+                <element signature="e#6917#6980#0" expanded="false" />
+                <element signature="e#7011#7087#0" expanded="false" />
                 <element signature="n#!!block;n#getAiToken#0" expanded="false" />
-                <element signature="e#7639#7698#0" expanded="false" />
-                <element signature="e#7758#7821#0" expanded="false" />
-                <element signature="e#7852#7928#0" expanded="false" />
+                <element signature="e#7692#7751#0" expanded="false" />
+                <element signature="e#7811#7874#0" expanded="false" />
+                <element signature="e#7905#7981#0" expanded="false" />
                 <element signature="n#!!block;n#getAiKeyFromDB#0" expanded="false" />
                 <element signature="n#!!block;n#test#0" expanded="false" />
-                <element signature="e#9424#9487#0" expanded="false" />
-                <element signature="e#9518#9594#0" expanded="false" />
+                <element signature="e#9477#9540#0" expanded="false" />
+                <element signature="e#9571#9647#0" expanded="false" />
                 <element signature="n#!!block;n#getIndexAggregate#0" expanded="false" />
-                <element signature="e#11349#11408#0" expanded="false" />
-                <element signature="e#11468#11531#0" expanded="false" />
-                <element signature="e#11562#11638#0" expanded="false" />
+                <element signature="e#11402#11461#0" expanded="false" />
+                <element signature="e#11521#11584#0" expanded="false" />
+                <element signature="e#11615#11691#0" expanded="false" />
                 <element signature="n#!!block;n#saveAiKey#0" expanded="false" />
               </folding>
             </state>
@@ -519,12 +517,12 @@
       <workItem from="1509331511591" duration="1545000" />
       <workItem from="1509375868833" duration="16339000" />
       <workItem from="1509510006615" duration="1699000" />
-      <workItem from="1509689126090" duration="23636000" />
+      <workItem from="1509689126090" duration="23757000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="452918000" />
+    <option name="totallyTimeSpent" value="453039000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1452,24 +1450,24 @@
     <entry file="file://$PROJECT_DIR$/new_nlp.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="461">
-          <caret line="60" column="20" lean-forward="false" selection-start-line="60" selection-start-column="20" selection-end-line="60" selection-end-column="20" />
+          <caret line="54" column="72" lean-forward="false" selection-start-line="54" selection-start-column="72" selection-end-line="54" selection-end-column="72" />
           <folding>
             <element signature="e#0#42#0" expanded="false" />
-            <element signature="e#6745#6804#0" expanded="false" />
-            <element signature="e#6864#6927#0" expanded="false" />
-            <element signature="e#6958#7034#0" expanded="false" />
+            <element signature="e#6798#6857#0" expanded="false" />
+            <element signature="e#6917#6980#0" expanded="false" />
+            <element signature="e#7011#7087#0" expanded="false" />
             <element signature="n#!!block;n#getAiToken#0" expanded="false" />
-            <element signature="e#7639#7698#0" expanded="false" />
-            <element signature="e#7758#7821#0" expanded="false" />
-            <element signature="e#7852#7928#0" expanded="false" />
+            <element signature="e#7692#7751#0" expanded="false" />
+            <element signature="e#7811#7874#0" expanded="false" />
+            <element signature="e#7905#7981#0" expanded="false" />
             <element signature="n#!!block;n#getAiKeyFromDB#0" expanded="false" />
             <element signature="n#!!block;n#test#0" expanded="false" />
-            <element signature="e#9424#9487#0" expanded="false" />
-            <element signature="e#9518#9594#0" expanded="false" />
+            <element signature="e#9477#9540#0" expanded="false" />
+            <element signature="e#9571#9647#0" expanded="false" />
             <element signature="n#!!block;n#getIndexAggregate#0" expanded="false" />
-            <element signature="e#11349#11408#0" expanded="false" />
-            <element signature="e#11468#11531#0" expanded="false" />
-            <element signature="e#11562#11638#0" expanded="false" />
+            <element signature="e#11402#11461#0" expanded="false" />
+            <element signature="e#11521#11584#0" expanded="false" />
+            <element signature="e#11615#11691#0" expanded="false" />
             <element signature="n#!!block;n#saveAiKey#0" expanded="false" />
           </folding>
         </state>
