@@ -431,31 +431,30 @@ app.post('/webhook', function (req, res) {
                         getResponseToUserForPostback(event.postback.payload, event.sender.id, event.recipient.id);
                     }
                 }
-            }
-        }
 
+                if (event.postback.hasOwnProperty('referral')) {
+                    var ref = event.postback.referral.ref;
+                    console.log("event.postback.referral.ref");
+                    if (ref === null) {
 
-        if (event.postback.hasOwnProperty('referral')) {
-            var ref = event.postback.referral.ref;
-            console.log("event.postback.referral.ref");
-            if (ref === null) {
+                    } else {
+                        if (ref.indexOf("{{") > -1) {
+                            new_nlp.getChatBot(ref, event.recipient.id, event.sender.id, res);
+                        } else if (ref === 'null') {
 
-            } else {
-                if (ref.indexOf("{{") > -1) {
-                    new_nlp.getChatBot(ref, event.recipient.id, event.sender.id, res);
-                } else if (ref === 'null') {
+                        } else {
+                            var keys = ref.split("|");
 
-                } else {
-                    var keys = ref.split("|");
+                            // if (keys[0] === 'MESSAGE_ME') {
+                            // getResponseToUser(ref,event.sender.id, event.recipient.id );
+                            getToken(ref, event.recipient.id, event.sender.id, true);
+                            // }
+                        }
 
-                    // if (keys[0] === 'MESSAGE_ME') {
-                    // getResponseToUser(ref,event.sender.id, event.recipient.id );
-                    getToken(ref, event.recipient.id, event.sender.id, true);
-                    // }
+                    }
+
                 }
-
             }
-
         }
 
     }
