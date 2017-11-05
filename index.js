@@ -334,8 +334,7 @@ app.post('/webhook', function (req, res) {
             /**
              * ACTIONS FOR POSTBACK
              */
-            if (event.postback) {
-
+            if (event.hasOwnProperty('postback')) {
                 if (event.postback.hasOwnProperty('payload')) {
                     console.log("===== event.postback.payload ========");
                     var find_prefix = event.postback.payload.split('_');
@@ -435,7 +434,7 @@ app.post('/webhook', function (req, res) {
             }
 
 
-            if (event.postback.referral) {
+            if (event.postback.hasOwnProperty('referral')) {
                 var ref = event.postback.referral.ref;
                 console.log("event.postback.referral");
                 if (ref === null) {
