@@ -87,7 +87,6 @@ app.post('/webhook', function (req, res) {
                 //NLP Handling
                 if (event.message.nlp) {
                     new_nlp.handleMessage(event, event.message, res);
-
                     //NON NLP Handling
                 } else {
                     if (event.message) {

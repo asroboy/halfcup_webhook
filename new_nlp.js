@@ -45,22 +45,20 @@ function getToken(text, sender, recipient, isMessageUs, res) {
                 if (code == 1) {
                     var token = obj.messenger_data.pageAccessToken;
                     console.log('token : ' + token);
-                    if(text !== ''){
-                        if (text.indexOf('AGGREGATION_')) {
 
-                            getAggregationObject(text, sender, recipient, token, res);
+                    if (text.indexOf('AGGREGATION_')) {
 
-                            saveAggregationObj(text, sender);
+                        getAggregationObject(text, sender, recipient, token, res);
 
-                        } else if (text.indexOf('{{') > -1) {
-                            var key = text.replace("{{", "").replace("}}", "");
-                            getChatBot(key, sender, recipient, token, res);
-                        } else {
-                            getMerchantId(sender, recipient, text, token, res);
-                        }
-                    }else{
-                        console.log('text empty');
+                        saveAggregationObj(text, sender);
+
+                    } else if (text.indexOf('{{') > -1) {
+                        var key = text.replace("{{", "").replace("}}", "");
+                        getChatBot(key, sender, recipient, token, res);
+                    } else {
+                        getMerchantId(sender, recipient, text, token, res);
                     }
+
 
                 }
                 if (code == 0) {
