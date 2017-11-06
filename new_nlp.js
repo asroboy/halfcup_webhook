@@ -256,7 +256,7 @@ function test(res) {
 function getIndexAggregate(size, pageId, key, aggreationData, recipient, token) {
     var aggr = aggreationData;
     console.log('aggreationData XX = ' + JSON.stringify(aggr));
-    var url = 'http://halfcup.com/social_rebates_system/wapi/save?api_name=AGGREGATE_AI&size=' + size + '&page_id=' + pageId + '&key=' + key + '&token=1234567890';
+    var url = 'http://halfcup.com/social_rebates_system/wapi/save?api_name=AGGREGATE_AI&size=' + size + '&aggregate_size=' + aggr.length + '&page_id=' + pageId + '&key=' + key + '&token=1234567890';
     console.log('url', url);
     request({
             url: url,
@@ -269,13 +269,13 @@ function getIndexAggregate(size, pageId, key, aggreationData, recipient, token) 
             } else {
                 var obj = JSON.parse(body);
                 var index = obj.data.mIndex;
+                var aggrIndex = obj.data.aggrIndex;
                 console.log('mIndex = ' + index);
                 console.log('aggreationData = ' + JSON.stringify(aggr));
-                var message = aggr[index];
+                var message = aggr[aggrIndex];
                 if (message.hasOwnProperty('message')) {
                     message = message.message;
                 }
-
 
                 var js_ = JSON.stringify(message);
                 var myEscapedJSONString = js_.escapeSpecialChars();
