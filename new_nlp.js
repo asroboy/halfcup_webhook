@@ -110,7 +110,7 @@ function getAggregationObject(key, sender, recipient, token, res) {
 
 
 function saveAggregationObj(key, sender) {
-    var url = 'http://halfcup.com/social_rebates_system/wapi/save?token=1234567890&api_name=AGGREGATE_OBJ&aggr_key=' + key + '&page_id=' + sender;
+    var url = 'http://halfcup.com/social_rebates_system/wapi/save?token=1234567890&api_name=AGGREGATE_OBJ&aggr_key=' + encodeURIComponent(key) + '&page_id=' + sender;
     console.log('url', url);
     request({
             url: url,
