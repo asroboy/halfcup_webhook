@@ -265,7 +265,7 @@ function getIndexAggregate(size, pageId, key, aggreationData, recipient, token) 
                 console.log('Error: ', response.body.error);
             } else {
                 var obj = JSON.parse(body);
-                console.log('mIndex = ' + obj.data.mIndex);
+                // console.log('mIndex = ' + obj.data.mIndex);
 
 
                 var message = aggreationData[obj.data.mIndex];
