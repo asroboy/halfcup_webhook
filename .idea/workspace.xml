@@ -96,7 +96,7 @@
         <entry file="file://$PROJECT_DIR$/new_nlp.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="138">
-              <caret line="225" column="145" lean-forward="false" selection-start-line="225" selection-start-column="145" selection-end-line="225" selection-end-column="145" />
+              <caret line="225" column="130" lean-forward="false" selection-start-line="225" selection-start-column="130" selection-end-line="225" selection-end-column="130" />
               <folding>
                 <element signature="e#0#42#0" expanded="false" />
                 <element signature="e#6884#6943#0" expanded="false" />
@@ -106,11 +106,11 @@
                 <element signature="e#7897#7960#0" expanded="false" />
                 <element signature="e#7991#8067#0" expanded="false" />
                 <element signature="n#!!block;n#test#0" expanded="false" />
-                <element signature="e#9594#9657#0" expanded="false" />
-                <element signature="e#9688#9764#0" expanded="false" />
-                <element signature="e#11607#11666#0" expanded="false" />
-                <element signature="e#11726#11789#0" expanded="false" />
-                <element signature="e#11820#11896#0" expanded="false" />
+                <element signature="e#9578#9641#0" expanded="false" />
+                <element signature="e#9672#9748#0" expanded="false" />
+                <element signature="e#11591#11650#0" expanded="false" />
+                <element signature="e#11710#11773#0" expanded="false" />
+                <element signature="e#11804#11880#0" expanded="false" />
                 <element signature="n#!!block;n#saveAiKey#0" expanded="false" />
               </folding>
             </state>
@@ -512,12 +512,12 @@
       <workItem from="1509331511591" duration="1545000" />
       <workItem from="1509375868833" duration="16339000" />
       <workItem from="1509510006615" duration="1699000" />
-      <workItem from="1509689126090" duration="30405000" />
+      <workItem from="1509689126090" duration="30602000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="459687000" />
+    <option name="totallyTimeSpent" value="459884000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1421,7 +1421,7 @@
     <entry file="file://$PROJECT_DIR$/new_nlp.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="138">
-          <caret line="225" column="145" lean-forward="false" selection-start-line="225" selection-start-column="145" selection-end-line="225" selection-end-column="145" />
+          <caret line="225" column="130" lean-forward="false" selection-start-line="225" selection-start-column="130" selection-end-line="225" selection-end-column="130" />
           <folding>
             <element signature="e#0#42#0" expanded="false" />
             <element signature="e#6884#6943#0" expanded="false" />
@@ -1431,11 +1431,11 @@
             <element signature="e#7897#7960#0" expanded="false" />
             <element signature="e#7991#8067#0" expanded="false" />
             <element signature="n#!!block;n#test#0" expanded="false" />
-            <element signature="e#9594#9657#0" expanded="false" />
-            <element signature="e#9688#9764#0" expanded="false" />
-            <element signature="e#11607#11666#0" expanded="false" />
-            <element signature="e#11726#11789#0" expanded="false" />
-            <element signature="e#11820#11896#0" expanded="false" />
+            <element signature="e#9578#9641#0" expanded="false" />
+            <element signature="e#9672#9748#0" expanded="false" />
+            <element signature="e#11591#11650#0" expanded="false" />
+            <element signature="e#11710#11773#0" expanded="false" />
+            <element signature="e#11804#11880#0" expanded="false" />
             <element signature="n#!!block;n#saveAiKey#0" expanded="false" />
           </folding>
         </state>
