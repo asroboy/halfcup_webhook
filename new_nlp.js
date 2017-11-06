@@ -497,7 +497,8 @@ function sendM(messages, recipient, token) {
         if (message.message.attachment) {
             m = message.message;
         } else {
-            m = {"text": message.message.text};
+            // m = {"text": message.message.text};
+            m = message.message;
         }
         console.log('m ' + JSON.stringify(m));
         request({
