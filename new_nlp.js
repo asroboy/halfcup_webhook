@@ -89,13 +89,14 @@ function getAggregationObject(key, sender, recipient, token, res) {
 
                     if (obj.aggregation.length > 0) {
                         // var jsonMessage = JSON.parse(obj);
-                        var randomIndex = randomIntFromInterval(1, obj.aggregation.length);
-                        console.log("randomIndex : " + randomIndex);
-                        console.log("jsonMessage.length : " + obj.aggregation.length);
+                        // var randomIndex = randomIntFromInterval(1, obj.aggregation.length);
+                        // console.log("randomIndex : " + randomIndex);
+                        // console.log("jsonMessage.length : " + obj.aggregation.length);
                         // res.send("DONE, randomIndex " + randomIndex);
                         // respond(obj.aggregation, sender, recipient, randomIndex, token, res);
-                        randomIndex = randomIndex - 1
-                        respondToTextOrAttacment(obj.aggregation, sender, recipient, token, randomIndex)
+                        // randomIndex = randomIndex - 1
+                        sendM(obj.aggregation, recipient, token);
+                        // respondToTextOrAttacment(obj.aggregation, sender, recipient, token, randomIndex)
                     } else {
                         getDefaultAnswer(sender, recipient, token, res);
                     }
