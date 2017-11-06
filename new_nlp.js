@@ -223,7 +223,7 @@ function getAiKeyFromDB(wang_token, pageId, recipient, text, token, res) {
             } else {
                 var obj = JSON.parse(body);
                 // console.log('obj: ', obj);
-                getAiKey(text, wang_token, pageId, JSON.stringify(obj.keys), recipient, token, res, JSON.stringify(obj.aggregation));
+                getAiKey(text, wang_token, pageId, JSON.stringify(obj.keys), recipient, token, res, JSON.stringify(obj.aggregation.aggregationKey));
             }
         }
     );
