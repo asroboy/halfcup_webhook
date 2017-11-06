@@ -23,8 +23,8 @@
       <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="245">
-              <caret line="1010" column="0" lean-forward="true" selection-start-line="1010" selection-start-column="0" selection-end-line="1010" selection-end-column="0" />
+            <state relative-caret-position="75">
+              <caret line="430" column="69" lean-forward="false" selection-start-line="430" selection-start-column="69" selection-end-line="430" selection-end-column="69" />
               <folding>
                 <element signature="e#517#829#0" expanded="false" />
                 <element signature="e#889#909#0" expanded="false" />
@@ -95,22 +95,23 @@
       <file leaf-file-name="new_nlp.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/new_nlp.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="274" column="17" lean-forward="false" selection-start-line="274" selection-start-column="17" selection-end-line="274" selection-end-column="17" />
+            <state relative-caret-position="245">
+              <caret line="276" column="16" lean-forward="false" selection-start-line="276" selection-start-column="16" selection-end-line="276" selection-end-column="16" />
               <folding>
                 <element signature="e#0#42#0" expanded="false" />
-                <element signature="e#6919#6978#0" expanded="false" />
-                <element signature="e#7038#7101#0" expanded="false" />
-                <element signature="e#7132#7208#0" expanded="false" />
-                <element signature="e#7813#7872#0" expanded="false" />
-                <element signature="e#7932#7995#0" expanded="false" />
-                <element signature="e#8026#8102#0" expanded="false" />
+                <element signature="e#6918#6977#0" expanded="false" />
+                <element signature="e#7037#7100#0" expanded="false" />
+                <element signature="e#7131#7207#0" expanded="false" />
+                <element signature="e#7812#7871#0" expanded="false" />
+                <element signature="e#7931#7994#0" expanded="false" />
+                <element signature="e#8025#8101#0" expanded="false" />
+                <element signature="n#!!block;n#getAiKeyFromDB#0" expanded="false" />
                 <element signature="n#!!block;n#test#0" expanded="false" />
-                <element signature="e#9633#9696#0" expanded="false" />
-                <element signature="e#9727#9803#0" expanded="false" />
-                <element signature="e#11759#11818#0" expanded="false" />
-                <element signature="e#11878#11941#0" expanded="false" />
-                <element signature="e#11972#12048#0" expanded="false" />
+                <element signature="e#9632#9695#0" expanded="false" />
+                <element signature="e#9726#9802#0" expanded="false" />
+                <element signature="e#11842#11901#0" expanded="false" />
+                <element signature="e#11961#12024#0" expanded="false" />
+                <element signature="e#12055#12131#0" expanded="false" />
                 <element signature="n#!!block;n#saveAiKey#0" expanded="false" />
               </folding>
             </state>
@@ -161,7 +162,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>asrofiridho</find>
       <find>sendEmailForLead</find>
       <find>getPageAccessTokenForLead</find>
       <find>getPageIdForLead</find>
@@ -171,7 +171,6 @@
       <find>foo</find>
       <find>escapeSpecialChars</find>
       <find>res</find>
-      <find>{{</find>
       <find>event.referral</find>
       <find>GROUP</find>
       <find>aggregation</find>
@@ -191,6 +190,8 @@
       <find>getChatBot</find>
       <find>sendMessage</find>
       <find>getAiKey</find>
+      <find>{{</find>
+      <find>after get token</find>
     </findStrings>
     <replaceStrings>
       <replace>localhost:8080</replace>
@@ -512,12 +513,12 @@
       <workItem from="1509331511591" duration="1545000" />
       <workItem from="1509375868833" duration="16339000" />
       <workItem from="1509510006615" duration="1699000" />
-      <workItem from="1509689126090" duration="32158000" />
+      <workItem from="1509689126090" duration="33599000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="461440000" />
+    <option name="totallyTimeSpent" value="462881000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1390,8 +1391,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="245">
-          <caret line="1010" column="0" lean-forward="true" selection-start-line="1010" selection-start-column="0" selection-end-line="1010" selection-end-column="0" />
+        <state relative-caret-position="75">
+          <caret line="430" column="69" lean-forward="false" selection-start-line="430" selection-start-column="69" selection-end-line="430" selection-end-column="69" />
           <folding>
             <element signature="e#517#829#0" expanded="false" />
             <element signature="e#889#909#0" expanded="false" />
@@ -1438,22 +1439,23 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/new_nlp.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="274" column="17" lean-forward="false" selection-start-line="274" selection-start-column="17" selection-end-line="274" selection-end-column="17" />
+        <state relative-caret-position="245">
+          <caret line="276" column="16" lean-forward="false" selection-start-line="276" selection-start-column="16" selection-end-line="276" selection-end-column="16" />
           <folding>
             <element signature="e#0#42#0" expanded="false" />
-            <element signature="e#6919#6978#0" expanded="false" />
-            <element signature="e#7038#7101#0" expanded="false" />
-            <element signature="e#7132#7208#0" expanded="false" />
-            <element signature="e#7813#7872#0" expanded="false" />
-            <element signature="e#7932#7995#0" expanded="false" />
-            <element signature="e#8026#8102#0" expanded="false" />
+            <element signature="e#6918#6977#0" expanded="false" />
+            <element signature="e#7037#7100#0" expanded="false" />
+            <element signature="e#7131#7207#0" expanded="false" />
+            <element signature="e#7812#7871#0" expanded="false" />
+            <element signature="e#7931#7994#0" expanded="false" />
+            <element signature="e#8025#8101#0" expanded="false" />
+            <element signature="n#!!block;n#getAiKeyFromDB#0" expanded="false" />
             <element signature="n#!!block;n#test#0" expanded="false" />
-            <element signature="e#9633#9696#0" expanded="false" />
-            <element signature="e#9727#9803#0" expanded="false" />
-            <element signature="e#11759#11818#0" expanded="false" />
-            <element signature="e#11878#11941#0" expanded="false" />
-            <element signature="e#11972#12048#0" expanded="false" />
+            <element signature="e#9632#9695#0" expanded="false" />
+            <element signature="e#9726#9802#0" expanded="false" />
+            <element signature="e#11842#11901#0" expanded="false" />
+            <element signature="e#11961#12024#0" expanded="false" />
+            <element signature="e#12055#12131#0" expanded="false" />
             <element signature="n#!!block;n#saveAiKey#0" expanded="false" />
           </folding>
         </state>

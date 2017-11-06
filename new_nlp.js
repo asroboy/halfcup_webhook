@@ -50,7 +50,6 @@ function getToken(text, sender, recipient, isMessageUs, res) {
                         getAggregationObject(text, sender, recipient, token, res);
                         saveAggregationObj(text, sender);
                     } else if (text.indexOf('{{') > -1) {
-
                         var key = text.replace("{{", "").replace("}}", "");
                         console.log('{{ after get token &  key = ' + key);
                         getChatBot(key, sender, recipient, token, res);
@@ -270,8 +269,10 @@ function getIndexAggregate(size, pageId, key, aggreationData, recipient, token) 
                 console.log('mIndex = ' + obj.data.mIndex);
                 // console.log('aggreationData = ' + JSON.stringify(aggreationData));
                 var message = aggreationData[obj.data.mIndex]
-                if(message.hasOwnProperty('message')){
-                    message = message.message;
+                if(message !== null){
+                    if(message.hasOwnProperty('message')){
+                        message = message.message;
+                    }
                 }
 
                 var js_ = JSON.stringify(message);
