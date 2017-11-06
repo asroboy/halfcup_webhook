@@ -269,7 +269,10 @@ function getIndexAggregate(size, pageId, key, aggreationData, recipient, token) 
                 var obj = JSON.parse(body);
                 console.log('mIndex = ' + obj.data.mIndex);
                 // console.log('aggreationData = ' + JSON.stringify(aggreationData));
-                var message = aggreationData[obj.data.mIndex].message;
+                var message = aggreationData[obj.data.mIndex]
+                if(message.hasOwnProperty('message')){
+                    message = message.message;
+                }
 
                 var js_ = JSON.stringify(message);
                 var myEscapedJSONString = js_.escapeSpecialChars();
