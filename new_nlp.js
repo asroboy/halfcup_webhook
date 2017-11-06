@@ -300,7 +300,7 @@ function getAiKey(text, wang_token, pageId, prevKeys, recipient, token, res, agg
                 console.log('obj = ' + JSON.stringify(obj));
                 if (obj.hasOwnProperty('aggregation')) {
                     if (obj.aggregation.length > 0) {
-                        getIndexAggregate(obj.aggregation.length, pageId, obj.key, obj.aggregation, recipient, token);
+                        getIndexAggregate(obj.aggregation.length, pageId, obj.key, JSON.stringify(obj.aggregation), recipient, token);
                     } else {
                         if (obj.key === '') {
                             getDefaultAnswer(pageId, recipient, token, res);
