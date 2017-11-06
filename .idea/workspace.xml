@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8c0fd527-5667-4e03-89ee-e95c0bdc3c27" name="Default" comment="" />
+    <list default="true" id="8c0fd527-5667-4e03-89ee-e95c0bdc3c27" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/new_nlp.js" afterPath="$PROJECT_DIR$/new_nlp.js" />
+    </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -93,22 +96,23 @@
       <file leaf-file-name="new_nlp.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/new_nlp.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1022">
-              <caret line="285" column="55" lean-forward="false" selection-start-line="285" selection-start-column="55" selection-end-line="285" selection-end-column="55" />
+            <state relative-caret-position="189">
+              <caret line="85" column="86" lean-forward="false" selection-start-line="85" selection-start-column="86" selection-end-line="85" selection-end-column="86" />
               <folding>
                 <element signature="e#0#42#0" expanded="false" />
-                <element signature="e#6918#6977#0" expanded="false" />
-                <element signature="e#7037#7100#0" expanded="false" />
-                <element signature="e#7131#7207#0" expanded="false" />
-                <element signature="e#7812#7871#0" expanded="false" />
-                <element signature="e#7931#7994#0" expanded="false" />
-                <element signature="e#8025#8101#0" expanded="false" />
+                <element signature="e#6934#6993#0" expanded="false" />
+                <element signature="e#7053#7116#0" expanded="false" />
+                <element signature="e#7147#7223#0" expanded="false" />
+                <element signature="e#7828#7887#0" expanded="false" />
+                <element signature="e#7947#8010#0" expanded="false" />
+                <element signature="e#8041#8117#0" expanded="false" />
                 <element signature="n#!!block;n#getAiKeyFromDB#0" expanded="false" />
-                <element signature="e#9632#9695#0" expanded="false" />
-                <element signature="e#9726#9802#0" expanded="false" />
-                <element signature="e#12118#12177#0" expanded="false" />
-                <element signature="e#12237#12300#0" expanded="false" />
-                <element signature="e#12331#12407#0" expanded="false" />
+                <element signature="n#!!block;n#test#0" expanded="false" />
+                <element signature="e#9648#9711#0" expanded="false" />
+                <element signature="e#9742#9818#0" expanded="false" />
+                <element signature="e#12166#12225#0" expanded="false" />
+                <element signature="e#12285#12348#0" expanded="false" />
+                <element signature="e#12379#12455#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -509,12 +513,12 @@
       <workItem from="1509331511591" duration="1545000" />
       <workItem from="1509375868833" duration="16339000" />
       <workItem from="1509510006615" duration="1699000" />
-      <workItem from="1509689126090" duration="40414000" />
+      <workItem from="1509689126090" duration="40582000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="469696000" />
+    <option name="totallyTimeSpent" value="469864000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1435,22 +1439,23 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/new_nlp.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1022">
-          <caret line="285" column="55" lean-forward="false" selection-start-line="285" selection-start-column="55" selection-end-line="285" selection-end-column="55" />
+        <state relative-caret-position="189">
+          <caret line="85" column="86" lean-forward="false" selection-start-line="85" selection-start-column="86" selection-end-line="85" selection-end-column="86" />
           <folding>
             <element signature="e#0#42#0" expanded="false" />
-            <element signature="e#6918#6977#0" expanded="false" />
-            <element signature="e#7037#7100#0" expanded="false" />
-            <element signature="e#7131#7207#0" expanded="false" />
-            <element signature="e#7812#7871#0" expanded="false" />
-            <element signature="e#7931#7994#0" expanded="false" />
-            <element signature="e#8025#8101#0" expanded="false" />
+            <element signature="e#6934#6993#0" expanded="false" />
+            <element signature="e#7053#7116#0" expanded="false" />
+            <element signature="e#7147#7223#0" expanded="false" />
+            <element signature="e#7828#7887#0" expanded="false" />
+            <element signature="e#7947#8010#0" expanded="false" />
+            <element signature="e#8041#8117#0" expanded="false" />
             <element signature="n#!!block;n#getAiKeyFromDB#0" expanded="false" />
-            <element signature="e#9632#9695#0" expanded="false" />
-            <element signature="e#9726#9802#0" expanded="false" />
-            <element signature="e#12118#12177#0" expanded="false" />
-            <element signature="e#12237#12300#0" expanded="false" />
-            <element signature="e#12331#12407#0" expanded="false" />
+            <element signature="n#!!block;n#test#0" expanded="false" />
+            <element signature="e#9648#9711#0" expanded="false" />
+            <element signature="e#9742#9818#0" expanded="false" />
+            <element signature="e#12166#12225#0" expanded="false" />
+            <element signature="e#12285#12348#0" expanded="false" />
+            <element signature="e#12379#12455#0" expanded="false" />
           </folding>
         </state>
       </provider>

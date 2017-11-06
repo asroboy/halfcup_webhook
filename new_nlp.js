@@ -83,7 +83,7 @@ function getAggregationObject(key, sender, recipient, token, res) {
                     console.log('Error: ', response.body.error);
                 } else {
                     var obj = JSON.parse(body);
-                    console.log('getChatBot RESULT: ', obj.aggregation);
+                    console.log('getChatBot RESULT: ', JSON.stringify(obj.aggregation));
                     // res.send(obj);
 
                     if (obj.aggregation.length > 0) {
