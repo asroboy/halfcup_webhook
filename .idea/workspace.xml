@@ -95,8 +95,8 @@
       <file leaf-file-name="new_nlp.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/new_nlp.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="393">
-              <caret line="273" column="46" lean-forward="true" selection-start-line="273" selection-start-column="46" selection-end-line="273" selection-end-column="46" />
+            <state relative-caret-position="325">
+              <caret line="272" column="40" lean-forward="false" selection-start-line="272" selection-start-column="40" selection-end-line="272" selection-end-column="40" />
               <folding>
                 <element signature="e#0#42#0" expanded="false" />
                 <element signature="e#6918#6977#0" expanded="false" />
@@ -109,9 +109,9 @@
                 <element signature="n#!!block;n#test#0" expanded="false" />
                 <element signature="e#9632#9695#0" expanded="false" />
                 <element signature="e#9726#9802#0" expanded="false" />
-                <element signature="e#11763#11822#0" expanded="false" />
-                <element signature="e#11882#11945#0" expanded="false" />
-                <element signature="e#11976#12052#0" expanded="false" />
+                <element signature="e#11808#11867#0" expanded="false" />
+                <element signature="e#11927#11990#0" expanded="false" />
+                <element signature="e#12021#12097#0" expanded="false" />
                 <element signature="n#!!block;n#saveAiKey#0" expanded="false" />
               </folding>
             </state>
@@ -513,12 +513,12 @@
       <workItem from="1509331511591" duration="1545000" />
       <workItem from="1509375868833" duration="16339000" />
       <workItem from="1509510006615" duration="1699000" />
-      <workItem from="1509689126090" duration="34577000" />
+      <workItem from="1509689126090" duration="34790000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="463859000" />
+    <option name="totallyTimeSpent" value="464072000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1439,8 +1439,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/new_nlp.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="393">
-          <caret line="273" column="46" lean-forward="true" selection-start-line="273" selection-start-column="46" selection-end-line="273" selection-end-column="46" />
+        <state relative-caret-position="325">
+          <caret line="272" column="40" lean-forward="false" selection-start-line="272" selection-start-column="40" selection-end-line="272" selection-end-column="40" />
           <folding>
             <element signature="e#0#42#0" expanded="false" />
             <element signature="e#6918#6977#0" expanded="false" />
@@ -1453,9 +1453,9 @@
             <element signature="n#!!block;n#test#0" expanded="false" />
             <element signature="e#9632#9695#0" expanded="false" />
             <element signature="e#9726#9802#0" expanded="false" />
-            <element signature="e#11763#11822#0" expanded="false" />
-            <element signature="e#11882#11945#0" expanded="false" />
-            <element signature="e#11976#12052#0" expanded="false" />
+            <element signature="e#11808#11867#0" expanded="false" />
+            <element signature="e#11927#11990#0" expanded="false" />
+            <element signature="e#12021#12097#0" expanded="false" />
             <element signature="n#!!block;n#saveAiKey#0" expanded="false" />
           </folding>
         </state>

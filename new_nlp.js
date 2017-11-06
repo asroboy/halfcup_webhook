@@ -254,6 +254,7 @@ function test(res) {
 }
 
 function getIndexAggregate(size, pageId, key, aggreationData, recipient, token) {
+    var aggr = aggreationData;
     var url = 'http://halfcup.com/social_rebates_system/wapi/save?api_name=AGGREGATE_AI&size=' + size + '&page_id=' + pageId + '&key=' + key + '&token=1234567890';
     console.log('url', url);
     request({
@@ -266,10 +267,10 @@ function getIndexAggregate(size, pageId, key, aggreationData, recipient, token) 
                 console.log('Error: ', response.body.error);
             } else {
                 var obj = JSON.parse(body);
-                console.log('mIndex = ' + obj.data.mIndex);
+                var index = obj.data.mIndex;
+                console.log('mIndex = ' + index);
                 // console.log('aggreationData = ' + JSON.stringify(aggreationData));
-                var message = aggreationData[obj.data.mIndex];
-
+                var message = aggr[index];
                 if (message.hasOwnProperty('message')) {
                     message = message.message;
                 }
