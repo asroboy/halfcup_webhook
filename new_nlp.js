@@ -223,7 +223,7 @@ function getAiKeyFromDB(wang_token, pageId, recipient, text, token, res) {
             } else {
                 var obj = JSON.parse(body);
                 // console.log('obj: ', obj);
-                getAiKey(text, wang_token, pageId, JSON.stringify(obj.keys), recipient, token, res, obj.aggregation);
+                getAiKey(text, wang_token, pageId, JSON.stringify(obj.keys), recipient, token, res, JSON.stringify(obj.aggregation));
             }
         }
     );
@@ -283,7 +283,7 @@ function getIndexAggregate(size, pageId, key, aggreationData, recipient, token) 
 }
 
 function getAiKey(text, wang_token, pageId, prevKeys, recipient, token, res, aggregateObj) {
-    var url = 'http://aileadsbooster.com/Backend/query?q=' + text + '&access_token=' + wang_token + '&prev_key=' + prevKeys + '&ggregation=' + aggregateObj;
+    var url = 'http://aileadsbooster.com/Backend/query?q=' + text + '&access_token=' + wang_token + '&prev_key=' + prevKeys + '&aggregation=' + aggregateObj;
     console.log('url', url);
     request({
             url: url,
