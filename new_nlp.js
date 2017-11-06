@@ -255,7 +255,7 @@ function test(res) {
 
 function getIndexAggregate(size, pageId, key, aggreationData, recipient, token) {
     var aggr = aggreationData;
-
+    console.log('aggreationData XX = ' + JSON.stringify(aggr));
     var url = 'http://halfcup.com/social_rebates_system/wapi/save?api_name=AGGREGATE_AI&size=' + size + '&page_id=' + pageId + '&key=' + key + '&token=1234567890';
     console.log('url', url);
     request({
