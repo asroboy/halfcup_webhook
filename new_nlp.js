@@ -271,6 +271,7 @@ function getIndexAggregate(size, pageId, key, aggreationData, recipient, token) 
                 var index = obj.data.mIndex;
                 var aggrIndex = obj.data.aggrIndex;
                 console.log('mIndex = ' + index);
+                console.log('aggrIndex = ' + aggrIndex);
                 console.log('aggreationData = ' + JSON.stringify(aggr));
                 var message = aggr[aggrIndex];
                 if (message.hasOwnProperty('message')) {
