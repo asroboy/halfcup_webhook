@@ -23,8 +23,8 @@
       <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="452">
-              <caret line="1293" column="59" lean-forward="true" selection-start-line="1293" selection-start-column="59" selection-end-line="1293" selection-end-column="59" />
+            <state relative-caret-position="245">
+              <caret line="1010" column="0" lean-forward="true" selection-start-line="1010" selection-start-column="0" selection-end-line="1010" selection-end-column="0" />
               <folding>
                 <element signature="e#517#829#0" expanded="false" />
                 <element signature="e#889#909#0" expanded="false" />
@@ -56,7 +56,6 @@
                 <element signature="n#!!block;n#sendEmail#0" expanded="false" />
                 <element signature="n#!!block;n#sendEmailForLead#0" expanded="false" />
                 <element signature="n#!!block;n#getResponseToUserForPostback#0" expanded="false" />
-                <element signature="e#49747#50048#0" expanded="false" />
                 <element signature="n#!!block;n#getResponseToUserRef#0" expanded="false" />
                 <element signature="n#!!block;n#getResponseToUserWithNoKey#0" expanded="false" />
                 <element signature="e#52555#52834#0" expanded="false" />
@@ -96,8 +95,8 @@
       <file leaf-file-name="new_nlp.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/new_nlp.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="342">
-              <caret line="276" column="36" lean-forward="true" selection-start-line="276" selection-start-column="36" selection-end-line="276" selection-end-column="36" />
+            <state relative-caret-position="36">
+              <caret line="270" column="0" lean-forward="true" selection-start-line="270" selection-start-column="0" selection-end-line="270" selection-end-column="0" />
               <folding>
                 <element signature="e#0#42#0" expanded="false" />
                 <element signature="e#6884#6943#0" expanded="false" />
@@ -110,9 +109,9 @@
                 <element signature="n#!!block;n#test#0" expanded="false" />
                 <element signature="e#9563#9626#0" expanded="false" />
                 <element signature="e#9657#9733#0" expanded="false" />
-                <element signature="e#11571#11630#0" expanded="false" />
-                <element signature="e#11690#11753#0" expanded="false" />
-                <element signature="e#11784#11860#0" expanded="false" />
+                <element signature="e#11577#11636#0" expanded="false" />
+                <element signature="e#11696#11759#0" expanded="false" />
+                <element signature="e#11790#11866#0" expanded="false" />
                 <element signature="n#!!block;n#saveAiKey#0" expanded="false" />
               </folding>
             </state>
@@ -187,12 +186,12 @@
       <find>saveAggregationObj</find>
       <find>new_nlp</find>
       <find>=======QUICK REPLY=======</find>
-      <find>getChatBot</find>
       <find>respondToTextOrAttacment</find>
       <find>respond</find>
       <find>getAiKey</find>
       <find>AGGREGATE_AI</find>
       <find>getIndexAggregate</find>
+      <find>getChatBot</find>
     </findStrings>
     <replaceStrings>
       <replace>localhost:8080</replace>
@@ -514,12 +513,12 @@
       <workItem from="1509331511591" duration="1545000" />
       <workItem from="1509375868833" duration="16339000" />
       <workItem from="1509510006615" duration="1699000" />
-      <workItem from="1509689126090" duration="29323000" />
+      <workItem from="1509689126090" duration="29420000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="458605000" />
+    <option name="totallyTimeSpent" value="458702000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -542,7 +541,7 @@
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.17708333" sideWeight="0.56785715" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.52495974" sideWeight="0.4940476" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.48638132" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.55233496" sideWeight="0.4940476" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.55233496" sideWeight="0.4940476" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.17708333" sideWeight="0.5426731" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -615,7 +614,6 @@
             <element signature="n#!!block;n#sendEmail#0" expanded="false" />
             <element signature="n#!!block;n#sendEmailForLead#0" expanded="false" />
             <element signature="n#!!block;n#getResponseToUserForPostback#0" expanded="false" />
-            <element signature="e#49747#50048#0" expanded="false" />
             <element signature="n#!!block;n#getResponseToUserRef#0" expanded="false" />
             <element signature="n#!!block;n#getResponseToUserWithNoKey#0" expanded="false" />
             <element signature="e#52555#52834#0" expanded="false" />
@@ -678,7 +676,6 @@
             <element signature="n#!!block;n#sendEmail#0" expanded="false" />
             <element signature="n#!!block;n#sendEmailForLead#0" expanded="false" />
             <element signature="n#!!block;n#getResponseToUserForPostback#0" expanded="false" />
-            <element signature="e#49747#50048#0" expanded="false" />
             <element signature="n#!!block;n#getResponseToUserRef#0" expanded="false" />
             <element signature="n#!!block;n#getResponseToUserWithNoKey#0" expanded="false" />
             <element signature="e#52555#52834#0" expanded="false" />
@@ -741,7 +738,6 @@
             <element signature="n#!!block;n#sendEmail#0" expanded="false" />
             <element signature="n#!!block;n#sendEmailForLead#0" expanded="false" />
             <element signature="n#!!block;n#getResponseToUserForPostback#0" expanded="false" />
-            <element signature="e#49747#50048#0" expanded="false" />
             <element signature="n#!!block;n#getResponseToUserRef#0" expanded="false" />
             <element signature="n#!!block;n#getResponseToUserWithNoKey#0" expanded="false" />
             <element signature="e#52555#52834#0" expanded="false" />
@@ -804,7 +800,6 @@
             <element signature="n#!!block;n#sendEmail#0" expanded="false" />
             <element signature="n#!!block;n#sendEmailForLead#0" expanded="false" />
             <element signature="n#!!block;n#getResponseToUserForPostback#0" expanded="false" />
-            <element signature="e#49747#50048#0" expanded="false" />
             <element signature="n#!!block;n#getResponseToUserRef#0" expanded="false" />
             <element signature="n#!!block;n#getResponseToUserWithNoKey#0" expanded="false" />
             <element signature="e#52555#52834#0" expanded="false" />
@@ -867,7 +862,6 @@
             <element signature="n#!!block;n#sendEmail#0" expanded="false" />
             <element signature="n#!!block;n#sendEmailForLead#0" expanded="false" />
             <element signature="n#!!block;n#getResponseToUserForPostback#0" expanded="false" />
-            <element signature="e#49747#50048#0" expanded="false" />
             <element signature="n#!!block;n#getResponseToUserRef#0" expanded="false" />
             <element signature="n#!!block;n#getResponseToUserWithNoKey#0" expanded="false" />
             <element signature="e#52555#52834#0" expanded="false" />
@@ -930,7 +924,6 @@
             <element signature="n#!!block;n#sendEmail#0" expanded="false" />
             <element signature="n#!!block;n#sendEmailForLead#0" expanded="false" />
             <element signature="n#!!block;n#getResponseToUserForPostback#0" expanded="false" />
-            <element signature="e#49747#50048#0" expanded="false" />
             <element signature="n#!!block;n#getResponseToUserRef#0" expanded="false" />
             <element signature="n#!!block;n#getResponseToUserWithNoKey#0" expanded="false" />
             <element signature="e#52555#52834#0" expanded="false" />
@@ -993,7 +986,6 @@
             <element signature="n#!!block;n#sendEmail#0" expanded="false" />
             <element signature="n#!!block;n#sendEmailForLead#0" expanded="false" />
             <element signature="n#!!block;n#getResponseToUserForPostback#0" expanded="false" />
-            <element signature="e#49747#50048#0" expanded="false" />
             <element signature="n#!!block;n#getResponseToUserRef#0" expanded="false" />
             <element signature="n#!!block;n#getResponseToUserWithNoKey#0" expanded="false" />
             <element signature="e#52555#52834#0" expanded="false" />
@@ -1056,7 +1048,6 @@
             <element signature="n#!!block;n#sendEmail#0" expanded="false" />
             <element signature="n#!!block;n#sendEmailForLead#0" expanded="false" />
             <element signature="n#!!block;n#getResponseToUserForPostback#0" expanded="false" />
-            <element signature="e#49747#50048#0" expanded="false" />
             <element signature="n#!!block;n#getResponseToUserRef#0" expanded="false" />
             <element signature="n#!!block;n#getResponseToUserWithNoKey#0" expanded="false" />
             <element signature="e#52555#52834#0" expanded="false" />
@@ -1126,7 +1117,6 @@
             <element signature="n#!!block;n#sendEmail#0" expanded="false" />
             <element signature="n#!!block;n#sendEmailForLead#0" expanded="false" />
             <element signature="n#!!block;n#getResponseToUserForPostback#0" expanded="false" />
-            <element signature="e#49747#50048#0" expanded="false" />
             <element signature="n#!!block;n#getResponseToUserRef#0" expanded="false" />
             <element signature="n#!!block;n#getResponseToUserWithNoKey#0" expanded="false" />
             <element signature="e#52555#52834#0" expanded="false" />
@@ -1196,7 +1186,6 @@
             <element signature="n#!!block;n#sendEmail#0" expanded="false" />
             <element signature="n#!!block;n#sendEmailForLead#0" expanded="false" />
             <element signature="n#!!block;n#getResponseToUserForPostback#0" expanded="false" />
-            <element signature="e#49747#50048#0" expanded="false" />
             <element signature="n#!!block;n#getResponseToUserRef#0" expanded="false" />
             <element signature="n#!!block;n#getResponseToUserWithNoKey#0" expanded="false" />
             <element signature="e#52555#52834#0" expanded="false" />
@@ -1266,7 +1255,6 @@
             <element signature="n#!!block;n#sendEmail#0" expanded="false" />
             <element signature="n#!!block;n#sendEmailForLead#0" expanded="false" />
             <element signature="n#!!block;n#getResponseToUserForPostback#0" expanded="false" />
-            <element signature="e#49747#50048#0" expanded="false" />
             <element signature="n#!!block;n#getResponseToUserRef#0" expanded="false" />
             <element signature="n#!!block;n#getResponseToUserWithNoKey#0" expanded="false" />
             <element signature="e#52555#52834#0" expanded="false" />
@@ -1385,8 +1373,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="452">
-          <caret line="1293" column="59" lean-forward="true" selection-start-line="1293" selection-start-column="59" selection-end-line="1293" selection-end-column="59" />
+        <state relative-caret-position="245">
+          <caret line="1010" column="0" lean-forward="true" selection-start-line="1010" selection-start-column="0" selection-end-line="1010" selection-end-column="0" />
           <folding>
             <element signature="e#517#829#0" expanded="false" />
             <element signature="e#889#909#0" expanded="false" />
@@ -1418,7 +1406,6 @@
             <element signature="n#!!block;n#sendEmail#0" expanded="false" />
             <element signature="n#!!block;n#sendEmailForLead#0" expanded="false" />
             <element signature="n#!!block;n#getResponseToUserForPostback#0" expanded="false" />
-            <element signature="e#49747#50048#0" expanded="false" />
             <element signature="n#!!block;n#getResponseToUserRef#0" expanded="false" />
             <element signature="n#!!block;n#getResponseToUserWithNoKey#0" expanded="false" />
             <element signature="e#52555#52834#0" expanded="false" />
@@ -1434,8 +1421,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/new_nlp.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="276" column="36" lean-forward="true" selection-start-line="276" selection-start-column="36" selection-end-line="276" selection-end-column="36" />
+        <state relative-caret-position="36">
+          <caret line="270" column="0" lean-forward="true" selection-start-line="270" selection-start-column="0" selection-end-line="270" selection-end-column="0" />
           <folding>
             <element signature="e#0#42#0" expanded="false" />
             <element signature="e#6884#6943#0" expanded="false" />
@@ -1448,9 +1435,9 @@
             <element signature="n#!!block;n#test#0" expanded="false" />
             <element signature="e#9563#9626#0" expanded="false" />
             <element signature="e#9657#9733#0" expanded="false" />
-            <element signature="e#11571#11630#0" expanded="false" />
-            <element signature="e#11690#11753#0" expanded="false" />
-            <element signature="e#11784#11860#0" expanded="false" />
+            <element signature="e#11577#11636#0" expanded="false" />
+            <element signature="e#11696#11759#0" expanded="false" />
+            <element signature="e#11790#11866#0" expanded="false" />
             <element signature="n#!!block;n#saveAiKey#0" expanded="false" />
           </folding>
         </state>
