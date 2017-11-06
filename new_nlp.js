@@ -269,11 +269,11 @@ function getIndexAggregate(size, pageId, key, aggreationData, recipient, token) 
                 console.log('mIndex = ' + obj.data.mIndex);
                 // console.log('aggreationData = ' + JSON.stringify(aggreationData));
                 var message = aggreationData[obj.data.mIndex]
-                if(message !== null){
-                    if(message.hasOwnProperty('message')){
-                        message = message.message;
-                    }
+
+                if (message.hasOwnProperty('message')) {
+                    message = message.message;
                 }
+
 
                 var js_ = JSON.stringify(message);
                 var myEscapedJSONString = js_.escapeSpecialChars();
@@ -302,6 +302,8 @@ function getAiKey(text, wang_token, pageId, prevKeys, recipient, token, res, agg
                 var obj = JSON.parse(body);
                 console.log('obj = ' + JSON.stringify(obj));
                 if (obj.hasOwnProperty('aggregation')) {
+
+                    console.log('AGGREGATION LENGTH = ' + obj.aggregation.length);
                     if (obj.aggregation.length > 0) {
                         getIndexAggregate(obj.aggregation.length, pageId, obj.key, obj.aggregation, recipient, token);
                     } else {
