@@ -231,7 +231,7 @@ app.post('/webhook', function (req, res) {
                                 /**
                                  * MULTI KEY FORMAT [A]|[B]|BOT_xxxx_xxxx
                                  */
-                                else if (event.message.quick_reply.payload.indexOf("|") > -1) {
+                                else if ((event.message.quick_reply.payload.indexOf("|") > -1) && payload_prefix !== 'AGGREGATION') {
                                     /**
                                      * Split Payload marked with |
                                      * @type {*}
