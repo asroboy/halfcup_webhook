@@ -282,8 +282,8 @@ function getIndexAggregate(size, pageId, key, aggreationData, recipient, token) 
                     var js_ = JSON.stringify(message);
                     var myEscapedJSONString = js_.escapeSpecialChars();
                     myEscapedJSONString = myEscapedJSONString.replace(/\\\\n/g, "\\n");
-                    console.log("TEXT ==> " + js_);
-                    sendMessage(recipient, js_, token);
+                    console.log("TEXT ==> " + myEscapedJSONString);
+                    sendMessage(recipient, myEscapedJSONString, token);
                 }
 
 
