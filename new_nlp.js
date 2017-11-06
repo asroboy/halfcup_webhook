@@ -266,16 +266,16 @@ function getIndexAggregate(size, pageId, key, aggreationData, recipient, token) 
                 console.log('Error: ', response.body.error);
             } else {
                 var obj = JSON.parse(body);
-                // console.log('mIndex = ' + obj.data.mIndex);
+                console.log('mIndex = ' + obj.data.mIndex);
 
 
                 var message = aggreationData[obj.data.mIndex];
 
-                var js_ = JSON.stringify(message);
-                var myEscapedJSONString = js_.escapeSpecialChars();
-                myEscapedJSONString = myEscapedJSONString.replace(/\\\\n/g, "\\n");
-                console.log("TEXT ==> " + myEscapedJSONString);
-                sendMessage(recipient, myEscapedJSONString, token);
+                // var js_ = JSON.stringify(message);
+                // var myEscapedJSONString = js_.escapeSpecialChars();
+                // myEscapedJSONString = myEscapedJSONString.replace(/\\\\n/g, "\\n");
+                console.log("TEXT ==> " + message);
+                sendMessage(recipient, message, token);
 
                 // res.send(JSON.stringify(obj))
             }
