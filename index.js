@@ -264,7 +264,7 @@ app.post('/webhook', function (req, res) {
                                 /**
                                  * if Payload is only text
                                  */
-                                else if (event.message.quick_reply.payload) {
+                                // else if (event.message.quick_reply.payload) {
 
                                     if (event.message.quick_reply.payload.indexOf('AGGREGATION_') > -1) {
                                         new_nlp.getChatBot(event.message.quick_reply.payload, event.recipient.id, event.sender.id, res);
@@ -275,7 +275,7 @@ app.post('/webhook', function (req, res) {
                                         pixel('QuickReply', event.message.text, event.message.quick_reply.payload, event.sender.id, event.recipient.id);
                                         getToken(event.message.quick_reply.payload, event.recipient.id, event.sender.id, false);
                                     }
-                                }
+                                // }
                             }
 
                             /**
