@@ -294,7 +294,7 @@ function getIndexAggregate(size, pageId, key, aggreationData, recipient, token) 
 }
 
 function getAiKey(text, wang_token, pageId, prevKeys, recipient, token, res, aggregateObj) {
-    var url = 'http://aileadsbooster.com/Backend/query?q=' + text + '&access_token=' + wang_token + '&prev_key=' + prevKeys + '&aggregation=' + aggregateObj;
+    var url = 'http://aileadsbooster.com/Backend/query?q=' + encodeURI(text) + '&access_token=' + wang_token + '&prev_key=' + prevKeys + '&aggregation=' + aggregateObj;
     console.log('url', url);
     request({
             url: url,
