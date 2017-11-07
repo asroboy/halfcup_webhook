@@ -270,7 +270,7 @@ function getIndexAggregate(size, pageId, key, aggreationData, recipient, token) 
                 var obj = JSON.parse(body);
                 var index = obj.data.mIndex;
                 var aggrIndex = obj.data.aggrIndex;
-                if(aggrIndex < aggr.length){
+                if (aggrIndex < aggr.length) {
                     console.log('mIndex = ' + index);
                     console.log('aggrIndex = ' + aggrIndex);
                     console.log('aggreationData = ' + JSON.stringify(aggr));
@@ -294,7 +294,7 @@ function getIndexAggregate(size, pageId, key, aggreationData, recipient, token) 
 }
 
 function getAiKey(text, wang_token, pageId, prevKeys, recipient, token, res, aggregateObj) {
-    var url = 'http://aileadsbooster.com/Backend/query?q=' + encodeURI(text) + '&access_token=' + wang_token + '&prev_key=' + encodeURI(prevKeys) + '&aggregation=' + encodeURI(aggregateObj);
+    var url = 'http://aileadsbooster.com/Backend/query?q=' + encodeURI(text) + '&access_token=' + wang_token + '&prev_key=' + prevKeys + '&aggregation=' + aggregateObj;
     console.log('url', url);
     request({
             url: url,
