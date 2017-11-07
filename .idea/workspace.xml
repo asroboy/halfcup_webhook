@@ -95,8 +95,8 @@
       <file leaf-file-name="new_nlp.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/new_nlp.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="257">
-              <caret line="296" column="167" lean-forward="false" selection-start-line="296" selection-start-column="167" selection-end-line="296" selection-end-column="167" />
+            <state relative-caret-position="503">
+              <caret line="287" column="0" lean-forward="true" selection-start-line="287" selection-start-column="0" selection-end-line="287" selection-end-column="0" />
               <folding>
                 <element signature="e#0#42#0" expanded="false" />
                 <element signature="e#6934#6993#0" expanded="false" />
@@ -108,9 +108,12 @@
                 <element signature="n#!!block;n#test#0" expanded="false" />
                 <element signature="e#9648#9711#0" expanded="false" />
                 <element signature="e#9742#9818#0" expanded="false" />
-                <element signature="e#12179#12238#0" expanded="false" />
-                <element signature="e#12298#12361#0" expanded="false" />
-                <element signature="e#12392#12468#0" expanded="false" />
+                <element signature="e#12185#12244#0" expanded="false" />
+                <element signature="e#12304#12367#0" expanded="false" />
+                <element signature="e#12398#12474#0" expanded="false" />
+                <marker date="1510027202101" expanded="true" signature="10217:11871" ph="{...}" />
+                <marker date="1510027202101" expanded="true" signature="10649:11861" ph="{...}" />
+                <marker date="1510027202101" expanded="true" signature="10850:11796" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -511,12 +514,12 @@
       <workItem from="1509331511591" duration="1545000" />
       <workItem from="1509375868833" duration="16339000" />
       <workItem from="1509510006615" duration="1699000" />
-      <workItem from="1509689126090" duration="47978000" />
+      <workItem from="1509689126090" duration="48355000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="477260000" />
+    <option name="totallyTimeSpent" value="477637000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1437,8 +1440,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/new_nlp.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="257">
-          <caret line="296" column="167" lean-forward="false" selection-start-line="296" selection-start-column="167" selection-end-line="296" selection-end-column="167" />
+        <state relative-caret-position="503">
+          <caret line="287" column="0" lean-forward="true" selection-start-line="287" selection-start-column="0" selection-end-line="287" selection-end-column="0" />
           <folding>
             <element signature="e#0#42#0" expanded="false" />
             <element signature="e#6934#6993#0" expanded="false" />
@@ -1450,9 +1453,12 @@
             <element signature="n#!!block;n#test#0" expanded="false" />
             <element signature="e#9648#9711#0" expanded="false" />
             <element signature="e#9742#9818#0" expanded="false" />
-            <element signature="e#12179#12238#0" expanded="false" />
-            <element signature="e#12298#12361#0" expanded="false" />
-            <element signature="e#12392#12468#0" expanded="false" />
+            <element signature="e#12185#12244#0" expanded="false" />
+            <element signature="e#12304#12367#0" expanded="false" />
+            <element signature="e#12398#12474#0" expanded="false" />
+            <marker date="1510027202101" expanded="true" signature="10217:11871" ph="{...}" />
+            <marker date="1510027202101" expanded="true" signature="10649:11861" ph="{...}" />
+            <marker date="1510027202101" expanded="true" signature="10850:11796" ph="{...}" />
           </folding>
         </state>
       </provider>
