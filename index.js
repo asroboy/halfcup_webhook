@@ -83,6 +83,17 @@ app.post('/webhook', function (req, res) {
                 var hc_token = 'EAABqJD84pmIBABjewVhyAuMwDLFaI7YT7fsJLzeh63mhOwdZAgMKClvFfZBvHhFR35dIok3YQAxeZCuDbiLCaWVOpQxWVRHZBahsQOy9ZCTn4e4wdWcZA0VmGU6x0CFzv6dRcCzrlSZA87EPcI3b0KCDkedjLc37lZCvnu47iTTAwgZDZD';
 
 
+                if(event.hasOwnProperty('messaging')){
+                    var messaging = event.messaging[0];
+                    if(messaging.hasOwnProperty('referral')){
+                        var referral = messaging.referral;
+                        if(referral.hasOwnProperty('ref')){
+                            new_nlp.getChatBot(referral.ref, messaging.recipient.id, messaging.sender.id, res);
+                        }
+                    }
+
+                }
+
                 if (event.message) {
                     //NLP Handling
                     if (event.message.nlp) {
