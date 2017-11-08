@@ -53,7 +53,14 @@ function getToken(text, sender, recipient, isMessageUs, res) {
                         var key = text.replace("{{", "").replace("}}", "");
                         console.log('{{ after get token &  key = ' + key);
                         getChatBot(key, sender, recipient, token, res);
-                    } else {
+                    } else if (text.indexOf('LIVE') > -1) {
+                        var key = text.replace("LIVE_", "");
+                        console.log('LIVE after get token &  key = ' + key);
+                        getChatBot(key, sender, recipient, token, res);
+                        getEmail('Someone asking for LIVE Inquiries in chatroom', recipient);
+                    }
+
+                    else {
                         getMerchantId(sender, recipient, text, token, res);
                     }
 
@@ -548,3 +555,48 @@ function sendMessage(recipientId, message, token) {
         }
     });
 };
+
+
+// generic function sending messages
+function getEmail(message, page_id) {
+    var url = 'http://halfcup.com/social_rebates_system/apix?page_id=' + page_id;
+    request({
+        url: url,
+        method: 'GET',
+    }, function (error, response, body) {
+        if (error) {
+            console.log('Error sending message: ', error);
+        } else if (response.body.error) {
+            console.log('Error: ', response.body.error);
+        } else {
+            sendEmailForAi(message, page_id)
+        }
+    });
+};
+
+function sendEmailForAi(message, page_id) {
+
+    var result = "Page ID " + page_id + "<br/>";
+    result = result + message;
+    //brotherho@halfcup.com
+
+    var url = 'http://halfcup.com/social_rebates_system/api/sendEmail?' +
+        'sender=noreply@halfcup.com' +
+        '&receiver=brotherho@halfcup.com' +
+        '&subject=LIVE Inquiries ' +
+        '&body=' + result;
+    console.log('url', url);
+    request({
+        url: url,
+        method: 'GET'
+    }, function (error, response, body) {
+        if (error) {
+            console.log('Error sending message: ', error);
+        } else if (response.body.error) {
+            console.log('Error: ', response.body.error);
+        } else {
+            console.log('Send email ', "OK");
+        }
+    });
+
+}

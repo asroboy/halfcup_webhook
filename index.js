@@ -403,7 +403,10 @@ app.post('/webhook', function (req, res) {
                             new_nlp.getChatBot(event.postback.payload, event.recipient.id, event.sender.id, res)
                         }
 
-
+                        else if (payload_prefix === 'LIVE') {
+                            console.log('call new_nlp AGGREGATION');
+                            new_nlp.getChatBot(event.postback.payload, event.recipient.id, event.sender.id, res)
+                        }
                         /**
                          * MULTI KEY FORMAT [A]|[B]|BOT_xxxx_xxxx
                          * MULTI KEY FORMAT [A]|[B]|[BOT_xxxx_xxxx]|BOT_xxx_xxx
