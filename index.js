@@ -91,7 +91,7 @@ app.post('/webhook', function (req, res) {
                     //     var referral = messaging.referral;
                     if (referral.hasOwnProperty('ref')) {
                         console.log('messaging.referral.ref');
-                        new_nlp.getChatBot(referral.ref, messaging.recipient.id, messaging.sender.id, res);
+                        new_nlp.getChatBot(referral.ref, event.recipient.id, event.sender.id, res);
                     }
                     // }
 
