@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="8c0fd527-5667-4e03-89ee-e95c0bdc3c27" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.js" afterPath="$PROJECT_DIR$/index.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/new_nlp.js" afterPath="$PROJECT_DIR$/new_nlp.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -25,8 +24,8 @@
       <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="495">
-              <caret line="1026" column="1" lean-forward="true" selection-start-line="983" selection-start-column="0" selection-end-line="1026" selection-end-column="1" />
+            <state relative-caret-position="5389">
+              <caret line="1026" column="1" lean-forward="false" selection-start-line="983" selection-start-column="0" selection-end-line="1026" selection-end-column="1" />
               <folding>
                 <element signature="e#517#829#0" expanded="false" />
                 <element signature="e#889#909#0" expanded="false" />
@@ -95,8 +94,8 @@
       <file leaf-file-name="new_nlp.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/new_nlp.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="189">
-              <caret line="560" column="9" lean-forward="false" selection-start-line="560" selection-start-column="9" selection-end-line="560" selection-end-column="9" />
+            <state relative-caret-position="210">
+              <caret line="239" column="6" lean-forward="true" selection-start-line="239" selection-start-column="6" selection-end-line="239" selection-end-column="6" />
               <folding>
                 <element signature="e#0#42#0" expanded="false" />
                 <element signature="e#7319#7378#0" expanded="false" />
@@ -106,11 +105,11 @@
                 <element signature="e#8332#8395#0" expanded="false" />
                 <element signature="e#8426#8502#0" expanded="false" />
                 <element signature="n#!!block;n#test#0" expanded="false" />
-                <element signature="e#10033#10096#0" expanded="false" />
-                <element signature="e#10127#10203#0" expanded="false" />
-                <element signature="e#12564#12623#0" expanded="false" />
-                <element signature="e#12683#12746#0" expanded="false" />
-                <element signature="e#12777#12853#0" expanded="false" />
+                <element signature="e#10146#10209#0" expanded="false" />
+                <element signature="e#10240#10316#0" expanded="false" />
+                <element signature="e#12677#12736#0" expanded="false" />
+                <element signature="e#12796#12859#0" expanded="false" />
+                <element signature="e#12890#12966#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -253,7 +252,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -268,7 +267,7 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -513,12 +512,14 @@
       <workItem from="1509510006615" duration="1699000" />
       <workItem from="1509689126090" duration="49009000" />
       <workItem from="1510029762873" duration="6309000" />
-      <workItem from="1510147525710" duration="1273000" />
+      <workItem from="1510147525710" duration="1476000" />
+      <workItem from="1510199233055" duration="599000" />
+      <workItem from="1510278427426" duration="465000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="485873000" />
+    <option name="totallyTimeSpent" value="487140000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -540,7 +541,7 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.52495974" sideWeight="0.4940476" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.17708333" sideWeight="0.56785715" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.48638132" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.52012885" sideWeight="0.4940476" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.52012885" sideWeight="0.4940476" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.17708333" sideWeight="0.5426731" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -1369,8 +1370,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="495">
-          <caret line="1026" column="1" lean-forward="true" selection-start-line="983" selection-start-column="0" selection-end-line="1026" selection-end-column="1" />
+        <state relative-caret-position="5389">
+          <caret line="1026" column="1" lean-forward="false" selection-start-line="983" selection-start-column="0" selection-end-line="1026" selection-end-column="1" />
           <folding>
             <element signature="e#517#829#0" expanded="false" />
             <element signature="e#889#909#0" expanded="false" />
@@ -1415,8 +1416,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/new_nlp.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="560" column="9" lean-forward="false" selection-start-line="560" selection-start-column="9" selection-end-line="560" selection-end-column="9" />
+        <state relative-caret-position="210">
+          <caret line="239" column="6" lean-forward="true" selection-start-line="239" selection-start-column="6" selection-end-line="239" selection-end-column="6" />
           <folding>
             <element signature="e#0#42#0" expanded="false" />
             <element signature="e#7319#7378#0" expanded="false" />
@@ -1426,11 +1427,11 @@
             <element signature="e#8332#8395#0" expanded="false" />
             <element signature="e#8426#8502#0" expanded="false" />
             <element signature="n#!!block;n#test#0" expanded="false" />
-            <element signature="e#10033#10096#0" expanded="false" />
-            <element signature="e#10127#10203#0" expanded="false" />
-            <element signature="e#12564#12623#0" expanded="false" />
-            <element signature="e#12683#12746#0" expanded="false" />
-            <element signature="e#12777#12853#0" expanded="false" />
+            <element signature="e#10146#10209#0" expanded="false" />
+            <element signature="e#10240#10316#0" expanded="false" />
+            <element signature="e#12677#12736#0" expanded="false" />
+            <element signature="e#12796#12859#0" expanded="false" />
+            <element signature="e#12890#12966#0" expanded="false" />
           </folding>
         </state>
       </provider>
