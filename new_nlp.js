@@ -202,15 +202,18 @@ function getAiToken(sender, recipient, restaurantId, text, token, res) {
             } else if (response.body.error) {
                 console.log('Error: ', response.body.error);
             } else {
-                var obj = JSON.parse(body);
-                // console.log('obj: ', obj);
-                if (obj.access_token !== '') {
-                    var pageId = sender;
-                    getAiKeyFromDB(obj.access_token, pageId, recipient, text, token, res);
-                } else {
-                    // getResponseToUser(text, sender, recipient);
-                }
+                if(obj.indexOf('<') > -1){
 
+                }else{
+                    var obj = JSON.parse(body);
+                    // console.log('obj: ', obj);
+                    if (obj.access_token !== '') {
+                        var pageId = sender;
+                        getAiKeyFromDB(obj.access_token, pageId, recipient, text, token, res);
+                    } else {
+                        // getResponseToUser(text, sender, recipient);
+                    }
+                }
             }
         }
     );
