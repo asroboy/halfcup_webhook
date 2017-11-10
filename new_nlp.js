@@ -231,7 +231,7 @@ function getAiKeyFromDB(wang_token, pageId, recipient, text, token, res) {
                 var obj = JSON.parse(body);
                 // console.log('obj: ', obj);
                 var agk = '';
-                if(obj.hasOwnProperty(aggregation)){
+                if(obj.hasOwnProperty('aggregation')){
                     if(obj.aggregation.hasOwnProperty('aggregationKey')){
                         agk = obj.aggregation.aggregationKey;
                         agk = agk.replace('&', '%26');
