@@ -230,8 +230,9 @@ function getAiKeyFromDB(wang_token, pageId, recipient, text, token, res) {
             } else {
                 var obj = JSON.parse(body);
                 // console.log('obj: ', obj);
-                var agk = obj.aggregation.aggregationKey
-                if(agk !== null){
+                var agk = '';
+                if(obj.aggregation.hasOwnProperty('aggregationKey')){
+                    agk = obj.aggregation.aggregationKey;
                     agk = agk.replace('&', '%26');
                 }
                 getAiKey(text, wang_token, pageId, JSON.stringify(obj.keys), recipient, token, res, agk);

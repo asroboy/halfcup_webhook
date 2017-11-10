@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8c0fd527-5667-4e03-89ee-e95c0bdc3c27" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/new_nlp.js" afterPath="$PROJECT_DIR$/new_nlp.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -94,8 +93,8 @@
       <file leaf-file-name="new_nlp.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/new_nlp.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="239" column="6" lean-forward="true" selection-start-line="239" selection-start-column="6" selection-end-line="239" selection-end-column="6" />
+            <state relative-caret-position="176">
+              <caret line="234" column="57" lean-forward="false" selection-start-line="234" selection-start-column="57" selection-end-line="234" selection-end-column="57" />
               <folding>
                 <element signature="e#0#42#0" expanded="false" />
                 <element signature="e#7319#7378#0" expanded="false" />
@@ -105,11 +104,11 @@
                 <element signature="e#8332#8395#0" expanded="false" />
                 <element signature="e#8426#8502#0" expanded="false" />
                 <element signature="n#!!block;n#test#0" expanded="false" />
-                <element signature="e#10146#10209#0" expanded="false" />
-                <element signature="e#10240#10316#0" expanded="false" />
-                <element signature="e#12677#12736#0" expanded="false" />
-                <element signature="e#12796#12859#0" expanded="false" />
-                <element signature="e#12890#12966#0" expanded="false" />
+                <element signature="e#10213#10276#0" expanded="false" />
+                <element signature="e#10307#10383#0" expanded="false" />
+                <element signature="e#12744#12803#0" expanded="false" />
+                <element signature="e#12863#12926#0" expanded="false" />
+                <element signature="e#12957#13033#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -514,12 +513,12 @@
       <workItem from="1510029762873" duration="6309000" />
       <workItem from="1510147525710" duration="1476000" />
       <workItem from="1510199233055" duration="599000" />
-      <workItem from="1510278427426" duration="465000" />
+      <workItem from="1510278427426" duration="731000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="487140000" />
+    <option name="totallyTimeSpent" value="487406000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1416,8 +1415,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/new_nlp.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="239" column="6" lean-forward="true" selection-start-line="239" selection-start-column="6" selection-end-line="239" selection-end-column="6" />
+        <state relative-caret-position="176">
+          <caret line="234" column="57" lean-forward="false" selection-start-line="234" selection-start-column="57" selection-end-line="234" selection-end-column="57" />
           <folding>
             <element signature="e#0#42#0" expanded="false" />
             <element signature="e#7319#7378#0" expanded="false" />
@@ -1427,11 +1426,11 @@
             <element signature="e#8332#8395#0" expanded="false" />
             <element signature="e#8426#8502#0" expanded="false" />
             <element signature="n#!!block;n#test#0" expanded="false" />
-            <element signature="e#10146#10209#0" expanded="false" />
-            <element signature="e#10240#10316#0" expanded="false" />
-            <element signature="e#12677#12736#0" expanded="false" />
-            <element signature="e#12796#12859#0" expanded="false" />
-            <element signature="e#12890#12966#0" expanded="false" />
+            <element signature="e#10213#10276#0" expanded="false" />
+            <element signature="e#10307#10383#0" expanded="false" />
+            <element signature="e#12744#12803#0" expanded="false" />
+            <element signature="e#12863#12926#0" expanded="false" />
+            <element signature="e#12957#13033#0" expanded="false" />
           </folding>
         </state>
       </provider>
