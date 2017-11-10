@@ -202,7 +202,7 @@ function getAiToken(sender, recipient, restaurantId, text, token, res) {
             } else if (response.body.error) {
                 console.log('Error: ', response.body.error);
             } else {
-                if(obj.indexOf('<') > -1){
+                if(body.indexOf('<') > -1){
 
                 }else{
                     var obj = JSON.parse(body);
