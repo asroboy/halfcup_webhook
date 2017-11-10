@@ -334,7 +334,6 @@ function getAiKey(text, wang_token, pageId, prevKeys, recipient, token, res, agg
                 var obj = JSON.parse(body);
                 // console.log('obj = ' + JSON.stringify(obj));
                 if (obj.hasOwnProperty('aggregation')) {
-
                     console.log('AGGREGATION LENGTH = ' + obj.aggregation.length);
                     if (obj.aggregation.length > 0) {
                         getIndexAggregate(obj.aggregation.length, pageId, obj.key, obj.aggregation, recipient, token);
