@@ -89,7 +89,7 @@ app.post('/webhook', function (req, res) {
                     // if(messaging.hasOwnProperty('referral')){
                     //     console.log('messaging.referral');
                     //     var referral = messaging.referral;
-                    if (referral.hasOwnProperty('ref')) {
+                    if (event.referral.hasOwnProperty('ref')) {
                         console.log('messaging.referral.ref');
                         new_nlp.getChatBot(referral.ref, event.recipient.id, event.sender.id, res);
                     }
