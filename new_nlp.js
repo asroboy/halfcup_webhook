@@ -88,7 +88,13 @@ function getToken(text, sender, recipient, isMessageUs, res) {
 function getAggregationObject(key, sender, recipient, token, res) {
     if (key.indexOf('AGGREGATION_') > -1) {
         var mKey = key.replace('AGGREGATION_', '');
-        var url = 'http://aileadsbooster.com/Backend/aggregation?' + mKey+'&query=agent=Minnie%20Seow||email=ming@gmail.com';
+        var url = '';
+        if (mKey === 'object=main') {
+            url = 'http://aileadsbooster.com/Backend/aggregation?' + mKey + '&query=agent=Minnie%20Seow||email=ming@gmail.com';
+        } else {
+            url = 'http://aileadsbooster.com/Backend/aggregation?' + mKey;
+        }
+
         console.log('url', url);
         request({
                 url: url,
