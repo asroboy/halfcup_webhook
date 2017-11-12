@@ -66,7 +66,14 @@ function getToken(text, sender, recipient, isMessageUs, res) {
                     } else if (text.indexOf('LIVE') > -1) {
                         var key = text.replace("LIVE_", "");
                         console.log('LIVE after get token &  key = ' + key);
-                        getChatBot(text, sender, recipient, token, res);
+                        // getChatBot(text, sender, recipient, token, res);
+                        var m = JSON.parse('{\"text\":\"Hi, the agent has been notified. We will be glad to support you\"}');
+                        var js_ = JSON.stringify(m);
+                        var myEscapedJSONString = js_.escapeSpecialChars();
+                        myEscapedJSONString = myEscapedJSONString.replace(/\\\\n/g, "\\n");
+                        console.log("TEXT ==> " + myEscapedJSONString);
+                        sendMessage(recipient, myEscapedJSONString, token);
+
                         var message = 'Hi, someone asking for Live Inquiries in messenger, <br>Thanks';
                         sendEmailForAi(message, recipient, key.split('=')[1]);
                         // getEmail('Someone asking for LIVE Inquiries in chatroom', recipient);

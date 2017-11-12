@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8c0fd527-5667-4e03-89ee-e95c0bdc3c27" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/new_nlp.js" afterPath="$PROJECT_DIR$/new_nlp.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -93,22 +94,22 @@
       <file leaf-file-name="new_nlp.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/new_nlp.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="410">
-              <caret line="70" column="57" lean-forward="false" selection-start-line="70" selection-start-column="57" selection-end-line="70" selection-end-column="57" />
+            <state relative-caret-position="240">
+              <caret line="65" column="59" lean-forward="true" selection-start-line="65" selection-start-column="59" selection-end-line="65" selection-end-column="59" />
               <folding>
                 <element signature="e#0#42#0" expanded="false" />
-                <element signature="e#8319#8378#0" expanded="false" />
-                <element signature="e#8438#8501#0" expanded="false" />
-                <element signature="e#8532#8608#0" expanded="false" />
-                <element signature="e#9213#9272#0" expanded="false" />
-                <element signature="e#9332#9395#0" expanded="false" />
-                <element signature="e#9426#9502#0" expanded="false" />
+                <element signature="e#8818#8877#0" expanded="false" />
+                <element signature="e#8937#9000#0" expanded="false" />
+                <element signature="e#9031#9107#0" expanded="false" />
+                <element signature="e#9712#9771#0" expanded="false" />
+                <element signature="e#9831#9894#0" expanded="false" />
+                <element signature="e#9925#10001#0" expanded="false" />
                 <element signature="n#!!block;n#test#0" expanded="false" />
-                <element signature="e#11509#11572#0" expanded="false" />
-                <element signature="e#11603#11679#0" expanded="false" />
-                <element signature="e#14404#14463#0" expanded="false" />
-                <element signature="e#14523#14586#0" expanded="false" />
-                <element signature="e#14617#14693#0" expanded="false" />
+                <element signature="e#12008#12071#0" expanded="false" />
+                <element signature="e#12102#12178#0" expanded="false" />
+                <element signature="e#14903#14962#0" expanded="false" />
+                <element signature="e#15022#15085#0" expanded="false" />
+                <element signature="e#15116#15192#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -186,8 +187,8 @@
       <find>referral</find>
       <find>AGGREGATE_OBJ</find>
       <find>getAggregationObject</find>
-      <find>getEmail</find>
       <find>sendEmailForAi</find>
+      <find>getEmail</find>
     </findStrings>
     <replaceStrings>
       <replace>localhost:8080</replace>
@@ -515,12 +516,12 @@
       <workItem from="1510199233055" duration="599000" />
       <workItem from="1510278427426" duration="6569000" />
       <workItem from="1510448770213" duration="1972000" />
-      <workItem from="1510450979832" duration="6832000" />
+      <workItem from="1510450979832" duration="7884000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="502048000" />
+    <option name="totallyTimeSpent" value="503100000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1417,22 +1418,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/new_nlp.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="410">
-          <caret line="70" column="57" lean-forward="false" selection-start-line="70" selection-start-column="57" selection-end-line="70" selection-end-column="57" />
+        <state relative-caret-position="240">
+          <caret line="65" column="59" lean-forward="true" selection-start-line="65" selection-start-column="59" selection-end-line="65" selection-end-column="59" />
           <folding>
             <element signature="e#0#42#0" expanded="false" />
-            <element signature="e#8319#8378#0" expanded="false" />
-            <element signature="e#8438#8501#0" expanded="false" />
-            <element signature="e#8532#8608#0" expanded="false" />
-            <element signature="e#9213#9272#0" expanded="false" />
-            <element signature="e#9332#9395#0" expanded="false" />
-            <element signature="e#9426#9502#0" expanded="false" />
+            <element signature="e#8818#8877#0" expanded="false" />
+            <element signature="e#8937#9000#0" expanded="false" />
+            <element signature="e#9031#9107#0" expanded="false" />
+            <element signature="e#9712#9771#0" expanded="false" />
+            <element signature="e#9831#9894#0" expanded="false" />
+            <element signature="e#9925#10001#0" expanded="false" />
             <element signature="n#!!block;n#test#0" expanded="false" />
-            <element signature="e#11509#11572#0" expanded="false" />
-            <element signature="e#11603#11679#0" expanded="false" />
-            <element signature="e#14404#14463#0" expanded="false" />
-            <element signature="e#14523#14586#0" expanded="false" />
-            <element signature="e#14617#14693#0" expanded="false" />
+            <element signature="e#12008#12071#0" expanded="false" />
+            <element signature="e#12102#12178#0" expanded="false" />
+            <element signature="e#14903#14962#0" expanded="false" />
+            <element signature="e#15022#15085#0" expanded="false" />
+            <element signature="e#15116#15192#0" expanded="false" />
           </folding>
         </state>
       </provider>
