@@ -67,6 +67,7 @@ function getToken(text, sender, recipient, isMessageUs, res) {
                         var key = text.replace("LIVE_", "");
                         console.log('LIVE after get token &  key = ' + key);
                         getChatBot(text, sender, recipient, token, res);
+                        var message = 'Hi, someone asking for Live Inquiries in messenger, <br>Thanks';
                         sendEmailForAi(message, page_id, key.split('=')[1]);
                         // getEmail('Someone asking for LIVE Inquiries in chatroom', recipient);
                     }
