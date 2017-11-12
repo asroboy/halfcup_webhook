@@ -88,7 +88,7 @@ function getToken(text, sender, recipient, isMessageUs, res) {
 function getAggregationObject(key, sender, recipient, token, res) {
     if (key.indexOf('AGGREGATION_') > -1) {
         var mKey = key.replace('AGGREGATION_', '');
-        var url = 'http://aileadsbooster.com/Backend/aggregation?' + mKey;
+        var url = 'http://aileadsbooster.com/Backend/aggregation?' + mKey+'&query=agent=Ming%20Seow||email=ming@gmail.com';
         console.log('url', url);
         request({
                 url: url,
