@@ -50,9 +50,19 @@ function getToken(text, sender, recipient, isMessageUs, res) {
                         getAggregationObject(text, sender, recipient, token, res);
                         saveAggregationObj(text, sender);
                     } else if (text.indexOf('{{') > -1) {
-                        var key = text.replace("{{", "").replace("}}", "");
-                        console.log('{{ after get token &  key = ' + key);
-                        getChatBot(key, sender, recipient, token, res);
+                        if (text.indexOf('_') > -1) {
+                            var param = text.split("_")[1];
+                            var key = text.split("_")[0].replace("{{", "").replace("}}", "");
+                            console.log('{{ after get token &  key = ' + key);
+                            getChatBot(key, sender, recipient, token, res);
+                            // getAggregationObject(text, sender, recipient, token, res);
+                            // saveAggregationObj(text, sender);
+                        } else {
+                            var key = text.replace("{{", "").replace("}}", "");
+                            console.log('{{ after get token &  key = ' + key);
+                            getChatBot(key, sender, recipient, token, res);
+                        }
+
                     } else if (text.indexOf('LIVE') > -1) {
                         var key = text.replace("LIVE_", "");
                         console.log('LIVE after get token &  key = ' + key);
@@ -202,9 +212,9 @@ function getAiToken(sender, recipient, restaurantId, text, token, res) {
             } else if (response.body.error) {
                 console.log('Error: ', response.body.error);
             } else {
-                if(body.indexOf('<') > -1){
+                if (body.indexOf('<') > -1) {
 
-                }else{
+                } else {
                     var obj = JSON.parse(body);
                     // console.log('obj: ', obj);
                     if (obj.access_token !== '') {
@@ -235,7 +245,7 @@ function getAiKeyFromDB(wang_token, pageId, recipient, text, token, res) {
                 // console.log('obj: ', obj);
                 var agk = '';
                 if (obj.hasOwnProperty('aggregation')) {
-                    if (obj.aggregation){
+                    if (obj.aggregation) {
                         if (obj.aggregation.hasOwnProperty('aggregationKey')) {
                             agk = obj.aggregation.aggregationKey;
                             agk = agk.replace('&', '%26');
@@ -315,9 +325,9 @@ function getIndexAggregate(size, pageId, key, aggreationData, recipient, token) 
 
 function getAiKey(text, wang_token, pageId, prevKeys, recipient, token, res, aggregateObj) {
     var url = 'http://aileadsbooster.com/Backend/query?q=' + encodeURI(text) + '&access_token=' + wang_token + '&prev_key=' + prevKeys + '&aggregation=' + aggregateObj;
-    if(aggregateObj === ''){
+    if (aggregateObj === '') {
         var url = 'http://aileadsbooster.com/Backend/query?q=' + encodeURI(text) + '&access_token=' + wang_token + '&prev_key=' + prevKeys;
-    }else{
+    } else {
         var url = 'http://aileadsbooster.com/Backend/query?q=' + encodeURI(text) + '&access_token=' + wang_token + '&prev_key=' + prevKeys + '&aggregation=' + aggregateObj;
 
     }
