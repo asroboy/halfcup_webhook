@@ -66,8 +66,9 @@ function getToken(text, sender, recipient, isMessageUs, res) {
                     } else if (text.indexOf('LIVE') > -1) {
                         var key = text.replace("LIVE_", "");
                         console.log('LIVE after get token &  key = ' + key);
-                        getChatBot(key, sender, recipient, token, res);
-                        getEmail('Someone asking for LIVE Inquiries in chatroom', recipient);
+                        getChatBot(text, sender, recipient, token, res);
+                        sendEmailForAi(message, page_id, key.split('=')[1]);
+                        // getEmail('Someone asking for LIVE Inquiries in chatroom', recipient);
                     }
 
                     else {
@@ -603,12 +604,12 @@ function getEmail(message, page_id) {
         } else if (response.body.error) {
             console.log('Error: ', response.body.error);
         } else {
-            sendEmailForAi(message, page_id)
+            sendEmailForAi(message, page_id, '');
         }
     });
 };
 
-function sendEmailForAi(message, page_id) {
+function sendEmailForAi(message, page_id, email) {
 
     var result = "Page ID " + page_id + "<br/>";
     result = result + message;
@@ -634,3 +635,4 @@ function sendEmailForAi(message, page_id) {
     });
 
 }
+
