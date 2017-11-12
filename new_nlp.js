@@ -91,7 +91,7 @@ function getAggregationObject(key, sender, recipient, token, res) {
         var mKey = key.replace('AGGREGATION_', '');
         var url = '';
         if (mKey === 'object=main') {
-            url = 'http://aileadsbooster.com/Backend/aggregation?' + mKey + '&query=agent=Minnie%20Seow||email=ming@gmail.com';
+            url = 'http://aileadsbooster.com/Backend/aggregation?' + mKey + '&query=agent=Minnie%20Seow||email=brotherho@halfcup.com';
         } else {
             url = 'http://aileadsbooster.com/Backend/aggregation?' + mKey;
         }
