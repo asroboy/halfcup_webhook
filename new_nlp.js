@@ -80,7 +80,7 @@ function getToken(text, sender, recipient, isMessageUs, res) {
                     }else if(text.indexOf('CUSTOM') > -1){
                         var key = text.replace("CUSTOM_", "");
                         getChatBot(key, sender, recipient, token, res);
-                        var message = 'Hi, someone asking for Live Inquiries in messenger, <br>Thanks';
+                        var message = 'Hi, someone clicked on Fengsui Brows Photos, <br>Thanks';
                         //audreychen531@yahoo.com.sg
                         sendEmailForAi(message, recipient, 'audreychen531@yahoo.com.sg');
                     }

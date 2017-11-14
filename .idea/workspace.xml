@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8c0fd527-5667-4e03-89ee-e95c0bdc3c27" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.js" afterPath="$PROJECT_DIR$/index.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/new_nlp.js" afterPath="$PROJECT_DIR$/new_nlp.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -95,22 +93,22 @@
       <file leaf-file-name="new_nlp.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/new_nlp.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-499">
-              <caret line="29" column="32" lean-forward="false" selection-start-line="29" selection-start-column="32" selection-end-line="29" selection-end-column="32" />
+            <state relative-caret-position="402">
+              <caret line="82" column="82" lean-forward="false" selection-start-line="82" selection-start-column="82" selection-end-line="82" selection-end-column="82" />
               <folding>
                 <element signature="e#0#42#0" expanded="false" />
-                <element signature="e#9259#9318#0" expanded="false" />
-                <element signature="e#9378#9441#0" expanded="false" />
-                <element signature="e#9472#9548#0" expanded="false" />
-                <element signature="e#10153#10212#0" expanded="false" />
-                <element signature="e#10272#10335#0" expanded="false" />
-                <element signature="e#10366#10442#0" expanded="false" />
+                <element signature="e#9252#9311#0" expanded="false" />
+                <element signature="e#9371#9434#0" expanded="false" />
+                <element signature="e#9465#9541#0" expanded="false" />
+                <element signature="e#10146#10205#0" expanded="false" />
+                <element signature="e#10265#10328#0" expanded="false" />
+                <element signature="e#10359#10435#0" expanded="false" />
                 <element signature="n#!!block;n#test#0" expanded="false" />
-                <element signature="e#12449#12512#0" expanded="false" />
-                <element signature="e#12543#12619#0" expanded="false" />
-                <element signature="e#15344#15403#0" expanded="false" />
-                <element signature="e#15463#15526#0" expanded="false" />
-                <element signature="e#15557#15633#0" expanded="false" />
+                <element signature="e#12442#12505#0" expanded="false" />
+                <element signature="e#12536#12612#0" expanded="false" />
+                <element signature="e#15337#15396#0" expanded="false" />
+                <element signature="e#15456#15519#0" expanded="false" />
+                <element signature="e#15550#15626#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -520,12 +518,12 @@
       <workItem from="1510450979832" duration="13546000" />
       <workItem from="1510551920799" duration="13000" />
       <workItem from="1510557478673" duration="443000" />
-      <workItem from="1510651801989" duration="985000" />
+      <workItem from="1510651801989" duration="2425000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="510203000" />
+    <option name="totallyTimeSpent" value="511643000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -538,6 +536,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17410715" sideWeight="0.43369177" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32850242" sideWeight="0.49702382" order="6" side_tool="false" content_ui="tabs" />
@@ -547,7 +546,7 @@
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.17708333" sideWeight="0.56785715" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.52495974" sideWeight="0.4940476" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.48638132" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.52012885" sideWeight="0.4940476" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.52012885" sideWeight="0.4940476" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.17708333" sideWeight="0.5426731" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -1421,22 +1420,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/new_nlp.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-499">
-          <caret line="29" column="32" lean-forward="false" selection-start-line="29" selection-start-column="32" selection-end-line="29" selection-end-column="32" />
+        <state relative-caret-position="402">
+          <caret line="82" column="82" lean-forward="false" selection-start-line="82" selection-start-column="82" selection-end-line="82" selection-end-column="82" />
           <folding>
             <element signature="e#0#42#0" expanded="false" />
-            <element signature="e#9259#9318#0" expanded="false" />
-            <element signature="e#9378#9441#0" expanded="false" />
-            <element signature="e#9472#9548#0" expanded="false" />
-            <element signature="e#10153#10212#0" expanded="false" />
-            <element signature="e#10272#10335#0" expanded="false" />
-            <element signature="e#10366#10442#0" expanded="false" />
+            <element signature="e#9252#9311#0" expanded="false" />
+            <element signature="e#9371#9434#0" expanded="false" />
+            <element signature="e#9465#9541#0" expanded="false" />
+            <element signature="e#10146#10205#0" expanded="false" />
+            <element signature="e#10265#10328#0" expanded="false" />
+            <element signature="e#10359#10435#0" expanded="false" />
             <element signature="n#!!block;n#test#0" expanded="false" />
-            <element signature="e#12449#12512#0" expanded="false" />
-            <element signature="e#12543#12619#0" expanded="false" />
-            <element signature="e#15344#15403#0" expanded="false" />
-            <element signature="e#15463#15526#0" expanded="false" />
-            <element signature="e#15557#15633#0" expanded="false" />
+            <element signature="e#12442#12505#0" expanded="false" />
+            <element signature="e#12536#12612#0" expanded="false" />
+            <element signature="e#15337#15396#0" expanded="false" />
+            <element signature="e#15456#15519#0" expanded="false" />
+            <element signature="e#15550#15626#0" expanded="false" />
           </folding>
         </state>
       </provider>
