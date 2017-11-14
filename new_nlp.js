@@ -77,6 +77,12 @@ function getToken(text, sender, recipient, isMessageUs, res) {
                         var message = 'Hi, someone asking for Live Inquiries in messenger, <br>Thanks';
                         sendEmailForAi(message, recipient, key.split('=')[1]);
                         // getEmail('Someone asking for LIVE Inquiries in chatroom', recipient);
+                    }else if(text.indexOf('CUSTOM') > -1){
+                        var key = text.replace("CUSTOM_", "");
+                        getChatBot(key, sender, recipient, token, res);
+                        var message = 'Hi, someone asking for Live Inquiries in messenger, <br>Thanks';
+                        //audreychen531@yahoo.com.sg
+                        sendEmailForAi(message, recipient, 'audreychen531@yahoo.com.sg');
                     }
 
                     else {
