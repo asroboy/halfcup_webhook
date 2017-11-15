@@ -286,7 +286,7 @@ app.post('/webhook', function (req, res) {
                                  */
                                 // else if (event.message.quick_reply.payload) {
 
-                                if (event.message.quick_reply.payload.indexOf('AGGREGATION_') > -1) {
+                                else if (event.message.quick_reply.payload.indexOf('AGGREGATION_') > -1) {
                                     new_nlp.getChatBot(event.message.quick_reply.payload, event.recipient.id, event.sender.id, res);
                                 } else {
                                     console.log("QuickReply ", event.message.quick_reply.payload);
