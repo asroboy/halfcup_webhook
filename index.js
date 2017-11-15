@@ -224,6 +224,11 @@ app.post('/webhook', function (req, res) {
                                     pixel('QuickReply', event.message.text, event.message.quick_reply.payload, event.sender.id, event.recipient.id);
                                     getResponseToUser(event.message.quick_reply.payload, event.sender.id, event.recipient.id);
                                 }
+
+                                else if (payload_prefix === 'CUSTOM') {
+                                    console.log('call new_nlp CUSTOM');
+                                    new_nlp.getChatBot(event.message.quick_reply.payload, event.sender.id, event.recipient.id, res)
+                                }
                                 /**
                                  * Check if payload is BOT key
                                  */
