@@ -227,7 +227,7 @@ app.post('/webhook', function (req, res) {
 
                                 else if (payload_prefix === 'CUSTOM') {
                                     console.log('call new_nlp CUSTOM');
-                                    new_nlp.getChatBot(event.message.quick_reply.payload, event.sender.id, event.recipient.id, res)
+                                    new_nlp.getChatBot(event.message.quick_reply.payload, event.recipient.id, event.sender.id, res)
                                 }
                                 /**
                                  * Check if payload is BOT key
@@ -285,8 +285,8 @@ app.post('/webhook', function (req, res) {
                                  * if Payload is only text
                                  */
                                 // else if (event.message.quick_reply.payload) {
-
-                                else if (event.message.quick_reply.payload.indexOf('AGGREGATION_') > -1) {
+                                //event.message.quick_reply.payload.indexOf('AGGREGATION_') > -1
+                                else if (payload_prefix === 'AGGREGATION') {
                                     new_nlp.getChatBot(event.message.quick_reply.payload, event.recipient.id, event.sender.id, res);
                                 } else {
                                     console.log("QuickReply ", event.message.quick_reply.payload);
