@@ -82,7 +82,7 @@ function getToken(text, sender, recipient, isMessageUs, res) {
                             getChatBot(key, sender, recipient, token, res);
                             var message = 'Hi, someone clicked on Fengsui Brows Photos, <br>Thanks';
                             //audreychen531@yahoo.com.sg
-                            sendEmailForAi(message, recipient, 'audreychen531@yahoo.com.sg');
+                            sendEmailForAi(message, recipient, 'asrofiridho@gmail.com');
                         }
 
                         else {
