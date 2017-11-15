@@ -45,50 +45,50 @@ function getToken(text, sender, recipient, isMessageUs, res) {
                 if (code == 1) {
                     var token = obj.messenger_data.pageAccessToken;
                     console.log('token : ' + token);
+                    if(text !== null){
+                        if (text.indexOf('AGGREGATION_') > -1) {
+                            getAggregationObject(text, sender, recipient, token, res);
+                            saveAggregationObj(text, sender);
+                        } else if (text.indexOf('{{') > -1) {
+                            if (text.indexOf('_') > -1) {
+                                var param = text.split("_")[1];
+                                var key = text.split("_")[0].replace("{{", "").replace("}}", "");
+                                console.log('{{ after get token &  key = ' + key);
+                                getChatBot(key, sender, recipient, token, res);
+                                // getAggregationObject(text, sender, recipient, token, res);
+                                // saveAggregationObj(text, sender);
+                            } else {
+                                var key = text.replace("{{", "").replace("}}", "");
+                                console.log('{{ after get token &  key = ' + key);
+                                getChatBot(key, sender, recipient, token, res);
+                            }
 
-                    if (text.indexOf('AGGREGATION_') > -1) {
-                        getAggregationObject(text, sender, recipient, token, res);
-                        saveAggregationObj(text, sender);
-                    } else if (text.indexOf('{{') > -1) {
-                        if (text.indexOf('_') > -1) {
-                            var param = text.split("_")[1];
-                            var key = text.split("_")[0].replace("{{", "").replace("}}", "");
-                            console.log('{{ after get token &  key = ' + key);
+                        } else if (text.indexOf('LIVE') > -1) {
+                            var key = text.replace("LIVE_", "");
+                            console.log('LIVE after get token &  key = ' + key);
+                            // getChatBot(text, sender, recipient, token, res);
+                            var m = JSON.parse('{\"text\":\"Hi, the agent has been notified. We will be glad to support you\"}');
+                            var js_ = JSON.stringify(m);
+                            var myEscapedJSONString = js_.escapeSpecialChars();
+                            myEscapedJSONString = myEscapedJSONString.replace(/\\\\n/g, "\\n");
+                            console.log("TEXT ==> " + myEscapedJSONString);
+                            sendMessage(recipient, myEscapedJSONString, token);
+
+                            var message = 'Hi, someone asking for Live Inquiries in messenger, <br>Thanks';
+                            sendEmailForAi(message, recipient, key.split('=')[1]);
+                            // getEmail('Someone asking for LIVE Inquiries in chatroom', recipient);
+                        }else if(text.indexOf('CUSTOM') > -1){
+                            var key = text.replace("CUSTOM_", "");
                             getChatBot(key, sender, recipient, token, res);
-                            // getAggregationObject(text, sender, recipient, token, res);
-                            // saveAggregationObj(text, sender);
-                        } else {
-                            var key = text.replace("{{", "").replace("}}", "");
-                            console.log('{{ after get token &  key = ' + key);
-                            getChatBot(key, sender, recipient, token, res);
+                            var message = 'Hi, someone clicked on Fengsui Brows Photos, <br>Thanks';
+                            //audreychen531@yahoo.com.sg
+                            sendEmailForAi(message, recipient, 'audreychen531@yahoo.com.sg');
                         }
 
-                    } else if (text.indexOf('LIVE') > -1) {
-                        var key = text.replace("LIVE_", "");
-                        console.log('LIVE after get token &  key = ' + key);
-                        // getChatBot(text, sender, recipient, token, res);
-                        var m = JSON.parse('{\"text\":\"Hi, the agent has been notified. We will be glad to support you\"}');
-                        var js_ = JSON.stringify(m);
-                        var myEscapedJSONString = js_.escapeSpecialChars();
-                        myEscapedJSONString = myEscapedJSONString.replace(/\\\\n/g, "\\n");
-                        console.log("TEXT ==> " + myEscapedJSONString);
-                        sendMessage(recipient, myEscapedJSONString, token);
-
-                        var message = 'Hi, someone asking for Live Inquiries in messenger, <br>Thanks';
-                        sendEmailForAi(message, recipient, key.split('=')[1]);
-                        // getEmail('Someone asking for LIVE Inquiries in chatroom', recipient);
-                    }else if(text.indexOf('CUSTOM') > -1){
-                        var key = text.replace("CUSTOM_", "");
-                        getChatBot(key, sender, recipient, token, res);
-                        var message = 'Hi, someone clicked on Fengsui Brows Photos, <br>Thanks';
-                        //audreychen531@yahoo.com.sg
-                        sendEmailForAi(message, recipient, 'audreychen531@yahoo.com.sg');
+                        else {
+                            getMerchantId(sender, recipient, text, token, res);
+                        }
                     }
-
-                    else {
-                        getMerchantId(sender, recipient, text, token, res);
-                    }
-
 
                 }
                 if (code == 0) {
