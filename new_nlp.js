@@ -618,7 +618,7 @@ function getEmail(message, page_id) {
         } else if (response.body.error) {
             console.log('Error: ', response.body.error);
         } else {
-            sendEmailForAi(message, page_id, '');
+            sendEmailForAi(message, page_id, 'brotherho@halfcup.com');
         }
     });
 };
@@ -631,7 +631,7 @@ function sendEmailForAi(message, page_id, email) {
 
     var url = 'http://halfcup.com/social_rebates_system/api/sendEmail?' +
         'sender=noreply@halfcup.com' +
-        '&receiver=brotherho@halfcup.com' +
+        '&receiver=' + email +
         '&subject=LIVE Inquiries ' +
         '&body=' + result;
     console.log('url', url);
