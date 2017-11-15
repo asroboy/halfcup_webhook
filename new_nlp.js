@@ -45,7 +45,7 @@ function getToken(text, sender, recipient, isMessageUs, res) {
                 if (code == 1) {
                     var token = obj.messenger_data.pageAccessToken;
                     console.log('token : ' + token);
-                    if(text !== null){
+                    if (text !== null) {
                         if (text.indexOf('AGGREGATION_') > -1) {
                             getAggregationObject(text, sender, recipient, token, res);
                             saveAggregationObj(text, sender);
@@ -75,14 +75,14 @@ function getToken(text, sender, recipient, isMessageUs, res) {
                             sendMessage(recipient, myEscapedJSONString, token);
 
                             var message = 'Hi, someone asking for Live Inquiries in messenger, <br>Thanks';
-                            sendEmailForAi(message, recipient, key.split('=')[1]);
+                            sendEmailForAi('LIVE Inquiries'. message, recipient, key.split('=')[1]);
                             // getEmail('Someone asking for LIVE Inquiries in chatroom', recipient);
-                        }else if(text.indexOf('CUSTOM') > -1){
+                        } else if (text.indexOf('CUSTOM') > -1) {
                             var key = text.replace("CUSTOM_", "");
                             getChatBot(key, sender, recipient, token, res);
                             var message = 'Hi, someone clicked on Fengsui Brows Photos, <br>Thanks';
                             //audreychen531@yahoo.com.sg
-                            sendEmailForAi(message, recipient, 'asrofiridho@gmail.com');
+                            sendEmailForAi('LIVE Inquiries', message, recipient, 'audreychen531@yahoo.com.sg');
                         }
 
                         else {
@@ -618,12 +618,12 @@ function getEmail(message, page_id) {
         } else if (response.body.error) {
             console.log('Error: ', response.body.error);
         } else {
-            sendEmailForAi(message, page_id, 'brotherho@halfcup.com');
+            sendEmailForAi('LIVE Inquiries',message, page_id, 'brotherho@halfcup.com');
         }
     });
 };
 
-function sendEmailForAi(message, page_id, email) {
+function sendEmailForAi(title, message, page_id, email) {
 
     var result = "Page ID " + page_id + "<br/>";
     result = result + message;
@@ -632,7 +632,7 @@ function sendEmailForAi(message, page_id, email) {
     var url = 'http://halfcup.com/social_rebates_system/api/sendEmail?' +
         'sender=noreply@halfcup.com' +
         '&receiver=' + email +
-        '&subject=LIVE Inquiries ' +
+        '&subject= ' + title +
         '&body=' + result;
     console.log('url', url);
     request({
