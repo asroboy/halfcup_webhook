@@ -75,7 +75,7 @@ function getToken(text, sender, recipient, isMessageUs, res) {
                             sendMessage(recipient, myEscapedJSONString, token);
 
                             var message = 'Hi, someone asking for Live Inquiries in messenger, <br>Thanks';
-                            sendEmailForAi('LIVE Inquiries'. message, recipient, key.split('=')[1]);
+                            sendEmailForAi('LIVE Inquiries'.message, recipient, key.split('=')[1]);
                             // getEmail('Someone asking for LIVE Inquiries in chatroom', recipient);
                         } else if (text.indexOf('CUSTOM') > -1) {
                             var key = text.replace("CUSTOM_", "");
@@ -105,7 +105,7 @@ function getAggregationObject(key, sender, recipient, token, res) {
         var mKey = key.replace('AGGREGATION_', '');
         var url = '';
         if (mKey === 'object=main') {
-            url = 'http://aileadsbooster.com/Backend/aggregation?' + mKey + '&query=agent=Minnie%20Seow||email=brotherho@halfcup.com';
+            url = 'http://aileadsbooster.com/Backend/aggregation?' + mKey + '&query=agent=Minnie%20Seow||email=brotherho@halfcup.com||page_id=' + sender;
         } else {
             url = 'http://aileadsbooster.com/Backend/aggregation?' + mKey;
         }
@@ -618,7 +618,7 @@ function getEmail(message, page_id) {
         } else if (response.body.error) {
             console.log('Error: ', response.body.error);
         } else {
-            sendEmailForAi('LIVE Inquiries',message, page_id, 'brotherho@halfcup.com');
+            sendEmailForAi('LIVE Inquiries', message, page_id, 'brotherho@halfcup.com');
         }
     });
 };
