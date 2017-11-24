@@ -102,7 +102,7 @@ function getToken(text, sender, recipient, isMessageUs, res) {
 }
 
 function getParam(key, sender, recipient, token, res) {
-    var url = 'http://halfcup.com/social_rebates_system/wapi/read?token=1234567890&api_name=PARAMS_AI&user_msg_id=' + reciever + '&page_id=' + sender;
+    var url = 'http://halfcup.com/social_rebates_system/wapi/read?token=1234567890&api_name=PARAMS_AI&user_msg_id=' + recipient + '&page_id=' + sender;
     console.log('url', url);
     request({
             url: url,
