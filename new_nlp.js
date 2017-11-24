@@ -132,6 +132,9 @@ function getAggregationObject(key, sender, recipient, token, res, param) {
         if (mKey === 'object=main') {
             url = 'http://aileadsbooster.com/Backend/aggregation?' + mKey + '&query=' + param;
         } else {
+            if (mKey.indexOf("{{") > -1) {
+                mKey = mKey.replace("{{", "").replace("}}", "");
+            }
             url = 'http://aileadsbooster.com/Backend/aggregation?' + mKey + '&param=' + param;
         }
 
