@@ -130,9 +130,9 @@ function getAggregationObject(key, sender, recipient, token, res, param) {
         var mKey = key.replace('AGGREGATION_', '');
         var url = '';
         if (mKey === 'object=main') {
-            url = 'http://aileadsbooster.com/Backend/aggregation?' + mKey + '&query=agent=Minnie%20Seow||email=brotherho@halfcup.com||page_id=' + sender;
+            url = 'http://aileadsbooster.com/Backend/aggregation?' + mKey + '&query=' + param;
         } else {
-            url = 'http://aileadsbooster.com/Backend/aggregation?' + mKey;
+            url = 'http://aileadsbooster.com/Backend/aggregation?' + mKey + '&param=' + param;
         }
 
         console.log('url', url);
