@@ -94,8 +94,8 @@ app.post('/webhook', function (req, res) {
                         console.log(event.referral.ref);
                         new_nlp.getChatBot(event.referral.ref, event.recipient.id, event.sender.id, res);
                         if (event.referral.ref.indexOf('|param|') > -1) {
-                            var code = event.referral.ref.split('|param|')[1];
-                            saveParamAi(event.recipient.id,event.sender.id, '', code)
+                            var code = event.referral.ref.split('_')[1];
+                            saveParamAi(event.recipient.id,event.sender.id, code, null);
                         }
                     }
                     // }
