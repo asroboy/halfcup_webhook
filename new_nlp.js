@@ -5,7 +5,7 @@ module.exports = {
     foo: function (res) {
         // whatever
         // test(res);
-        getAggregationObject('AGGREGATION_object=agent&query=agent=Ang%20Mo%20Kio', '228431964255924', '877390472364218', 'EAABqJD84pmIBAKZBPiJ12rk2OoZBJQzy4CcoT2CG4ZBzCKyJkRL2OMqcmuGvfryINB79U8qWx1DiV21FAZBUsHZCIsGQvId6SoCg4UqoCGxVk2FZBMZAszgVX02ZAWwoWUecALj0KycDq88ZBBN6WgeKG0QbZAXrql7IZAGX1jE2XHVmgZDZD', res);
+        // getAggregationObject('AGGREGATION_object=agent&query=agent=Ang%20Mo%20Kio', '228431964255924', '877390472364218', 'EAABqJD84pmIBAKZBPiJ12rk2OoZBJQzy4CcoT2CG4ZBzCKyJkRL2OMqcmuGvfryINB79U8qWx1DiV21FAZBUsHZCIsGQvId6SoCg4UqoCGxVk2FZBMZAszgVX02ZAWwoWUecALj0KycDq88ZBBN6WgeKG0QbZAXrql7IZAGX1jE2XHVmgZDZD', res);
         // getToken('AGGREGATION_object=main', '228431964255924', '877390472364218', false, res);
         // console.log("NEW N L P");
         // var token = getToken('{{greetings}}', '1965520413734063', '1676161905789453', false, res);
@@ -47,7 +47,8 @@ function getToken(text, sender, recipient, isMessageUs, res) {
                     console.log('token : ' + token);
                     if (text !== null) {
                         if (text.indexOf('AGGREGATION_') > -1) {
-                            getAggregationObject(text, sender, recipient, token, res);
+                            getParam(text, sender, recipient, token, res);
+                            // getAggregationObject(text, sender, recipient, token, res);
                             saveAggregationObj(text, sender);
                         } else if (text.indexOf('{{') > -1) {
                             if (text.indexOf('_') > -1) {
@@ -100,7 +101,31 @@ function getToken(text, sender, recipient, isMessageUs, res) {
     );
 }
 
-function getAggregationObject(key, sender, recipient, token, res) {
+function getParam(key, sender, recipient, token, res) {
+    var url = 'http://halfcup.com/social_rebates_system/wapi/read?token=1234567890&api_name=PARAMS_AI&user_msg_id=' + reciever + '&page_id=' + sender;
+    console.log('url', url);
+    request({
+            url: url,
+            method: 'POST'
+        }, function (error, response, body) {
+            if (error) {
+                console.log('Error sending message: ', error);
+            } else if (response.body.error) {
+                console.log('Error: ', response.body.error);
+            } else {
+                var obj = JSON.parse(body);
+                console.log('getChatBot RESULT: ', obj);
+                if (obj.data !== null) {
+                    var param = obj.data.prm;
+                    getAggregationObject(key, sender, recipient, token, res, param);
+                }
+
+            }
+        }
+    );
+}
+
+function getAggregationObject(key, sender, recipient, token, res, param) {
     if (key.indexOf('AGGREGATION_') > -1) {
         var mKey = key.replace('AGGREGATION_', '');
         var url = '';

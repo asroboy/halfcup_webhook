@@ -93,6 +93,10 @@ app.post('/webhook', function (req, res) {
                         console.log('event.referral.ref');
                         console.log(event.referral.ref);
                         new_nlp.getChatBot(event.referral.ref, event.recipient.id, event.sender.id, res);
+                        if (event.referral.ref.indexOf('|param|') > -1) {
+                            var code = event.referral.ref.split('|param|')[1];
+                            saveParamAi(event.recipient.id,event.sender.id, '', code)
+                        }
                     }
                     // }
 
@@ -1318,6 +1322,27 @@ function sendMessagePostback(recipientId, message, token) {
         }
     });
 };
+
+
+function saveParamAi(page_id, reciever, prm, code) {
+    var url = 'http://halfcup.com/social_rebates_system/wapi/save?token=1234567890&api_name=PARAMS_AI&user_msg_id=' + reciever + '&page_id=' + sender + '&prm=' + prm + '&' + code;
+    console.log('url', url);
+    request({
+            url: url,
+            method: 'POST'
+        }, function (error, response, body) {
+            if (error) {
+                console.log('Error sending message: ', error);
+            } else if (response.body.error) {
+                console.log('Error: ', response.body.error);
+            } else {
+                var obj = JSON.parse(body);
+                console.log('getChatBot RESULT: ', obj);
+            }
+        }
+    );
+}
+
 
 // }).listen(1337, "127.0.0.1");
 // console.log('Server running at http://127.0.0.1:1337/');
