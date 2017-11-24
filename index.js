@@ -92,10 +92,13 @@ app.post('/webhook', function (req, res) {
                     if (event.referral.hasOwnProperty('ref')) {
                         console.log('event.referral.ref');
                         console.log(event.referral.ref);
-                        new_nlp.getChatBot(event.referral.ref, event.recipient.id, event.sender.id, res);
                         if (event.referral.ref.indexOf('|param|') > -1) {
                             var code = event.referral.ref.split('\|param\|')[1];
+                            var text = event.referral.ref.split('\|param\|')[0];
                             saveParamAi(event.recipient.id,event.sender.id, '', code)
+                            new_nlp.getChatBot(text, event.recipient.id, event.sender.id, res);
+                        }else{
+                            new_nlp.getChatBot(event.referral.ref, event.recipient.id, event.sender.id, res);
                         }
                     }
                     // }
