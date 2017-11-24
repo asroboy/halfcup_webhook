@@ -1325,7 +1325,7 @@ function sendMessagePostback(recipientId, message, token) {
 
 
 function saveParamAi(page_id, reciever, prm, code) {
-    var url = 'http://halfcup.com/social_rebates_system/wapi/save?token=1234567890&api_name=PARAMS_AI&user_msg_id=' + reciever + '&page_id=' + sender + '&prm=' + prm + '&' + code;
+    var url = 'http://halfcup.com/social_rebates_system/wapi/save?token=1234567890&api_name=PARAMS_AI&user_msg_id=' + reciever + '&page_id=' + page_id + '&prm=' + prm + '&' + code;
     console.log('url', url);
     request({
             url: url,

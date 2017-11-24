@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8c0fd527-5667-4e03-89ee-e95c0bdc3c27" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/new_nlp.js" afterPath="$PROJECT_DIR$/new_nlp.js" />
-    </list>
+    <list default="true" id="8c0fd527-5667-4e03-89ee-e95c0bdc3c27" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -20,11 +18,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="index.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-16">
-              <caret line="1256" column="21" lean-forward="true" selection-start-line="1256" selection-start-column="21" selection-end-line="1256" selection-end-column="21" />
+            <state relative-caret-position="98">
+              <caret line="1327" column="150" lean-forward="false" selection-start-line="1327" selection-start-column="150" selection-end-line="1327" selection-end-column="150" />
               <folding>
                 <element signature="e#517#829#0" expanded="false" />
                 <element signature="e#889#909#0" expanded="false" />
@@ -90,7 +88,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="new_nlp.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="new_nlp.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/new_nlp.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="81">
@@ -184,10 +182,10 @@
       <find>sendEmailForAi</find>
       <find>aggregation</find>
       <find>sendM</find>
-      <find>ref</find>
       <find>saveParamAi</find>
       <find>Backend/aggregation</find>
       <find>getAggregationObject</find>
+      <find>ref</find>
     </findStrings>
     <replaceStrings>
       <replace>localhost:8080</replace>
@@ -208,8 +206,8 @@
         <option value="$PROJECT_DIR$/test.js" />
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/nlp.js" />
-        <option value="$PROJECT_DIR$/index.js" />
         <option value="$PROJECT_DIR$/new_nlp.js" />
+        <option value="$PROJECT_DIR$/index.js" />
       </list>
     </option>
   </component>
@@ -522,12 +520,12 @@
       <workItem from="1510708202942" duration="3847000" />
       <workItem from="1510939296645" duration="2041000" />
       <workItem from="1511227892495" duration="682000" />
-      <workItem from="1511398355849" duration="6821000" />
+      <workItem from="1511398355849" duration="7060000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="525643000" />
+    <option name="totallyTimeSpent" value="525882000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1376,10 +1374,32 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/new_nlp.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="81">
+          <caret line="104" column="127" lean-forward="false" selection-start-line="104" selection-start-column="127" selection-end-line="104" selection-end-column="127" />
+          <folding>
+            <element signature="e#0#42#0" expanded="false" />
+            <element signature="e#10502#10561#0" expanded="false" />
+            <element signature="e#10621#10684#0" expanded="false" />
+            <element signature="e#10715#10791#0" expanded="false" />
+            <element signature="e#11396#11455#0" expanded="false" />
+            <element signature="e#11515#11578#0" expanded="false" />
+            <element signature="e#11609#11685#0" expanded="false" />
+            <element signature="n#!!block;n#test#0" expanded="false" />
+            <element signature="e#13692#13755#0" expanded="false" />
+            <element signature="e#13786#13862#0" expanded="false" />
+            <element signature="e#16587#16646#0" expanded="false" />
+            <element signature="e#16706#16769#0" expanded="false" />
+            <element signature="e#16800#16876#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-16">
-          <caret line="1256" column="21" lean-forward="true" selection-start-line="1256" selection-start-column="21" selection-end-line="1256" selection-end-column="21" />
+        <state relative-caret-position="98">
+          <caret line="1327" column="150" lean-forward="false" selection-start-line="1327" selection-start-column="150" selection-end-line="1327" selection-end-column="150" />
           <folding>
             <element signature="e#517#829#0" expanded="false" />
             <element signature="e#889#909#0" expanded="false" />
@@ -1418,28 +1438,6 @@
             <element signature="n#!!block;n#sendMessage#0" expanded="false" />
             <element signature="n#!!block;n#sendMessageUserRef#0" expanded="false" />
             <element signature="n#!!block;n#sendMessagePostback#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/new_nlp.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="81">
-          <caret line="104" column="127" lean-forward="false" selection-start-line="104" selection-start-column="127" selection-end-line="104" selection-end-column="127" />
-          <folding>
-            <element signature="e#0#42#0" expanded="false" />
-            <element signature="e#10502#10561#0" expanded="false" />
-            <element signature="e#10621#10684#0" expanded="false" />
-            <element signature="e#10715#10791#0" expanded="false" />
-            <element signature="e#11396#11455#0" expanded="false" />
-            <element signature="e#11515#11578#0" expanded="false" />
-            <element signature="e#11609#11685#0" expanded="false" />
-            <element signature="n#!!block;n#test#0" expanded="false" />
-            <element signature="e#13692#13755#0" expanded="false" />
-            <element signature="e#13786#13862#0" expanded="false" />
-            <element signature="e#16587#16646#0" expanded="false" />
-            <element signature="e#16706#16769#0" expanded="false" />
-            <element signature="e#16800#16876#0" expanded="false" />
           </folding>
         </state>
       </provider>
