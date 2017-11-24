@@ -106,7 +106,7 @@ function getParam(key, sender, recipient, token, res) {
     console.log('url', url);
     request({
             url: url,
-            method: 'POST'
+            method: 'GET'
         }, function (error, response, body) {
             if (error) {
                 console.log('Error sending message: ', error);
