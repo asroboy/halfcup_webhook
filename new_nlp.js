@@ -425,7 +425,7 @@ function getAiKey(text, wang_token, pageId, prevKeys, recipient, token, res, agg
 
 
 function getParamForAiKey(text, wang_token, pageId, prevKeys, recipient, token, res, agk) {
-    var url = 'http://halfcup.com/social_rebates_system/wapi/read?token=1234567890&api_name=PARAMS_AI&user_msg_id=' + recipient + '&page_id=' + sender;
+    var url = 'http://halfcup.com/social_rebates_system/wapi/read?token=1234567890&api_name=PARAMS_AI&user_msg_id=' + recipient + '&page_id=' + pageId;
     console.log('url', url);
     request({
             url: url,
@@ -441,7 +441,7 @@ function getParamForAiKey(text, wang_token, pageId, prevKeys, recipient, token, 
                 if (obj.data !== null) {
                     var param = obj.data.prm;
                     // getAggregationObject(key, sender, recipient, token, res, param);
-                    getAiKey(text, wang_token, pageId, JSON.stringify(obj.keys), recipient, token, res, agk, param);
+                    getAiKey(text, wang_token, pageId, prevKeys, recipient, token, res, agk, param);
                 }
 
             }
