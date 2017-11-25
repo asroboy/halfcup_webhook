@@ -480,7 +480,17 @@ app.post('/webhook', function (req, res) {
 
                         } else {
                             if (ref.indexOf("{{") > -1) {
-                                new_nlp.getChatBot(ref, event.recipient.id, event.sender.id, res);
+                                // new_nlp.getChatBot(ref, event.recipient.id, event.sender.id, res);
+
+                                if (ref.indexOf('|param|') > -1) {
+                                    var code = ref.split('\|param\|')[1];
+                                    var text = ref.split('\|param\|')[0];
+                                    saveParamAi(event.recipient.id,event.sender.id, '', code)
+                                    new_nlp.getChatBot(text, event.recipient.id, event.sender.id, res);
+                                }else{
+                                    new_nlp.getChatBot(ref, event.recipient.id, event.sender.id, res);
+                                }
+
                             } else if (ref === 'null') {
 
                             } else {
