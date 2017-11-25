@@ -195,7 +195,6 @@ function saveAggregationObj(key, sender) {
 }
 
 
-
 function getChatBot(key, sender, recipient, token, res) {
     var url = 'http://halfcup.com/social_rebates_system/wapi/read?token=1234567890&api_name=CHATBOT&key=' + key + '&page_id=' + sender;
     console.log('url', url);
@@ -303,7 +302,9 @@ function getAiKeyFromDB(wang_token, pageId, recipient, text, token, res) {
                     }
                 }
 
-                getAiKey(text, wang_token, pageId, JSON.stringify(obj.keys), recipient, token, res, agk);
+                getParamForAiKey(text, wang_token, pageId, JSON.stringify(obj.keys), recipient, token, res, agk);
+                // getParam(text, sender, recipient, token, res);
+                // getAiKey(text, wang_token, pageId, JSON.stringify(obj.keys), recipient, token, res, agk);
             }
         }
     );
@@ -373,12 +374,12 @@ function getIndexAggregate(size, pageId, key, aggreationData, recipient, token) 
     );
 }
 
-function getAiKey(text, wang_token, pageId, prevKeys, recipient, token, res, aggregateObj) {
-    var url = 'http://aileadsbooster.com/Backend/query?q=' + encodeURI(text) + '&access_token=' + wang_token + '&prev_key=' + prevKeys + '&aggregation=' + aggregateObj;
+function getAiKey(text, wang_token, pageId, prevKeys, recipient, token, res, aggregateObj, param) {
+    var url = 'http://aileadsbooster.com/Backend/query?q=' + encodeURI(text) + '&access_token=' + wang_token + '&prev_key=' + prevKeys + '&aggregation=' + aggregateObj + '&param=' + param;
     if (aggregateObj === '') {
-        var url = 'http://aileadsbooster.com/Backend/query?q=' + encodeURI(text) + '&access_token=' + wang_token + '&prev_key=' + prevKeys;
+        var url = 'http://aileadsbooster.com/Backend/query?q=' + encodeURI(text) + '&access_token=' + wang_token + '&prev_key=' + prevKeys + '&param=' + param;
     } else {
-        var url = 'http://aileadsbooster.com/Backend/query?q=' + encodeURI(text) + '&access_token=' + wang_token + '&prev_key=' + prevKeys + '&aggregation=' + aggregateObj;
+        var url = 'http://aileadsbooster.com/Backend/query?q=' + encodeURI(text) + '&access_token=' + wang_token + '&prev_key=' + prevKeys + '&aggregation=' + aggregateObj + '&param=' + param;
 
     }
     console.log('url', url);
@@ -421,6 +422,33 @@ function getAiKey(text, wang_token, pageId, prevKeys, recipient, token, res, agg
         }
     );
 }
+
+
+function getParamForAiKey(text, wang_token, pageId, prevKeys, recipient, token, res, agk) {
+    var url = 'http://halfcup.com/social_rebates_system/wapi/read?token=1234567890&api_name=PARAMS_AI&user_msg_id=' + recipient + '&page_id=' + sender;
+    console.log('url', url);
+    request({
+            url: url,
+            method: 'GET'
+        }, function (error, response, body) {
+            if (error) {
+                console.log('Error sending message: ', error);
+            } else if (response.body.error) {
+                console.log('Error: ', response.body.error);
+            } else {
+                var obj = JSON.parse(body);
+                console.log('getChatBot RESULT: ', obj);
+                if (obj.data !== null) {
+                    var param = obj.data.prm;
+                    // getAggregationObject(key, sender, recipient, token, res, param);
+                    getAiKey(text, wang_token, pageId, JSON.stringify(obj.keys), recipient, token, res, agk, param);
+                }
+
+            }
+        }
+    );
+}
+
 
 function saveAiKey(key, pageId, recipient, token, res) {
     var url = 'http://halfcup.com/social_rebates_system/wapi/save?api_name=AI_PREV_KEYS&key=' + key + '&token=1234567890&page_id=' + pageId;
