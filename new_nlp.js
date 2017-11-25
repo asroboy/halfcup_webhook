@@ -195,6 +195,7 @@ function saveAggregationObj(key, sender) {
 }
 
 
+
 function getChatBot(key, sender, recipient, token, res) {
     var url = 'http://halfcup.com/social_rebates_system/wapi/read?token=1234567890&api_name=CHATBOT&key=' + key + '&page_id=' + sender;
     console.log('url', url);
@@ -402,6 +403,7 @@ function getAiKey(text, wang_token, pageId, prevKeys, recipient, token, res, agg
                         } else {
                             // console.log('obj: ', obj);
                             saveAiKey(obj.key, pageId, recipient, token, res);
+                            saveAggregationObj('', pageId);
                         }
                     }
 

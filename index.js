@@ -93,11 +93,12 @@ app.post('/webhook', function (req, res) {
                         console.log('event.referral.ref');
                         console.log(event.referral.ref);
                         if (event.referral.ref.indexOf('|param|') > -1) {
+                            clearAiKey(event.recipient.id);
                             var code = event.referral.ref.split('\|param\|')[1];
                             var text = event.referral.ref.split('\|param\|')[0];
-                            saveParamAi(event.recipient.id,event.sender.id, '', code)
+                            saveParamAi(event.recipient.id, event.sender.id, '', code)
                             new_nlp.getChatBot(text, event.recipient.id, event.sender.id, res);
-                        }else{
+                        } else {
                             new_nlp.getChatBot(event.referral.ref, event.recipient.id, event.sender.id, res);
                         }
                     }
@@ -352,6 +353,7 @@ app.post('/webhook', function (req, res) {
                             console.log(key)
                             // getResponseToUserRef(key, event.optin.user_ref, event.recipient.id);
                         } else if (key.indexOf("{{") > -1) {
+                            clearAiKey(event.recipient.id);
                             new_nlp.getChatBot(key, event.recipient.id, event.sender.id, res);
                         } else if (key === 'null') {
 
@@ -485,9 +487,10 @@ app.post('/webhook', function (req, res) {
                                 if (ref.indexOf('|param|') > -1) {
                                     var code = ref.split('\|param\|')[1];
                                     var text = ref.split('\|param\|')[0];
-                                    saveParamAi(event.recipient.id,event.sender.id, '', code)
+                                    clearAiKey(event.recipient.id);
+                                    saveParamAi(event.recipient.id, event.sender.id, '', code);
                                     new_nlp.getChatBot(text, event.recipient.id, event.sender.id, res);
-                                }else{
+                                } else {
                                     new_nlp.getChatBot(ref, event.recipient.id, event.sender.id, res);
                                 }
 
@@ -1356,6 +1359,24 @@ function saveParamAi(page_id, reciever, prm, code) {
     );
 }
 
+
+function clearAiKey(sender) {
+    // http://localhost:8080/social_rebates_system/wapi/delete?token=1234567890&api_name=AI_PREV_KEYS_CLEAR&page_id=111
+    var url = 'http://halfcup.com/social_rebates_system/wapi/delete?token=1234567890&api_name=AI_PREV_KEYS_CLEAR&page_id=' + sender;
+    console.log('url', url);
+    request({
+            url: url,
+            method: 'DELETE'
+        }, function (error, response, body) {
+            if (error) {
+                console.log('Error delete ai keys: ', error);
+            } else if (response.body.error) {
+                console.log('Error: ', response.body.error);
+            } else {
+            }
+        }
+    );
+}
 
 // }).listen(1337, "127.0.0.1");
 // console.log('Server running at http://127.0.0.1:1337/');
