@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8c0fd527-5667-4e03-89ee-e95c0bdc3c27" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/new_nlp.js" afterPath="$PROJECT_DIR$/new_nlp.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -94,8 +93,8 @@
       <file leaf-file-name="new_nlp.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/new_nlp.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="432">
-              <caret line="378" column="19" lean-forward="false" selection-start-line="378" selection-start-column="19" selection-end-line="378" selection-end-column="19" />
+            <state relative-caret-position="177">
+              <caret line="378" column="35" lean-forward="false" selection-start-line="378" selection-start-column="35" selection-end-line="378" selection-end-column="35" />
               <folding>
                 <element signature="e#0#42#0" expanded="false" />
                 <element signature="e#10584#10643#0" expanded="false" />
@@ -109,8 +108,8 @@
                 <element signature="e#13957#14020#0" expanded="false" />
                 <element signature="e#14051#14127#0" expanded="false" />
                 <element signature="n#!!block;n#getIndexAggregate#0" expanded="false" />
-                <element signature="e#17134#17197#0" expanded="false" />
-                <element signature="e#17228#17304#0" expanded="false" />
+                <element signature="e#17158#17221#0" expanded="false" />
+                <element signature="e#17252#17328#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -524,12 +523,12 @@
       <workItem from="1510708202942" duration="3847000" />
       <workItem from="1510939296645" duration="2041000" />
       <workItem from="1511227892495" duration="682000" />
-      <workItem from="1511398355849" duration="17471000" />
+      <workItem from="1511398355849" duration="17655000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="536293000" />
+    <option name="totallyTimeSpent" value="536477000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1426,8 +1425,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/new_nlp.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="378" column="19" lean-forward="false" selection-start-line="378" selection-start-column="19" selection-end-line="378" selection-end-column="19" />
+        <state relative-caret-position="177">
+          <caret line="378" column="35" lean-forward="false" selection-start-line="378" selection-start-column="35" selection-end-line="378" selection-end-column="35" />
           <folding>
             <element signature="e#0#42#0" expanded="false" />
             <element signature="e#10584#10643#0" expanded="false" />
@@ -1441,8 +1440,8 @@
             <element signature="e#13957#14020#0" expanded="false" />
             <element signature="e#14051#14127#0" expanded="false" />
             <element signature="n#!!block;n#getIndexAggregate#0" expanded="false" />
-            <element signature="e#17134#17197#0" expanded="false" />
-            <element signature="e#17228#17304#0" expanded="false" />
+            <element signature="e#17158#17221#0" expanded="false" />
+            <element signature="e#17252#17328#0" expanded="false" />
           </folding>
         </state>
       </provider>

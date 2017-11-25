@@ -375,8 +375,8 @@ function getIndexAggregate(size, pageId, key, aggreationData, recipient, token) 
 }
 
 function getAiKey(text, wang_token, pageId, prevKeys, recipient, token, res, aggregateObj, param) {
-    if(text.indexOf("{{") > -1){
-        text = text.replace("{{", "").replace("}}", "");
+    if(aggregateObj.indexOf("{{") > -1){
+        aggregateObj = aggregateObj.replace("{{", "").replace("}}", "");
     }
     var url = 'http://aileadsbooster.com/Backend/query?q=' + encodeURI(text) + '&access_token=' + wang_token + '&prev_key=' + prevKeys + '&aggregation=' + aggregateObj + '&param=' + param;
     if (aggregateObj === '') {
