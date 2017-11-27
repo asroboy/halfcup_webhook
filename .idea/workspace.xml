@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8c0fd527-5667-4e03-89ee-e95c0bdc3c27" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/new_nlp.js" afterPath="$PROJECT_DIR$/new_nlp.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -92,8 +93,8 @@
       <file leaf-file-name="new_nlp.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/new_nlp.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="87">
-              <caret line="391" column="45" lean-forward="true" selection-start-line="391" selection-start-column="45" selection-end-line="391" selection-end-column="45" />
+            <state relative-caret-position="204">
+              <caret line="402" column="65" lean-forward="false" selection-start-line="402" selection-start-column="65" selection-end-line="402" selection-end-column="65" />
               <folding>
                 <element signature="e#0#42#0" expanded="false" />
                 <element signature="e#10584#10643#0" expanded="false" />
@@ -180,13 +181,13 @@
       <find>getMerchantId</find>
       <find>getAiKey</find>
       <find>{{</find>
-      <find>query</find>
       <find>wapi/save</find>
       <find>saveAiKey</find>
       <find>|param|</find>
       <find>getIndexAggregate</find>
-      <find>saveParamAi</find>
       <find>getParam</find>
+      <find>query</find>
+      <find>saveParamAi</find>
     </findStrings>
     <replaceStrings>
       <replace>localhost:8080</replace>
@@ -524,12 +525,12 @@
       <workItem from="1511398355849" duration="18284000" />
       <workItem from="1511696295859" duration="28000" />
       <workItem from="1511743384860" duration="8661000" />
-      <workItem from="1511755592806" duration="3113000" />
+      <workItem from="1511755592806" duration="4896000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="548908000" />
+    <option name="totallyTimeSpent" value="550691000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1414,8 +1415,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/new_nlp.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="87">
-          <caret line="391" column="45" lean-forward="true" selection-start-line="391" selection-start-column="45" selection-end-line="391" selection-end-column="45" />
+        <state relative-caret-position="204">
+          <caret line="402" column="65" lean-forward="false" selection-start-line="402" selection-start-column="65" selection-end-line="402" selection-end-column="65" />
           <folding>
             <element signature="e#0#42#0" expanded="false" />
             <element signature="e#10584#10643#0" expanded="false" />
