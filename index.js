@@ -92,15 +92,18 @@ app.post('/webhook', function (req, res) {
                     if (event.referral.hasOwnProperty('ref')) {
                         console.log('event.referral.ref');
                         console.log(event.referral.ref);
-                        if (event.referral.ref.indexOf('|param|') > -1) {
-                            clearAiKey(event.recipient.id);
-                            var code = event.referral.ref.split('\|param\|')[1];
-                            var text = event.referral.ref.split('\|param\|')[0];
-                            saveParamAi(event.recipient.id, event.sender.id, '', code)
-                            new_nlp.getChatBot(text, event.recipient.id, event.sender.id, res);
-                        } else {
-                            new_nlp.getChatBot(event.referral.ref, event.recipient.id, event.sender.id, res);
+                        if(event.referral.ref !== null){
+                            if (event.referral.ref.indexOf('|param|') > -1) {
+                                clearAiKey(event.recipient.id);
+                                var code = event.referral.ref.split('\|param\|')[1];
+                                var text = event.referral.ref.split('\|param\|')[0];
+                                saveParamAi(event.recipient.id, event.sender.id, '', code)
+                                new_nlp.getChatBot(text, event.recipient.id, event.sender.id, res);
+                            } else {
+                                new_nlp.getChatBot(event.referral.ref, event.recipient.id, event.sender.id, res);
+                            }
                         }
+
                     }
                     // }
 
@@ -264,27 +267,37 @@ app.post('/webhook', function (req, res) {
                                      * Split Payload marked with |
                                      * @type {*}
                                      */
-                                    var keys = event.message.quick_reply.payload.split("|");
-                                    console.log("Payload ", event.message.quick_reply.payload);
-                                    var action_name = keys[0];
-                                    action_name = action_name.replace("[", "");
-                                    action_name = action_name.replace("]", "");
+
+                                    if(event.message.quick_reply.payload.indexOf('|param|')){
+                                        var code = event.message.quick_reply.payload.split('\|param\|')[1];
+                                        var text = event.message.quick_reply.payload.split('\|param\|')[0];
+                                        clearAiKey(event.recipient.id);
+                                        saveParamAi(event.recipient.id, event.sender.id, '', code);
+                                        new_nlp.getChatBot(text, event.recipient.id, event.sender.id, res);
+                                    }else{
+                                        var keys = event.message.quick_reply.payload.split("|");
+                                        console.log("Payload ", event.message.quick_reply.payload);
+                                        var action_name = keys[0];
+                                        action_name = action_name.replace("[", "");
+                                        action_name = action_name.replace("]", "");
 
 
-                                    if (keys.length == 2) {
-                                        keyIndexAction(keys[1], event, action_name, "QuickReply");
+                                        if (keys.length == 2) {
+                                            keyIndexAction(keys[1], event, action_name, "QuickReply");
+                                        }
+                                        if (keys.length == 3) {
+                                            keyIndexAction(keys[1], event, action_name, "QuickReply");
+                                            keyIndexAction(keys[2], event, action_name, "QuickReply");
+                                        }
+
+                                        if (keys.length == 4) {
+                                            keyIndexAction(keys[1], event, action_name, "QuickReply");
+                                            keyIndexAction(keys[2], event, action_name, "QuickReply");
+                                            keyIndexAction(keys[3], event, action_name, "QuickReply");
+
+                                        }
                                     }
-                                    if (keys.length == 3) {
-                                        keyIndexAction(keys[1], event, action_name, "QuickReply");
-                                        keyIndexAction(keys[2], event, action_name, "QuickReply");
-                                    }
 
-                                    if (keys.length == 4) {
-                                        keyIndexAction(keys[1], event, action_name, "QuickReply");
-                                        keyIndexAction(keys[2], event, action_name, "QuickReply");
-                                        keyIndexAction(keys[3], event, action_name, "QuickReply");
-
-                                    }
 
                                 }
 
