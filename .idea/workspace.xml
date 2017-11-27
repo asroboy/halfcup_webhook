@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8c0fd527-5667-4e03-89ee-e95c0bdc3c27" name="Default" comment="" />
+    <list default="true" id="8c0fd527-5667-4e03-89ee-e95c0bdc3c27" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/new_nlp.js" afterPath="$PROJECT_DIR$/new_nlp.js" />
+    </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -21,8 +24,8 @@
       <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="441">
-              <caret line="274" column="99" lean-forward="true" selection-start-line="274" selection-start-column="99" selection-end-line="274" selection-end-column="99" />
+            <state relative-caret-position="852">
+              <caret line="503" column="47" lean-forward="false" selection-start-line="503" selection-start-column="36" selection-end-line="503" selection-end-column="47" />
               <folding>
                 <element signature="e#517#829#0" expanded="false" />
                 <element signature="e#889#909#0" expanded="false" />
@@ -68,7 +71,7 @@
       <file leaf-file-name="nlp.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/nlp.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="562">
+            <state relative-caret-position="7038">
               <caret line="437" column="23" lean-forward="false" selection-start-line="437" selection-start-column="23" selection-end-line="437" selection-end-column="23" />
               <folding>
                 <element signature="e#0#41#0" expanded="false" />
@@ -90,8 +93,8 @@
       <file leaf-file-name="new_nlp.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/new_nlp.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="172">
-              <caret line="404" column="28" lean-forward="true" selection-start-line="404" selection-start-column="28" selection-end-line="404" selection-end-column="28" />
+            <state relative-caret-position="274">
+              <caret line="403" column="87" lean-forward="false" selection-start-line="403" selection-start-column="87" selection-end-line="403" selection-end-column="87" />
               <folding>
                 <element signature="e#0#42#0" expanded="false" />
                 <element signature="e#10584#10643#0" expanded="false" />
@@ -155,7 +158,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>referral</find>
       <find>AGGREGATE_OBJ</find>
       <find>getEmail</find>
       <find>payload</find>
@@ -170,7 +172,6 @@
       <find>aggregation</find>
       <find>sendM</find>
       <find>Backend/aggregation</find>
-      <find>saveParamAi</find>
       <find>aggregationKey</find>
       <find>saveAggregationObj</find>
       <find>getAggregationObject</find>
@@ -185,6 +186,8 @@
       <find>saveAiKey</find>
       <find>|param|</find>
       <find>getIndexAggregate</find>
+      <find>saveParamAi</find>
+      <find>getParam</find>
     </findStrings>
     <replaceStrings>
       <replace>localhost:8080</replace>
@@ -248,8 +251,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -521,12 +524,13 @@
       <workItem from="1511227892495" duration="682000" />
       <workItem from="1511398355849" duration="18284000" />
       <workItem from="1511696295859" duration="28000" />
-      <workItem from="1511743384860" duration="6493000" />
+      <workItem from="1511743384860" duration="8661000" />
+      <workItem from="1511755592806" duration="1375000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="543627000" />
+    <option name="totallyTimeSpent" value="547170000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1346,7 +1350,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/nlp.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="562">
+        <state relative-caret-position="7038">
           <caret line="437" column="23" lean-forward="false" selection-start-line="437" selection-start-column="23" selection-end-line="437" selection-end-column="23" />
           <folding>
             <element signature="e#0#41#0" expanded="false" />
@@ -1366,8 +1370,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="441">
-          <caret line="274" column="99" lean-forward="true" selection-start-line="274" selection-start-column="99" selection-end-line="274" selection-end-column="99" />
+        <state relative-caret-position="852">
+          <caret line="503" column="47" lean-forward="false" selection-start-line="503" selection-start-column="36" selection-end-line="503" selection-end-column="47" />
           <folding>
             <element signature="e#517#829#0" expanded="false" />
             <element signature="e#889#909#0" expanded="false" />
@@ -1411,8 +1415,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/new_nlp.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="172">
-          <caret line="404" column="28" lean-forward="true" selection-start-line="404" selection-start-column="28" selection-end-line="404" selection-end-column="28" />
+        <state relative-caret-position="274">
+          <caret line="403" column="87" lean-forward="false" selection-start-line="403" selection-start-column="87" selection-end-line="403" selection-end-column="87" />
           <folding>
             <element signature="e#0#42#0" expanded="false" />
             <element signature="e#10584#10643#0" expanded="false" />

@@ -401,6 +401,7 @@ function getAiKey(text, wang_token, pageId, prevKeys, recipient, token, res, agg
                     console.log('AGGREGATION LENGTH = ' + obj.aggregation.length);
                     if (obj.aggregation.length > 0) {
                         getIndexAggregate(obj.aggregation.length, pageId, obj.key, obj.aggregation, recipient, token);
+                        saveAiKeyWithoutGetBot(obj.key, pageId, recipient, token, res);
                         // saveAiKey(obj.key, pageId, recipient, token, res);
                     } else {
                         if (obj.key === '') {
@@ -453,6 +454,24 @@ function getParamForAiKey(text, wang_token, pageId, prevKeys, recipient, token, 
     );
 }
 
+
+function saveAiKeyWithoutGetBot(key, pageId, recipient, token, res) {
+    var url = 'http://halfcup.com/social_rebates_system/wapi/save?api_name=AI_PREV_KEYS&key=' + key + '&token=1234567890&page_id=' + pageId;
+    console.log('url', url);
+    request({
+            url: url,
+            method: 'POST'
+        }, function (error, response, body) {
+            if (error) {
+                console.log('Error : ', error);
+            } else if (response.body.error) {
+                console.log('Error: ', response.body.error);
+            } else {
+
+            }
+        }
+    );
+}
 
 function saveAiKey(key, pageId, recipient, token, res) {
     var url = 'http://halfcup.com/social_rebates_system/wapi/save?api_name=AI_PREV_KEYS&key=' + key + '&token=1234567890&page_id=' + pageId;
