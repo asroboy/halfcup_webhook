@@ -401,7 +401,7 @@ function getAiKey(text, wang_token, pageId, prevKeys, recipient, token, res, agg
                     console.log('AGGREGATION LENGTH = ' + obj.aggregation.length);
                     if (obj.aggregation.length > 0) {
                         getIndexAggregate(obj.aggregation.length, pageId, obj.key, obj.aggregation, recipient, token);
-                        // saveAiKeyWithoutGetBot(obj.key, pageId, recipient, token, res);
+                        saveAiKeyWithoutGetBot(obj.key, pageId, recipient, token, res);
                         // saveAiKey(obj.key, pageId, recipient, token, res);
                     } else {
                         if (obj.key === '') {
