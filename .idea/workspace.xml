@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="8c0fd527-5667-4e03-89ee-e95c0bdc3c27" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.js" afterPath="$PROJECT_DIR$/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/new_nlp.js" afterPath="$PROJECT_DIR$/new_nlp.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -24,8 +23,8 @@
       <file leaf-file-name="index.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="172">
-              <caret line="415" column="89" lean-forward="false" selection-start-line="415" selection-start-column="89" selection-end-line="415" selection-end-column="89" />
+            <state relative-caret-position="461">
+              <caret line="221" column="0" lean-forward="true" selection-start-line="221" selection-start-column="0" selection-end-line="221" selection-end-column="0" />
               <folding>
                 <element signature="e#953#977#0" expanded="false" />
                 <element signature="e#1312#2476#0" expanded="false" />
@@ -68,7 +67,7 @@
       <file leaf-file-name="new_nlp.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/new_nlp.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="852">
+            <state relative-caret-position="1260">
               <caret line="144" column="9" lean-forward="false" selection-start-line="144" selection-start-column="9" selection-end-line="144" selection-end-column="9" />
               <folding>
                 <element signature="e#0#42#0" expanded="false" />
@@ -182,8 +181,8 @@
       <find>@</find>
       <find>Quick</find>
       <find>getParam</find>
-      <find>sendEmailForAi</find>
       <find>sendEmail</find>
+      <find>sendEmailForAi</find>
       <find>getParamZ</find>
     </findStrings>
     <replaceStrings>
@@ -522,12 +521,12 @@
       <workItem from="1511398355849" duration="18284000" />
       <workItem from="1511696295859" duration="28000" />
       <workItem from="1511743384860" duration="8661000" />
-      <workItem from="1511755592806" duration="14792000" />
+      <workItem from="1511755592806" duration="14893000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="560587000" />
+    <option name="totallyTimeSpent" value="560688000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1334,7 +1333,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/new_nlp.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="852">
+        <state relative-caret-position="1260">
           <caret line="144" column="9" lean-forward="false" selection-start-line="144" selection-start-column="9" selection-end-line="144" selection-end-column="9" />
           <folding>
             <element signature="e#0#42#0" expanded="false" />
@@ -1356,8 +1355,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="172">
-          <caret line="415" column="89" lean-forward="false" selection-start-line="415" selection-start-column="89" selection-end-line="415" selection-end-column="89" />
+        <state relative-caret-position="461">
+          <caret line="221" column="0" lean-forward="true" selection-start-line="221" selection-start-column="0" selection-end-line="221" selection-end-column="0" />
           <folding>
             <element signature="e#953#977#0" expanded="false" />
             <element signature="e#1312#2476#0" expanded="false" />
