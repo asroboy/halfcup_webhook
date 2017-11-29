@@ -92,7 +92,7 @@ app.post('/webhook', function (req, res) {
                     if (event.referral.hasOwnProperty('ref')) {
                         console.log('event.referral.ref');
                         console.log(event.referral.ref);
-                        if(event.referral.ref !== null){
+                        if (event.referral.ref !== null) {
                             if (event.referral.ref.indexOf('|param|') > -1) {
                                 clearAiKey(event.recipient.id);
                                 var code = event.referral.ref.split('\|param\|')[1];
@@ -217,8 +217,8 @@ app.post('/webhook', function (req, res) {
                                     " </tr> " +
                                     "</table> ";
 
-                                sendEmail(htmlMessage, event.recipient.id);
-
+                                // sendEmail(htmlMessage, event.recipient.id);
+                                getParamZ(htmlMessage, event.recipient.id, event.sender.id);
 
                                 /**
                                  * Check if payload REGISTER_PAYLOAD (old Get started) button
@@ -268,13 +268,13 @@ app.post('/webhook', function (req, res) {
                                      * @type {*}
                                      */
 
-                                    if(event.message.quick_reply.payload.indexOf('|param|')){
+                                    if (event.message.quick_reply.payload.indexOf('|param|')) {
                                         var code = event.message.quick_reply.payload.split('\|param\|')[1];
                                         var text = event.message.quick_reply.payload.split('\|param\|')[0];
                                         clearAiKey(event.recipient.id);
                                         saveParamAi(event.recipient.id, event.sender.id, '', code);
                                         new_nlp.getChatBot(text, event.recipient.id, event.sender.id, res);
-                                    }else{
+                                    } else {
                                         var keys = event.message.quick_reply.payload.split("|");
                                         console.log("Payload ", event.message.quick_reply.payload);
                                         var action_name = keys[0];
@@ -413,9 +413,8 @@ app.post('/webhook', function (req, res) {
                             " </tr> " +
                             "</table> ";
 
-                        sendEmail(htmlMessage, event.recipient.id);
-
-
+                        // sendEmail(htmlMessage, event.recipient.id);
+                        getParamZ(htmlMessage, event.recipient.id, event.sender.id);
                         // console.log("Index of , " + event.postback.payload.indexOf(","));
                         if ((payload_prefix === 'BOT' || payload_prefix === 'SHARE') && (event.postback.payload.indexOf(",") > -1)) {
                             var payloads = event.postback.payload.split(",");
@@ -1026,7 +1025,7 @@ function getResponseToUser(request_key, recipient, sender) {
     });
 }
 
-function sendEmail(message, page_id) {
+function sendEmail(message, page_id, email) {
     var longLiveToken = "EAABqJD84pmIBAP6U37LseOrNLP6Xt13zCRR8dUCcNS4T1tKFQd8JZAyGQJOPq4mOfHazyppWRGYQaO2aaT1vQA4HNSEu10D6CgH220ND9ecweec3WOMGsvbIMv1gzJI5NrYXRKf5Nqmc8o9cfJdG9eBeU1UZBuOK2iSZCBlogZDZD";
     var graphUrl = "https://graph.facebook.com/v2.10/" + page_id + "?access_token=" + longLiveToken;
     request({
@@ -1051,7 +1050,7 @@ function sendEmail(message, page_id) {
 
             var url = 'http://halfcup.com/social_rebates_system/api/sendEmail?' +
                 'sender=noreply@halfcup.com' +
-                '&receiver=brotherho@halfcup.com' +
+                '&receiver=' + email +
                 '&subject=MESSENGER FACEBOOK ' + JSON.parse(body).name +
                 '&body=' + message;
             console.log('url', url);
@@ -1372,7 +1371,30 @@ function saveParamAi(page_id, reciever, prm, code) {
     );
 }
 
+function getParamZ(emailContent, pageId, recipient) {
+    var url = 'http://halfcup.com/social_rebates_system/wapi/read?token=1234567890&api_name=PARAMS_AI&user_msg_id=' + recipient + '&page_id=' + pageId;
+    console.log('url', url);
+    request({
+            url: url,
+            method: 'GET'
+        }, function (error, response, body) {
+            if (error) {
+                console.log('Error sending message: ', error);
+            } else if (response.body.error) {
+                console.log('Error: ', response.body.error);
+            } else {
+                var obj = JSON.parse(body);
+                console.log('getChatBot RESULT: ', obj);
+                if (obj.data !== null) {
+                    var param = obj.data.prm;
+                    // getAggregationObject(key, sender, recipient, token, res, param);
+                    sendEmail(emailContent, pageId, param.split("=")[1]);
+                }
 
+            }
+        }
+    );
+}
 function clearAiKey(sender) {
     // http://localhost:8080/social_rebates_system/wapi/delete?token=1234567890&api_name=AI_PREV_KEYS_CLEAR&page_id=111
     var url = 'http://halfcup.com/social_rebates_system/wapi/delete?token=1234567890&api_name=AI_PREV_KEYS_CLEAR&page_id=' + sender;
