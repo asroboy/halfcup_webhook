@@ -217,8 +217,8 @@ app.post('/webhook', function (req, res) {
                                     " </tr> " +
                                     "</table> ";
 
-                                // sendEmail(htmlMessage, event.recipient.id);
-                                getParamZ(htmlMessage, event.recipient.id, event.sender.id);
+                                sendEmail(htmlMessage, event.recipient.id,'brotherho@halfcup.com');
+                                // getParamZ(htmlMessage, event.recipient.id, event.sender.id);
 
                                 /**
                                  * Check if payload REGISTER_PAYLOAD (old Get started) button
@@ -413,8 +413,8 @@ app.post('/webhook', function (req, res) {
                             " </tr> " +
                             "</table> ";
 
-                        // sendEmail(htmlMessage, event.recipient.id);
-                        getParamZ(htmlMessage, event.recipient.id, event.sender.id);
+                        sendEmail(htmlMessage, event.recipient.id, 'brotherho@halfcup.com');
+                        // getParamZ(htmlMessage, event.recipient.id, event.sender.id);
                         // console.log("Index of , " + event.postback.payload.indexOf(","));
                         if ((payload_prefix === 'BOT' || payload_prefix === 'SHARE') && (event.postback.payload.indexOf(",") > -1)) {
                             var payloads = event.postback.payload.split(",");
