@@ -45,6 +45,8 @@ function getToken(text, sender, recipient, isMessageUs, res) {
                 if (code == 1) {
                     var token = obj.messenger_data.pageAccessToken;
                     console.log('token : ' + token);
+                    showLoading(token, recipient);
+
                     if (text !== null) {
                         if (text.indexOf('AGGREGATION_') > -1) {
                             getParam(text, sender, recipient, token, res);
@@ -100,6 +102,34 @@ function getToken(text, sender, recipient, isMessageUs, res) {
         }
     );
 }
+
+
+function showLoading(token, recipientId) {
+    request({
+        url: 'https://graph.facebook.com/v2.6/me/messages',
+        qs: {access_token: token},
+        method: 'POST',
+        json: {
+            recipient: {id: recipientId},
+            sender_action: "typing_on"
+        }
+    }, function (error, response, body) {
+    });
+}
+
+function hideLoading(token, recipientId) {
+    request({
+        url: 'https://graph.facebook.com/v2.6/me/messages',
+        qs: {access_token: token},
+        method: 'POST',
+        json: {
+            recipient: {id: recipientId},
+            sender_action: "typing_off"
+        }
+    }, function (error, response, body) {
+    });
+}
+
 
 function getParam(key, sender, recipient, token, res) {
     var url = 'http://halfcup.com/social_rebates_system/wapi/read?token=1234567890&api_name=PARAMS_AI&user_msg_id=' + recipient + '&page_id=' + sender;
@@ -375,7 +405,7 @@ function getIndexAggregate(size, pageId, key, aggreationData, recipient, token) 
 }
 
 function getAiKey(text, wang_token, pageId, prevKeys, recipient, token, res, aggregateObj, param) {
-    if(aggregateObj.indexOf("{{") > -1){
+    if (aggregateObj.indexOf("{{") > -1) {
         aggregateObj = aggregateObj.replace("{{", "").replace("}}", "");
     }
     var url = 'http://aileadsbooster.com/Backend/query?q=' + encodeURI(text) + '&access_token=' + wang_token + '&prev_key=' + prevKeys + '&aggregation=' + aggregateObj + '&param=' + param;
