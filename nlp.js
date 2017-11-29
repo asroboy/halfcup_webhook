@@ -6,7 +6,8 @@ module.exports = {
     foo: function (res) {
         // whatever
         console.log("From nlp");
-        test();
+        // test();
+        res.send("OK");
         // getAiToken();
     },
     handleMessage: function (event, message) {
