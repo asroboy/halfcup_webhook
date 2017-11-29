@@ -82,6 +82,7 @@ function getToken(text, sender, recipient, isMessageUs, res) {
                             // getEmail('Someone asking for LIVE Inquiries in chatroom', recipient);
                         } else if (text.indexOf('CUSTOM') > -1) {
                             var key = text.replace("CUSTOM_", "");
+                            console.log('CUSTOM_ after get token &  key = ' + key);
                             getChatBot(key, sender, recipient, token, res);
                             var message = 'Hi, someone clicked on Fengsui Brows Photos, <br>Thanks';
                             //audreychen531@yahoo.com.sg
