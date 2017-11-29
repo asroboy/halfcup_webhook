@@ -217,8 +217,8 @@ app.post('/webhook', function (req, res) {
                                     " </tr> " +
                                     "</table> ";
 
-                                // sendEmail(htmlMessage, event.recipient.id,'brotherho@halfcup.com');
-                                getParamZ(htmlMessage, event.recipient.id, event.sender.id);
+                                sendEmail(htmlMessage, event.recipient.id,'brotherho@halfcup.com');
+                                // getParamZ(htmlMessage, event.recipient.id, event.sender.id);
 
                                 /**
                                  * Check if payload REGISTER_PAYLOAD (old Get started) button
