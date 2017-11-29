@@ -213,7 +213,7 @@ app.post('/webhook', function (req, res) {
                                     "<tr>" +
                                     " <td>Quick Reply</td>" +
                                     "<td>:</td>" +
-                                    "<td>" + event.message.quick_reply.title + "</td>" +
+                                    "<td>" + event.message.text + "</td>" +
                                     " </tr> " +
                                     "</table> ";
 
