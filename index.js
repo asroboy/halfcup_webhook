@@ -422,9 +422,16 @@ app.post('/webhook', function (req, res) {
                                 pixel('PostBack', payloads[i], payloads[i], event.sender.id, event.recipient.id);
                                 getResponseToUser(payloads[i], event.sender.id, event.recipient.id);
                             }
-                        }
+                        } else if ((event.postback.payload.indexOf("|") > -1) && payload_prefix !== 'AGGREGATION') {
+                            if (event.message.quick_reply.payload.indexOf('|param|')) {
+                                var code = event.message.quick_reply.payload.split('\|param\|')[1];
+                                var text = event.message.quick_reply.payload.split('\|param\|')[0];
+                                clearAiKey(event.recipient.id);
+                                saveParamAi(event.recipient.id, event.sender.id, '', code);
+                                new_nlp.getChatBot(text, event.recipient.id, event.sender.id, res);
+                            }
 
-                        else if (payload_prefix === 'AGGREGATION') {
+                        } else if (payload_prefix === 'AGGREGATION') {
                             console.log('call new_nlp AGGREGATION');
                             new_nlp.getChatBot(event.postback.payload, event.recipient.id, event.sender.id, res)
                         }
