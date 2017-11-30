@@ -16,7 +16,7 @@ app.listen((process.env.PORT || 3000));
 
 // Facebook Webhook
 app.get('/webhook', function (req, res) {
-    console.log('res', res);
+    // console.log('res', res);
 
     if (req.query['hub.mode'] === 'subscribe' &&
         req.query['hub.verify_token'] === 'testbot_verify_token') {
@@ -45,9 +45,8 @@ app.get('/test', function (req, res) {
 app.post('/webhook', function (req, res) {
         var events = req.body.entry[0].messaging;
         var changes = req.body.entry[0].changes;
-
+        console.log("POST WEBHOOK");
         console.log("REQ", JSON.stringify(req.body));
-
         if (changes) {
             var field = req.body.entry[0].changes[0].field;
             if (field == "leadgen") {
@@ -217,7 +216,7 @@ app.post('/webhook', function (req, res) {
                                     " </tr> " +
                                     "</table> ";
 
-                                sendEmail(htmlMessage, event.recipient.id,'brotherho@halfcup.com');
+                                // sendEmail(htmlMessage, event.recipient.id, 'brotherho@halfcup.com');
                                 // getParamZ(htmlMessage, event.recipient.id, event.sender.id);
 
                                 /**
@@ -413,7 +412,7 @@ app.post('/webhook', function (req, res) {
                             " </tr> " +
                             "</table> ";
 
-                        sendEmail(htmlMessage, event.recipient.id, 'brotherho@halfcup.com');
+                        // sendEmail(htmlMessage, event.recipient.id, 'brotherho@halfcup.com');
                         // getParamZ(htmlMessage, event.recipient.id, event.sender.id);
                         // console.log("Index of , " + event.postback.payload.indexOf(","));
                         if ((payload_prefix === 'BOT' || payload_prefix === 'SHARE') && (event.postback.payload.indexOf(",") > -1)) {
@@ -524,7 +523,6 @@ app.post('/webhook', function (req, res) {
             }
 
         }
-
 
         res.sendStatus(200);
     }
