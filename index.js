@@ -424,8 +424,8 @@ app.post('/webhook', function (req, res) {
                             }
                         } else if ((event.postback.payload.indexOf("|") > -1) && payload_prefix !== 'AGGREGATION') {
                             if (event.message.quick_reply.payload.indexOf('|param|')) {
-                                var code = event.message.quick_reply.payload.split('\|param\|')[1];
-                                var text = event.message.quick_reply.payload.split('\|param\|')[0];
+                                var code = event.postback.payload.split('\|param\|')[1];
+                                var text = event.postback.payload.split('\|param\|')[0];
                                 clearAiKey(event.recipient.id);
                                 saveParamAi(event.recipient.id, event.sender.id, '', code);
                                 new_nlp.getChatBot(text, event.recipient.id, event.sender.id, res);
