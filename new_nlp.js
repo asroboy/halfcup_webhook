@@ -151,7 +151,8 @@ function getParamDoneBot(key, sender, recipient, token, res, id) {
 }
 
 function getAggregationObjectDoneBot(key, sender, recipient, token, res, param) {
-    var url = 'http://aileadsbooster.com/Backend/aggregation?' + param;
+    var mKey = param.replace('AGGREGATION_', '');
+    var url = 'http://aileadsbooster.com/Backend/aggregation?' + mKey;
     console.log('url', url);
     request({
             url: url,
