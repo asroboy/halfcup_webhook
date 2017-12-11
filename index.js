@@ -94,11 +94,11 @@ app.post('/webhook', function (req, res) {
                         if (event.referral.ref !== null) {
                             if (event.referral.ref.indexOf("DONE_BOT") > -1 && event.referral.ref.indexOf('|param|') > -1) {
                                 if (event.referral.ref.indexOf('|param|') > -1) {
-                                    var code = ref.split('\|param\|')[1];
+                                    var code = event.referral.ref.split('\|param\|')[1];
 
                                     // clearAiKey(event.recipient.id);
                                     // saveParamAi(event.recipient.id, event.sender.id, '', code);
-                                    new_nlp.getChatBot(ref, event.recipient.id, event.sender.id, res);
+                                    new_nlp.getChatBot(event.referral.ref, event.recipient.id, event.sender.id, res);
                                 }
                             }
                             else if (event.referral.ref.indexOf('|param|') > -1) {
