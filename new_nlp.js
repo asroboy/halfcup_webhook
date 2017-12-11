@@ -127,7 +127,7 @@ function showLoading(token, recipientId) {
 
 
 function getParamDoneBot(key, sender, recipient, token, res, id) {
-    var url = 'http://halfcup.com/social_rebates_system/wapi/read?token=1234567890&api_name=PARAMS_AI_ITEM&id=' + id;
+    var url = 'http://halfcup.com/social_rebates_system/wapi/read?token=1234567890&api_name=PARAMS_AI_ITEM&id=' + id.split("=")[1];
     console.log('url', url);
     request({
             url: url,
