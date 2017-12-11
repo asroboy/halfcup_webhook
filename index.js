@@ -514,6 +514,14 @@ app.post('/webhook', function (req, res) {
 
                             } else if (ref === 'null') {
 
+                            } else if (ref.indexOf("DONE_BOT") > -1) {
+                                if (ref.indexOf('|param|') > -1) {
+                                    var code = ref.split('\|param\|')[1];
+
+                                    // clearAiKey(event.recipient.id);
+                                    // saveParamAi(event.recipient.id, event.sender.id, '', code);
+                                    new_nlp.getChatBot(ref, event.recipient.id, event.sender.id, res);
+                                }
                             } else {
                                 var keys = ref.split("|");
 

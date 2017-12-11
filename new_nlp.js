@@ -20,6 +20,7 @@ module.exports = {
     getChatBot: function (key, sender, recipient, res) {
         getToken(key, sender, recipient, false, res);
     },
+
 };
 
 var async = require("async");
@@ -48,7 +49,13 @@ function getToken(text, sender, recipient, isMessageUs, res) {
                     showLoading(token, recipient);
 
                     if (text !== null) {
-                        if (text.indexOf('AGGREGATION_') > -1) {
+                        if (text.indexOf('DONE_BOT') > -1) {
+                            var text_ = ref.split('\|param\|')[1];
+
+                            getParamDoneBot('', sender, recipient, token, res, text_);
+                            // getAggregationObject(text, sender, recipient, token, res);
+                            saveAggregationObj(text_, sender);
+                        }else if (text.indexOf('AGGREGATION_') > -1) {
                             getParam(text, sender, recipient, token, res);
                             // getAggregationObject(text, sender, recipient, token, res);
                             saveAggregationObj(text, sender);
@@ -116,6 +123,31 @@ function showLoading(token, recipientId) {
         }
     }, function (error, response, body) {
     });
+}
+
+
+function getParamDoneBot(key, sender, recipient, token, res, id) {
+    var url = 'http://halfcup.com/social_rebates_system/wapi/read?token=1234567890&api_name=PARAMS_AI_ITEM&id=' + id;
+    console.log('url', url);
+    request({
+            url: url,
+            method: 'GET'
+        }, function (error, response, body) {
+            if (error) {
+                console.log('Error sending message: ', error);
+            } else if (response.body.error) {
+                console.log('Error: ', response.body.error);
+            } else {
+                var obj = JSON.parse(body);
+                console.log('getChatBot RESULT: ', obj);
+                if (obj.data !== null) {
+                    var param = obj.data.prm;
+                    getAggregationObject(key, sender, recipient, token, res, param);
+                }
+
+            }
+        }
+    );
 }
 
 function getParam(key, sender, recipient, token, res) {
