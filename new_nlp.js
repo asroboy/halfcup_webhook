@@ -142,12 +142,60 @@ function getParamDoneBot(key, sender, recipient, token, res, id) {
                 console.log('getChatBot RESULT: ', obj);
                 if (obj.data !== null) {
                     var param = obj.data.prm;
-                    getAggregationObject(key, sender, recipient, token, res, param);
+                    getAggregationObjectDoneBot(key, sender, recipient, token, res, param);
                 }
 
             }
         }
     );
+}
+
+function getAggregationObjectDoneBot(key, sender, recipient, token, res, param) {
+    if (key.indexOf('AGGREGATION_') > -1) {
+        var mKey = key.replace('AGGREGATION_', '');
+        var url = '';
+        if (mKey === 'object=main') {
+            url = 'http://aileadsbooster.com/Backend/aggregation?' + param;
+        } else {
+            if (mKey.indexOf("{{") > -1) {
+                mKey = mKey.replace("{{", "").replace("}}", "");
+            }
+            url = 'http://aileadsbooster.com/Backend/aggregation?' + param;
+        }
+
+        console.log('url', url);
+        request({
+                url: url,
+                method: 'GET'
+            }, function (error, response, body) {
+                if (error) {
+                    console.log('Error sending message: ', error);
+                } else if (response.body.error) {
+                    console.log('Error: ', response.body.error);
+                } else {
+                    var obj = JSON.parse(body);
+                    console.log('getChatBot RESULT: ', JSON.stringify(obj.aggregation));
+                    // res.send(obj);
+
+                    if (obj.aggregation.length > 0) {
+                        // var jsonMessage = JSON.parse(obj);
+                        // var randomIndex = randomIntFromInterval(1, obj.aggregation.length);
+                        // console.log("randomIndex : " + randomIndex);
+                        // console.log("jsonMessage.length : " + obj.aggregation.length);
+                        // res.send("DONE, randomIndex " + randomIndex);
+                        // respond(obj.aggregation, sender, recipient, randomIndex, token, res);
+                        // randomIndex = randomIndex - 1
+                        sendM(obj.aggregation, recipient, token);
+                        // respondToTextOrAttacment(obj.aggregation, sender, recipient, token, randomIndex)
+                    } else {
+                        getDefaultAnswer(sender, recipient, token, res);
+                    }
+
+                }
+            }
+        );
+    }
+
 }
 
 function getParam(key, sender, recipient, token, res) {
