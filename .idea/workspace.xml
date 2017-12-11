@@ -69,22 +69,22 @@
       <file leaf-file-name="new_nlp.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/new_nlp.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="398">
-              <caret line="162" column="67" lean-forward="false" selection-start-line="162" selection-start-column="67" selection-end-line="162" selection-end-column="67" />
+            <state relative-caret-position="58">
+              <caret line="152" column="81" lean-forward="false" selection-start-line="152" selection-start-column="81" selection-end-line="152" selection-end-column="81" />
               <folding>
                 <element signature="e#0#42#0" expanded="false" />
-                <element signature="e#14376#14435#0" expanded="false" />
-                <element signature="e#14495#14558#0" expanded="false" />
-                <element signature="e#14589#14665#0" expanded="false" />
-                <element signature="e#15270#15329#0" expanded="false" />
-                <element signature="e#15389#15452#0" expanded="false" />
-                <element signature="e#15483#15559#0" expanded="false" />
+                <element signature="e#13868#13927#0" expanded="false" />
+                <element signature="e#13987#14050#0" expanded="false" />
+                <element signature="e#14081#14157#0" expanded="false" />
+                <element signature="e#14762#14821#0" expanded="false" />
+                <element signature="e#14881#14944#0" expanded="false" />
+                <element signature="e#14975#15051#0" expanded="false" />
                 <element signature="n#!!block;n#getAiKeyFromDB#0" expanded="false" />
                 <element signature="n#!!block;n#test#0" expanded="false" />
-                <element signature="e#17749#17812#0" expanded="false" />
-                <element signature="e#17843#17919#0" expanded="false" />
-                <element signature="e#20952#21015#0" expanded="false" />
-                <element signature="e#21046#21122#0" expanded="false" />
+                <element signature="e#17241#17304#0" expanded="false" />
+                <element signature="e#17335#17411#0" expanded="false" />
+                <element signature="e#20444#20507#0" expanded="false" />
+                <element signature="e#20538#20614#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -526,12 +526,12 @@
       <workItem from="1511755592806" duration="18352000" />
       <workItem from="1512011065605" duration="7492000" />
       <workItem from="1512998356622" duration="1163000" />
-      <workItem from="1512999794841" duration="5290000" />
+      <workItem from="1512999794841" duration="5799000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="578092000" />
+    <option name="totallyTimeSpent" value="578601000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1404,22 +1404,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/new_nlp.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="398">
-          <caret line="162" column="67" lean-forward="false" selection-start-line="162" selection-start-column="67" selection-end-line="162" selection-end-column="67" />
+        <state relative-caret-position="58">
+          <caret line="152" column="81" lean-forward="false" selection-start-line="152" selection-start-column="81" selection-end-line="152" selection-end-column="81" />
           <folding>
             <element signature="e#0#42#0" expanded="false" />
-            <element signature="e#14376#14435#0" expanded="false" />
-            <element signature="e#14495#14558#0" expanded="false" />
-            <element signature="e#14589#14665#0" expanded="false" />
-            <element signature="e#15270#15329#0" expanded="false" />
-            <element signature="e#15389#15452#0" expanded="false" />
-            <element signature="e#15483#15559#0" expanded="false" />
+            <element signature="e#13868#13927#0" expanded="false" />
+            <element signature="e#13987#14050#0" expanded="false" />
+            <element signature="e#14081#14157#0" expanded="false" />
+            <element signature="e#14762#14821#0" expanded="false" />
+            <element signature="e#14881#14944#0" expanded="false" />
+            <element signature="e#14975#15051#0" expanded="false" />
             <element signature="n#!!block;n#getAiKeyFromDB#0" expanded="false" />
             <element signature="n#!!block;n#test#0" expanded="false" />
-            <element signature="e#17749#17812#0" expanded="false" />
-            <element signature="e#17843#17919#0" expanded="false" />
-            <element signature="e#20952#21015#0" expanded="false" />
-            <element signature="e#21046#21122#0" expanded="false" />
+            <element signature="e#17241#17304#0" expanded="false" />
+            <element signature="e#17335#17411#0" expanded="false" />
+            <element signature="e#20444#20507#0" expanded="false" />
+            <element signature="e#20538#20614#0" expanded="false" />
           </folding>
         </state>
       </provider>
