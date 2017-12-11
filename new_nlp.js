@@ -50,7 +50,7 @@ function getToken(text, sender, recipient, isMessageUs, res) {
 
                     if (text !== null) {
                         if (text.indexOf('DONE_BOT') > -1) {
-                            var text_ = ref.split('\|param\|')[1];
+                            var text_ = text.split('\|param\|')[1];
 
                             getParamDoneBot('', sender, recipient, token, res, text_);
                             // getAggregationObject(text, sender, recipient, token, res);
