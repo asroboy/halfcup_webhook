@@ -105,6 +105,8 @@ app.post('/webhook', function (req, res) {
                                 clearAiKey(event.recipient.id);
                                 var code = event.referral.ref.split('\|param\|')[1];
                                 var text = event.referral.ref.split('\|param\|')[0];
+                                console.log("code " + code);
+                                console.log("text " + text);
                                 saveParamAi(event.recipient.id, event.sender.id, '', code)
                                 new_nlp.getChatBot(text, event.recipient.id, event.sender.id, res);
                             } else {
