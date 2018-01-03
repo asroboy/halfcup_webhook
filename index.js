@@ -105,8 +105,8 @@ app.post('/webhook', function (req, res) {
                                 clearAiKey(event.recipient.id);
                                 var code = event.referral.ref.split('\|param\|')[1];
                                 var text = event.referral.ref.split('\|param\|')[0];
-                                console.log("code " + code);
-                                console.log("text " + text);
+                                console.log("code ", code);
+                                console.log("text ", text);
                                 saveParamAi(event.recipient.id, event.sender.id, '', code)
                                 new_nlp.getChatBot(text, event.recipient.id, event.sender.id, res);
                             } else {
@@ -1377,6 +1377,7 @@ function sendMessagePostback(recipientId, message, token) {
 
 
 function saveParamAi(page_id, reciever, prm, code) {
+    console.log("SAVE PARAM AI");
     var url = 'http://halfcup.com/social_rebates_system/wapi/save?token=1234567890&api_name=PARAMS_AI&user_msg_id=' + reciever + '&page_id=' + page_id + '&prm=' + prm + '&' + code;
     console.log('url', url);
     request({
