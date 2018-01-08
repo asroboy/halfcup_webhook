@@ -126,6 +126,19 @@ function showLoading(token, recipientId) {
 }
 
 
+function hideLoading(token, recipientId) {
+    request({
+        url: 'https://graph.facebook.com/v2.6/me/messages',
+        qs: {access_token: token},
+        method: 'POST',
+        json: {
+            recipient: {id: recipientId},
+            sender_action: "typing_off"
+        }
+    }, function (error, response, body) {
+    });
+}
+
 function getParamDoneBot(key, sender, recipient, token, res, id) {
     var url = 'http://halfcup.com/social_rebates_system/wapi/read?token=1234567890&api_name=PARAMS_AI_ITEM&id=' + id.split("=")[1];
     console.log('url', url);
@@ -510,6 +523,7 @@ function getAiKey(text, wang_token, pageId, prevKeys, recipient, token, res, agg
                     }
                 }catch (error){
                     console.log("Error catched ==>", error);
+                    hideLoading(token, recipient);
                     // res.sendStatus(500);
                 }
 
