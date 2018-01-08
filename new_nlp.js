@@ -510,7 +510,7 @@ function getAiKey(text, wang_token, pageId, prevKeys, recipient, token, res, agg
                     }
                 }catch (error){
                     console.log("Error catched ==>", error);
-                    res.sendStatus(500);
+                    // res.sendStatus(500);
                 }
 
             }
