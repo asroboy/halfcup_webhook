@@ -480,34 +480,38 @@ function getAiKey(text, wang_token, pageId, prevKeys, recipient, token, res, agg
             } else if (response.body.error) {
                 console.log('Error: ', response.body.error);
             } else {
-                var obj = JSON.parse(body);
-                // console.log('obj = ' + JSON.stringify(obj));
-                if (obj.hasOwnProperty('aggregation')) {
-                    console.log('AGGREGATION LENGTH = ' + obj.aggregation.length);
-                    if (obj.aggregation.length > 0) {
-                        sendM(obj.aggregation, recipient, token);
-                        // getIndexAggregate(obj.aggregation.length, pageId, obj.key, obj.aggregation, recipient, token);
-                        saveAiKeyWithoutGetBot(obj.key, pageId, recipient, token, res)
-                        // saveAiKey(obj.key, pageId, recipient, token, res);
+                try{
+                    var obj = JSON.parse(body);
+                    // console.log('obj = ' + JSON.stringify(obj));
+                    if (obj.hasOwnProperty('aggregation')) {
+                        console.log('AGGREGATION LENGTH = ' + obj.aggregation.length);
+                        if (obj.aggregation.length > 0) {
+                            sendM(obj.aggregation, recipient, token);
+                            // getIndexAggregate(obj.aggregation.length, pageId, obj.key, obj.aggregation, recipient, token);
+                            saveAiKeyWithoutGetBot(obj.key, pageId, recipient, token, res)
+                            // saveAiKey(obj.key, pageId, recipient, token, res);
+                        } else {
+                            if (obj.key === '') {
+                                getDefaultAnswer(pageId, recipient, token, res);
+                            } else {
+                                // console.log('obj: ', obj);
+                                saveAiKey(obj.key, pageId, recipient, token, res);
+                                saveAggregationObj('', pageId);
+                            }
+                        }
+
                     } else {
                         if (obj.key === '') {
                             getDefaultAnswer(pageId, recipient, token, res);
                         } else {
                             // console.log('obj: ', obj);
                             saveAiKey(obj.key, pageId, recipient, token, res);
-                            saveAggregationObj('', pageId);
                         }
                     }
-
-                } else {
-                    if (obj.key === '') {
-                        getDefaultAnswer(pageId, recipient, token, res);
-                    } else {
-                        // console.log('obj: ', obj);
-                        saveAiKey(obj.key, pageId, recipient, token, res);
-                    }
+                }catch (error){
+                    console.log("Error catched ==>", error);
+                    res.sendStatus(500);
                 }
-
 
             }
         }
