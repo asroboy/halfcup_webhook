@@ -456,7 +456,7 @@ function getIndexAggregate(size, pageId, key, aggreationData, recipient, token) 
                     var message = aggr[aggrIndex];
                     if (message.hasOwnProperty('message')) {
                         message = message.message;
-                    }
+                     }
 
                     var js_ = JSON.stringify(message);
                     var myEscapedJSONString = js_.escapeSpecialChars();
