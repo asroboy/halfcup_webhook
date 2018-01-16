@@ -246,23 +246,31 @@ function getAggregationObject(key, sender, recipient, token, res, param) {
                 } else if (response.body.error) {
                     console.log('Error: ', response.body.error);
                 } else {
-                    var obj = JSON.parse(body);
-                    console.log('getChatBot RESULT: ', JSON.stringify(obj.aggregation));
-                    // res.send(obj);
 
-                    if (obj.aggregation.length > 0) {
-                        // var jsonMessage = JSON.parse(obj);
-                        // var randomIndex = randomIntFromInterval(1, obj.aggregation.length);
-                        // console.log("randomIndex : " + randomIndex);
-                        // console.log("jsonMessage.length : " + obj.aggregation.length);
-                        // res.send("DONE, randomIndex " + randomIndex);
-                        // respond(obj.aggregation, sender, recipient, randomIndex, token, res);
-                        // randomIndex = randomIndex - 1
-                        sendM(obj.aggregation, recipient, token);
-                        // respondToTextOrAttacment(obj.aggregation, sender, recipient, token, randomIndex)
-                    } else {
-                        getDefaultAnswer(sender, recipient, token, res);
+                    try {
+                        var obj = JSON.parse(body);
+                        console.log('getChatBot RESULT: ', JSON.stringify(obj.aggregation));
+                        // res.send(obj);
+
+                        if (obj.aggregation.length > 0) {
+                            // var jsonMessage = JSON.parse(obj);
+                            // var randomIndex = randomIntFromInterval(1, obj.aggregation.length);
+                            // console.log("randomIndex : " + randomIndex);
+                            // console.log("jsonMessage.length : " + obj.aggregation.length);
+                            // res.send("DONE, randomIndex " + randomIndex);
+                            // respond(obj.aggregation, sender, recipient, randomIndex, token, res);
+                            // randomIndex = randomIndex - 1
+                            sendM(obj.aggregation, recipient, token);
+                            // respondToTextOrAttacment(obj.aggregation, sender, recipient, token, randomIndex)
+                        } else {
+                            getDefaultAnswer(sender, recipient, token, res);
+                        }
+                    } catch (error) {
+                        console.log("Error catched ==>", error);
+                        hideLoading(token, recipient);
+                        // res.sendStatus(500);
                     }
+
 
                 }
             }
@@ -456,7 +464,7 @@ function getIndexAggregate(size, pageId, key, aggreationData, recipient, token) 
                     var message = aggr[aggrIndex];
                     if (message.hasOwnProperty('message')) {
                         message = message.message;
-                     }
+                    }
 
                     var js_ = JSON.stringify(message);
                     var myEscapedJSONString = js_.escapeSpecialChars();
@@ -493,7 +501,7 @@ function getAiKey(text, wang_token, pageId, prevKeys, recipient, token, res, agg
             } else if (response.body.error) {
                 console.log('Error: ', response.body.error);
             } else {
-                try{
+                try {
                     var obj = JSON.parse(body);
                     // console.log('obj = ' + JSON.stringify(obj));
                     if (obj.hasOwnProperty('aggregation')) {
@@ -521,7 +529,7 @@ function getAiKey(text, wang_token, pageId, prevKeys, recipient, token, res, agg
                             saveAiKey(obj.key, pageId, recipient, token, res);
                         }
                     }
-                }catch (error){
+                } catch (error) {
                     console.log("Error catched ==>", error);
                     hideLoading(token, recipient);
                     // res.sendStatus(500);

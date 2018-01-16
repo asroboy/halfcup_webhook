@@ -21,11 +21,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="index.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="586" column="32" lean-forward="false" selection-start-line="585" selection-start-column="10" selection-end-line="586" selection-end-column="32" />
+            <state relative-caret-position="34">
+              <caret line="1019" column="0" lean-forward="true" selection-start-line="1019" selection-start-column="0" selection-end-line="1019" selection-end-column="0" />
               <folding>
                 <element signature="e#956#980#0" expanded="false" />
                 <element signature="e#5772#9819#0" expanded="false" />
@@ -67,23 +67,23 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="new_nlp.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="new_nlp.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/new_nlp.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="5185">
-              <caret line="307" column="43" lean-forward="false" selection-start-line="307" selection-start-column="43" selection-end-line="307" selection-end-column="43" />
+            <state relative-caret-position="376">
+              <caret line="266" column="25" lean-forward="false" selection-start-line="266" selection-start-column="25" selection-end-line="266" selection-end-column="25" />
               <folding>
                 <element signature="e#0#42#0" expanded="false" />
-                <element signature="e#14254#14313#0" expanded="false" />
-                <element signature="e#14373#14436#0" expanded="false" />
-                <element signature="e#14467#14543#0" expanded="false" />
-                <element signature="e#15148#15207#0" expanded="false" />
-                <element signature="e#15267#15330#0" expanded="false" />
-                <element signature="e#15361#15437#0" expanded="false" />
+                <element signature="e#14574#14633#0" expanded="false" />
+                <element signature="e#14693#14756#0" expanded="false" />
+                <element signature="e#14787#14863#0" expanded="false" />
+                <element signature="e#15468#15527#0" expanded="false" />
+                <element signature="e#15587#15650#0" expanded="false" />
+                <element signature="e#15681#15757#0" expanded="false" />
                 <element signature="n#!!block;n#getAiKeyFromDB#0" expanded="false" />
                 <element signature="n#!!block;n#test#0" expanded="false" />
-                <element signature="e#17627#17690#0" expanded="false" />
-                <element signature="e#17721#17797#0" expanded="false" />
+                <element signature="e#17947#18010#0" expanded="false" />
+                <element signature="e#18041#18117#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -248,6 +248,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -262,8 +264,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -531,12 +531,13 @@
       <workItem from="1515320841532" duration="7531000" />
       <workItem from="1515470233904" duration="963000" />
       <workItem from="1515484736282" duration="1238000" />
-      <workItem from="1515719875872" duration="447000" />
+      <workItem from="1515719875872" duration="599000" />
+      <workItem from="1516010089003" duration="1662000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="601299000" />
+    <option name="totallyTimeSpent" value="603113000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1363,30 +1364,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/new_nlp.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5185">
-          <caret line="307" column="43" lean-forward="false" selection-start-line="307" selection-start-column="43" selection-end-line="307" selection-end-column="43" />
-          <folding>
-            <element signature="e#0#42#0" expanded="false" />
-            <element signature="e#14254#14313#0" expanded="false" />
-            <element signature="e#14373#14436#0" expanded="false" />
-            <element signature="e#14467#14543#0" expanded="false" />
-            <element signature="e#15148#15207#0" expanded="false" />
-            <element signature="e#15267#15330#0" expanded="false" />
-            <element signature="e#15361#15437#0" expanded="false" />
-            <element signature="n#!!block;n#getAiKeyFromDB#0" expanded="false" />
-            <element signature="n#!!block;n#test#0" expanded="false" />
-            <element signature="e#17627#17690#0" expanded="false" />
-            <element signature="e#17721#17797#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="586" column="32" lean-forward="false" selection-start-line="585" selection-start-column="10" selection-end-line="586" selection-end-column="32" />
+        <state relative-caret-position="34">
+          <caret line="1019" column="0" lean-forward="true" selection-start-line="1019" selection-start-column="0" selection-end-line="1019" selection-end-column="0" />
           <folding>
             <element signature="e#956#980#0" expanded="false" />
             <element signature="e#5772#9819#0" expanded="false" />
@@ -1423,6 +1404,26 @@
             <element signature="n#!!block;n#sendMessage#0" expanded="false" />
             <element signature="n#!!block;n#sendMessageUserRef#0" expanded="false" />
             <element signature="n#!!block;n#sendMessagePostback#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/new_nlp.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="376">
+          <caret line="266" column="25" lean-forward="false" selection-start-line="266" selection-start-column="25" selection-end-line="266" selection-end-column="25" />
+          <folding>
+            <element signature="e#0#42#0" expanded="false" />
+            <element signature="e#14574#14633#0" expanded="false" />
+            <element signature="e#14693#14756#0" expanded="false" />
+            <element signature="e#14787#14863#0" expanded="false" />
+            <element signature="e#15468#15527#0" expanded="false" />
+            <element signature="e#15587#15650#0" expanded="false" />
+            <element signature="e#15681#15757#0" expanded="false" />
+            <element signature="n#!!block;n#getAiKeyFromDB#0" expanded="false" />
+            <element signature="n#!!block;n#test#0" expanded="false" />
+            <element signature="e#17947#18010#0" expanded="false" />
+            <element signature="e#18041#18117#0" expanded="false" />
           </folding>
         </state>
       </provider>
