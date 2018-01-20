@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="8c0fd527-5667-4e03-89ee-e95c0bdc3c27" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.js" afterPath="$PROJECT_DIR$/index.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -20,11 +21,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="index.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="9486">
-              <caret line="1019" column="0" lean-forward="false" selection-start-line="1019" selection-start-column="0" selection-end-line="1019" selection-end-column="0" />
+            <state relative-caret-position="261">
+              <caret line="399" column="116" lean-forward="false" selection-start-line="399" selection-start-column="116" selection-end-line="399" selection-end-column="116" />
               <folding>
                 <element signature="e#956#980#0" expanded="false" />
                 <element signature="e#5772#9819#0" expanded="false" />
@@ -33,8 +34,8 @@
                 <element signature="n#!!block;n#saveMessengerAdmin#0" expanded="false" />
                 <element signature="n#!!block;n#keyIndexAction#0" expanded="false" />
                 <element signature="n#!!block;n#validateSamples#0" expanded="false" />
-                <element signature="e#39716#39846#0" expanded="false" />
-                <element signature="e#39887#40051#0" expanded="false" />
+                <element signature="e#39861#39991#0" expanded="false" />
+                <element signature="e#40032#40196#0" expanded="false" />
                 <element signature="n#!!block;n#looper#0" expanded="false" />
                 <element signature="n#!!block;n#callback#0" expanded="false" />
                 <element signature="n#!!block;n#helooTest#0" expanded="false" />
@@ -42,7 +43,7 @@
                 <element signature="n#!!block;n#logAction#0" expanded="false" />
                 <element signature="n#!!block;n#getUserInfo#0" expanded="false" />
                 <element signature="n#!!block;n#getPageIdForLead#0" expanded="false" />
-                <element signature="e#43934#43993#0" expanded="false" />
+                <element signature="e#44079#44138#0" expanded="false" />
                 <element signature="n#!!block;n#getPageAccessTokenForLead#0" expanded="false" />
                 <element signature="n#!!block;n#getLead#0" expanded="false" />
                 <element signature="n#!!block;n#getToken#0" expanded="false" />
@@ -51,12 +52,12 @@
                 <element signature="n#!!block;n#sendEmail#0" expanded="false" />
                 <element signature="n#!!block;n#sendEmailForLead#0" expanded="false" />
                 <element signature="n#!!block;n#getResponseToUserForPostback#0" expanded="false" />
-                <element signature="e#60237#60538#0" expanded="false" />
+                <element signature="e#60382#60683#0" expanded="false" />
                 <element signature="n#!!block;n#getResponseToUserRef#0" expanded="false" />
                 <element signature="n#!!block;n#getResponseToUserWithNoKey#0" expanded="false" />
-                <element signature="e#63045#63324#0" expanded="false" />
-                <element signature="e#63374#63774#0" expanded="false" />
-                <element signature="e#63839#63926#0" expanded="false" />
+                <element signature="e#63190#63469#0" expanded="false" />
+                <element signature="e#63519#63919#0" expanded="false" />
+                <element signature="e#63984#64071#0" expanded="false" />
                 <element signature="n#!!block;n#leadgenProcessor#0" expanded="false" />
                 <element signature="n#!!block;n#sendMessage#0" expanded="false" />
                 <element signature="n#!!block;n#sendMessageUserRef#0" expanded="false" />
@@ -66,11 +67,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="new_nlp.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="new_nlp.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/new_nlp.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="246" column="64" lean-forward="false" selection-start-line="246" selection-start-column="64" selection-end-line="246" selection-end-column="64" />
+            <state relative-caret-position="1904">
+              <caret line="456" column="43" lean-forward="true" selection-start-line="456" selection-start-column="43" selection-end-line="456" selection-end-column="43" />
               <folding>
                 <element signature="e#0#42#0" expanded="false" />
                 <element signature="e#14574#14633#0" expanded="false" />
@@ -204,8 +205,8 @@
         <option value="$PROJECT_DIR$/test.js" />
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/nlp.js" />
-        <option value="$PROJECT_DIR$/index.js" />
         <option value="$PROJECT_DIR$/new_nlp.js" />
+        <option value="$PROJECT_DIR$/index.js" />
       </list>
     </option>
   </component>
@@ -247,7 +248,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
@@ -263,6 +263,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -534,12 +535,13 @@
       <workItem from="1516010089003" duration="3039000" />
       <workItem from="1516157737828" duration="2352000" />
       <workItem from="1516224498276" duration="116000" />
-      <workItem from="1516238624980" duration="599000" />
+      <workItem from="1516238624980" duration="3646000" />
+      <workItem from="1516415704221" duration="664000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="607557000" />
+    <option name="totallyTimeSpent" value="611268000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -551,7 +553,8 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="754" extended-state="7" />
+    <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17336309" sideWeight="0.43369177" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32850242" sideWeight="0.49702382" order="6" side_tool="false" content_ui="tabs" />
@@ -560,7 +563,7 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.52495974" sideWeight="0.4940476" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.17708333" sideWeight="0.56785715" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.48638132" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.8035427" sideWeight="0.4940476" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.8035427" sideWeight="0.4940476" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.17708333" sideWeight="0.5426731" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -629,8 +632,8 @@
             <element signature="n#!!block;n#saveMessengerAdmin#0" expanded="false" />
             <element signature="n#!!block;n#keyIndexAction#0" expanded="false" />
             <element signature="n#!!block;n#validateSamples#0" expanded="false" />
-            <element signature="e#39716#39846#0" expanded="false" />
-            <element signature="e#39887#40051#0" expanded="false" />
+            <element signature="e#39861#39991#0" expanded="false" />
+            <element signature="e#40032#40196#0" expanded="false" />
             <element signature="n#!!block;n#looper#0" expanded="false" />
             <element signature="n#!!block;n#callback#0" expanded="false" />
             <element signature="n#!!block;n#helooTest#0" expanded="false" />
@@ -638,7 +641,7 @@
             <element signature="n#!!block;n#logAction#0" expanded="false" />
             <element signature="n#!!block;n#getUserInfo#0" expanded="false" />
             <element signature="n#!!block;n#getPageIdForLead#0" expanded="false" />
-            <element signature="e#43934#43993#0" expanded="false" />
+            <element signature="e#44079#44138#0" expanded="false" />
             <element signature="n#!!block;n#getPageAccessTokenForLead#0" expanded="false" />
             <element signature="n#!!block;n#getLead#0" expanded="false" />
             <element signature="n#!!block;n#getToken#0" expanded="false" />
@@ -647,12 +650,12 @@
             <element signature="n#!!block;n#sendEmail#0" expanded="false" />
             <element signature="n#!!block;n#sendEmailForLead#0" expanded="false" />
             <element signature="n#!!block;n#getResponseToUserForPostback#0" expanded="false" />
-            <element signature="e#60237#60538#0" expanded="false" />
+            <element signature="e#60382#60683#0" expanded="false" />
             <element signature="n#!!block;n#getResponseToUserRef#0" expanded="false" />
             <element signature="n#!!block;n#getResponseToUserWithNoKey#0" expanded="false" />
-            <element signature="e#63045#63324#0" expanded="false" />
-            <element signature="e#63374#63774#0" expanded="false" />
-            <element signature="e#63839#63926#0" expanded="false" />
+            <element signature="e#63190#63469#0" expanded="false" />
+            <element signature="e#63519#63919#0" expanded="false" />
+            <element signature="e#63984#64071#0" expanded="false" />
             <element signature="n#!!block;n#leadgenProcessor#0" expanded="false" />
             <element signature="n#!!block;n#sendMessage#0" expanded="false" />
             <element signature="n#!!block;n#sendMessageUserRef#0" expanded="false" />
@@ -687,8 +690,8 @@
             <element signature="n#!!block;n#saveMessengerAdmin#0" expanded="false" />
             <element signature="n#!!block;n#keyIndexAction#0" expanded="false" />
             <element signature="n#!!block;n#validateSamples#0" expanded="false" />
-            <element signature="e#39716#39846#0" expanded="false" />
-            <element signature="e#39887#40051#0" expanded="false" />
+            <element signature="e#39861#39991#0" expanded="false" />
+            <element signature="e#40032#40196#0" expanded="false" />
             <element signature="n#!!block;n#looper#0" expanded="false" />
             <element signature="n#!!block;n#callback#0" expanded="false" />
             <element signature="n#!!block;n#helooTest#0" expanded="false" />
@@ -696,7 +699,7 @@
             <element signature="n#!!block;n#logAction#0" expanded="false" />
             <element signature="n#!!block;n#getUserInfo#0" expanded="false" />
             <element signature="n#!!block;n#getPageIdForLead#0" expanded="false" />
-            <element signature="e#43934#43993#0" expanded="false" />
+            <element signature="e#44079#44138#0" expanded="false" />
             <element signature="n#!!block;n#getPageAccessTokenForLead#0" expanded="false" />
             <element signature="n#!!block;n#getLead#0" expanded="false" />
             <element signature="n#!!block;n#getToken#0" expanded="false" />
@@ -705,12 +708,12 @@
             <element signature="n#!!block;n#sendEmail#0" expanded="false" />
             <element signature="n#!!block;n#sendEmailForLead#0" expanded="false" />
             <element signature="n#!!block;n#getResponseToUserForPostback#0" expanded="false" />
-            <element signature="e#60237#60538#0" expanded="false" />
+            <element signature="e#60382#60683#0" expanded="false" />
             <element signature="n#!!block;n#getResponseToUserRef#0" expanded="false" />
             <element signature="n#!!block;n#getResponseToUserWithNoKey#0" expanded="false" />
-            <element signature="e#63045#63324#0" expanded="false" />
-            <element signature="e#63374#63774#0" expanded="false" />
-            <element signature="e#63839#63926#0" expanded="false" />
+            <element signature="e#63190#63469#0" expanded="false" />
+            <element signature="e#63519#63919#0" expanded="false" />
+            <element signature="e#63984#64071#0" expanded="false" />
             <element signature="n#!!block;n#leadgenProcessor#0" expanded="false" />
             <element signature="n#!!block;n#sendMessage#0" expanded="false" />
             <element signature="n#!!block;n#sendMessageUserRef#0" expanded="false" />
@@ -745,8 +748,8 @@
             <element signature="n#!!block;n#saveMessengerAdmin#0" expanded="false" />
             <element signature="n#!!block;n#keyIndexAction#0" expanded="false" />
             <element signature="n#!!block;n#validateSamples#0" expanded="false" />
-            <element signature="e#39716#39846#0" expanded="false" />
-            <element signature="e#39887#40051#0" expanded="false" />
+            <element signature="e#39861#39991#0" expanded="false" />
+            <element signature="e#40032#40196#0" expanded="false" />
             <element signature="n#!!block;n#looper#0" expanded="false" />
             <element signature="n#!!block;n#callback#0" expanded="false" />
             <element signature="n#!!block;n#helooTest#0" expanded="false" />
@@ -754,7 +757,7 @@
             <element signature="n#!!block;n#logAction#0" expanded="false" />
             <element signature="n#!!block;n#getUserInfo#0" expanded="false" />
             <element signature="n#!!block;n#getPageIdForLead#0" expanded="false" />
-            <element signature="e#43934#43993#0" expanded="false" />
+            <element signature="e#44079#44138#0" expanded="false" />
             <element signature="n#!!block;n#getPageAccessTokenForLead#0" expanded="false" />
             <element signature="n#!!block;n#getLead#0" expanded="false" />
             <element signature="n#!!block;n#getToken#0" expanded="false" />
@@ -763,12 +766,12 @@
             <element signature="n#!!block;n#sendEmail#0" expanded="false" />
             <element signature="n#!!block;n#sendEmailForLead#0" expanded="false" />
             <element signature="n#!!block;n#getResponseToUserForPostback#0" expanded="false" />
-            <element signature="e#60237#60538#0" expanded="false" />
+            <element signature="e#60382#60683#0" expanded="false" />
             <element signature="n#!!block;n#getResponseToUserRef#0" expanded="false" />
             <element signature="n#!!block;n#getResponseToUserWithNoKey#0" expanded="false" />
-            <element signature="e#63045#63324#0" expanded="false" />
-            <element signature="e#63374#63774#0" expanded="false" />
-            <element signature="e#63839#63926#0" expanded="false" />
+            <element signature="e#63190#63469#0" expanded="false" />
+            <element signature="e#63519#63919#0" expanded="false" />
+            <element signature="e#63984#64071#0" expanded="false" />
             <element signature="n#!!block;n#leadgenProcessor#0" expanded="false" />
             <element signature="n#!!block;n#sendMessage#0" expanded="false" />
             <element signature="n#!!block;n#sendMessageUserRef#0" expanded="false" />
@@ -803,8 +806,8 @@
             <element signature="n#!!block;n#saveMessengerAdmin#0" expanded="false" />
             <element signature="n#!!block;n#keyIndexAction#0" expanded="false" />
             <element signature="n#!!block;n#validateSamples#0" expanded="false" />
-            <element signature="e#39716#39846#0" expanded="false" />
-            <element signature="e#39887#40051#0" expanded="false" />
+            <element signature="e#39861#39991#0" expanded="false" />
+            <element signature="e#40032#40196#0" expanded="false" />
             <element signature="n#!!block;n#looper#0" expanded="false" />
             <element signature="n#!!block;n#callback#0" expanded="false" />
             <element signature="n#!!block;n#helooTest#0" expanded="false" />
@@ -812,7 +815,7 @@
             <element signature="n#!!block;n#logAction#0" expanded="false" />
             <element signature="n#!!block;n#getUserInfo#0" expanded="false" />
             <element signature="n#!!block;n#getPageIdForLead#0" expanded="false" />
-            <element signature="e#43934#43993#0" expanded="false" />
+            <element signature="e#44079#44138#0" expanded="false" />
             <element signature="n#!!block;n#getPageAccessTokenForLead#0" expanded="false" />
             <element signature="n#!!block;n#getLead#0" expanded="false" />
             <element signature="n#!!block;n#getToken#0" expanded="false" />
@@ -821,12 +824,12 @@
             <element signature="n#!!block;n#sendEmail#0" expanded="false" />
             <element signature="n#!!block;n#sendEmailForLead#0" expanded="false" />
             <element signature="n#!!block;n#getResponseToUserForPostback#0" expanded="false" />
-            <element signature="e#60237#60538#0" expanded="false" />
+            <element signature="e#60382#60683#0" expanded="false" />
             <element signature="n#!!block;n#getResponseToUserRef#0" expanded="false" />
             <element signature="n#!!block;n#getResponseToUserWithNoKey#0" expanded="false" />
-            <element signature="e#63045#63324#0" expanded="false" />
-            <element signature="e#63374#63774#0" expanded="false" />
-            <element signature="e#63839#63926#0" expanded="false" />
+            <element signature="e#63190#63469#0" expanded="false" />
+            <element signature="e#63519#63919#0" expanded="false" />
+            <element signature="e#63984#64071#0" expanded="false" />
             <element signature="n#!!block;n#leadgenProcessor#0" expanded="false" />
             <element signature="n#!!block;n#sendMessage#0" expanded="false" />
             <element signature="n#!!block;n#sendMessageUserRef#0" expanded="false" />
@@ -861,8 +864,8 @@
             <element signature="n#!!block;n#saveMessengerAdmin#0" expanded="false" />
             <element signature="n#!!block;n#keyIndexAction#0" expanded="false" />
             <element signature="n#!!block;n#validateSamples#0" expanded="false" />
-            <element signature="e#39716#39846#0" expanded="false" />
-            <element signature="e#39887#40051#0" expanded="false" />
+            <element signature="e#39861#39991#0" expanded="false" />
+            <element signature="e#40032#40196#0" expanded="false" />
             <element signature="n#!!block;n#looper#0" expanded="false" />
             <element signature="n#!!block;n#callback#0" expanded="false" />
             <element signature="n#!!block;n#helooTest#0" expanded="false" />
@@ -870,7 +873,7 @@
             <element signature="n#!!block;n#logAction#0" expanded="false" />
             <element signature="n#!!block;n#getUserInfo#0" expanded="false" />
             <element signature="n#!!block;n#getPageIdForLead#0" expanded="false" />
-            <element signature="e#43934#43993#0" expanded="false" />
+            <element signature="e#44079#44138#0" expanded="false" />
             <element signature="n#!!block;n#getPageAccessTokenForLead#0" expanded="false" />
             <element signature="n#!!block;n#getLead#0" expanded="false" />
             <element signature="n#!!block;n#getToken#0" expanded="false" />
@@ -879,12 +882,12 @@
             <element signature="n#!!block;n#sendEmail#0" expanded="false" />
             <element signature="n#!!block;n#sendEmailForLead#0" expanded="false" />
             <element signature="n#!!block;n#getResponseToUserForPostback#0" expanded="false" />
-            <element signature="e#60237#60538#0" expanded="false" />
+            <element signature="e#60382#60683#0" expanded="false" />
             <element signature="n#!!block;n#getResponseToUserRef#0" expanded="false" />
             <element signature="n#!!block;n#getResponseToUserWithNoKey#0" expanded="false" />
-            <element signature="e#63045#63324#0" expanded="false" />
-            <element signature="e#63374#63774#0" expanded="false" />
-            <element signature="e#63839#63926#0" expanded="false" />
+            <element signature="e#63190#63469#0" expanded="false" />
+            <element signature="e#63519#63919#0" expanded="false" />
+            <element signature="e#63984#64071#0" expanded="false" />
             <element signature="n#!!block;n#leadgenProcessor#0" expanded="false" />
             <element signature="n#!!block;n#sendMessage#0" expanded="false" />
             <element signature="n#!!block;n#sendMessageUserRef#0" expanded="false" />
@@ -919,8 +922,8 @@
             <element signature="n#!!block;n#saveMessengerAdmin#0" expanded="false" />
             <element signature="n#!!block;n#keyIndexAction#0" expanded="false" />
             <element signature="n#!!block;n#validateSamples#0" expanded="false" />
-            <element signature="e#39716#39846#0" expanded="false" />
-            <element signature="e#39887#40051#0" expanded="false" />
+            <element signature="e#39861#39991#0" expanded="false" />
+            <element signature="e#40032#40196#0" expanded="false" />
             <element signature="n#!!block;n#looper#0" expanded="false" />
             <element signature="n#!!block;n#callback#0" expanded="false" />
             <element signature="n#!!block;n#helooTest#0" expanded="false" />
@@ -928,7 +931,7 @@
             <element signature="n#!!block;n#logAction#0" expanded="false" />
             <element signature="n#!!block;n#getUserInfo#0" expanded="false" />
             <element signature="n#!!block;n#getPageIdForLead#0" expanded="false" />
-            <element signature="e#43934#43993#0" expanded="false" />
+            <element signature="e#44079#44138#0" expanded="false" />
             <element signature="n#!!block;n#getPageAccessTokenForLead#0" expanded="false" />
             <element signature="n#!!block;n#getLead#0" expanded="false" />
             <element signature="n#!!block;n#getToken#0" expanded="false" />
@@ -937,12 +940,12 @@
             <element signature="n#!!block;n#sendEmail#0" expanded="false" />
             <element signature="n#!!block;n#sendEmailForLead#0" expanded="false" />
             <element signature="n#!!block;n#getResponseToUserForPostback#0" expanded="false" />
-            <element signature="e#60237#60538#0" expanded="false" />
+            <element signature="e#60382#60683#0" expanded="false" />
             <element signature="n#!!block;n#getResponseToUserRef#0" expanded="false" />
             <element signature="n#!!block;n#getResponseToUserWithNoKey#0" expanded="false" />
-            <element signature="e#63045#63324#0" expanded="false" />
-            <element signature="e#63374#63774#0" expanded="false" />
-            <element signature="e#63839#63926#0" expanded="false" />
+            <element signature="e#63190#63469#0" expanded="false" />
+            <element signature="e#63519#63919#0" expanded="false" />
+            <element signature="e#63984#64071#0" expanded="false" />
             <element signature="n#!!block;n#leadgenProcessor#0" expanded="false" />
             <element signature="n#!!block;n#sendMessage#0" expanded="false" />
             <element signature="n#!!block;n#sendMessageUserRef#0" expanded="false" />
@@ -977,8 +980,8 @@
             <element signature="n#!!block;n#saveMessengerAdmin#0" expanded="false" />
             <element signature="n#!!block;n#keyIndexAction#0" expanded="false" />
             <element signature="n#!!block;n#validateSamples#0" expanded="false" />
-            <element signature="e#39716#39846#0" expanded="false" />
-            <element signature="e#39887#40051#0" expanded="false" />
+            <element signature="e#39861#39991#0" expanded="false" />
+            <element signature="e#40032#40196#0" expanded="false" />
             <element signature="n#!!block;n#looper#0" expanded="false" />
             <element signature="n#!!block;n#callback#0" expanded="false" />
             <element signature="n#!!block;n#helooTest#0" expanded="false" />
@@ -986,7 +989,7 @@
             <element signature="n#!!block;n#logAction#0" expanded="false" />
             <element signature="n#!!block;n#getUserInfo#0" expanded="false" />
             <element signature="n#!!block;n#getPageIdForLead#0" expanded="false" />
-            <element signature="e#43934#43993#0" expanded="false" />
+            <element signature="e#44079#44138#0" expanded="false" />
             <element signature="n#!!block;n#getPageAccessTokenForLead#0" expanded="false" />
             <element signature="n#!!block;n#getLead#0" expanded="false" />
             <element signature="n#!!block;n#getToken#0" expanded="false" />
@@ -995,12 +998,12 @@
             <element signature="n#!!block;n#sendEmail#0" expanded="false" />
             <element signature="n#!!block;n#sendEmailForLead#0" expanded="false" />
             <element signature="n#!!block;n#getResponseToUserForPostback#0" expanded="false" />
-            <element signature="e#60237#60538#0" expanded="false" />
+            <element signature="e#60382#60683#0" expanded="false" />
             <element signature="n#!!block;n#getResponseToUserRef#0" expanded="false" />
             <element signature="n#!!block;n#getResponseToUserWithNoKey#0" expanded="false" />
-            <element signature="e#63045#63324#0" expanded="false" />
-            <element signature="e#63374#63774#0" expanded="false" />
-            <element signature="e#63839#63926#0" expanded="false" />
+            <element signature="e#63190#63469#0" expanded="false" />
+            <element signature="e#63519#63919#0" expanded="false" />
+            <element signature="e#63984#64071#0" expanded="false" />
             <element signature="n#!!block;n#leadgenProcessor#0" expanded="false" />
             <element signature="n#!!block;n#sendMessage#0" expanded="false" />
             <element signature="n#!!block;n#sendMessageUserRef#0" expanded="false" />
@@ -1035,8 +1038,8 @@
             <element signature="n#!!block;n#saveMessengerAdmin#0" expanded="false" />
             <element signature="n#!!block;n#keyIndexAction#0" expanded="false" />
             <element signature="n#!!block;n#validateSamples#0" expanded="false" />
-            <element signature="e#39716#39846#0" expanded="false" />
-            <element signature="e#39887#40051#0" expanded="false" />
+            <element signature="e#39861#39991#0" expanded="false" />
+            <element signature="e#40032#40196#0" expanded="false" />
             <element signature="n#!!block;n#looper#0" expanded="false" />
             <element signature="n#!!block;n#callback#0" expanded="false" />
             <element signature="n#!!block;n#helooTest#0" expanded="false" />
@@ -1044,7 +1047,7 @@
             <element signature="n#!!block;n#logAction#0" expanded="false" />
             <element signature="n#!!block;n#getUserInfo#0" expanded="false" />
             <element signature="n#!!block;n#getPageIdForLead#0" expanded="false" />
-            <element signature="e#43934#43993#0" expanded="false" />
+            <element signature="e#44079#44138#0" expanded="false" />
             <element signature="n#!!block;n#getPageAccessTokenForLead#0" expanded="false" />
             <element signature="n#!!block;n#getLead#0" expanded="false" />
             <element signature="n#!!block;n#getToken#0" expanded="false" />
@@ -1053,12 +1056,12 @@
             <element signature="n#!!block;n#sendEmail#0" expanded="false" />
             <element signature="n#!!block;n#sendEmailForLead#0" expanded="false" />
             <element signature="n#!!block;n#getResponseToUserForPostback#0" expanded="false" />
-            <element signature="e#60237#60538#0" expanded="false" />
+            <element signature="e#60382#60683#0" expanded="false" />
             <element signature="n#!!block;n#getResponseToUserRef#0" expanded="false" />
             <element signature="n#!!block;n#getResponseToUserWithNoKey#0" expanded="false" />
-            <element signature="e#63045#63324#0" expanded="false" />
-            <element signature="e#63374#63774#0" expanded="false" />
-            <element signature="e#63839#63926#0" expanded="false" />
+            <element signature="e#63190#63469#0" expanded="false" />
+            <element signature="e#63519#63919#0" expanded="false" />
+            <element signature="e#63984#64071#0" expanded="false" />
             <element signature="n#!!block;n#leadgenProcessor#0" expanded="false" />
             <element signature="n#!!block;n#sendMessage#0" expanded="false" />
             <element signature="n#!!block;n#sendMessageUserRef#0" expanded="false" />
@@ -1100,8 +1103,8 @@
             <element signature="n#!!block;n#saveMessengerAdmin#0" expanded="false" />
             <element signature="n#!!block;n#keyIndexAction#0" expanded="false" />
             <element signature="n#!!block;n#validateSamples#0" expanded="false" />
-            <element signature="e#39716#39846#0" expanded="false" />
-            <element signature="e#39887#40051#0" expanded="false" />
+            <element signature="e#39861#39991#0" expanded="false" />
+            <element signature="e#40032#40196#0" expanded="false" />
             <element signature="n#!!block;n#looper#0" expanded="false" />
             <element signature="n#!!block;n#callback#0" expanded="false" />
             <element signature="n#!!block;n#helooTest#0" expanded="false" />
@@ -1109,7 +1112,7 @@
             <element signature="n#!!block;n#logAction#0" expanded="false" />
             <element signature="n#!!block;n#getUserInfo#0" expanded="false" />
             <element signature="n#!!block;n#getPageIdForLead#0" expanded="false" />
-            <element signature="e#43934#43993#0" expanded="false" />
+            <element signature="e#44079#44138#0" expanded="false" />
             <element signature="n#!!block;n#getPageAccessTokenForLead#0" expanded="false" />
             <element signature="n#!!block;n#getLead#0" expanded="false" />
             <element signature="n#!!block;n#getToken#0" expanded="false" />
@@ -1118,12 +1121,12 @@
             <element signature="n#!!block;n#sendEmail#0" expanded="false" />
             <element signature="n#!!block;n#sendEmailForLead#0" expanded="false" />
             <element signature="n#!!block;n#getResponseToUserForPostback#0" expanded="false" />
-            <element signature="e#60237#60538#0" expanded="false" />
+            <element signature="e#60382#60683#0" expanded="false" />
             <element signature="n#!!block;n#getResponseToUserRef#0" expanded="false" />
             <element signature="n#!!block;n#getResponseToUserWithNoKey#0" expanded="false" />
-            <element signature="e#63045#63324#0" expanded="false" />
-            <element signature="e#63374#63774#0" expanded="false" />
-            <element signature="e#63839#63926#0" expanded="false" />
+            <element signature="e#63190#63469#0" expanded="false" />
+            <element signature="e#63519#63919#0" expanded="false" />
+            <element signature="e#63984#64071#0" expanded="false" />
             <element signature="n#!!block;n#leadgenProcessor#0" expanded="false" />
             <element signature="n#!!block;n#sendMessage#0" expanded="false" />
             <element signature="n#!!block;n#sendMessageUserRef#0" expanded="false" />
@@ -1165,8 +1168,8 @@
             <element signature="n#!!block;n#saveMessengerAdmin#0" expanded="false" />
             <element signature="n#!!block;n#keyIndexAction#0" expanded="false" />
             <element signature="n#!!block;n#validateSamples#0" expanded="false" />
-            <element signature="e#39716#39846#0" expanded="false" />
-            <element signature="e#39887#40051#0" expanded="false" />
+            <element signature="e#39861#39991#0" expanded="false" />
+            <element signature="e#40032#40196#0" expanded="false" />
             <element signature="n#!!block;n#looper#0" expanded="false" />
             <element signature="n#!!block;n#callback#0" expanded="false" />
             <element signature="n#!!block;n#helooTest#0" expanded="false" />
@@ -1174,7 +1177,7 @@
             <element signature="n#!!block;n#logAction#0" expanded="false" />
             <element signature="n#!!block;n#getUserInfo#0" expanded="false" />
             <element signature="n#!!block;n#getPageIdForLead#0" expanded="false" />
-            <element signature="e#43934#43993#0" expanded="false" />
+            <element signature="e#44079#44138#0" expanded="false" />
             <element signature="n#!!block;n#getPageAccessTokenForLead#0" expanded="false" />
             <element signature="n#!!block;n#getLead#0" expanded="false" />
             <element signature="n#!!block;n#getToken#0" expanded="false" />
@@ -1183,12 +1186,12 @@
             <element signature="n#!!block;n#sendEmail#0" expanded="false" />
             <element signature="n#!!block;n#sendEmailForLead#0" expanded="false" />
             <element signature="n#!!block;n#getResponseToUserForPostback#0" expanded="false" />
-            <element signature="e#60237#60538#0" expanded="false" />
+            <element signature="e#60382#60683#0" expanded="false" />
             <element signature="n#!!block;n#getResponseToUserRef#0" expanded="false" />
             <element signature="n#!!block;n#getResponseToUserWithNoKey#0" expanded="false" />
-            <element signature="e#63045#63324#0" expanded="false" />
-            <element signature="e#63374#63774#0" expanded="false" />
-            <element signature="e#63839#63926#0" expanded="false" />
+            <element signature="e#63190#63469#0" expanded="false" />
+            <element signature="e#63519#63919#0" expanded="false" />
+            <element signature="e#63984#64071#0" expanded="false" />
             <element signature="n#!!block;n#leadgenProcessor#0" expanded="false" />
             <element signature="n#!!block;n#sendMessage#0" expanded="false" />
             <element signature="n#!!block;n#sendMessageUserRef#0" expanded="false" />
@@ -1230,8 +1233,8 @@
             <element signature="n#!!block;n#saveMessengerAdmin#0" expanded="false" />
             <element signature="n#!!block;n#keyIndexAction#0" expanded="false" />
             <element signature="n#!!block;n#validateSamples#0" expanded="false" />
-            <element signature="e#39716#39846#0" expanded="false" />
-            <element signature="e#39887#40051#0" expanded="false" />
+            <element signature="e#39861#39991#0" expanded="false" />
+            <element signature="e#40032#40196#0" expanded="false" />
             <element signature="n#!!block;n#looper#0" expanded="false" />
             <element signature="n#!!block;n#callback#0" expanded="false" />
             <element signature="n#!!block;n#helooTest#0" expanded="false" />
@@ -1239,7 +1242,7 @@
             <element signature="n#!!block;n#logAction#0" expanded="false" />
             <element signature="n#!!block;n#getUserInfo#0" expanded="false" />
             <element signature="n#!!block;n#getPageIdForLead#0" expanded="false" />
-            <element signature="e#43934#43993#0" expanded="false" />
+            <element signature="e#44079#44138#0" expanded="false" />
             <element signature="n#!!block;n#getPageAccessTokenForLead#0" expanded="false" />
             <element signature="n#!!block;n#getLead#0" expanded="false" />
             <element signature="n#!!block;n#getToken#0" expanded="false" />
@@ -1248,12 +1251,12 @@
             <element signature="n#!!block;n#sendEmail#0" expanded="false" />
             <element signature="n#!!block;n#sendEmailForLead#0" expanded="false" />
             <element signature="n#!!block;n#getResponseToUserForPostback#0" expanded="false" />
-            <element signature="e#60237#60538#0" expanded="false" />
+            <element signature="e#60382#60683#0" expanded="false" />
             <element signature="n#!!block;n#getResponseToUserRef#0" expanded="false" />
             <element signature="n#!!block;n#getResponseToUserWithNoKey#0" expanded="false" />
-            <element signature="e#63045#63324#0" expanded="false" />
-            <element signature="e#63374#63774#0" expanded="false" />
-            <element signature="e#63839#63926#0" expanded="false" />
+            <element signature="e#63190#63469#0" expanded="false" />
+            <element signature="e#63519#63919#0" expanded="false" />
+            <element signature="e#63984#64071#0" expanded="false" />
             <element signature="n#!!block;n#leadgenProcessor#0" expanded="false" />
             <element signature="n#!!block;n#sendMessage#0" expanded="false" />
             <element signature="n#!!block;n#sendMessageUserRef#0" expanded="false" />
@@ -1365,54 +1368,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="9486">
-          <caret line="1019" column="0" lean-forward="false" selection-start-line="1019" selection-start-column="0" selection-end-line="1019" selection-end-column="0" />
-          <folding>
-            <element signature="e#956#980#0" expanded="false" />
-            <element signature="e#5772#9819#0" expanded="false" />
-            <element signature="e#5911#7069#0" expanded="false" />
-            <element signature="e#7149#9789#0" expanded="false" />
-            <element signature="n#!!block;n#saveMessengerAdmin#0" expanded="false" />
-            <element signature="n#!!block;n#keyIndexAction#0" expanded="false" />
-            <element signature="n#!!block;n#validateSamples#0" expanded="false" />
-            <element signature="e#39716#39846#0" expanded="false" />
-            <element signature="e#39887#40051#0" expanded="false" />
-            <element signature="n#!!block;n#looper#0" expanded="false" />
-            <element signature="n#!!block;n#callback#0" expanded="false" />
-            <element signature="n#!!block;n#helooTest#0" expanded="false" />
-            <element signature="n#!!block;n#pixel#0" expanded="false" />
-            <element signature="n#!!block;n#logAction#0" expanded="false" />
-            <element signature="n#!!block;n#getUserInfo#0" expanded="false" />
-            <element signature="n#!!block;n#getPageIdForLead#0" expanded="false" />
-            <element signature="e#43934#43993#0" expanded="false" />
-            <element signature="n#!!block;n#getPageAccessTokenForLead#0" expanded="false" />
-            <element signature="n#!!block;n#getLead#0" expanded="false" />
-            <element signature="n#!!block;n#getToken#0" expanded="false" />
-            <element signature="n#!!block;n#getAdsResponseToUser#0" expanded="false" />
-            <element signature="n#!!block;n#getResponseToUser#0" expanded="false" />
-            <element signature="n#!!block;n#sendEmail#0" expanded="false" />
-            <element signature="n#!!block;n#sendEmailForLead#0" expanded="false" />
-            <element signature="n#!!block;n#getResponseToUserForPostback#0" expanded="false" />
-            <element signature="e#60237#60538#0" expanded="false" />
-            <element signature="n#!!block;n#getResponseToUserRef#0" expanded="false" />
-            <element signature="n#!!block;n#getResponseToUserWithNoKey#0" expanded="false" />
-            <element signature="e#63045#63324#0" expanded="false" />
-            <element signature="e#63374#63774#0" expanded="false" />
-            <element signature="e#63839#63926#0" expanded="false" />
-            <element signature="n#!!block;n#leadgenProcessor#0" expanded="false" />
-            <element signature="n#!!block;n#sendMessage#0" expanded="false" />
-            <element signature="n#!!block;n#sendMessageUserRef#0" expanded="false" />
-            <element signature="n#!!block;n#sendMessagePostback#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/new_nlp.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="246" column="64" lean-forward="false" selection-start-line="246" selection-start-column="64" selection-end-line="246" selection-end-column="64" />
+        <state relative-caret-position="1904">
+          <caret line="456" column="43" lean-forward="true" selection-start-line="456" selection-start-column="43" selection-end-line="456" selection-end-column="43" />
           <folding>
             <element signature="e#0#42#0" expanded="false" />
             <element signature="e#14574#14633#0" expanded="false" />
@@ -1425,6 +1384,50 @@
             <element signature="n#!!block;n#test#0" expanded="false" />
             <element signature="e#17947#18010#0" expanded="false" />
             <element signature="e#18041#18117#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="261">
+          <caret line="399" column="116" lean-forward="false" selection-start-line="399" selection-start-column="116" selection-end-line="399" selection-end-column="116" />
+          <folding>
+            <element signature="e#956#980#0" expanded="false" />
+            <element signature="e#5772#9819#0" expanded="false" />
+            <element signature="e#5911#7069#0" expanded="false" />
+            <element signature="e#7149#9789#0" expanded="false" />
+            <element signature="n#!!block;n#saveMessengerAdmin#0" expanded="false" />
+            <element signature="n#!!block;n#keyIndexAction#0" expanded="false" />
+            <element signature="n#!!block;n#validateSamples#0" expanded="false" />
+            <element signature="e#39861#39991#0" expanded="false" />
+            <element signature="e#40032#40196#0" expanded="false" />
+            <element signature="n#!!block;n#looper#0" expanded="false" />
+            <element signature="n#!!block;n#callback#0" expanded="false" />
+            <element signature="n#!!block;n#helooTest#0" expanded="false" />
+            <element signature="n#!!block;n#pixel#0" expanded="false" />
+            <element signature="n#!!block;n#logAction#0" expanded="false" />
+            <element signature="n#!!block;n#getUserInfo#0" expanded="false" />
+            <element signature="n#!!block;n#getPageIdForLead#0" expanded="false" />
+            <element signature="e#44079#44138#0" expanded="false" />
+            <element signature="n#!!block;n#getPageAccessTokenForLead#0" expanded="false" />
+            <element signature="n#!!block;n#getLead#0" expanded="false" />
+            <element signature="n#!!block;n#getToken#0" expanded="false" />
+            <element signature="n#!!block;n#getAdsResponseToUser#0" expanded="false" />
+            <element signature="n#!!block;n#getResponseToUser#0" expanded="false" />
+            <element signature="n#!!block;n#sendEmail#0" expanded="false" />
+            <element signature="n#!!block;n#sendEmailForLead#0" expanded="false" />
+            <element signature="n#!!block;n#getResponseToUserForPostback#0" expanded="false" />
+            <element signature="e#60382#60683#0" expanded="false" />
+            <element signature="n#!!block;n#getResponseToUserRef#0" expanded="false" />
+            <element signature="n#!!block;n#getResponseToUserWithNoKey#0" expanded="false" />
+            <element signature="e#63190#63469#0" expanded="false" />
+            <element signature="e#63519#63919#0" expanded="false" />
+            <element signature="e#63984#64071#0" expanded="false" />
+            <element signature="n#!!block;n#leadgenProcessor#0" expanded="false" />
+            <element signature="n#!!block;n#sendMessage#0" expanded="false" />
+            <element signature="n#!!block;n#sendMessageUserRef#0" expanded="false" />
+            <element signature="n#!!block;n#sendMessagePostback#0" expanded="false" />
           </folding>
         </state>
       </provider>
