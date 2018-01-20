@@ -396,6 +396,7 @@ app.post('/webhook', function (req, res) {
                             console.log("===== event.postback.payload ========");
                             if (event.postback.payload.indexOf('|param|') > -1) {
                                 var ref = event.postback.payload;
+                                console.log("payload " + ref);
                                 if (ref.indexOf("halfcup.com") > -1){
                                     ref = ref.replace("http://halfcup.com/social_rebates_system/app/msgredir?", "");
                                 }
