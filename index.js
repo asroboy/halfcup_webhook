@@ -400,7 +400,9 @@ app.post('/webhook', function (req, res) {
                                 if (ref.indexOf("halfcup.com") > -1){
                                     ref = ref.replace("http://halfcup.com/social_rebates_system/app/msgredir?", "");
                                 }
-                                ref = ref.split("ref=")[1];
+                                if (ref.indexOf("ref=") > -1){
+                                    ref = ref.split("ref=")[1];
+                                }
                                 console.log("payload after extract: " + ref);
                                 if (ref.indexOf("{{") > -1) {
                                     // new_nlp.getChatBot(ref, event.recipient.id, event.sender.id, res);
