@@ -219,6 +219,33 @@ function getThirdPartyPageID_1(text, wang_token, pageId, prevKeys, recipient, to
     );
 }
 
+
+function getThirdPartyPageID_2(key, sender, recipient, token, res, param) {
+    var url = 'http://halfcup.com//social_rebates_system/app/get3rdParty?page_id=' + sender;
+    console.log('url : ' + url);
+    request({
+            url: url,
+            method: 'GET'
+        }, function (error, response, body) {
+            if (error) {
+                console.log('Error sending message: ', error);
+            } else if (response.body.error) {
+                console.log('Error: ', response.body.error);
+            } else {
+                var obj = JSON.parse(body);
+                console.log('get 3rd Party pageid RESULT: ', JSON.stringify(obj.aggregation));
+                // res.send(obj);
+                if (obj.data !== 'not found') {
+                    getAggregationObject(key, sender, recipient, token, res, param, obj.data);
+                } else {
+                    getAggregationObject(key, sender, recipient, token, res, param, "");
+                }
+
+            }
+        }
+    );
+}
+
 function getAggregationObjectDoneBot(key, sender, recipient, token, res, param, third_party) {
     var mKey = param.replace('AGGREGATION_', '');
     var url = 'http://aileadsbooster.com/Backend/aggregation?' + mKey + '&third-party=' + third_party;
@@ -271,7 +298,8 @@ function getParam(key, sender, recipient, token, res) {
                 console.log('getChatBot RESULT: ', obj);
                 if (obj.data !== null) {
                     var param = obj.data.prm;
-                    getAggregationObject(key, sender, recipient, token, res, param);
+                    getThirdPartyPageID_2(key, sender, recipient, token, res, param);
+                    // getAggregationObject(key, sender, recipient, token, res, param);
                 }
 
             }
@@ -279,17 +307,17 @@ function getParam(key, sender, recipient, token, res) {
     );
 }
 
-function getAggregationObject(key, sender, recipient, token, res, param) {
+function getAggregationObject(key, sender, recipient, token, res, param, third_party) {
     if (key.indexOf('AGGREGATION_') > -1) {
         var mKey = key.replace('AGGREGATION_', '');
         var url = '';
         if (mKey === 'object=main') {
-            url = 'http://aileadsbooster.com/Backend/aggregation?' + mKey + '&query=' + param;
+            url = 'http://aileadsbooster.com/Backend/aggregation?' + mKey + '&query=' + param + '&third-party=' + third_party;
         } else {
             if (mKey.indexOf("{{") > -1) {
                 mKey = mKey.replace("{{", "").replace("}}", "");
             }
-            url = 'http://aileadsbooster.com/Backend/aggregation?' + mKey + '&param=' + param;
+            url = 'http://aileadsbooster.com/Backend/aggregation?' + mKey + '&param=' + param + '&third-party=' + third_party
         }
 
         console.log('url', url);
@@ -540,7 +568,7 @@ function getAiKey(text, wang_token, pageId, prevKeys, recipient, token, res, agg
     if (aggregateObj.indexOf("{{") > -1) {
         aggregateObj = aggregateObj.replace("{{", "").replace("}}", "");
     }
-    var url = 'http://aileadsbooster.com/Backend/query?q=' + encodeURI(text) + '&access_token=' + wang_token + '&prev_key=' + prevKeys + '&aggregation=' + aggregateObj + '&param=' + param + '&third-party='+ third_party;
+    var url = 'http://aileadsbooster.com/Backend/query?q=' + encodeURI(text) + '&access_token=' + wang_token + '&prev_key=' + prevKeys + '&aggregation=' + aggregateObj + '&param=' + param + '&third-party=' + third_party;
     if (aggregateObj === '') {
         var url = 'http://aileadsbooster.com/Backend/query?q=' + encodeURI(text) + '&access_token=' + wang_token + '&prev_key=' + prevKeys + '&param=' + param;
     } else {
