@@ -279,7 +279,7 @@ app.post('/webhook', function (req, res) {
                                          * @type {*}
                                          */
 
-                                        if (event.message.quick_reply.payload.indexOf('|param|')) {
+                                        if (event.message.quick_reply.payload.indexOf('|param|') > -1) {
                                             var code = event.message.quick_reply.payload.split('\|param\|')[1];
                                             var text = event.message.quick_reply.payload.split('\|param\|')[0];
                                             clearAiKey(event.recipient.id);
@@ -479,7 +479,7 @@ app.post('/webhook', function (req, res) {
                                         getResponseToUser(payloads[i], event.sender.id, event.recipient.id);
                                     }
                                 } else if ((event.postback.payload.indexOf("|") > -1) && payload_prefix !== 'AGGREGATION') {
-                                    if (event.postback.payload.indexOf('|param|')) {
+                                    if (event.postback.payload.indexOf('|param|') > -1) {
                                         var code = event.postback.payload.split('\|param\|')[1];
                                         var text = event.postback.payload.split('\|param\|')[0];
                                         clearAiKey(event.recipient.id);
