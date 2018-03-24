@@ -537,7 +537,13 @@ app.post('/webhook', function (req, res) {
                                 } else if (event.postback.payload.indexOf("{{") > -1) {
                                     console.log('call new_nlp event.postback.payload {{');
                                     new_nlp.getChatBot(event.postback.payload, event.recipient.id, event.sender.id, res);
-                                } else {
+                                }
+                                else if(find_prefix[0] === "TRUE" && find_prefix[1] === "MONEY"){
+                                    var keyword = event.postback.payload.replace("TRUE_MONEY_", "");
+                                    console.log("keyword " + keyword);
+                                    // getResponseToUserForPostback(keyword, event.sender.id, event.recipient.id);
+                                }
+                                else {
                                     pixel('PostBack', event.postback.payload, event.postback.payload, event.sender.id, event.recipient.id);
                                     getResponseToUserForPostback(event.postback.payload, event.sender.id, event.recipient.id);
                                 }
