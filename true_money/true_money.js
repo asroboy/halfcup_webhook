@@ -58,12 +58,17 @@ function getToken(messages, sender, recipient) {
 
                 if (code == 1) {
                     var token = obj.messenger_data.pageAccessToken;
-                    var message = JSON.stringify(messages[0].message);
+
+
+                    var messages_ = JSON.stringify(messages);
                     console.log('message ==> ' + messages);
-                    if (message.indexOf("{{first_name}}") > -1) {
-                        getUserInfo(recipient, token, message);
+                    if (messages_.indexOf("{{first_name}}") > -1) {
+                        getUserInfo(recipient, token, messages_);
                     } else {
-                        sendMessage(recipient,messages[0].message, token);
+                        // sendMessage(recipient,messages[0].message, token);
+                        // if (messages.length > 0) {
+                            sendM(JSON.parse(messages_), recipient, token);
+                        // }
                     }
 
 
@@ -100,7 +105,7 @@ function sendMessage(recipientId, message, token) {
 };
 
 
-function getUserInfo(recipient, token, message) {
+function getUserInfo(recipient, token, messages) {
     var url = 'https://graph.facebook.com/v2.6/' + recipient + '?fields=first_name,last_name,profile_pic,locale,timezone,gender&access_token=' + token;
     console.log('url', url);
     request({
@@ -113,9 +118,52 @@ function getUserInfo(recipient, token, message) {
             console.log('Error: ', response.body.error);
         } else {
             var profile_user = JSON.parse(body);
-            message = message.replace("{{first_name}}", profile_user.first_name);
-            sendMessage(recipient, JSON.parse(message), token);
+            messages = messages.replace("{{first_name}}", profile_user.first_name);
+            // sendMessage(recipient, JSON.parse(message), token);
+            sendM(JSON.parse(messages), recipient, token);
 
         }
     });
+}
+
+
+function sendM(messages, recipient, token) {
+    var i = 0;
+
+    function getOneM(messages) {
+        console.log('i ' + i);
+        var message = messages[i];
+        var m = '';
+        if (message.message.attachment) {
+            m = message.message;
+        } else {
+            // m = {"text": message.message.text};
+            m = message.message;
+        }
+        console.log('m ' + JSON.stringify(m));
+        request({
+            url: 'https://graph.facebook.com/v2.6/me/messages',
+            qs: {access_token: token},
+            method: 'POST',
+            json: {
+                recipient: {id: recipient},
+                message: m,
+            }
+        }, function (err, resp, body) {
+            console.log("--->  " + JSON.stringify(body));
+        }).on('end', function () {
+            console.log("done with ONE user ");
+            if (i < messages.length) { // do we still have users to make requests?
+                getOneM(messages); // recursion
+            } else {
+                console.log("done with ALL users");
+                // res.json(success);
+            }
+        });
+
+        i++;
+    }
+
+    // make a copy of the original users Array because we're going to mutate it
+    getOneM(Array.from(messages));
 }
