@@ -23,7 +23,7 @@
       <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-10642">
+            <state relative-caret-position="-10628">
               <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="9" selection-end-column="29" />
               <folding>
                 <element signature="e#517#832#0" expanded="false" />
@@ -89,8 +89,8 @@
       <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ai/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="541" column="114" lean-forward="false" selection-start-line="541" selection-start-column="99" selection-end-line="541" selection-end-column="114" />
+            <state relative-caret-position="401">
+              <caret line="855" column="1" lean-forward="true" selection-start-line="830" selection-start-column="0" selection-end-line="855" selection-end-column="1" />
               <folding />
             </state>
           </provider>
@@ -99,8 +99,8 @@
       <file leaf-file-name="true_money.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/true_money/true_money.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="233">
-              <caret line="39" column="43" lean-forward="false" selection-start-line="39" selection-start-column="43" selection-end-line="39" selection-end-column="43" />
+            <state relative-caret-position="267">
+              <caret line="64" column="62" lean-forward="false" selection-start-line="64" selection-start-column="62" selection-end-line="64" selection-end-column="62" />
               <folding />
             </state>
           </provider>
@@ -201,9 +201,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>ref</find>
-      <find>PARAMS_AI_ITEM</find>
-      <find>event.referral.ref</find>
       <find>try</find>
       <find>setting_up_push</find>
       <find>TEXT</find>
@@ -228,9 +225,12 @@
       <find>payload_prefix</find>
       <find>TEXT ==&gt;</find>
       <find>http://halfcup.com/social_rebates_system/api/getResponseMessage</find>
-      <find>getResponseToUserForPostback</find>
       <find>getToken</find>
       <find>event.postback.</find>
+      <find>getResponseToUserForPostback</find>
+      <find>{{</find>
+      <find>user</find>
+      <find>getUserInfo</find>
     </findStrings>
     <replaceStrings>
       <replace>localhost:8080</replace>
@@ -592,12 +592,12 @@
       <workItem from="1521193194841" duration="6381000" />
       <workItem from="1521431732670" duration="12000" />
       <workItem from="1521623819898" duration="1282000" />
-      <workItem from="1521864397305" duration="4736000" />
+      <workItem from="1521864397305" duration="6317000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="668960000" />
+    <option name="totallyTimeSpent" value="670541000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1461,9 +1461,36 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/witapi.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/new_nlp.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="19" column="4" lean-forward="false" selection-start-line="19" selection-start-column="4" selection-end-line="19" selection-end-column="4" />
+          <folding>
+            <element signature="e#0#42#0" expanded="false" />
+            <element signature="e#18001#18060#0" expanded="false" />
+            <element signature="e#18120#18183#0" expanded="false" />
+            <element signature="e#18214#18290#0" expanded="false" />
+            <element signature="e#18895#18954#0" expanded="false" />
+            <element signature="e#19014#19077#0" expanded="false" />
+            <element signature="e#19108#19184#0" expanded="false" />
+            <element signature="n#!!block;n#test#0" expanded="false" />
+            <element signature="e#21374#21437#0" expanded="false" />
+            <element signature="e#21468#21544#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-10642">
+        <state relative-caret-position="-10628">
           <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="9" selection-end-column="29" />
           <folding>
             <element signature="e#517#832#0" expanded="false" />
@@ -1515,45 +1542,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/witapi.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/new_nlp.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="19" column="4" lean-forward="false" selection-start-line="19" selection-start-column="4" selection-end-line="19" selection-end-column="4" />
-          <folding>
-            <element signature="e#0#42#0" expanded="false" />
-            <element signature="e#18001#18060#0" expanded="false" />
-            <element signature="e#18120#18183#0" expanded="false" />
-            <element signature="e#18214#18290#0" expanded="false" />
-            <element signature="e#18895#18954#0" expanded="false" />
-            <element signature="e#19014#19077#0" expanded="false" />
-            <element signature="e#19108#19184#0" expanded="false" />
-            <element signature="n#!!block;n#test#0" expanded="false" />
-            <element signature="e#21374#21437#0" expanded="false" />
-            <element signature="e#21468#21544#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ai/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="541" column="114" lean-forward="false" selection-start-line="541" selection-start-column="99" selection-end-line="541" selection-end-column="114" />
+        <state relative-caret-position="401">
+          <caret line="855" column="1" lean-forward="true" selection-start-line="830" selection-start-column="0" selection-end-line="855" selection-end-column="1" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/true_money/true_money.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="233">
-          <caret line="39" column="43" lean-forward="false" selection-start-line="39" selection-start-column="43" selection-end-line="39" selection-end-column="43" />
+        <state relative-caret-position="267">
+          <caret line="64" column="62" lean-forward="false" selection-start-line="64" selection-start-column="62" selection-end-line="64" selection-end-column="62" />
           <folding />
         </state>
       </provider>
