@@ -33,7 +33,11 @@ function getGreetings(event, keyword) {
                 console.log(JSON.stringify(obj.data[0]));
                 var recipient = event.sender.id;
                 var sender = event.recipient.id;
-                getToken(obj.data[0].message, sender, recipient);
+                var message = obj.data[0].message;
+                if (message.indexOf("{{first_name}}")) {
+                    message.replace("{{first_name}}", event.recipient.name.first_name);
+                }
+                getToken(message, sender, recipient);
             }
         }
     );
@@ -71,6 +75,7 @@ function getToken(message, sender, recipient) {
 
 // generic function sending messages
 function sendMessage(recipientId, message, token) {
+
     request({
         url: 'https://graph.facebook.com/v2.6/me/messages',
         qs: {access_token: token},
