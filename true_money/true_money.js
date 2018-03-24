@@ -78,14 +78,14 @@ function getToken(messages, sender, recipient) {
 
 // generic function sending messages
 function sendMessage(recipientId, message, token) {
-
+    console.log(message);
     request({
         url: 'https://graph.facebook.com/v2.6/me/messages',
         qs: {access_token: token},
         method: 'POST',
         json: {
             recipient: {id: recipientId},
-            message: message,
+            message: message.message,
         }
     }, function (error, response, body) {
         if (error) {
