@@ -4,7 +4,9 @@ var request = require('request');
 var app = express();
 var Analytics = require('analytics-node');
 var analytics = new Analytics('kngf8THjj5e2QnLTdjfprebBW1KdQQbx');
-
+var nlp = require('../nlp');
+var new_nlp = require('../new_nlp');
+var test = require('../test');
 
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
@@ -541,7 +543,7 @@ app.post('/webhook', function (req, res) {
                                 else if(find_prefix[0] === "TRUE" && find_prefix[1] === "MONEY"){
                                     var keyword = event.postback.payload.replace("TRUE_MONEY_", "");
                                     console.log("keyword " + keyword);
-                                    // getResponseToUserForPostback(keyword, event.sender.id, event.recipient.id);
+                                    getResponseToUserForPostback(keyword, event.sender.id, event.recipient.id);
                                 }
                                 else {
                                     pixel('PostBack', event.postback.payload, event.postback.payload, event.sender.id, event.recipient.id);
