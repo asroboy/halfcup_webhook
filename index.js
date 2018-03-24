@@ -507,7 +507,7 @@ app.post('/webhook', function (req, res) {
                                  * MULTI KEY FORMAT [A]|[B]|BOT_xxxx_xxxx
                                  * MULTI KEY FORMAT [A]|[B]|[BOT_xxxx_xxxx]|BOT_xxx_xxx
                                  */
-                                else if (event.postback.payload.indexOf("|") > -1) {
+                                else if (event.postback.payload.indexOf("|") > -1 && !(find_prefix[0] === "TRUE" && find_prefix[1] === "MONEY")) {
                                     /**
                                      * Split Payload marked with |
                                      * @type {*}

@@ -476,7 +476,7 @@ app.post('/webhook', function (req, res) {
                                  * MULTI KEY FORMAT [A]|[B]|BOT_xxxx_xxxx
                                  * MULTI KEY FORMAT [A]|[B]|[BOT_xxxx_xxxx]|BOT_xxx_xxx
                                  */
-                                else if (event.postback.payload.indexOf("|") > -1) {
+                                else if (event.postback.payload.indexOf("|") > -1 && !(find_prefix[0] === "TRUE" && find_prefix[1] === "MONEY")) {
                                     /**
                                      * Split Payload marked with |
                                      * @type {*}
@@ -508,7 +508,7 @@ app.post('/webhook', function (req, res) {
                                     pixel('PostBack', "Get Started", event.postback.payload, event.sender.id, event.recipient.id);
                                     getResponseToUser(event.postback.payload, event.sender.id, event.recipient.id);
                                 }
-                                else if (event.postback.payload.indexOf("{{") > -1 && !(find_prefix[0] === "TRUE" && find_prefix[1] === "MONEY")) {
+                                else if (event.postback.payload.indexOf("{{") > -1) {
                                     console.log('call new_nlp event.postback.payload {{');
                                     new_nlp.getChatBot(event.postback.payload, event.recipient.id, event.sender.id, res);
                                 }
