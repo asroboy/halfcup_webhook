@@ -58,11 +58,12 @@ function getToken(messages, sender, recipient) {
 
                 if (code == 1) {
                     var token = obj.messenger_data.pageAccessToken;
-                    var message = JSON.stringify(messages[0].message)
+                    var message = JSON.stringify(messages[0].message);
+                    console.log('message ==> ' + message);
                     if (message.indexOf("{{first_name}}") > -1) {
-                        getUserInfo(recipient, token, message)
+                        getUserInfo(recipient, token, message);
                     } else {
-                        sendMessage(recipient,messages[0].message, token)
+                        sendMessage(recipient,messages[0].message, token);
                     }
 
 
