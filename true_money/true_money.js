@@ -30,7 +30,7 @@ function getGreetings(event, keyword) {
                 console.log('Error: ', response.body.error);
             } else {
                 var obj = JSON.parse(body);
-                console.log(JSON.stringify(obj.data));
+                console.log(JSON.stringify(obj.data[0]));
                 var recipient = event.sender.id;
                 var sender = event.recipient.id;
                 getToken(obj.data[0], sender, recipient);
