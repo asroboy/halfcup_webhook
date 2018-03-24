@@ -33,11 +33,11 @@ function getGreetings(event, keyword) {
                 console.log(JSON.stringify(obj.data[0]));
                 var recipient = event.sender.id;
                 var sender = event.recipient.id;
-                var message = obj.data[0].message;
+                var message = JSON.stringify(obj.data[0].message);
                 if (message.indexOf("{{first_name}}")) {
                     message.replace("{{first_name}}", event.recipient.name.first_name);
                 }
-                getToken(message, sender, recipient);
+                getToken(JSON.parse(message), sender, recipient);
             }
         }
     );
