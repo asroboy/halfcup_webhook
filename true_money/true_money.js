@@ -13,11 +13,11 @@ var urlApi = "http://aileadsbooster.com/TrueMoney/aggregation?object=";
 
 function postbackHandler(event, keyword) {
     if (keyword === "GREETINGS") {
-        getGreetings(keyword);
+        getGreetings(event, keyword);
     }
 }
 
-function getGreetings(keyword) {
+function getGreetings(event, keyword) {
     var url = urlApi + keyword;
     console.log('url', url);
     request({
