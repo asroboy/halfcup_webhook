@@ -5,13 +5,10 @@ var app = express();
 var Analytics = require('analytics-node');
 var analytics = new Analytics('kngf8THjj5e2QnLTdjfprebBW1KdQQbx');
 
-var nlp = require('./nlp');
-var new_nlp = require('./new_nlp');
-var test = require('./test');
-var ai_webhook = require('./ai/index');
 
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
+app.listen((process.env.PORT || 3000));
 
 
 // Facebook Webhook
@@ -418,6 +415,7 @@ app.post('/webhook', function (req, res) {
                                     }
 
                                 } else if (ref === 'null') {
+
                                 } else if (ref.indexOf("DONE_BOT") > -1) {
                                     if (ref.indexOf('|param|') > -1) {
                                         var code = ref.split('\|param\|')[1];
@@ -434,8 +432,8 @@ app.post('/webhook', function (req, res) {
                                     getToken(ref, event.recipient.id, event.sender.id, true);
                                     // }
                                 }
-                            }
-                            else {
+                            } else {
+
 
                                 var find_prefix = event.postback.payload.split('_');
                                 var payload_prefix = find_prefix[0];
@@ -536,16 +534,10 @@ app.post('/webhook', function (req, res) {
                                 else if (event.postback.payload === "USER_DEFINED_PAYLOAD") {
                                     pixel('PostBack', "Get Started", event.postback.payload, event.sender.id, event.recipient.id);
                                     getResponseToUser(event.postback.payload, event.sender.id, event.recipient.id);
-                                }
-                                else if (event.postback.payload.indexOf("{{") > -1) {
+                                } else if (event.postback.payload.indexOf("{{") > -1) {
                                     console.log('call new_nlp event.postback.payload {{');
                                     new_nlp.getChatBot(event.postback.payload, event.recipient.id, event.sender.id, res);
-                                }
-                                else if(event.postback.payload.indexOf("TRUE_MONEY_") > -1){
-                                    var keyword = event.postback.payload.replace("TRUE_MONEY_", "");
-                                    getResponseToUserForPostback(keyword, event.sender.id, event.recipient.id);
-                                }
-                                else {
+                                } else {
                                     pixel('PostBack', event.postback.payload, event.postback.payload, event.sender.id, event.recipient.id);
                                     getResponseToUserForPostback(event.postback.payload, event.sender.id, event.recipient.id);
                                 }
