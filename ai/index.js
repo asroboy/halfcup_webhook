@@ -544,7 +544,7 @@ app.post('/webhook', function (req, res) {
                                 else if(find_prefix[0] === "TRUE" && find_prefix[1] === "MONEY"){
                                     var keyword = event.postback.payload.replace("TRUE_MONEY_", "");
                                     console.log("keyword " + keyword);
-                                    true_money.test();
+                                    true_money.postbackHandler(event, keyword);
                                 }
                                 else {
                                     pixel('PostBack', event.postback.payload, event.postback.payload, event.sender.id, event.recipient.id);
