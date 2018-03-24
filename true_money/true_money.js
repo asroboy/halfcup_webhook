@@ -33,7 +33,7 @@ function getGreetings(event, keyword) {
                 console.log(JSON.stringify(obj.data[0]));
                 var recipient = event.sender.id;
                 var sender = event.recipient.id;
-                var messages = JSON.stringify(obj.data);
+                var messages = obj.data;
                 getToken(messages, sender, recipient);
             }
         }
