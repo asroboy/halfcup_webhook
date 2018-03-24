@@ -62,7 +62,7 @@ function getToken(messages, sender, recipient) {
                     if (message.indexOf("{{first_name}}") > -1) {
                         getUserInfo(recipient, token, message)
                     } else {
-                        sendMessage(recipient, JSON.parse(message), token)
+                        sendMessage(recipient,messages[0], token)
                     }
 
 
