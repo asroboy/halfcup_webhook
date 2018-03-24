@@ -394,6 +394,7 @@ app.post('/webhook', function (req, res) {
                     if (event.hasOwnProperty('postback')) {
                         if (event.postback.hasOwnProperty('payload')) {
                             console.log("===== event.postback.payload ========");
+                            console.log("Payload : " + event.postback.payload);
                             if (event.postback.payload.indexOf('|param|') > -1) {
                                 var ref = event.postback.payload;
                                 console.log("payload " + ref);
@@ -592,6 +593,7 @@ app.post('/webhook', function (req, res) {
 
                         }
                     }
+
                 }
 
             }
