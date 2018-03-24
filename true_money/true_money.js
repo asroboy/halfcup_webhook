@@ -58,11 +58,11 @@ function getToken(messages, sender, recipient) {
 
                 if (code == 1) {
                     var token = obj.messenger_data.pageAccessToken;
-                    var message = JSON.stringify(messages[0])
+                    var message = JSON.stringify(messages[0].message)
                     if (message.indexOf("{{first_name}}") > -1) {
                         getUserInfo(recipient, token, message)
                     } else {
-                        sendMessage(recipient,messages[0], token)
+                        sendMessage(recipient,messages[0].message, token)
                     }
 
 
@@ -85,7 +85,7 @@ function sendMessage(recipientId, message, token) {
         method: 'POST',
         json: {
             recipient: {id: recipientId},
-            message: message.message,
+            message: message,
         }
     }, function (error, response, body) {
         if (error) {
