@@ -543,6 +543,7 @@ app.post('/webhook', function (req, res) {
                                 }
                                 else if(event.postback.payload.indexOf("TRUE_MONEY_") > -1){
                                     var keyword = event.postback.payload.replace("TRUE_MONEY_", "");
+                                    console.log("keyword " + keyword);
                                     getResponseToUserForPostback(keyword, event.sender.id, event.recipient.id);
                                 }
                                 else {
