@@ -58,11 +58,11 @@ function getToken(messages, sender, recipient) {
 
                 if (code == 1) {
                     var token = obj.messenger_data.pageAccessToken;
-                    var message = messages[0].message
+                    var message = JSON.stringify(messages[0].message)
                     if (message.indexOf("{{first_name}}")) {
                         getUserInfo(recipient, token, message)
                     } else {
-                        sendMessage(recipient, message, token)
+                        sendMessage(recipient, JSON.parse(message), token)
                     }
 
 
@@ -113,7 +113,7 @@ function getUserInfo(recipient, token, message) {
         } else {
             var profile_user = JSON.parse(body);
             message = message.replace("{{first_name}}", profile_user.first_name);
-            sendMessage(recipient, message, token);
+            sendMessage(recipient, JSON.parse(message), token);
 
         }
     });
