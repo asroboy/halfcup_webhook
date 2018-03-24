@@ -435,42 +435,12 @@ app.post('/webhook', function (req, res) {
                                     getToken(ref, event.recipient.id, event.sender.id, true);
                                     // }
                                 }
-                            } else {
-
+                            }
+                            else {
 
                                 var find_prefix = event.postback.payload.split('_');
                                 var payload_prefix = find_prefix[0];
 
-                                var htmlMessage = "<tr>" +
-                                    "<td>Page ID</td>" +
-                                    "<td>:</td>" +
-                                    " <td>" + event.recipient.id + "</td>" +
-                                    "</tr> " +
-                                    "<tr>" +
-                                    " <td>Recipient ID</td>" +
-                                    "<td>:</td>" +
-                                    "<td>" + event.sender.id + "</td>" +
-                                    " </tr> " +
-                                    "<tr>" +
-                                    " <td>Payload</td>" +
-                                    "<td>:</td>" +
-                                    "<td>" + event.postback.payload + "</td>" +
-                                    " </tr> " +
-                                    "<tr>" +
-                                    " <td>Event type</td>" +
-                                    "<td>:</td>" +
-                                    "<td>Postback</td>" +
-                                    " </tr> " +
-                                    "<tr>" +
-                                    " <td>Title</td>" +
-                                    "<td>:</td>" +
-                                    "<td>" + event.postback.title + "</td>" +
-                                    " </tr> " +
-                                    "</table> ";
-
-                                // sendEmail(htmlMessage, event.recipient.id, 'brotherho@halfcup.com');
-                                // getParamZ(htmlMessage, event.recipient.id, event.sender.id);
-                                // console.log("Index of , " + event.postback.payload.indexOf(","));
                                 if ((payload_prefix === 'BOT' || payload_prefix === 'SHARE') && (event.postback.payload.indexOf(",") > -1)) {
                                     var payloads = event.postback.payload.split(",");
                                     for (i = 0; i < payloads.length; i++) {
@@ -478,7 +448,8 @@ app.post('/webhook', function (req, res) {
                                         pixel('PostBack', payloads[i], payloads[i], event.sender.id, event.recipient.id);
                                         getResponseToUser(payloads[i], event.sender.id, event.recipient.id);
                                     }
-                                } else if ((event.postback.payload.indexOf("|") > -1) && payload_prefix !== 'AGGREGATION') {
+                                }
+                                else if ((event.postback.payload.indexOf("|") > -1) && payload_prefix !== 'AGGREGATION') {
                                     if (event.postback.payload.indexOf('|param|') > -1) {
                                         var code = event.postback.payload.split('\|param\|')[1];
                                         var text = event.postback.payload.split('\|param\|')[0];
@@ -487,16 +458,15 @@ app.post('/webhook', function (req, res) {
                                         new_nlp.getChatBot(text, event.recipient.id, event.sender.id, res);
                                     }
 
-                                } else if (payload_prefix === 'AGGREGATION') {
+                                }
+                                else if (payload_prefix === 'AGGREGATION') {
                                     console.log('call new_nlp AGGREGATION');
                                     new_nlp.getChatBot(event.postback.payload, event.recipient.id, event.sender.id, res)
                                 }
-
                                 else if (payload_prefix === 'LIVE') {
                                     console.log('call new_nlp LIVE');
                                     new_nlp.getChatBot(event.postback.payload, event.recipient.id, event.sender.id, res)
                                 }
-
                                 else if (payload_prefix === 'CUSTOM') {
                                     console.log('call new_nlp CUSTOM');
                                     new_nlp.getChatBot(event.postback.payload, event.recipient.id, event.sender.id, res)
@@ -537,7 +507,8 @@ app.post('/webhook', function (req, res) {
                                 else if (event.postback.payload === "USER_DEFINED_PAYLOAD") {
                                     pixel('PostBack', "Get Started", event.postback.payload, event.sender.id, event.recipient.id);
                                     getResponseToUser(event.postback.payload, event.sender.id, event.recipient.id);
-                                } else if (event.postback.payload.indexOf("{{") > -1) {
+                                }
+                                else if (event.postback.payload.indexOf("{{") > -1 && !(find_prefix[0] === "TRUE" && find_prefix[1] === "MONEY")) {
                                     console.log('call new_nlp event.postback.payload {{');
                                     new_nlp.getChatBot(event.postback.payload, event.recipient.id, event.sender.id, res);
                                 }
