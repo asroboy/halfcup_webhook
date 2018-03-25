@@ -449,6 +449,7 @@ app.post('/webhook', function (req, res) {
 
                                 if ((payload_prefix === 'BOT' || payload_prefix === 'SHARE') && (event.postback.payload.indexOf(",") > -1)) {
                                     var payloads = event.postback.payload.split(",");
+                                    console.log("payload_prefix === \"BOT \" && payload_prefix === \"SHARE\"");
                                     for (i = 0; i < payloads.length; i++) {
                                         console.log("Payload " + i, payloads[i]);
                                         pixel('PostBack', payloads[i], payloads[i], event.sender.id, event.recipient.id);
@@ -456,7 +457,9 @@ app.post('/webhook', function (req, res) {
                                     }
                                 }
                                 else if ((event.postback.payload.indexOf("|") > -1) && payload_prefix !== 'AGGREGATION') {
+                                    console.log("payload_prefix contains \| sign");
                                     if (event.postback.payload.indexOf('|param|') > -1) {
+                                        console.log("payload_prefix has \|param\|");
                                         var code = event.postback.payload.split('\|param\|')[1];
                                         var text = event.postback.payload.split('\|param\|')[0];
                                         clearAiKey(event.recipient.id);
@@ -518,7 +521,7 @@ app.post('/webhook', function (req, res) {
                                     console.log('call new_nlp event.postback.payload {{');
                                     new_nlp.getChatBot(event.postback.payload, event.recipient.id, event.sender.id, res);
                                 }
-                                else if (find_prefix[0] === "TRUE" && find_prefix[1] === "MONEY") {
+                                else if ((find_prefix[0] === "TRUE") && (find_prefix[1] === "MONEY")) {
                                     var keyword = event.postback.payload.replace("TRUE_MONEY_", "");
                                     console.log("keyword " + keyword);
                                     true_money.postbackHandler(event, keyword);
