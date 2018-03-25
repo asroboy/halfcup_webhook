@@ -395,11 +395,6 @@ app.post('/webhook', function (req, res) {
                         if (event.postback.hasOwnProperty('payload')) {
                             console.log("===== event.postback.payload ========");
                             console.log("Payload : " + event.postback.payload);
-                            console.log("find_prefix at 0 : " + find_prefix[0]);
-                            if (find_prefix.length > 1) {
-                                console.log("find_prefix at 1 : " + find_prefix[1]);
-                            }
-
                             if (event.postback.payload.indexOf('|param|') > -1) {
                                 var ref = event.postback.payload;
                                 console.log("payload " + ref);
@@ -446,6 +441,11 @@ app.post('/webhook', function (req, res) {
 
                                 var find_prefix = event.postback.payload.split('_');
                                 var payload_prefix = find_prefix[0];
+
+                                console.log("find_prefix at 0 : " + find_prefix[0]);
+                                if (find_prefix.length > 1) {
+                                    console.log("find_prefix at 1 : " + find_prefix[1]);
+                                }
 
                                 if ((payload_prefix === 'BOT' || payload_prefix === 'SHARE') && (event.postback.payload.indexOf(",") > -1)) {
                                     var payloads = event.postback.payload.split(",");
