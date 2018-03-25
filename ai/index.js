@@ -297,7 +297,7 @@ app.post('/webhook', function (req, res) {
                                         new_nlp.getChatBot(event.message.quick_reply.payload, event.recipient.id, event.sender.id, res);
                                     }
                                     else if ((find_prefix[0] === "TRUE") && (find_prefix[1] === "MONEY")) {
-                                        var keyword = event.postback.payload.replace("TRUE_MONEY_", "");
+                                        var keyword = event.message.quick_reply.payload.replace("TRUE_MONEY_", "");
                                         console.log("keyword " + keyword);
                                         true_money.postbackHandler(event, keyword);
                                     }
