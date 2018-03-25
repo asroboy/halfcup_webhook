@@ -13,14 +13,14 @@ var urlApi = "http://aileadsbooster.com/TrueMoney/aggregation?object=";
 
 function postbackHandler(event, keyword) {
     if (keyword === "GREETINGS") {
-        getGreetings(event, keyword);
+        getJsonBot(event, keyword);
     }
-    if(keyword.indexOf("START") > -1){
-        getGreetings(event, keyword);
+    else {
+        getJsonBot(event, keyword);
     }
 }
 
-function getGreetings(event, keyword) {
+function getJsonBot(event, keyword) {
     var url = urlApi + keyword;
     console.log('url', url);
     request({
@@ -70,7 +70,7 @@ function getToken(messages, sender, recipient) {
                     } else {
                         // sendMessage(recipient,messages[0].message, token);
                         // if (messages.length > 0) {
-                            sendM(JSON.parse(messages_), recipient, token);
+                        sendM(JSON.parse(messages_), recipient, token);
                         // }
                     }
 
