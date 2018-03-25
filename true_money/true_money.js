@@ -15,6 +15,9 @@ function postbackHandler(event, keyword) {
     if (keyword === "GREETINGS") {
         getGreetings(event, keyword);
     }
+    if(keyword.indexOf("START") > -1){
+        getGreetings(event, keyword);
+    }
 }
 
 function getGreetings(event, keyword) {
