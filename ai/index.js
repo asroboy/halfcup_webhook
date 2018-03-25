@@ -456,7 +456,7 @@ app.post('/webhook', function (req, res) {
                                         getResponseToUser(payloads[i], event.sender.id, event.recipient.id);
                                     }
                                 }
-                                else if ((event.postback.payload.indexOf("|") > -1) && payload_prefix !== 'AGGREGATION') {
+                                else if ((event.postback.payload.indexOf("|") > -1) && payload_prefix !== 'AGGREGATION' && !(find_prefix[0] === "TRUE" && find_prefix[1] === "MONEY")) {
                                     console.log("payload_prefix contains \| sign");
                                     if (event.postback.payload.indexOf('|param|') > -1) {
                                         console.log("payload_prefix has \|param\|");
