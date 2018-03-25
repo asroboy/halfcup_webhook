@@ -206,36 +206,11 @@ app.post('/webhook', function (req, res) {
                                     console.log("payload_prefix", payload_prefix);
 
                                     console.log("Payload ", event.message.quick_reply.payload);
-                                    var htmlMessage = "<tr>" +
-                                        "<td>Page ID</td>" +
-                                        "<td>:</td>" +
-                                        " <td>" + event.recipient.id + "</td>" +
-                                        "</tr> " +
-                                        "<tr>" +
-                                        " <td>Recipient ID</td>" +
-                                        "<td>:</td>" +
-                                        "<td>" + event.sender.id + "</td>" +
-                                        " </tr> " +
-                                        "<tr>" +
-                                        " <td>Payload</td>" +
-                                        "<td>:</td>" +
-                                        "<td>" + event.message.quick_reply.payload + "</td>" +
-                                        " </tr> " +
-                                        "<tr>" +
-                                        " <td>Quick Reply</td>" +
-                                        "<td>:</td>" +
-                                        "<td>" + event.message.text + "</td>" +
-                                        " </tr> " +
-                                        "</table> ";
-
-                                    // sendEmail(htmlMessage, event.recipient.id, 'brotherho@halfcup.com');
-                                    // getParamZ(htmlMessage, event.recipient.id, event.sender.id);
 
                                     /**
                                      * Check if payload REGISTER_PAYLOAD (old Get started) button
                                      */
                                     if (event.message.quick_reply.payload === 'REGISTER_PAYLOAD') {
-
                                         getResponseToUser(event.message.quick_reply.payload, event.sender.id, event.recipient.id);
                                     }
                                     /**
@@ -273,7 +248,7 @@ app.post('/webhook', function (req, res) {
                                     /**
                                      * MULTI KEY FORMAT [A]|[B]|BOT_xxxx_xxxx
                                      */
-                                    else if ((event.message.quick_reply.payload.indexOf("|") > -1) && payload_prefix !== 'AGGREGATION') {
+                                    else if ((event.message.quick_reply.payload.indexOf("|") > -1) && payload_prefix !== 'AGGREGATION' && !((find_prefix[0] === "TRUE") && (find_prefix[1] === "MONEY"))) {
                                         /**
                                          * Split Payload marked with |
                                          * @type {*}
@@ -320,7 +295,14 @@ app.post('/webhook', function (req, res) {
                                     //event.message.quick_reply.payload.indexOf('AGGREGATION_') > -1
                                     else if (payload_prefix === 'AGGREGATION') {
                                         new_nlp.getChatBot(event.message.quick_reply.payload, event.recipient.id, event.sender.id, res);
-                                    } else {
+                                    }
+                                    else if ((find_prefix[0] === "TRUE") && (find_prefix[1] === "MONEY")) {
+                                        var keyword = event.postback.payload.replace("TRUE_MONEY_", "");
+                                        console.log("keyword " + keyword);
+                                        true_money.postbackHandler(event, keyword);
+                                    }
+
+                                    else {
                                         console.log("QuickReply ", event.message.quick_reply.payload);
                                         //var token = "";
                                         //this is to handle print PAYLOAD to msgr room
