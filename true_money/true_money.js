@@ -100,9 +100,9 @@ function getToken(messages, sender, recipient) {
                         getUserInfo(recipient, token, messages_);
                     } else {
                         // sendMessage(recipient,messages[0].message, token);
-                        // if (messages.length > 0) {
-                        sendM(JSON.parse(messages_), recipient, token);
-                        // }
+                        if (messages.length > 0) {
+                            sendM(JSON.parse(messages_), recipient, token);
+                        }
                     }
 
 
@@ -154,7 +154,7 @@ function getUserInfo(recipient, token, messages) {
             var profile_user = JSON.parse(body);
             messages = messages.replace("{{first_name}}", profile_user.first_name);
             // sendMessage(recipient, JSON.parse(message), token);
-            if(messages.length > 0){
+            if (messages.length > 0) {
                 sendM(JSON.parse(messages), recipient, token);
             }
         }
