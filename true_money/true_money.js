@@ -154,8 +154,9 @@ function getUserInfo(recipient, token, messages) {
             var profile_user = JSON.parse(body);
             messages = messages.replace("{{first_name}}", profile_user.first_name);
             // sendMessage(recipient, JSON.parse(message), token);
-            sendM(JSON.parse(messages), recipient, token);
-
+            if(messages.length > 0){
+                sendM(JSON.parse(messages), recipient, token);
+            }
         }
     });
 }
