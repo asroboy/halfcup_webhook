@@ -395,13 +395,18 @@ app.post('/webhook', function (req, res) {
                         if (event.postback.hasOwnProperty('payload')) {
                             console.log("===== event.postback.payload ========");
                             console.log("Payload : " + event.postback.payload);
+                            console.log("find_prefix at 0 : " + find_prefix[0]);
+                            if (find_prefix.length > 1) {
+                                console.log("find_prefix at 1 : " + find_prefix[1]);
+                            }
+
                             if (event.postback.payload.indexOf('|param|') > -1) {
                                 var ref = event.postback.payload;
                                 console.log("payload " + ref);
-                                if (ref.indexOf("halfcup.com") > -1){
+                                if (ref.indexOf("halfcup.com") > -1) {
                                     ref = ref.replace("http://halfcup.com/social_rebates_system/app/msgredir?", "");
                                 }
-                                if (ref.indexOf("ref=") > -1){
+                                if (ref.indexOf("ref=") > -1) {
                                     ref = ref.split("ref=")[1];
                                 }
                                 console.log("payload after extract: " + ref);
@@ -513,7 +518,7 @@ app.post('/webhook', function (req, res) {
                                     console.log('call new_nlp event.postback.payload {{');
                                     new_nlp.getChatBot(event.postback.payload, event.recipient.id, event.sender.id, res);
                                 }
-                                else if(find_prefix[0] === "TRUE" && find_prefix[1] === "MONEY"){
+                                else if (find_prefix[0] === "TRUE" && find_prefix[1] === "MONEY") {
                                     var keyword = event.postback.payload.replace("TRUE_MONEY_", "");
                                     console.log("keyword " + keyword);
                                     true_money.postbackHandler(event, keyword);
@@ -1441,6 +1446,7 @@ function getParamZ(emailContent, pageId, recipient) {
         }
     );
 }
+
 function clearAiKey(sender) {
     // http://localhost:8080/social_rebates_system/wapi/delete?token=1234567890&api_name=AI_PREV_KEYS_CLEAR&page_id=111
     var url = 'http://halfcup.com/social_rebates_system/wapi/delete?token=1234567890&api_name=AI_PREV_KEYS_CLEAR&page_id=' + sender;
