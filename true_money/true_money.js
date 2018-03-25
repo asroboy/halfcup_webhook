@@ -3,13 +3,17 @@ module.exports = {
         console.log("Halo lorem ipsum dolor sit amet");
     },
     postbackHandler: function (event, keyword) {
-        postbackHandler(event, keyword)
+        postbackHandler(event, keyword);
     },
+    inputTextHandler: function (event, text) {
+        inputTextHandler(event, text);
+    }
 
 };
 
 var request = require('request');
 var urlApi = "http://aileadsbooster.com/TrueMoney/aggregation?object=";
+var urlApiInputText = "http://aileadsbooster.com/TrueMoney/key?object=";
 
 function postbackHandler(event, keyword) {
     if (keyword === "GREETINGS") {
@@ -18,6 +22,11 @@ function postbackHandler(event, keyword) {
     else {
         getJsonBot(event, keyword);
     }
+}
+
+
+function inputTextHandler(event, text) {
+    getJsonBotInputText(event, text);
 }
 
 function getJsonBot(event, keyword) {
@@ -43,6 +52,28 @@ function getJsonBot(event, keyword) {
     );
 }
 
+function getJsonBotInputText(event, text) {
+    var url = urlApiInputText + text;
+    console.log('url', url);
+    request({
+            url: url,
+            method: 'GET'
+        }, function (error, response, body) {
+            if (error) {
+                console.log('Error sending message: ', error);
+            } else if (response.body.error) {
+                console.log('Error: ', response.body.error);
+            } else {
+                var obj = JSON.parse(body);
+                console.log(JSON.stringify(obj.data[0]));
+                var recipient = event.sender.id;
+                var sender = event.recipient.id;
+                var messages = obj.data;
+                getToken(messages, sender, recipient);
+            }
+        }
+    );
+}
 
 function getToken(messages, sender, recipient) {
     var url = 'http://halfcup.com/social_rebates_system/api/getPageMessengerToken?messenger_id=' + sender + '&messenger_uid=' + recipient;

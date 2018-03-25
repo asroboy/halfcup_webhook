@@ -345,9 +345,13 @@ app.post('/webhook', function (req, res) {
                                         }
                                     } else {
                                         if (event.message.text) {
-                                            var request_key = event.message.text;
-                                            new_nlp.getMerchantId(event.recipient.id, event.sender.id, request_key, res);
                                             console.log("===== event.message.text ========");
+                                            var request_key = event.message.text;
+                                            if(event.recipient.id === '198665724065584'){
+                                                true_money.inputTextHandler(event, request_key);
+                                            }else{
+                                                new_nlp.getMerchantId(event.recipient.id, event.sender.id, request_key, res);
+                                            }
                                             // getResponseToUser(request_key, event.sender.id, event.recipient.id);
                                         }
                                     }
