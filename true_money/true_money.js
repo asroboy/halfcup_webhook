@@ -14,7 +14,8 @@ module.exports = {
 var request = require('request');
 var urlApi = "http://aileadsbooster.com/TrueMoney/aggregation?object=";
 var urlApiInputText = "http://aileadsbooster.com/TrueMoney/key?object=";
-var urlApiGetLang = 'http://halfcup.com/social_rebates_system/trueMoneyApi/saveOrUpdate';
+var urlApiSaveOrUpdate = 'http://halfcup.com/social_rebates_system/trueMoneyApi/saveOrUpdate';
+var urlApiRead = 'http://halfcup.com/social_rebates_system/trueMoneyApi/read';
 
 function postbackHandler(event, keyword) {
     if (keyword === "GREETINGS") {
@@ -22,8 +23,8 @@ function postbackHandler(event, keyword) {
     }
     else {
         var recipient = event.sender.id;
-        var lang ='';
-        if(keyword.indexOf('lang=') > -1 && keyword.indexOf('START') > -1){
+        var lang = '';
+        if (keyword.indexOf('lang=') > -1 && keyword.indexOf('START') > -1) {
             lang = keyword.split('lang=')[1];
         }
         getLanguage(recipient, lang, event, keyword);
@@ -33,11 +34,13 @@ function postbackHandler(event, keyword) {
 
 
 function inputTextHandler(event, text) {
-    getJsonBotInputText(event, text);
+    // getJsonBotInputText(event, text);
+    getPreviousActions(event.sender.id, event, text, 'text')
 }
 
 function getJsonBot(event, keyword) {
     var url = urlApi + keyword;
+    savePreviousActions(event.sender.id, 'key', keyword);
     console.log('url', url);
     request({
             url: url,
@@ -61,6 +64,7 @@ function getJsonBot(event, keyword) {
 
 function getJsonBotInputText(event, text) {
     var url = urlApiInputText + text;
+    savePreviousActions(event.sender.id, 'key', text);
     console.log('url', url);
     request({
             url: url,
@@ -212,7 +216,7 @@ function sendM(messages, recipient, token) {
 
 
 function getLanguage(recipient_id, lang, event, keyword) {
-    var url = urlApiGetLang + "?api_name=lang&lang=" + lang + "&recipeient_id=" + recipient_id;
+    var url = urlApiSaveOrUpdate + "?api_name=lang&lang=" + lang + "&recipeient_id=" + recipient_id;
     console.log(url)
     request({
         url: url,
@@ -225,10 +229,55 @@ function getLanguage(recipient_id, lang, event, keyword) {
         } else {
             var data = JSON.parse(response.body);
             console.log('============ ' + response.body + ' =========== ');
-            if(keyword.indexOf('lang=') < 0){
+            if (keyword.indexOf('lang=') < 0) {
                 keyword = keyword + "||lang=" + data.data.lang;
             }
-            getJsonBot(event, keyword);
+            getPreviousActions(recipient_id, event, keyword, 'aggregation');
+            // getJsonBot(event, keyword);
+        }
+    });
+}
+
+function savePreviousActions(recipient_id, type, keyword) {
+    var url = urlApiSaveOrUpdate + "?api_name=prev_actions&key=" + keyword + "&recipeient_id=" + recipient_id + '&type=' + type;
+    console.log(url)
+    request({
+        url: url,
+        method: 'GET'
+    }, function (error, response, body) {
+        if (error) {
+            console.log('Error sending message: ', error);
+        } else if (response.body.error) {
+            console.log('Error: ', response.body.error);
+        } else {
+            console.log('============ SAVE PREV ACTION OK, ' + response.body + ' =========== ');
+        }
+    });
+}
+
+function getPreviousActions(recipient_id, event, keyword, input_type) {
+    var url = urlApiRead + "?api_name=prev_actions&recipient_id=" + recipient_id;
+    console.log(url);
+    request({
+        url: url,
+        method: 'GET'
+    }, function (error, response, body) {
+        if (error) {
+            console.log('Error sending message: ', error);
+        } else if (response.body.error) {
+            console.log('Error: ', response.body.error);
+        } else {
+            var data = JSON.parse(response.body);
+            console.log('============ ' + response.body + ' =========== ');
+            var prevActions = data.data;
+            keyword = keyword + "||prev_action=" + prevActions
+            if(input_type === 'text'){
+                getJsonBotInputText(event, keyword);
+            }
+            if(input_type === 'aggregation'){
+                getJsonBot(event, keyword);
+            }
+
 
         }
     });
