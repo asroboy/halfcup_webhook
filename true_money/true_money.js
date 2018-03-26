@@ -232,8 +232,8 @@ function getLanguage(recipient_id, lang, event, keyword) {
             if (keyword.indexOf('lang=') < 0) {
                 keyword = keyword + "||lang=" + data.data.lang;
             }
-            getPreviousActions(recipient_id, event, keyword, 'aggregation');
-            // getJsonBot(event, keyword);
+            // getPreviousActions(recipient_id, event, keyword, 'aggregation');
+            getJsonBot(event, keyword);
         }
     });
 }
