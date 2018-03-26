@@ -226,7 +226,7 @@ function getLanguage(recipient_id, lang, event, keyword) {
             var data = JSON.parse(response.body);
             console.log('============ ' + response.body + ' =========== ');
             if(keyword.indexOf('lang=') < 0){
-                keyword = keyword + "lang=" + data.lang;
+                keyword = keyword + "lang=" + data.data.lang;
             }
             getJsonBot(event, keyword);
 
