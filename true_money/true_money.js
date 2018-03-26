@@ -40,7 +40,7 @@ function inputTextHandler(event, text) {
 
 function getJsonBot(event, keyword) {
     var url = urlApi + keyword;
-    savePreviousActions(event.sender.id, 'key', keyword);
+    savePreviousActions(event.sender.id, 'aggregation', keyword);
     console.log('url', url);
     request({
             url: url,
@@ -239,6 +239,9 @@ function getLanguage(recipient_id, lang, event, keyword) {
 }
 
 function savePreviousActions(recipient_id, type, keyword) {
+    if(keyword.indexOf('prev_action=') > -1){
+        keyword = keyword.split('prev_action=')[0]
+    }
     var url = urlApiSaveOrUpdate + "?api_name=prev_actions&key=" + keyword + "&recipient_id=" + recipient_id + '&type=' + type;
     console.log(url)
     request({
