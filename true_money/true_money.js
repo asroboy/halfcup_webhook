@@ -270,7 +270,7 @@ function getPreviousActions(recipient_id, event, keyword, input_type) {
             var data = JSON.parse(response.body);
             console.log('============ ' + response.body + ' =========== ');
             var prevActions = data.data;
-            keyword = keyword + "||prev_action=" + prevActions
+            keyword = keyword + "||prev_action=" + JSON.stringify(prevActions)
             if(input_type === 'text'){
                 getJsonBotInputText(event, keyword);
             }
