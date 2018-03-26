@@ -76,7 +76,7 @@ function getJsonBotInputText(event, text) {
                 console.log('Error: ', response.body.error);
             } else {
                 var obj = JSON.parse(body);
-                console.log(JSON.stringify(obj.data[0]));
+                console.log(JSON.stringify(obj.data));
                 var recipient = event.sender.id;
                 var sender = event.recipient.id;
                 var messages = obj.data;
