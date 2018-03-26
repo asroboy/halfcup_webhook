@@ -223,8 +223,7 @@ function getLanguage(recipient_id, lang, event, keyword) {
         } else if (response.body.error) {
             console.log('Error: ', response.body.error);
         } else {
-            var data = response.body.data;
-            console.log('============ ' + response.body.data + ' =========== ');
+            var data = JSON.parse(response.body);
             console.log('============ ' + response.body + ' =========== ');
             if(keyword.indexOf('lang=') < 0){
                 keyword = keyword + "lang=" + data.lang;
