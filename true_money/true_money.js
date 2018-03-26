@@ -223,8 +223,12 @@ function getLanguage(recipient_id, lang, event, keyword) {
         } else if (response.body.error) {
             console.log('Error: ', response.body.error);
         } else {
-            getJsonBot(event, keyword);
             console.log('============ ' + response.body + ' =========== ');
+            if(keyword.indexOf('lang=') < 0){
+                keyword = keyword + "lang=" + response.body.data.lang;
+            }
+            getJsonBot(event, keyword);
+
         }
     });
 }
