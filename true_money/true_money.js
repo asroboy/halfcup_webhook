@@ -14,13 +14,20 @@ module.exports = {
 var request = require('request');
 var urlApi = "http://aileadsbooster.com/TrueMoney/aggregation?object=";
 var urlApiInputText = "http://aileadsbooster.com/TrueMoney/key?object=";
+var urlApiGetLang = 'http://halfcup.com/social_rebates_system/trueMoneyApi/saveOrUpdate';
 
 function postbackHandler(event, keyword) {
     if (keyword === "GREETINGS") {
         getJsonBot(event, keyword);
     }
     else {
-        getJsonBot(event, keyword);
+        var recipient = event.sender.id;
+        var lang ='';
+        if(keyword.indexOf('lang=') > -1 && keyword.indexOf('START') > -1){
+            lang = keyword.split('lang=')[1];
+        }
+        getLanguage(recipient, lang, event, keyword);
+
     }
 }
 
@@ -201,4 +208,24 @@ function sendM(messages, recipient, token) {
 
     // make a copy of the original users Array because we're going to mutate it
     getOneM(Array.from(messages));
+}
+
+
+function getLanguage(recipient_id, lang, event, keyword) {
+    console.log(message);
+    var url = urlApiGetLang + "?api_name=lang&lang=" + lang + "&recipient_id=" + recipient_id;
+    request({
+        url: url,
+        qs: {access_token: token},
+        method: 'GET'
+    }, function (error, response, body) {
+        if (error) {
+            console.log('Error sending message: ', error);
+        } else if (response.body.error) {
+            console.log('Error: ', response.body.error);
+        } else {
+            getJsonBot(event, keyword);
+            console.log('============ ' + response + ' =========== ');
+        }
+    });
 }
