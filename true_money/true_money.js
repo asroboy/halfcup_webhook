@@ -224,7 +224,7 @@ function getLanguage(recipient_id, lang, event, keyword) {
             console.log('Error: ', response.body.error);
         } else {
             getJsonBot(event, keyword);
-            console.log('============ ' + JSON.stringify(response) + ' =========== ');
+            console.log('============ ' + esponse.body + ' =========== ');
         }
     });
 }
