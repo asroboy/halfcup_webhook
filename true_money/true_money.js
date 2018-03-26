@@ -52,11 +52,13 @@ function getJsonBot(event, keyword) {
                 console.log('Error: ', response.body.error);
             } else {
                 var obj = JSON.parse(body);
-                console.log(JSON.stringify(obj.data[0]));
+                console.log(JSON.stringify(obj.data));
                 var recipient = event.sender.id;
                 var sender = event.recipient.id;
                 var messages = obj.data;
-                getToken(messages, sender, recipient);
+                if(typeof messages !== 'undefined'){
+                    getToken(messages, sender, recipient);
+                }
             }
         }
     );
@@ -80,7 +82,9 @@ function getJsonBotInputText(event, text) {
                 var recipient = event.sender.id;
                 var sender = event.recipient.id;
                 var messages = obj.data;
-                getToken(messages, sender, recipient);
+                if(typeof messages !== 'undefined'){
+                    getToken(messages, sender, recipient);
+                }
             }
         }
     );
