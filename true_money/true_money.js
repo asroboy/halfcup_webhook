@@ -212,7 +212,6 @@ function sendM(messages, recipient, token) {
 
 
 function getLanguage(recipient_id, lang, event, keyword) {
-    console.log(message);
     var url = urlApiGetLang + "?api_name=lang&lang=" + lang + "&recipient_id=" + recipient_id;
     request({
         url: url,
