@@ -212,7 +212,7 @@ function sendM(messages, recipient, token) {
 
 
 function getLanguage(recipient_id, lang, event, keyword) {
-    var url = urlApiGetLang + "?api_name=lang&lang=" + lang + "&recipient_id=" + recipient_id;
+    var url = urlApiGetLang + "?api_name=lang&lang=" + lang + "&recipeient_id=" + recipient_id;
     console.log(url)
     request({
         url: url,
@@ -224,7 +224,7 @@ function getLanguage(recipient_id, lang, event, keyword) {
             console.log('Error: ', response.body.error);
         } else {
             getJsonBot(event, keyword);
-            console.log('============ ' + response + ' =========== ');
+            console.log('============ ' + JSON.stringify(response) + ' =========== ');
         }
     });
 }
