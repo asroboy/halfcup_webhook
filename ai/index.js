@@ -341,13 +341,14 @@ app.post('/webhook', function (req, res) {
 
                             }
 
-                            if (event.message && event.message.attachments) {
+                            if (event.message && event.message.attachments && event.sender) {
                                 console.log("===== event.message.text ========");
-                                console.log("===== NOTHING HERE ========");
 
                                 var attachementType = event.message.attachments.type
-                                if(attachementType === 'location'){
+                                if (attachementType === 'location') {
                                     var cord = event.message.attachments.payload.coordinates;
+                                    console.log("===== " + JSON.stringify(cord) + " ========");
+
                                     if (typeof cord !== 'undefined') {
                                         true_money.coordinatesHandler(event);
                                     }
