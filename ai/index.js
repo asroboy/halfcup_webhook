@@ -345,7 +345,7 @@ app.post('/webhook', function (req, res) {
                                 console.log("===== event.message.text ========");
 
                                 var attachementType = event.message.attachments.type
-                                console.log("===== " + attachementType + " ========");
+                                console.log("===== " + JSON.stringify(event.message) + " ========");
                                 if (attachementType === 'location') {
                                     var cord = event.message.attachments.payload.coordinates;
                                     console.log("===== " + JSON.stringify(cord) + " ========");
