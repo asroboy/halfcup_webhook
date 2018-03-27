@@ -344,6 +344,10 @@ app.post('/webhook', function (req, res) {
                             if (event.message && event.message.attachments) {
                                 console.log("===== event.message.text ========");
                                 console.log("===== NOTHING HERE ========");
+
+                                if(event.message.attachments.payload.coordinates){
+                                    true_money.coordinatesHandler(event);
+                                }
                                 //var arr = JSON.parse(event.message.attachments);
                                 //getResponseToUser(event.message.attachments[0].payload.sticker_id, event.sender.id, event.recipient.id);
                             }

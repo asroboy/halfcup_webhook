@@ -10,6 +10,11 @@ module.exports = {
         var recipient = event.sender.id;
         var lang = '';
         getLanguage(recipient, lang, event, text, 'text');
+    },
+    coordinatesHandler(event) {
+        var recipient = event.sender.id;
+        var lang = '';
+        getLanguage(recipient, lang, event, '', 'coordinate');
     }
 
 };
@@ -19,6 +24,33 @@ var urlApi = "http://aileadsbooster.com/TrueMoney/aggregation?object=";
 var urlApiInputText = "http://aileadsbooster.com/TrueMoney/key?object=";
 var urlApiSaveOrUpdate = 'http://halfcup.com/social_rebates_system/trueMoneyApi/saveOrUpdate';
 var urlApiRead = 'http://halfcup.com/social_rebates_system/trueMoneyApi/read';
+
+
+function coordinatesHandler(event, prev_action) {
+    var cordinates = event.message.attachments.payload.coordinates;
+    var url = urlApiInputText + 'SelLocation||type=cashin||latitude=' + cordinates.lat + '||longgitude=' + cordinates.long + prev_action;
+    console.log('url', url);
+    request({
+            url: url,
+            method: 'GET'
+        }, function (error, response, body) {
+            if (error) {
+                console.log('Error sending message: ', error);
+            } else if (response.body.error) {
+                console.log('Error: ', response.body.error);
+            } else {
+                var obj = JSON.parse(body);
+                console.log(JSON.stringify(obj.data));
+                var recipient = event.sender.id;
+                var sender = event.recipient.id;
+                var messages = obj.data;
+                if (typeof messages !== 'undefined') {
+                    getToken(messages, sender, recipient);
+                }
+            }
+        }
+    );
+}
 
 function postbackHandler(event, keyword) {
     if (keyword === "GREETINGS") {
@@ -248,6 +280,10 @@ function getLanguage(recipient_id, lang, event, keyword, input_type) {
                 inputTextHandler(event, keyword);
             }
 
+            if (input_type === 'coordinate') {
+                getPreviousActions(recipient_id, event, keyword, input_type);
+            }
+
         }
     });
 }
@@ -294,7 +330,9 @@ function getPreviousActions(recipient_id, event, keyword, input_type) {
             if (input_type === 'aggregation') {
                 getJsonBot(event, keyword);
             }
-
+            if (input_type === 'coordinate') {
+                coordinatesHandler(event, keyword);
+            }
 
         }
     });

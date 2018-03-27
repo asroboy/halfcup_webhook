@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8c0fd527-5667-4e03-89ee-e95c0bdc3c27" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/ai/index.js" afterPath="$PROJECT_DIR$/ai/index.js" />
       <change beforePath="$PROJECT_DIR$/true_money/true_money.js" afterPath="$PROJECT_DIR$/true_money/true_money.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -22,25 +23,25 @@
       <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ai/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="67">
-              <caret line="299" column="79" lean-forward="false" selection-start-line="299" selection-start-column="79" selection-end-line="299" selection-end-column="79" />
+            <state relative-caret-position="256">
+              <caret line="347" column="80" lean-forward="true" selection-start-line="347" selection-start-column="35" selection-end-line="347" selection-end-column="80" />
               <folding>
                 <element signature="e#3279#5492#0" expanded="false" />
                 <element signature="e#14134#16540#0" expanded="false" />
-                <element signature="e#20829#21612#0" expanded="false" />
-                <element signature="e#22080#24624#0" expanded="false" />
-                <element signature="e#25227#25887#0" expanded="false" />
-                <element signature="e#25501#25853#0" expanded="false" />
-                <element signature="e#26245#26843#0" expanded="false" />
-                <element signature="e#26954#27187#0" expanded="false" />
-                <element signature="e#27256#27482#0" expanded="false" />
-                <element signature="e#27553#27781#0" expanded="false" />
-                <element signature="e#27815#28016#0" expanded="false" />
-                <element signature="e#28162#29881#0" expanded="false" />
-                <element signature="e#30024#30306#0" expanded="false" />
-                <element signature="e#30391#30639#0" expanded="false" />
-                <element signature="e#31067#31369#0" expanded="false" />
-                <element signature="e#31497#33699#0" expanded="false" />
+                <element signature="e#21021#21804#0" expanded="false" />
+                <element signature="e#22272#24816#0" expanded="false" />
+                <element signature="e#25419#26079#0" expanded="false" />
+                <element signature="e#25693#26045#0" expanded="false" />
+                <element signature="e#26437#27035#0" expanded="false" />
+                <element signature="e#27146#27379#0" expanded="false" />
+                <element signature="e#27448#27674#0" expanded="false" />
+                <element signature="e#27745#27973#0" expanded="false" />
+                <element signature="e#28007#28208#0" expanded="false" />
+                <element signature="e#28354#30073#0" expanded="false" />
+                <element signature="e#30216#30498#0" expanded="false" />
+                <element signature="e#30583#30831#0" expanded="false" />
+                <element signature="e#31259#31561#0" expanded="false" />
+                <element signature="e#31689#33891#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -118,8 +119,8 @@
       <file leaf-file-name="true_money.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/true_money/true_money.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="214">
-              <caret line="16" column="33" lean-forward="true" selection-start-line="16" selection-start-column="33" selection-end-line="16" selection-end-column="33" />
+            <state relative-caret-position="231">
+              <caret line="28" column="9" lean-forward="false" selection-start-line="28" selection-start-column="9" selection-end-line="28" selection-end-column="9" />
               <folding />
             </state>
           </provider>
@@ -220,8 +221,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>postback</find>
-      <find>ABC</find>
       <find>abc</find>
       <find>event.postback.payload</find>
       <find>payload_prefix</find>
@@ -247,9 +246,11 @@
       <find>=======QUICK REPLY=======</find>
       <find>sendM</find>
       <find>getJsonBotInputText</find>
-      <find>getPreviousActions</find>
       <find>savePreviousActions</find>
       <find>getToken</find>
+      <find>===== NOTHING HERE ========</find>
+      <find>getPreviousActions</find>
+      <find>coordinatesHandler</find>
     </findStrings>
     <replaceStrings>
       <replace>localhost:8080</replace>
@@ -612,12 +613,12 @@
       <workItem from="1521431732670" duration="12000" />
       <workItem from="1521623819898" duration="1282000" />
       <workItem from="1521864397305" duration="15071000" />
-      <workItem from="1521984385571" duration="18340000" />
+      <workItem from="1521984385571" duration="20052000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="697635000" />
+    <option name="totallyTimeSpent" value="699347000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1518,31 +1519,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ai/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="67">
-          <caret line="299" column="79" lean-forward="false" selection-start-line="299" selection-start-column="79" selection-end-line="299" selection-end-column="79" />
-          <folding>
-            <element signature="e#3279#5492#0" expanded="false" />
-            <element signature="e#14134#16540#0" expanded="false" />
-            <element signature="e#20829#21612#0" expanded="false" />
-            <element signature="e#22080#24624#0" expanded="false" />
-            <element signature="e#25227#25887#0" expanded="false" />
-            <element signature="e#25501#25853#0" expanded="false" />
-            <element signature="e#26245#26843#0" expanded="false" />
-            <element signature="e#26954#27187#0" expanded="false" />
-            <element signature="e#27256#27482#0" expanded="false" />
-            <element signature="e#27553#27781#0" expanded="false" />
-            <element signature="e#27815#28016#0" expanded="false" />
-            <element signature="e#28162#29881#0" expanded="false" />
-            <element signature="e#30024#30306#0" expanded="false" />
-            <element signature="e#30391#30639#0" expanded="false" />
-            <element signature="e#31067#31369#0" expanded="false" />
-            <element signature="e#31497#33699#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/new_nlp.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1479">
@@ -1619,10 +1595,35 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/ai/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="256">
+          <caret line="347" column="80" lean-forward="true" selection-start-line="347" selection-start-column="35" selection-end-line="347" selection-end-column="80" />
+          <folding>
+            <element signature="e#3279#5492#0" expanded="false" />
+            <element signature="e#14134#16540#0" expanded="false" />
+            <element signature="e#21021#21804#0" expanded="false" />
+            <element signature="e#22272#24816#0" expanded="false" />
+            <element signature="e#25419#26079#0" expanded="false" />
+            <element signature="e#25693#26045#0" expanded="false" />
+            <element signature="e#26437#27035#0" expanded="false" />
+            <element signature="e#27146#27379#0" expanded="false" />
+            <element signature="e#27448#27674#0" expanded="false" />
+            <element signature="e#27745#27973#0" expanded="false" />
+            <element signature="e#28007#28208#0" expanded="false" />
+            <element signature="e#28354#30073#0" expanded="false" />
+            <element signature="e#30216#30498#0" expanded="false" />
+            <element signature="e#30583#30831#0" expanded="false" />
+            <element signature="e#31259#31561#0" expanded="false" />
+            <element signature="e#31689#33891#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/true_money/true_money.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="214">
-          <caret line="16" column="33" lean-forward="true" selection-start-line="16" selection-start-column="33" selection-end-line="16" selection-end-column="33" />
+        <state relative-caret-position="231">
+          <caret line="28" column="9" lean-forward="false" selection-start-line="28" selection-start-column="9" selection-end-line="28" selection-end-column="9" />
           <folding />
         </state>
       </provider>
