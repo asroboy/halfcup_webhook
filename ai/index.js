@@ -345,10 +345,10 @@ app.post('/webhook', function (req, res) {
                                 console.log("===== event.message.text ========");
                                 console.log("===== NOTHING HERE ========");
 
-                                var cord = event.message.attachments.payload.coordinates;
-                                if (typeof cord !== 'undefined') {
-                                    true_money.coordinatesHandler(event);
-                                }
+                                // var cord = event.message.attachments.payload.coordinates;
+                                // if (typeof cord !== 'undefined') {
+                                //     true_money.coordinatesHandler(event);
+                                // }
                                 //var arr = JSON.parse(event.message.attachments);
                                 //getResponseToUser(event.message.attachments[0].payload.sticker_id, event.sender.id, event.recipient.id);
                             }
