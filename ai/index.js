@@ -329,9 +329,9 @@ app.post('/webhook', function (req, res) {
                                         if (event.message.text) {
                                             console.log("===== event.message.text ========");
                                             var request_key = event.message.text;
-                                            if(event.recipient.id === '198665724065584'){
+                                            if (event.recipient.id === '198665724065584') {
                                                 true_money.inputTextHandler(event, request_key);
-                                            }else{
+                                            } else {
                                                 new_nlp.getMerchantId(event.recipient.id, event.sender.id, request_key, res);
                                             }
                                             // getResponseToUser(request_key, event.sender.id, event.recipient.id);
@@ -345,7 +345,8 @@ app.post('/webhook', function (req, res) {
                                 console.log("===== event.message.text ========");
                                 console.log("===== NOTHING HERE ========");
 
-                                if(event.message.attachments.payload.coordinates){
+                                var cord = event.message.attachments.payload.coordinates;
+                                if (typeof cord !== 'undefined') {
                                     true_money.coordinatesHandler(event);
                                 }
                                 //var arr = JSON.parse(event.message.attachments);
