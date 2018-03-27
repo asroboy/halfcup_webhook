@@ -343,16 +343,19 @@ app.post('/webhook', function (req, res) {
 
                             if (event.message && event.message.attachments && event.sender) {
                                 console.log("===== event.message.text ========");
+                                var attachments = event.message.attachments
+                                if (attachments.length > 0) {
+                                    var attachementType = attachments[0].type
+                                    console.log("===== " + attachementType + " ========");
+                                    if (attachementType === 'location') {
+                                        var cord = attachments[0].payload.coordinates;
+                                        console.log("===== " + JSON.stringify(cord) + " ========");
 
-                                var attachementType = event.message.attachments.type
-                                console.log("===== " + JSON.stringify(event.message) + " ========");
-                                if (attachementType === 'location') {
-                                    var cord = event.message.attachments.payload.coordinates;
-                                    console.log("===== " + JSON.stringify(cord) + " ========");
-
-                                    if (typeof cord !== 'undefined') {
-                                        true_money.coordinatesHandler(event);
+                                        if (typeof cord !== 'undefined') {
+                                            true_money.coordinatesHandler(event);
+                                        }
                                     }
+
                                 }
 
                                 //var arr = JSON.parse(event.message.attachments);
