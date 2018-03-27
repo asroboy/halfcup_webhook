@@ -6,7 +6,10 @@ module.exports = {
         postbackHandler(event, keyword);
     },
     inputTextHandler: function (event, text) {
-        inputTextHandler(event, text);
+        // inputTextHandler(event, text);
+        var recipient = event.sender.id;
+        var lang = '';
+        getLanguage(recipient, lang, event, text, 'text');
     }
 
 };
@@ -27,7 +30,7 @@ function postbackHandler(event, keyword) {
         if (keyword.indexOf('lang=') > -1 && keyword.indexOf('START') > -1) {
             lang = keyword.split('lang=')[1];
         }
-        getLanguage(recipient, lang, event, keyword);
+        getLanguage(recipient, lang, event, keyword, 'aggregation');
 
     }
 }
@@ -56,7 +59,7 @@ function getJsonBot(event, keyword) {
                 var recipient = event.sender.id;
                 var sender = event.recipient.id;
                 var messages = obj.data;
-                if(typeof messages !== 'undefined'){
+                if (typeof messages !== 'undefined') {
                     getToken(messages, sender, recipient);
                 }
             }
@@ -82,7 +85,7 @@ function getJsonBotInputText(event, text) {
                 var recipient = event.sender.id;
                 var sender = event.recipient.id;
                 var messages = obj.data;
-                if(typeof messages !== 'undefined'){
+                if (typeof messages !== 'undefined') {
                     getToken(messages, sender, recipient);
                 }
             }
@@ -219,7 +222,7 @@ function sendM(messages, recipient, token) {
 }
 
 
-function getLanguage(recipient_id, lang, event, keyword) {
+function getLanguage(recipient_id, lang, event, keyword, input_type) {
     var url = urlApiSaveOrUpdate + "?api_name=lang&lang=" + lang + "&recipeient_id=" + recipient_id;
     console.log(url)
     request({
@@ -237,13 +240,20 @@ function getLanguage(recipient_id, lang, event, keyword) {
                 keyword = keyword + "||lang=" + data.data.lang;
             }
             // getPreviousActions(recipient_id, event, keyword, 'aggregation');
-            getJsonBot(event, keyword);
+            if (input_type === 'aggregation') {
+                getJsonBot(event, keyword);
+            }
+
+            if (input_type === 'text') {
+                inputTextHandler(event, keyword);
+            }
+
         }
     });
 }
 
 function savePreviousActions(recipient_id, type, keyword) {
-    if(keyword.indexOf('prev_action=') > -1){
+    if (keyword.indexOf('prev_action=') > -1) {
         keyword = keyword.split('||prev_action=')[0]
     }
     var url = urlApiSaveOrUpdate + "?api_name=prev_actions&key=" + keyword + "&recipient_id=" + recipient_id + '&type=' + type;
@@ -277,11 +287,11 @@ function getPreviousActions(recipient_id, event, keyword, input_type) {
             var data = JSON.parse(response.body);
             console.log('============ ' + response.body + ' =========== ');
             var prevActions = data.data;
-            keyword = keyword + "||prev_action=" + JSON.stringify(prevActions)
-            if(input_type === 'text'){
+            keyword = keyword + "&prev_action=" + JSON.stringify(prevActions)
+            if (input_type === 'text') {
                 getJsonBotInputText(event, keyword);
             }
-            if(input_type === 'aggregation'){
+            if (input_type === 'aggregation') {
                 getJsonBot(event, keyword);
             }
 
