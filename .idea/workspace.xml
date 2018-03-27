@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8c0fd527-5667-4e03-89ee-e95c0bdc3c27" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/ai/index.js" afterPath="$PROJECT_DIR$/ai/index.js" />
       <change beforePath="$PROJECT_DIR$/true_money/true_money.js" afterPath="$PROJECT_DIR$/true_money/true_money.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -123,8 +122,8 @@
       <file leaf-file-name="true_money.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/true_money/true_money.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="299">
-              <caret line="29" column="49" lean-forward="false" selection-start-line="29" selection-start-column="49" selection-end-line="29" selection-end-column="49" />
+            <state relative-caret-position="180">
+              <caret line="30" column="101" lean-forward="false" selection-start-line="30" selection-start-column="101" selection-end-line="30" selection-end-column="101" />
               <folding />
             </state>
           </provider>
@@ -251,10 +250,10 @@
       <find>savePreviousActions</find>
       <find>getToken</find>
       <find>getPreviousActions</find>
-      <find>coordinatesHandler</find>
       <find>===== NOTHING HERE ========</find>
       <find>undefined</find>
       <find>Event</find>
+      <find>coordinatesHandler</find>
     </findStrings>
     <replaceStrings>
       <replace>localhost:8080</replace>
@@ -617,12 +616,12 @@
       <workItem from="1521431732670" duration="12000" />
       <workItem from="1521623819898" duration="1282000" />
       <workItem from="1521864397305" duration="15071000" />
-      <workItem from="1521984385571" duration="21911000" />
+      <workItem from="1521984385571" duration="22128000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="701206000" />
+    <option name="totallyTimeSpent" value="701423000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1630,8 +1629,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/true_money/true_money.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
-          <caret line="29" column="49" lean-forward="false" selection-start-line="29" selection-start-column="49" selection-end-line="29" selection-end-column="49" />
+        <state relative-caret-position="180">
+          <caret line="30" column="101" lean-forward="false" selection-start-line="30" selection-start-column="101" selection-end-line="30" selection-end-column="101" />
           <folding />
         </state>
       </provider>

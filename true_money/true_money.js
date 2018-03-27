@@ -28,7 +28,7 @@ var urlApiRead = 'http://halfcup.com/social_rebates_system/trueMoneyApi/read';
 
 function coordinatesHandler(event, prev_action) {
     var cordinates = event.message.attachments[0].payload.coordinates;
-    var url = urlApiInputText + 'SelLocation||type=cashin||latitude=' + cordinates.lat + '||longgitude=' + cordinates.long + prev_action;
+    var url = urlApiInputText + 'SelLocation||type=cashin||latitude=' + cordinates.lat + '||longitude=' + cordinates.long + prev_action;
     console.log('url', url);
     request({
             url: url,
