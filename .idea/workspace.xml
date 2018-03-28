@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8c0fd527-5667-4e03-89ee-e95c0bdc3c27" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/true_money/true_money.js" afterPath="$PROJECT_DIR$/true_money/true_money.js" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/ai/index.js" afterPath="$PROJECT_DIR$/ai/index.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -19,32 +20,31 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="index.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/ai/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="167">
-              <caret line="350" column="65" lean-forward="false" selection-start-line="350" selection-start-column="65" selection-end-line="350" selection-end-column="65" />
+            <state relative-caret-position="-1995">
+              <caret line="86" column="51" lean-forward="false" selection-start-line="86" selection-start-column="51" selection-end-line="86" selection-end-column="51" />
               <folding>
-                <element signature="e#3279#5492#0" expanded="false" />
-                <element signature="e#5621#5773#0" expanded="false" />
-                <element signature="e#5828#9875#0" expanded="false" />
-                <element signature="e#9962#20168#0" expanded="false" />
-                <element signature="e#14134#16540#0" expanded="false" />
-                <element signature="e#21615#22398#0" expanded="false" />
-                <element signature="e#22622#32211#0" expanded="false" />
-                <element signature="e#22866#25410#0" expanded="false" />
-                <element signature="e#26013#26673#0" expanded="false" />
-                <element signature="e#26287#26639#0" expanded="false" />
-                <element signature="e#27031#27629#0" expanded="false" />
-                <element signature="e#27740#27973#0" expanded="false" />
-                <element signature="e#28042#28268#0" expanded="false" />
-                <element signature="e#28339#28567#0" expanded="false" />
-                <element signature="e#28601#28802#0" expanded="false" />
-                <element signature="e#28948#30667#0" expanded="false" />
-                <element signature="e#30810#31092#0" expanded="false" />
-                <element signature="e#31177#31425#0" expanded="false" />
-                <element signature="e#31853#32155#0" expanded="false" />
-                <element signature="e#32283#34485#0" expanded="false" />
+                <element signature="e#5626#5778#0" expanded="false" />
+                <element signature="e#5833#9880#0" expanded="false" />
+                <element signature="e#9967#20173#0" expanded="false" />
+                <element signature="e#14139#16545#0" expanded="false" />
+                <element signature="e#21620#22403#0" expanded="false" />
+                <element signature="e#22627#32216#0" expanded="false" />
+                <element signature="e#22871#25415#0" expanded="false" />
+                <element signature="e#26018#26678#0" expanded="false" />
+                <element signature="e#26292#26644#0" expanded="false" />
+                <element signature="e#27036#27634#0" expanded="false" />
+                <element signature="e#27745#27978#0" expanded="false" />
+                <element signature="e#28047#28273#0" expanded="false" />
+                <element signature="e#28344#28572#0" expanded="false" />
+                <element signature="e#28606#28807#0" expanded="false" />
+                <element signature="e#28953#30672#0" expanded="false" />
+                <element signature="e#30815#31097#0" expanded="false" />
+                <element signature="e#31182#31430#0" expanded="false" />
+                <element signature="e#31858#32160#0" expanded="false" />
+                <element signature="e#32288#34493#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -53,7 +53,7 @@
       <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="190">
+            <state relative-caret-position="1105">
               <caret line="441" column="36" lean-forward="false" selection-start-line="441" selection-start-column="36" selection-end-line="441" selection-end-column="36" />
               <folding>
                 <element signature="e#517#832#0" expanded="false" />
@@ -119,10 +119,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="true_money.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="true_money.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/true_money/true_money.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
+            <state relative-caret-position="17">
               <caret line="30" column="101" lean-forward="false" selection-start-line="30" selection-start-column="101" selection-end-line="30" selection-end-column="101" />
               <folding />
             </state>
@@ -132,7 +132,7 @@
       <file leaf-file-name="new_nlp.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/new_nlp.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1479">
+            <state relative-caret-position="289">
               <caret line="19" column="14" lean-forward="false" selection-start-line="19" selection-start-column="4" selection-end-line="19" selection-end-column="14" />
               <folding>
                 <element signature="e#0#42#0" expanded="false" />
@@ -224,7 +224,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>payload_prefix</find>
       <find>TEXT ==&gt;</find>
       <find>http://halfcup.com/social_rebates_system/api/getResponseMessage</find>
       <find>event.postback.</find>
@@ -254,6 +253,7 @@
       <find>undefined</find>
       <find>Event</find>
       <find>coordinatesHandler</find>
+      <find>referral</find>
     </findStrings>
     <replaceStrings>
       <replace>localhost:8080</replace>
@@ -276,8 +276,8 @@
         <option value="$PROJECT_DIR$/nlp.js" />
         <option value="$PROJECT_DIR$/new_nlp.js" />
         <option value="$PROJECT_DIR$/index.js" />
-        <option value="$PROJECT_DIR$/ai/index.js" />
         <option value="$PROJECT_DIR$/true_money/true_money.js" />
+        <option value="$PROJECT_DIR$/ai/index.js" />
       </list>
     </option>
   </component>
@@ -616,12 +616,13 @@
       <workItem from="1521431732670" duration="12000" />
       <workItem from="1521623819898" duration="1282000" />
       <workItem from="1521864397305" duration="15071000" />
-      <workItem from="1521984385571" duration="22128000" />
+      <workItem from="1521984385571" duration="23394000" />
+      <workItem from="1522240530473" duration="1446000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="701423000" />
+    <option name="totallyTimeSpent" value="704135000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -641,8 +642,8 @@
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32850242" sideWeight="0.5029762" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3252818" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.52427185" sideWeight="0.4940476" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.17708333" sideWeight="0.56785715" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.52427185" sideWeight="0.4940476" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.48638132" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.6569579" sideWeight="0.4940476" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.17708333" sideWeight="0.5426731" order="2" side_tool="true" content_ui="tabs" />
@@ -1524,7 +1525,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/new_nlp.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1479">
+        <state relative-caret-position="289">
           <caret line="19" column="14" lean-forward="false" selection-start-line="19" selection-start-column="4" selection-end-line="19" selection-end-column="14" />
           <folding>
             <element signature="e#0#42#0" expanded="false" />
@@ -1543,7 +1544,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
+        <state relative-caret-position="1105">
           <caret line="441" column="36" lean-forward="false" selection-start-line="441" selection-start-column="36" selection-end-line="441" selection-end-column="36" />
           <folding>
             <element signature="e#517#832#0" expanded="false" />
@@ -1598,40 +1599,39 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ai/index.js">
+    <entry file="file://$PROJECT_DIR$/true_money/true_money.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="167">
-          <caret line="350" column="65" lean-forward="false" selection-start-line="350" selection-start-column="65" selection-end-line="350" selection-end-column="65" />
-          <folding>
-            <element signature="e#3279#5492#0" expanded="false" />
-            <element signature="e#5621#5773#0" expanded="false" />
-            <element signature="e#5828#9875#0" expanded="false" />
-            <element signature="e#9962#20168#0" expanded="false" />
-            <element signature="e#14134#16540#0" expanded="false" />
-            <element signature="e#21615#22398#0" expanded="false" />
-            <element signature="e#22622#32211#0" expanded="false" />
-            <element signature="e#22866#25410#0" expanded="false" />
-            <element signature="e#26013#26673#0" expanded="false" />
-            <element signature="e#26287#26639#0" expanded="false" />
-            <element signature="e#27031#27629#0" expanded="false" />
-            <element signature="e#27740#27973#0" expanded="false" />
-            <element signature="e#28042#28268#0" expanded="false" />
-            <element signature="e#28339#28567#0" expanded="false" />
-            <element signature="e#28601#28802#0" expanded="false" />
-            <element signature="e#28948#30667#0" expanded="false" />
-            <element signature="e#30810#31092#0" expanded="false" />
-            <element signature="e#31177#31425#0" expanded="false" />
-            <element signature="e#31853#32155#0" expanded="false" />
-            <element signature="e#32283#34485#0" expanded="false" />
-          </folding>
+        <state relative-caret-position="17">
+          <caret line="30" column="101" lean-forward="false" selection-start-line="30" selection-start-column="101" selection-end-line="30" selection-end-column="101" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/true_money/true_money.js">
+    <entry file="file://$PROJECT_DIR$/ai/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="30" column="101" lean-forward="false" selection-start-line="30" selection-start-column="101" selection-end-line="30" selection-end-column="101" />
-          <folding />
+        <state relative-caret-position="-1995">
+          <caret line="86" column="51" lean-forward="false" selection-start-line="86" selection-start-column="51" selection-end-line="86" selection-end-column="51" />
+          <folding>
+            <element signature="e#5626#5778#0" expanded="false" />
+            <element signature="e#5833#9880#0" expanded="false" />
+            <element signature="e#9967#20173#0" expanded="false" />
+            <element signature="e#14139#16545#0" expanded="false" />
+            <element signature="e#21620#22403#0" expanded="false" />
+            <element signature="e#22627#32216#0" expanded="false" />
+            <element signature="e#22871#25415#0" expanded="false" />
+            <element signature="e#26018#26678#0" expanded="false" />
+            <element signature="e#26292#26644#0" expanded="false" />
+            <element signature="e#27036#27634#0" expanded="false" />
+            <element signature="e#27745#27978#0" expanded="false" />
+            <element signature="e#28047#28273#0" expanded="false" />
+            <element signature="e#28344#28572#0" expanded="false" />
+            <element signature="e#28606#28807#0" expanded="false" />
+            <element signature="e#28953#30672#0" expanded="false" />
+            <element signature="e#30815#31097#0" expanded="false" />
+            <element signature="e#31182#31430#0" expanded="false" />
+            <element signature="e#31858#32160#0" expanded="false" />
+            <element signature="e#32288#34493#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>

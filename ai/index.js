@@ -84,7 +84,7 @@ app.post('/webhook', function (req, res) {
 
 
                     if (event.referral) {
-                        console.log('messaging');
+                        console.log('event.referral');
                         // var messaging = event.messaging[0];
                         // if(messaging.hasOwnProperty('referral')){
                         //     console.log('messaging.referral');
@@ -562,7 +562,7 @@ app.post('/webhook', function (req, res) {
                                     var keys = ref.split("|");
                                     // if (keys[0] === 'MESSAGE_ME') {
                                     // getResponseToUser(ref,event.sender.id, event.recipient.id );
-                                    getToken(ref, event.recipient.id, event.sender.id, true);
+                                    // getToken(ref, event.recipient.id, event.sender.id, true);
                                     // }
                                 }
 
