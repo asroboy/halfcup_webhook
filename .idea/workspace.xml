@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="8c0fd527-5667-4e03-89ee-e95c0bdc3c27" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/ai/index.js" afterPath="$PROJECT_DIR$/ai/index.js" />
+      <change beforePath="$PROJECT_DIR$/new_nlp.js" afterPath="$PROJECT_DIR$/new_nlp.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -20,11 +20,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="index.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ai/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1995">
-              <caret line="86" column="51" lean-forward="false" selection-start-line="86" selection-start-column="51" selection-end-line="86" selection-end-column="51" />
+            <state relative-caret-position="180">
+              <caret line="111" column="49" lean-forward="false" selection-start-line="111" selection-start-column="49" selection-end-line="111" selection-end-column="49" />
               <folding>
                 <element signature="e#5626#5778#0" expanded="false" />
                 <element signature="e#5833#9880#0" expanded="false" />
@@ -122,29 +122,29 @@
       <file leaf-file-name="true_money.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/true_money/true_money.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
+            <state relative-caret-position="510">
               <caret line="30" column="101" lean-forward="false" selection-start-line="30" selection-start-column="101" selection-end-line="30" selection-end-column="101" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="new_nlp.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="new_nlp.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/new_nlp.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="19" column="14" lean-forward="false" selection-start-line="19" selection-start-column="4" selection-end-line="19" selection-end-column="14" />
+            <state relative-caret-position="146">
+              <caret line="321" column="42" lean-forward="false" selection-start-line="321" selection-start-column="42" selection-end-line="321" selection-end-column="42" />
               <folding>
                 <element signature="e#0#42#0" expanded="false" />
-                <element signature="e#18001#18060#0" expanded="false" />
-                <element signature="e#18120#18183#0" expanded="false" />
-                <element signature="e#18214#18290#0" expanded="false" />
-                <element signature="e#18895#18954#0" expanded="false" />
-                <element signature="e#19014#19077#0" expanded="false" />
-                <element signature="e#19108#19184#0" expanded="false" />
+                <element signature="e#18190#18249#0" expanded="false" />
+                <element signature="e#18309#18372#0" expanded="false" />
+                <element signature="e#18403#18479#0" expanded="false" />
+                <element signature="e#19084#19143#0" expanded="false" />
+                <element signature="e#19203#19266#0" expanded="false" />
+                <element signature="e#19297#19373#0" expanded="false" />
                 <element signature="n#!!block;n#test#0" expanded="false" />
-                <element signature="e#21374#21437#0" expanded="false" />
-                <element signature="e#21468#21544#0" expanded="false" />
+                <element signature="e#21563#21626#0" expanded="false" />
+                <element signature="e#21657#21733#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -224,19 +224,12 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>TEXT ==&gt;</find>
-      <find>http://halfcup.com/social_rebates_system/api/getResponseMessage</find>
-      <find>event.postback.</find>
-      <find>getResponseToUserForPostback</find>
-      <find>{{</find>
-      <find>user</find>
       <find>getUserInfo</find>
       <find>aggregation</find>
       <find>saveParamAi</find>
       <find>TEXT ========================================&gt;</find>
       <find>handleMessage</find>
       <find>getMerchantId</find>
-      <find>getChatBot</find>
       <find>SAVE PARAM AI</find>
       <find>===== event.postback.payload ========</find>
       <find>POST WEBHOOK</find>
@@ -254,6 +247,13 @@
       <find>Event</find>
       <find>coordinatesHandler</find>
       <find>referral</find>
+      <find>getChatBot</find>
+      <find>getAggregationObjectDoneBot</find>
+      <find>getThirdPartyPageID</find>
+      <find>AGGREGATE_OBJ</find>
+      <find>saveAggregationObj</find>
+      <find>getThirdPartyPageID_2</find>
+      <find>getParam</find>
     </findStrings>
     <replaceStrings>
       <replace>localhost:8080</replace>
@@ -274,10 +274,10 @@
         <option value="$PROJECT_DIR$/test.js" />
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/nlp.js" />
-        <option value="$PROJECT_DIR$/new_nlp.js" />
         <option value="$PROJECT_DIR$/index.js" />
         <option value="$PROJECT_DIR$/true_money/true_money.js" />
         <option value="$PROJECT_DIR$/ai/index.js" />
+        <option value="$PROJECT_DIR$/new_nlp.js" />
       </list>
     </option>
   </component>
@@ -298,7 +298,7 @@
   <component name="NodeModulesDirectoryManager">
     <handled-path value="$PROJECT_DIR$/node_modules" />
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="1" />
     <option name="y" value="1" />
     <option name="width" value="670" />
@@ -319,6 +319,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
@@ -336,7 +337,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -617,12 +617,17 @@
       <workItem from="1521623819898" duration="1282000" />
       <workItem from="1521864397305" duration="15071000" />
       <workItem from="1521984385571" duration="23394000" />
-      <workItem from="1522240530473" duration="1446000" />
+      <workItem from="1522240530473" duration="2112000" />
+      <workItem from="1522638930985" duration="47000" />
+      <workItem from="1522726801613" duration="7000" />
+      <workItem from="1522828568186" duration="185000" />
+      <workItem from="1522898256061" duration="599000" />
+      <workItem from="1523266676192" duration="8317000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="704135000" />
+    <option name="totallyTimeSpent" value="713956000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -634,10 +639,9 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1382" height="754" extended-state="7" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15550596" sideWeight="0.43369177" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.072916664" sideWeight="0.43369177" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32850242" sideWeight="0.49702382" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32850242" sideWeight="0.5029762" order="7" side_tool="true" content_ui="tabs" />
@@ -645,7 +649,7 @@
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.17708333" sideWeight="0.56785715" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.52427185" sideWeight="0.4940476" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.48638132" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.6569579" sideWeight="0.4940476" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.63754046" sideWeight="0.4940476" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.17708333" sideWeight="0.5426731" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -1523,25 +1527,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/new_nlp.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="19" column="14" lean-forward="false" selection-start-line="19" selection-start-column="4" selection-end-line="19" selection-end-column="14" />
-          <folding>
-            <element signature="e#0#42#0" expanded="false" />
-            <element signature="e#18001#18060#0" expanded="false" />
-            <element signature="e#18120#18183#0" expanded="false" />
-            <element signature="e#18214#18290#0" expanded="false" />
-            <element signature="e#18895#18954#0" expanded="false" />
-            <element signature="e#19014#19077#0" expanded="false" />
-            <element signature="e#19108#19184#0" expanded="false" />
-            <element signature="n#!!block;n#test#0" expanded="false" />
-            <element signature="e#21374#21437#0" expanded="false" />
-            <element signature="e#21468#21544#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1105">
@@ -1601,7 +1586,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/true_money/true_money.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
+        <state relative-caret-position="510">
           <caret line="30" column="101" lean-forward="false" selection-start-line="30" selection-start-column="101" selection-end-line="30" selection-end-column="101" />
           <folding />
         </state>
@@ -1609,8 +1594,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/ai/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1995">
-          <caret line="86" column="51" lean-forward="false" selection-start-line="86" selection-start-column="51" selection-end-line="86" selection-end-column="51" />
+        <state relative-caret-position="180">
+          <caret line="111" column="49" lean-forward="false" selection-start-line="111" selection-start-column="49" selection-end-line="111" selection-end-column="49" />
           <folding>
             <element signature="e#5626#5778#0" expanded="false" />
             <element signature="e#5833#9880#0" expanded="false" />
@@ -1631,6 +1616,25 @@
             <element signature="e#31182#31430#0" expanded="false" />
             <element signature="e#31858#32160#0" expanded="false" />
             <element signature="e#32288#34493#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/new_nlp.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="146">
+          <caret line="321" column="42" lean-forward="false" selection-start-line="321" selection-start-column="42" selection-end-line="321" selection-end-column="42" />
+          <folding>
+            <element signature="e#0#42#0" expanded="false" />
+            <element signature="e#18190#18249#0" expanded="false" />
+            <element signature="e#18309#18372#0" expanded="false" />
+            <element signature="e#18403#18479#0" expanded="false" />
+            <element signature="e#19084#19143#0" expanded="false" />
+            <element signature="e#19203#19266#0" expanded="false" />
+            <element signature="e#19297#19373#0" expanded="false" />
+            <element signature="n#!!block;n#test#0" expanded="false" />
+            <element signature="e#21563#21626#0" expanded="false" />
+            <element signature="e#21657#21733#0" expanded="false" />
           </folding>
         </state>
       </provider>

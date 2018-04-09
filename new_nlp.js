@@ -295,7 +295,7 @@ function getParam(key, sender, recipient, token, res) {
                 console.log('Error: ', response.body.error);
             } else {
                 var obj = JSON.parse(body);
-                console.log('getChatBot RESULT: ', obj);
+                console.log('PARAM AI RESULT: ', obj);
                 if (obj.data !== null) {
                     var param = obj.data.prm;
                     getThirdPartyPageID_2(key, sender, recipient, token, res, param);
@@ -317,7 +317,12 @@ function getAggregationObject(key, sender, recipient, token, res, param, third_p
             if (mKey.indexOf("{{") > -1) {
                 mKey = mKey.replace("{{", "").replace("}}", "");
             }
-            url = 'http://aileadsbooster.com/Backend/aggregation?' + mKey + '&param=' + param + '&third-party=' + third_party
+            mKey = mKey.replace('%26', '&');
+            var mParam = param;
+            if (param.indexOf('param=') > -1) {
+                mParam = param.split('param=')[1];
+            }
+            url = 'http://aileadsbooster.com/Backend/aggregation?' + mKey + '&param=' + mParam + '&third-party=' + third_party
         }
 
         console.log('url', url);
