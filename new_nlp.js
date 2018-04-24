@@ -320,17 +320,18 @@ function getAggregationObject(key, sender, recipient, token, res, param, third_p
                 mKey = mKey.replace("{{", "").replace("}}", "");
             }
             mKey = mKey.replace('%26', '&');
-            var mParam = param;
-            if (param.indexOf('param=') > -1) {
-                mParam = param.split('param=')[1];
+            if(param === null){
+                url = 'http://aileadsbooster.com/Backend/aggregation?' + mKey + '&third-party=' + third_party
+            }else{
+                var mParam = param;
+                if (param.indexOf('param=') > -1) {
+                    mParam = param.split('param=')[1];
+                }
+                url = 'http://aileadsbooster.com/Backend/aggregation?' + mKey + '&param=' + mParam + '&third-party=' + third_party
             }
-            url = 'http://aileadsbooster.com/Backend/aggregation?' + mKey + '&param=' + mParam + '&third-party=' + third_party
+
         }
 
-        if(param === null){
-            mKey = mKey.replace('%26','&');
-            url = 'http://aileadsbooster.com/Backend/aggregation?' + mKey + '&third-party=' + third_party
-        }
 
         console.log('url', url);
         request({
