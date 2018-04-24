@@ -300,6 +300,8 @@ function getParam(key, sender, recipient, token, res) {
                     var param = obj.data.prm;
                     getThirdPartyPageID_2(key, sender, recipient, token, res, param);
                     // getAggregationObject(key, sender, recipient, token, res, param);
+                }else{
+                    getAggregationObject(key, sender, recipient, token, res, null, "");
                 }
 
             }
@@ -323,6 +325,11 @@ function getAggregationObject(key, sender, recipient, token, res, param, third_p
                 mParam = param.split('param=')[1];
             }
             url = 'http://aileadsbooster.com/Backend/aggregation?' + mKey + '&param=' + mParam + '&third-party=' + third_party
+        }
+
+        if(param === null){
+            mKey = mKey.replace('%26','&');
+            url = 'http://aileadsbooster.com/Backend/aggregation?' + mKey + '&third-party=' + third_party
         }
 
         console.log('url', url);

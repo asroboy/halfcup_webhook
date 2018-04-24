@@ -470,6 +470,7 @@ app.post('/webhook', function (req, res) {
                                 }
                                 else if (payload_prefix === 'AGGREGATION') {
                                     console.log('call new_nlp AGGREGATION');
+                                    // saveParamAi(event.recipient.id, event.sender.id, '', ####);
                                     new_nlp.getChatBot(event.postback.payload, event.recipient.id, event.sender.id, res)
                                 }
                                 else if (payload_prefix === 'LIVE') {
