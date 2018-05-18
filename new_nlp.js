@@ -83,7 +83,7 @@ function getToken(text, sender, recipient, isMessageUs, res) {
                             var myEscapedJSONString = js_.escapeSpecialChars();
                             myEscapedJSONString = myEscapedJSONString.replace(/\\\\n/g, "\\n");
                             console.log("TEXT ==> " + myEscapedJSONString);
-                            sendMessage(recipient, myEscapedJSONString, token);
+                            sendMessage(sender, recipient, myEscapedJSONString, token);
 
                             var message = 'Hi, someone asking for Live Inquiries in messenger, <br>Thanks';
                             sendEmailForAi('LIVE Inquiries'.message, recipient, key.split('=')[1]);
@@ -271,7 +271,7 @@ function getAggregationObjectDoneBot(key, sender, recipient, token, res, param, 
                     // res.send("DONE, randomIndex " + randomIndex);
                     // respond(obj.aggregation, sender, recipient, randomIndex, token, res);
                     // randomIndex = randomIndex - 1
-                    sendM(obj.aggregation, recipient, token);
+                    sendM(sender, obj.aggregation, recipient, token);
                     // respondToTextOrAttacment(obj.aggregation, sender, recipient, token, randomIndex)
                 } else {
                     getDefaultAnswer(sender, recipient, token, res);
@@ -357,7 +357,7 @@ function getAggregationObject(key, sender, recipient, token, res, param, third_p
                             // res.send("DONE, randomIndex " + randomIndex);
                             // respond(obj.aggregation, sender, recipient, randomIndex, token, res);
                             // randomIndex = randomIndex - 1
-                            sendM(obj.aggregation, recipient, token);
+                            sendM(sender, obj.aggregation, recipient, token);
                             // respondToTextOrAttacment(obj.aggregation, sender, recipient, token, randomIndex)
                         } else {
                             getDefaultAnswer(sender, recipient, token, res);
@@ -567,7 +567,7 @@ function getIndexAggregate(size, pageId, key, aggreationData, recipient, token) 
                     var myEscapedJSONString = js_.escapeSpecialChars();
                     myEscapedJSONString = myEscapedJSONString.replace(/\\\\n/g, "\\n");
                     console.log("TEXT ==> " + myEscapedJSONString);
-                    sendMessage(recipient, myEscapedJSONString, token);
+                    sendMessage(pageId, recipient, myEscapedJSONString, token);
                 }
 
 
@@ -604,7 +604,7 @@ function getAiKey(text, wang_token, pageId, prevKeys, recipient, token, res, agg
                     if (obj.hasOwnProperty('aggregation')) {
                         console.log('AGGREGATION LENGTH = ' + obj.aggregation.length);
                         if (obj.aggregation.length > 0) {
-                            sendM(obj.aggregation, recipient, token);
+                            sendM(pageId, obj.aggregation, recipient, token);
                             // getIndexAggregate(obj.aggregation.length, pageId, obj.key, obj.aggregation, recipient, token);
                             saveAiKeyWithoutGetBot(obj.key, pageId, recipient, token, res)
                             // saveAiKey(obj.key, pageId, recipient, token, res);
@@ -731,21 +731,21 @@ function respondToTextOrAttacment(json, sender, recipient, token, index) {
     if (json[index].message.text) {
         var message = json[index].message.text;
         console.log(message);
-        sendMorA(message, recipient, token)
+        sendMorA(sender, message, recipient, token)
         //attachment
     } else {
         var message = json[index].message;
         console.log(message);
-        sendMorA(message, recipient, token)
+        sendMorA(sender, message, recipient, token)
     }
 }
 
-function sendMorA(m_payload, recipient, token) {
+function sendMorA(page_id, m_payload, recipient, token) {
     if (m_payload.attachment) {
         // var myEscapedJSONString = m_payload.escapeSpecialChars();
         // myEscapedJSONString = myEscapedJSONString.replace(/\\\\n/g, "\\n");
         // console.log("TEXT ==> " + myEscapedJSONString);
-        sendMessage(recipient, m_payload, token);
+        sendMessage(page_id, recipient, m_payload, token);
     } else {
         if (m_payload.indexOf('{{') > -1) {
             getUserInfo(m_payload, recipient, token);
@@ -756,7 +756,7 @@ function sendMorA(m_payload, recipient, token) {
             var myEscapedJSONString = js_.escapeSpecialChars();
             myEscapedJSONString = myEscapedJSONString.replace(/\\\\n/g, "\\n");
             console.log("TEXT ==> " + myEscapedJSONString);
-            sendMessage(recipient, myEscapedJSONString, token);
+            sendMessage(page_id, recipient, myEscapedJSONString, token);
         }
     }
 }
@@ -788,7 +788,7 @@ function getGroupBot(key, sender, recipient, token, res) {
 
 function respondFromGroup(jsonMessage, sender, recipient, size, token, res) {
     var json = JSON.parse(jsonMessage[0].json);
-    sendM(json, recipient, token);
+    sendM(sender, json, recipient, token);
 
     // res.send('~ DONE ~');
 }
@@ -834,7 +834,7 @@ function isChatBot(jsonMessage, index) {
     return json[index] && json[index].message;
 }
 
-function sendM(messages, recipient, token) {
+function sendM(page_id, messages, recipient, token) {
     var i = 0;
 
     function getOneM(messages) {
@@ -858,11 +858,13 @@ function sendM(messages, recipient, token) {
             }
         }, function (err, resp, body) {
             console.log("--->  " + JSON.stringify(body));
+            update_webhook_status(page_id, "Error: " + err);
         }).on('end', function () {
             console.log("done with ONE user ");
             if (i < messages.length) { // do we still have users to make requests?
                 getOneM(messages); // recursion
             } else {
+                update_webhook_status(page_id, "OK");
                 console.log("done with ALL users");
                 // res.json(success);
             }
@@ -876,7 +878,7 @@ function sendM(messages, recipient, token) {
 }
 
 // generic function sending messages
-function sendMessage(recipientId, message, token) {
+function sendMessage(page_id, recipientId, message, token) {
     request({
         url: 'https://graph.facebook.com/v2.6/me/messages',
         qs: {access_token: token},
@@ -887,10 +889,13 @@ function sendMessage(recipientId, message, token) {
         }
     }, function (error, response, body) {
         if (error) {
+            update_webhook_status(page_id, "Error: " + error);
             console.log('Error sending message: ', error);
         } else if (response.body.error) {
+            update_webhook_status(page_id, "Error: " + response.body.error);
             console.log('Error: ', response.body.error);
         } else {
+            update_webhook_status(page_id, "OK");
             // console.log('============ ' + response + ' =========== ');
         }
     });
@@ -941,3 +946,21 @@ function sendEmailForAi(title, message, page_id, email) {
 
 }
 
+
+function update_webhook_status(page_id, status) {
+    // http://localhost:8080/social_rebates_system/wapi/delete?token=1234567890&api_name=AI_PREV_KEYS_CLEAR&page_id=111
+    var url = 'http://localhost:8080/social_rebates_system/messengerPage/update_webhook_status?page_id=' + page_id + '&status=' + status;
+    console.log('url', url);
+    request({
+            url: url,
+            method: 'GET'
+        }, function (error, response, body) {
+            if (error) {
+                console.log('Error : ', error);
+            } else if (response.body.error) {
+                console.log('Error: ', response.body.error);
+            } else {
+            }
+        }
+    );
+}

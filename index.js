@@ -398,10 +398,10 @@ app.post('/webhook', function (req, res) {
                             if (event.postback.payload.indexOf('|param|') > -1) {
                                 var ref = event.postback.payload;
                                 console.log("payload " + ref);
-                                if (ref.indexOf("halfcup.com") > -1){
+                                if (ref.indexOf("halfcup.com") > -1) {
                                     ref = ref.replace("http://halfcup.com/social_rebates_system/app/msgredir?", "");
                                 }
-                                if (ref.indexOf("ref=") > -1){
+                                if (ref.indexOf("ref=") > -1) {
                                     ref = ref.split("ref=")[1];
                                 }
                                 console.log("payload after extract: " + ref);
@@ -544,7 +544,7 @@ app.post('/webhook', function (req, res) {
                                     console.log('call new_nlp event.postback.payload {{');
                                     new_nlp.getChatBot(event.postback.payload, event.recipient.id, event.sender.id, res);
                                 }
-                                else if(find_prefix[0] === "TRUE" && find_prefix[1] === "MONEY"){
+                                else if (find_prefix[0] === "TRUE" && find_prefix[1] === "MONEY") {
                                     var keyword = event.postback.payload.replace("TRUE_MONEY_", "");
                                     console.log("keyword " + keyword);
                                     // getResponseToUserForPostback(keyword, event.sender.id, event.recipient.id);
@@ -1439,7 +1439,9 @@ function saveParamAi(page_id, reciever, prm, code) {
         }, function (error, response, body) {
             if (error) {
                 console.log('Error sending message: ', error);
+                // update_webhook_status(sender, 'Error : ' + error);
             } else if (response.body.error) {
+                // update_webhook_status(sender, 'Error : ' + response.body.error);
                 console.log('Error: ', response.body.error);
             } else {
                 var obj = JSON.parse(body);
@@ -1458,8 +1460,10 @@ function getParamZ(emailContent, pageId, recipient) {
         }, function (error, response, body) {
             if (error) {
                 console.log('Error sending message: ', error);
+                // update_webhook_status(pageId, 'Error' + error);
             } else if (response.body.error) {
                 console.log('Error: ', response.body.error);
+                // update_webhook_status(pageId, 'Error' + error);
             } else {
                 var obj = JSON.parse(body);
                 console.log('getChatBot RESULT: ', obj);
@@ -1473,6 +1477,7 @@ function getParamZ(emailContent, pageId, recipient) {
         }
     );
 }
+
 function clearAiKey(sender) {
     // http://localhost:8080/social_rebates_system/wapi/delete?token=1234567890&api_name=AI_PREV_KEYS_CLEAR&page_id=111
     var url = 'http://halfcup.com/social_rebates_system/wapi/delete?token=1234567890&api_name=AI_PREV_KEYS_CLEAR&page_id=' + sender;
@@ -1483,6 +1488,27 @@ function clearAiKey(sender) {
         }, function (error, response, body) {
             if (error) {
                 console.log('Error delete ai keys: ', error);
+                // update_webhook_status(sender, 'Error delete ai keys: ' + error);
+            } else if (response.body.error) {
+                console.log('Error: ', response.body.error);
+                // update_webhook_status(sender, 'Error' + response.body.error);
+            } else {
+            }
+        }
+    );
+}
+
+
+function update_webhook_status(page_id, status) {
+    // http://localhost:8080/social_rebates_system/wapi/delete?token=1234567890&api_name=AI_PREV_KEYS_CLEAR&page_id=111
+    var url = 'http://localhost:8080/social_rebates_system/messengerPage/update_webhook_status?page_id=' + page_id + '&status=' + status;
+    console.log('url', url);
+    request({
+            url: url,
+            method: 'GET'
+        }, function (error, response, body) {
+            if (error) {
+                console.log('Error : ', error);
             } else if (response.body.error) {
                 console.log('Error: ', response.body.error);
             } else {
@@ -1490,6 +1516,7 @@ function clearAiKey(sender) {
         }
     );
 }
+
 
 // }).listen(1337, "127.0.0.1");
 // console.log('Server running at http://127.0.0.1:1337/');
