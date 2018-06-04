@@ -93,9 +93,14 @@ function get_delay_task(page_id, recipient_id, prev_task_id) {
                 console.log('Error: ', response.body.error);
             } else {
                 console.log('response', response);
-                // var message = {"text": `${delay} ms have passed since I was scheduled`};
-                // sendMessage('1724621464435440', '1193481570735913', message, tokenTest);
-                // console.log(`${delay} ms have passed since I was scheduled`);
+                if (response.body.data.taskId === prev_task_id) {
+                    var message = {"text": `${delay} ms have passed since I was scheduled`};
+                    sendMessage('1724621464435440', '1193481570735913', message, tokenTest);
+                    console.log(`${delay} ms have passed since I was scheduled`);
+                } else {
+                    console.log(`DESTROYED`);
+                }
+
             }
         }
     );
