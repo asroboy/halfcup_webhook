@@ -27,7 +27,7 @@ module.exports = {
 var async = require("async");
 var request = require('request');
 var http = require('http');
-
+var autotask = require('./autotask/index');
 
 function getToken(text, sender, recipient, isMessageUs, res) {
     var url = 'http://halfcup.com/social_rebates_system/api/getPageMessengerToken?messenger_id=' + sender + '&messenger_uid=' + recipient;
@@ -432,6 +432,7 @@ function getMerchantId(pageId, recipient, text, token, res) {
     console.log("TEXT ========================================> " + text);
     if (pageId === '1724621464435440') {
         console.log("DI DALAM PENGECUALIAN");
+        autotask.test(res);
     } else {
         var url = 'http://halfcup.com/social_rebates_system/wapi/read?api_name=GET_RESTAURANT&token=1234567890&page_id=' + pageId;
         console.log('url', url);

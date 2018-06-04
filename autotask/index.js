@@ -1,5 +1,5 @@
 module.exports = {
-    foo: function (res) {
+    test: function (res) {
         // test_auto_task(res);
         someAsyncOperation(() => {
             const startCallback = Date.now();
