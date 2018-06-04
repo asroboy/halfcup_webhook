@@ -42,8 +42,8 @@
       <file leaf-file-name="index.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/autotask/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="251">
-              <caret line="89" column="24" lean-forward="true" selection-start-line="89" selection-start-column="24" selection-end-line="89" selection-end-column="24" />
+            <state relative-caret-position="180">
+              <caret line="27" column="9" lean-forward="false" selection-start-line="27" selection-start-column="9" selection-end-line="27" selection-end-column="9" />
               <folding />
             </state>
           </provider>
@@ -61,8 +61,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>Event</find>
-      <find>coordinatesHandler</find>
       <find>referral</find>
       <find>getChatBot</find>
       <find>getAggregationObjectDoneBot</find>
@@ -91,6 +89,8 @@
       <find>TEXT ========================================&gt;</find>
       <find>request</find>
       <find>text</find>
+      <find>get_delay_task</find>
+      <find>someAsyncOperation</find>
     </findStrings>
     <replaceStrings>
       <replace>localhost:8080</replace>
@@ -484,12 +484,12 @@
       <workItem from="1527726985484" duration="725000" />
       <workItem from="1527731180711" duration="1732000" />
       <workItem from="1527738985705" duration="1464000" />
-      <workItem from="1528075860000" duration="7047000" />
+      <workItem from="1528075860000" duration="7178000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="755044000" />
+    <option name="totallyTimeSpent" value="755175000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -904,8 +904,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/autotask/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="251">
-          <caret line="89" column="24" lean-forward="true" selection-start-line="89" selection-start-column="24" selection-end-line="89" selection-end-column="24" />
+        <state relative-caret-position="180">
+          <caret line="27" column="9" lean-forward="false" selection-start-line="27" selection-start-column="9" selection-end-line="27" selection-end-column="9" />
           <folding />
         </state>
       </provider>

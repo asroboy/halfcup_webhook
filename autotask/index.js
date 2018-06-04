@@ -2,15 +2,16 @@ module.exports = {
     test: function (res) {
         // test_auto_task(res);
         const startCallback = Date.now();
+        var task_id = startCallback + '-1193481570735913';
         someAsyncOperation(() => {
-            var task_id = startCallback + '-1193481570735913';
+
             console.log("start callback at " + startCallback);
             save_delay_task('1724621464435440', '1193481570735913', task_id)
             // do something that will take 10ms...
             while (Date.now() - startCallback < 10) {
                 // do nothing
             }
-        }, res);
+        }, res, task_id);
     }
 };
 
