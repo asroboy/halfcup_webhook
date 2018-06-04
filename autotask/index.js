@@ -14,7 +14,7 @@ module.exports = {
 
 
 function test_auto_task(res, message) {
-    res.send(message);
+    // res.send(message);
 }
 
 
@@ -23,7 +23,7 @@ const fs = require('fs');
 function someAsyncOperation(callback, res) {
     // Assume this takes 95ms to complete
     fs.readFile('/path/to/file', callback);
-    res.send('ok')
+    // res.send('ok')
     const timeoutScheduled = Date.now();
 
     setTimeout(() => {
