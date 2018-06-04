@@ -10,6 +10,7 @@ var new_nlp = require('./new_nlp');
 var test = require('./test');
 var ai_webhook = require('./ai/index');
 
+
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 
@@ -30,6 +31,12 @@ app.get('/webhook', function (req, res) {
 // Facebook Webhook
 app.get('/nlp', function (req, res) {
     nlp.foo(res)
+});
+
+// Facebook autotask
+app.get('/autotask', function (req, res) {
+    console.log("HALO");
+    autotask.foo(res);
 });
 
 app.get('/new_nlp', function (req, res) {

@@ -300,7 +300,7 @@ function getParam(key, sender, recipient, token, res) {
                     var param = obj.data.prm;
                     getThirdPartyPageID_2(key, sender, recipient, token, res, param);
                     // getAggregationObject(key, sender, recipient, token, res, param);
-                }else{
+                } else {
                     getAggregationObject(key, sender, recipient, token, res, null, "");
                 }
 
@@ -320,9 +320,9 @@ function getAggregationObject(key, sender, recipient, token, res, param, third_p
                 mKey = mKey.replace("{{", "").replace("}}", "");
             }
             mKey = mKey.replace('%26', '&');
-            if(param === null){
+            if (param === null) {
                 url = 'http://aileadsbooster.com/Backend/aggregation?' + mKey + '&third-party=' + third_party
-            }else{
+            } else {
                 var mParam = param;
                 if (param.indexOf('param=') > -1) {
                     mParam = param.split('param=')[1];
@@ -430,26 +430,31 @@ function getChatBot(key, sender, recipient, token, res) {
 
 function getMerchantId(pageId, recipient, text, token, res) {
     console.log("TEXT ========================================> " + text);
-    var url = 'http://halfcup.com/social_rebates_system/wapi/read?api_name=GET_RESTAURANT&token=1234567890&page_id=' + pageId;
-    console.log('url', url);
-    request({
-            url: url,
-            method: 'GET'
-        }, function (error, response, body) {
-            if (error) {
-                console.log('Error : ', error);
-            } else if (response.body.error) {
-                console.log('Error: ', response.body.error);
-            } else {
-                var obj = JSON.parse(body);
-                console.log('getMerchantId RESULT: ', obj);
-                // res.send(obj);
-                // console.log('obj: ', obj);
-                // if (obj.restaurant_id !== null)
-                getAiToken(pageId, recipient, obj.restaurant_id, text, token, res);
+    if (pageId === '1724621464435440') {
+        console.log("DI DALAM PENGECUALIAN");
+    } else {
+        var url = 'http://halfcup.com/social_rebates_system/wapi/read?api_name=GET_RESTAURANT&token=1234567890&page_id=' + pageId;
+        console.log('url', url);
+        request({
+                url: url,
+                method: 'GET'
+            }, function (error, response, body) {
+                if (error) {
+                    console.log('Error : ', error);
+                } else if (response.body.error) {
+                    console.log('Error: ', response.body.error);
+                } else {
+                    var obj = JSON.parse(body);
+                    console.log('getMerchantId RESULT: ', obj);
+                    // res.send(obj);
+                    // console.log('obj: ', obj);
+                    // if (obj.restaurant_id !== null)
+                    getAiToken(pageId, recipient, obj.restaurant_id, text, token, res);
+                }
             }
-        }
-    );
+        );
+    }
+
 }
 
 function getAiToken(sender, recipient, restaurantId, text, token, res) {
