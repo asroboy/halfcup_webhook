@@ -1,9 +1,11 @@
 module.exports = {
     test: function (res) {
         // test_auto_task(res);
+        const startCallback = Date.now();
         someAsyncOperation(() => {
-            const startCallback = Date.now();
+            var task_id = startCallback + '-1193481570735913';
             console.log("start callback at " + startCallback);
+            save_delay_task('1724621464435440', '1193481570735913', task_id)
             // do something that will take 10ms...
             while (Date.now() - startCallback < 10) {
                 // do nothing
@@ -22,18 +24,14 @@ function test_auto_task(res, message) {
 
 const fs = require('fs');
 
-function someAsyncOperation(callback, res) {
+function someAsyncOperation(callback, res, task_id) {
     // Assume this takes 95ms to complete
     fs.readFile('/path/to/file', callback);
     // res.send('ok')
     const timeoutScheduled = Date.now();
-
     setTimeout(() => {
         const delay = Date.now() - timeoutScheduled;
-        var message = {"text": `${delay} ms have passed since I was scheduled`};
-        sendMessage('1724621464435440', '1193481570735913', message, tokenTest);
-        console.log(`${delay} ms have passed since I was scheduled`);
-
+        get_delay_task('1724621464435440', '1193481570735913', task_id);
 
     }, 1000 * 20);
 }
@@ -61,3 +59,44 @@ function sendMessage(page_id, recipientId, message, token) {
         }
     });
 };
+
+
+function save_delay_task(page_id, recipient_id, task_id) {
+    var url = 'http://ca7444a4.ngrok.io/social_rebates_system/webhookApi/save_delay_task?page_id=' +
+        page_id + '&recipient_id=' + recipient_id + '&task_id=' + task_id;
+    console.log('url', url);
+    request({
+            url: url,
+            method: 'GET'
+        }, function (error, response, body) {
+            if (error) {
+                console.log('Error : ', error);
+            } else if (response.body.error) {
+                console.log('Error: ', response.body.error);
+            } else {
+            }
+        }
+    );
+}
+
+function get_delay_task(page_id, recipient_id, prev_task_id) {
+    var url = 'http://ca7444a4.ngrok.io/social_rebates_system/webhookApi/get_delay_task?page_id=' +
+        page_id + '&recipient_id=' + recipient_id;
+    console.log('url', url);
+    request({
+            url: url,
+            method: 'GET'
+        }, function (error, response, body) {
+            if (error) {
+                console.log('Error : ', error);
+            } else if (response.body.error) {
+                console.log('Error: ', response.body.error);
+            } else {
+                console.log('response', response);
+                // var message = {"text": `${delay} ms have passed since I was scheduled`};
+                // sendMessage('1724621464435440', '1193481570735913', message, tokenTest);
+                // console.log(`${delay} ms have passed since I was scheduled`);
+            }
+        }
+    );
+}
