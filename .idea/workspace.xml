@@ -44,7 +44,7 @@
         <entry file="file://$PROJECT_DIR$/autotask/index.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="353">
-              <caret line="33" column="66" lean-forward="false" selection-start-line="33" selection-start-column="66" selection-end-line="33" selection-end-column="66" />
+              <caret line="33" column="56" lean-forward="false" selection-start-line="33" selection-start-column="56" selection-end-line="33" selection-end-column="56" />
               <folding />
             </state>
           </provider>
@@ -485,12 +485,12 @@
       <workItem from="1527726985484" duration="725000" />
       <workItem from="1527731180711" duration="1732000" />
       <workItem from="1527738985705" duration="1464000" />
-      <workItem from="1528075860000" duration="3456000" />
+      <workItem from="1528075860000" duration="4116000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="751453000" />
+    <option name="totallyTimeSpent" value="752113000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -906,7 +906,7 @@
     <entry file="file://$PROJECT_DIR$/autotask/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="353">
-          <caret line="33" column="66" lean-forward="false" selection-start-line="33" selection-start-column="66" selection-end-line="33" selection-end-column="66" />
+          <caret line="33" column="56" lean-forward="false" selection-start-line="33" selection-start-column="56" selection-end-line="33" selection-end-column="56" />
           <folding />
         </state>
       </provider>
