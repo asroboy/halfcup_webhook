@@ -92,8 +92,8 @@ function get_delay_task(page_id, recipient_id, prev_task_id) {
             } else if (response.body.error) {
                 console.log('Error: ', response.body.error);
             } else {
-                console.log('response', response);
                 var obj = JSON.parse(body);
+                console(obj.data.taskId + " === " + prev_task_id)
                 if (obj.data.taskId === prev_task_id) {
                     var message = {"text": `${delay} ms have passed since I was scheduled`};
                     sendMessage('1724621464435440', '1193481570735913', message, tokenTest);
