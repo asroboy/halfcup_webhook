@@ -12,6 +12,7 @@ module.exports = {
     }
 };
 
+var request = require('request');
 var tokenTest = 'EAABqJD84pmIBAJMrzrRQsyunRMk4ONmSkegazzoI7DbS6xZBLcKOUITc1yqzZBv4wKqHGEa77DYEQJK5rJTU2SFoGaoKKmeplLT3z1n6t1fulizTZB2B8np6fa6uhHQz\n' +
     'CImcwzMZATAtaWfff1OMm7PbRjfOthdxjW7vqHlCceEjddlvx1jj5nG6QCwqV4cZD';
 function test_auto_task(res, message) {
