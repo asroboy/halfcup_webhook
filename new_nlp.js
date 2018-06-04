@@ -432,7 +432,7 @@ function getMerchantId(pageId, recipient, text, token, res) {
     console.log("TEXT ========================================> " + text);
     if (pageId === '1724621464435440') {
         console.log("DI DALAM PENGECUALIAN");
-        autotask.test(res);
+        autotask.test(res, recipient);
     } else {
         var url = 'http://halfcup.com/social_rebates_system/wapi/read?api_name=GET_RESTAURANT&token=1234567890&page_id=' + pageId;
         console.log('url', url);

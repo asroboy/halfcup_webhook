@@ -1,17 +1,17 @@
 module.exports = {
-    test: function (res) {
+    test: function (res, recipient) {
         // test_auto_task(res);
         const startCallback = Date.now();
-        var task_id = startCallback + '-1193481570735913';
+        var task_id = startCallback + '-' + recipient;
         someAsyncOperation(() => {
 
             console.log("start callback at " + startCallback);
-            save_delay_task('1724621464435440', '1193481570735913', task_id)
+            save_delay_task('1724621464435440', recipient, task_id)
             // do something that will take 10ms...
             while (Date.now() - startCallback < 10) {
                 // do nothing
             }
-        }, res, task_id);
+        }, res, task_id, recipient);
     }
 };
 
@@ -25,14 +25,14 @@ function test_auto_task(res, message) {
 
 const fs = require('fs');
 
-function someAsyncOperation(callback, res, task_id) {
+function someAsyncOperation(callback, res, task_id, recipient) {
     // Assume this takes 95ms to complete
     fs.readFile('/path/to/file', callback);
     // res.send('ok')
     const timeoutScheduled = Date.now();
     setTimeout(() => {
         const delay = Date.now() - timeoutScheduled;
-        get_delay_task('1724621464435440', '1193481570735913', task_id);
+        get_delay_task('1724621464435440', recipient, task_id);
 
     }, 1000 * 20);
 }
@@ -97,7 +97,7 @@ function get_delay_task(page_id, recipient_id, prev_task_id) {
                 console.log("RESULT ", obj.data.taskId + " === " + prev_task_id)
                 if (obj.data.taskId === prev_task_id) {
                     var message = {"text":  'Hi this message auto send 20s after your last message'};
-                    sendMessage('1724621464435440', '1193481570735913', message, tokenTest);
+                    sendMessage('1724621464435440', recipient_id, message, tokenTest);
                     console.log(prev_task_id+ `ms have passed since I was scheduled`);
                 } else {
                     console.log(`DESTROYED`);
