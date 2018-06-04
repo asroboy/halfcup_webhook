@@ -31,7 +31,7 @@ function someAsyncOperation(callback, res) {
     setTimeout(() => {
         const delay = Date.now() - timeoutScheduled;
         var message = {"text": `${delay} ms have passed since I was scheduled`};
-        sendMessage('325277791333856', '1724621464435440', message, tokenTest);
+        sendMessage('1724621464435440', '1193481570735913', message, tokenTest);
         console.log(`${delay} ms have passed since I was scheduled`);
 
 
