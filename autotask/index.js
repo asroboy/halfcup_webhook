@@ -30,7 +30,8 @@ function someAsyncOperation(callback, res) {
 
     setTimeout(() => {
         const delay = Date.now() - timeoutScheduled;
-        sendMessage('325277791333856', '1694918677293172', `${delay} ms have passed since I was scheduled`, tokenTest);
+        var message = {"text": `${delay} ms have passed since I was scheduled`};
+        sendMessage('325277791333856', '1694918677293172', message, tokenTest);
         console.log(`${delay} ms have passed since I was scheduled`);
 
 
@@ -41,6 +42,7 @@ function someAsyncOperation(callback, res) {
 // do someAsyncOperation which takes 95 ms to complete
 // generic function sending messages
 function sendMessage(page_id, recipientId, message, token) {
+
     request({
         url: 'https://graph.facebook.com/v2.6/me/messages',
         qs: {access_token: token},
