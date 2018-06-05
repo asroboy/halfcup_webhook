@@ -6,7 +6,7 @@ module.exports = {
         someAsyncOperation(() => {
 
             console.log("start callback at " + startCallback);
-            save_delay_task('1724621464435440', recipient, task_id)
+            save_delay_task(page_id, recipient, task_id);
             // do something that will take 10ms...
             while (Date.now() - startCallback < 10) {
                 // do nothing
@@ -59,7 +59,7 @@ function sendMessage(page_id, recipientId, message, token) {
 
 
 function save_delay_task(page_id, recipient_id, task_id) {
-    var url = 'http://ca7444a4.ngrok.io/social_rebates_system/webhookApi/save_delay_task?page_id=' +
+    var url = 'http://halfcup.com/social_rebates_system/webhookApi/save_delay_task?page_id=' +
         page_id + '&recipient_id=' + recipient_id + '&task_id=' + task_id;
     console.log('url', url);
     request({
@@ -77,7 +77,7 @@ function save_delay_task(page_id, recipient_id, task_id) {
 }
 
 function get_delay_task(page_id, recipient_id, prev_task_id, fb_token) {
-    var url = 'http://ca7444a4.ngrok.io/social_rebates_system/webhookApi/get_delay_task?page_id=' +
+    var url = 'http://halfcup.com/social_rebates_system/webhookApi/get_delay_task?page_id=' +
         page_id + '&recipient_id=' + recipient_id;
     console.log('url', url);
     request({
