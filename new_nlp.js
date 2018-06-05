@@ -21,7 +21,6 @@ module.exports = {
         getToken(key, sender, recipient, false, res);
     },
 
-
 };
 
 var async = require("async");
@@ -47,7 +46,7 @@ function getToken(text, sender, recipient, isMessageUs, res) {
                 if (code == 1) {
                     var token = obj.messenger_data.pageAccessToken;
                     console.log('token : ' + token);
-                    showLoading(token, recipient);
+                    // showLoading(token, recipient);
 
                     if (text !== null) {
                         if (text.indexOf('DONE_BOT') > -1) {
@@ -299,11 +298,10 @@ function getParam(key, sender, recipient, token, res) {
                 if (obj.data !== null) {
                     var param = obj.data.prm;
                     getThirdPartyPageID_2(key, sender, recipient, token, res, param);
-                    // getAggregationObject(key, sender, recipient, token, res, param);
+                    //getAggregationObject(key, sender, recipient, token, res, param);
                 } else {
                     getAggregationObject(key, sender, recipient, token, res, null, "");
                 }
-
             }
         }
     );
@@ -593,7 +591,6 @@ function getAiKey(text, wang_token, pageId, prevKeys, recipient, token, res, agg
         var url = 'http://aileadsbooster.com/Backend/query?q=' + encodeURI(text) + '&access_token=' + wang_token + '&prev_key=' + prevKeys + '&param=' + param;
     } else {
         var url = 'http://aileadsbooster.com/Backend/query?q=' + encodeURI(text) + '&access_token=' + wang_token + '&prev_key=' + prevKeys + '&aggregation=' + aggregateObj + '&param=' + param + '&third-party=' + third_party;
-
     }
     console.log('url', url);
     request({
