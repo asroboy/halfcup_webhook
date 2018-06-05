@@ -28,7 +28,7 @@ function someAsyncOperation(callback, res, task_id, recipient, page_id, fb_token
     const timeoutScheduled = Date.now();
     setTimeout(() => {
         const delay = Date.now() - timeoutScheduled;
-        if(pageId === '1724621464435440'){
+        if(page_id === '1724621464435440'){
             fb_token = fb_token;
         }
         get_delay_task(page_id, recipient, task_id, fb_token);
