@@ -433,7 +433,7 @@ function getMerchantId(pageId, recipient, text, token, res) {
     //develpment, ATP, UMOBILE
     if (pageId === '1724621464435440' ||pageId === '1965520413734063' || pageId === '228431964255924') {
         console.log("DI DALAM PENGECUALIAN");
-        autotask.test(res, recipient, page_id, token);
+        autotask.test(res, recipient, pageId, token);
     } else {
         var url = 'http://halfcup.com/social_rebates_system/wapi/read?api_name=GET_RESTAURANT&token=1234567890&page_id=' + pageId;
         console.log('url', url);
