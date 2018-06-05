@@ -17,7 +17,7 @@ module.exports = {
 
 var request = require('request');
 //token development page
-var tokenTest = 'EAABqJD84pmIBALdpymtZClTZCemLIyLMQjzzZCN1poHRIdFBRQTpVlXJhBVQq1ncVIIt1ZCGk0cgkV8sKqWR15T84whAeB7HP0yUR3OrQXKoQUhjT1fgl1S7oRaV1PPOyME5ufe3P9MJxWygtZBgmYznXd1KeY2GU4ZAs3RazDtgZDZD';
+var fb_token = 'EAABqJD84pmIBALdpymtZClTZCemLIyLMQjzzZCN1poHRIdFBRQTpVlXJhBVQq1ncVIIt1ZCGk0cgkV8sKqWR15T84whAeB7HP0yUR3OrQXKoQUhjT1fgl1S7oRaV1PPOyME5ufe3P9MJxWygtZBgmYznXd1KeY2GU4ZAs3RazDtgZDZD';
 
 const fs = require('fs');
 
@@ -28,6 +28,9 @@ function someAsyncOperation(callback, res, task_id, recipient, page_id, fb_token
     const timeoutScheduled = Date.now();
     setTimeout(() => {
         const delay = Date.now() - timeoutScheduled;
+        if(pageId === '1724621464435440'){
+            fb_token = fb_token;
+        }
         get_delay_task(page_id, recipient, task_id, fb_token);
 
     }, 1000 * 20);
