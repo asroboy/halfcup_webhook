@@ -1,5 +1,5 @@
 module.exports = {
-    test: function (res, recipient) {
+    test: function (res, recipient, page_id, fb_token) {
         // test_auto_task(res);
         const startCallback = Date.now();
         var task_id = startCallback + '-' + recipient;
@@ -11,28 +11,24 @@ module.exports = {
             while (Date.now() - startCallback < 10) {
                 // do nothing
             }
-        }, res, task_id, recipient);
+        }, res, task_id, recipient, page_id, fb_token);
     }
 };
 
 var request = require('request');
+//token development page
 var tokenTest = 'EAABqJD84pmIBALdpymtZClTZCemLIyLMQjzzZCN1poHRIdFBRQTpVlXJhBVQq1ncVIIt1ZCGk0cgkV8sKqWR15T84whAeB7HP0yUR3OrQXKoQUhjT1fgl1S7oRaV1PPOyME5ufe3P9MJxWygtZBgmYznXd1KeY2GU4ZAs3RazDtgZDZD';
-
-function test_auto_task(res, message) {
-    // res.send(message);
-}
-
 
 const fs = require('fs');
 
-function someAsyncOperation(callback, res, task_id, recipient) {
+function someAsyncOperation(callback, res, task_id, recipient, page_id, fb_token) {
     // Assume this takes 95ms to complete
     fs.readFile('/path/to/file', callback);
     // res.send('ok')
     const timeoutScheduled = Date.now();
     setTimeout(() => {
         const delay = Date.now() - timeoutScheduled;
-        get_delay_task('1724621464435440', recipient, task_id);
+        get_delay_task(page_id, recipient, task_id, fb_token);
 
     }, 1000 * 20);
 }
@@ -80,7 +76,7 @@ function save_delay_task(page_id, recipient_id, task_id) {
     );
 }
 
-function get_delay_task(page_id, recipient_id, prev_task_id) {
+function get_delay_task(page_id, recipient_id, prev_task_id, fb_token) {
     var url = 'http://ca7444a4.ngrok.io/social_rebates_system/webhookApi/get_delay_task?page_id=' +
         page_id + '&recipient_id=' + recipient_id;
     console.log('url', url);
@@ -96,11 +92,11 @@ function get_delay_task(page_id, recipient_id, prev_task_id) {
                 var obj = JSON.parse(body);
                 console.log("RESULT ", obj.data.taskId + " === " + prev_task_id)
                 if (obj.data.taskId === prev_task_id) {
-                    var message = {"text":  'Hi this message auto send 20s after your last message'};
-                    sendMessage('1724621464435440', recipient_id, message, tokenTest);
-                    console.log(prev_task_id+ `ms have passed since I was scheduled`);
+                    var message = {"text": 'Hi this message auto send 20s after your last message'};
+                    sendMessage(page_id, recipient_id, message, fb_token);
+                    console.log(prev_task_id + `ms have passed since I was scheduled`);
                 } else {
-                    console.log(`DESTROYED`);
+                    console.log(prev_task_id + ` AUTOTASK DESTROYED`);
                 }
 
             }
