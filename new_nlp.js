@@ -263,19 +263,26 @@ function getAggregationObjectDoneBot(key, sender, recipient, token, res, param, 
                 // res.send(obj);
 
                 if (obj.aggregation.length > 0) {
-                    // var jsonMessage = JSON.parse(obj);
-                    // var randomIndex = randomIntFromInterval(1, obj.aggregation.length);
-                    // console.log("randomIndex : " + randomIndex);
-                    // console.log("jsonMessage.length : " + obj.aggregation.length);
-                    // res.send("DONE, randomIndex " + randomIndex);
-                    // respond(obj.aggregation, sender, recipient, randomIndex, token, res);
-                    // randomIndex = randomIndex - 1
-                    sendM(sender, obj.aggregation, recipient, token);
-                    // respondToTextOrAttacment(obj.aggregation, sender, recipient, token, randomIndex)
+                        // var jsonMessage = JSON.parse(obj);
+                        // var randomIndex = randomIntFromInterval(1, obj.aggregation.length);
+                        // console.log("randomIndex : " + randomIndex);
+                        // console.log("jsonMessage.length : " + obj.aggregation.length);
+                        // res.send("DONE, randomIndex " + randomIndex);
+                        // respond(obj.aggregation, sender, recipient, randomIndex, token, res);
+                        // randomIndex = randomIndex - 1
+                        sendM(sender, obj.aggregation, recipient, token);
+                        // respondToTextOrAttacment(obj.aggregation, sender, recipient, token, randomIndex)
                 } else {
                     getDefaultAnswer(sender, recipient, token, res);
                 }
 
+                //RESERVED API
+                if (obj.hasOwnProperty('reserved')) {
+                    if(obj.reserved.length > 0){
+                        var reserved_parameter = obj.reserved;
+                        autotask.startAutoReply(res,recipient, sender, token, reserved_parameter);
+                    }
+                }
             }
         }
     );
@@ -348,17 +355,25 @@ function getAggregationObject(key, sender, recipient, token, res, param, third_p
                         // res.send(obj);
 
                         if (obj.aggregation.length > 0) {
-                            // var jsonMessage = JSON.parse(obj);
-                            // var randomIndex = randomIntFromInterval(1, obj.aggregation.length);
-                            // console.log("randomIndex : " + randomIndex);
-                            // console.log("jsonMessage.length : " + obj.aggregation.length);
-                            // res.send("DONE, randomIndex " + randomIndex);
-                            // respond(obj.aggregation, sender, recipient, randomIndex, token, res);
-                            // randomIndex = randomIndex - 1
-                            sendM(sender, obj.aggregation, recipient, token);
-                            // respondToTextOrAttacment(obj.aggregation, sender, recipient, token, randomIndex)
+                                // var jsonMessage = JSON.parse(obj);
+                                // var randomIndex = randomIntFromInterval(1, obj.aggregation.length);
+                                // console.log("randomIndex : " + randomIndex);
+                                // console.log("jsonMessage.length : " + obj.aggregation.length);
+                                // res.send("DONE, randomIndex " + randomIndex);
+                                // respond(obj.aggregation, sender, recipient, randomIndex, token, res);
+                                // randomIndex = randomIndex - 1
+                                sendM(sender, obj.aggregation, recipient, token);
+                                // respondToTextOrAttacment(obj.aggregation, sender, recipient, token, randomIndex)
                         } else {
                             getDefaultAnswer(sender, recipient, token, res);
+                        }
+
+                        //RESERVED API
+                        if (obj.hasOwnProperty('reserved')) {
+                            if(obj.reserved.length > 0){
+                                var reserved_parameter = obj.reserved;
+                                autotask.startAutoReply(res,recipient, sender, token, reserved_parameter);
+                            }
                         }
                     } catch (error) {
                         console.log("Error catched ==>", error);
@@ -518,30 +533,6 @@ function getAiKeyFromDB(wang_token, pageId, recipient, text, token, res) {
     );
 }
 
-function test(res) {
-    var url = 'http://aileadsbooster.com/Backend/query?access_token=0ddb61601a8bcd5b822994fdc4e061a4&q=collect';
-    console.log('url', url);
-    request({
-            url: url,
-            method: 'GET'
-        }, function (error, response, body) {
-            if (error) {
-                console.log('Error : ', error);
-            } else if (response.body.error) {
-                console.log('Error: ', response.body.error);
-            } else {
-                var obj = JSON.parse(body);
-                // console.log(obj)
-                if (obj.aggregation.length > 0) {
-                    getIndexAggregate(obj.aggregation.length, '', 'collect', obj.aggregation, '', '');
-                } else {
-
-                }
-            }
-        }
-    );
-}
-
 function getIndexAggregate(size, pageId, key, aggreationData, recipient, token) {
     var aggr = aggreationData;
     console.log('aggreationData XX = ' + JSON.stringify(aggr));
@@ -630,6 +621,15 @@ function getAiKey(text, wang_token, pageId, prevKeys, recipient, token, res, agg
                             saveAiKey(obj.key, pageId, recipient, token, res);
                         }
                     }
+
+                    //RESERVED API
+                    if (obj.hasOwnProperty('reserved')) {
+                        if(obj.reserved.length > 0){
+                            var reserved_parameter = obj.reserved;
+                            autotask.startAutoReply(res,recipient, sender, token, reserved_parameter);
+                        }
+                    }
+
                 } catch (error) {
                     console.log("Error catched ==>", error);
                     hideLoading(token, recipient);
