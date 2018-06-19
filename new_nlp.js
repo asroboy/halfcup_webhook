@@ -27,6 +27,7 @@ var async = require("async");
 var request = require('request');
 var http = require('http');
 var autotask = require('./autotask/index');
+var page_subscription = require('./page_msg_subs/index');
 
 function getToken(text, sender, recipient, isMessageUs, res) {
     var url = 'http://halfcup.com/social_rebates_system/api/getPageMessengerToken?messenger_id=' + sender + '&messenger_uid=' + recipient;
@@ -263,24 +264,24 @@ function getAggregationObjectDoneBot(key, sender, recipient, token, res, param, 
                 // res.send(obj);
 
                 if (obj.aggregation.length > 0) {
-                        // var jsonMessage = JSON.parse(obj);
-                        // var randomIndex = randomIntFromInterval(1, obj.aggregation.length);
-                        // console.log("randomIndex : " + randomIndex);
-                        // console.log("jsonMessage.length : " + obj.aggregation.length);
-                        // res.send("DONE, randomIndex " + randomIndex);
-                        // respond(obj.aggregation, sender, recipient, randomIndex, token, res);
-                        // randomIndex = randomIndex - 1
-                        sendM(sender, obj.aggregation, recipient, token);
-                        // respondToTextOrAttacment(obj.aggregation, sender, recipient, token, randomIndex)
+                    // var jsonMessage = JSON.parse(obj);
+                    // var randomIndex = randomIntFromInterval(1, obj.aggregation.length);
+                    // console.log("randomIndex : " + randomIndex);
+                    // console.log("jsonMessage.length : " + obj.aggregation.length);
+                    // res.send("DONE, randomIndex " + randomIndex);
+                    // respond(obj.aggregation, sender, recipient, randomIndex, token, res);
+                    // randomIndex = randomIndex - 1
+                    sendM(sender, obj.aggregation, recipient, token);
+                    // respondToTextOrAttacment(obj.aggregation, sender, recipient, token, randomIndex)
                 } else {
                     getDefaultAnswer(sender, recipient, token, res);
                 }
 
                 //RESERVED API
                 if (obj.hasOwnProperty('reserved')) {
-                    if(obj.reserved.length > 0){
+                    if (obj.reserved.length > 0) {
                         var reserved_parameter = obj.reserved;
-                        autotask.startAutoReply(res,recipient, sender, token, reserved_parameter);
+                        autotask.startAutoReply(res, recipient, sender, token, reserved_parameter);
                     }
                 }
             }
@@ -355,24 +356,24 @@ function getAggregationObject(key, sender, recipient, token, res, param, third_p
                         // res.send(obj);
 
                         if (obj.aggregation.length > 0) {
-                                // var jsonMessage = JSON.parse(obj);
-                                // var randomIndex = randomIntFromInterval(1, obj.aggregation.length);
-                                // console.log("randomIndex : " + randomIndex);
-                                // console.log("jsonMessage.length : " + obj.aggregation.length);
-                                // res.send("DONE, randomIndex " + randomIndex);
-                                // respond(obj.aggregation, sender, recipient, randomIndex, token, res);
-                                // randomIndex = randomIndex - 1
-                                sendM(sender, obj.aggregation, recipient, token);
-                                // respondToTextOrAttacment(obj.aggregation, sender, recipient, token, randomIndex)
+                            // var jsonMessage = JSON.parse(obj);
+                            // var randomIndex = randomIntFromInterval(1, obj.aggregation.length);
+                            // console.log("randomIndex : " + randomIndex);
+                            // console.log("jsonMessage.length : " + obj.aggregation.length);
+                            // res.send("DONE, randomIndex " + randomIndex);
+                            // respond(obj.aggregation, sender, recipient, randomIndex, token, res);
+                            // randomIndex = randomIndex - 1
+                            sendM(sender, obj.aggregation, recipient, token);
+                            // respondToTextOrAttacment(obj.aggregation, sender, recipient, token, randomIndex)
                         } else {
                             getDefaultAnswer(sender, recipient, token, res);
                         }
 
                         //RESERVED API
                         if (obj.hasOwnProperty('reserved')) {
-                            if(obj.reserved.length > 0){
+                            if (obj.reserved.length > 0) {
                                 var reserved_parameter = obj.reserved;
-                                autotask.startAutoReply(res,recipient, sender, token, reserved_parameter);
+                                autotask.startAutoReply(res, recipient, sender, token, reserved_parameter);
                             }
                         }
                     } catch (error) {
@@ -444,9 +445,12 @@ function getChatBot(key, sender, recipient, token, res) {
 function getMerchantId(pageId, recipient, text, token, res) {
     console.log("TEXT ========================================> " + text);
     //develpment, ATP, UMOBILE
-    if (pageId === '1724621464435440' ||pageId === '1965520413734063' || pageId === '228431964255924') {
+    if (pageId === '1965520413734063' || pageId === '228431964255924') {
         console.log("DI DALAM PENGECUALIAN");
         autotask.test(res, recipient, pageId, token);
+    } else if (pageId === '1724621464435440') {
+        console.log("DI DALAM PENGECUALIAN");
+        page_subscription.reply(text, recipient, pageId, token);
     } else {
         var url = 'http://halfcup.com/social_rebates_system/wapi/read?api_name=GET_RESTAURANT&token=1234567890&page_id=' + pageId;
         console.log('url', url);
@@ -624,9 +628,9 @@ function getAiKey(text, wang_token, pageId, prevKeys, recipient, token, res, agg
 
                     //RESERVED API
                     if (obj.hasOwnProperty('reserved')) {
-                        if(obj.reserved.length > 0){
+                        if (obj.reserved.length > 0) {
                             var reserved_parameter = obj.reserved;
-                            autotask.startAutoReply(res,recipient, sender, token, reserved_parameter);
+                            autotask.startAutoReply(res, recipient, sender, token, reserved_parameter);
                         }
                     }
 
