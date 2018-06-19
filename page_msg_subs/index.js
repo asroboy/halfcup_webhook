@@ -7,6 +7,8 @@ module.exports = {
 var request = require('request');
 
 //token development page
+const my_token = 'EAABqJD84pmIBAHHu7FKRXuUr7Qra0DZBiev8ZAQZAkihWky8669VMsS5U4I9NlCkh6W4BleCCM9ZAmZBQpa4ILAZClLM1CHzQ9bZAvg3ZCc8hjWUzVZCWj2TNIffkSMzg3tKajKZB0ZCYdImECDFW0NsDJuzBxz29avMqwMUZBGip9806wZDZD';
+
 
 function findReply(page_id, recipientId, key, token) {
     var messageText = '';
