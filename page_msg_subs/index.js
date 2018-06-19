@@ -13,7 +13,12 @@ const my_token = 'EAABqJD84pmIBAHHu7FKRXuUr7Qra0DZBiev8ZAQZAkihWky8669VMsS5U4I9N
 function findReply(page_id, recipientId, key, token) {
     var messageText = '';
     if (key === 'Hi' || key === 'Hello') {
-        messageText = 'Hi, Hi I\'m Ridho, nice to meet you';
+        messageText = 'Hi, I\'m Ridho, nice to meet you';
+    }
+
+    if (key === 'Time' || key === 'time' || key === 'What time?' || key === 'what time') {
+        var now = new Date();
+        messageText = 'The time is now ' + now.getHours() + ':' + now.getMinutes();
     }
     var message = {"text": messageText};
     if (page_id === '1724621464435440') {
