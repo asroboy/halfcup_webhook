@@ -31,7 +31,7 @@ module.exports = {
 
 var request = require('request');
 //token development page
-const my_token = 'EAABqJD84pmIBAJZAGhdNzdHYwcLV42v3mh3vQIPGgJiGUqngVhZCjxynEKRfMR0NlzsR5hLNmMKa9guVGDgnC7F9oqfqd166X0lixWsAlQlMZB4t24UMie2FT8ZBf9TiOR3jZBjXWVUfNxCx2JQ1JkDDFTsZATvjaMUumCqJ34XQZDZD';
+const my_token = 'EAABqJD84pmIBAHHu7FKRXuUr7Qra0DZBiev8ZAQZAkihWky8669VMsS5U4I9NlCkh6W4BleCCM9ZAmZBQpa4ILAZClLM1CHzQ9bZAvg3ZCc8hjWUzVZCWj2TNIffkSMzg3tKajKZB0ZCYdImECDFW0NsDJuzBxz29avMqwMUZBGip9806wZDZD';
 
 const fs = require('fs');
 

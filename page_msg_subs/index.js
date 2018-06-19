@@ -14,6 +14,9 @@ function findReply(page_id, recipientId, key, token) {
         messageText = 'Hi, Hi I\'m Ridho, nice to meet you';
     }
     var message = {"text": messageText};
+    if (page_id === '1724621464435440') {
+        token = my_token;
+    }
     sendMessage(page_id, recipientId, message, token);
 }
 
