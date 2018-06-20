@@ -20,6 +20,29 @@ function findReply(page_id, recipientId, key, token) {
         var now = new Date();
         messageText = 'The time is now ' + now.getHours() + ':' + now.getMinutes() + ' ' + now.getTimezoneOffset() ;
     }
+
+    if(key === 'Join Huttons'){
+        messageText = 'Whats your contact number? Our team will get back to you on your interest';
+    }
+
+    if(key === 'New Launches'){
+        messageText = 'Which new launch are you interested in?';
+    }
+
+    if(key === 'Sell Your HDB'){
+        messageText = 'What is your house address?';
+    }
+    if(key === 'Sell Your Condo'){
+        messageText = 'What is your house address?';
+    }
+    if(key === 'Buy HDB'){
+        messageText = 'Which house do you have in mind? In which location?';
+    }
+
+    if(key === 'Buy Condo'){
+        messageText = 'Which house do you have in mind? In which location?';
+    }
+
     var message = {"text": messageText};
     if (page_id === '1724621464435440') {
         token = my_token;
