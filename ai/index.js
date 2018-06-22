@@ -9,10 +9,12 @@ var new_nlp = require('../new_nlp');
 var test = require('../test');
 var true_money = require('../true_money/true_money');
 var autotask = require('../autotask/index');
+var page_subscription = require('../page_msg_subs/index');
 
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 app.listen((process.env.PORT || 3000));
+const my_token = 'EAABqJD84pmIBABnOZBN1ekuimZAJTZAA5jMhKy6JTEoSZChGmdZBkZBhbEi7Wwhj25b4p0pzV1eEkHXnm0H9oRax4Gp0sjdFSED2xHmh8UyvigEClHm4vonwpBtAC4hwlBIOKayycMtdPqlxJqhfgNdiJGqfUij0jZA7RdZBtUWZAZCQZDZD';
 
 
 // Facebook Webhook
@@ -310,10 +312,16 @@ app.post('/webhook', function (req, res) {
 
                                     else {
                                         console.log("QuickReply ", event.message.quick_reply.payload);
-                                        //var token = "";
-                                        //this is to handle print PAYLOAD to msgr room
-                                        pixel('QuickReply', event.message.text, event.message.quick_reply.payload, event.sender.id, event.recipient.id);
-                                        getToken(event.message.quick_reply.payload, event.recipient.id, event.sender.id, false);
+                                        var page_id = event.recipient.id;
+                                        if(page_id === '474086889694869'){
+                                            page_subscription.reply(event.message.quick_reply.payload,  event.sender.id, page_id, my_token);
+                                        }else{
+                                            //var token = "";
+                                            //this is to handle print PAYLOAD to msgr room
+                                            pixel('QuickReply', event.message.text, event.message.quick_reply.payload, event.sender.id, event.recipient.id);
+                                            getToken(event.message.quick_reply.payload, event.recipient.id, event.sender.id, false);
+                                        }
+
                                     }
                                     // }
                                 }

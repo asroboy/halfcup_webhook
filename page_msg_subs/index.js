@@ -90,7 +90,94 @@ function findReply(page_id, recipientId, text, token) {
                 }
             ]
         }
-    }else{
+    } else if (text === 'yes') {
+        response = { "text": "Thanks!" }
+    } else if (text === 'no') {
+        response = { "text": "Oops, try sending another image." }
+    }else if (text === 'Jakarta'){
+        response =  {
+            "text": "Berikut ini adalah beberapa tempat yang bisa Anda kunjungi dengan diskon yang cukup menraik, mulai dari 20-70%",
+            "quick_replies":[
+                {
+                    "content_type":"text",
+                    "title":"Pondok Indah Mall",
+                    "payload":"PIM",
+                },
+                {
+                    "content_type":"text",
+                    "title":"Cilandak Town Square",
+                    "payload":"CITOS",
+                },
+                {
+                    "content_type":"text",
+                    "title":"Matahari Dept. Store",
+                    "payload":"MATJAKARTA",
+                }
+            ]
+        }
+    }else if (text === 'Bandung'){
+        response =  {
+            "text": "Berikut ini adalah beberapa tempat yang bisa Anda kunjungi dengan diskon yang cukup menraik, mulai dari 20-70%",
+            "quick_replies":[
+                {
+                    "content_type":"text",
+                    "title":"Trans Studio Bandung",
+                    "payload":"trans_studio_bandung",
+                },
+                {
+                    "content_type":"text",
+                    "title":"Metro Indah Mall",
+                    "payload":"MIM",
+                },
+                {
+                    "content_type":"text",
+                    "title":"Bandung Indah Plaza",
+                    "payload":"BIP",
+                }
+            ]
+        }
+    }else if (text === 'trans_studio_bandung'){
+        response =  {"text": "Modern shopping mall denga lebih dari 200 retailer dan 100 tempat makan unik, ditambah bioskop untuk menonton bersama keluarga Anda tercinta. \n\nAlamat: Jalan Jendral Gatot Subroto No. 289, Cibangkong, Batununggal, Cibangkong, Batununggal, Kota Bandung, Jawa Barat 40273\n\nHours: Open ⋅ Closes 10PM\nPhone: (022) 86012333\nProvince: West Java"}
+    }else if (text === 'MIM'){
+        response =  {"text": "Alamat: Kawasan Niaga MTC, Jalan Soekarno Hatta No. 590, Sekejati, Buahbatu, Kota Bandung, Jawa Barat 40623 \nHours: Closed ⋅ Opens 10AM \nPhone: (022) 7537577"}
+    }else if (text === 'BIP'){
+        response =  {"text": "Bandung Indah Plaza adalah salah satu pusat perbelanjaan besar di kota Bandung. Mall ini merupakan pusat perbelanjaan tertua di Bandung. Didirikan pada akhir tahun 80-an, mulai buka tahun 1989 dan secara resminya dibuka pada 19 Agustus 1990. \n\nDikenal dengan nama BIP, menjadi sebuah ikon belanja di Bandung masa itu. Sebelumnya, masyarakat Bandung hanya mengenal konsep department store dan pasar swalayan. Terletak di pusat kota , Jalan Merdeka Bandung. Dengan ada BIP maka kawasan ini menjadi tempat nongkrong/hang out baru beralih dari kawasan Alun-Alun kota dan juga menjadi awal pembangunan mall dan pusat perbelanjaan di Bandung Utara (sebelumnya hampir semuanya ada di Bandung selatan, batas rel kereta api). \n\nBIP yang sekarang sudah mengalami perluasan dan renovasi bangunannya, serta berpindah management/pemilik lama ke yang pemilik baru disertai dengan perubahan konsep baru pula. Di mall ini terdapat beberapa tenant seperti Toserba Yogya (ditutup pada 2009), Hypermart, Matahari Department Store, BIP, Pizza Hut, Timezone, dan lain-lain. Mall ini terintergrasi dengan hotel Hyatt Regency Bandung."}
+    }else if (text === 'PIM'){
+        response =  {"text": "Pondok Indah Mall (PIM; Indonesian: Mal Pondok Indah) is a large shopping complex located in wealthy Pondok Indah suburb of South Jakarta, Indonesia. The Pondok Indah Mall, or referred to by Jakartans by its acronym: \"PIM\" complex: is actually three large malls, the older 3-storey PIM1 and the newer 5-storey PIM2, interconnected via a two elevated multi-storey pedestrian walkways (Skywalk North and Skywalk South) which also are tenanted by specialty shops. PM 3, which is now under construction, is connected with other two by underpass. In January 2017, Forbes recognized Pondok Indah Mall as one of the top five shopping malls in Jakarta."}
+    }else if (text === 'MATJAKARTA'){
+        response =  {"text": "Matahari Department Store adalah sebuah perusahaan ritel di Indonesia yang merupakan pemilik dari jaringan toserba Matahari. Saat ini, Matahari Department Store merupakan salah satu anak perusahaan dari Lippo Group. Per kuartal pertama tahun 2017, Matahari Department Store sudah mempunyai 151 gerai di lebih dari 60 kota di Indonesia dan satu gerai online MatahariStore.com"}
+    }else if (text === 'CITOS'){
+        response =  {"text": "Citos Mall Jakarta, Mall Full of Multi Cuisine Restaurants, Most of them Worth. Special Promotions Twice Each Week, Live Fashion Shows, Good Atmosphere, Serviced Apartments, Pool & Health Club Usage, etc."}
+    }else if (text === 'Help'){
+        response = {
+            "text": "Kami akan membantu Anda untuk mencari Diskon yang ada di sekitar anda, untuk itu and cukup ketikkan Rebate",
+            "quick_replies":[
+                {
+                    "content_type":"text",
+                    "title":"Rebate",
+                    "payload":"Rebate",
+                }
+            ]
+        }
+    }else if (payload === 'Rebate'){
+        response = {
+            "text": "Dimana lokasi Anda saat ini!",
+            "quick_replies":[
+                {
+                    "content_type":"text",
+                    "title":"Jakarta",
+                    "payload":"Jakarta",
+                },
+                {
+                    "content_type":"text",
+                    "title":"Bandung",
+                    "payload":"Bandung",
+                }
+            ]
+        }
+    }
+
+    else{
         response = {
             "text": "Mohon maaf kami belum mengerti maksud Anda, gunakan perintah Help untuk bantuan dan Rebate untuk mencari tempat-tempat penuh diskon",
             "quick_replies":[
