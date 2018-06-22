@@ -18,7 +18,7 @@ function findReply(page_id, recipientId, text, token) {
 
     let response;
     // Check if the message contains text
-    if (keyz === 'Help') {
+    if (text === 'Help') {
         // Create the payload for a basic text message
         response = {
             "text": "Kami akan membantu Anda untuk mencari Diskon yang ada di sekitar anda, untuk itu and cukup ketikkan Rebate",
