@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8c0fd527-5667-4e03-89ee-e95c0bdc3c27" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/new_nlp.js" afterPath="$PROJECT_DIR$/new_nlp.js" />
       <change beforePath="$PROJECT_DIR$/page_msg_subs/index.js" afterPath="$PROJECT_DIR$/page_msg_subs/index.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -24,8 +22,8 @@
       <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ai/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="214">
-              <caret line="356" column="80" lean-forward="false" selection-start-line="356" selection-start-column="80" selection-end-line="356" selection-end-column="80" />
+            <state relative-caret-position="350">
+              <caret line="340" column="62" lean-forward="false" selection-start-line="340" selection-start-column="62" selection-end-line="340" selection-end-column="62" />
               <folding />
             </state>
           </provider>
@@ -34,8 +32,8 @@
       <file leaf-file-name="new_nlp.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/new_nlp.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="146">
-              <caret line="450" column="42" lean-forward="false" selection-start-line="450" selection-start-column="27" selection-end-line="450" selection-end-column="42" />
+            <state relative-caret-position="-92">
+              <caret line="444" column="9" lean-forward="false" selection-start-line="444" selection-start-column="9" selection-end-line="444" selection-end-column="9" />
               <folding />
             </state>
           </provider>
@@ -44,8 +42,8 @@
       <file leaf-file-name="index.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/page_msg_subs/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1819">
-              <caret line="115" column="46" lean-forward="false" selection-start-line="115" selection-start-column="46" selection-end-line="115" selection-end-column="46" />
+            <state relative-caret-position="289">
+              <caret line="18" column="17" lean-forward="false" selection-start-line="18" selection-start-column="17" selection-end-line="18" selection-end-column="17" />
               <folding />
             </state>
           </provider>
@@ -73,8 +71,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>getMerchantId</find>
-      <find>TEXT ========================================&gt;</find>
       <find>request</find>
       <find>text</find>
       <find>Sorry</find>
@@ -103,6 +99,8 @@
       <find>sendMessage</find>
       <find>DI DALAM</find>
       <find>page_subscription</find>
+      <find>event.message.text</find>
+      <find>getMerchantId</find>
     </findStrings>
     <replaceStrings>
       <replace>localhost:8080</replace>
@@ -499,12 +497,12 @@
       <workItem from="1528205132994" duration="804000" />
       <workItem from="1528277016230" duration="1199000" />
       <workItem from="1528863007744" duration="599000" />
-      <workItem from="1528871180495" duration="20480000" />
+      <workItem from="1528871180495" duration="21509000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="786444000" />
+    <option name="totallyTimeSpent" value="787473000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -900,24 +898,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/ai/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="214">
-          <caret line="356" column="80" lean-forward="false" selection-start-line="356" selection-start-column="80" selection-end-line="356" selection-end-column="80" />
+        <state relative-caret-position="350">
+          <caret line="340" column="62" lean-forward="false" selection-start-line="340" selection-start-column="62" selection-end-line="340" selection-end-column="62" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/new_nlp.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="146">
-          <caret line="450" column="42" lean-forward="false" selection-start-line="450" selection-start-column="27" selection-end-line="450" selection-end-column="42" />
+        <state relative-caret-position="-92">
+          <caret line="444" column="9" lean-forward="false" selection-start-line="444" selection-start-column="9" selection-end-line="444" selection-end-column="9" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/page_msg_subs/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1819">
-          <caret line="115" column="46" lean-forward="false" selection-start-line="115" selection-start-column="46" selection-end-line="115" selection-end-column="46" />
+        <state relative-caret-position="289">
+          <caret line="18" column="17" lean-forward="false" selection-start-line="18" selection-start-column="17" selection-end-line="18" selection-end-column="17" />
           <folding />
         </state>
       </provider>
