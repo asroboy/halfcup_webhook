@@ -7,47 +7,113 @@ module.exports = {
 var request = require('request');
 
 //token development page
-const my_token = 'EAABqJD84pmIBAHHu7FKRXuUr7Qra0DZBiev8ZAQZAkihWky8669VMsS5U4I9NlCkh6W4BleCCM9ZAmZBQpa4ILAZClLM1CHzQ9bZAvg3ZCc8hjWUzVZCWj2TNIffkSMzg3tKajKZB0ZCYdImECDFW0NsDJuzBxz29avMqwMUZBGip9806wZDZD';
+const my_token = 'EAABqJD84pmIBABnOZBN1ekuimZAJTZAA5jMhKy6JTEoSZChGmdZBkZBhbEi7Wwhj25b4p0pzV1eEkHXnm0H9oRax4Gp0sjdFSED2xHmh8UyvigEClHm4vonwpBtAC4hwlBIOKayycMtdPqlxJqhfgNdiJGqfUij0jZA7RdZBtUWZAZCQZDZD';
 
 
 function findReply(page_id, recipientId, key, token) {
     var messageText = '';
-    if (key === 'Hi' || key === 'Hello') {
-        messageText = 'Hi, I\'m Ridho, nice to meet you';
-    }
+    // if (key === 'Hi' || key === 'Hello') {
+    //     messageText = 'Hi, I\'m Ridho, nice to meet you';
+    // }
 
-    if (key === 'Time' || key === 'time' || key === 'What time?' || key === 'what time') {
-        var now = new Date();
-        messageText = 'The time is now ' + now.getHours() + ':' + now.getMinutes() + ' ' + now.getTimezoneOffset() ;
-    }
+    let response;
 
-    if(key === 'Join Huttons'){
-        messageText = 'Whats your contact number? Our team will get back to you on your interest';
+    let text = received_message.text;
+    // Check if the message contains text
+    if (text === 'Help') {
+        // Create the payload for a basic text message
+        response = {
+            "text": "Kami akan membantu Anda untuk mencari Diskon yang ada di sekitar anda, untuk itu and cukup ketikkan Rebate",
+            "quick_replies":[
+                {
+                    "content_type":"text",
+                    "title":"Rebate",
+                    "payload":"Rebate",
+                }
+            ]
+        }
+    } else if (text === 'Rebate'){
+        response = {
+            "text": "Dimana lokasi Anda saat ini!",
+            "quick_replies":[
+                {
+                    "content_type":"text",
+                    "title":"Jakarta",
+                    "payload":"Jakarta",
+                },
+                {
+                    "content_type":"text",
+                    "title":"Bandung",
+                    "payload":"Bandung",
+                }
+            ]
+        }
     }
+    else if (text === 'Jakarta'){
+        response =  {
+            "text": "Berikut ini adalah beberapa tempat yang bisa Anda kunjungi dengan diskon yang cukup menraik, mulai dari 20-70%",
+            "quick_replies":[
+                {
+                    "content_type":"text",
+                    "title":"Pondok Indah Mall",
+                    "payload":"PIM",
+                },
+                {
+                    "content_type":"text",
+                    "title":"Cilandak Town Square",
+                    "payload":"CITOS",
+                },
+                {
+                    "content_type":"text",
+                    "title":"Matahari Dept. Store",
+                    "payload":"MATJAKARTA",
+                }
+            ]
+        }
 
-    if(key === 'New Launches'){
-        messageText = 'Which new launch are you interested in?';
+    }else if (text === 'Bandung'){
+        response =  {
+            "text": "Berikut ini adalah beberapa tempat yang bisa Anda kunjungi dengan diskon yang cukup menraik, mulai dari 20-70%",
+            "quick_replies":[
+                {
+                    "content_type":"text",
+                    "title":"Trans Studio Bandung",
+                    "payload":"trans_studio_bandung",
+                },
+                {
+                    "content_type":"text",
+                    "title":"Metro Indah Mall",
+                    "payload":"MIM",
+                },
+                {
+                    "content_type":"text",
+                    "title":"Bandung Indah Plaza",
+                    "payload":"BIP",
+                }
+            ]
+        }
+    }else{
+        response = {
+            "text": "Mohon maaf kami belum mengerti maksud Anda, gunakan perintah Help untuk bantuan dan Rebate untuk mencari tempat-tempat penuh diskon",
+            "quick_replies":[
+                {
+                    "content_type":"text",
+                    "title":"Help",
+                    "payload":"Help",
+                },
+                {
+                    "content_type":"text",
+                    "title":"Rebate",
+                    "payload":"Rebate",
+                }
+            ]
+        }
     }
-
-    if(key === 'Sell Your HDB'){
-        messageText = 'What is your house address?';
-    }
-    if(key === 'Sell Your Condo'){
-        messageText = 'What is your house address?';
-    }
-    if(key === 'Buy HDB'){
-        messageText = 'Which house do you have in mind? In which location?';
-    }
-
-    if(key === 'Buy Condo'){
-        messageText = 'Which house do you have in mind? In which location?';
-    }
-
     var message = {"text": messageText};
-    if (page_id === '1724621464435440') {
+    if (page_id === '474086889694869') {
         token = my_token;
     }
-    sendMessage(page_id, recipientId, message, token);
+    sendMessage(page_id, recipientId, response, token);
 }
 
 // do someAsyncOperation which takes 95 ms to complete

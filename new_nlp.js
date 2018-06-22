@@ -445,11 +445,11 @@ function getChatBot(key, sender, recipient, token, res) {
 function getMerchantId(pageId, recipient, text, token, res) {
     console.log("TEXT ========================================> " + text);
     //develpment, ATP, UMOBILE
-    if (pageId === '1965520413734063' || pageId === '228431964255924') {
+    if (pageId === '1965520413734063' || pageId === '228431964255924') { //pageId === '1724621464435440'
         console.log("DI DALAM PENGECUALIAN");
         autotask.test(res, recipient, pageId, token);
-    } else if (pageId === '1724621464435440') {
-        console.log("DI DALAM PENGECUALIAN");
+    } else if (pageId === '474086889694869') {
+        console.log("DI DALAM PENGECUALIAN -- AI REPLY");
         page_subscription.reply(text, recipient, pageId, token);
     } else {
         var url = 'http://halfcup.com/social_rebates_system/wapi/read?api_name=GET_RESTAURANT&token=1234567890&page_id=' + pageId;
