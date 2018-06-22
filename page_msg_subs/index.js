@@ -10,7 +10,7 @@ var request = require('request');
 const my_token = 'EAABqJD84pmIBABnOZBN1ekuimZAJTZAA5jMhKy6JTEoSZChGmdZBkZBhbEi7Wwhj25b4p0pzV1eEkHXnm0H9oRax4Gp0sjdFSED2xHmh8UyvigEClHm4vonwpBtAC4hwlBIOKayycMtdPqlxJqhfgNdiJGqfUij0jZA7RdZBtUWZAZCQZDZD';
 
 
-function findReply(page_id, recipientId, key, token) {
+function findReply(page_id, recipientId, text, token) {
     var messageText = '';
     // if (key === 'Hi' || key === 'Hello') {
     //     messageText = 'Hi, I\'m Ridho, nice to meet you';
@@ -18,7 +18,7 @@ function findReply(page_id, recipientId, key, token) {
 
     let response;
     // Check if the message contains text
-    if (text === 'Help') {
+    if (keyz === 'Help') {
         // Create the payload for a basic text message
         response = {
             "text": "Kami akan membantu Anda untuk mencari Diskon yang ada di sekitar anda, untuk itu and cukup ketikkan Rebate",
@@ -107,7 +107,7 @@ function findReply(page_id, recipientId, key, token) {
             ]
         }
     }
-    var message = {"text": messageText};
+    // var message = {"text": messageText};
     if (page_id === '474086889694869') {
         token = my_token;
     }
