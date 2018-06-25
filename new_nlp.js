@@ -968,6 +968,7 @@ function update_webhook_status(page_id, status) {
             } else if (response.body.error) {
                 console.log('Error: ', response.body.error);
             } else {
+                console.log('Update Webhook Status ', "OK, page: " + page_id + ", status:" + status);
             }
         }
     );
