@@ -169,45 +169,51 @@ function sendM(page_id, messages, recipient, token) {
         var m = '';
         if (message.message.attachment) {
             m = message.message;
-            var url = 'http://halfcup.com/social_rebates_system/apix/get_messenger_attachment_id?page_id=' + page_id + '&url=' + m.attachment.payload.url;
-            console.log('# GET ATTACHMENT ID url', url);
-            request({
-                url: url,
-                method: 'GET'
-            }, function (error, response, body) {
-                if (error) {
-                    hideLoading(token, recipient);
-                    console.log('Error : ', error);
-                } else if (response.body.error) {
-                    hideLoading(token, recipient);
-                    console.log('Error: ', response.body.error);
-                } else {
-                    var obj = JSON.parse(body);
-                    console.log('==> GET ATTACHMENT ID RESULT :', JSON.stringify(obj));
-                    if (obj.attachment_id !== null) {
-                        m.attachment.payload = {attachment_id: obj.attachment_id};
-                    } else {
-                        request({
-                            url: 'https://graph.facebook.com/v2.6/me/message_attachments',
-                            qs: {access_token: token},
-                            method: 'POST',
-                            json: {
-                                message: message,
-                            }
-                        }, function (error, response, body) {
-                            if (error) {
-                                console.log('Error sending message: ', error);
-                            } else if (response.body.error) {
-                                console.log('Error: ', response.body.error);
-                            } else {
-                                var obj = JSON.parse(body);
-                                save_uploaded_attachmentid_m(page_id, recipientId, message, token);
+            if (m.attachment.payload.hasOwnProperty('is_reusable')) {
+                if (m.attachment.payload.is_reusable === true) {
+                    var url = 'http://halfcup.com/social_rebates_system/apix/get_messenger_attachment_id?page_id=' + page_id + '&url=' + m.attachment.payload.url;
+                    console.log('# GET ATTACHMENT ID url', url);
+                    request({
+                        url: url,
+                        method: 'GET'
+                    }, function (error, response, body) {
+                        if (error) {
+                            hideLoading(token, recipient);
+                            console.log('Error : ', error);
+                        } else if (response.body.error) {
+                            hideLoading(token, recipient);
+                            console.log('Error: ', response.body.error);
+                        } else {
+                            var obj = JSON.parse(body);
+                            console.log('==> GET ATTACHMENT ID RESULT :', JSON.stringify(obj));
+                            if (obj.attachment_id !== null) {
                                 m.attachment.payload = {attachment_id: obj.attachment_id};
+                            } else {
+                                console.log('# SAVE ATTACHMENT ID ');
+                                request({
+                                    url: 'https://graph.facebook.com/v2.6/me/message_attachments',
+                                    qs: {access_token: token},
+                                    method: 'POST',
+                                    json: {
+                                        message: m,
+                                    }
+                                }, function (error, response, body) {
+                                    if (error) {
+                                        console.log('Error sending message: ', error);
+                                    } else if (response.body.error) {
+                                        console.log('Error: ', response.body.error);
+                                    } else {
+                                        var obj = JSON.parse(body);
+                                        console.log('# SAVE ATTACHMENT ID RESULT ', JSON.stringify(obj));
+                                        save_uploaded_attachmentid_m(page_id, recipientId, message, token);
+                                        m.attachment.payload = {attachment_id: obj.attachment_id};
+                                    }
+                                });
                             }
-                        });
-                    }
+                        }
+                    });
                 }
-            });
+            }
         } else {
             // m = {"text": message.message.text};
             m = message.message;
@@ -244,7 +250,6 @@ function sendM(page_id, messages, recipient, token) {
     // make a copy of the original users Array because we're going to mutate it
     getOneM(Array.from(messages));
 }
-
 
 
 function save_uploaded_attachmentid_m(page_id, recipientId, message, token) {
