@@ -891,6 +891,7 @@ function sendM(page_id, messages, recipient, token) {
                     if (obj.attachment_id !== null) {
                         m.attachment.payload = {attachment_id: obj.attachment_id};
                     } else {
+                        console.log('# SAVE ATTACHMENT ID ');
                         request({
                             url: 'https://graph.facebook.com/v2.6/me/message_attachments',
                             qs: {access_token: token},
@@ -905,6 +906,7 @@ function sendM(page_id, messages, recipient, token) {
                                 console.log('Error: ', response.body.error);
                             } else {
                                 var obj = JSON.parse(body);
+                                console.log('# SAVE ATTACHMENT ID RESULT ', JSON.stringify(obj));
                                 save_uploaded_attachmentid_m(page_id, recipientId, message, token);
                                 m.attachment.payload = {attachment_id: obj.attachment_id};
                             }

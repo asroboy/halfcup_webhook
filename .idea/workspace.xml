@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8c0fd527-5667-4e03-89ee-e95c0bdc3c27" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/autotask/index.js" afterPath="$PROJECT_DIR$/autotask/index.js" />
       <change beforePath="$PROJECT_DIR$/new_nlp.js" afterPath="$PROJECT_DIR$/new_nlp.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -50,11 +49,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="new_nlp.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="new_nlp.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/new_nlp.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="486">
-              <caret line="1076" column="1" lean-forward="true" selection-start-line="1051" selection-start-column="0" selection-end-line="1076" selection-end-column="1" />
+            <state relative-caret-position="376">
+              <caret line="908" column="94" lean-forward="false" selection-start-line="908" selection-start-column="94" selection-end-line="908" selection-end-column="94" />
               <folding />
             </state>
           </provider>
@@ -70,10 +69,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/autotask/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="596">
+            <state relative-caret-position="647">
               <caret line="311" column="9" lean-forward="false" selection-start-line="311" selection-start-column="9" selection-end-line="311" selection-end-column="9" />
               <folding />
             </state>
@@ -151,8 +150,8 @@
         <option value="$PROJECT_DIR$/index.js" />
         <option value="$PROJECT_DIR$/page_msg_subs/index.js" />
         <option value="$PROJECT_DIR$/ai/index.js" />
-        <option value="$PROJECT_DIR$/new_nlp.js" />
         <option value="$PROJECT_DIR$/autotask/index.js" />
+        <option value="$PROJECT_DIR$/new_nlp.js" />
       </list>
     </option>
   </component>
@@ -523,12 +522,12 @@
       <workItem from="1528871180495" duration="27015000" />
       <workItem from="1529896207609" duration="707000" />
       <workItem from="1529897621222" duration="2385000" />
-      <workItem from="1529978322788" duration="17339000" />
+      <workItem from="1529978322788" duration="18147000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="813410000" />
+    <option name="totallyTimeSpent" value="814218000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -950,18 +949,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/new_nlp.js">
+    <entry file="file://$PROJECT_DIR$/autotask/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="486">
-          <caret line="1076" column="1" lean-forward="true" selection-start-line="1051" selection-start-column="0" selection-end-line="1076" selection-end-column="1" />
+        <state relative-caret-position="647">
+          <caret line="311" column="9" lean-forward="false" selection-start-line="311" selection-start-column="9" selection-end-line="311" selection-end-column="9" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/autotask/index.js">
+    <entry file="file://$PROJECT_DIR$/new_nlp.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="596">
-          <caret line="311" column="9" lean-forward="false" selection-start-line="311" selection-start-column="9" selection-end-line="311" selection-end-column="9" />
+        <state relative-caret-position="376">
+          <caret line="908" column="94" lean-forward="false" selection-start-line="908" selection-start-column="94" selection-end-line="908" selection-end-column="94" />
           <folding />
         </state>
       </provider>
