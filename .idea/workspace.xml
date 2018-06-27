@@ -50,11 +50,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="new_nlp.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="new_nlp.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/new_nlp.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="95">
-              <caret line="1123" column="41" lean-forward="false" selection-start-line="1123" selection-start-column="41" selection-end-line="1123" selection-end-column="41" />
+            <state relative-caret-position="375">
+              <caret line="1137" column="16" lean-forward="true" selection-start-line="1137" selection-start-column="16" selection-end-line="1137" selection-end-column="16" />
               <folding>
                 <element signature="n#!!block;n#getGroupBot#0" expanded="false" />
                 <element signature="n#!!block;n#respondFromGroup#0" expanded="false" />
@@ -64,11 +64,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="index.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/autotask/index.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="202">
-              <caret line="207" column="98" lean-forward="false" selection-start-line="207" selection-start-column="98" selection-end-line="207" selection-end-column="98" />
+              <caret line="207" column="84" lean-forward="false" selection-start-line="207" selection-start-column="84" selection-end-line="207" selection-end-column="84" />
               <folding />
             </state>
           </provider>
@@ -114,8 +114,8 @@
       <find>save_uploaded_attachmentid</find>
       <find>GET ATTACHMENT ID RESULT</find>
       <find>save_uploaded_attachmentid_m</find>
-      <find>SAVE ATTACHMENT ID</find>
       <find>sendM</find>
+      <find>SAVE ATTACHMENT ID</find>
     </findStrings>
     <replaceStrings>
       <replace>localhost:8080</replace>
@@ -145,8 +145,8 @@
         <option value="$PROJECT_DIR$/index.js" />
         <option value="$PROJECT_DIR$/page_msg_subs/index.js" />
         <option value="$PROJECT_DIR$/ai/index.js" />
-        <option value="$PROJECT_DIR$/autotask/index.js" />
         <option value="$PROJECT_DIR$/new_nlp.js" />
+        <option value="$PROJECT_DIR$/autotask/index.js" />
       </list>
     </option>
   </component>
@@ -517,12 +517,12 @@
       <workItem from="1528871180495" duration="27015000" />
       <workItem from="1529896207609" duration="707000" />
       <workItem from="1529897621222" duration="2385000" />
-      <workItem from="1529978322788" duration="22089000" />
+      <workItem from="1529978322788" duration="22246000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="818160000" />
+    <option name="totallyTimeSpent" value="818317000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -944,23 +944,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/autotask/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="202">
-          <caret line="207" column="98" lean-forward="false" selection-start-line="207" selection-start-column="98" selection-end-line="207" selection-end-column="98" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/new_nlp.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="1123" column="41" lean-forward="false" selection-start-line="1123" selection-start-column="41" selection-end-line="1123" selection-end-column="41" />
+        <state relative-caret-position="375">
+          <caret line="1137" column="16" lean-forward="true" selection-start-line="1137" selection-start-column="16" selection-end-line="1137" selection-end-column="16" />
           <folding>
             <element signature="n#!!block;n#getGroupBot#0" expanded="false" />
             <element signature="n#!!block;n#respondFromGroup#0" expanded="false" />
             <element signature="n#!!block;n#getDefaultAnswer#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/autotask/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="202">
+          <caret line="207" column="84" lean-forward="false" selection-start-line="207" selection-start-column="84" selection-end-line="207" selection-end-column="84" />
+          <folding />
         </state>
       </provider>
     </entry>
