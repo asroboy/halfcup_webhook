@@ -317,7 +317,7 @@ function getParam(key, sender, recipient, token, res) {
                 console.log('Error: ', response.body.error);
             } else {
                 var obj = JSON.parse(body);
-                console.log('PARAM AI RESULT: ', obj);
+                console.log('==> PARAM AI RESULT: ', obj);
                 if (obj.data !== null) {
                     var param = obj.data.prm;
                     getThirdPartyPageID_2(key, sender, recipient, token, res, param);
@@ -369,7 +369,7 @@ function getAggregationObject(key, sender, recipient, token, res, param, third_p
 
                     try {
                         var obj = JSON.parse(body);
-                        console.log('getChatBot RESULT: ', JSON.stringify(obj.aggregation));
+                        console.log('==> AGGREGATION API RESULT: ', JSON.stringify(obj.aggregation));
                         // res.send(obj);
 
                         if (obj.aggregation.length > 0) {
@@ -422,7 +422,7 @@ function saveAggregationObj(key, sender) {
                 console.log('Error: ', response.body.error);
             } else {
                 var obj = JSON.parse(body);
-                console.log('getChatBot RESULT: ', obj);
+                console.log('==> SAVE AGGREGATION API RESULT: ', obj);
             }
         }
     );
@@ -442,7 +442,7 @@ function getChatBot(key, sender, recipient, token, res) {
                 console.log('Error: ', response.body.error);
             } else {
                 var obj = JSON.parse(body);
-                console.log('getChatBot RESULT: ', obj);
+                console.log('==> GET CHATBOT API RESULT: ', obj);
                 // res.send(obj);
                 if (obj.length > 0) {
                     var jsonMessage = JSON.parse(obj[0].json);
@@ -481,7 +481,7 @@ function getMerchantId(pageId, recipient, text, token, res) {
                     console.log('Error: ', response.body.error);
                 } else {
                     var obj = JSON.parse(body);
-                    console.log('getMerchantId RESULT: ', obj);
+                    console.log('==> GET MERCHANT ID RESULT: ', obj);
                     // res.send(obj);
                     // console.log('obj: ', obj);
                     // if (obj.restaurant_id !== null)
@@ -509,7 +509,7 @@ function getAiToken(sender, recipient, restaurantId, text, token, res) {
 
                 } else {
                     var obj = JSON.parse(body);
-                    // console.log('obj: ', obj);
+                    console.log('==> GET AI TOKEN RESULT : ', obj);
                     if (obj.access_token !== '') {
                         var pageId = sender;
                         getAiKeyFromDB(obj.access_token, pageId, recipient, text, token, res);
@@ -721,7 +721,7 @@ function saveAiKey(key, pageId, recipient, token, res) {
                 console.log('Error: ', response.body.error);
             } else {
                 var obj = JSON.parse(body);
-                // console.log('obj: ', obj);
+                console.log('SAVE AI KEY RESULT: ', obj);
                 // return obj.message
                 getChatBot(key, pageId, recipient, token, res)
             }
