@@ -84,12 +84,13 @@ app.post('/webhook', function (req, res) {
 
             for (j = 0; j < entries.length; j++) {
                 var event = entries[j]
+                console.log("=======EVENT CHECK=======");
                 console.log('Event ' + j + ': ', JSON.stringify(event));
                 var messagings = event.messaging;
                 if (messagings) {
                     for (i = 0; i < messagings.length; i++) {
                         var messaging = messagings[i];
-                        console.log("=======EVENT CHECK=======");
+                        console.log("======= MESSAGING =======");
                         //console.log('Sender ID: ', messaging.sender.id);
                         console.log('Messaging ' + i + ': ', JSON.stringify(messaging));
                         var hc_token = 'EAABqJD84pmIBABjewVhyAuMwDLFaI7YT7fsJLzeh63mhOwdZAgMKClvFfZBvHhFR35dIok3YQAxeZCuDbiLCaWVOpQxWVRHZBahsQOy9ZCTn4e4wdWcZA0VmGU6x0CFzv6dRcCzrlSZA87EPcI3b0KCDkedjLc37lZCvnu47iTTAwgZDZD';
