@@ -95,6 +95,7 @@ app.post('/webhook', function (req, res) {
                         var hc_token = 'EAABqJD84pmIBABjewVhyAuMwDLFaI7YT7fsJLzeh63mhOwdZAgMKClvFfZBvHhFR35dIok3YQAxeZCuDbiLCaWVOpQxWVRHZBahsQOy9ZCTn4e4wdWcZA0VmGU6x0CFzv6dRcCzrlSZA87EPcI3b0KCDkedjLc37lZCvnu47iTTAwgZDZD';
 
                         if(event.id == messaging.recipient.id){
+                            console.log('Messaging from USER to PAGE');
 
                             if (messaging.referral) {
                                 console.log('messaging.referral');
@@ -590,6 +591,9 @@ app.post('/webhook', function (req, res) {
 
                                 }
                             }
+                        }
+                        else{
+                            console.log('Messaging from PAGE to USER');
                         }
 
                     }
