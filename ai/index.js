@@ -54,8 +54,8 @@ app.post('/webhook', function (req, res) {
         try {
             var entries = req.body.entry;
             var changes = req.body.entry[0].changes;
-            console.log("POST WEBHOOK");
-            console.log("REQ", JSON.stringify(req.body));
+            // console.log("POST WEBHOOK");
+            // console.log("REQ", JSON.stringify(req.body));
             if (changes) {
                 var field = req.body.entry[0].changes[0].field;
                 if (field == "leadgen") {
@@ -91,8 +91,6 @@ app.post('/webhook', function (req, res) {
                     for (i = 0; i < messagings.length; i++) {
                         var messaging = messagings[i];
                         console.log("======= MESSAGING =======");
-                        //console.log('Sender ID: ', messaging.sender.id);
-                        console.log('Messaging ' + i + ': ', JSON.stringify(messaging));
                         var hc_token = 'EAABqJD84pmIBABjewVhyAuMwDLFaI7YT7fsJLzeh63mhOwdZAgMKClvFfZBvHhFR35dIok3YQAxeZCuDbiLCaWVOpQxWVRHZBahsQOy9ZCTn4e4wdWcZA0VmGU6x0CFzv6dRcCzrlSZA87EPcI3b0KCDkedjLc37lZCvnu47iTTAwgZDZD';
 
                         if(event.id == messaging.recipient.id){
