@@ -158,7 +158,7 @@ function getParamDoneBot(key, sender, recipient, token, res, id) {
                 console.log('Error: ', response.body.error);
             } else {
                 var obj = JSON.parse(body);
-                console.log('getChatBot RESULT: ', obj);
+                console.log('==> PARAM AI ITEM RESULT: ', obj);
                 if (obj.data !== null) {
                     var param = obj.data.prm;
                     getThirdPartyPageID(key, sender, recipient, token, res, param);
@@ -535,7 +535,7 @@ function getAiKeyFromDB(wang_token, pageId, recipient, text, token, res) {
                 console.log('Error: ', response.body.error);
             } else {
                 var obj = JSON.parse(body);
-                // console.log('obj: ', obj);
+                console.log('==> AI PREV KEY RESULT: ', JSON.stringify(obj));
                 var agk = '';
                 if (obj.hasOwnProperty('aggregation')) {
                     if (obj.aggregation) {
@@ -676,7 +676,7 @@ function getParamForAiKey(text, wang_token, pageId, prevKeys, recipient, token, 
                 console.log('Error: ', response.body.error);
             } else {
                 var obj = JSON.parse(body);
-                console.log('getChatBot RESULT: ', obj);
+                console.log('==> PARAM AI RESULT: ', JSON.stringify(obj));
                 if (obj.data !== null) {
                     var param = obj.data.prm;
                     // getAggregationObject(key, sender, recipient, token, res, param);
@@ -800,7 +800,7 @@ function getGroupBot(key, sender, recipient, token, res) {
                 console.log('Error: ', response.body.error);
             } else {
                 var obj = JSON.parse(body);
-                console.log('==> READ GROUP WAPI RESULT :', JSON.stringify(obj))
+                console.log('==> GROUP WAPI RESULT :', JSON.stringify(obj))
                 var jsonMessage = JSON.parse(obj[0].json);
                 var randomIndex = randomIntFromInterval(1, jsonMessage.length);
                 console.log("randomIndex : " + randomIndex);
@@ -835,6 +835,7 @@ function getDefaultAnswer(sender, recipient, token, res) {
                 console.log('Error: ', response.body.error);
             } else {
                 var obj = JSON.parse(body);
+                console.log('==> DEFAULT ANSWER API RESULT :', JSON.stringify(obj));
                 if (obj.length > 0) {
                     var jsonMessage = JSON.parse(obj[0].json);
                     var randomIndex = randomIntFromInterval(1, jsonMessage.length);
