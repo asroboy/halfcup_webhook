@@ -112,6 +112,7 @@ function get_delay_task(page_id, recipient_id, prev_task_id, fb_token, reserved_
                     var message = {"text": 'Hi this message auto send 20s after your last message'};
                     // sendMessage(page_id, recipient_id, message, fb_token);
                     if(reserved_parameter !== ''){
+                        console.log('==================AUTO TAASK EXECUTE====================');
                         console.log(prev_task_id + `ms have passed since I was scheduled`);
                         get_reserved_message(page_id, recipient_id, fb_token, reserved_parameter);
                     }else{
