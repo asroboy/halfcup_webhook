@@ -918,7 +918,7 @@ function sendM(page_id, messages, recipient, token) {
                                     } else {
                                         var obj = JSON.parse(body);
                                         console.log('# SAVE ATTACHMENT ID RESULT ', JSON.stringify(obj));
-                                        save_uploaded_attachmentid_m(page_id, recipientId, message, token);
+                                        save_uploaded_attachmentid_m(obj.attachment_id, page_id, recipientId, message, token);
                                         m.attachment.payload = {attachment_id: obj.attachment_id};
                                     }
                                 });
@@ -1065,11 +1065,11 @@ function check_attachment_uploaded(page_id, recipientId, message, token) {
 }
 
 
-function save_uploaded_attachmentid_m(page_id, recipientId, message, token) {
+function save_uploaded_attachmentid_m(attachment_id, page_id, recipientId, message, token) {
     var url = 'http://halfcup.com/social_rebates_system/apix/save_messenger_attachment_id?page_id=' + page_id
-        + '&url=' + image_url
+        + '&url=' + message.attachment.payload.url
         + '&type=' + message.attachment.type
-        + '&attachment_id=' + message.attachment.payload.url;
+        + '&attachment_id=' +attachment_id;
     console.log('# SAVE ATTACHMENT ID url', url);
     request({
         url: url,
@@ -1091,7 +1091,7 @@ function save_uploaded_attachmentid_m(page_id, recipientId, message, token) {
     });
 }
 
-function save_uploaded_attachmentid(page_id, recipientId, message, token) {
+function save_uploaded_attachmentid(attachment_id, page_id, recipientId, message, token) {
     var url = 'http://halfcup.com/social_rebates_system/apix/save_messenger_attachment_id?page_id=' + page_id
         + '&url=' + image_url
         + '&type=' + message.attachment.type
@@ -1135,7 +1135,9 @@ function upload_attachement(page_id, recipientId, message, token) {
             update_webhook_status(page_id, "Error: " + response.body.error);
             console.log('Error: ', response.body.error);
         } else {
-            save_uploaded_attachmentid(page_id, recipientId, message, token);
+            var obj = JSON.parse(body);
+            console.log('==> UPLOAD ATTACHMENT RESULT :', JSON.stringify(obj));
+            save_uploaded_attachmentid(obj.attachment_id, page_id, recipientId, message, token);
         }
     });
 }

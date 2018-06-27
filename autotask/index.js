@@ -252,11 +252,12 @@ function sendM(page_id, messages, recipient, token) {
 }
 
 
-function save_uploaded_attachmentid_m(page_id, recipientId, message, token) {
+
+function save_uploaded_attachmentid_m(attachment_id, page_id, recipientId, message, token) {
     var url = 'http://halfcup.com/social_rebates_system/apix/save_messenger_attachment_id?page_id=' + page_id
-        + '&url=' + image_url
+        + '&url=' + message.attachment.payload.url
         + '&type=' + message.attachment.type
-        + '&attachment_id=' + message.attachment.payload.url;
+        + '&attachment_id=' +attachment_id;
     console.log('# SAVE ATTACHMENT ID url', url);
     request({
         url: url,
@@ -277,6 +278,9 @@ function save_uploaded_attachmentid_m(page_id, recipientId, message, token) {
         }
     });
 }
+
+
+
 function update_webhook_status(page_id, status) {
     // http://localhost:8080/social_rebates_system/wapi/delete?token=1234567890&api_name=AI_PREV_KEYS_CLEAR&page_id=111
     // var url = 'http://halfcup.com/social_rebates_system/messengerPage/update_webhook_status?page_id=' + page_id + '&status=' + status;
