@@ -144,10 +144,12 @@ function get_reserved_message(page_id, recipient_id, fb_token, reserved_paramete
                 if (obj.aggregation.length > 0) {
                     sendM(page_id, obj.aggregation, recipient_id, fb_token);
                 }
-
-                if(obj.reserved.length > 0){
-                    mStartAutoReply(null, recipient_id, page_id, fb_token, obj.reserved);
+                if (obj.hasOwnProperty('reserved')){
+                    if(obj.reserved.length > 0){
+                        mStartAutoReply(null, recipient_id, page_id, fb_token, obj.reserved);
+                    }
                 }
+
             }
         }
     );
