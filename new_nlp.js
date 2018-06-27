@@ -37,9 +37,9 @@ function getToken(text, sender, recipient, isMessageUs, res) {
             method: 'GET'
         }, function (error, response, body) {
             if (error) {
-                console.log('Error sending message: ', error);
+                console.log('Error : ', "GET TOKEN " + error);
             } else if (response.body.error) {
-                console.log('Error: ', response.body.error);
+                console.log('Error: ',  "GET TOKEN " + response.body.error);
             } else {
                 var obj = JSON.parse(body);
                 var code = obj.code;
@@ -150,8 +150,10 @@ function getParamDoneBot(key, sender, recipient, token, res, id) {
             method: 'GET'
         }, function (error, response, body) {
             if (error) {
+                hideLoading(token, recipient);
                 console.log('Error sending message: ', error);
             } else if (response.body.error) {
+                hideLoading(token, recipient);
                 console.log('Error: ', response.body.error);
             } else {
                 var obj = JSON.parse(body);
@@ -176,8 +178,10 @@ function getThirdPartyPageID(key, sender, recipient, token, res, param) {
             method: 'GET'
         }, function (error, response, body) {
             if (error) {
+                hideLoading(token, recipient);
                 console.log('Error sending message: ', error);
             } else if (response.body.error) {
+                hideLoading(token, recipient);
                 console.log('Error: ', response.body.error);
             } else {
                 var obj = JSON.parse(body);
@@ -203,8 +207,10 @@ function getThirdPartyPageID_1(text, wang_token, pageId, prevKeys, recipient, to
             method: 'GET'
         }, function (error, response, body) {
             if (error) {
+                hideLoading(token, recipient);
                 console.log('Error sending message: ', error);
             } else if (response.body.error) {
+                hideLoading(token, recipient);
                 console.log('Error: ', response.body.error);
             } else {
                 var obj = JSON.parse(body);
@@ -230,8 +236,10 @@ function getThirdPartyPageID_2(key, sender, recipient, token, res, param) {
             method: 'GET'
         }, function (error, response, body) {
             if (error) {
+                hideLoading(token, recipient);
                 console.log('Error sending message: ', error);
             } else if (response.body.error) {
+                hideLoading(token, recipient);
                 console.log('Error: ', response.body.error);
             } else {
                 var obj = JSON.parse(body);
@@ -257,8 +265,10 @@ function getAggregationObjectDoneBot(key, sender, recipient, token, res, param, 
             method: 'GET'
         }, function (error, response, body) {
             if (error) {
+                hideLoading(token, recipient);
                 console.log('Error sending message: ', error);
             } else if (response.body.error) {
+                hideLoading(token, recipient);
                 console.log('Error: ', response.body.error);
             } else {
                 var obj = JSON.parse(body);
@@ -299,8 +309,10 @@ function getParam(key, sender, recipient, token, res) {
             method: 'GET'
         }, function (error, response, body) {
             if (error) {
+                hideLoading(token, recipient);
                 console.log('Error sending message: ', error);
             } else if (response.body.error) {
+                hideLoading(token, recipient);
                 console.log('Error: ', response.body.error);
             } else {
                 var obj = JSON.parse(body);
@@ -347,8 +359,10 @@ function getAggregationObject(key, sender, recipient, token, res, param, third_p
                 method: 'GET'
             }, function (error, response, body) {
                 if (error) {
+                    hideLoading(token, recipient);
                     console.log('Error sending message: ', error);
                 } else if (response.body.error) {
+                    hideLoading(token, recipient);
                     console.log('Error: ', response.body.error);
                 } else {
 
@@ -812,8 +826,10 @@ function getDefaultAnswer(sender, recipient, token, res) {
             method: 'GET'
         }, function (error, response, body) {
             if (error) {
+                hideLoading(token, recipient);
                 console.log('Error sending message: ', error);
             } else if (response.body.error) {
+                hideLoading(token, recipient);
                 console.log('Error: ', response.body.error);
             } else {
                 var obj = JSON.parse(body);
@@ -868,7 +884,10 @@ function sendM(page_id, messages, recipient, token) {
             }
         }, function (err, resp, body) {
             console.log("--->  " + JSON.stringify(body));
-            update_webhook_status(page_id, "Error: " + err);
+            if(err){
+                hideLoading(token, recipient);
+                update_webhook_status(page_id, "Error: " + err);
+            }
         }).on('end', function () {
             console.log("done with ONE user ");
             if (i < messages.length) { // do we still have users to make requests?
@@ -920,8 +939,10 @@ function getEmail(message, page_id) {
         method: 'GET',
     }, function (error, response, body) {
         if (error) {
+            hideLoading(token, recipient);
             console.log('Error sending message: ', error);
         } else if (response.body.error) {
+            hideLoading(token, recipient);
             console.log('Error: ', response.body.error);
         } else {
             sendEmailForAi('LIVE Inquiries', message, page_id, 'brotherho@halfcup.com');
@@ -946,8 +967,10 @@ function sendEmailForAi(title, message, page_id, email) {
         method: 'GET'
     }, function (error, response, body) {
         if (error) {
+            hideLoading(token, recipient);
             console.log('Error sending message: ', error);
         } else if (response.body.error) {
+            hideLoading(token, recipient);
             console.log('Error: ', response.body.error);
         } else {
             console.log('Send email ', "OK");

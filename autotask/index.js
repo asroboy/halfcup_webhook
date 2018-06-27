@@ -205,20 +205,21 @@ function sendM(page_id, messages, recipient, token) {
 
 function update_webhook_status(page_id, status) {
     // http://localhost:8080/social_rebates_system/wapi/delete?token=1234567890&api_name=AI_PREV_KEYS_CLEAR&page_id=111
-    var url = 'http://halfcup.com/social_rebates_system/messengerPage/update_webhook_status?page_id=' + page_id + '&status=' + status;
-    console.log('url', url);
-    request({
-            url: url,
-            method: 'GET'
-        }, function (error, response, body) {
-            if (error) {
-                console.log('Error : ', error);
-            } else if (response.body.error) {
-                console.log('Error: ', response.body.error);
-            } else {
-            }
-        }
-    );
+    // var url = 'http://halfcup.com/social_rebates_system/messengerPage/update_webhook_status?page_id=' + page_id + '&status=' + status;
+    // console.log('url', url);
+    // request({
+    //         url: url,
+    //         method: 'GET'
+    //     }, function (error, response, body) {
+    //         if (error) {
+    //             console.log('Error : ', error);
+    //         } else if (response.body.error) {
+    //             console.log('Error: ', response.body.error);
+    //         } else {
+    //             console.log('Update Webhook Status ', "OK, page: " + page_id + ", status:" + status);
+    //         }
+    //     }
+    // );
 }
 
 
@@ -235,4 +236,19 @@ function mStartAutoReply(res, recipient, page_id, fb_token, reserved_parameter) 
             // do nothing
         }
     }, res, task_id, recipient, page_id, fb_token, reserved_parameter);
+}
+
+
+
+function hideLoading(token, recipientId) {
+    request({
+        url: 'https://graph.facebook.com/v2.6/me/messages',
+        qs: {access_token: token},
+        method: 'POST',
+        json: {
+            recipient: {id: recipientId},
+            sender_action: "typing_off"
+        }
+    }, function (error, response, body) {
+    });
 }
