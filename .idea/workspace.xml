@@ -22,7 +22,7 @@
       <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ai/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="121">
+            <state relative-caret-position="-99">
               <caret line="82" column="13" lean-forward="true" selection-start-line="82" selection-start-column="13" selection-end-line="82" selection-end-column="13" />
               <folding>
                 <element signature="e#1832#3080#0" expanded="false" />
@@ -52,8 +52,8 @@
       <file leaf-file-name="new_nlp.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/new_nlp.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-526">
-              <caret line="723" column="47" lean-forward="false" selection-start-line="723" selection-start-column="47" selection-end-line="723" selection-end-column="47" />
+            <state relative-caret-position="130">
+              <caret line="802" column="78" lean-forward="false" selection-start-line="802" selection-start-column="78" selection-end-line="802" selection-end-column="78" />
               <folding />
             </state>
           </provider>
@@ -522,12 +522,12 @@
       <workItem from="1528871180495" duration="27015000" />
       <workItem from="1529896207609" duration="707000" />
       <workItem from="1529897621222" duration="2385000" />
-      <workItem from="1529978322788" duration="10545000" />
+      <workItem from="1529978322788" duration="10781000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="806616000" />
+    <option name="totallyTimeSpent" value="806852000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -931,7 +931,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/ai/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="121">
+        <state relative-caret-position="-99">
           <caret line="82" column="13" lean-forward="true" selection-start-line="82" selection-start-column="13" selection-end-line="82" selection-end-column="13" />
           <folding>
             <element signature="e#1832#3080#0" expanded="false" />
@@ -959,8 +959,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/new_nlp.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-526">
-          <caret line="723" column="47" lean-forward="false" selection-start-line="723" selection-start-column="47" selection-end-line="723" selection-end-column="47" />
+        <state relative-caret-position="130">
+          <caret line="802" column="78" lean-forward="false" selection-start-line="802" selection-start-column="78" selection-end-line="802" selection-end-column="78" />
           <folding />
         </state>
       </provider>
