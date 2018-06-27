@@ -918,8 +918,8 @@ function sendM(page_id, messages, recipient, token) {
                                     } else {
                                         // var obj_ = JSON.parse(body_);
                                         console.log('# SAVE ATTACHMENT ID RESULT ', JSON.stringify(body_));
-                                        // save_uploaded_attachmentid_m(obj.attachment_id, page_id, recipientId, message, token);
-                                        // m.attachment.payload = {attachment_id: obj.attachment_id};
+                                        save_uploaded_attachmentid_m(obj.attachment_id, page_id, recipientId, message, token);
+                                        m.attachment.payload = {attachment_id: obj.attachment_id};
                                     }
                                 });
                             }
@@ -1120,9 +1120,10 @@ function save_uploaded_attachmentid(attachment_id, page_id, recipientId, message
 }
 
 function upload_attachement(page_id, recipientId, message, token) {
+    var url = 'https://graph.facebook.com/v2.6/me/message_attachments?access_token=' + token;
+    console.log('# SAVE ATTACHMENT ID ', url);
     request({
-        url: 'https://graph.facebook.com/v2.6/me/message_attachments',
-        qs: {access_token: token},
+        url: url,
         method: 'POST',
         json: {
             message: message,

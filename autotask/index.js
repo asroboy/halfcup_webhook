@@ -159,7 +159,6 @@ function get_reserved_message(page_id, recipient_id, fb_token, reserved_paramete
 
 //aileadsbooster.com/Backend/reserved?reserved_parameter.
 
-
 function sendM(page_id, messages, recipient, token) {
     var i = 0;
 
@@ -189,23 +188,23 @@ function sendM(page_id, messages, recipient, token) {
                             if (obj.attachment_id !== null) {
                                 m.attachment.payload = {attachment_id: obj.attachment_id};
                             } else {
-                                console.log('# SAVE ATTACHMENT ID ');
+                                var url = 'https://graph.facebook.com/v2.6/me/message_attachments?access_token=' + token;
+                                console.log('# SAVE ATTACHMENT ID ', url);
                                 request({
-                                    url: 'https://graph.facebook.com/v2.6/me/message_attachments',
-                                    qs: {access_token: token},
+                                    url: url,
                                     method: 'POST',
                                     json: {
                                         message: m,
                                     }
-                                }, function (error, response, body) {
+                                }, function (error, response, body_) {
                                     if (error) {
-                                        console.log('Error sending message: ', error);
+                                        console.log('Error : ', error);
                                     } else if (response.body.error) {
                                         console.log('Error: ', response.body.error);
                                     } else {
-                                        var obj = JSON.parse(body);
-                                        console.log('# SAVE ATTACHMENT ID RESULT ', JSON.stringify(obj));
-                                        save_uploaded_attachmentid_m(page_id, recipientId, message, token);
+                                        // var obj_ = JSON.parse(body_);
+                                        console.log('# SAVE ATTACHMENT ID RESULT ', JSON.stringify(body_));
+                                        save_uploaded_attachmentid_m(obj.attachment_id, page_id, recipientId, message, token);
                                         m.attachment.payload = {attachment_id: obj.attachment_id};
                                     }
                                 });
@@ -250,7 +249,6 @@ function sendM(page_id, messages, recipient, token) {
     // make a copy of the original users Array because we're going to mutate it
     getOneM(Array.from(messages));
 }
-
 
 
 function save_uploaded_attachmentid_m(attachment_id, page_id, recipientId, message, token) {
