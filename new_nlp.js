@@ -47,7 +47,7 @@ function getToken(text, sender, recipient, isMessageUs, res) {
                 if (code == 1) {
                     var token = obj.messenger_data.pageAccessToken;
                     console.log('token : ' + token);
-                    // showLoading(token, recipient);
+                    showLoading(token, recipient);
 
                     if (text !== null) {
                         if (text.indexOf('DONE_BOT') > -1) {
@@ -104,7 +104,9 @@ function getToken(text, sender, recipient, isMessageUs, res) {
 
                 }
                 if (code == 0) {
-                    console.log('NLP : Can\'t send message, TOKEN NOT FOUND, Get page access token from facebook developer page and register to http://halfcup.com/social_rebates_system');
+                    hideLoading(token, recipient);
+                    console.log('NLP : Can\'t send message, TOKEN NOT FOUND, Get page access token from facebook developer page and register to http://halfcup.com/social_rebates_system \n' +
+                        'page_id : ' + sender);
 
                 }
             }
