@@ -910,14 +910,14 @@ function sendM(page_id, messages, recipient, token) {
                                     json: {
                                         message: m,
                                     }
-                                }, function (error, response, body) {
+                                }, function (error, response, body_) {
                                     if (error) {
                                         console.log('Error sending message: ', error);
                                     } else if (response.body.error) {
                                         console.log('Error: ', response.body.error);
                                     } else {
-                                        var obj = JSON.parse(body);
-                                        console.log('# SAVE ATTACHMENT ID RESULT ', JSON.stringify(obj));
+                                        var obj_ = JSON.parse(body_);
+                                        console.log('# SAVE ATTACHMENT ID RESULT ', JSON.stringify(obj_));
                                         save_uploaded_attachmentid_m(obj.attachment_id, page_id, recipientId, message, token);
                                         m.attachment.payload = {attachment_id: obj.attachment_id};
                                     }
