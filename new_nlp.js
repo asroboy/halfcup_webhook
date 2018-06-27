@@ -304,7 +304,7 @@ function getAggregationObjectDoneBot(key, sender, recipient, token, res, param, 
 
 function getParam(key, sender, recipient, token, res) {
     var url = 'http://halfcup.com/social_rebates_system/wapi/read?token=1234567890&api_name=PARAMS_AI&user_msg_id=' + recipient + '&page_id=' + sender;
-    console.log('url', url);
+    console.log('# PARAM AI url', url);
     request({
             url: url,
             method: 'GET'
@@ -354,7 +354,7 @@ function getAggregationObject(key, sender, recipient, token, res, param, third_p
         }
 
 
-        console.log('url', url);
+        console.log('# AGGREGATION API url', url);
         request({
                 url: url,
                 method: 'GET'
@@ -411,7 +411,7 @@ function getAggregationObject(key, sender, recipient, token, res, param, third_p
 function saveAggregationObj(key, sender) {
     key = key.replace('&', '%26');
     var url = 'http://halfcup.com/social_rebates_system/wapi/save?token=1234567890&api_name=AGGREGATE_OBJ&aggr_key=' + key + '&page_id=' + sender;
-    console.log('url', url);
+    console.log('# SAVE AGGREGATION API url', url);
     request({
             url: url,
             method: 'POST'
@@ -431,7 +431,7 @@ function saveAggregationObj(key, sender) {
 
 function getChatBot(key, sender, recipient, token, res) {
     var url = 'http://halfcup.com/social_rebates_system/wapi/read?token=1234567890&api_name=CHATBOT&key=' + key + '&page_id=' + sender;
-    console.log('url', url);
+    console.log('# GET CHAT BOT url', url);
     request({
             url: url,
             method: 'GET'
@@ -470,7 +470,7 @@ function getMerchantId(pageId, recipient, text, token, res) {
         page_subscription.reply(text, recipient, pageId, token);
     } else {
         var url = 'http://halfcup.com/social_rebates_system/wapi/read?api_name=GET_RESTAURANT&token=1234567890&page_id=' + pageId;
-        console.log('url', url);
+        console.log('# GET MERCHANT ID url', url);
         request({
                 url: url,
                 method: 'GET'
@@ -495,7 +495,7 @@ function getMerchantId(pageId, recipient, text, token, res) {
 
 function getAiToken(sender, recipient, restaurantId, text, token, res) {
     var url = 'http://aileadsbooster.com/backend/getEnvironment?page_id=' + sender + '&merchant_id=' + restaurantId + '&lang=en';
-    console.log('url', url);
+    console.log('# GET AI TOKEN url', url);
     request({
             url: url,
             method: 'GET'
@@ -524,7 +524,7 @@ function getAiToken(sender, recipient, restaurantId, text, token, res) {
 
 function getAiKeyFromDB(wang_token, pageId, recipient, text, token, res) {
     var url = 'http://halfcup.com/social_rebates_system/wapi/read?api_name=AI_PREV_KEYS&token=1234567890&page_id=' + pageId;
-    console.log('url', url);
+    console.log('# AI PREV KEY url', url);
     request({
             url: url,
             method: 'GET'
@@ -604,7 +604,7 @@ function getAiKey(text, wang_token, pageId, prevKeys, recipient, token, res, agg
     } else {
         var url = 'http://aileadsbooster.com/Backend/query?q=' + encodeURI(text) + '&access_token=' + wang_token + '&prev_key=' + prevKeys + '&aggregation=' + aggregateObj + '&param=' + param + '&third-party=' + third_party;
     }
-    console.log('url', url);
+    console.log('# BACKEND QUERY API url', url);
     request({
             url: url,
             method: 'GET'
@@ -616,7 +616,7 @@ function getAiKey(text, wang_token, pageId, prevKeys, recipient, token, res, agg
             } else {
                 try {
                     var obj = JSON.parse(body);
-                    // console.log('obj = ' + JSON.stringify(obj));
+                    console.log('==>BAKCEND QUERY API RESULT : ' + JSON.stringify(obj));
                     if (obj.hasOwnProperty('aggregation')) {
                         console.log('AGGREGATION LENGTH = ' + obj.aggregation.length);
                         if (obj.aggregation.length > 0) {
@@ -665,7 +665,7 @@ function getAiKey(text, wang_token, pageId, prevKeys, recipient, token, res, agg
 
 function getParamForAiKey(text, wang_token, pageId, prevKeys, recipient, token, res, agk) {
     var url = 'http://halfcup.com/social_rebates_system/wapi/read?token=1234567890&api_name=PARAMS_AI&user_msg_id=' + recipient + '&page_id=' + pageId;
-    console.log('url', url);
+    console.log('# PARAM AI url', url);
     request({
             url: url,
             method: 'GET'
@@ -692,7 +692,7 @@ function getParamForAiKey(text, wang_token, pageId, prevKeys, recipient, token, 
 
 function saveAiKeyWithoutGetBot(key, pageId, recipient, token, res) {
     var url = 'http://halfcup.com/social_rebates_system/wapi/save?api_name=AI_PREV_KEYS&key=' + key + '&token=1234567890&page_id=' + pageId;
-    console.log('url', url);
+    console.log('# SAVE AI PREV KEY url', url);
     request({
             url: url,
             method: 'POST'
@@ -710,7 +710,7 @@ function saveAiKeyWithoutGetBot(key, pageId, recipient, token, res) {
 
 function saveAiKey(key, pageId, recipient, token, res) {
     var url = 'http://halfcup.com/social_rebates_system/wapi/save?api_name=AI_PREV_KEYS&key=' + key + '&token=1234567890&page_id=' + pageId;
-    console.log('url', url);
+    console.log('# SAVE AI PREV KEY url', url);
     request({
             url: url,
             method: 'POST'
@@ -789,7 +789,7 @@ function sendMorA(page_id, m_payload, recipient, token) {
 function getGroupBot(key, sender, recipient, token, res) {
     var url = 'http://halfcup.com/social_rebates_system/wapi/read?token=1234567890&api_name=GROUP&key=' + key;
     // + '&page_id=' + sender;
-    console.log('url', url);
+    console.log('# GROUP WAPI url', url);
     request({
             url: url,
             method: 'GET'
@@ -822,7 +822,7 @@ function respondFromGroup(jsonMessage, sender, recipient, size, token, res) {
 
 function getDefaultAnswer(sender, recipient, token, res) {
     var url = 'http://halfcup.com/social_rebates_system/wapi/read?token=1234567890&api_name=DEFAULT_ANSWER&page_id=' + sender + '&is_on=true';
-    console.log('url', url);
+    console.log('# DEFAULT ANSWER API url', url);
     request({
             url: url,
             method: 'GET'
