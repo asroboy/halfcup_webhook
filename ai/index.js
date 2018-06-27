@@ -52,7 +52,7 @@ app.get('/test', function (req, res) {
 // handler receiving messages
 app.post('/webhook', function (req, res) {
         try {
-            var events = req.body.entry[0].messaging;
+            var entries = req.body.entry;
             var changes = req.body.entry[0].changes;
             console.log("POST WEBHOOK");
             console.log("REQ", JSON.stringify(req.body));
@@ -82,512 +82,521 @@ app.post('/webhook', function (req, res) {
                 }
             }
 
-            if (events) {
-                for (i = 0; i < events.length; i++) {
-                    var event = events[i];
-                    console.log("=======EVENT CHECK=======");
-                    //console.log('Sender ID: ', event.sender.id);
-                    console.log('Event ' + i + ': ', JSON.stringify(event));
-                    var hc_token = 'EAABqJD84pmIBABjewVhyAuMwDLFaI7YT7fsJLzeh63mhOwdZAgMKClvFfZBvHhFR35dIok3YQAxeZCuDbiLCaWVOpQxWVRHZBahsQOy9ZCTn4e4wdWcZA0VmGU6x0CFzv6dRcCzrlSZA87EPcI3b0KCDkedjLc37lZCvnu47iTTAwgZDZD';
+            for (j = 0; j < entries.length; j++) {
+                var event = entries[j]
+                console.log('Event ' + j + ': ', JSON.stringify(event));
+                var messagings = event.messaging;
+                if (messagings) {
+                    for (i = 0; i < messagings.length; i++) {
+                        var messaging = messagings[i];
+                        console.log("=======EVENT CHECK=======");
+                        //console.log('Sender ID: ', messaging.sender.id);
+                        console.log('Messaging ' + i + ': ', JSON.stringify(messaging));
+                        var hc_token = 'EAABqJD84pmIBABjewVhyAuMwDLFaI7YT7fsJLzeh63mhOwdZAgMKClvFfZBvHhFR35dIok3YQAxeZCuDbiLCaWVOpQxWVRHZBahsQOy9ZCTn4e4wdWcZA0VmGU6x0CFzv6dRcCzrlSZA87EPcI3b0KCDkedjLc37lZCvnu47iTTAwgZDZD';
 
+                        if(event.id == messaging.recipient.id){
 
-                    if (event.referral) {
-                        console.log('event.referral');
-                        // var messaging = event.messaging[0];
-                        // if(messaging.hasOwnProperty('referral')){
-                        //     console.log('messaging.referral');
-                        //     var referral = messaging.referral;
-                        if (event.referral.hasOwnProperty('ref')) {
-                            console.log('event.referral.ref');
-                            console.log(event.referral.ref);
-                            if (event.referral.ref !== null) {
-                                if (event.referral.ref.indexOf("DONE_BOT") > -1 && event.referral.ref.indexOf('|param|') > -1) {
-                                    if (event.referral.ref.indexOf('|param|') > -1) {
-                                        var code = event.referral.ref.split('\|param\|')[1];
+                            if (messaging.referral) {
+                                console.log('messaging.referral');
+                                // var messaging = messaging.messaging[0];
+                                // if(messaging.hasOwnProperty('referral')){
+                                //     console.log('messaging.referral');
+                                //     var referral = messaging.referral;
+                                if (messaging.referral.hasOwnProperty('ref')) {
+                                    console.log('messaging.referral.ref');
+                                    console.log(messaging.referral.ref);
+                                    if (messaging.referral.ref !== null) {
+                                        if (messaging.referral.ref.indexOf("DONE_BOT") > -1 && messaging.referral.ref.indexOf('|param|') > -1) {
+                                            if (messaging.referral.ref.indexOf('|param|') > -1) {
+                                                var code = messaging.referral.ref.split('\|param\|')[1];
 
-                                        // clearAiKey(event.recipient.id);
-                                        // saveParamAi(event.recipient.id, event.sender.id, '', code);
-                                        new_nlp.getChatBot(event.referral.ref, event.recipient.id, event.sender.id, res);
-                                    }
-                                }
-                                else if (event.referral.ref.indexOf('|param|') > -1) {
-                                    clearAiKey(event.recipient.id);
-                                    var code = event.referral.ref.split('\|param\|')[1];
-                                    var text = event.referral.ref.split('\|param\|')[0];
-                                    console.log("code ", code);
-                                    console.log("text ", text);
-                                    saveParamAi(event.recipient.id, event.sender.id, '', code)
-                                    new_nlp.getChatBot(text, event.recipient.id, event.sender.id, res);
-                                } else {
-                                    new_nlp.getChatBot(event.referral.ref, event.recipient.id, event.sender.id, res);
-                                }
-                            }
-
-                        }
-                        // }
-
-                    }
-
-                    if (event.message) {
-                        //NLP Handling
-                        if (event.message.nlp) {
-                            new_nlp.handleMessage(event, event.message, res);
-                            //NON NLP Handling
-                        } else {
-                            if (event.message) {
-                                var msg = event.message.text;
-                                if (event.sender.id === '912070908830063') {
-                                    if (msg === 'Hi, I\'m Halfcup') {
-                                        var message = {"text": "I can help you to remind food time at anytime u want"}
-                                        sendMessage(event.recipient.id, message, hc_token);
-                                    }
-                                    if (msg === 'OK, I will guide you') {
-                                        var message = {
-                                            "text": 'Do you need me to remind your breakfast time',
-                                            "quick_replies": [{
-                                                "content_type": "text",
-                                                "title": "Yes",
-                                                "payload": "DEVELOPER_SETUP_YES"
-                                            }, {"content_type": "text", "title": "No", "payload": "DEVELOPER_SETUP_NO"}]
+                                                // clearAiKey(messaging.recipient.id);
+                                                // saveParamAi(messaging.recipient.id, messaging.sender.id, '', code);
+                                                new_nlp.getChatBot(messaging.referral.ref, messaging.recipient.id, messaging.sender.id, res);
+                                            }
                                         }
-                                        sendMessage(event.recipient.id, message, hc_token);
-                                    }
-                                }
-
-                                if (event.recipient.id === '912070908830063') {
-                                    console.log("=======Reply check 912070908830063=======");
-                                    if (msg === 'Hi' || msg === 'hi' || msg === 'hallo' || msg === 'halo' || msg === 'Hallo') {
-                                        var message = {
-                                            "text": 'Hi, are you ready to setup your remider',
-                                            "quick_replies": [{
-                                                "content_type": "text",
-                                                "title": "Setup",
-                                                "payload": "DEVELOPER_SETUP"
-                                            }]
-                                        }
-                                        sendMessage(event.sender.id, message, hc_token);
-                                    }
-
-                                    if (msg === 'setup' || msg === 'Setup') {
-
-                                        var message = {
-                                            "text": 'OK, do you need me to remind your breakfast time',
-                                            "quick_replies": [{
-                                                "content_type": "text",
-                                                "title": "Yes",
-                                                "payload": "DEVELOPER_SETUP_YES"
-                                            }, {"content_type": "text", "title": "No", "payload": "DEVELOPER_SETUP_NO"}]
-                                        }
-                                        sendMessage(event.sender.id, message, hc_token);
-                                    }
-
-                                    if (msg.indexOf('start') !== -1 || msg.indexOf('Start') !== -1) {
-
-                                    }
-
-                                    if ((msg.indexOf('How') !== -1 || msg.indexOf('how') !== -1) && (msg.indexOf('do') !== -1 || msg.indexOf('Do') !== -1)) {
-                                        var message = {
-                                            "text": 'OK, I will guide you'
-                                        }
-                                        sendMessage(event.sender.id, message, hc_token);
-                                    }
-                                    // if(event.message.text !== 'GET_STARTED_PAYLOAD '){
-                                    //     var message = {"text": "Yeah .. I know u're busy person"}
-                                    //     sendMessage(event.sender.id, message, hc_token);
-                                    // }
-
-                                }
-                            }
-
-                            if (event.message && event.message.text && event.sender) {
-                                //console.log("=======MESSAGE=======");
-                                //console.log('Message : ', event.message.text);
-
-                                /**
-                                 * ACTIONS FOR QUICK REPLY
-                                 */
-                                if (event.message.quick_reply) {
-                                    console.log("=======QUICK REPLY=======");
-
-                                    var find_prefix = event.message.quick_reply.payload.split('_');
-                                    var payload_prefix = find_prefix[0];
-                                    console.log("payload_prefix", payload_prefix);
-
-                                    console.log("Payload ", event.message.quick_reply.payload);
-
-                                    /**
-                                     * Check if payload REGISTER_PAYLOAD (old Get started) button
-                                     */
-                                    if (event.message.quick_reply.payload === 'REGISTER_PAYLOAD') {
-                                        getResponseToUser(event.message.quick_reply.payload, event.sender.id, event.recipient.id);
-                                    }
-                                    /**
-                                     * Check if payload DEVELOPER (Get started) button
-                                     */
-                                    else if (payload_prefix === 'DEVELOPER') {
-                                        console.log("Payload ", event.message.quick_reply.payload);
-                                        pixel('QuickReply', event.message.text, event.message.quick_reply.payload, event.sender.id, event.recipient.id);
-                                        getResponseToUser(event.message.quick_reply.payload, event.sender.id, event.recipient.id);
-                                    }
-
-                                    else if (payload_prefix === 'CUSTOM') {
-                                        console.log('call new_nlp CUSTOM');
-                                        new_nlp.getChatBot(event.message.quick_reply.payload, event.recipient.id, event.sender.id, res)
-                                    }
-                                    /**
-                                     * Check if payload is BOT key
-                                     */
-                                    else if (payload_prefix === 'BOT' || payload_prefix === 'SHARE') {
-                                        console.log("Payload ", event.message.quick_reply.payload);
-                                        pixel('QuickReply', event.message.text, event.message.quick_reply.payload, event.sender.id, event.recipient.id);
-                                        getResponseToUser(event.message.quick_reply.payload, event.sender.id, event.recipient.id);
-                                    }
-                                    /**
-                                     * Check if payload is Multi BOT key(s)
-                                     */
-                                    else if ((payload_prefix === 'BOT' || payload_prefix === 'SHARE') && event.message.quick_reply.payload.indexOf(",") !== -1) {
-                                        var payloads = event.message.quick_reply.payload.split(",");
-                                        for (i = 0; i < payloads.length; i++) {
-                                            console.log("Payload " + i, payloads[i]);
-                                            pixel('QuickReply', event.message.text, payloads[i], event.sender.id, event.recipient.id);
-                                            getResponseToUser(payloads[i], event.sender.id, event.recipient.id);
-                                        }
-                                    }
-                                    /**
-                                     * MULTI KEY FORMAT [A]|[B]|BOT_xxxx_xxxx
-                                     */
-                                    else if ((event.message.quick_reply.payload.indexOf("|") > -1) && payload_prefix !== 'AGGREGATION' && !((find_prefix[0] === "TRUE") && (find_prefix[1] === "MONEY"))) {
-                                        /**
-                                         * Split Payload marked with |
-                                         * @type {*}
-                                         */
-
-                                        if (event.message.quick_reply.payload.indexOf('|param|') > -1) {
-                                            var code = event.message.quick_reply.payload.split('\|param\|')[1];
-                                            var text = event.message.quick_reply.payload.split('\|param\|')[0];
-                                            clearAiKey(event.recipient.id);
-                                            saveParamAi(event.recipient.id, event.sender.id, '', code);
-                                            new_nlp.getChatBot(text, event.recipient.id, event.sender.id, res);
+                                        else if (messaging.referral.ref.indexOf('|param|') > -1) {
+                                            clearAiKey(messaging.recipient.id);
+                                            var code = messaging.referral.ref.split('\|param\|')[1];
+                                            var text = messaging.referral.ref.split('\|param\|')[0];
+                                            console.log("code ", code);
+                                            console.log("text ", text);
+                                            saveParamAi(messaging.recipient.id, messaging.sender.id, '', code)
+                                            new_nlp.getChatBot(text, messaging.recipient.id, messaging.sender.id, res);
                                         } else {
-                                            var keys = event.message.quick_reply.payload.split("|");
-                                            console.log("Payload ", event.message.quick_reply.payload);
-                                            var action_name = keys[0];
+                                            new_nlp.getChatBot(messaging.referral.ref, messaging.recipient.id, messaging.sender.id, res);
+                                        }
+                                    }
+
+                                }
+                                // }
+
+                            }
+
+                            if (messaging.message) {
+                                //NLP Handling
+                                if (messaging.message.nlp) {
+                                    new_nlp.handleMessage(messaging, messaging.message, res);
+                                    //NON NLP Handling
+                                } else {
+                                    if (messaging.message) {
+                                        var msg = messaging.message.text;
+                                        if (messaging.sender.id === '912070908830063') {
+                                            if (msg === 'Hi, I\'m Halfcup') {
+                                                var message = {"text": "I can help you to remind food time at anytime u want"}
+                                                sendMessage(messaging.recipient.id, message, hc_token);
+                                            }
+                                            if (msg === 'OK, I will guide you') {
+                                                var message = {
+                                                    "text": 'Do you need me to remind your breakfast time',
+                                                    "quick_replies": [{
+                                                        "content_type": "text",
+                                                        "title": "Yes",
+                                                        "payload": "DEVELOPER_SETUP_YES"
+                                                    }, {"content_type": "text", "title": "No", "payload": "DEVELOPER_SETUP_NO"}]
+                                                }
+                                                sendMessage(messaging.recipient.id, message, hc_token);
+                                            }
+                                        }
+
+                                        if (messaging.recipient.id === '912070908830063') {
+                                            console.log("=======Reply check 912070908830063=======");
+                                            if (msg === 'Hi' || msg === 'hi' || msg === 'hallo' || msg === 'halo' || msg === 'Hallo') {
+                                                var message = {
+                                                    "text": 'Hi, are you ready to setup your remider',
+                                                    "quick_replies": [{
+                                                        "content_type": "text",
+                                                        "title": "Setup",
+                                                        "payload": "DEVELOPER_SETUP"
+                                                    }]
+                                                }
+                                                sendMessage(messaging.sender.id, message, hc_token);
+                                            }
+
+                                            if (msg === 'setup' || msg === 'Setup') {
+
+                                                var message = {
+                                                    "text": 'OK, do you need me to remind your breakfast time',
+                                                    "quick_replies": [{
+                                                        "content_type": "text",
+                                                        "title": "Yes",
+                                                        "payload": "DEVELOPER_SETUP_YES"
+                                                    }, {"content_type": "text", "title": "No", "payload": "DEVELOPER_SETUP_NO"}]
+                                                }
+                                                sendMessage(messaging.sender.id, message, hc_token);
+                                            }
+
+                                            if (msg.indexOf('start') !== -1 || msg.indexOf('Start') !== -1) {
+
+                                            }
+
+                                            if ((msg.indexOf('How') !== -1 || msg.indexOf('how') !== -1) && (msg.indexOf('do') !== -1 || msg.indexOf('Do') !== -1)) {
+                                                var message = {
+                                                    "text": 'OK, I will guide you'
+                                                }
+                                                sendMessage(messaging.sender.id, message, hc_token);
+                                            }
+                                            // if(messaging.message.text !== 'GET_STARTED_PAYLOAD '){
+                                            //     var message = {"text": "Yeah .. I know u're busy person"}
+                                            //     sendMessage(messaging.sender.id, message, hc_token);
+                                            // }
+
+                                        }
+                                    }
+
+                                    if (messaging.message && messaging.message.text && messaging.sender) {
+                                        //console.log("=======MESSAGE=======");
+                                        //console.log('Message : ', event.message.text);
+
+                                        /**
+                                         * ACTIONS FOR QUICK REPLY
+                                         */
+                                        if (messaging.message.quick_reply) {
+                                            console.log("=======QUICK REPLY=======");
+
+                                            var find_prefix = messaging.message.quick_reply.payload.split('_');
+                                            var payload_prefix = find_prefix[0];
+                                            console.log("payload_prefix", payload_prefix);
+
+                                            console.log("Payload ", messaging.message.quick_reply.payload);
+
+                                            /**
+                                             * Check if payload REGISTER_PAYLOAD (old Get started) button
+                                             */
+                                            if (messaging.message.quick_reply.payload === 'REGISTER_PAYLOAD') {
+                                                getResponseToUser(messaging.message.quick_reply.payload, messaging.sender.id, messaging.recipient.id);
+                                            }
+                                            /**
+                                             * Check if payload DEVELOPER (Get started) button
+                                             */
+                                            else if (payload_prefix === 'DEVELOPER') {
+                                                console.log("Payload ", messaging.message.quick_reply.payload);
+                                                pixel('QuickReply', messaging.message.text, messaging.message.quick_reply.payload, messaging.sender.id, messaging.recipient.id);
+                                                getResponseToUser(messaging.message.quick_reply.payload, messaging.sender.id, messaging.recipient.id);
+                                            }
+
+                                            else if (payload_prefix === 'CUSTOM') {
+                                                console.log('call new_nlp CUSTOM');
+                                                new_nlp.getChatBot(messaging.message.quick_reply.payload, messaging.recipient.id, messaging.sender.id, res)
+                                            }
+                                            /**
+                                             * Check if payload is BOT key
+                                             */
+                                            else if (payload_prefix === 'BOT' || payload_prefix === 'SHARE') {
+                                                console.log("Payload ", messaging.message.quick_reply.payload);
+                                                pixel('QuickReply', messaging.message.text, messaging.message.quick_reply.payload, messaging.sender.id, messaging.recipient.id);
+                                                getResponseToUser(messaging.message.quick_reply.payload, messaging.sender.id, messaging.recipient.id);
+                                            }
+                                            /**
+                                             * Check if payload is Multi BOT key(s)
+                                             */
+                                            else if ((payload_prefix === 'BOT' || payload_prefix === 'SHARE') && messaging.message.quick_reply.payload.indexOf(",") !== -1) {
+                                                var payloads = messaging.message.quick_reply.payload.split(",");
+                                                for (i = 0; i < payloads.length; i++) {
+                                                    console.log("Payload " + i, payloads[i]);
+                                                    pixel('QuickReply', messaging.message.text, payloads[i], messaging.sender.id, messaging.recipient.id);
+                                                    getResponseToUser(payloads[i], messaging.sender.id, messaging.recipient.id);
+                                                }
+                                            }
+                                            /**
+                                             * MULTI KEY FORMAT [A]|[B]|BOT_xxxx_xxxx
+                                             */
+                                            else if ((messaging.message.quick_reply.payload.indexOf("|") > -1) && payload_prefix !== 'AGGREGATION' && !((find_prefix[0] === "TRUE") && (find_prefix[1] === "MONEY"))) {
+                                                /**
+                                                 * Split Payload marked with |
+                                                 * @type {*}
+                                                 */
+
+                                                if (messaging.message.quick_reply.payload.indexOf('|param|') > -1) {
+                                                    var code = messaging.message.quick_reply.payload.split('\|param\|')[1];
+                                                    var text = messaging.message.quick_reply.payload.split('\|param\|')[0];
+                                                    clearAiKey(messaging.recipient.id);
+                                                    saveParamAi(messaging.recipient.id, messaging.sender.id, '', code);
+                                                    new_nlp.getChatBot(text, messaging.recipient.id, messaging.sender.id, res);
+                                                } else {
+                                                    var keys = messaging.message.quick_reply.payload.split("|");
+                                                    console.log("Payload ", messaging.message.quick_reply.payload);
+                                                    var action_name = keys[0];
+                                                    action_name = action_name.replace("[", "");
+                                                    action_name = action_name.replace("]", "");
+
+
+                                                    if (keys.length == 2) {
+                                                        keyIndexAction(keys[1], messaging, action_name, "QuickReply");
+                                                    }
+                                                    if (keys.length == 3) {
+                                                        keyIndexAction(keys[1], messaging, action_name, "QuickReply");
+                                                        keyIndexAction(keys[2], messaging, action_name, "QuickReply");
+                                                    }
+
+                                                    if (keys.length == 4) {
+                                                        keyIndexAction(keys[1], messaging, action_name, "QuickReply");
+                                                        keyIndexAction(keys[2], messaging, action_name, "QuickReply");
+                                                        keyIndexAction(keys[3], messaging, action_name, "QuickReply");
+
+                                                    }
+                                                }
+
+
+                                            }
+
+                                            //=====
+                                            /**
+                                             * if Payload is only text
+                                             */
+                                            // else if (messaging.message.quick_reply.payload) {
+                                            //messaging.message.quick_reply.payload.indexOf('AGGREGATION_') > -1
+                                            else if (payload_prefix === 'AGGREGATION') {
+                                                new_nlp.getChatBot(messaging.message.quick_reply.payload, messaging.recipient.id, messaging.sender.id, res);
+                                            }
+                                            else if ((find_prefix[0] === "TRUE") && (find_prefix[1] === "MONEY")) {
+                                                var keyword = messaging.message.quick_reply.payload.replace("TRUE_MONEY_", "");
+                                                console.log("keyword " + keyword);
+                                                true_money.postbackHandler(messaging, keyword);
+                                            }
+
+                                            else {
+                                                console.log("QuickReply ", messaging.message.quick_reply.payload);
+                                                var page_id = messaging.recipient.id;
+                                                if(page_id === '474086889694869'){
+                                                    page_subscription.reply(messaging.message.quick_reply.payload,  messaging.sender.id, page_id, my_token);
+                                                }else{
+                                                    //var token = "";
+                                                    //this is to handle print PAYLOAD to msgr room
+                                                    pixel('QuickReply', messaging.message.text, messaging.message.quick_reply.payload, messaging.sender.id, messaging.recipient.id);
+                                                    getToken(messaging.message.quick_reply.payload, messaging.recipient.id, messaging.sender.id, false);
+                                                }
+
+                                            }
+                                            // }
+                                        }
+
+                                        /**
+                                         * ACTIONS FOR OTHERS
+                                         */
+                                        else {
+                                            if (messaging.message.metadata) {
+                                                var jsonMeta = JSON.parse(messaging.message.metadata);
+                                                console.log('json meta', jsonMeta);
+                                                if (jsonMeta.ad_id) {
+                                                    console.log("=======ADS REPLY=======");
+                                                    if (messaging.message.text.indexOf('{{') > -1)
+                                                        new_nlp.getMerchantId(messaging.sender.id, messaging.recipient.id, messaging.message.text, res);
+                                                    // getAdsResponseToUser(messaging.recipient.id, messaging.sender.id, jsonMeta.ad_id)
+                                                }
+                                            } else {
+                                                if (messaging.message.text) {
+                                                    console.log("===== messaging.message.text ========");
+                                                    var request_key = messaging.message.text;
+                                                    if (messaging.recipient.id === '198665724065584') {
+                                                        true_money.inputTextHandler(messaging, request_key);
+                                                    } else {
+                                                        new_nlp.getMerchantId(messaging.recipient.id, messaging.sender.id, request_key, res);
+                                                    }
+                                                    // getResponseToUser(request_key, messaging.sender.id, messaging.recipient.id);
+                                                }
+                                            }
+                                        }
+
+                                    }
+
+                                    if (messaging.message && messaging.message.attachments && messaging.sender) {
+                                        console.log("===== messaging.message.text ========");
+                                        var attachments = messaging.message.attachments
+                                        if (attachments.length > 0) {
+                                            var attachementType = attachments[0].type
+                                            console.log("===== " + attachementType + " ========");
+                                            if (attachementType === 'location') {
+                                                var cord = attachments[0].payload.coordinates;
+                                                console.log("===== " + JSON.stringify(cord) + " ========");
+
+                                                if (typeof cord !== 'undefined') {
+                                                    true_money.coordinatesHandler(messaging);
+                                                }
+                                            }
+
+                                        }
+
+                                        //var arr = JSON.parse(messaging.message.attachments);
+                                        //getResponseToUser(messaging.message.attachments[0].payload.sticker_id, messaging.sender.id, messaging.recipient.id);
+                                    }
+                                }
+                            }
+
+                            /**
+                             * ACTIONS FOR OPTIN
+                             */
+                            if (messaging.optin) {
+                                var key = messaging.optin.ref;
+                                console.log(key)
+                                if (key === null) {
+
+                                } else {
+                                    if (messaging.optin.user_ref) {
+                                        console.log(key)
+                                        // getResponseToUserRef(key, messaging.optin.user_ref, messaging.recipient.id);
+                                    } else if (key.indexOf("{{") > -1) {
+                                        clearAiKey(messaging.recipient.id);
+                                        new_nlp.getChatBot(key, messaging.recipient.id, messaging.sender.id, res);
+                                    } else if (key === 'null') {
+
+                                    } else {
+
+                                    }
+                                }
+
+                            }
+
+                            /**
+                             * ACTIONS FOR POSTBACK
+                             */
+                            if (messaging.hasOwnProperty('postback')) {
+                                if (messaging.postback.hasOwnProperty('payload')) {
+                                    console.log("===== messaging.postback.payload ========");
+                                    console.log("Payload : " + messaging.postback.payload);
+                                    if (messaging.postback.payload.indexOf('|param|') > -1) {
+                                        var ref = messaging.postback.payload;
+                                        console.log("payload " + ref);
+                                        if (ref.indexOf("halfcup.com") > -1) {
+                                            ref = ref.replace("http://halfcup.com/social_rebates_system/app/msgredir?", "");
+                                        }
+                                        if (ref.indexOf("ref=") > -1) {
+                                            ref = ref.split("ref=")[1];
+                                        }
+                                        console.log("payload after extract: " + ref);
+                                        if (ref.indexOf("{{") > -1) {
+                                            // new_nlp.getChatBot(ref, messaging.recipient.id, messaging.sender.id, res);
+
+                                            if (ref.indexOf('|param|') > -1) {
+                                                var code = ref.split('\|param\|')[1];
+                                                var text = ref.split('\|param\|')[0];
+                                                clearAiKey(messaging.recipient.id);
+                                                saveParamAi(messaging.recipient.id, messaging.sender.id, '', code);
+                                                new_nlp.getChatBot(text, messaging.recipient.id, messaging.sender.id, res);
+                                            } else {
+                                                new_nlp.getChatBot(ref, messaging.recipient.id, messaging.sender.id, res);
+                                            }
+
+                                        } else if (ref === 'null') {
+
+                                        } else if (ref.indexOf("DONE_BOT") > -1) {
+                                            if (ref.indexOf('|param|') > -1) {
+                                                var code = ref.split('\|param\|')[1];
+
+                                                // clearAiKey(messaging.recipient.id);
+                                                // saveParamAi(messaging.recipient.id, messaging.sender.id, '', code);
+                                                new_nlp.getChatBot(ref, messaging.recipient.id, messaging.sender.id, res);
+                                            }
+                                        } else {
+                                            var keys = ref.split("|");
+
+                                            // if (keys[0] === 'MESSAGE_ME') {
+                                            // getResponseToUser(ref,messaging.sender.id, messaging.recipient.id );
+                                            getToken(ref, messaging.recipient.id, messaging.sender.id, true);
+                                            // }
+                                        }
+                                    }
+                                    else {
+
+                                        var find_prefix = messaging.postback.payload.split('_');
+                                        var payload_prefix = find_prefix[0];
+
+                                        console.log("find_prefix at 0 : " + find_prefix[0]);
+                                        if (find_prefix.length > 1) {
+                                            console.log("find_prefix at 1 : " + find_prefix[1]);
+                                        }
+
+                                        if ((payload_prefix === 'BOT' || payload_prefix === 'SHARE') && (messaging.postback.payload.indexOf(",") > -1)) {
+                                            var payloads = messaging.postback.payload.split(",");
+                                            console.log("payload_prefix === \"BOT \" && payload_prefix === \"SHARE\"");
+                                            for (i = 0; i < payloads.length; i++) {
+                                                console.log("Payload " + i, payloads[i]);
+                                                pixel('PostBack', payloads[i], payloads[i], messaging.sender.id, messaging.recipient.id);
+                                                getResponseToUser(payloads[i], messaging.sender.id, messaging.recipient.id);
+                                            }
+                                        }
+                                        else if ((messaging.postback.payload.indexOf("|") > -1) && payload_prefix !== 'AGGREGATION' && !(find_prefix[0] === "TRUE" && find_prefix[1] === "MONEY")) {
+                                            console.log("payload_prefix contains \| sign");
+                                            if (messaging.postback.payload.indexOf('|param|') > -1) {
+                                                console.log("payload_prefix has \|param\|");
+                                                var code = messaging.postback.payload.split('\|param\|')[1];
+                                                var text = messaging.postback.payload.split('\|param\|')[0];
+                                                clearAiKey(messaging.recipient.id);
+                                                saveParamAi(messaging.recipient.id, messaging.sender.id, '', code);
+                                                new_nlp.getChatBot(text, messaging.recipient.id, messaging.sender.id, res);
+                                            }
+
+                                        }
+                                        else if (payload_prefix === 'AGGREGATION') {
+                                            console.log('call new_nlp AGGREGATION');
+                                            // saveParamAi(messaging.recipient.id, messaging.sender.id, '', ####);
+                                            new_nlp.getChatBot(messaging.postback.payload, messaging.recipient.id, messaging.sender.id, res)
+                                        }
+                                        else if (payload_prefix === 'LIVE') {
+                                            console.log('call new_nlp LIVE');
+                                            new_nlp.getChatBot(messaging.postback.payload, messaging.recipient.id, messaging.sender.id, res)
+                                        }
+                                        else if (payload_prefix === 'CUSTOM') {
+                                            console.log('call new_nlp CUSTOM');
+                                            new_nlp.getChatBot(messaging.postback.payload, messaging.recipient.id, messaging.sender.id, res)
+                                        }
+
+                                        /**
+                                         * MULTI KEY FORMAT [A]|[B]|BOT_xxxx_xxxx
+                                         * MULTI KEY FORMAT [A]|[B]|[BOT_xxxx_xxxx]|BOT_xxx_xxx
+                                         */
+                                        else if (messaging.postback.payload.indexOf("|") > -1 && !(find_prefix[0] === "TRUE" && find_prefix[1] === "MONEY")) {
+                                            /**
+                                             * Split Payload marked with |
+                                             * @type {*}
+                                             */
+                                            var keys = messaging.postback.payload.split("|");
+                                            console.log("Payload ", messaging.postback.payload);
+                                            console.log("PAYLOAD KEY SIZE ", keys.length);
+
+                                            var action_name = keys[0]; //action name
                                             action_name = action_name.replace("[", "");
                                             action_name = action_name.replace("]", "");
 
-
                                             if (keys.length == 2) {
-                                                keyIndexAction(keys[1], event, action_name, "QuickReply");
+                                                keyIndexAction(keys[1], messaging, action_name, "PostBack");
                                             }
                                             if (keys.length == 3) {
-                                                keyIndexAction(keys[1], event, action_name, "QuickReply");
-                                                keyIndexAction(keys[2], event, action_name, "QuickReply");
+                                                keyIndexAction(keys[1], messaging, action_name, "PostBack");
+                                                keyIndexAction(keys[2], messaging, action_name, "PostBack");
                                             }
-
                                             if (keys.length == 4) {
-                                                keyIndexAction(keys[1], event, action_name, "QuickReply");
-                                                keyIndexAction(keys[2], event, action_name, "QuickReply");
-                                                keyIndexAction(keys[3], event, action_name, "QuickReply");
-
+                                                keyIndexAction(keys[1], messaging, action_name, "PostBack");
+                                                keyIndexAction(keys[2], messaging, action_name, "PostBack");
+                                                keyIndexAction(keys[3], messaging, action_name, "PostBack");
+                                                // index_1_action(action_name, reply_text_or_bot_key, keys[2], "PostBack", messaging);
                                             }
                                         }
-
-
-                                    }
-
-                                    //=====
-                                    /**
-                                     * if Payload is only text
-                                     */
-                                    // else if (event.message.quick_reply.payload) {
-                                    //event.message.quick_reply.payload.indexOf('AGGREGATION_') > -1
-                                    else if (payload_prefix === 'AGGREGATION') {
-                                        new_nlp.getChatBot(event.message.quick_reply.payload, event.recipient.id, event.sender.id, res);
-                                    }
-                                    else if ((find_prefix[0] === "TRUE") && (find_prefix[1] === "MONEY")) {
-                                        var keyword = event.message.quick_reply.payload.replace("TRUE_MONEY_", "");
-                                        console.log("keyword " + keyword);
-                                        true_money.postbackHandler(event, keyword);
-                                    }
-
-                                    else {
-                                        console.log("QuickReply ", event.message.quick_reply.payload);
-                                        var page_id = event.recipient.id;
-                                        if(page_id === '474086889694869'){
-                                            page_subscription.reply(event.message.quick_reply.payload,  event.sender.id, page_id, my_token);
-                                        }else{
-                                            //var token = "";
-                                            //this is to handle print PAYLOAD to msgr room
-                                            pixel('QuickReply', event.message.text, event.message.quick_reply.payload, event.sender.id, event.recipient.id);
-                                            getToken(event.message.quick_reply.payload, event.recipient.id, event.sender.id, false);
+                                        //***************
+                                        else if (messaging.postback.payload === "USER_DEFINED_PAYLOAD") {
+                                            pixel('PostBack', "Get Started", messaging.postback.payload, messaging.sender.id, messaging.recipient.id);
+                                            getResponseToUser(messaging.postback.payload, messaging.sender.id, messaging.recipient.id);
                                         }
-
+                                        else if (messaging.postback.payload.indexOf("{{") > -1) {
+                                            console.log('call new_nlp messaging.postback.payload {{');
+                                            new_nlp.getChatBot(messaging.postback.payload, messaging.recipient.id, messaging.sender.id, res);
+                                        }
+                                        else if ((find_prefix[0] === "TRUE") && (find_prefix[1] === "MONEY")) {
+                                            var keyword = messaging.postback.payload.replace("TRUE_MONEY_", "");
+                                            console.log("keyword " + keyword);
+                                            true_money.postbackHandler(messaging, keyword);
+                                        }
+                                        else {
+                                            pixel('PostBack', messaging.postback.payload, messaging.postback.payload, messaging.sender.id, messaging.recipient.id);
+                                            getResponseToUserForPostback(messaging.postback.payload, messaging.sender.id, messaging.recipient.id);
+                                        }
                                     }
-                                    // }
                                 }
+                                if (messaging.postback.hasOwnProperty('referral')) {
+                                    var ref = messaging.postback.referral.ref;
+                                    console.log("messaging.postback.referral.ref");
+                                    if (ref === null) {
 
-                                /**
-                                 * ACTIONS FOR OTHERS
-                                 */
-                                else {
-                                    if (event.message.metadata) {
-                                        var jsonMeta = JSON.parse(event.message.metadata);
-                                        console.log('json meta', jsonMeta);
-                                        if (jsonMeta.ad_id) {
-                                            console.log("=======ADS REPLY=======");
-                                            if (event.message.text.indexOf('{{') > -1)
-                                                new_nlp.getMerchantId(event.sender.id, event.recipient.id, event.message.text, res);
-                                            // getAdsResponseToUser(event.recipient.id, event.sender.id, jsonMeta.ad_id)
-                                        }
                                     } else {
-                                        if (event.message.text) {
-                                            console.log("===== event.message.text ========");
-                                            var request_key = event.message.text;
-                                            if (event.recipient.id === '198665724065584') {
-                                                true_money.inputTextHandler(event, request_key);
+                                        if (ref.indexOf("{{") > -1) {
+                                            // new_nlp.getChatBot(ref, messaging.recipient.id, messaging.sender.id, res);
+                                            if (ref.indexOf('|param|') > -1) {
+                                                var code = ref.split('\|param\|')[1];
+                                                var text = ref.split('\|param\|')[0];
+                                                clearAiKey(messaging.recipient.id);
+                                                saveParamAi(messaging.recipient.id, messaging.sender.id, '', code);
+                                                new_nlp.getChatBot(text, messaging.recipient.id, messaging.sender.id, res);
                                             } else {
-                                                new_nlp.getMerchantId(event.recipient.id, event.sender.id, request_key, res);
+                                                new_nlp.getChatBot(ref, messaging.recipient.id, messaging.sender.id, res);
                                             }
-                                            // getResponseToUser(request_key, event.sender.id, event.recipient.id);
+                                        } else if (ref === 'null') {
+
+                                        } else if (ref.indexOf("DONE_BOT") > -1) {
+                                            if (ref.indexOf('|param|') > -1) {
+                                                var code = ref.split('\|param\|')[1];
+                                                // clearAiKey(messaging.recipient.id);
+                                                // saveParamAi(messaging.recipient.id, messaging.sender.id, '', code);
+                                                new_nlp.getChatBot(ref, messaging.recipient.id, messaging.sender.id, res);
+                                            }
+                                        } else {
+                                            var keys = ref.split("|");
+                                            // if (keys[0] === 'MESSAGE_ME') {
+                                            // getResponseToUser(ref,messaging.sender.id, messaging.recipient.id );
+                                            // getToken(ref, messaging.recipient.id, messaging.sender.id, true);
+                                            // }
                                         }
-                                    }
-                                }
 
-                            }
-
-                            if (event.message && event.message.attachments && event.sender) {
-                                console.log("===== event.message.text ========");
-                                var attachments = event.message.attachments
-                                if (attachments.length > 0) {
-                                    var attachementType = attachments[0].type
-                                    console.log("===== " + attachementType + " ========");
-                                    if (attachementType === 'location') {
-                                        var cord = attachments[0].payload.coordinates;
-                                        console.log("===== " + JSON.stringify(cord) + " ========");
-
-                                        if (typeof cord !== 'undefined') {
-                                            true_money.coordinatesHandler(event);
-                                        }
                                     }
 
                                 }
-
-                                //var arr = JSON.parse(event.message.attachments);
-                                //getResponseToUser(event.message.attachments[0].payload.sticker_id, event.sender.id, event.recipient.id);
-                            }
-                        }
-                    }
-
-                    /**
-                     * ACTIONS FOR OPTIN
-                     */
-                    if (event.optin) {
-                        var key = event.optin.ref;
-                        console.log(key)
-                        if (key === null) {
-
-                        } else {
-                            if (event.optin.user_ref) {
-                                console.log(key)
-                                // getResponseToUserRef(key, event.optin.user_ref, event.recipient.id);
-                            } else if (key.indexOf("{{") > -1) {
-                                clearAiKey(event.recipient.id);
-                                new_nlp.getChatBot(key, event.recipient.id, event.sender.id, res);
-                            } else if (key === 'null') {
-
-                            } else {
-
                             }
                         }
 
                     }
 
-                    /**
-                     * ACTIONS FOR POSTBACK
-                     */
-                    if (event.hasOwnProperty('postback')) {
-                        if (event.postback.hasOwnProperty('payload')) {
-                            console.log("===== event.postback.payload ========");
-                            console.log("Payload : " + event.postback.payload);
-                            if (event.postback.payload.indexOf('|param|') > -1) {
-                                var ref = event.postback.payload;
-                                console.log("payload " + ref);
-                                if (ref.indexOf("halfcup.com") > -1) {
-                                    ref = ref.replace("http://halfcup.com/social_rebates_system/app/msgredir?", "");
-                                }
-                                if (ref.indexOf("ref=") > -1) {
-                                    ref = ref.split("ref=")[1];
-                                }
-                                console.log("payload after extract: " + ref);
-                                if (ref.indexOf("{{") > -1) {
-                                    // new_nlp.getChatBot(ref, event.recipient.id, event.sender.id, res);
-
-                                    if (ref.indexOf('|param|') > -1) {
-                                        var code = ref.split('\|param\|')[1];
-                                        var text = ref.split('\|param\|')[0];
-                                        clearAiKey(event.recipient.id);
-                                        saveParamAi(event.recipient.id, event.sender.id, '', code);
-                                        new_nlp.getChatBot(text, event.recipient.id, event.sender.id, res);
-                                    } else {
-                                        new_nlp.getChatBot(ref, event.recipient.id, event.sender.id, res);
-                                    }
-
-                                } else if (ref === 'null') {
-
-                                } else if (ref.indexOf("DONE_BOT") > -1) {
-                                    if (ref.indexOf('|param|') > -1) {
-                                        var code = ref.split('\|param\|')[1];
-
-                                        // clearAiKey(event.recipient.id);
-                                        // saveParamAi(event.recipient.id, event.sender.id, '', code);
-                                        new_nlp.getChatBot(ref, event.recipient.id, event.sender.id, res);
-                                    }
-                                } else {
-                                    var keys = ref.split("|");
-
-                                    // if (keys[0] === 'MESSAGE_ME') {
-                                    // getResponseToUser(ref,event.sender.id, event.recipient.id );
-                                    getToken(ref, event.recipient.id, event.sender.id, true);
-                                    // }
-                                }
-                            }
-                            else {
-
-                                var find_prefix = event.postback.payload.split('_');
-                                var payload_prefix = find_prefix[0];
-
-                                console.log("find_prefix at 0 : " + find_prefix[0]);
-                                if (find_prefix.length > 1) {
-                                    console.log("find_prefix at 1 : " + find_prefix[1]);
-                                }
-
-                                if ((payload_prefix === 'BOT' || payload_prefix === 'SHARE') && (event.postback.payload.indexOf(",") > -1)) {
-                                    var payloads = event.postback.payload.split(",");
-                                    console.log("payload_prefix === \"BOT \" && payload_prefix === \"SHARE\"");
-                                    for (i = 0; i < payloads.length; i++) {
-                                        console.log("Payload " + i, payloads[i]);
-                                        pixel('PostBack', payloads[i], payloads[i], event.sender.id, event.recipient.id);
-                                        getResponseToUser(payloads[i], event.sender.id, event.recipient.id);
-                                    }
-                                }
-                                else if ((event.postback.payload.indexOf("|") > -1) && payload_prefix !== 'AGGREGATION' && !(find_prefix[0] === "TRUE" && find_prefix[1] === "MONEY")) {
-                                    console.log("payload_prefix contains \| sign");
-                                    if (event.postback.payload.indexOf('|param|') > -1) {
-                                        console.log("payload_prefix has \|param\|");
-                                        var code = event.postback.payload.split('\|param\|')[1];
-                                        var text = event.postback.payload.split('\|param\|')[0];
-                                        clearAiKey(event.recipient.id);
-                                        saveParamAi(event.recipient.id, event.sender.id, '', code);
-                                        new_nlp.getChatBot(text, event.recipient.id, event.sender.id, res);
-                                    }
-
-                                }
-                                else if (payload_prefix === 'AGGREGATION') {
-                                    console.log('call new_nlp AGGREGATION');
-                                    // saveParamAi(event.recipient.id, event.sender.id, '', ####);
-                                    new_nlp.getChatBot(event.postback.payload, event.recipient.id, event.sender.id, res)
-                                }
-                                else if (payload_prefix === 'LIVE') {
-                                    console.log('call new_nlp LIVE');
-                                    new_nlp.getChatBot(event.postback.payload, event.recipient.id, event.sender.id, res)
-                                }
-                                else if (payload_prefix === 'CUSTOM') {
-                                    console.log('call new_nlp CUSTOM');
-                                    new_nlp.getChatBot(event.postback.payload, event.recipient.id, event.sender.id, res)
-                                }
-
-                                /**
-                                 * MULTI KEY FORMAT [A]|[B]|BOT_xxxx_xxxx
-                                 * MULTI KEY FORMAT [A]|[B]|[BOT_xxxx_xxxx]|BOT_xxx_xxx
-                                 */
-                                else if (event.postback.payload.indexOf("|") > -1 && !(find_prefix[0] === "TRUE" && find_prefix[1] === "MONEY")) {
-                                    /**
-                                     * Split Payload marked with |
-                                     * @type {*}
-                                     */
-                                    var keys = event.postback.payload.split("|");
-                                    console.log("Payload ", event.postback.payload);
-                                    console.log("PAYLOAD KEY SIZE ", keys.length);
-
-                                    var action_name = keys[0]; //action name
-                                    action_name = action_name.replace("[", "");
-                                    action_name = action_name.replace("]", "");
-
-                                    if (keys.length == 2) {
-                                        keyIndexAction(keys[1], event, action_name, "PostBack");
-                                    }
-                                    if (keys.length == 3) {
-                                        keyIndexAction(keys[1], event, action_name, "PostBack");
-                                        keyIndexAction(keys[2], event, action_name, "PostBack");
-                                    }
-                                    if (keys.length == 4) {
-                                        keyIndexAction(keys[1], event, action_name, "PostBack");
-                                        keyIndexAction(keys[2], event, action_name, "PostBack");
-                                        keyIndexAction(keys[3], event, action_name, "PostBack");
-                                        // index_1_action(action_name, reply_text_or_bot_key, keys[2], "PostBack", event);
-                                    }
-                                }
-                                //***************
-                                else if (event.postback.payload === "USER_DEFINED_PAYLOAD") {
-                                    pixel('PostBack', "Get Started", event.postback.payload, event.sender.id, event.recipient.id);
-                                    getResponseToUser(event.postback.payload, event.sender.id, event.recipient.id);
-                                }
-                                else if (event.postback.payload.indexOf("{{") > -1) {
-                                    console.log('call new_nlp event.postback.payload {{');
-                                    new_nlp.getChatBot(event.postback.payload, event.recipient.id, event.sender.id, res);
-                                }
-                                else if ((find_prefix[0] === "TRUE") && (find_prefix[1] === "MONEY")) {
-                                    var keyword = event.postback.payload.replace("TRUE_MONEY_", "");
-                                    console.log("keyword " + keyword);
-                                    true_money.postbackHandler(event, keyword);
-                                }
-                                else {
-                                    pixel('PostBack', event.postback.payload, event.postback.payload, event.sender.id, event.recipient.id);
-                                    getResponseToUserForPostback(event.postback.payload, event.sender.id, event.recipient.id);
-                                }
-                            }
-                        }
-                        if (event.postback.hasOwnProperty('referral')) {
-                            var ref = event.postback.referral.ref;
-                            console.log("event.postback.referral.ref");
-                            if (ref === null) {
-
-                            } else {
-                                if (ref.indexOf("{{") > -1) {
-                                    // new_nlp.getChatBot(ref, event.recipient.id, event.sender.id, res);
-                                    if (ref.indexOf('|param|') > -1) {
-                                        var code = ref.split('\|param\|')[1];
-                                        var text = ref.split('\|param\|')[0];
-                                        clearAiKey(event.recipient.id);
-                                        saveParamAi(event.recipient.id, event.sender.id, '', code);
-                                        new_nlp.getChatBot(text, event.recipient.id, event.sender.id, res);
-                                    } else {
-                                        new_nlp.getChatBot(ref, event.recipient.id, event.sender.id, res);
-                                    }
-                                } else if (ref === 'null') {
-
-                                } else if (ref.indexOf("DONE_BOT") > -1) {
-                                    if (ref.indexOf('|param|') > -1) {
-                                        var code = ref.split('\|param\|')[1];
-                                        // clearAiKey(event.recipient.id);
-                                        // saveParamAi(event.recipient.id, event.sender.id, '', code);
-                                        new_nlp.getChatBot(ref, event.recipient.id, event.sender.id, res);
-                                    }
-                                } else {
-                                    var keys = ref.split("|");
-                                    // if (keys[0] === 'MESSAGE_ME') {
-                                    // getResponseToUser(ref,event.sender.id, event.recipient.id );
-                                    // getToken(ref, event.recipient.id, event.sender.id, true);
-                                    // }
-                                }
-
-                            }
-
-                        }
-                    }
                 }
-
             }
+
 
             res.sendStatus(200);
         } catch (error) {
@@ -617,7 +626,7 @@ function saveMessengerAdmin(sender, recipient) {
     );
 }
 
-function keyIndexAction(key, event, action_name, event_name) {
+function keyIndexAction(key, messaging, action_name, event_name) {
     // var key_1 = keys[1]; //reply text or maybe bot key  INDEX 1
     if (key.indexOf("]") > -1) {
 
@@ -631,30 +640,30 @@ function keyIndexAction(key, event, action_name, event_name) {
                 var payloads = reply_text.split(",");
                 for (i = 0; i < payloads.length; i++) {
                     console.log("Payload " + i, payloads[i]);
-                    pixel(event_name, action_name, payloads[i], event.sender.id, event.recipient.id);
+                    pixel(event_name, action_name, payloads[i], messaging.sender.id, messaging.recipient.id);
                     if (event_name === "PostBack") {
-                        getResponseToUserForPostback(payloads[i], event.sender.id, event.recipient.id);
+                        getResponseToUserForPostback(payloads[i], messaging.sender.id, messaging.recipient.id);
                     } else {
-                        var resp = getResponseToUser(payloads[i], event.sender.id, event.recipient.id);
+                        var resp = getResponseToUser(payloads[i], messaging.sender.id, messaging.recipient.id);
                         console.log("GET RESPONSE TO USER : ", resp);
                     }
                 }
             } else {
-                pixel(event_name, action_name, reply_text, event.sender.id, event.recipient.id);
+                pixel(event_name, action_name, reply_text, messaging.sender.id, messaging.recipient.id);
                 if (event_name === "PostBack") {
-                    getResponseToUserForPostback(reply_text, event.sender.id, event.recipient.id);
+                    getResponseToUserForPostback(reply_text, messaging.sender.id, messaging.recipient.id);
                 } else {
-                    getResponseToUser(reply_text, event.sender.id, event.recipient.id);
+                    getResponseToUser(reply_text, messaging.sender.id, messaging.recipient.id);
 
                 }
             }
         } else if (reply_text.indexOf('{{') > -1) {
             reply_text = reply_text.replace('{{', "")
             reply_text = reply_text.replace('}}', "")
-            new_nlp.getChatBot(reply_text, event.recipient.id, event.sender.id, res);
+            new_nlp.getChatBot(reply_text, messaging.recipient.id, messaging.sender.id, res);
         } else {
             if (reply_text !== "") {
-                getToken(reply_text, event.recipient.id, event.sender.id, false);
+                getToken(reply_text, messaging.recipient.id, messaging.sender.id, false);
             }
         }
 
@@ -666,29 +675,29 @@ function keyIndexAction(key, event, action_name, event_name) {
                 var payloads = key.split(",");
                 for (i = 0; i < payloads.length; i++) {
                     console.log("Payload " + i, payloads[i]);
-                    pixel(event_name, action_name, payloads[i], event.sender.id, event.recipient.id);
+                    pixel(event_name, action_name, payloads[i], messaging.sender.id, messaging.recipient.id);
                     if (event_name === "PostBack") {
-                        getResponseToUserForPostback(payloads[i], event.sender.id, event.recipient.id);
+                        getResponseToUserForPostback(payloads[i], messaging.sender.id, messaging.recipient.id);
                     } else {
-                        getResponseToUser(payloads[i], event.sender.id, event.recipient.id);
+                        getResponseToUser(payloads[i], messaging.sender.id, messaging.recipient.id);
                     }
                 }
             } else if ((p_prefix === 'BOT' || p_prefix === 'SHARE')) {
-                pixel(event_name, action_name, key, event.sender.id, event.recipient.id);
+                pixel(event_name, action_name, key, messaging.sender.id, messaging.recipient.id);
                 if (event_name === "PostBack") {
-                    getResponseToUserForPostback(key, event.sender.id, event.recipient.id);
+                    getResponseToUserForPostback(key, messaging.sender.id, messaging.recipient.id);
                 } else {
-                    var resp = getResponseToUser(key, event.sender.id, event.recipient.id);
+                    var resp = getResponseToUser(key, messaging.sender.id, messaging.recipient.id);
                     console.log("GET RESPONSE TO USER : ", resp);
                 }
             }
         } else if (key.indexOf('{{') > -1) {
             key = key.replace('{{', "")
             key = key.replace('}}', "")
-            new_nlp.getChatBot(key, event.recipient.id, event.sender.id, res);
+            new_nlp.getChatBot(key, messaging.recipient.id, messaging.sender.id, res);
         } else {
             if (key !== "") {
-                getToken(key, event.recipient.id, event.sender.id, false);
+                getToken(key, messaging.recipient.id, messaging.sender.id, false);
             }
 
         }

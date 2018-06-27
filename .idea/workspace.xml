@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8c0fd527-5667-4e03-89ee-e95c0bdc3c27" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/new_nlp.js" afterPath="$PROJECT_DIR$/new_nlp.js" />
+      <change beforePath="$PROJECT_DIR$/ai/index.js" afterPath="$PROJECT_DIR$/ai/index.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -19,21 +19,30 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="index.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/ai/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="420" column="52" lean-forward="false" selection-start-line="420" selection-start-column="52" selection-end-line="420" selection-end-column="52" />
-              <folding />
+            <state relative-caret-position="5">
+              <caret line="54" column="41" lean-forward="false" selection-start-line="54" selection-start-column="41" selection-end-line="54" selection-end-column="41" />
+              <folding>
+                <element signature="e#1826#3074#0" expanded="false" />
+                <element signature="e#3249#37366#0" expanded="false" />
+                <element signature="e#6233#23459#0" expanded="false" />
+                <element signature="e#6699#7921#0" expanded="false" />
+                <element signature="e#8005#10789#0" expanded="false" />
+                <element signature="e#23603#24446#0" expanded="false" />
+                <element signature="e#24690#34890#0" expanded="false" />
+                <element signature="e#34966#37299#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="new_nlp.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="new_nlp.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/new_nlp.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="34" column="28" lean-forward="true" selection-start-line="34" selection-start-column="28" selection-end-line="34" selection-end-column="28" />
+            <state relative-caret-position="-312">
+              <caret line="19" column="4" lean-forward="false" selection-start-line="19" selection-start-column="4" selection-end-line="19" selection-end-column="4" />
               <folding />
             </state>
           </provider>
@@ -71,9 +80,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>get_delay_task</find>
-      <find>sendM</find>
-      <find>mStartAutoReply</find>
       <find>query</find>
       <find>aggregation</find>
       <find>DALAM</find>
@@ -83,7 +89,6 @@
       <find>Kami akan</find>
       <find>sendMessage</find>
       <find>DI DALAM</find>
-      <find>event.message.text</find>
       <find>getMerchantId</find>
       <find>474086889694869</find>
       <find>QUICK REPLY</find>
@@ -100,13 +105,18 @@
       <find>error</find>
       <find>Can't send message</find>
       <find>Can\'t send message</find>
+      <find>event.message.text</find>
+      <find>===== event.message.text ========</find>
+      <find>REQ</find>
       <find>getToken</find>
+      <find>event</find>
     </findStrings>
     <replaceStrings>
       <replace>localhost:8080</replace>
       <replace>halfcup.com</replace>
       <replace>halfcup.com/</replace>
       <replace>text</replace>
+      <replace>messaging</replace>
     </replaceStrings>
     <dirStrings>
       <dir>C:\Users\Ridho\TEST\halfcup-secret-spire-55522</dir>
@@ -127,10 +137,10 @@
         <option value="$PROJECT_DIR$/nlp.js" />
         <option value="$PROJECT_DIR$/true_money/true_money.js" />
         <option value="$PROJECT_DIR$/index.js" />
-        <option value="$PROJECT_DIR$/ai/index.js" />
         <option value="$PROJECT_DIR$/page_msg_subs/index.js" />
         <option value="$PROJECT_DIR$/autotask/index.js" />
         <option value="$PROJECT_DIR$/new_nlp.js" />
+        <option value="$PROJECT_DIR$/ai/index.js" />
       </list>
     </option>
   </component>
@@ -501,12 +511,12 @@
       <workItem from="1528871180495" duration="27015000" />
       <workItem from="1529896207609" duration="707000" />
       <workItem from="1529897621222" duration="2385000" />
-      <workItem from="1529978322788" duration="7443000" />
+      <workItem from="1529978322788" duration="8832000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="803514000" />
+    <option name="totallyTimeSpent" value="804903000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -527,7 +537,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3252818" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.53796446" sideWeight="0.4940476" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.17708333" sideWeight="0.56785715" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.67689824" sideWeight="0.4940476" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.41033927" sideWeight="0.4940476" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17865254" sideWeight="0.43369177" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Nativescript Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -900,14 +910,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ai/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="420" column="52" lean-forward="false" selection-start-line="420" selection-start-column="52" selection-end-line="420" selection-end-column="52" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/autotask/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
@@ -918,9 +920,26 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/new_nlp.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="34" column="28" lean-forward="true" selection-start-line="34" selection-start-column="28" selection-end-line="34" selection-end-column="28" />
+        <state relative-caret-position="-312">
+          <caret line="19" column="4" lean-forward="false" selection-start-line="19" selection-start-column="4" selection-end-line="19" selection-end-column="4" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ai/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5">
+          <caret line="54" column="41" lean-forward="false" selection-start-line="54" selection-start-column="41" selection-end-line="54" selection-end-column="41" />
+          <folding>
+            <element signature="e#1826#3074#0" expanded="false" />
+            <element signature="e#3249#37366#0" expanded="false" />
+            <element signature="e#6233#23459#0" expanded="false" />
+            <element signature="e#6699#7921#0" expanded="false" />
+            <element signature="e#8005#10789#0" expanded="false" />
+            <element signature="e#23603#24446#0" expanded="false" />
+            <element signature="e#24690#34890#0" expanded="false" />
+            <element signature="e#34966#37299#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
