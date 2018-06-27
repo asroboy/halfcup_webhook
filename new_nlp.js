@@ -897,7 +897,7 @@ function sendM(page_id, messages, recipient, token) {
                             qs: {access_token: token},
                             method: 'POST',
                             json: {
-                                message: message,
+                                message: m,
                             }
                         }, function (error, response, body) {
                             if (error) {
