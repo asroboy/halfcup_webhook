@@ -902,17 +902,17 @@ function sendM(page_id, messages, recipient, token) {
                             if (obj.attachment_id !== null) {
                                 m.attachment.payload = {attachment_id: obj.attachment_id};
                             } else {
-                                console.log('# SAVE ATTACHMENT ID ');
+                                var url = 'https://graph.facebook.com/v2.6/me/message_attachments?access_token=' + token;
+                                console.log('# SAVE ATTACHMENT ID ', url);
                                 request({
-                                    url: 'https://graph.facebook.com/v2.6/me/message_attachments',
-                                    qs: {access_token: token},
+                                    url: url,
                                     method: 'POST',
                                     json: {
                                         message: m,
                                     }
                                 }, function (error, response, body_) {
                                     if (error) {
-                                        console.log('Error sending message: ', error);
+                                        console.log('Error : ', error);
                                     } else if (response.body.error) {
                                         console.log('Error: ', response.body.error);
                                     } else {
