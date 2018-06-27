@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8c0fd527-5667-4e03-89ee-e95c0bdc3c27" name="Default" comment="" />
+    <list default="true" id="8c0fd527-5667-4e03-89ee-e95c0bdc3c27" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/autotask/index.js" afterPath="$PROJECT_DIR$/autotask/index.js" />
+      <change beforePath="$PROJECT_DIR$/new_nlp.js" afterPath="$PROJECT_DIR$/new_nlp.js" />
+    </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -20,8 +23,8 @@
       <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ai/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-99">
-              <caret line="82" column="13" lean-forward="true" selection-start-line="82" selection-start-column="13" selection-end-line="82" selection-end-column="13" />
+            <state relative-caret-position="171">
+              <caret line="1414" column="14" lean-forward="false" selection-start-line="1414" selection-start-column="9" selection-end-line="1414" selection-end-column="14" />
               <folding>
                 <element signature="e#1832#3080#0" expanded="false" />
                 <element signature="e#3855#40247#0" expanded="false" />
@@ -47,11 +50,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="new_nlp.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="new_nlp.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/new_nlp.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="305" column="65" lean-forward="false" selection-start-line="305" selection-start-column="55" selection-end-line="305" selection-end-column="65" />
+            <state relative-caret-position="486">
+              <caret line="1076" column="1" lean-forward="true" selection-start-line="1051" selection-start-column="0" selection-end-line="1076" selection-end-column="1" />
               <folding />
             </state>
           </provider>
@@ -67,11 +70,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="index.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/autotask/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="15" column="4" lean-forward="false" selection-start-line="15" selection-start-column="4" selection-end-line="15" selection-end-column="4" />
+            <state relative-caret-position="596">
+              <caret line="311" column="9" lean-forward="false" selection-start-line="311" selection-start-column="9" selection-end-line="311" selection-end-column="9" />
               <folding />
             </state>
           </provider>
@@ -89,13 +92,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>Jakarta</find>
-      <find>DI DALAM PENGECUALIAN</find>
-      <find>Kami akan</find>
-      <find>sendMessage</find>
-      <find>DI DALAM</find>
-      <find>getMerchantId</find>
-      <find>474086889694869</find>
       <find>QUICK REPLY</find>
       <find>page_subscription</find>
       <find>payload</find>
@@ -108,7 +104,6 @@
       <find>hideLoading</find>
       <find>autotask</find>
       <find>error</find>
-      <find>Can't send message</find>
       <find>Can\'t send message</find>
       <find>event.message.text</find>
       <find>===== event.message.text ========</find>
@@ -119,6 +114,14 @@
       <find>==</find>
       <find>==&gt;</find>
       <find>/wapi/read</find>
+      <find>url</find>
+      <find>console.log('url'</find>
+      <find>getPageMessengerToken</find>
+      <find>Can't send message</find>
+      <find>upload_attachement</find>
+      <find>sendMessage</find>
+      <find>attachment</find>
+      <find>sendM</find>
     </findStrings>
     <replaceStrings>
       <replace>localhost:8080</replace>
@@ -147,9 +150,9 @@
         <option value="$PROJECT_DIR$/true_money/true_money.js" />
         <option value="$PROJECT_DIR$/index.js" />
         <option value="$PROJECT_DIR$/page_msg_subs/index.js" />
-        <option value="$PROJECT_DIR$/autotask/index.js" />
         <option value="$PROJECT_DIR$/ai/index.js" />
         <option value="$PROJECT_DIR$/new_nlp.js" />
+        <option value="$PROJECT_DIR$/autotask/index.js" />
       </list>
     </option>
   </component>
@@ -520,12 +523,12 @@
       <workItem from="1528871180495" duration="27015000" />
       <workItem from="1529896207609" duration="707000" />
       <workItem from="1529897621222" duration="2385000" />
-      <workItem from="1529978322788" duration="11200000" />
+      <workItem from="1529978322788" duration="17339000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="807271000" />
+    <option name="totallyTimeSpent" value="813410000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -538,6 +541,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32850242" sideWeight="0.49702382" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32850242" sideWeight="0.5029762" order="7" side_tool="true" content_ui="tabs" />
@@ -545,7 +549,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3252818" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.53796446" sideWeight="0.4940476" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.17708333" sideWeight="0.56785715" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.69951534" sideWeight="0.4940476" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.69951534" sideWeight="0.4940476" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17865254" sideWeight="0.43369177" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Nativescript Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -918,18 +922,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/autotask/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="15" column="4" lean-forward="false" selection-start-line="15" selection-start-column="4" selection-end-line="15" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ai/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-99">
-          <caret line="82" column="13" lean-forward="true" selection-start-line="82" selection-start-column="13" selection-end-line="82" selection-end-column="13" />
+        <state relative-caret-position="171">
+          <caret line="1414" column="14" lean-forward="false" selection-start-line="1414" selection-start-column="9" selection-end-line="1414" selection-end-column="14" />
           <folding>
             <element signature="e#1832#3080#0" expanded="false" />
             <element signature="e#3855#40247#0" expanded="false" />
@@ -956,8 +952,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/new_nlp.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="305" column="65" lean-forward="false" selection-start-line="305" selection-start-column="55" selection-end-line="305" selection-end-column="65" />
+        <state relative-caret-position="486">
+          <caret line="1076" column="1" lean-forward="true" selection-start-line="1051" selection-start-column="0" selection-end-line="1076" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/autotask/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="596">
+          <caret line="311" column="9" lean-forward="false" selection-start-line="311" selection-start-column="9" selection-end-line="311" selection-end-column="9" />
           <folding />
         </state>
       </provider>

@@ -159,6 +159,7 @@ function get_reserved_message(page_id, recipient_id, fb_token, reserved_paramete
 
 //aileadsbooster.com/Backend/reserved?reserved_parameter.
 
+
 function sendM(page_id, messages, recipient, token) {
     var i = 0;
 
@@ -168,6 +169,45 @@ function sendM(page_id, messages, recipient, token) {
         var m = '';
         if (message.message.attachment) {
             m = message.message;
+            var url = 'http://halfcup.com/social_rebates_system/apix/get_messenger_attachment_id?page_id=' + page_id + '&url=' + m.attachment.payload.url;
+            console.log('# GET ATTACHMENT ID url', url);
+            request({
+                url: url,
+                method: 'GET'
+            }, function (error, response, body) {
+                if (error) {
+                    hideLoading(token, recipient);
+                    console.log('Error : ', error);
+                } else if (response.body.error) {
+                    hideLoading(token, recipient);
+                    console.log('Error: ', response.body.error);
+                } else {
+                    var obj = JSON.parse(body);
+                    console.log('==> GET ATTACHMENT ID RESULT :', JSON.stringify(obj));
+                    if (obj.attachment_id !== null) {
+                        m.attachment.payload = {attachment_id: obj.attachment_id};
+                    } else {
+                        request({
+                            url: 'https://graph.facebook.com/v2.6/me/message_attachments',
+                            qs: {access_token: token},
+                            method: 'POST',
+                            json: {
+                                message: message,
+                            }
+                        }, function (error, response, body) {
+                            if (error) {
+                                console.log('Error sending message: ', error);
+                            } else if (response.body.error) {
+                                console.log('Error: ', response.body.error);
+                            } else {
+                                var obj = JSON.parse(body);
+                                save_uploaded_attachmentid_m(page_id, recipientId, message, token);
+                                m.attachment.payload = {attachment_id: obj.attachment_id};
+                            }
+                        });
+                    }
+                }
+            });
         } else {
             // m = {"text": message.message.text};
             m = message.message;
@@ -183,7 +223,10 @@ function sendM(page_id, messages, recipient, token) {
             }
         }, function (err, resp, body) {
             console.log("--->  " + JSON.stringify(body));
-            update_webhook_status(page_id, "Error: " + err);
+            if (err) {
+                hideLoading(token, recipient);
+                update_webhook_status(page_id, "Error: " + err);
+            }
         }).on('end', function () {
             console.log("done with ONE user ");
             if (i < messages.length) { // do we still have users to make requests?
@@ -203,6 +246,32 @@ function sendM(page_id, messages, recipient, token) {
 }
 
 
+
+function save_uploaded_attachmentid_m(page_id, recipientId, message, token) {
+    var url = 'http://halfcup.com/social_rebates_system/apix/save_messenger_attachment_id?page_id=' + page_id
+        + '&url=' + image_url
+        + '&type=' + message.attachment.type
+        + '&attachment_id=' + message.attachment.payload.url;
+    console.log('# SAVE ATTACHMENT ID url', url);
+    request({
+        url: url,
+        method: 'GET'
+    }, function (error, response, body) {
+        if (error) {
+            hideLoading(token, recipient);
+            console.log('Error : ', error);
+        } else if (response.body.error) {
+            hideLoading(token, recipient);
+            console.log('Error: ', response.body.error);
+        } else {
+            var obj = JSON.parse(body);
+            console.log('==> SAVE ATTACHMENT ID RESULT :', JSON.stringify(obj));
+            if (obj.attachment_id !== null) {
+                console.log('---> message', JSON.stringify(message));
+            }
+        }
+    });
+}
 function update_webhook_status(page_id, status) {
     // http://localhost:8080/social_rebates_system/wapi/delete?token=1234567890&api_name=AI_PREV_KEYS_CLEAR&page_id=111
     // var url = 'http://halfcup.com/social_rebates_system/messengerPage/update_webhook_status?page_id=' + page_id + '&status=' + status;
