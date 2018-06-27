@@ -13,12 +13,12 @@ module.exports = {
     handleMessage: function (event, message, res) {
         var pageId = event.recipient.id;
         var userId = event.sender.id;
-        getToken(message.text, pageId, userId, false, res);
+        getToken(message.text, pageId, userId, false, res, 'HANDLE_MESSAGE');
     }, getMerchantId: function (pageId, recipient, text, res) {
-        getToken(text, pageId, recipient, false, res);
+        getToken(text, pageId, recipient, false, res, 'GET_MERCHANT_ID');
     },
     getChatBot: function (key, sender, recipient, res) {
-        getToken(key, sender, recipient, false, res);
+        getToken(key, sender, recipient, false, res, 'GET_CHAT_BOT');
     },
 
 };
@@ -29,9 +29,10 @@ var http = require('http');
 var autotask = require('./autotask/index');
 var page_subscription = require('./page_msg_subs/index');
 
-function getToken(text, sender, recipient, isMessageUs, res) {
+function getToken(text, sender, recipient, isMessageUs, res, action_name) {
     var url = 'http://halfcup.com/social_rebates_system/api/getPageMessengerToken?messenger_id=' + sender + '&messenger_uid=' + recipient;
     console.log('url', url);
+    console.log('action name', action_name);
     request({
             url: url,
             method: 'GET'
