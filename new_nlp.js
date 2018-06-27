@@ -957,20 +957,20 @@ function sendEmailForAi(title, message, page_id, email) {
 
 function update_webhook_status(page_id, status) {
     // http://localhost:8080/social_rebates_system/wapi/delete?token=1234567890&api_name=AI_PREV_KEYS_CLEAR&page_id=111
-    var url = 'http://halfcup.com/social_rebates_system/messengerPage/update_webhook_status?page_id=' + page_id + '&status=' + status;
-    console.log('url', url);
-    request({
-            url: url,
-            method: 'GET'
-        }, function (error, response, body) {
-            if (error) {
-                console.log('Error : ', error);
-            } else if (response.body.error) {
-                console.log('Error: ', response.body.error);
-            } else {
-                console.log('Update Webhook Status ', "OK, page: " + page_id + ", status:" + status);
-            }
-        }
-    );
+    // var url = 'http://halfcup.com/social_rebates_system/messengerPage/update_webhook_status?page_id=' + page_id + '&status=' + status;
+    // console.log('url', url);
+    // request({
+    //         url: url,
+    //         method: 'GET'
+    //     }, function (error, response, body) {
+    //         if (error) {
+    //             console.log('Error : ', error);
+    //         } else if (response.body.error) {
+    //             console.log('Error: ', response.body.error);
+    //         } else {
+    //             console.log('Update Webhook Status ', "OK, page: " + page_id + ", status:" + status);
+    //         }
+    //     }
+    // );
 }
 
