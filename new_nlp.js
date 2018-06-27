@@ -105,7 +105,7 @@ function getToken(text, sender, recipient, isMessageUs, res) {
                 }
                 if (code == 0) {
                     hideLoading(token, recipient);
-                    console.log('NLP : Can\'t send message, TOKEN NOT FOUND, Get page access token from facebook developer page and register to http://halfcup.com/social_rebates_system \n' +
+                    console.log('NLP : Can\'t send message, TOKEN NOT FOUND, Get page access token from facebook developer page and register to http://halfcup.com/social_rebates_system, ' +
                         'page_id : ' + sender);
 
                 }
