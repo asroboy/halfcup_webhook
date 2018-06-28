@@ -55,7 +55,7 @@ app.post('/webhook', function (req, res) {
             var entries = req.body.entry;
             var changes = req.body.entry[0].changes;
             // console.log("POST WEBHOOK");
-            // console.log("REQ", JSON.stringify(req.body));
+            console.log("REQ", JSON.stringify(req.body));
             if (changes) {
                 var field = req.body.entry[0].changes[0].field;
                 if (field == "leadgen") {
