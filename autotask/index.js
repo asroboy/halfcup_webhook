@@ -56,7 +56,7 @@ function someAsyncOperation(callback, res, task_id, recipient, page_id, fb_token
 function sendMessage(page_id, recipientId, message, token) {
 
     request({
-        url: 'https://graph.facebook.com/v2.6/me/messages',
+        url: 'https://graph.facebook.com/v3.0/me/messages',
         qs: {access_token: token},
         method: 'POST',
         json: {
@@ -188,7 +188,7 @@ function sendM(page_id, messages, recipient, token) {
                             if (obj.attachment_id !== null) {
                                 m.attachment.payload = {attachment_id: obj.attachment_id};
                             } else {
-                                var url = 'https://graph.facebook.com/v2.6/me/message_attachments?access_token=' + token;
+                                var url = 'https://graph.facebook.com/v3.0/me/message_attachments?access_token=' + token;
                                 console.log('# SAVE ATTACHMENT ID ', url);
                                 request({
                                     url: url,
@@ -219,7 +219,7 @@ function sendM(page_id, messages, recipient, token) {
         }
         console.log('m ' + JSON.stringify(m));
         request({
-            url: 'https://graph.facebook.com/v2.6/me/messages',
+            url: 'https://graph.facebook.com/v3.0/me/messages',
             qs: {access_token: token},
             method: 'POST',
             json: {
@@ -318,7 +318,7 @@ function mStartAutoReply(res, recipient, page_id, fb_token, reserved_parameter) 
 
 function hideLoading(token, recipientId) {
     request({
-        url: 'https://graph.facebook.com/v2.6/me/messages',
+        url: 'https://graph.facebook.com/v3.0/me/messages',
         qs: {access_token: token},
         method: 'POST',
         json: {

@@ -118,7 +118,7 @@ function getToken(text, sender, recipient, isMessageUs, res, action_name) {
 
 function showLoading(token, recipientId) {
     request({
-        url: 'https://graph.facebook.com/v2.6/me/messages',
+        url: 'https://graph.facebook.com/v3.0/me/messages',
         qs: {access_token: token},
         method: 'POST',
         json: {
@@ -132,7 +132,7 @@ function showLoading(token, recipientId) {
 
 function hideLoading(token, recipientId) {
     request({
-        url: 'https://graph.facebook.com/v2.6/me/messages',
+        url: 'https://graph.facebook.com/v3.0/me/messages',
         qs: {access_token: token},
         method: 'POST',
         json: {
@@ -902,7 +902,7 @@ function sendM(page_id, messages, recipient, token) {
                             if (obj.attachment_id !== null) {
                                 m.attachment.payload = {attachment_id: obj.attachment_id};
                             } else {
-                                var url = 'https://graph.facebook.com/v2.6/me/message_attachments?access_token=' + token;
+                                var url = 'https://graph.facebook.com/v3.0/me/message_attachments?access_token=' + token;
                                 console.log('# SAVE ATTACHMENT ID url', url);
                                 request({
                                     url: url,
@@ -933,7 +933,7 @@ function sendM(page_id, messages, recipient, token) {
         }
         console.log('m ' + JSON.stringify(m));
         request({
-            url: 'https://graph.facebook.com/v2.6/me/messages',
+            url: 'https://graph.facebook.com/v3.0/me/messages',
             qs: {access_token: token},
             method: 'POST',
             json: {
@@ -967,7 +967,7 @@ function sendM(page_id, messages, recipient, token) {
 // generic function sending messages
 function sendMessage(page_id, recipientId, message, token) {
     request({
-        url: 'https://graph.facebook.com/v2.6/me/messages',
+        url: 'https://graph.facebook.com/v3.0/me/messages',
         qs: {access_token: token},
         method: 'POST',
         json: {
@@ -1120,7 +1120,7 @@ function save_uploaded_attachmentid(attachment_id, page_id, recipientId, message
 }
 
 function upload_attachement(page_id, recipientId, message, token) {
-    var url = 'https://graph.facebook.com/v2.6/me/message_attachments?access_token=' + token;
+    var url = 'https://graph.facebook.com/v3.0/me/message_attachments?access_token=' + token;
     console.log('# SAVE ATTACHMENT ID url', url);
     request({
         url: url,
