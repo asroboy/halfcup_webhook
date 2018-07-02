@@ -879,6 +879,7 @@ function sendM(page_id, messages, recipient, token, res,  obj) {
                             var obj = JSON.parse(body);
                             console.log('==> GET ATTACHMENT ID RESULT :', JSON.stringify(obj));
                             if (obj.attachment_id !== null) {
+                                console.log('ATTACHMENT ID :', obj.attachment_id);
                                 m.attachment.payload = {attachment_id: obj.attachment_id};
                             } else {
                                 var url = 'https://graph.facebook.com/v3.0/me/message_attachments?access_token=' + token;
