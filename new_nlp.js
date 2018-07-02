@@ -917,6 +917,7 @@ function sendM(page_id, messages, recipient, token, res,  obj) {
                             } else {
                                 var url = 'https://graph.facebook.com/v3.0/me/message_attachments?access_token=' + token;
                                 console.log('# SAVE ATTACHMENT ID url', url);
+                                console.log('# message(m) ', m);
                                 request({
                                     url: url,
                                     method: 'POST',
