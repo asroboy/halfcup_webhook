@@ -244,7 +244,7 @@ function sendM(page_id, messages, recipient, token, res,  obj) {
                 if (obj.hasOwnProperty('reserved')) {
                     if (obj.reserved.length > 0) {
                         var reserved_parameter = obj.reserved;
-                        mStartAutoReply(res, recipient, sender, token, reserved_parameter);
+                        mStartAutoReply(res, recipient, page_id, token, reserved_parameter);
                     }
                 }
 

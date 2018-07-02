@@ -284,7 +284,7 @@ function getAggregationObjectDoneBot(key, sender, recipient, token, res, param, 
                     // res.send("DONE, randomIndex " + randomIndex);
                     // respond(obj.aggregation, sender, recipient, randomIndex, token, res);
                     // randomIndex = randomIndex - 1
-                    sendM(sender, obj.aggregation, recipient, token, obj);
+                    sendM(sender, obj.aggregation, recipient, token, res, obj);
                     // respondToTextOrAttacment(obj.aggregation, sender, recipient, token, randomIndex)
                 } else {
                     getDefaultAnswer(sender, recipient, token, res);
@@ -937,7 +937,7 @@ function sendM(page_id, messages, recipient, token, res,  obj) {
                 if (obj.hasOwnProperty('reserved')) {
                     if (obj.reserved.length > 0) {
                         var reserved_parameter = obj.reserved;
-                        autotask.startAutoReply(res, recipient, sender, token, reserved_parameter);
+                        autotask.startAutoReply(res, recipient, page_id, token, reserved_parameter);
                     }
                 }
 
