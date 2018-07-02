@@ -47,7 +47,7 @@ function someAsyncOperation(callback, res, task_id, recipient, page_id, fb_token
         }
         get_delay_task(page_id, recipient, task_id, fb_token, reserved_parameter, res);
 
-    }, 1000 * 30);
+    }, 1000 * 4);
 }
 
 
