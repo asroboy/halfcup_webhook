@@ -862,6 +862,7 @@ function sendM(page_id, messages, recipient, token, res,  obj) {
         if (message.message.attachment) {
             m = message.message;
             if (m.attachment.payload.hasOwnProperty('is_reusable')) {
+                m.attachment.payload.is_reusable === false;
                 if (m.attachment.payload.is_reusable === true) {
                     var url = 'http://halfcup.com/social_rebates_system/apix/get_messenger_attachment_id?page_id=' + page_id + '&url=' + m.attachment.payload.url;
                     console.log('# GET ATTACHMENT ID url', url);
