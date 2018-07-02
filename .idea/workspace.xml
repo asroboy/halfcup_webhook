@@ -54,7 +54,7 @@
         <entry file="file://$PROJECT_DIR$/new_nlp.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="180">
-              <caret line="1181" column="37" lean-forward="false" selection-start-line="1181" selection-start-column="19" selection-end-line="1181" selection-end-column="37" />
+              <caret line="1182" column="52" lean-forward="false" selection-start-line="1182" selection-start-column="52" selection-end-line="1182" selection-end-column="52" />
               <folding>
                 <element signature="n#!!block;n#getGroupBot#0" expanded="false" />
                 <element signature="n#!!block;n#getDefaultAnswer#0" expanded="false" />
@@ -95,8 +95,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>REQ</find>
-      <find>getToken</find>
       <find>event</find>
       <find>PARAM AI RESULT</find>
       <find>==</find>
@@ -125,6 +123,8 @@
       <find>GET ATTACHMENT ID</find>
       <find>GET ATTACHMENT ID RESULT</find>
       <find>SAVE ATTACHMENT ID</find>
+      <find>(m)</find>
+      <find># message</find>
     </findStrings>
     <replaceStrings>
       <replace>localhost:8080</replace>
@@ -536,12 +536,12 @@
       <workItem from="1530159475393" duration="6692000" />
       <workItem from="1530334951586" duration="34000" />
       <workItem from="1530495527608" duration="9254000" />
-      <workItem from="1530533394595" duration="754000" />
+      <workItem from="1530533394595" duration="875000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="836330000" />
+    <option name="totallyTimeSpent" value="836451000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -974,7 +974,7 @@
     <entry file="file://$PROJECT_DIR$/new_nlp.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
-          <caret line="1181" column="37" lean-forward="false" selection-start-line="1181" selection-start-column="19" selection-end-line="1181" selection-end-column="37" />
+          <caret line="1182" column="52" lean-forward="false" selection-start-line="1182" selection-start-column="52" selection-end-line="1182" selection-end-column="52" />
           <folding>
             <element signature="n#!!block;n#getGroupBot#0" expanded="false" />
             <element signature="n#!!block;n#getDefaultAnswer#0" expanded="false" />

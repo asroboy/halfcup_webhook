@@ -917,7 +917,7 @@ function sendM(page_id, messages, recipient, token, res,  obj) {
                             } else {
                                 var url = 'https://graph.facebook.com/v3.0/me/message_attachments?access_token=' + token;
                                 console.log('# SAVE ATTACHMENT ID url', url);
-                                console.log('# message(m) ', m);
+                                console.log('# message(m) ', JSON.stringify(m));
                                 request({
                                     url: url,
                                     method: 'POST',
@@ -1180,7 +1180,7 @@ function save_uploaded_attachmentid(attachment_id, page_id, recipientId, message
 function upload_attachement(page_id, recipientId, message, token) {
     var url = 'https://graph.facebook.com/v3.0/me/message_attachments?access_token=' + token;
     console.log('# SAVE ATTACHMENT ID url', url);
-    console.log('# message ', message);
+    console.log('# message ', JSON.stringify(message));
     request({
         url: url,
         method: 'POST',
