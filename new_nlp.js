@@ -284,19 +284,13 @@ function getAggregationObjectDoneBot(key, sender, recipient, token, res, param, 
                     // res.send("DONE, randomIndex " + randomIndex);
                     // respond(obj.aggregation, sender, recipient, randomIndex, token, res);
                     // randomIndex = randomIndex - 1
-                    sendM(sender, obj.aggregation, recipient, token);
+                    sendM(sender, obj.aggregation, recipient, token, obj);
                     // respondToTextOrAttacment(obj.aggregation, sender, recipient, token, randomIndex)
                 } else {
                     getDefaultAnswer(sender, recipient, token, res);
                 }
 
-                //RESERVED API
-                if (obj.hasOwnProperty('reserved')) {
-                    if (obj.reserved.length > 0) {
-                        var reserved_parameter = obj.reserved;
-                        autotask.startAutoReply(res, recipient, sender, token, reserved_parameter);
-                    }
-                }
+
             }
         }
     );
@@ -380,19 +374,12 @@ function getAggregationObject(key, sender, recipient, token, res, param, third_p
                             // res.send("DONE, randomIndex " + randomIndex);
                             // respond(obj.aggregation, sender, recipient, randomIndex, token, res);
                             // randomIndex = randomIndex - 1
-                            sendM(sender, obj.aggregation, recipient, token);
+                            sendM(sender, obj.aggregation, recipient, token, res, obj);
                             // respondToTextOrAttacment(obj.aggregation, sender, recipient, token, randomIndex)
                         } else {
                             getDefaultAnswer(sender, recipient, token, res);
                         }
 
-                        //RESERVED API
-                        if (obj.hasOwnProperty('reserved')) {
-                            if (obj.reserved.length > 0) {
-                                var reserved_parameter = obj.reserved;
-                                autotask.startAutoReply(res, recipient, sender, token, reserved_parameter);
-                            }
-                        }
                     } catch (error) {
                         console.log("Error catched ==>", error);
                         hideLoading(token, recipient);
@@ -620,7 +607,7 @@ function getAiKey(text, wang_token, pageId, prevKeys, recipient, token, res, agg
                     if (obj.hasOwnProperty('aggregation')) {
                         console.log('AGGREGATION LENGTH = ' + obj.aggregation.length);
                         if (obj.aggregation.length > 0) {
-                            sendM(pageId, obj.aggregation, recipient, token);
+                            sendM(pageId, obj.aggregation, recipient, token, res, obj);
                             // getIndexAggregate(obj.aggregation.length, pageId, obj.key, obj.aggregation, recipient, token);
                             saveAiKeyWithoutGetBot(obj.key, pageId, recipient, token, res)
                             // saveAiKey(obj.key, pageId, recipient, token, res);
@@ -640,14 +627,6 @@ function getAiKey(text, wang_token, pageId, prevKeys, recipient, token, res, agg
                         } else {
                             // console.log('obj: ', obj);
                             saveAiKey(obj.key, pageId, recipient, token, res);
-                        }
-                    }
-
-                    //RESERVED API
-                    if (obj.hasOwnProperty('reserved')) {
-                        if (obj.reserved.length > 0) {
-                            var reserved_parameter = obj.reserved;
-                            autotask.startAutoReply(res, recipient, sender, token, reserved_parameter);
                         }
                     }
 
@@ -824,7 +803,7 @@ function getGroupBot(key, sender, recipient, token, res) {
 
 function respondFromGroup(jsonMessage, sender, recipient, size, token, res) {
     var json = JSON.parse(jsonMessage[0].json);
-    sendM(sender, json, recipient, token);
+    sendM(sender, json, recipient, token, res, jsonMessage);
 
     // res.send('~ DONE ~');
 }
@@ -873,7 +852,7 @@ function isChatBot(jsonMessage, index) {
     return json[index] && json[index].message;
 }
 
-function sendM(page_id, messages, recipient, token) {
+function sendM(page_id, messages, recipient, token, res,  obj) {
     var i = 0;
 
     function getOneM(messages) {
@@ -953,7 +932,15 @@ function sendM(page_id, messages, recipient, token) {
             } else {
                 update_webhook_status(page_id, "OK");
                 console.log("done with ALL users");
-                // res.json(success);
+
+                //RESERVED API
+                if (obj.hasOwnProperty('reserved')) {
+                    if (obj.reserved.length > 0) {
+                        var reserved_parameter = obj.reserved;
+                        autotask.startAutoReply(res, recipient, sender, token, reserved_parameter);
+                    }
+                }
+
             }
         });
 

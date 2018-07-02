@@ -45,7 +45,7 @@ function someAsyncOperation(callback, res, task_id, recipient, page_id, fb_token
         if (page_id === '1724621464435440') {
             fb_token = my_token;
         }
-        get_delay_task(page_id, recipient, task_id, fb_token, reserved_parameter);
+        get_delay_task(page_id, recipient, task_id, fb_token, reserved_parameter, res);
 
     }, 1000 * 30);
 }
@@ -93,7 +93,7 @@ function save_delay_task(page_id, recipient_id, task_id) {
     );
 }
 
-function get_delay_task(page_id, recipient_id, prev_task_id, fb_token, reserved_parameter) {
+function get_delay_task(page_id, recipient_id, prev_task_id, fb_token, reserved_parameter, res) {
     var url = 'http://halfcup.com/social_rebates_system/webhookApi/get_delay_task?page_id=' +
         page_id + '&recipient_id=' + recipient_id;
     console.log('url', url);
@@ -114,7 +114,7 @@ function get_delay_task(page_id, recipient_id, prev_task_id, fb_token, reserved_
                     if(reserved_parameter !== ''){
                         console.log('==================AUTO TAASK EXECUTE====================');
                         console.log(prev_task_id + `ms have passed since I was scheduled`);
-                        get_reserved_message(page_id, recipient_id, fb_token, reserved_parameter);
+                        get_reserved_message(page_id, recipient_id, fb_token, reserved_parameter, res);
                     }else{
                         console.log(prev_task_id + ` ms >> reserved param is empty`);
                     }
@@ -129,7 +129,7 @@ function get_delay_task(page_id, recipient_id, prev_task_id, fb_token, reserved_
 }
 
 
-function get_reserved_message(page_id, recipient_id, fb_token, reserved_parameter) {
+function get_reserved_message(page_id, recipient_id, fb_token, reserved_parameter, res) {
     var url = 'http://aileadsbooster.com/Backend/reserved?param=' + reserved_parameter;
     console.log('url', url);
     request({
@@ -143,13 +143,13 @@ function get_reserved_message(page_id, recipient_id, fb_token, reserved_paramete
             } else {
                 var obj = JSON.parse(body);
                 if (obj.aggregation.length > 0) {
-                    sendM(page_id, obj.aggregation, recipient_id, fb_token);
+                    sendM(page_id, obj.aggregation, recipient_id, fb_token, res, obj);
                 }
-                if (obj.hasOwnProperty('reserved')){
-                    if(obj.reserved.length > 0){
-                        mStartAutoReply(null, recipient_id, page_id, fb_token, obj.reserved);
-                    }
-                }
+                // if (obj.hasOwnProperty('reserved')){
+                //     if(obj.reserved.length > 0){
+                //         mStartAutoReply(null, recipient_id, page_id, fb_token, obj.reserved);
+                //     }
+                // }
 
             }
         }
@@ -159,7 +159,7 @@ function get_reserved_message(page_id, recipient_id, fb_token, reserved_paramete
 
 //aileadsbooster.com/Backend/reserved?reserved_parameter.
 
-function sendM(page_id, messages, recipient, token) {
+function sendM(page_id, messages, recipient, token, res,  obj) {
     var i = 0;
 
     function getOneM(messages) {
@@ -189,7 +189,7 @@ function sendM(page_id, messages, recipient, token) {
                                 m.attachment.payload = {attachment_id: obj.attachment_id};
                             } else {
                                 var url = 'https://graph.facebook.com/v3.0/me/message_attachments?access_token=' + token;
-                                console.log('# SAVE ATTACHMENT ID ', url);
+                                console.log('# SAVE ATTACHMENT ID url', url);
                                 request({
                                     url: url,
                                     method: 'POST',
@@ -239,7 +239,15 @@ function sendM(page_id, messages, recipient, token) {
             } else {
                 update_webhook_status(page_id, "OK");
                 console.log("done with ALL users");
-                // res.json(success);
+
+                //RESERVED API
+                if (obj.hasOwnProperty('reserved')) {
+                    if (obj.reserved.length > 0) {
+                        var reserved_parameter = obj.reserved;
+                        mStartAutoReply(res, recipient, sender, token, reserved_parameter);
+                    }
+                }
+
             }
         });
 
