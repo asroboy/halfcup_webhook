@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8c0fd527-5667-4e03-89ee-e95c0bdc3c27" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/autotask/index.js" afterPath="$PROJECT_DIR$/autotask/index.js" />
       <change beforePath="$PROJECT_DIR$/new_nlp.js" afterPath="$PROJECT_DIR$/new_nlp.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -52,8 +54,8 @@
       <file leaf-file-name="new_nlp.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/new_nlp.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="920">
-              <caret line="913" column="6" lean-forward="true" selection-start-line="913" selection-start-column="6" selection-end-line="913" selection-end-column="6" />
+            <state relative-caret-position="299">
+              <caret line="1154" column="43" lean-forward="false" selection-start-line="1154" selection-start-column="43" selection-end-line="1154" selection-end-column="43" />
               <folding>
                 <element signature="n#!!block;n#getGroupBot#0" expanded="false" />
                 <element signature="n#!!block;n#getDefaultAnswer#0" expanded="false" />
@@ -65,7 +67,7 @@
       <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/page_msg_subs/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="503">
+            <state relative-caret-position="4199">
               <caret line="247" column="60" lean-forward="true" selection-start-line="247" selection-start-column="60" selection-end-line="247" selection-end-column="60" />
               <folding />
             </state>
@@ -75,11 +77,9 @@
       <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/autotask/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="333">
-              <caret line="49" column="16" lean-forward="false" selection-start-line="49" selection-start-column="16" selection-end-line="49" selection-end-column="16" />
-              <folding>
-                <element signature="e#6300#8929#0" expanded="false" />
-              </folding>
+            <state relative-caret-position="17">
+              <caret line="216" column="63" lean-forward="false" selection-start-line="216" selection-start-column="63" selection-end-line="216" selection-end-column="63" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -113,9 +113,7 @@
       <find>check_attachment_uploaded</find>
       <find>is_reusable</find>
       <find>save_uploaded_attachmentid</find>
-      <find>GET ATTACHMENT ID RESULT</find>
       <find>save_uploaded_attachmentid_m</find>
-      <find>SAVE ATTACHMENT ID</find>
       <find>https://graph.facebook.com/v2.6/</find>
       <find>respondFromGroup</find>
       <find>get_reserved_message</find>
@@ -126,6 +124,8 @@
       <find>30</find>
       <find>sendM</find>
       <find>GET ATTACHMENT ID</find>
+      <find>GET ATTACHMENT ID RESULT</find>
+      <find>SAVE ATTACHMENT ID</find>
     </findStrings>
     <replaceStrings>
       <replace>localhost:8080</replace>
@@ -199,6 +199,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -220,7 +221,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scratches" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -536,12 +536,13 @@
       <workItem from="1529978322788" duration="23525000" />
       <workItem from="1530159475393" duration="6692000" />
       <workItem from="1530334951586" duration="34000" />
-      <workItem from="1530495527608" duration="8897000" />
+      <workItem from="1530495527608" duration="9254000" />
+      <workItem from="1530533394595" duration="384000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="835219000" />
+    <option name="totallyTimeSpent" value="835960000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -563,7 +564,7 @@
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.17708333" sideWeight="0.56785715" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.53796446" sideWeight="0.4940476" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.69951534" sideWeight="0.4940476" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18773656" sideWeight="0.43369177" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19076458" sideWeight="0.43369177" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Nativescript Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.48638132" order="1" side_tool="false" content_ui="tabs" />
@@ -957,7 +958,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/page_msg_subs/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="503">
+        <state relative-caret-position="4199">
           <caret line="247" column="60" lean-forward="true" selection-start-line="247" selection-start-column="60" selection-end-line="247" selection-end-column="60" />
           <folding />
         </state>
@@ -965,18 +966,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/autotask/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="333">
-          <caret line="49" column="16" lean-forward="false" selection-start-line="49" selection-start-column="16" selection-end-line="49" selection-end-column="16" />
-          <folding>
-            <element signature="e#6300#8929#0" expanded="false" />
-          </folding>
+        <state relative-caret-position="17">
+          <caret line="216" column="63" lean-forward="false" selection-start-line="216" selection-start-column="63" selection-end-line="216" selection-end-column="63" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/new_nlp.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="920">
-          <caret line="913" column="6" lean-forward="true" selection-start-line="913" selection-start-column="6" selection-end-line="913" selection-end-column="6" />
+        <state relative-caret-position="299">
+          <caret line="1154" column="43" lean-forward="false" selection-start-line="1154" selection-start-column="43" selection-end-line="1154" selection-end-column="43" />
           <folding>
             <element signature="n#!!block;n#getGroupBot#0" expanded="false" />
             <element signature="n#!!block;n#getDefaultAnswer#0" expanded="false" />

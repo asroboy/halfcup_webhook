@@ -158,7 +158,6 @@ function get_reserved_message(page_id, recipient_id, fb_token, reserved_paramete
 
 
 //aileadsbooster.com/Backend/reserved?reserved_parameter.
-
 function sendM(page_id, messages, recipient, token, res,  obj) {
     var i = 0;
 
@@ -186,7 +185,41 @@ function sendM(page_id, messages, recipient, token, res,  obj) {
                             var obj = JSON.parse(body);
                             console.log('==> GET ATTACHMENT ID RESULT :', JSON.stringify(obj));
                             if (obj.attachment_id !== null) {
+                                console.log('ATTACHMENT ID :', obj.attachment_id);
                                 m.attachment.payload = {attachment_id: obj.attachment_id};
+                                console.log('m ' + JSON.stringify(m));
+                                request({
+                                    url: 'https://graph.facebook.com/v3.0/me/messages',
+                                    qs: {access_token: token},
+                                    method: 'POST',
+                                    json: {
+                                        recipient: {id: recipient},
+                                        message: m,
+                                    }
+                                }, function (err, resp, body) {
+                                    console.log("--->  " + JSON.stringify(body));
+                                    if (err) {
+                                        hideLoading(token, recipient);
+                                        update_webhook_status(page_id, "Error: " + err);
+                                    }
+                                }).on('end', function () {
+                                    console.log("done with ONE user ");
+                                    if (i < messages.length) { // do we still have users to make requests?
+                                        getOneM(messages); // recursion
+                                    } else {
+                                        update_webhook_status(page_id, "OK");
+                                        console.log("done with ALL users");
+
+                                        //RESERVED API
+                                        if (obj.hasOwnProperty('reserved')) {
+                                            if (obj.reserved.length > 0) {
+                                                var reserved_parameter = obj.reserved;
+                                                mStartAutoReply(res, recipient, page_id, token, reserved_parameter);
+                                            }
+                                        }
+
+                                    }
+                                });
                             } else {
                                 var url = 'https://graph.facebook.com/v3.0/me/message_attachments?access_token=' + token;
                                 console.log('# SAVE ATTACHMENT ID url', url);
@@ -206,6 +239,39 @@ function sendM(page_id, messages, recipient, token, res,  obj) {
                                         console.log('# SAVE ATTACHMENT ID RESULT ', JSON.stringify(body_));
                                         save_uploaded_attachmentid_m(body_.attachment_id, page_id, recipient, m, token);
                                         m.attachment.payload = {attachment_id: body_.attachment_id};
+                                        console.log('m ' + JSON.stringify(m));
+                                        request({
+                                            url: 'https://graph.facebook.com/v3.0/me/messages',
+                                            qs: {access_token: token},
+                                            method: 'POST',
+                                            json: {
+                                                recipient: {id: recipient},
+                                                message: m,
+                                            }
+                                        }, function (err, resp, body) {
+                                            console.log("--->  " + JSON.stringify(body));
+                                            if (err) {
+                                                hideLoading(token, recipient);
+                                                update_webhook_status(page_id, "Error: " + err);
+                                            }
+                                        }).on('end', function () {
+                                            console.log("done with ONE user ");
+                                            if (i < messages.length) { // do we still have users to make requests?
+                                                getOneM(messages); // recursion
+                                            } else {
+                                                update_webhook_status(page_id, "OK");
+                                                console.log("done with ALL users");
+
+                                                //RESERVED API
+                                                if (obj.hasOwnProperty('reserved')) {
+                                                    if (obj.reserved.length > 0) {
+                                                        var reserved_parameter = obj.reserved;
+                                                        mStartAutoReply(res, recipient, page_id, token, reserved_parameter);
+                                                    }
+                                                }
+
+                                            }
+                                        });
                                     }
                                 });
                             }
@@ -216,40 +282,41 @@ function sendM(page_id, messages, recipient, token, res,  obj) {
         } else {
             // m = {"text": message.message.text};
             m = message.message;
-        }
-        console.log('m ' + JSON.stringify(m));
-        request({
-            url: 'https://graph.facebook.com/v3.0/me/messages',
-            qs: {access_token: token},
-            method: 'POST',
-            json: {
-                recipient: {id: recipient},
-                message: m,
-            }
-        }, function (err, resp, body) {
-            console.log("--->  " + JSON.stringify(body));
-            if (err) {
-                hideLoading(token, recipient);
-                update_webhook_status(page_id, "Error: " + err);
-            }
-        }).on('end', function () {
-            console.log("done with ONE user ");
-            if (i < messages.length) { // do we still have users to make requests?
-                getOneM(messages); // recursion
-            } else {
-                update_webhook_status(page_id, "OK");
-                console.log("done with ALL users");
-
-                //RESERVED API
-                if (obj.hasOwnProperty('reserved')) {
-                    if (obj.reserved.length > 0) {
-                        var reserved_parameter = obj.reserved;
-                        mStartAutoReply(res, recipient, page_id, token, reserved_parameter);
-                    }
+            console.log('m ' + JSON.stringify(m));
+            request({
+                url: 'https://graph.facebook.com/v3.0/me/messages',
+                qs: {access_token: token},
+                method: 'POST',
+                json: {
+                    recipient: {id: recipient},
+                    message: m,
                 }
+            }, function (err, resp, body) {
+                console.log("--->  " + JSON.stringify(body));
+                if (err) {
+                    hideLoading(token, recipient);
+                    update_webhook_status(page_id, "Error: " + err);
+                }
+            }).on('end', function () {
+                console.log("done with ONE user ");
+                if (i < messages.length) { // do we still have users to make requests?
+                    getOneM(messages); // recursion
+                } else {
+                    update_webhook_status(page_id, "OK");
+                    console.log("done with ALL users");
 
-            }
-        });
+                    //RESERVED API
+                    if (obj.hasOwnProperty('reserved')) {
+                        if (obj.reserved.length > 0) {
+                            var reserved_parameter = obj.reserved;
+                            mStartAutoReply(res, recipient, page_id, token, reserved_parameter);
+                        }
+                    }
+
+                }
+            });
+        }
+
 
         i++;
     }

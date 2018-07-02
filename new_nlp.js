@@ -1126,6 +1126,8 @@ function save_uploaded_attachmentid_m(attachment_id, page_id, recipientId, messa
         + '&type=' + message.attachment.type
         + '&attachment_id=' +attachment_id;
     console.log('# SAVE ATTACHMENT ID url', url);
+    console.log('# url file ', message.attachment.payload.url);
+    console.log('# type file ', message.attachment.type);
     request({
         url: url,
         method: 'GET'
@@ -1148,9 +1150,9 @@ function save_uploaded_attachmentid_m(attachment_id, page_id, recipientId, messa
 
 function save_uploaded_attachmentid(attachment_id, page_id, recipientId, message, token) {
     var url = 'http://halfcup.com/social_rebates_system/apix/save_messenger_attachment_id?page_id=' + page_id
-        + '&url=' + image_url
+        + '&url=' + message.attachment.payload.url
         + '&type=' + message.attachment.type
-        + '&attachment_id=' + message.attachment.payload.url;
+        + '&attachment_id=' + attachment_id;
     console.log('# SAVE ATTACHMENT ID url', url);
     request({
         url: url,
@@ -1177,6 +1179,7 @@ function save_uploaded_attachmentid(attachment_id, page_id, recipientId, message
 function upload_attachement(page_id, recipientId, message, token) {
     var url = 'https://graph.facebook.com/v3.0/me/message_attachments?access_token=' + token;
     console.log('# SAVE ATTACHMENT ID url', url);
+    console.log('# message ', message);
     request({
         url: url,
         method: 'POST',
