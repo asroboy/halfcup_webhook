@@ -223,6 +223,7 @@ function sendM(page_id, messages, recipient, token, res,  obj) {
                             } else {
                                 var url = 'https://graph.facebook.com/v3.0/me/message_attachments?access_token=' + token;
                                 console.log('# SAVE ATTACHMENT ID url', url);
+                                console.log('# message(m) ', JSON.stringify(m));
                                 request({
                                     url: url,
                                     method: 'POST',
@@ -324,6 +325,7 @@ function sendM(page_id, messages, recipient, token, res,  obj) {
     // make a copy of the original users Array because we're going to mutate it
     getOneM(Array.from(messages));
 }
+
 
 
 function save_uploaded_attachmentid_m(attachment_id, page_id, recipientId, message, token) {
