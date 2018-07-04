@@ -56,7 +56,7 @@ function someAsyncOperation(callback, res, task_id, recipient, page_id, fb_token
 function sendMessage(page_id, recipientId, message, token) {
 
     request({
-        url: 'https://graph.facebook.com/v3.0/me/messages',
+        url: 'https://graph.facebook.com/v2.8/me/messages',
         qs: {access_token: token},
         method: 'POST',
         json: {
@@ -189,7 +189,7 @@ function sendM(page_id, messages, recipient, token, res,  obj) {
                                 m.attachment.payload = {attachment_id: obj.attachment_id};
                                 console.log('m ' + JSON.stringify(m));
                                 request({
-                                    url: 'https://graph.facebook.com/v3.0/me/messages',
+                                    url: 'https://graph.facebook.com/v2.8/me/messages',
                                     qs: {access_token: token},
                                     method: 'POST',
                                     json: {
@@ -221,7 +221,7 @@ function sendM(page_id, messages, recipient, token, res,  obj) {
                                     }
                                 });
                             } else {
-                                var url = 'https://graph.facebook.com/v3.0/me/message_attachments?access_token=' + token;
+                                var url = 'https://graph.facebook.com/v2.8/me/message_attachments?access_token=' + token;
                                 console.log('# SAVE ATTACHMENT ID url', url);
                                 console.log('# message(m) ', JSON.stringify(m));
                                 request({
@@ -242,7 +242,7 @@ function sendM(page_id, messages, recipient, token, res,  obj) {
                                         m.attachment.payload = {attachment_id: body_.attachment_id};
                                         console.log('m ' + JSON.stringify(m));
                                         request({
-                                            url: 'https://graph.facebook.com/v3.0/me/messages',
+                                            url: 'https://graph.facebook.com/v2.8/me/messages',
                                             qs: {access_token: token},
                                             method: 'POST',
                                             json: {
@@ -285,7 +285,7 @@ function sendM(page_id, messages, recipient, token, res,  obj) {
                 m = message.message;
                 console.log('m ' + JSON.stringify(m));
                 request({
-                    url: 'https://graph.facebook.com/v3.0/me/messages',
+                    url: 'https://graph.facebook.com/v2.8/me/messages',
                     qs: {access_token: token},
                     method: 'POST',
                     json: {
@@ -322,7 +322,7 @@ function sendM(page_id, messages, recipient, token, res,  obj) {
             m = message.message;
             console.log('m ' + JSON.stringify(m));
             request({
-                url: 'https://graph.facebook.com/v3.0/me/messages',
+                url: 'https://graph.facebook.com/v2.8/me/messages',
                 qs: {access_token: token},
                 method: 'POST',
                 json: {
@@ -432,7 +432,7 @@ function mStartAutoReply(res, recipient, page_id, fb_token, reserved_parameter) 
 
 function hideLoading(token, recipientId) {
     request({
-        url: 'https://graph.facebook.com/v3.0/me/messages',
+        url: 'https://graph.facebook.com/v2.8/me/messages',
         qs: {access_token: token},
         method: 'POST',
         json: {

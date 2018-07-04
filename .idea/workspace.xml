@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8c0fd527-5667-4e03-89ee-e95c0bdc3c27" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/ai/index.js" afterPath="$PROJECT_DIR$/ai/index.js" />
       <change beforePath="$PROJECT_DIR$/autotask/index.js" afterPath="$PROJECT_DIR$/autotask/index.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -22,8 +24,8 @@
       <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ai/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="11985">
-              <caret line="1414" column="59" lean-forward="false" selection-start-line="1414" selection-start-column="59" selection-end-line="1414" selection-end-column="59" />
+            <state relative-caret-position="511">
+              <caret line="1417" column="45" lean-forward="false" selection-start-line="1417" selection-start-column="45" selection-end-line="1417" selection-end-column="45" />
               <folding>
                 <element signature="e#1829#3077#0" expanded="false" />
                 <element signature="e#3852#40244#0" expanded="false" />
@@ -52,12 +54,13 @@
       <file leaf-file-name="new_nlp.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/new_nlp.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="214">
-              <caret line="1021" column="0" lean-forward="true" selection-start-line="854" selection-start-column="0" selection-end-line="1021" selection-end-column="0" />
+            <state relative-caret-position="2016">
+              <caret line="1014" column="16" lean-forward="false" selection-start-line="1014" selection-start-column="16" selection-end-line="1014" selection-end-column="16" />
               <folding>
                 <element signature="n#!!block;n#getToken#0" expanded="false" />
                 <element signature="n#!!block;n#getGroupBot#0" expanded="false" />
                 <element signature="n#!!block;n#getDefaultAnswer#0" expanded="false" />
+                <element signature="e#36606#43572#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -76,8 +79,8 @@
       <file leaf-file-name="index.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/autotask/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="508">
-              <caret line="317" column="19" lean-forward="false" selection-start-line="317" selection-start-column="19" selection-end-line="317" selection-end-column="19" />
+            <state relative-caret-position="2041">
+              <caret line="434" column="45" lean-forward="false" selection-start-line="434" selection-start-column="45" selection-end-line="434" selection-end-column="45" />
               <folding />
             </state>
           </provider>
@@ -95,8 +98,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>/wapi/read</find>
-      <find>url</find>
       <find>console.log('url'</find>
       <find>getPageMessengerToken</find>
       <find>Can't send message</find>
@@ -125,6 +126,8 @@
       <find>startAutoReply</find>
       <find>i</find>
       <find>reserved</find>
+      <find>3.0</find>
+      <find>v3.0</find>
     </findStrings>
     <replaceStrings>
       <replace>localhost:8080</replace>
@@ -133,6 +136,7 @@
       <replace>text</replace>
       <replace>messaging</replace>
       <replace>https://graph.facebook.com/v3.0/</replace>
+      <replace>v2.8</replace>
     </replaceStrings>
     <dirStrings>
       <dir>C:\Users\Ridho\TEST\halfcup-secret-spire-55522</dir>
@@ -154,8 +158,8 @@
         <option value="$PROJECT_DIR$/true_money/true_money.js" />
         <option value="$PROJECT_DIR$/index.js" />
         <option value="$PROJECT_DIR$/page_msg_subs/index.js" />
-        <option value="$PROJECT_DIR$/ai/index.js" />
         <option value="$PROJECT_DIR$/new_nlp.js" />
+        <option value="$PROJECT_DIR$/ai/index.js" />
         <option value="$PROJECT_DIR$/autotask/index.js" />
       </list>
     </option>
@@ -538,12 +542,12 @@
       <workItem from="1530495527608" duration="9254000" />
       <workItem from="1530533394595" duration="2641000" />
       <workItem from="1530581285734" duration="3298000" />
-      <workItem from="1530669275430" duration="699000" />
+      <workItem from="1530669275430" duration="2294000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="842214000" />
+    <option name="totallyTimeSpent" value="843809000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -929,10 +933,31 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/page_msg_subs/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4199">
+          <caret line="247" column="60" lean-forward="false" selection-start-line="247" selection-start-column="60" selection-end-line="247" selection-end-column="60" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/new_nlp.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2016">
+          <caret line="1014" column="16" lean-forward="false" selection-start-line="1014" selection-start-column="16" selection-end-line="1014" selection-end-column="16" />
+          <folding>
+            <element signature="n#!!block;n#getToken#0" expanded="false" />
+            <element signature="n#!!block;n#getGroupBot#0" expanded="false" />
+            <element signature="n#!!block;n#getDefaultAnswer#0" expanded="false" />
+            <element signature="e#36606#43572#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/ai/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="11985">
-          <caret line="1414" column="59" lean-forward="false" selection-start-line="1414" selection-start-column="59" selection-end-line="1414" selection-end-column="59" />
+        <state relative-caret-position="511">
+          <caret line="1417" column="45" lean-forward="false" selection-start-line="1417" selection-start-column="45" selection-end-line="1417" selection-end-column="45" />
           <folding>
             <element signature="e#1829#3077#0" expanded="false" />
             <element signature="e#3852#40244#0" expanded="false" />
@@ -957,30 +982,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/page_msg_subs/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4199">
-          <caret line="247" column="60" lean-forward="false" selection-start-line="247" selection-start-column="60" selection-end-line="247" selection-end-column="60" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/new_nlp.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="214">
-          <caret line="1021" column="0" lean-forward="true" selection-start-line="854" selection-start-column="0" selection-end-line="1021" selection-end-column="0" />
-          <folding>
-            <element signature="n#!!block;n#getToken#0" expanded="false" />
-            <element signature="n#!!block;n#getGroupBot#0" expanded="false" />
-            <element signature="n#!!block;n#getDefaultAnswer#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/autotask/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="508">
-          <caret line="317" column="19" lean-forward="false" selection-start-line="317" selection-start-column="19" selection-end-line="317" selection-end-column="19" />
+        <state relative-caret-position="2041">
+          <caret line="434" column="45" lean-forward="false" selection-start-line="434" selection-start-column="45" selection-end-line="434" selection-end-column="45" />
           <folding />
         </state>
       </provider>

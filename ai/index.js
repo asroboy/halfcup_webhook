@@ -836,7 +836,7 @@ function logAction(event_name, name, key, messenger_id, page_id) {
 }
 
 function getUserInfo(user_msg_id, page_token) {
-    var url = 'https://graph.facebook.com/v3.0/' + user_msg_id + '?fields=first_name,last_name,profile_pic,locale,timezone,gender&access_token=' + page_token;
+    var url = 'https://graph.facebook.com/v2.8/' + user_msg_id + '?fields=first_name,last_name,profile_pic,locale,timezone,gender&access_token=' + page_token;
     console.log('url', url);
     request({
         url: url,
@@ -1367,7 +1367,7 @@ function sendMessage(recipientId, message, token) {
 
     var result = "";
     request({
-        url: 'https://graph.facebook.com/v3.0/me/messages',
+        url: 'https://graph.facebook.com/v2.8/me/messages',
         qs: {access_token: token},
         method: 'POST',
         json: {
@@ -1395,7 +1395,7 @@ function sendMessage(recipientId, message, token) {
 function sendMessageUserRef(recipientId, message, token) {
     //console.log(process); process.env.PAGE_ACCESS_TOKEN
     request({
-        url: 'https://graph.facebook.com/v3.0/me/messages',
+        url: 'https://graph.facebook.com/v2.8/me/messages',
         qs: {access_token: token},
         method: 'POST',
         json: {
@@ -1415,7 +1415,7 @@ function sendMessageUserRef(recipientId, message, token) {
 function sendMessagePostback(recipientId, message, token) {
     //console.log(process); process.env.PAGE_ACCESS_TOKEN
     request({
-        url: 'https://graph.facebook.com/v3.0/me/messaging_postbacks',
+        url: 'https://graph.facebook.com/v2.8/me/messaging_postbacks',
         qs: {access_token: token},
         method: 'POST',
         json: {
