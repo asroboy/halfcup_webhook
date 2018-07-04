@@ -973,43 +973,42 @@ function sendM(page_id, messages, recipient, token, res,  obj) {
                         }
                     });
                 }
-                else{
-                    // m = {"text": message.message.text};
-                    m = message.message;
-                    console.log('m ' + JSON.stringify(m));
-                    request({
-                        url: 'https://graph.facebook.com/v2.8/me/messages',
-                        qs: {access_token: token},
-                        method: 'POST',
-                        json: {
-                            recipient: {id: recipient},
-                            message: m,
-                        }
-                    }, function (err, resp, body) {
-                        console.log("--->  " + JSON.stringify(body));
-                        if (err) {
-                            hideLoading(token, recipient);
-                            update_webhook_status(page_id, "Error: " + err);
-                        }
-                    }).on('end', function () {
-                        console.log("done with ONE user ");
-                        if (i < messages.length) { // do we still have users to make requests?
-                            getOneM(messages); // recursion
-                        } else {
-                            update_webhook_status(page_id, "OK");
-                            console.log("done with ALL users");
+            } else{
+                // m = {"text": message.message.text};
+                m = message.message;
+                console.log('m ' + JSON.stringify(m));
+                request({
+                    url: 'https://graph.facebook.com/v2.8/me/messages',
+                    qs: {access_token: token},
+                    method: 'POST',
+                    json: {
+                        recipient: {id: recipient},
+                        message: m,
+                    }
+                }, function (err, resp, body) {
+                    console.log("--->  " + JSON.stringify(body));
+                    if (err) {
+                        hideLoading(token, recipient);
+                        update_webhook_status(page_id, "Error: " + err);
+                    }
+                }).on('end', function () {
+                    console.log("done with ONE user ");
+                    if (i < messages.length) { // do we still have users to make requests?
+                        getOneM(messages); // recursion
+                    } else {
+                        update_webhook_status(page_id, "OK");
+                        console.log("done with ALL users");
 
-                            //RESERVED API
-                            if (obj.hasOwnProperty('reserved')) {
-                                if (obj.reserved.length > 0) {
-                                    var reserved_parameter = obj.reserved;
-                                    autotask.startAutoReply(res, recipient, page_id, token, reserved_parameter);
-                                }
+                        //RESERVED API
+                        if (obj.hasOwnProperty('reserved')) {
+                            if (obj.reserved.length > 0) {
+                                var reserved_parameter = obj.reserved;
+                                autotask.startAutoReply(res, recipient, page_id, token, reserved_parameter);
                             }
-
                         }
-                    });
-                }
+
+                    }
+                });
             }
         } else {
             // m = {"text": message.message.text};
