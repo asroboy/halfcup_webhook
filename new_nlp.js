@@ -261,6 +261,10 @@ function getAggregationObjectDoneBot(key, sender, recipient, token, res, param, 
     var mKey = param.replace('AGGREGATION_', '');
     var url = 'http://aileadsbooster.com/Backend/aggregation?' + mKey + '&third-party=' + third_party;
     console.log('url', url);
+
+    check_tracking_id(param, recipient, token);
+
+
     request({
             url: url,
             method: 'GET'
@@ -347,6 +351,8 @@ function getAggregationObject(key, sender, recipient, token, res, param, third_p
 
         }
 
+
+        check_tracking_id(param, recipient, token);
 
         console.log('# AGGREGATION API url', url);
         request({
@@ -582,6 +588,9 @@ function getIndexAggregate(size, pageId, key, aggreationData, recipient, token) 
 }
 
 function getAiKey(text, wang_token, pageId, prevKeys, recipient, token, res, aggregateObj, param, third_party) {
+
+    get_tracking_id(param, recipient, text);
+
     if (aggregateObj.indexOf("{{") > -1) {
         aggregateObj = aggregateObj.replace("{{", "").replace("}}", "");
     }
@@ -852,7 +861,7 @@ function isChatBot(jsonMessage, index) {
     return json[index] && json[index].message;
 }
 
-function sendM(page_id, messages, recipient, token, res,  obj) {
+function sendM(page_id, messages, recipient, token, res, obj) {
     var i = 0;
 
     function getOneM(messages) {
@@ -973,7 +982,7 @@ function sendM(page_id, messages, recipient, token, res,  obj) {
                         }
                     });
                 }
-            } else{
+            } else {
                 // m = {"text": message.message.text};
                 m = message.message;
                 console.log('m ' + JSON.stringify(m));
@@ -1161,7 +1170,7 @@ function save_uploaded_attachmentid_m(attachment_id, page_id, recipientId, messa
     var url = 'http://halfcup.com/social_rebates_system/apix/save_messenger_attachment_id?page_id=' + page_id
         + '&url=' + message.attachment.payload.url
         + '&type=' + message.attachment.type
-        + '&attachment_id=' +attachment_id;
+        + '&attachment_id=' + attachment_id;
     console.log('# SAVE ATTACHMENT ID url', url);
     console.log('# url file ', message.attachment.payload.url);
     console.log('# type file ', message.attachment.type);
@@ -1257,3 +1266,163 @@ function update_webhook_status(page_id, status) {
     // );
 }
 
+
+
+
+/========##### TRACKING API ######## ------------------
+function start_tracking(aggregation, messenger_id, email) {
+    // AGGREGATION_object=xxx_main&query=agent_id=[agent_id]||project_id=[project_id]
+    var agg_data = aggregation.split('=');
+    var agg_obj = agg_data[1].split('&')[0];
+    var agent_id = agg_data[3].split('||')[0];
+    var project_id = agg_data[4];
+
+    var url = 'http://aileadsbooster.com/Backend/start_tracking?aggregation=' + agg_obj
+        + '&agent_id=' + agent_id
+        + '&project_id=' + project_id
+        + '&email=' + email;
+    console.log('# START TRACKING url', url);
+    console.log('# aggregation ', JSON.stringify(aggregation));
+    request({
+        url: url,
+        method: 'GET'
+    }, function (error, response, body) {
+        if (error) {
+            console.log('Error sending message: ', error);
+        } else if (response.body.error) {
+            console.log('Error: ', response.body.error);
+        } else {
+            var obj = JSON.parse(body);
+            console.log('==> START TRACKING RESULT :', JSON.stringify(body));
+            save_tracking_id(aggregation, messenger_id, obj.tracking_id);
+        }
+    });
+}
+
+function register_tracking(tracking_id, message) {
+    var url = 'http://aileadsbooster.com/Backend/register_message_tracking?tracking_id=' + tracking_id
+        + '&message=' + message;
+    console.log('# REGISTER TRACKING url', url);
+    request({
+        url: url,
+        method: 'GET'
+    }, function (error, response, body) {
+        if (error) {
+            console.log('Error sending message: ', error);
+        } else if (response.body.error) {
+            console.log('Error: ', response.body.error);
+        } else {
+            console.log('==> REGISTER TRACKING RESULT :', JSON.stringify(body));
+        }
+    });
+}
+
+function register_tracking_phone(tracking_id, phone) {
+    var url = 'http://aileadsbooster.com/Backend/register_phone_tracking?tracking_id=' + tracking_id
+        + '&phone=' + phone;
+    console.log('# REGISTER TRACKING url', url);
+    request({
+        url: url,
+        method: 'GET'
+    }, function (error, response, body) {
+        if (error) {
+            console.log('Error sending message: ', error);
+        } else if (response.body.error) {
+            console.log('Error: ', response.body.error);
+        } else {
+            console.log('==> REGISTER TRACKING RESULT :', JSON.stringify(body));
+        }
+    });
+}
+
+
+function get_tracking_id(aggregation, messenger_id, text) {
+    var url = 'http://halfcup.com/social_rebates_system/apix/get_tracking_id?aggregation=' + aggregation_object
+        + '&messenger_id=' + messenger_id;
+    console.log('# GET TRACKING ID url', url);
+    console.log('# aggregation ', JSON.stringify(aggregation));
+    request({
+        url: url,
+        method: 'GET'
+    }, function (error, response, body) {
+        if (error) {
+            console.log('Error sending message: ', error);
+        } else if (response.body.error) {
+            console.log('Error: ', response.body.error);
+        } else {
+            var obj = JSON.parse(body);
+            console.log('==> GET TRACKING ID RESULT :', JSON.stringify(obj));
+            if (obj.data !== null) {
+                var phone = false;
+                if (phone) {
+                    register_tracking_phone(obj.data.tracking_id, text);
+                } else {
+                    register_tracking(obj.data.tracking_id, text);
+                }
+
+            }
+        }
+    });
+}
+
+function check_tracking_id(aggregation, messenger_id, token) {
+    var url = 'http://halfcup.com/social_rebates_system/apix/get_tracking_id?aggregation=' + aggregation
+        + '&messenger_id=' + messenger_id;
+    console.log('# CHECK TRACKING ID url', url);
+    console.log('# aggregation ', JSON.stringify(aggregation));
+    request({
+        url: url,
+        method: 'GET'
+    }, function (error, response, body) {
+        if (error) {
+            console.log('Error sending message: ', error);
+        } else if (response.body.error) {
+            console.log('Error: ', response.body.error);
+        } else {
+            var obj = JSON.parse(body);
+            console.log('==> CHECK TRACKING ID RESULT :', JSON.stringify(obj));
+            if (obj.data === null) {
+                get_profile_user(aggregation, messenger_id, token);
+            }
+        }
+    });
+}
+
+function save_tracking_id(aggregation, messenger_id, tracking_id) {
+    var url = 'http://halfcup.com/social_rebates_system/apix/save_tracking_id?aggregation=' + aggregation_object
+        + '&messenger_id=' + messenger_id + '&tracking_id=' + tracking_id;
+    console.log('# SAVE TRACKING ID url', url);
+    console.log('# aggregation ', JSON.stringify(aggregation));
+    request({
+        url: url,
+        method: 'GET'
+    }, function (error, response, body) {
+        if (error) {
+            console.log('Error sending message: ', error);
+        } else if (response.body.error) {
+            console.log('Error: ', response.body.error);
+        } else {
+            var obj = JSON.parse(body);
+            console.log('==> SAVE TRACKING ID RESULT :', JSON.stringify(obj));
+        }
+    });
+}
+
+function get_profile_user(aggregation, messenger_id, token) {
+    var url = 'https://graph.facebook.com/v2.6/' + messenger_id + '?fields=first_name,last_name,profile_pic&access_token=' + token;
+    request({
+        url: url,
+        method: 'GET'
+    }, function (error, response, body) {
+        if (error) {
+            console.log('Error sending message: ', error);
+        } else if (response.body.error) {
+            console.log('Error: ', response.body.error);
+        } else {
+            var obj = JSON.parse(body);
+            console.log('==> GET TRACKING ID RESULT :', JSON.stringify(obj));
+            var name = obj.first_name + ' ' + obj.last_name;
+            start_tracking(aggregation, name);
+        }
+    });
+}
