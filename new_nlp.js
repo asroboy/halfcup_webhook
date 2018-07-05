@@ -262,7 +262,7 @@ function getAggregationObjectDoneBot(key, sender, recipient, token, res, param, 
     var url = 'http://aileadsbooster.com/Backend/aggregation?' + mKey + '&third-party=' + third_party;
     console.log('url', url);
 
-    check_tracking_id(param, recipient, token);
+    // check_tracking_id(param, recipient, token);
 
 
     request({
@@ -352,7 +352,7 @@ function getAggregationObject(key, sender, recipient, token, res, param, third_p
         }
 
 
-        check_tracking_id(param, recipient, token);
+        // check_tracking_id(param, recipient, token);
 
         console.log('# AGGREGATION API url', url);
         request({
@@ -589,7 +589,7 @@ function getIndexAggregate(size, pageId, key, aggreationData, recipient, token) 
 
 function getAiKey(text, wang_token, pageId, prevKeys, recipient, token, res, aggregateObj, param, third_party) {
 
-    get_tracking_id(param, recipient, text);
+    // get_tracking_id(param, recipient, text);
 
     if (aggregateObj.indexOf("{{") > -1) {
         aggregateObj = aggregateObj.replace("{{", "").replace("}}", "");
