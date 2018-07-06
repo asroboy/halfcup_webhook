@@ -589,7 +589,7 @@ function getIndexAggregate(size, pageId, key, aggreationData, recipient, token) 
 
 function getAiKey(text, wang_token, pageId, prevKeys, recipient, token, res, aggregateObj, param, third_party) {
 
-    console.log('AGGREGATION OBJECT >>>>>>>>>>>>>>>> ' aggregateObj);
+    console.log('AGGREGATION OBJECT >>>>>>>>>>>>>>>> ', aggregateObj);
     get_tracking_id(param, recipient, text);
 
     if (aggregateObj.indexOf("{{") > -1) {
