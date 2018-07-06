@@ -52,11 +52,11 @@
       <file leaf-file-name="new_nlp.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/new_nlp.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="392">
-              <caret line="1435" column="53" lean-forward="false" selection-start-line="1435" selection-start-column="53" selection-end-line="1435" selection-end-column="53" />
+            <state relative-caret-position="214">
+              <caret line="591" column="69" lean-forward="false" selection-start-line="591" selection-start-column="69" selection-end-line="591" selection-end-column="69" />
               <folding>
                 <element signature="n#!!block;n#getToken#0" expanded="false" />
-                <element signature="e#36760#43726#0" expanded="false" />
+                <element signature="e#36814#43780#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -114,18 +114,18 @@
       <find>http://aileadsbooster.com/Backend/query</find>
       <find>sendM</find>
       <find>getAggregationObjectDoneBot</find>
-      <find>getAiKey</find>
       <find>getThirdPartyPageID_1</find>
       <find>query</find>
       <find>is_reusable</find>
       <find>========##### TRACKING API ######## ------------------</find>
-      <find>get_tracking_id</find>
       <find>get_profile_user</find>
-      <find>check_tracking_id</find>
       <find>getAggregationObject</find>
       <find>save_tracking_id</find>
       <find>for</find>
       <find>start_tracking</find>
+      <find>check_tracking_id</find>
+      <find>get_tracking_id</find>
+      <find>getAiKey</find>
     </findStrings>
     <replaceStrings>
       <replace>localhost:8080</replace>
@@ -540,12 +540,12 @@
       <workItem from="1530495527608" duration="9254000" />
       <workItem from="1530533394595" duration="2641000" />
       <workItem from="1530581285734" duration="3298000" />
-      <workItem from="1530669275430" duration="16962000" />
+      <workItem from="1530669275430" duration="17259000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="858477000" />
+    <option name="totallyTimeSpent" value="858774000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -979,11 +979,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/new_nlp.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="392">
-          <caret line="1435" column="53" lean-forward="false" selection-start-line="1435" selection-start-column="53" selection-end-line="1435" selection-end-column="53" />
+        <state relative-caret-position="214">
+          <caret line="591" column="69" lean-forward="false" selection-start-line="591" selection-start-column="69" selection-end-line="591" selection-end-column="69" />
           <folding>
             <element signature="n#!!block;n#getToken#0" expanded="false" />
-            <element signature="e#36760#43726#0" expanded="false" />
+            <element signature="e#36814#43780#0" expanded="false" />
           </folding>
         </state>
       </provider>

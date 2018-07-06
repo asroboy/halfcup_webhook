@@ -262,7 +262,7 @@ function getAggregationObjectDoneBot(key, sender, recipient, token, res, param, 
     var url = 'http://aileadsbooster.com/Backend/aggregation?' + mKey + '&third-party=' + third_party;
     console.log('url', url);
 
-    // check_tracking_id(param, recipient, token);
+    check_tracking_id(key, recipient, token);
 
 
     request({
@@ -589,16 +589,17 @@ function getIndexAggregate(size, pageId, key, aggreationData, recipient, token) 
 
 function getAiKey(text, wang_token, pageId, prevKeys, recipient, token, res, aggregateObj, param, third_party) {
 
-    // get_tracking_id(param, recipient, text);
+    console.log('AGGREGATION OBJECT >>>>>>>>>>>>>>>> ' aggregateObj);
+    get_tracking_id(param, recipient, text);
 
     if (aggregateObj.indexOf("{{") > -1) {
         aggregateObj = aggregateObj.replace("{{", "").replace("}}", "");
     }
     var url = 'http://aileadsbooster.com/Backend/query?q=' + encodeURI(text) + '&access_token=' + wang_token + '&prev_key=' + prevKeys + '&aggregation=' + aggregateObj + '&param=' + param + '&third-party=' + third_party;
     if (aggregateObj === '') {
-        var url = 'http://aileadsbooster.com/Backend/query?q=' + encodeURI(text) + '&access_token=' + wang_token + '&prev_key=' + prevKeys + '&param=' + param;
+        url = 'http://aileadsbooster.com/Backend/query?q=' + encodeURI(text) + '&access_token=' + wang_token + '&prev_key=' + prevKeys + '&param=' + param;
     } else {
-        var url = 'http://aileadsbooster.com/Backend/query?q=' + encodeURI(text) + '&access_token=' + wang_token + '&prev_key=' + prevKeys + '&aggregation=' + aggregateObj + '&param=' + param + '&third-party=' + third_party;
+        url = 'http://aileadsbooster.com/Backend/query?q=' + encodeURI(text) + '&access_token=' + wang_token + '&prev_key=' + prevKeys + '&aggregation=' + aggregateObj + '&param=' + param + '&third-party=' + third_party;
     }
     console.log('# BACKEND QUERY API url', url);
     request({
