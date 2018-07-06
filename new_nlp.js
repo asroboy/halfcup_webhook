@@ -1389,7 +1389,7 @@ function check_tracking_id(aggregation, messenger_id, token) {
 }
 
 function save_tracking_id(aggregation, messenger_id, tracking_id) {
-    var url = 'http://halfcup.com/social_rebates_system/apix/save_tracking_id?aggregation=' + aggregation_object
+    var url = 'http://halfcup.com/social_rebates_system/apix/save_tracking_id?aggregation=' + aggregation
         + '&messenger_id=' + messenger_id + '&tracking_id=' + tracking_id;
     console.log('# SAVE TRACKING ID url', url);
     console.log('# aggregation ', JSON.stringify(aggregation));
