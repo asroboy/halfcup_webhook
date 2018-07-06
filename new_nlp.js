@@ -262,7 +262,7 @@ function getAggregationObjectDoneBot(key, sender, recipient, token, res, param, 
     var url = 'http://aileadsbooster.com/Backend/aggregation?' + mKey + '&third-party=' + third_party;
     console.log('url', url);
 
-    check_tracking_id(key, recipient, token);
+    // check_tracking_id(key, recipient, token);
 
 
     request({
@@ -352,7 +352,7 @@ function getAggregationObject(key, sender, recipient, token, res, param, third_p
         }
 
 
-        check_tracking_id(key, recipient, token);
+        // check_tracking_id(key, recipient, token);
 
         console.log('# AGGREGATION API url', url);
         request({
@@ -590,7 +590,7 @@ function getIndexAggregate(size, pageId, key, aggreationData, recipient, token) 
 function getAiKey(text, wang_token, pageId, prevKeys, recipient, token, res, aggregateObj, param, third_party) {
 
     console.log('AGGREGATION OBJECT >>>>>>>>>>>>>>>> ', aggregateObj);
-    get_tracking_id(param, recipient, text);
+    // get_tracking_id(param, recipient, text);
 
     if (aggregateObj.indexOf("{{") > -1) {
         aggregateObj = aggregateObj.replace("{{", "").replace("}}", "");
@@ -1292,7 +1292,7 @@ function start_tracking(aggregation, messenger_id, email) {
         + '&agent_id=' + agent_id
         + '&project_id=' + project_id
         + '&email=' + email;
-    console.log('# START TRACKING url', url);
+    console.log('# c url', url);
     console.log('# aggregation ', JSON.stringify(aggregation));
     request({
         url: url,
@@ -1305,7 +1305,7 @@ function start_tracking(aggregation, messenger_id, email) {
         } else {
             var obj = JSON.parse(body);
             console.log('==> START TRACKING RESULT :', JSON.stringify(body));
-            save_tracking_id(aggregation, messenger_id, obj.tracking_id);
+            save_tracking_id(agg_obj, messenger_id, obj.tracking_id);
         }
     });
 }
@@ -1377,7 +1377,9 @@ function get_tracking_id(aggregation, messenger_id, text) {
 }
 
 function check_tracking_id(aggregation, messenger_id, token) {
-    var url = 'http://halfcup.com/social_rebates_system/apix/get_tracking_id?aggregation=' + aggregation
+    var agg_data = aggregation.split('=');
+    var agg_obj = agg_data[1].split('&')[0];
+    var url = 'http://halfcup.com/social_rebates_system/apix/get_tracking_id?aggregation=' + agg_obj
         + '&messenger_id=' + messenger_id;
     console.log('# CHECK TRACKING ID url', url);
     console.log('# aggregation ', JSON.stringify(aggregation));
