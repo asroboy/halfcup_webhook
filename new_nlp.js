@@ -1267,15 +1267,25 @@ function update_webhook_status(page_id, status) {
 }
 
 
-
-
 //========##### TRACKING API ######## ------------------
 function start_tracking(aggregation, messenger_id, email) {
     // AGGREGATION_object=xxx_main&query=agent_id=[agent_id]||project_id=[project_id]
+    //AGGREGATION_object=unified_button_main&query=project_id=52||agent_id=137||bot_index=0
     var agg_data = aggregation.split('=');
     var agg_obj = agg_data[1].split('&')[0];
-    var agent_id = agg_data[3].split('\|\|')[0];
-    var project_id = agg_data[4];
+    var data_ = agg_data[1].split('&')[1].replace('query=', '');
+    var data_agent = data_.split('||');
+    var project_id = null;
+    var agent_id = null;
+    for (i = 0; i < data_agent.length; i++) {
+        if (data_agent[i].contains('project_id')) {
+            project_id = data_agent[i].split('=')[1];
+        }
+        if (data_agent[i].contains('project_id')) {
+            agent_id = data_agent[i].split('=')[1];
+        }
+    }
+
 
     var url = 'http://aileadsbooster.com/Backend/start_tracking?aggregation=' + agg_obj
         + '&agent_id=' + agent_id
