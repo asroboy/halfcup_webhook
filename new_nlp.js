@@ -352,7 +352,7 @@ function getAggregationObject(key, sender, recipient, token, res, param, third_p
         }
 
 
-        check_tracking_id(param, recipient, token);
+        check_tracking_id(key, recipient, token);
 
         console.log('# AGGREGATION API url', url);
         request({
