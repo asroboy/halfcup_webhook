@@ -1278,10 +1278,10 @@ function start_tracking(aggregation, messenger_id, email) {
     var project_id = null;
     var agent_id = null;
     for (i = 0; i < data_agent.length; i++) {
-        if (data_agent[i].contains('project_id')) {
+        if (data_agent[i].includes('project_id')) {
             project_id = data_agent[i].split('=')[1];
         }
-        if (data_agent[i].contains('project_id')) {
+        if (data_agent[i].includes('project_id')) {
             agent_id = data_agent[i].split('=')[1];
         }
     }
