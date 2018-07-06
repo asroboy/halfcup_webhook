@@ -1281,7 +1281,7 @@ function start_tracking(aggregation, messenger_id, email) {
         if (data_agent[i].includes('project_id')) {
             project_id = data_agent[i].split('=')[1];
         }
-        if (data_agent[i].includes('project_id')) {
+        if (data_agent[i].includes('agent_id')) {
             agent_id = data_agent[i].split('=')[1];
         }
     }
