@@ -1420,6 +1420,7 @@ function save_tracking_id(aggregation, messenger_id, tracking_id) {
 
 function get_profile_user(aggregation, messenger_id, token) {
     var url = 'https://graph.facebook.com/v2.6/' + messenger_id + '?fields=first_name,last_name,profile_pic&access_token=' + token;
+    console.log('==> GET PROFILE USER url:', url);
     request({
         url: url,
         method: 'GET'
@@ -1430,9 +1431,9 @@ function get_profile_user(aggregation, messenger_id, token) {
             console.log('Error: ', response.body.error);
         } else {
             var obj = JSON.parse(body);
-            console.log('==> GET TRACKING ID RESULT :', JSON.stringify(obj));
+            console.log('==> GET PROFILE USER RESULT :', JSON.stringify(obj));
             var name = obj.first_name + ' ' + obj.last_name;
-            start_tracking(aggregation, name);
+            start_tracking(aggregation, messenger_id, name);
         }
     });
 }
