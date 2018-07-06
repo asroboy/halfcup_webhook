@@ -1273,7 +1273,7 @@ function start_tracking(aggregation, messenger_id, email) {
     //AGGREGATION_object=unified_button_main&query=project_id=52||agent_id=137||bot_index=0
     var agg_data = aggregation.split('=');
     var agg_obj = agg_data[1].split('&')[0];
-    var data_ = agg_data[1].split('&')[1].replace('query=', '');
+    var data_ = aggregation.split('&')[1].replace('query=', '');
     var data_agent = data_.split('||');
     var project_id = null;
     var agent_id = null;
