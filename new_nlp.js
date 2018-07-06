@@ -1274,7 +1274,7 @@ function start_tracking(aggregation, messenger_id, email) {
     // AGGREGATION_object=xxx_main&query=agent_id=[agent_id]||project_id=[project_id]
     var agg_data = aggregation.split('=');
     var agg_obj = agg_data[1].split('&')[0];
-    var agent_id = agg_data[3].split('||')[0];
+    var agent_id = agg_data[3].split('\|\|')[0];
     var project_id = agg_data[4];
 
     var url = 'http://aileadsbooster.com/Backend/start_tracking?aggregation=' + agg_obj
