@@ -263,7 +263,7 @@ function getAggregationObjectDoneBot(key, sender, recipient, token, res, param, 
     var url = 'http://aileadsbooster.com/Backend/aggregation?' + mKey + '&third-party=' + third_party;
     console.log('url', url);
 
-    // check_tracking_id(key, recipient, token);
+    check_tracking_id(key, recipient, token);
 
 
     request({
@@ -353,7 +353,7 @@ function getAggregationObject(key, sender, recipient, token, res, param, third_p
         }
 
 
-        // check_tracking_id(key, recipient, token);
+        check_tracking_id(key, recipient, token);
 
         console.log('# AGGREGATION API url', url);
         request({
