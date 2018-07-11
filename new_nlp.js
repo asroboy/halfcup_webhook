@@ -31,7 +31,7 @@ var page_subscription = require('./page_msg_subs/index');
 
 function getToken(text, sender, recipient, isMessageUs, res, action_name) {
     var url = 'http://halfcup.com/social_rebates_system/api/getPageMessengerToken?messenger_id=' + sender + '&messenger_uid=' + recipient;
-    console.log('# new_nlp getToken() text', text);
+    console.log('# new_nlp getToken() text', text + 'action_name ' + action_name);
     console.log('# GET PAGE TOKEN url', url);
     console.log('action name', action_name);
     request({
@@ -1349,7 +1349,9 @@ function register_tracking_phone(tracking_id, phone) {
 
 
 function get_tracking_id(aggregation, messenger_id, text) {
-    var url = 'http://halfcup.com/social_rebates_system/apix/get_tracking_id?aggregation=' + aggregation_object
+    var agg_data = aggregation.split('=');
+    var agg_obj = agg_data[1].split('&')[0];
+    var url = 'http://halfcup.com/social_rebates_system/apix/get_tracking_id?aggregation=' + agg_obj
         + '&messenger_id=' + messenger_id;
     console.log('# GET TRACKING ID url', url);
     console.log('# aggregation ', JSON.stringify(aggregation));
