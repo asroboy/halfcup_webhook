@@ -101,6 +101,7 @@ function getToken(text, sender, recipient, isMessageUs, res, action_name) {
 
                         else {
                             getMerchantId(sender, recipient, text, token, res);
+                            get_tracking_id("", recipient, text, false);
                         }
                     }
 
@@ -1349,7 +1350,7 @@ function register_tracking_phone(tracking_id, phone) {
 }
 
 
-function get_tracking_id(aggregation, messenger_id, text) {
+function get_tracking_id(aggregation, messenger_id, textOrPhone, isPhone) {
     var agg_data = aggregation.split('=');
     var agg_obj = agg_data[1].split('&')[0];
     var url = 'http://halfcup.com/social_rebates_system/apix/get_tracking_id?aggregation=' + agg_obj
@@ -1368,11 +1369,10 @@ function get_tracking_id(aggregation, messenger_id, text) {
             var obj = JSON.parse(body);
             console.log('==> GET TRACKING ID RESULT :', JSON.stringify(obj));
             if (obj.data !== null) {
-                var phone = false;
-                if (phone) {
-                    register_tracking_phone(obj.data.tracking_id, text);
+                if (isPhone) {
+                    register_tracking_phone(obj.data.tracking_id, textOrPhone);
                 } else {
-                    register_tracking(obj.data.tracking_id, text);
+                    register_tracking(obj.data.tracking_id, textOrPhone);
                 }
 
             }

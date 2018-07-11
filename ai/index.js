@@ -93,7 +93,7 @@ app.post('/webhook', function (req, res) {
                         console.log("======= MESSAGING =======");
                         var hc_token = 'EAABqJD84pmIBABjewVhyAuMwDLFaI7YT7fsJLzeh63mhOwdZAgMKClvFfZBvHhFR35dIok3YQAxeZCuDbiLCaWVOpQxWVRHZBahsQOy9ZCTn4e4wdWcZA0VmGU6x0CFzv6dRcCzrlSZA87EPcI3b0KCDkedjLc37lZCvnu47iTTAwgZDZD';
 
-                        if(event.id == messaging.recipient.id){
+                        if (event.id == messaging.recipient.id) {
                             console.log('Messaging from USER to PAGE');
 
                             if (messaging.referral) {
@@ -153,7 +153,11 @@ app.post('/webhook', function (req, res) {
                                                         "content_type": "text",
                                                         "title": "Yes",
                                                         "payload": "DEVELOPER_SETUP_YES"
-                                                    }, {"content_type": "text", "title": "No", "payload": "DEVELOPER_SETUP_NO"}]
+                                                    }, {
+                                                        "content_type": "text",
+                                                        "title": "No",
+                                                        "payload": "DEVELOPER_SETUP_NO"
+                                                    }]
                                                 }
                                                 sendMessage(messaging.recipient.id, message, hc_token);
                                             }
@@ -181,7 +185,11 @@ app.post('/webhook', function (req, res) {
                                                         "content_type": "text",
                                                         "title": "Yes",
                                                         "payload": "DEVELOPER_SETUP_YES"
-                                                    }, {"content_type": "text", "title": "No", "payload": "DEVELOPER_SETUP_NO"}]
+                                                    }, {
+                                                        "content_type": "text",
+                                                        "title": "No",
+                                                        "payload": "DEVELOPER_SETUP_NO"
+                                                    }]
                                                 }
                                                 sendMessage(messaging.sender.id, message, hc_token);
                                             }
@@ -318,9 +326,10 @@ app.post('/webhook', function (req, res) {
                                             else {
                                                 console.log("QuickReply ", messaging.message.quick_reply.payload);
                                                 var page_id = messaging.recipient.id;
-                                                if(page_id === '474086889694869'){
-                                                    page_subscription.reply(messaging.message.quick_reply.payload,  messaging.sender.id, page_id, my_token);
-                                                }else{
+                                                if (page_id === '474086889694869') {
+                                                    page_subscription.reply(messaging.message.quick_reply.payload, messaging.sender.id, page_id, my_token);
+                                                } else {
+                                                    get_tracking_id("", messaging.sender.id, messaging.message.quick_reply.payload, isPhoneNumber(messaging.message.quick_reply.payload));
                                                     //var token = "";
                                                     //this is to handle print PAYLOAD to msgr room
                                                     pixel('QuickReply', messaging.message.text, messaging.message.quick_reply.payload, messaging.sender.id, messaging.recipient.id);
@@ -591,7 +600,7 @@ app.post('/webhook', function (req, res) {
                                 }
                             }
                         }
-                        else{
+                        else {
                             console.log('Messaging from PAGE to USER');
                         }
 
@@ -1497,3 +1506,90 @@ function clearAiKey(sender) {
 
 // }).listen(1337, "127.0.0.1");
 // console.log('Server running at http://127.0.0.1:1337/');
+
+
+function get_tracking_id(aggregation, messenger_id, textOrPhone, isPhone) {
+    var agg_data = aggregation.split('=');
+    var agg_obj = agg_data[1].split('&')[0];
+    var url = 'http://halfcup.com/social_rebates_system/apix/get_tracking_id?aggregation=' + agg_obj
+        + '&messenger_id=' + messenger_id;
+    console.log('# GET TRACKING ID url', url);
+    console.log('# aggregation ', JSON.stringify(aggregation));
+    request({
+        url: url,
+        method: 'GET'
+    }, function (error, response, body) {
+        if (error) {
+            console.log('Error sending message: ', error);
+        } else if (response.body.error) {
+            console.log('Error: ', response.body.error);
+        } else {
+            var obj = JSON.parse(body);
+            console.log('==> GET TRACKING ID RESULT :', JSON.stringify(obj));
+            if (obj.data !== null) {
+                if (isPhone) {
+                    register_tracking_phone(obj.data.tracking_id, textOrPhone);
+                } else {
+                    register_tracking(obj.data.tracking_id, textOrPhone);
+                }
+
+            }
+        }
+    });
+}
+
+
+function register_tracking(tracking_id, message) {
+    var url = 'http://aileadsbooster.com/Backend/register_message_tracking?tracking_id=' + tracking_id
+        + '&message=' + message;
+    console.log('# REGISTER TRACKING url', url);
+    request({
+        url: url,
+        method: 'GET'
+    }, function (error, response, body) {
+        if (error) {
+            console.log('Error sending message: ', error);
+        } else if (response.body.error) {
+            console.log('Error: ', response.body.error);
+        } else {
+            console.log('==> REGISTER TRACKING RESULT :', JSON.stringify(body));
+        }
+    });
+}
+
+function register_tracking_phone(tracking_id, phone) {
+    var url = 'http://aileadsbooster.com/Backend/register_phone_tracking?tracking_id=' + tracking_id
+        + '&phone=' + phone;
+    console.log('# REGISTER TRACKING url', url);
+    request({
+        url: url,
+        method: 'GET'
+    }, function (error, response, body) {
+        if (error) {
+            console.log('Error sending message: ', error);
+        } else if (response.body.error) {
+            console.log('Error: ', response.body.error);
+        } else {
+            console.log('==> REGISTER TRACKING RESULT :', JSON.stringify(body));
+        }
+    });
+}
+
+
+function isPhoneNumber(phone) {
+
+    var phoneno = /^(?!.*911.*\d{4})((\+?1[\/ ]?)?(?![\(\. -]?555.*)\( ?[2-9][0-9]{2} ?\) ?|(\+?1[\.\/ -])?[2-9][0-9]{2}[\.\/ -]?)(?!555.?01..)([2-9][0-9]{2})[\.\/ -]?([0-9]{4})$/;
+
+    var phoneno2 = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im;
+
+    var phoneno3 = /^[+]?(1\-|1\s|1|\d{3}\-|\d{3}\s|)?((\(\d{3}\))|\d{3})(\-|\s)?(\d{3})(\-|\s)?(\d{4})$/g;
+
+    var phoneno4 = /\b\d{3}[-.]?\d{3}[-.]?\d{4}\b/g;
+
+    var phoneno5 = /(\+62 ((\d{3}([ -]\d{3,})([- ]\d{4,})?)|(\d+)))|(\(\d+\) \d+)|\d{3}( \d+)+|(\d+[ -]\d+)|\d+/;
+    if (phone.match(phoneno) || phone.match(phoneno2) || phone.match(phoneno3) || phone.match(phoneno4) || phone.match(phoneno5)) {
+        return true;
+    } else {
+        return false;
+    }
+}
