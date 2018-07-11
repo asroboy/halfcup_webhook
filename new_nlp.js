@@ -263,7 +263,7 @@ function getAggregationObjectDoneBot(key, sender, recipient, token, res, param, 
     var url = 'http://aileadsbooster.com/Backend/aggregation?' + mKey + '&third-party=' + third_party;
     console.log('url', url);
 
-    check_tracking_id(key, recipient, token);
+    // check_tracking_id(key, recipient, token);
 
 
     request({
@@ -353,7 +353,7 @@ function getAggregationObject(key, sender, recipient, token, res, param, third_p
         }
 
 
-        check_tracking_id(key, recipient, token);
+        // check_tracking_id(key, recipient, token);
 
         console.log('# AGGREGATION API url', url);
         request({
@@ -1305,7 +1305,7 @@ function start_tracking(aggregation, messenger_id, email) {
             console.log('Error: ', response.body.error);
         } else {
             var obj = JSON.parse(body);
-            console.log('==> START TRACKING RESULT :', JSON.stringify(body));
+            console.log('==> START TRACKING RESULT :', JSON.stringify(obj));
             save_tracking_id(agg_obj, messenger_id, obj.tracking_id);
         }
     });
