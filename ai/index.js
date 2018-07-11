@@ -1509,8 +1509,12 @@ function clearAiKey(sender) {
 
 
 function get_tracking_id(aggregation, messenger_id, textOrPhone, isPhone) {
-    var agg_data = aggregation.split('=');
-    var agg_obj = agg_data[1].split('&')[0];
+    var agg_obj = "";
+    if(aggregation){
+        var agg_data = aggregation.split('=');
+        agg_obj = agg_data[1].split('&')[0];
+    }
+
     var url = 'http://halfcup.com/social_rebates_system/apix/get_tracking_id?aggregation=' + agg_obj
         + '&messenger_id=' + messenger_id;
     console.log('# GET TRACKING ID url', url);
