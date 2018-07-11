@@ -263,8 +263,7 @@ function getAggregationObjectDoneBot(key, sender, recipient, token, res, param, 
     var url = 'http://aileadsbooster.com/Backend/aggregation?' + mKey + '&third-party=' + third_party;
     console.log('url', url);
 
-    // check_tracking_id(key, recipient, token);
-
+    check_tracking_id(key, recipient, token);
 
     request({
             url: url,
@@ -353,7 +352,7 @@ function getAggregationObject(key, sender, recipient, token, res, param, third_p
         }
 
 
-        // check_tracking_id(key, recipient, token);
+        check_tracking_id(key, recipient, token);
 
         console.log('# AGGREGATION API url', url);
         request({
@@ -1288,27 +1287,29 @@ function start_tracking(aggregation, messenger_id, email) {
         }
     }
 
+    if (agent_id !== null) {
+        var url = 'http://aileadsbooster.com/Backend/start_tracking?aggregation=' + agg_obj
+            + '&agent_id=' + agent_id
+            + '&project_id=' + project_id
+            + '&email=' + email;
+        console.log('# c url', url);
+        console.log('# aggregation ', JSON.stringify(aggregation));
+        request({
+            url: url,
+            method: 'GET'
+        }, function (error, response, body) {
+            if (error) {
+                console.log('Error sending message: ', error);
+            } else if (response.body.error) {
+                console.log('Error: ', response.body.error);
+            } else {
+                var obj = JSON.parse(body);
+                console.log('==> START TRACKING RESULT :', JSON.stringify(obj));
+                save_tracking_id(agg_obj, messenger_id, obj.tracking_id);
+            }
+        });
+    }
 
-    var url = 'http://aileadsbooster.com/Backend/start_tracking?aggregation=' + agg_obj
-        + '&agent_id=' + agent_id
-        + '&project_id=' + project_id
-        + '&email=' + email;
-    console.log('# c url', url);
-    console.log('# aggregation ', JSON.stringify(aggregation));
-    request({
-        url: url,
-        method: 'GET'
-    }, function (error, response, body) {
-        if (error) {
-            console.log('Error sending message: ', error);
-        } else if (response.body.error) {
-            console.log('Error: ', response.body.error);
-        } else {
-            var obj = JSON.parse(body);
-            console.log('==> START TRACKING RESULT :', JSON.stringify(obj));
-            save_tracking_id(agg_obj, messenger_id, obj.tracking_id);
-        }
-    });
 }
 
 function register_tracking(tracking_id, message) {
