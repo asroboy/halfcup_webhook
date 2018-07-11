@@ -31,6 +31,7 @@ var page_subscription = require('./page_msg_subs/index');
 
 function getToken(text, sender, recipient, isMessageUs, res, action_name) {
     var url = 'http://halfcup.com/social_rebates_system/api/getPageMessengerToken?messenger_id=' + sender + '&messenger_uid=' + recipient;
+    console.log('# new_nlp getToken() text', text);
     console.log('# GET PAGE TOKEN url', url);
     console.log('action name', action_name);
     request({
