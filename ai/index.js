@@ -329,9 +329,9 @@ app.post('/webhook', function (req, res) {
                                                 if (page_id === '474086889694869') {
                                                     page_subscription.reply(messaging.message.quick_reply.payload, messaging.sender.id, page_id, my_token);
                                                 } else {
-                                                    var isPhoneNumber = isPhoneNumber(messaging.message.quick_reply.payload);
-                                                    if (isPhoneNumber) {
-                                                        get_tracking_id("", messaging.sender.id, page_id, messaging.message.quick_reply.payload, isPhoneNumber, res);
+                                                    var isPhone = isPhoneNumber(messaging.message.quick_reply.payload);
+                                                    if (isPhone) {
+                                                        get_tracking_id("", messaging.sender.id, page_id, messaging.message.quick_reply.payload, isPhone, res);
                                                     } else {
                                                         //var token = "";
                                                         //this is to handle print PAYLOAD to msgr room

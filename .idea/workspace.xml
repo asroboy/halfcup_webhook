@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="8c0fd527-5667-4e03-89ee-e95c0bdc3c27" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/ai/index.js" afterPath="$PROJECT_DIR$/ai/index.js" />
-      <change beforePath="$PROJECT_DIR$/new_nlp.js" afterPath="$PROJECT_DIR$/new_nlp.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -24,7 +23,7 @@
         <entry file="file://$PROJECT_DIR$/ai/index.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="214">
-              <caret line="333" column="165" lean-forward="false" selection-start-line="333" selection-start-column="165" selection-end-line="333" selection-end-column="165" />
+              <caret line="333" column="152" lean-forward="false" selection-start-line="333" selection-start-column="152" selection-end-line="333" selection-end-column="152" />
               <folding>
                 <element signature="e#1829#3077#0" expanded="false" />
                 <element signature="e#3981#6563#0" expanded="false" />
@@ -34,15 +33,15 @@
                 <element signature="e#16785#19495#0" expanded="false" />
                 <element signature="e#20013#20217#0" expanded="false" />
                 <element signature="e#20332#20686#0" expanded="false" />
-                <element signature="e#26273#27204#0" expanded="false" />
-                <element signature="e#27392#41163#0" expanded="false" />
-                <element signature="e#27476#38508#0" expanded="false" />
-                <element signature="e#38592#41133#0" expanded="false" />
+                <element signature="e#26255#27186#0" expanded="false" />
+                <element signature="e#27374#41145#0" expanded="false" />
+                <element signature="e#27458#38490#0" expanded="false" />
+                <element signature="e#38574#41115#0" expanded="false" />
                 <element signature="n#!!block;n#saveMessengerAdmin#0" expanded="false" />
                 <element signature="n#!!block;n#keyIndexAction#0" expanded="false" />
                 <element signature="n#!!block;n#validateSamples#0" expanded="false" />
-                <element signature="e#46807#46937#0" expanded="false" />
-                <element signature="e#46978#47142#0" expanded="false" />
+                <element signature="e#46789#46919#0" expanded="false" />
+                <element signature="e#46960#47124#0" expanded="false" />
                 <element signature="n#!!block;n#looper#0" expanded="false" />
                 <element signature="n#!!block;n#callback#0" expanded="false" />
                 <element signature="n#!!block;n#helooTest#0" expanded="false" />
@@ -839,12 +838,12 @@
       <workItem from="1530669275430" duration="25123000" />
       <workItem from="1530964719172" duration="22428000" />
       <workItem from="1531303102432" duration="8953000" />
-      <workItem from="1531377379339" duration="2547000" />
+      <workItem from="1531377379339" duration="2652000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="900566000" />
+    <option name="totallyTimeSpent" value="900671000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1541,7 +1540,7 @@
     <entry file="file://$PROJECT_DIR$/ai/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="214">
-          <caret line="333" column="165" lean-forward="false" selection-start-line="333" selection-start-column="165" selection-end-line="333" selection-end-column="165" />
+          <caret line="333" column="152" lean-forward="false" selection-start-line="333" selection-start-column="152" selection-end-line="333" selection-end-column="152" />
           <folding>
             <element signature="e#1829#3077#0" expanded="false" />
             <element signature="e#3981#6563#0" expanded="false" />
@@ -1551,15 +1550,15 @@
             <element signature="e#16785#19495#0" expanded="false" />
             <element signature="e#20013#20217#0" expanded="false" />
             <element signature="e#20332#20686#0" expanded="false" />
-            <element signature="e#26273#27204#0" expanded="false" />
-            <element signature="e#27392#41163#0" expanded="false" />
-            <element signature="e#27476#38508#0" expanded="false" />
-            <element signature="e#38592#41133#0" expanded="false" />
+            <element signature="e#26255#27186#0" expanded="false" />
+            <element signature="e#27374#41145#0" expanded="false" />
+            <element signature="e#27458#38490#0" expanded="false" />
+            <element signature="e#38574#41115#0" expanded="false" />
             <element signature="n#!!block;n#saveMessengerAdmin#0" expanded="false" />
             <element signature="n#!!block;n#keyIndexAction#0" expanded="false" />
             <element signature="n#!!block;n#validateSamples#0" expanded="false" />
-            <element signature="e#46807#46937#0" expanded="false" />
-            <element signature="e#46978#47142#0" expanded="false" />
+            <element signature="e#46789#46919#0" expanded="false" />
+            <element signature="e#46960#47124#0" expanded="false" />
             <element signature="n#!!block;n#looper#0" expanded="false" />
             <element signature="n#!!block;n#callback#0" expanded="false" />
             <element signature="n#!!block;n#helooTest#0" expanded="false" />
