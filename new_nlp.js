@@ -104,7 +104,7 @@ function getToken(text, sender, recipient, isMessageUs, res, action_name) {
                             if (action_name !== 'PHONE_ACTION') {
                                 getMerchantId(sender, recipient, text, token, res);
                                 get_tracking_id("", recipient, text, false);
-                            }else{
+                            } else {
                                 getMerchantIdForPhone(sender, recipient, text, token, res)
                             }
                         }
@@ -492,7 +492,7 @@ function getMerchantId(pageId, recipient, text, token, res) {
 
 }
 
-function getMerchantIdForPhone(pageId, recipient, text, token, res){
+function getMerchantIdForPhone(pageId, recipient, text, token, res) {
     var url = 'http://halfcup.com/social_rebates_system/wapi/read?api_name=GET_RESTAURANT&token=1234567890&page_id=' + pageId;
     console.log('# GET MERCHANT ID url', url);
     request({
@@ -509,7 +509,7 @@ function getMerchantIdForPhone(pageId, recipient, text, token, res){
                 // res.send(obj);
                 // console.log('obj: ', obj);
                 // if (obj.restaurant_id !== null)
-                getAiToken(pageId, recipient, obj.restaurant_id, text, token, res);
+                getAiKeyForPhone(pageId, recipient, obj.restaurant_id, text, token, res);
             }
         }
     );
@@ -611,6 +611,63 @@ function getIndexAggregate(size, pageId, key, aggreationData, recipient, token) 
 
 
                 // res.send(JSON.stringify(obj))
+            }
+        }
+    );
+}
+
+
+function getAiKeyForPhone(text, wang_token, pageId, prevKeys, recipient, token, res, aggregateObj, param, third_party) {
+
+    console.log('TEXT OBJECT >>>>>>>>>>>>>>>> ', aggregateObj);
+
+    var url = 'http://aileadsbooster.com/Backend/query?q=' + text.replace('+', '') + '&access_token=' + wang_token;
+
+    console.log('# BACKEND QUERY API (PHONE)url', url);
+    request({
+            url: url,
+            method: 'GET'
+        }, function (error, response, body) {
+            if (error) {
+                console.log('Error : ', error);
+            } else if (response.body.error) {
+                console.log('Error: ', response.body.error);
+            } else {
+                try {
+                    var obj = JSON.parse(body);
+                    console.log('==>BAKCEND QUERY API (PHONE) RESULT : ' + JSON.stringify(obj));
+                    if (obj.hasOwnProperty('aggregation')) {
+                        console.log('AGGREGATION LENGTH = ' + obj.aggregation.length);
+                        if (obj.aggregation.length > 0) {
+                            sendM(pageId, obj.aggregation, recipient, token, res, obj);
+                            // getIndexAggregate(obj.aggregation.length, pageId, obj.key, obj.aggregation, recipient, token);
+                            saveAiKeyWithoutGetBot(obj.key, pageId, recipient, token, res)
+                            // saveAiKey(obj.key, pageId, recipient, token, res);
+                        } else {
+                            if (obj.key === '') {
+                                getDefaultAnswer(pageId, recipient, token, res);
+                            } else {
+                                // console.log('obj: ', obj);
+                                saveAiKey(obj.key, pageId, recipient, token, res);
+                                saveAggregationObj('', pageId);
+                            }
+                        }
+
+                    } else {
+                        if (obj.key === '') {
+                            getDefaultAnswer(pageId, recipient, token, res);
+                        } else {
+                            // console.log('obj: ', obj);
+                            saveAiKey(obj.key, pageId, recipient, token, res);
+                        }
+                    }
+
+                } catch (error) {
+                    console.log("Error catched ==>", error);
+                    hideLoading(token, recipient);
+                    // res.sendStatus(500);
+                }
+
             }
         }
     );
