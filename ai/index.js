@@ -329,11 +329,15 @@ app.post('/webhook', function (req, res) {
                                                 if (page_id === '474086889694869') {
                                                     page_subscription.reply(messaging.message.quick_reply.payload, messaging.sender.id, page_id, my_token);
                                                 } else {
-                                                    get_tracking_id("", messaging.sender.id, page_id, messaging.message.quick_reply.payload, isPhoneNumber(messaging.message.quick_reply.payload), res);
-                                                    //var token = "";
-                                                    //this is to handle print PAYLOAD to msgr room
-                                                    pixel('QuickReply', messaging.message.text, messaging.message.quick_reply.payload, messaging.sender.id, messaging.recipient.id);
-                                                    getToken(messaging.message.quick_reply.payload, messaging.recipient.id, messaging.sender.id, false);
+                                                    var isPhoneNumber = isPhoneNumber(messaging.message.quick_reply.payload);
+                                                    if (isPhoneNumber) {
+                                                        get_tracking_id("", messaging.sender.id, page_id, messaging.message.quick_reply.payload, isPhoneNumber, res);
+                                                    } else {
+                                                        //var token = "";
+                                                        //this is to handle print PAYLOAD to msgr room
+                                                        pixel('QuickReply', messaging.message.text, messaging.message.quick_reply.payload, messaging.sender.id, messaging.recipient.id);
+                                                        getToken(messaging.message.quick_reply.payload, messaging.recipient.id, messaging.sender.id, false);
+                                                    }
                                                 }
 
                                             }
@@ -1510,7 +1514,7 @@ function clearAiKey(sender) {
 
 function get_tracking_id(aggregation, messenger_id, page_id, textOrPhone, isPhone, res) {
     var agg_obj = "";
-    if(aggregation){
+    if (aggregation) {
         var agg_data = aggregation.split('=');
         agg_obj = agg_data[1].split('&')[0];
     }

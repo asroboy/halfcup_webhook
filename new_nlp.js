@@ -18,8 +18,8 @@ module.exports = {
         getToken(text, pageId, recipient, false, res, 'GET_MERCHANT_ID');
     }, getChatBot: function (key, sender, recipient, res) {
         getToken(key, sender, recipient, false, res, 'GET_CHAT_BOT');
-    }, phoneAction: function (key, sender, recipient, res) {
-        getToken(key, sender, recipient, false, res, 'PHONE_ACTION');
+    }, phoneAction: function (key, pageId, recipient, res) {
+        getToken(key, pageId, recipient, false, res, 'PHONE_ACTION');
     },
 
 
