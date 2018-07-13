@@ -101,9 +101,11 @@ function getToken(text, sender, recipient, isMessageUs, res, action_name) {
                             sendEmailForAi('LIVE Inquiries', message, recipient, 'brotherho@halfcup.com');
                         }
                         else {
-                            getMerchantId(sender, recipient, text, token, res);
                             if (action_name !== 'PHONE_ACTION') {
+                                getMerchantId(sender, recipient, text, token, res);
                                 get_tracking_id("", recipient, text, false);
+                            }else{
+                                getMerchantIdForPhone(sender, recipient, text, token, res)
                             }
                         }
                     }
@@ -488,6 +490,29 @@ function getMerchantId(pageId, recipient, text, token, res) {
         );
     }
 
+}
+
+function getMerchantIdForPhone(pageId, recipient, text, token, res){
+    var url = 'http://halfcup.com/social_rebates_system/wapi/read?api_name=GET_RESTAURANT&token=1234567890&page_id=' + pageId;
+    console.log('# GET MERCHANT ID url', url);
+    request({
+            url: url,
+            method: 'GET'
+        }, function (error, response, body) {
+            if (error) {
+                console.log('Error : ', error);
+            } else if (response.body.error) {
+                console.log('Error: ', response.body.error);
+            } else {
+                var obj = JSON.parse(body);
+                console.log('==> GET MERCHANT ID RESULT: ', JSON.stringify(obj));
+                // res.send(obj);
+                // console.log('obj: ', obj);
+                // if (obj.restaurant_id !== null)
+                getAiToken(pageId, recipient, obj.restaurant_id, text, token, res);
+            }
+        }
+    );
 }
 
 function getAiToken(sender, recipient, restaurantId, text, token, res) {
