@@ -366,7 +366,7 @@ app.post('/webhook', function (req, res) {
                                                     } else {
                                                         var isPhone = isPhoneNumber(request_key);
                                                         if (isPhone) {
-                                                            get_tracking_id("", messaging.recipient.id, messaging.sender.id, request_key, isPhone, res);
+                                                            get_tracking_id("",  messaging.sender.id, messaging.recipient.id,request_key, isPhone, res);
                                                         } else {
                                                             new_nlp.getMerchantId(messaging.recipient.id, messaging.sender.id, request_key, res);
 

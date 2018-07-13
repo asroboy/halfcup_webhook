@@ -22,8 +22,8 @@
       <file leaf-file-name="index.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/ai/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="231">
-              <caret line="368" column="136" lean-forward="false" selection-start-line="368" selection-start-column="136" selection-end-line="368" selection-end-column="136" />
+            <state relative-caret-position="180">
+              <caret line="368" column="125" lean-forward="false" selection-start-line="368" selection-start-column="125" selection-end-line="368" selection-end-column="125" />
               <folding>
                 <element signature="e#1829#3077#0" expanded="false" />
                 <element signature="e#3981#6563#0" expanded="false" />
@@ -378,7 +378,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>save_tracking_id</find>
       <find>for</find>
       <find>v3.0</find>
       <find>http://halfcup.com/social_rebates_system/trueMoneyApi/saveOrUpdate</find>
@@ -398,7 +397,6 @@
       <find>action_name</find>
       <find>GET_CHAT_BOT</find>
       <find>getToken</find>
-      <find>get_tracking_id</find>
       <find>getPageMessengerToken</find>
       <find>getMerchantIdForPhone</find>
       <find>getAiToken</find>
@@ -408,6 +406,8 @@
       <find>TEXT ========================================&gt;</find>
       <find>isPhoneNumber</find>
       <find>getMerchantId</find>
+      <find>===== messaging.message.text ========</find>
+      <find>get_tracking_id</find>
     </findStrings>
     <replaceStrings>
       <replace>localhost:8080</replace>
@@ -830,12 +830,12 @@
       <workItem from="1530669275430" duration="25123000" />
       <workItem from="1530964719172" duration="22428000" />
       <workItem from="1531303102432" duration="8953000" />
-      <workItem from="1531377379339" duration="7450000" />
+      <workItem from="1531377379339" duration="7717000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="905469000" />
+    <option name="totallyTimeSpent" value="905736000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1524,8 +1524,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/ai/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="368" column="136" lean-forward="false" selection-start-line="368" selection-start-column="136" selection-end-line="368" selection-end-column="136" />
+        <state relative-caret-position="180">
+          <caret line="368" column="125" lean-forward="false" selection-start-line="368" selection-start-column="125" selection-end-line="368" selection-end-column="125" />
           <folding>
             <element signature="e#1829#3077#0" expanded="false" />
             <element signature="e#3981#6563#0" expanded="false" />
