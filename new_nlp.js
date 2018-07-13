@@ -16,10 +16,12 @@ module.exports = {
         getToken(message.text, pageId, userId, false, res, 'HANDLE_MESSAGE');
     }, getMerchantId: function (pageId, recipient, text, res) {
         getToken(text, pageId, recipient, false, res, 'GET_MERCHANT_ID');
-    },
-    getChatBot: function (key, sender, recipient, res) {
+    }, getChatBot: function (key, sender, recipient, res) {
         getToken(key, sender, recipient, false, res, 'GET_CHAT_BOT');
+    }, phoneAction: function (key, sender, recipient, res) {
+        getToken(key, sender, recipient, false, res, 'PHONE_ACTION');
     },
+
 
 };
 
@@ -98,10 +100,11 @@ function getToken(text, sender, recipient, isMessageUs, res, action_name) {
                             //audreychen531@yahoo.com.sg
                             sendEmailForAi('LIVE Inquiries', message, recipient, 'brotherho@halfcup.com');
                         }
-
                         else {
                             getMerchantId(sender, recipient, text, token, res);
-                            get_tracking_id("", recipient, text, false);
+                            if (action_name !== 'PHONE_ACTION') {
+                                get_tracking_id("", recipient, text, false);
+                            }
                         }
                     }
 
@@ -1352,7 +1355,7 @@ function register_tracking_phone(tracking_id, phone) {
 
 function get_tracking_id(aggregation, messenger_id, textOrPhone, isPhone) {
     var agg_obj = "";
-    if(aggregation){
+    if (aggregation) {
         var agg_data = aggregation.split('=');
         agg_obj = agg_data[1].split('&')[0];
     }

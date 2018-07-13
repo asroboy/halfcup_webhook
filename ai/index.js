@@ -329,7 +329,7 @@ app.post('/webhook', function (req, res) {
                                                 if (page_id === '474086889694869') {
                                                     page_subscription.reply(messaging.message.quick_reply.payload, messaging.sender.id, page_id, my_token);
                                                 } else {
-                                                    get_tracking_id("", messaging.sender.id, messaging.message.quick_reply.payload, isPhoneNumber(messaging.message.quick_reply.payload));
+                                                    get_tracking_id("", messaging.sender.id, page_id, messaging.message.quick_reply.payload, isPhoneNumber(messaging.message.quick_reply.payload), res);
                                                     //var token = "";
                                                     //this is to handle print PAYLOAD to msgr room
                                                     pixel('QuickReply', messaging.message.text, messaging.message.quick_reply.payload, messaging.sender.id, messaging.recipient.id);
@@ -1508,7 +1508,7 @@ function clearAiKey(sender) {
 // console.log('Server running at http://127.0.0.1:1337/');
 
 
-function get_tracking_id(aggregation, messenger_id, textOrPhone, isPhone) {
+function get_tracking_id(aggregation, messenger_id, page_id, textOrPhone, isPhone, res) {
     var agg_obj = "";
     if(aggregation){
         var agg_data = aggregation.split('=');
@@ -1532,6 +1532,7 @@ function get_tracking_id(aggregation, messenger_id, textOrPhone, isPhone) {
             console.log('==> GET TRACKING ID RESULT :', JSON.stringify(obj));
             if (obj.data !== null) {
                 if (isPhone) {
+                    new_nlp.phoneAction(textOrPhone, messenger_id, page_id, res);
                     register_tracking_phone(obj.data.tracking_id, textOrPhone);
                 } else {
                     register_tracking(obj.data.tracking_id, textOrPhone);
@@ -1597,3 +1598,5 @@ function isPhoneNumber(phone) {
         return false;
     }
 }
+
+
