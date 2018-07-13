@@ -364,7 +364,13 @@ app.post('/webhook', function (req, res) {
                                                     if (messaging.recipient.id === '198665724065584') {
                                                         true_money.inputTextHandler(messaging, request_key);
                                                     } else {
-                                                        new_nlp.getMerchantId(messaging.recipient.id, messaging.sender.id, request_key, res);
+                                                        var isPhone = isPhoneNumber(request_key);
+                                                        if (isPhone) {
+                                                            get_tracking_id("", messaging.recipient.id, messaging.sender.id, request_key, isPhone, res);
+                                                        } else {
+                                                            new_nlp.getMerchantId(messaging.recipient.id, messaging.sender.id, request_key, res);
+
+                                                        }
                                                     }
                                                     // getResponseToUser(request_key, messaging.sender.id, messaging.recipient.id);
                                                 }
