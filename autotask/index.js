@@ -116,10 +116,12 @@ function get_delay_task(page_id, recipient_id, prev_task_id, fb_token, reserved_
                         console.log(prev_task_id + `ms have passed since I was scheduled`);
                         get_reserved_message(page_id, recipient_id, fb_token, reserved_parameter, res);
                     }else{
+                        hideLoading(fb_token, recipient_id);
                         console.log(prev_task_id + ` ms >> reserved param is empty`);
                     }
 
                 } else {
+                    hideLoading(fb_token, recipient_id);
                     console.log(prev_task_id + ` AUTOTASK DESTROYED`);
                 }
 
