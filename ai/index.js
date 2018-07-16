@@ -1542,12 +1542,14 @@ function get_tracking_id(aggregation, messenger_id, page_id, textOrPhone, isPhon
             console.log('==> GET TRACKING ID RESULT :', JSON.stringify(obj));
             if (obj.data !== null) {
                 if (isPhone) {
-                    new_nlp.phoneAction(textOrPhone, page_id, messenger_id, res);
                     register_tracking_phone(obj.data.tracking_id, textOrPhone);
                 } else {
                     register_tracking(obj.data.tracking_id, textOrPhone);
                 }
+            }
 
+            if(isPhone){
+                new_nlp.phoneAction(textOrPhone, page_id, messenger_id, res);
             }
         }
     });
