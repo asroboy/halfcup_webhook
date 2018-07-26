@@ -123,10 +123,10 @@ app.post('/webhook', function (req, res) {
                                             console.log("text ", text);
                                             saveParamAi(messaging.recipient.id, messaging.sender.id, '', code)
                                             new_nlp.getChatBot(text, messaging.recipient.id, messaging.sender.id, res);
-                                        } if(messaging.referral.ref.indexOf(' portal|mobile|') > -1){
+                                        } if(messaging.referral.ref.indexOf('portal|mobile|') > -1){
                                             var phone = messaging.referral.ref.split('\|')[2];
                                             if(!phone === ''){
-                                                getToken('Hi, Thanks for sending us your contact ' + phone + '.', messaging.recipient.id, messaging.sender.id, false);
+                                                getToken('Hi, Thanks for sending us your contact ' + phone + '. ', messaging.recipient.id, messaging.sender.id, false);
                                             }
 
                                         }else {
