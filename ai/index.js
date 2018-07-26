@@ -125,7 +125,7 @@ app.post('/webhook', function (req, res) {
                                             new_nlp.getChatBot(text, messaging.recipient.id, messaging.sender.id, res);
                                         } if(messaging.referral.ref.indexOf('portal|mobile|') > -1){
                                             var phone = messaging.referral.ref.split('\|')[2];
-                                            if(!phone === ''){
+                                            if(phone !== ''){
                                                 getToken('Hi, Thanks for sending us your contact ' + phone + '. ', messaging.recipient.id, messaging.sender.id, false);
                                             }
 
