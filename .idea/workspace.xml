@@ -23,23 +23,22 @@
       <file leaf-file-name="index.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/ai/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="132" column="108" lean-forward="false" selection-start-line="132" selection-start-column="108" selection-end-line="132" selection-end-column="108" />
+            <state relative-caret-position="77">
+              <caret line="63" column="72" lean-forward="false" selection-start-line="63" selection-start-column="72" selection-end-line="63" selection-end-column="72" />
               <folding>
-                <element signature="e#1829#3077#0" expanded="false" />
-                <element signature="e#4796#5437#0" expanded="false" />
-                <element signature="e#7833#9349#0" expanded="false" />
-                <element signature="e#9441#12611#0" expanded="false" />
-                <element signature="e#16407#17083#0" expanded="false" />
-                <element signature="e#17480#20190#0" expanded="false" />
-                <element signature="e#20708#20912#0" expanded="false" />
-                <element signature="e#21027#21381#0" expanded="false" />
-                <element signature="e#27400#28331#0" expanded="false" />
-                <element signature="e#28603#39635#0" expanded="false" />
+                <element signature="e#4812#5453#0" expanded="false" />
+                <element signature="e#7849#9365#0" expanded="false" />
+                <element signature="e#9457#12627#0" expanded="false" />
+                <element signature="e#16423#17099#0" expanded="false" />
+                <element signature="e#17496#20206#0" expanded="false" />
+                <element signature="e#20724#20928#0" expanded="false" />
+                <element signature="e#21043#21397#0" expanded="false" />
+                <element signature="e#27416#28347#0" expanded="false" />
+                <element signature="e#28619#39651#0" expanded="false" />
                 <element signature="n#!!block;n#keyIndexAction#0" expanded="false" />
                 <element signature="n#!!block;n#validateSamples#0" expanded="false" />
-                <element signature="e#47934#48064#0" expanded="false" />
-                <element signature="e#48105#48269#0" expanded="false" />
+                <element signature="e#47950#48080#0" expanded="false" />
+                <element signature="e#48121#48285#0" expanded="false" />
                 <element signature="n#!!block;n#looper#0" expanded="false" />
                 <element signature="n#!!block;n#callback#0" expanded="false" />
                 <element signature="n#!!block;n#helooTest#0" expanded="false" />
@@ -52,7 +51,7 @@
       <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
+            <state relative-caret-position="10489">
               <caret line="617" column="80" lean-forward="false" selection-start-line="617" selection-start-column="60" selection-end-line="617" selection-end-column="80" />
               <folding />
             </state>
@@ -489,6 +488,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -515,8 +516,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -842,12 +841,14 @@
       <workItem from="1532562711355" duration="5189000" />
       <workItem from="1533201189383" duration="1311000" />
       <workItem from="1533612887135" duration="1519000" />
-      <workItem from="1533616679557" duration="1032000" />
+      <workItem from="1533616679557" duration="1780000" />
+      <workItem from="1533661406595" duration="1123000" />
+      <workItem from="1533861445741" duration="206000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="920676000" />
+    <option name="totallyTimeSpent" value="922753000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -866,10 +867,10 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32850242" sideWeight="0.5029762" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="NativeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32956383" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3252818" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.53796446" sideWeight="0.4940476" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.17708333" sideWeight="0.56785715" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5024233" sideWeight="0.4940476" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22180167" sideWeight="0.43369177" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.53796446" sideWeight="0.4940476" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.5024233" sideWeight="0.4940476" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22937168" sideWeight="0.43369177" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Nativescript Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.48638132" order="1" side_tool="false" content_ui="tabs" />
@@ -1527,7 +1528,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
+        <state relative-caret-position="10489">
           <caret line="617" column="80" lean-forward="false" selection-start-line="617" selection-start-column="60" selection-end-line="617" selection-end-column="80" />
           <folding />
         </state>
@@ -1535,23 +1536,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/ai/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="132" column="108" lean-forward="false" selection-start-line="132" selection-start-column="108" selection-end-line="132" selection-end-column="108" />
+        <state relative-caret-position="77">
+          <caret line="63" column="72" lean-forward="false" selection-start-line="63" selection-start-column="72" selection-end-line="63" selection-end-column="72" />
           <folding>
-            <element signature="e#1829#3077#0" expanded="false" />
-            <element signature="e#4796#5437#0" expanded="false" />
-            <element signature="e#7833#9349#0" expanded="false" />
-            <element signature="e#9441#12611#0" expanded="false" />
-            <element signature="e#16407#17083#0" expanded="false" />
-            <element signature="e#17480#20190#0" expanded="false" />
-            <element signature="e#20708#20912#0" expanded="false" />
-            <element signature="e#21027#21381#0" expanded="false" />
-            <element signature="e#27400#28331#0" expanded="false" />
-            <element signature="e#28603#39635#0" expanded="false" />
+            <element signature="e#4812#5453#0" expanded="false" />
+            <element signature="e#7849#9365#0" expanded="false" />
+            <element signature="e#9457#12627#0" expanded="false" />
+            <element signature="e#16423#17099#0" expanded="false" />
+            <element signature="e#17496#20206#0" expanded="false" />
+            <element signature="e#20724#20928#0" expanded="false" />
+            <element signature="e#21043#21397#0" expanded="false" />
+            <element signature="e#27416#28347#0" expanded="false" />
+            <element signature="e#28619#39651#0" expanded="false" />
             <element signature="n#!!block;n#keyIndexAction#0" expanded="false" />
             <element signature="n#!!block;n#validateSamples#0" expanded="false" />
-            <element signature="e#47934#48064#0" expanded="false" />
-            <element signature="e#48105#48269#0" expanded="false" />
+            <element signature="e#47950#48080#0" expanded="false" />
+            <element signature="e#48121#48285#0" expanded="false" />
             <element signature="n#!!block;n#looper#0" expanded="false" />
             <element signature="n#!!block;n#callback#0" expanded="false" />
             <element signature="n#!!block;n#helooTest#0" expanded="false" />

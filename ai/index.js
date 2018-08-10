@@ -61,7 +61,7 @@ app.post('/webhook', function (req, res) {
                 if (field == "leadgen") {
                     var value = req.body.entry[0].changes[0].value;
 
-                    console.log("leadgen value " + value);
+                    console.log("leadgen value " + JSON.stringify(value));
                     var adId = value.ad_id;
                     var formId = value.form_id;
                     var leadgenId = value.leadgen_id;
