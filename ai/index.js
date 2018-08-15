@@ -938,12 +938,13 @@ function getPageAccessTokenForLead(sender, message, leadgenId, emailMessage) {
                 var code = obj.code;
                 if (code == 1) {
                     var token = obj.messenger_data.pageAccessToken;
+                    var email = obj.email;
                     var recipientId = obj.messenger_data.adminMessengerId;
                     // var longLiveToken = "EAABqJD84pmIBAP4xtPj3NTLfCzWp17iZByoFndpbnEq79ZAOGs7XdF5YMO5i1GgQ3zHex200f2uvLHWqzFxRk0RrC1jV7RZBZAqtU2mLluefhmexnX7SSnTP63Hy2x3AAvv5FgkU48FE95fpj7c8ZBREHJIVBYg4ZD";
                     var longLiveToken = "EAABqJD84pmIBAP6U37LseOrNLP6Xt13zCRR8dUCcNS4T1tKFQd8JZAyGQJOPq4mOfHazyppWRGYQaO2aaT1vQA4HNSEu10D6CgH220ND9ecweec3WOMGsvbIMv1gzJI5NrYXRKf5Nqmc8o9cfJdG9eBeU1UZBuOK2iSZCBlogZDZD";
                     var urlGetLead = "https://graph.facebook.com/v2.9/" + leadgenId + "?access_token=" + token;
                     console.log("LEAD URL " + urlGetLead);
-                    getLead(urlGetLead, token, message, recipientId, sender, emailMessage)
+                    getLead(urlGetLead, token, message, recipientId, sender, emailMessage, email);
                     return token;
 
                 }
@@ -958,7 +959,7 @@ function getPageAccessTokenForLead(sender, message, leadgenId, emailMessage) {
 }
 
 
-function getLead(url, token, message, recipientId, sender, emailMessage) {
+function getLead(url, token, message, recipientId, sender, emailMessage, email) {
     console.log("get lead url : " + url);
     request({
             url: url,
@@ -1000,10 +1001,10 @@ function getLead(url, token, message, recipientId, sender, emailMessage) {
                     var myEscapedJSONString = js_.escapeSpecialChars();
                     myEscapedJSONString = myEscapedJSONString.replace(/\\\\n/g, "\\n");
                     console.log("TEXT ==> " + myEscapedJSONString);
-                    sendMessage(recipientId, msg, token);
+                    // sendMessage(recipientId, msg, token);
 
 
-                    sendEmailForLead(emailMessage, sender)
+                    sendEmailForLead(emailMessage, sender, email);
                 }
 
             }
@@ -1178,7 +1179,7 @@ function sendEmail(message, page_id, email) {
     });
 }
 
-function sendEmailForLead(message, page_id) {
+function sendEmailForLead(message, page_id, email) {
     var longLiveToken = "EAABqJD84pmIBAP6U37LseOrNLP6Xt13zCRR8dUCcNS4T1tKFQd8JZAyGQJOPq4mOfHazyppWRGYQaO2aaT1vQA4HNSEu10D6CgH220ND9ecweec3WOMGsvbIMv1gzJI5NrYXRKf5Nqmc8o9cfJdG9eBeU1UZBuOK2iSZCBlogZDZD";
     var graphUrl = "https://graph.facebook.com/v2.10/" + page_id + "?access_token=" + longLiveToken;
     request({
@@ -1203,9 +1204,10 @@ function sendEmailForLead(message, page_id) {
             //brotherho@halfcup.com
             //asrofiridho@gmail.com
 
-            var url = 'http://halfcup.com/social_rebates_system/api/sendEmail?' +
+            //sendEmail sendMultipleEmail for multiple target
+            var url = 'http://halfcup.com/social_rebates_system/api/sendMultipleEmail?' +
                 'sender=noreply@halfcup.com' +
-                '&receiver=brotherho@halfcup.com' +
+                '&receiver=asrofiridho@gmail.com,asrofi_ridho@yahoo.com' +
                 '&subject=NEW LEAD RECIEVED : ' + JSON.parse(body).name +
                 '&body=' + message;
             console.log('url', url);
