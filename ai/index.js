@@ -1215,7 +1215,7 @@ function sendEmailForLead(message, page_id, email) {
             //sendEmail sendMultipleEmail for multiple target
             var url = 'http://halfcup.com/social_rebates_system/api/sendMultipleEmail?' +
                 'sender=noreply@halfcup.com' +
-                '&receiver=brotherho@halfcup.com,'+email
+                '&receiver=brotherho@halfcup.com,'+ email +
                 '&subject=NEW LEAD RECIEVED'+
                 '&body=' + message;
             console.log('url', url);
