@@ -944,6 +944,11 @@ function getPageAccessTokenForLead(sender, message, leadgenId, emailMessage) {
                     var longLiveToken = "EAABqJD84pmIBAP6U37LseOrNLP6Xt13zCRR8dUCcNS4T1tKFQd8JZAyGQJOPq4mOfHazyppWRGYQaO2aaT1vQA4HNSEu10D6CgH220ND9ecweec3WOMGsvbIMv1gzJI5NrYXRKf5Nqmc8o9cfJdG9eBeU1UZBuOK2iSZCBlogZDZD";
                     var urlGetLead = "https://graph.facebook.com/v2.9/" + leadgenId + "?access_token=" + token;
                     console.log("LEAD URL " + urlGetLead);
+                    emailMessage = emailMessage + "<br/>Agent Name: " +  obj.restaurant_name
+                        + "<br/>Agent Email: " +  email
+                        + "<br/>Page ID: " +  sender
+                        + "<br/>Page Name: " +  obj.page_name
+
                     getLead(urlGetLead, token, message, recipientId, sender, emailMessage, email);
                     return token;
 
