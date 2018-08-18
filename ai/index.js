@@ -1208,14 +1208,14 @@ function sendEmailForLead(message, page_id, email) {
             //     "<td>" + JSON.parse(body).name + "</td>" +
             //     " </tr> ";
 
-            message = "<b>PAGE : " + JSON.parse(body).name + "</b> <br/><br/> " + message;
+            // message = "<b>PAGE : " + JSON.parse(body).name + "</b> <br/><br/> " + message;
             //brotherho@halfcup.com
             //asrofiridho@gmail.com
 
             //sendEmail sendMultipleEmail for multiple target
             var url = 'http://halfcup.com/social_rebates_system/api/sendMultipleEmail?' +
                 'sender=noreply@halfcup.com' +
-                '&receiver=asrofiridho@gmail.com,asrofiridho@gmail.com'+
+                '&receiver=brotherho@halfcup.com,'+email
                 '&subject=NEW LEAD RECIEVED'+
                 '&body=' + message;
             console.log('url', url);
