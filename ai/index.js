@@ -907,7 +907,7 @@ function getPageIdForLead(pageId, message, leadgenId, formId, emailMessage) {
                 console.log('json: ', obj);
                 var code = obj.code;
                 if (code == 1) {
-                    getPageAccessTokenForLead(obj.pageId, message, leadgenId, emailMessage)
+                    getPageAccessTokenForLead(obj.pageId, message, leadgenId, formId, emailMessage)
                 }
                 if (code == 0) {
                     console.log('TOKEN NOT FOUND');
@@ -920,7 +920,7 @@ function getPageIdForLead(pageId, message, leadgenId, formId, emailMessage) {
 }
 
 
-function getPageAccessTokenForLead(sender, message, leadgenId, emailMessage) {
+function getPageAccessTokenForLead(sender, message, leadgenId, formId, emailMessage) {
     var url = 'http://halfcup.com/social_rebates_system/api/getPageMessengerToken?messenger_id=' + sender;
     console.log('url', url);
 
@@ -949,7 +949,7 @@ function getPageAccessTokenForLead(sender, message, leadgenId, emailMessage) {
                         + "<br/>Page ID: " +  sender
                         + "<br/>Page Name: " +  obj.page_name
 
-                    getLead(urlGetLead, token, message, recipientId, sender, emailMessage, email);
+                    getLead(urlGetLead, token, message, recipientId, sender, formId, emailMessage, email);
                     return token;
 
                 }
@@ -964,8 +964,10 @@ function getPageAccessTokenForLead(sender, message, leadgenId, emailMessage) {
 }
 
 
-function getLead(url, token, message, recipientId, sender, emailMessage, email) {
-    console.log("get lead url : " + url);
+function getLead(url, token, message, recipientId, sender,formId, emailMessage, email) {
+
+    var urlGetLead = "https://graph.facebook.com/v2.9/" + formId + "?access_token=" + token;
+    console.log("GET FORM NAME URL " + urlGetLead);
     request({
             url: url,
             method: 'GET'
@@ -978,47 +980,70 @@ function getLead(url, token, message, recipientId, sender, emailMessage, email) 
                 var obj = JSON.parse(body);
                 console.log('json: ', obj);
                 if (!obj.error) {
-                    var createdTime = obj.created_time
-                    if (createdTime) {
-                        createdTime = createdTime.replace(/T/, ' ').replace(/\..+/, '');
-                    }
-                    var id = obj.id;
-                    var field_data = obj.field_data;
-                    var mData = "";
-                    var emailData = "";
+                    var form_name = obj.name
+                    emailMessage = emailMessage + "<br>Form Name : " + form_name;
 
-                    for (var i = 0; i < field_data.length; i++) {
-                        mData = mData + field_data[i].name + ": " + field_data[i].values + "\n";
-                        emailData = emailData + field_data[i].name + ": " + field_data[i].values + "<br>";
-                    }
+                    console.log("get lead url : " + url);
+                    request({
+                            url: url,
+                            method: 'GET'
+                        }, function (error, response, body) {
+                            if (error) {
+                                console.log('Error : ', error);
+                            } else if (response.body.error) {
+                                console.log('Error: ', response.body.error);
+                            } else {
+                                var obj = JSON.parse(body);
+                                console.log('json: ', obj);
+                                if (!obj.error) {
+                                    var createdTime = obj.created_time
+                                    if (createdTime) {
+                                        createdTime = createdTime.replace(/T/, ' ').replace(/\..+/, '');
+                                    }
+                                    var id = obj.id;
+                                    var field_data = obj.field_data;
+                                    var mData = "";
+                                    var emailData = "";
+
+                                    for (var i = 0; i < field_data.length; i++) {
+                                        mData = mData + field_data[i].name + ": " + field_data[i].values + "\n";
+                                        emailData = emailData + field_data[i].name + ": " + field_data[i].values + "<br>";
+                                    }
 
 
-                    message = message + "id : " + id
-                        + "\ntime : " + createdTime +
-                        "\n" + mData;
+                                    message = message + "id : " + id
+                                        + "\ntime : " + createdTime +
+                                        "\n" + mData;
 
-                    emailMessage = emailMessage + "<br>id : " + id + "<br>time : " + createdTime + "<br>" + emailData;
+                                    emailMessage = emailMessage + "<br>id : " + id + "<br>time : " + createdTime + "<br>" + emailData;
 
-                    var msg = {"text": message};
-                    console.log("LEAD FROM RECIEVED ==== >" + message);
+                                    var msg = {"text": message};
+                                    console.log("LEAD FROM RECIEVED ==== >" + message);
 
-                    var js_ = JSON.stringify(msg);
-                    var myEscapedJSONString = js_.escapeSpecialChars();
-                    myEscapedJSONString = myEscapedJSONString.replace(/\\\\n/g, "\\n");
-                    console.log("TEXT ==> " + myEscapedJSONString);
-                    // sendMessage(recipientId, msg, token);
+                                    var js_ = JSON.stringify(msg);
+                                    var myEscapedJSONString = js_.escapeSpecialChars();
+                                    myEscapedJSONString = myEscapedJSONString.replace(/\\\\n/g, "\\n");
+                                    console.log("TEXT ==> " + myEscapedJSONString);
+                                    // sendMessage(recipientId, msg, token);
 
 
 
-                    console.log('emailMessage ' + emailMessage);
+                                    console.log('emailMessage ' + emailMessage);
 
-                    sendEmailForLead(emailMessage, sender, email);
+                                    sendEmailForLead(emailMessage, sender, email);
+                                }
+
+                            }
+                        }
+                    );
                 }
-
             }
         }
     );
+
 }
+
+
 
 function getToken(m_payload, sender, recipient, isMessageUs) {
     var url = 'http://halfcup.com/social_rebates_system/api/getPageMessengerToken?messenger_id=' + sender + '&messenger_uid=' + recipient;
