@@ -969,7 +969,7 @@ function getLead(url, token, message, recipientId, sender,formId, emailMessage, 
     var urlGetLead = "https://graph.facebook.com/v2.9/" + formId + "?access_token=" + token;
     console.log("GET FORM NAME URL " + urlGetLead);
     request({
-            url: url,
+            url: urlGetLead,
             method: 'GET'
         }, function (error, response, body) {
             if (error) {

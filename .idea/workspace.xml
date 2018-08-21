@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8c0fd527-5667-4e03-89ee-e95c0bdc3c27" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/ai/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/ai/index.js" afterDir="false" />
-    </list>
+    <list default="true" id="8c0fd527-5667-4e03-89ee-e95c0bdc3c27" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -49,8 +47,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/ai/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="384">
-              <caret line="996" column="74" selection-start-line="996" selection-start-column="74" selection-end-line="996" selection-end-column="74" />
+            <state relative-caret-position="187">
+              <caret line="971" column="27" selection-start-line="971" selection-start-column="27" selection-end-line="971" selection-end-column="27" />
               <folding>
                 <element signature="e#4812#5453#0" />
                 <element signature="e#7849#9365#0" />
@@ -823,12 +821,12 @@
       <workItem from="1534379178034" duration="1407000" />
       <workItem from="1534580659672" duration="3228000" />
       <workItem from="1534818299616" duration="1584000" />
-      <workItem from="1534821311231" duration="1896000" />
+      <workItem from="1534821311231" duration="2052000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="945360000" />
+    <option name="totallyTimeSpent" value="945516000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -991,8 +989,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/ai/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="384">
-          <caret line="996" column="74" selection-start-line="996" selection-start-column="74" selection-end-line="996" selection-end-column="74" />
+        <state relative-caret-position="187">
+          <caret line="971" column="27" selection-start-line="971" selection-start-column="27" selection-end-line="971" selection-end-column="27" />
           <folding>
             <element signature="e#4812#5453#0" />
             <element signature="e#7849#9365#0" />
