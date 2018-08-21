@@ -978,7 +978,7 @@ function getLead(url, token, message, recipientId, sender,formId, emailMessage, 
                 console.log('Error: ', response.body.error);
             } else {
                 var obj = JSON.parse(body);
-                console.log('json: ', obj);
+                console.log('json: ', JSON.stringify(obj));
                 if (!obj.error) {
                     var form_name = obj.name
                     emailMessage = emailMessage + "<br>Form Name : " + form_name;
@@ -994,7 +994,7 @@ function getLead(url, token, message, recipientId, sender,formId, emailMessage, 
                                 console.log('Error: ', response.body.error);
                             } else {
                                 var obj = JSON.parse(body);
-                                console.log('json: ', obj);
+                                console.log('json: ',  JSON.stringify(obj));
                                 if (!obj.error) {
                                     var createdTime = obj.created_time
                                     if (createdTime) {
