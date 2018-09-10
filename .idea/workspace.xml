@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8c0fd527-5667-4e03-89ee-e95c0bdc3c27" name="Default" comment="" />
+    <list default="true" id="8c0fd527-5667-4e03-89ee-e95c0bdc3c27" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -15,16 +17,20 @@
     <session id="1065562524">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="7" />
+          <entry key="project.closed" value="12" />
+          <entry key="project.open.time.1" value="1" />
           <entry key="project.open.time.10" value="1" />
           <entry key="project.open.time.109" value="1" />
+          <entry key="project.open.time.11" value="1" />
           <entry key="project.open.time.12" value="1" />
+          <entry key="project.open.time.13" value="1" />
           <entry key="project.open.time.135" value="1" />
-          <entry key="project.open.time.14" value="1" />
+          <entry key="project.open.time.14" value="2" />
           <entry key="project.open.time.17" value="1" />
           <entry key="project.open.time.3" value="1" />
           <entry key="project.open.time.4" value="2" />
-          <entry key="project.opened" value="9" />
+          <entry key="project.open.time.59" value="1" />
+          <entry key="project.opened" value="14" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
@@ -44,10 +50,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ai/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
+            <state relative-caret-position="8789">
               <caret line="971" column="27" selection-start-line="971" selection-start-column="27" selection-end-line="971" selection-end-column="27" />
               <folding>
                 <element signature="e#4812#5453#0" />
@@ -90,11 +96,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/new_nlp.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="20" column="18" selection-start-line="20" selection-start-column="7" selection-end-line="20" selection-end-column="18" />
+            <state relative-caret-position="70">
+              <caret line="402" column="13" selection-start-line="402" selection-start-column="13" selection-end-line="402" selection-end-column="13" />
               <folding>
                 <element signature="e#0#42#0" />
                 <element signature="e#86#689#0" />
@@ -151,11 +157,8 @@
                 <element signature="e#15345#15425#0" />
                 <element signature="e#15634#15941#0" />
                 <element signature="e#15722#15796#0" />
-                <element signature="e#16179#17973#0" />
                 <element signature="e#16208#16345#0" />
                 <element signature="e#16376#16511#0" />
-                <element signature="e#16517#17959#0" />
-                <element signature="e#16544#17733#0" />
                 <element signature="e#16799#17600#0" />
                 <element signature="e#16829#16866#0" />
                 <element signature="e#17606#17710#0" />
@@ -504,7 +507,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -536,6 +538,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -821,12 +824,17 @@
       <workItem from="1534379178034" duration="1407000" />
       <workItem from="1534580659672" duration="3228000" />
       <workItem from="1534818299616" duration="1584000" />
-      <workItem from="1534821311231" duration="2052000" />
+      <workItem from="1534821311231" duration="2762000" />
+      <workItem from="1534836406471" duration="442000" />
+      <workItem from="1535006301360" duration="1080000" />
+      <workItem from="1535011548682" duration="1983000" />
+      <workItem from="1535019711462" duration="1354000" />
+      <workItem from="1536121779406" duration="1542000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="945516000" />
+    <option name="totallyTimeSpent" value="952627000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -839,7 +847,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.43369177" visible="true" weight="0.14285715" />
       <window_info id="Structure" order="1" sideWeight="0.48638132" weight="0.25" />
@@ -856,7 +863,7 @@
       <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.5029762" side_tool="true" weight="0.32850242" />
       <window_info anchor="bottom" id="NativeScript" order="9" weight="0.32956383" />
       <window_info anchor="bottom" id="Version Control" order="10" weight="0.3252818" />
-      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.4940476" weight="0.8711755" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="11" sideWeight="0.4940476" visible="true" weight="0.5845411" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -989,7 +996,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/ai/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
+        <state relative-caret-position="8789">
           <caret line="971" column="27" selection-start-line="971" selection-start-column="27" selection-end-line="971" selection-end-column="27" />
           <folding>
             <element signature="e#4812#5453#0" />
@@ -1027,10 +1034,27 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/page_msg_subs/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4199">
+          <caret line="247" column="60" selection-start-line="247" selection-start-column="60" selection-end-line="247" selection-end-column="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/autotask/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1717">
+          <caret line="101" column="25" selection-start-line="101" selection-start-column="25" selection-end-line="101" selection-end-column="25" />
+          <folding>
+            <element signature="e#6482#13432#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/new_nlp.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="20" column="18" selection-start-line="20" selection-start-column="7" selection-end-line="20" selection-end-column="18" />
+        <state relative-caret-position="70">
+          <caret line="402" column="13" selection-start-line="402" selection-start-column="13" selection-end-line="402" selection-end-column="13" />
           <folding>
             <element signature="e#0#42#0" />
             <element signature="e#86#689#0" />
@@ -1087,11 +1111,8 @@
             <element signature="e#15345#15425#0" />
             <element signature="e#15634#15941#0" />
             <element signature="e#15722#15796#0" />
-            <element signature="e#16179#17973#0" />
             <element signature="e#16208#16345#0" />
             <element signature="e#16376#16511#0" />
-            <element signature="e#16517#17959#0" />
-            <element signature="e#16544#17733#0" />
             <element signature="e#16799#17600#0" />
             <element signature="e#16829#16866#0" />
             <element signature="e#17606#17710#0" />
@@ -1303,23 +1324,6 @@
             <element signature="e#64424#64494#0" />
             <element signature="e#64525#64593#0" />
             <element signature="e#64599#64729#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/page_msg_subs/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4199">
-          <caret line="247" column="60" selection-start-line="247" selection-start-column="60" selection-end-line="247" selection-end-column="60" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/autotask/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1717">
-          <caret line="101" column="25" selection-start-line="101" selection-start-column="25" selection-end-line="101" selection-end-column="25" />
-          <folding>
-            <element signature="e#6482#13432#0" />
           </folding>
         </state>
       </provider>
