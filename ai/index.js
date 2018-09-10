@@ -1030,7 +1030,7 @@ function getLead(url, token, message, recipientId, sender,formId, emailMessage, 
 
                                     console.log('emailMessage ' + emailMessage);
 
-                                    sendEmailForLead(emailMessage, sender, email);
+                                    sendEmailForLead(emailMessage, sender, email, token);
                                 }
 
                             }
@@ -1212,8 +1212,8 @@ function sendEmail(message, page_id, email) {
     });
 }
 
-function sendEmailForLead(message, page_id, email) {
-    var longLiveToken = "EAABqJD84pmIBAP6U37LseOrNLP6Xt13zCRR8dUCcNS4T1tKFQd8JZAyGQJOPq4mOfHazyppWRGYQaO2aaT1vQA4HNSEu10D6CgH220ND9ecweec3WOMGsvbIMv1gzJI5NrYXRKf5Nqmc8o9cfJdG9eBeU1UZBuOK2iSZCBlogZDZD";
+function sendEmailForLead(message, page_id, email, longLiveToken) {
+    // var longLiveToken = "EAABqJD84pmIBAP6U37LseOrNLP6Xt13zCRR8dUCcNS4T1tKFQd8JZAyGQJOPq4mOfHazyppWRGYQaO2aaT1vQA4HNSEu10D6CgH220ND9ecweec3WOMGsvbIMv1gzJI5NrYXRKf5Nqmc8o9cfJdG9eBeU1UZBuOK2iSZCBlogZDZD";
     var graphUrl = "https://graph.facebook.com/v2.10/" + page_id + "?access_token=" + longLiveToken;
     request({
         url: graphUrl,
