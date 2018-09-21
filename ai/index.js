@@ -1242,7 +1242,7 @@ function sendEmailForLead(message, page_id, email, longLiveToken) {
                 'sender=noreply@halfcup.com' +
                 '&receiver=brotherho@halfcup.com,'+ email + ',asrofiridho@gmail.com'+
                 '&subject=NEW LEAD RECIEVED'+
-                '&body=' + message;
+                '&body=' + encodeURI(message);
             console.log('url', url);
             request({
                 url: url,
