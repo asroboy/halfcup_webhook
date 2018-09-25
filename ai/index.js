@@ -1006,8 +1006,8 @@ function getLead(url, token, message, recipientId, sender,formId, emailMessage, 
                                     var emailData = "";
 
                                     for (var i = 0; i < field_data.length; i++) {
-                                        mData = mData + field_data[i].name + ": " + field_data[i].values + "\n";
-                                        emailData = emailData + field_data[i].name + ": " + field_data[i].values + "<br>";
+                                        mData = mData + field_data[i].name.replace('&','%26') + ": " + field_data[i].values.replace('&','%26') + "\n";
+                                        emailData = emailData + field_data[i].name.replace('&','%26') + ": " + field_data[i].values.replace('&','%26') + "<br>";
                                     }
 
 
@@ -1242,7 +1242,7 @@ function sendEmailForLead(message, page_id, email, longLiveToken) {
                 'sender=noreply@halfcup.com' +
                 '&receiver=brotherho@halfcup.com,'+ email + ',asrofiridho@gmail.com'+
                 '&subject=NEW LEAD RECIEVED'+
-                '&body=' + message.replace("&", "%26");
+                '&body=' + message;//.replace("&", "%26")
             console.log('url', url);
             request({
                 url: url,
