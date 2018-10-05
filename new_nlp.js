@@ -1384,7 +1384,8 @@ function start_tracking(aggregation, messenger_id, email) {
             + '&project_id=' + project_id
             + '&email=' + email;
         console.log('# c url', url);
-        console.log('# aggregation ', JSON.stringify(aggregation));
+        var aggr = JSON.stringify(aggregation);
+        console.log('# aggregation ', aggr);
         request({
             url: url,
             method: 'GET'
@@ -1396,7 +1397,7 @@ function start_tracking(aggregation, messenger_id, email) {
             } else {
                 var obj = JSON.parse(body);
                 console.log('==> START TRACKING RESULT :', JSON.stringify(obj));
-                save_tracking_id(agg_obj, messenger_id, obj.tracking_id);
+                save_tracking_id(aggr, messenger_id, obj.tracking_id);
             }
         });
     }
