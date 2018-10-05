@@ -1023,8 +1023,8 @@ function getLead(url, token, message, recipientId, sender, formId, emailMessage,
                                             fullNameX = fieldValue;
                                         }
                                         else {
-                                            otherFields = otherFields + fieldName.replace('&', '%26').replace('?', '%3F') + '-';
-                                            otherValues = otherValues + fieldValue + '-';
+                                            otherFields = otherFields + fieldName.replace('&', '%26').replace('?', '%3F') + '||';
+                                            otherValues = otherValues + fieldValue + '||';
                                         }
                                         mData = mData + fieldName + ": " + fieldValue + "\n";
                                         emailData = emailData + fieldName.replace('&', '%26').replace('?', '%3F') + ": " + fieldValue + "<br>";
@@ -1037,7 +1037,7 @@ function getLead(url, token, message, recipientId, sender, formId, emailMessage,
                                     var createdTime = leadValue.created_time;
                                     var pageId = leadValue.page_id;
                                     var adGroupId = leadValue.adgroup_id;
-                                    if(!pageId){
+                                    if (!pageId) {
                                         pageId = sender
                                     }
                                     saveLeadToHalfcup(pageId, leadgenId, adId, '', adGroupId, '', '', '', formId, '', fullNameX, mobileX, emailX, otherFields, otherValues);
@@ -1075,7 +1075,7 @@ function getLead(url, token, message, recipientId, sender, formId, emailMessage,
 
 
 function saveLeadToHalfcup(pageId, leadId, adId, adName, adSetId, adSetName, campainId, campainName, formId, formName, fullName, mobile, email, otherFields, fieldsValues) {
-    var url = 'http://halfcup.com/social_rebates_system/api/addNewLead?pageId=' + pageId + '&leadId=' + leadId + '&adId=' + adId + '&adName=' + adName + '&adSetId=' + adSetId + '&adSetName=' + adSetName + '&campainId=' + campainId +
+    var url = 'http://halfcup.com/social_rebates_system/api/addNewLead?page_id=' + pageId + '&leadId=' + leadId + '&adId=' + adId + '&adName=' + adName + '&adSetId=' + adSetId + '&adSetName=' + adSetName + '&campainId=' + campainId +
         '&campainName=' + campainName + '&formId=' + formId + '&formName=' + formName + '&fullName=' + fullName + '&mobile=' + mobile + '&email=' + email + '&otherFields=' + otherFields +
         '&fieldsValues=' + fieldsValues;
     console.log('url', url);
