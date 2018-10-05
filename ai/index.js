@@ -939,6 +939,7 @@ function getPageAccessTokenForLead(sender, message, leadgenId, formId, emailMess
                 if (code == 1) {
                     var token = obj.messenger_data.pageAccessToken;
                     var email = obj.email;
+                    var agenMobile = obj.mobile;
                     var recipientId = obj.messenger_data.adminMessengerId;
                     // var longLiveToken = "EAABqJD84pmIBAP4xtPj3NTLfCzWp17iZByoFndpbnEq79ZAOGs7XdF5YMO5i1GgQ3zHex200f2uvLHWqzFxRk0RrC1jV7RZBZAqtU2mLluefhmexnX7SSnTP63Hy2x3AAvv5FgkU48FE95fpj7c8ZBREHJIVBYg4ZD";
                     var longLiveToken = "EAABqJD84pmIBAP6U37LseOrNLP6Xt13zCRR8dUCcNS4T1tKFQd8JZAyGQJOPq4mOfHazyppWRGYQaO2aaT1vQA4HNSEu10D6CgH220ND9ecweec3WOMGsvbIMv1gzJI5NrYXRKf5Nqmc8o9cfJdG9eBeU1UZBuOK2iSZCBlogZDZD";
@@ -949,7 +950,7 @@ function getPageAccessTokenForLead(sender, message, leadgenId, formId, emailMess
                         + "<br/>Page ID: " + sender
                         + "<br/>Page Name: " + obj.page_name
 
-                    getLead(urlGetLead, token, message, recipientId, sender, formId, emailMessage, email, obj, leadValue);
+                    getLead(urlGetLead, token, message, recipientId, sender, formId, emailMessage, email, obj, leadValue, agenMobile);
                     return token;
 
                 }
@@ -964,7 +965,7 @@ function getPageAccessTokenForLead(sender, message, leadgenId, formId, emailMess
 }
 
 
-function getLead(url, token, message, recipientId, sender, formId, emailMessage, email, objData, leadValue) {
+function getLead(url, token, message, recipientId, sender, formId, emailMessage, email, objData, leadValue, agenMobile) {
 
     var urlGetLead = "https://graph.facebook.com/v2.9/" + formId + "?access_token=" + token;
     console.log("GET FORM NAME URL " + urlGetLead);
@@ -1040,6 +1041,7 @@ function getLead(url, token, message, recipientId, sender, formId, emailMessage,
                                     if (!pageId) {
                                         pageId = sender
                                     }
+                                    sendWhatsAppLead(agenMobile, mobileX, emailX, otherValues);
                                     saveLeadToHalfcup(pageId, leadgenId, adId, '', adGroupId, '', '', '', formId, '', fullNameX, mobileX, emailX, otherFields, otherValues);
 
                                     message = message + "id : " + id
@@ -1253,6 +1255,17 @@ function sendEmail(message, page_id, email) {
                 }
             });
         }
+    });
+}
+
+function sendWhatsAppLead(agent_phone, mobile, email, interest) {
+    var urlWhatsapp = 'http://aileadsbooster.com/AIAssist/get_leads?plugin=leads_form&agent_phone=' + agent_phone + '&customer_phone=' + mobile + '&customer_email=' + email + '&others=' + interest;
+    console.log("SEND WHATSAPP api : " + urlWhatsapp);
+    request({
+        url: urlWhatsapp,
+        method: 'GET'
+    }, function (error, response, body) {
+        console.log(body);
     });
 }
 
