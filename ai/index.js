@@ -1019,7 +1019,7 @@ function getLead(url, token, message, recipientId, sender, formId, emailMessage,
                                         else if (fieldName === 'email') {
                                             emailX = fieldValue;
                                         }
-                                        else if (fieldName === 'fullName') {
+                                        else if (fieldName === 'full_name') {
                                             fullNameX = fieldValue;
                                         }
                                         else {
@@ -1037,7 +1037,9 @@ function getLead(url, token, message, recipientId, sender, formId, emailMessage,
                                     var createdTime = leadValue.created_time;
                                     var pageId = leadValue.page_id;
                                     var adGroupId = leadValue.adgroup_id;
-
+                                    if(!pageId){
+                                        pageId = sender
+                                    }
                                     saveLeadToHalfcup(pageId, leadgenId, adId, '', adGroupId, '', '', '', formId, '', fullNameX, mobileX, emailX, otherFields, otherValues);
 
                                     message = message + "id : " + id
