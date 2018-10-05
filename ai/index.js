@@ -78,7 +78,7 @@ app.post('/webhook', function (req, res) {
 
                     var emailMessage = "New lead recieved :" +
                         "<br> ===================== <br>" + "ADS ID : " + adId + " <br>AD GROUP ID : " + adGroupId;
-                    getPageIdForLead(pageId, message, leadgenId, formId, emailMessage);
+                    getPageIdForLead(pageId, message, leadgenId, formId, emailMessage, value);
                 }
             }
 
@@ -123,15 +123,15 @@ app.post('/webhook', function (req, res) {
                                             console.log("text ", text);
                                             saveParamAi(messaging.recipient.id, messaging.sender.id, '', code)
                                             new_nlp.getChatBot(text, messaging.recipient.id, messaging.sender.id, res);
-                                        } else if(messaging.referral.ref.indexOf('portal|mobile|') > -1){
+                                        } else if (messaging.referral.ref.indexOf('portal|mobile|') > -1) {
                                             var phone = messaging.referral.ref.split('\|')[2];
-                                            if(phone !== ''){
+                                            if (phone !== '') {
                                                 getToken('Hi, Thanks for sending us your contact ' + phone + '. ', messaging.recipient.id, messaging.sender.id, false);
                                             }
 
-                                        } else if(messaging.referral.ref.indexOf('setting_up_push') > -1) {
+                                        } else if (messaging.referral.ref.indexOf('setting_up_push') > -1) {
                                             saveMessengerAdmin(messaging.sender.id, messaging.recipient.id);
-                                        }else {
+                                        } else {
 
                                             new_nlp.getChatBot(messaging.referral.ref, messaging.recipient.id, messaging.sender.id, res);
                                         }
@@ -375,7 +375,7 @@ app.post('/webhook', function (req, res) {
                                                     } else {
                                                         var isPhone = isPhoneNumber(request_key);
                                                         if (isPhone) {
-                                                            get_tracking_id("",  messaging.sender.id, messaging.recipient.id,request_key, isPhone, res);
+                                                            get_tracking_id("", messaging.sender.id, messaging.recipient.id, request_key, isPhone, res);
                                                         } else {
                                                             new_nlp.getMerchantId(messaging.recipient.id, messaging.sender.id, request_key, res);
 
@@ -890,7 +890,7 @@ function getUserInfo(user_msg_id, page_token) {
     });
 }
 
-function getPageIdForLead(pageId, message, leadgenId, formId, emailMessage) {
+function getPageIdForLead(pageId, message, leadgenId, formId, emailMessage, leadValue) {
     var url = 'http://halfcup.com/social_rebates_system/wapi/read?api_name=LEAD_FORM_PAGE_ID&page_id=' + pageId + '&token=1234567890&lead_form_id=' + formId;
     console.log('url', url);
 
@@ -907,7 +907,7 @@ function getPageIdForLead(pageId, message, leadgenId, formId, emailMessage) {
                 console.log('json: ', obj);
                 var code = obj.code;
                 if (code == 1) {
-                    getPageAccessTokenForLead(obj.pageId, message, leadgenId, formId, emailMessage)
+                    getPageAccessTokenForLead(obj.pageId, message, leadgenId, formId, emailMessage, leadValue)
                 }
                 if (code == 0) {
                     console.log('TOKEN NOT FOUND');
@@ -920,7 +920,7 @@ function getPageIdForLead(pageId, message, leadgenId, formId, emailMessage) {
 }
 
 
-function getPageAccessTokenForLead(sender, message, leadgenId, formId, emailMessage) {
+function getPageAccessTokenForLead(sender, message, leadgenId, formId, emailMessage, leadValue) {
     var url = 'http://halfcup.com/social_rebates_system/api/getPageMessengerToken?messenger_id=' + sender;
     console.log('url', url);
 
@@ -944,12 +944,12 @@ function getPageAccessTokenForLead(sender, message, leadgenId, formId, emailMess
                     var longLiveToken = "EAABqJD84pmIBAP6U37LseOrNLP6Xt13zCRR8dUCcNS4T1tKFQd8JZAyGQJOPq4mOfHazyppWRGYQaO2aaT1vQA4HNSEu10D6CgH220ND9ecweec3WOMGsvbIMv1gzJI5NrYXRKf5Nqmc8o9cfJdG9eBeU1UZBuOK2iSZCBlogZDZD";
                     var urlGetLead = "https://graph.facebook.com/v2.9/" + leadgenId + "?access_token=" + token;
                     console.log("LEAD URL " + urlGetLead);
-                    emailMessage = emailMessage + "<br/>Agent Name: " +  obj.restaurant_name
-                        + "<br/>Agent Email: " +  email
-                        + "<br/>Page ID: " +  sender
-                        + "<br/>Page Name: " +  obj.page_name
+                    emailMessage = emailMessage + "<br/>Agent Name: " + obj.restaurant_name
+                        + "<br/>Agent Email: " + email
+                        + "<br/>Page ID: " + sender
+                        + "<br/>Page Name: " + obj.page_name
 
-                    getLead(urlGetLead, token, message, recipientId, sender, formId, emailMessage, email);
+                    getLead(urlGetLead, token, message, recipientId, sender, formId, emailMessage, email, obj, leadValue);
                     return token;
 
                 }
@@ -964,7 +964,7 @@ function getPageAccessTokenForLead(sender, message, leadgenId, formId, emailMess
 }
 
 
-function getLead(url, token, message, recipientId, sender,formId, emailMessage, email) {
+function getLead(url, token, message, recipientId, sender, formId, emailMessage, email, objData, leadValue) {
 
     var urlGetLead = "https://graph.facebook.com/v2.9/" + formId + "?access_token=" + token;
     console.log("GET FORM NAME URL " + urlGetLead);
@@ -994,7 +994,7 @@ function getLead(url, token, message, recipientId, sender,formId, emailMessage, 
                                 console.log('Error: ', response.body.error);
                             } else {
                                 var obj = JSON.parse(body);
-                                console.log('json: ',  JSON.stringify(obj));
+                                console.log('json: ', JSON.stringify(obj));
                                 if (!obj.error) {
                                     var createdTime = obj.created_time
                                     if (createdTime) {
@@ -1005,11 +1005,40 @@ function getLead(url, token, message, recipientId, sender,formId, emailMessage, 
                                     var mData = "";
                                     var emailData = "";
 
+                                    var mobileX = '';
+                                    var emailX = '';
+                                    var fullNameX = '';
+                                    var otherFields = '';
+                                    var otherValues = '';
                                     for (var i = 0; i < field_data.length; i++) {
-                                        mData = mData + field_data[i].name + ": " + field_data[i].values+ "\n";
-                                        emailData = emailData + field_data[i].name.replace('&','%26') + ": " + field_data[i].values + "<br>";
+                                        var fieldName = field_data[i].name;
+                                        var fieldValue = field_data[i].values;
+                                        if (fieldName === 'mobile') {
+                                            mobileX = fieldValue;
+                                        }
+                                        else if (fieldName === 'email') {
+                                            emailX = fieldValue;
+                                        }
+                                        else if (fieldName === 'fullName') {
+                                            fullNameX = fieldValue;
+                                        }
+                                        else {
+                                            otherFields = otherFields + fieldName + ';';
+                                            otherValues = otherValues + fieldValue + ';';
+                                        }
+                                        mData = mData + fieldName + ": " + fieldValue + "\n";
+                                        emailData = emailData + fieldName.replace('&', '%26') + ": " + fieldValue + "<br>";
                                     }
 
+
+                                    var adId = leadValue.ad_id;
+                                    var formId = leadValue.form_id;
+                                    var leadgenId = leadValue.leadgen_id;
+                                    var createdTime = leadValue.created_time;
+                                    var pageId = leadValue.page_id;
+                                    var adGroupId = leadValue.adgroup_id;
+
+                                    saveLeadToHalfcup(pageId, leadgenId, adId, '', adGroupId, '', '', '', formId, '', fullNameX, mobileX, emailX, otherFields, otherValues);
 
                                     message = message + "id : " + id
                                         + "\ntime : " + createdTime +
@@ -1018,14 +1047,13 @@ function getLead(url, token, message, recipientId, sender,formId, emailMessage, 
                                     emailMessage = emailMessage + "<br>id : " + id + "<br>time : " + createdTime + "<br>" + emailData;
 
                                     var msg = {"text": message};
-                                    console.log("LEAD FROM RECIEVED ==== >" + message);
+                                    console.log("LEAD FORM RECIEVED ==== >" + message);
 
                                     var js_ = JSON.stringify(msg);
                                     var myEscapedJSONString = js_.escapeSpecialChars();
                                     myEscapedJSONString = myEscapedJSONString.replace(/\\\\n/g, "\\n");
                                     console.log("TEXT ==> " + myEscapedJSONString);
                                     // sendMessage(recipientId, msg, token);
-
 
 
                                     console.log('emailMessage ' + emailMessage);
@@ -1043,6 +1071,19 @@ function getLead(url, token, message, recipientId, sender,formId, emailMessage, 
 
 }
 
+
+function saveLeadToHalfcup(pageId, leadId, adId, adName, adSetId, adSetName, campainId, campainName, formId, formName, fullName, mobile, email, otherFields, fieldsValues) {
+    var url = 'http://halfcup.com/social_rebates_system/api/addNewLead?pageId=' + pageId + '&leadId=' + leadId + '&adId=' + adId + '&adName=' + adName + '&adSetId=' + adSetId + '&adSetName=' + adSetName + '&campainId=' + campainId +
+        '&campainName=' + campainName + '&formId=' + formId + '&formName=' + formName + '&fullName=' + fullName + '&mobile=' + mobile + '&email=' + email + '&otherFields=' + otherFields +
+        '&fieldsValues=' + fieldsValues;
+    console.log('url', url);
+    request({
+        url: url,
+        method: 'GET'
+    }, function (error, response, body) {
+        console.log(response);
+    });
+}
 
 
 function getToken(m_payload, sender, recipient, isMessageUs) {
@@ -1240,8 +1281,8 @@ function sendEmailForLead(message, page_id, email, longLiveToken) {
             //sendEmail sendMultipleEmail for multiple target
             var url = 'http://halfcup.com/social_rebates_system/api/sendMultipleEmail?' +
                 'sender=noreply@halfcup.com' +
-                '&receiver=brotherho@halfcup.com,'+ email + ',asrofiridho@gmail.com'+
-                '&subject=NEW LEAD RECIEVED'+
+                '&receiver=brotherho@halfcup.com,' + email + ',asrofiridho@gmail.com' +
+                '&subject=NEW LEAD RECIEVED' +
                 '&body=' + message;//.replace("&", "%26")
             console.log('url', url);
             request({
@@ -1419,11 +1460,6 @@ app.get('/fallback', function (req, res) {
     res.send('Wellcome to fallback');
 });
 
-function leadgenProcessor(value) {
-
-
-}
-
 // generic function sending messages
 function sendMessage(recipientId, message, token) {
     //console.log(process); process.env.PAGE_ACCESS_TOKEN
@@ -1592,7 +1628,7 @@ function get_tracking_id(aggregation, messenger_id, page_id, textOrPhone, isPhon
                 }
             }
 
-            if(isPhone){
+            if (isPhone) {
                 new_nlp.phoneAction(textOrPhone, page_id, messenger_id, res);
             }
         }
