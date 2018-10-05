@@ -1022,10 +1022,10 @@ function getLead(url, token, message, recipientId, sender, formId, emailMessage,
                                         else if (fieldName === 'fullName') {
                                             fullNameX = fieldValue;
                                         }
-                                        else {
-                                            otherFields = otherFields + fieldName + ';';
-                                            otherValues = otherValues + fieldValue + ';';
-                                        }
+                                        // else {
+                                        //     otherFields = otherFields + fieldName + ';';
+                                        //     otherValues = otherValues + fieldValue + ';';
+                                        // }
                                         mData = mData + fieldName + ": " + fieldValue + "\n";
                                         emailData = emailData + fieldName.replace('&', '%26') + ": " + fieldValue + "<br>";
                                     }
