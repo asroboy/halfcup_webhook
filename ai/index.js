@@ -1081,7 +1081,8 @@ function saveLeadToHalfcup(pageId, leadId, adId, adName, adSetId, adSetName, cam
         url: url,
         method: 'GET'
     }, function (error, response, body) {
-        console.log(response);
+        var obj = JSON.parse(body);
+        console.log(obj);
     });
 }
 
