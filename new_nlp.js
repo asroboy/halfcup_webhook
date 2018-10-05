@@ -1478,7 +1478,7 @@ function get_tracking_id(aggregation, messenger_id, textOrPhone, isPhone) {
 function check_tracking_id(aggregation, messenger_id, token) {
     var agg_data = aggregation.split('=');
     var agg_obj = agg_data[1].split('&')[0];
-    var url = 'http://halfcup.com/social_rebates_system/apix/get_tracking_id?aggregation=' + agg_obj
+    var url = 'http://halfcup.com/social_rebates_system/apix/get_tracking_id?aggregation=' + aggregation
         + '&messenger_id=' + messenger_id;
     console.log('# CHECK TRACKING ID url', url);
     console.log('# aggregation ', JSON.stringify(aggregation));
