@@ -1397,7 +1397,7 @@ function start_tracking(aggregation, messenger_id, email) {
             } else {
                 var obj = JSON.parse(body);
                 console.log('==> START TRACKING RESULT :', JSON.stringify(obj));
-                save_tracking_id(aggr, messenger_id, obj.tracking_id);
+                save_tracking_id(agg_obj, messenger_id, obj.tracking_id);
             }
         });
     }
