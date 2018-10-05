@@ -375,7 +375,8 @@ app.post('/webhook', function (req, res) {
                                                     } else {
                                                         var isPhone = isPhoneNumber(request_key);
                                                         if (isPhone) {
-                                                            get_tracking_id("", messaging.sender.id, messaging.recipient.id, request_key, isPhone, res);
+                                                            getAggregation(messaging.sender.id, messaging.recipient.id, request_key, isPhone, res)
+
                                                         } else {
                                                             new_nlp.getMerchantId(messaging.recipient.id, messaging.sender.id, request_key, res);
 
@@ -1613,6 +1614,26 @@ function clearAiKey(sender) {
 // }).listen(1337, "127.0.0.1");
 // console.log('Server running at http://127.0.0.1:1337/');
 
+
+function getAggregation(pageId,recipient, request_key, isPhone, res){
+    var url = 'http://halfcup.com/social_rebates_system/wapi/read?token=1234567890&api_name=AGGREGATE_OBJ&page_id=' + pageId;
+    console.log('# GET AGGREGATION API url', url);
+    request({
+            url: url,
+            method: 'GET'
+        }, function (error, response, body) {
+            if (error) {
+                console.log('Error sending message: ', error);
+            } else if (response.body.error) {
+                console.log('Error: ', response.body.error);
+            } else {
+                var obj = JSON.parse(body);
+                console.log('==> GET AGGREGATION API RESULT: ', JSON.stringify(obj));
+                get_tracking_id(obj.data.aggregationKey, pageId,recipient, request_key, isPhone, res);
+            }
+        }
+    );
+}
 
 function get_tracking_id(aggregation, messenger_id, page_id, textOrPhone, isPhone, res) {
     var agg_obj = "";
