@@ -691,7 +691,7 @@ function getAiKeyForPhone(text, wang_token, pageId, recipient, token, res, AGGR)
     console.log('AGGREGATION OBJECT >>>>>>>>>>>>>>>> ', text);
     // get_tracking_id(param, recipient, text);
 
-    var url = 'http://aileadsbooster.com/Backend/query?q=' + encodeURI(text.replace('+', '')) + '&access_token=' + wang_token + '&aggregation=' + AGGR.replace('&', '%26');
+    var url = 'http://aileadsbooster.com/Backend/query?q=' + encodeURI(text.replace('+', '')) + '&access_token=' + wang_token + '&aggregation=' + AGGR.replace('AGGREGATION_object=','').replace('&', '%26');
 
     console.log('# BACKEND QUERY API (PHONE) url', url);
     request({
