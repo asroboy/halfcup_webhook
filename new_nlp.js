@@ -690,8 +690,8 @@ function getAiKeyForPhone(text, wang_token, pageId, recipient, token, res, AGGR)
 
     console.log('AGGREGATION OBJECT >>>>>>>>>>>>>>>> ', text);
     // get_tracking_id(param, recipient, text);
-    var agr = AGGR.replace('AGGREGATION_object=', '');
-    agr = agr.replace('&', '%26')
+    // var agr = AGGR.replace('AGGREGATION_object=', '');
+    var agr = AGGR.replace('&', '%26')
 
     var url = 'http://aileadsbooster.com/Backend/query?q=' + encodeURI(text.replace('+', '')) + '&access_token=' + wang_token + '&aggregation=' + agr;
 
