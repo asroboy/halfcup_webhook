@@ -1267,7 +1267,11 @@ function sendWhatsAppLead(agent_phone, mobile, email, interest) {
         url: urlWhatsapp,
         method: 'GET'
     }, function (error, response, body) {
-        console.log(body);
+        if(!error){
+            console.log(body);
+        }else{
+            console.log("Error send whatsapp api");
+        }
     });
 }
 
