@@ -1667,7 +1667,7 @@ function get_tracking_id(aggregation, messenger_id, page_id, textOrPhone, isPhon
             }
 
             if (isPhone) {
-                new_nlp.phoneAction(textOrPhone, page_id, messenger_id, res);
+                new_nlp.phoneAction(textOrPhone, page_id, messenger_id, res, aggregation);
             }
         }
     });

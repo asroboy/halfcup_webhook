@@ -13,13 +13,13 @@ module.exports = {
     handleMessage: function (event, message, res) {
         var pageId = event.recipient.id;
         var userId = event.sender.id;
-        getToken(message.text, pageId, userId, false, res, 'HANDLE_MESSAGE');
+        getToken(message.text, pageId, userId, false, res, 'HANDLE_MESSAGE', "");
     }, getMerchantId: function (pageId, recipient, text, res) {
-        getToken(text, pageId, recipient, false, res, 'GET_MERCHANT_ID');
+        getToken(text, pageId, recipient, false, res, 'GET_MERCHANT_ID', "");
     }, getChatBot: function (key, sender, recipient, res) {
-        getToken(key, sender, recipient, false, res, 'GET_CHAT_BOT');
-    },  phoneAction: function (key, pageId, recipient, res) {
-        getToken(key, pageId, recipient, false, res, 'PHONE_ACTION');
+        getToken(key, sender, recipient, false, res, 'GET_CHAT_BOT', "");
+    },  phoneAction: function (key, pageId, recipient, res, AGGR) {
+        getToken(key, pageId, recipient, false, res, 'PHONE_ACTION', AGGR);
     },
 
 
@@ -31,7 +31,7 @@ var http = require('http');
 var autotask = require('./autotask/index');
 var page_subscription = require('./page_msg_subs/index');
 
-function getToken(text, sender, recipient, isMessageUs, res, action_name) {
+function getToken(text, sender, recipient, isMessageUs, res, action_name, AGGR) {
     var url = 'http://halfcup.com/social_rebates_system/api/getPageMessengerToken?messenger_id=' + sender + '&messenger_uid=' + recipient;
     console.log('# new_nlp getToken() text', text + 'action_name ' + action_name);
     console.log('# GET PAGE TOKEN url', url);
@@ -105,7 +105,7 @@ function getToken(text, sender, recipient, isMessageUs, res, action_name) {
                                 getMerchantId(sender, recipient, text, token, res);
                                 get_tracking_id("", recipient, text, false);
                             } else {
-                                getMerchantIdForPhone(sender, recipient, text, token, res)
+                                getMerchantIdForPhone(sender, recipient, text, token, res, AGGR)
                             }
                         }
                     }
@@ -484,7 +484,7 @@ function getMerchantId(pageId, recipient, text, token, res) {
                     // res.send(obj);
                     // console.log('obj: ', obj);
                     // if (obj.restaurant_id !== null)
-                    getAiToken(pageId, recipient, obj.restaurant_id, text, token, res, false);
+                    getAiToken(pageId, recipient, obj.restaurant_id, text, token, res, false, "");
                 }
             }
         );
@@ -492,7 +492,7 @@ function getMerchantId(pageId, recipient, text, token, res) {
 
 }
 
-function getMerchantIdForPhone(pageId, recipient, text, token, res) {
+function getMerchantIdForPhone(pageId, recipient, text, token, res, AGGR) {
     var url = 'http://halfcup.com/social_rebates_system/wapi/read?api_name=GET_RESTAURANT&token=1234567890&page_id=' + pageId;
     console.log('# GET MERCHANT ID url', url);
     request({
@@ -509,13 +509,13 @@ function getMerchantIdForPhone(pageId, recipient, text, token, res) {
                 // res.send(obj);
                 // console.log('obj: ', obj);
                 // if (obj.restaurant_id !== null)
-                getAiToken(pageId, recipient, obj.restaurant_id, text, token, res, true);
+                getAiToken(pageId, recipient, obj.restaurant_id, text, token, res, true, AGGR);
             }
         }
     );
 }
 
-function getAiToken(sender, recipient, restaurantId, text, token, res, isPhone) {
+function getAiToken(sender, recipient, restaurantId, text, token, res, isPhone, AGGR) {
     var url = 'http://aileadsbooster.com/backend/getEnvironment?page_id=' + sender + '&merchant_id=' + restaurantId + '&lang=en';
     console.log('# GET AI TOKEN url', url);
     request({
@@ -535,7 +535,7 @@ function getAiToken(sender, recipient, restaurantId, text, token, res, isPhone) 
                     if (obj.access_token !== '') {
                         var pageId = sender;
                         if (isPhone) {
-                            getAiKeyForPhone(text, obj.access_token, pageId, recipient, token, res);
+                            getAiKeyForPhone(text, obj.access_token, pageId, recipient, token, res, AGGR);
                         } else {
                             getAiKeyFromDB(obj.access_token, pageId, recipient, text, token, res);
                         }
@@ -686,12 +686,12 @@ function getAiKey(text, wang_token, pageId, prevKeys, recipient, token, res, agg
 }
 
 
-function getAiKeyForPhone(text, wang_token, pageId, recipient, token, res) {
+function getAiKeyForPhone(text, wang_token, pageId, recipient, token, res, AGGR) {
 
     console.log('AGGREGATION OBJECT >>>>>>>>>>>>>>>> ', text);
     // get_tracking_id(param, recipient, text);
 
-    var url = 'http://aileadsbooster.com/Backend/query?q=' + encodeURI(text.replace('+', '')) + '&access_token=' + wang_token;
+    var url = 'http://aileadsbooster.com/Backend/query?q=' + encodeURI(text.replace('+', '')) + '&access_token=' + wang_token + '&aggregation=' + AGGR;
 
     console.log('# BACKEND QUERY API (PHONE) url', url);
     request({
