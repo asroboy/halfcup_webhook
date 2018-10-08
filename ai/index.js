@@ -1585,7 +1585,7 @@ function getParamZ(emailContent, pageId, recipient) {
                 console.log('getChatBot RESULT: ', obj);
                 if (obj.data !== null) {
                     var param = obj.data.prm;
-                    // getAggregationObject(key, sender, recipient, token, res, param);
+                    // get###AggregationObject(key, sender, recipient, token, res, param);
                     sendEmail(emailContent, pageId, param.split("=")[1]);
                 }
 
@@ -1643,7 +1643,7 @@ function get_tracking_id(aggregation, messenger_id, page_id, textOrPhone, isPhon
         agg_obj = agg_data[1].split('&')[0];
     }
 
-    var url = 'http://halfcup.com/social_rebates_system/apix/get_tracking_id?aggregation=' + aggregation
+    var url = 'http://halfcup.com/social_rebates_system/apix/get_tracking_id?aggregation=' + agg_obj
         + '&messenger_id=' + messenger_id;
     console.log('# GET TRACKING ID url', url);
     console.log('# aggregation ', JSON.stringify(aggregation));
