@@ -1019,11 +1019,11 @@ function getLead(url, token, message, recipientId, sender, formId, emailMessage,
                                         var fieldValue = field_data[i].values;
                                         if (fieldName === 'mobile') {
                                             mobileX = fieldValue;
-                                        }
-                                        else if (fieldName === 'email') {
+                                        } else if (fieldName === 'phone_number') {
+                                            mobileX = fieldValue;
+                                        } else if (fieldName === 'email') {
                                             emailX = fieldValue;
-                                        }
-                                        else if (fieldName === 'full_name') {
+                                        } else if (fieldName === 'full_name') {
                                             fullNameX = fieldValue;
                                         } else if (fieldName === 'project_name') {
                                             project_name = fieldValue;
