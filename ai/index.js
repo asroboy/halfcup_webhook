@@ -952,7 +952,7 @@ function getPageAccessTokenForLead(sender, message, leadgenId, formId, emailMess
                         + "<br/>Page ID: " + sender
                         + "<br/>Page Name: " + obj.page_name
 
-                    getLead(urlGetLead, token, message, recipientId, sender, formId, emailMessage, email, obj, leadValue, agenMobile);
+                    getLead(urlGetLead, token, message, recipientId, sender, formId, emailMessage, email, obj, leadValue, agenMobile, restaurant_name);
                     return token;
 
                 }
@@ -967,7 +967,7 @@ function getPageAccessTokenForLead(sender, message, leadgenId, formId, emailMess
 }
 
 
-function getLead(url, token, message, recipientId, sender, formId, emailMessage, email, objData, leadValue, agenMobile) {
+function getLead(url, token, message, recipientId, sender, formId, emailMessage, email, objData, leadValue, agenMobile, agentName) {
 
     var urlGetLead = "https://graph.facebook.com/v2.9/" + formId + "?access_token=" + token;
     console.log("GET FORM NAME URL " + urlGetLead);
@@ -1043,7 +1043,7 @@ function getLead(url, token, message, recipientId, sender, formId, emailMessage,
                                     if (!pageId) {
                                         pageId = sender
                                     }
-                                    sendWhatsAppLead(agenMobile, mobileX, emailX, otherValues);
+                                    sendWhatsAppLead(agenMobile, mobileX, emailX, otherValues, form_name, agentName);
                                     saveLeadToHalfcup(pageId, leadgenId, adId, '', adGroupId, '', '', '', formId, '', fullNameX, mobileX, emailX, otherFields, otherValues);
 
                                     message = message + "id : " + id
@@ -1260,16 +1260,17 @@ function sendEmail(message, page_id, email) {
     });
 }
 
-function sendWhatsAppLead(agent_phone, mobile, email, interest) {
-    var urlWhatsapp = 'http://aileadsbooster.com/AIAssist/get_leads?plugin=leads_form&agent_phone=' + agent_phone + '&customer_phone=' + mobile + '&customer_email=' + email + '&others=' + interest;
+function sendWhatsAppLead(agent_phone, mobile, email, interest, project_name, agent_name) {
+    var urlWhatsapp = 'http://aileadsbooster.com/AIAssist/get_leads?agent=' + agent_name + '&project_name=' + project_name
+        + '&plugin=leads_form&agent_phone=' + agent_phone + '&customer_phone=' + mobile + '&customer_email=' + email + '&others=' + interest;
     console.log("SEND WHATSAPP api : " + urlWhatsapp);
     request({
         url: urlWhatsapp,
         method: 'GET'
     }, function (error, response, body) {
-        if(!error){
+        if (!error) {
             console.log(body);
-        }else{
+        } else {
             console.log("Error send whatsapp api");
         }
     });
