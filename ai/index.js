@@ -1028,6 +1028,9 @@ function getLead(url, token, message, recipientId, sender, formId, emailMessage,
                                         } else if (fieldName === 'project_name') {
                                             project_name = fieldValue;
                                         } else {
+                                            if (fieldName.indexOf(':') > -1) {
+                                                project_name = fieldName.split(':')[0]
+                                            }
                                             otherFields = otherFields + fieldName.replace('&', '%26').replace('?', '%3F') + '||';
                                             otherValues = otherValues + fieldValue + '||';
                                         }
@@ -1052,7 +1055,8 @@ function getLead(url, token, message, recipientId, sender, formId, emailMessage,
                                         + "\ntime : " + createdTime +
                                         "\n" + mData;
 
-                                    emailMessage = emailMessage + "<br>id : " + id + "<br>time : " + createdTime + "<br>" + emailData;
+                                    emailMessage = emailMessage + "<br/>Project Name: "
+                                        + project_name + "<br>id : " + id + "<br>time : " + createdTime + "<br>" + emailData;
 
                                     var msg = {"text": message};
                                     console.log("LEAD FORM RECIEVED ==== >" + message);
