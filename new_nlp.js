@@ -18,7 +18,7 @@ module.exports = {
         getToken(text, pageId, recipient, false, res, 'GET_MERCHANT_ID', "");
     }, getChatBot: function (key, sender, recipient, res) {
         getToken(key, sender, recipient, false, res, 'GET_CHAT_BOT', "");
-    },  phoneAction: function (key, pageId, recipient, res, AGGR) {
+    }, phoneAction: function (key, pageId, recipient, res, AGGR) {
         getToken(key, pageId, recipient, false, res, 'PHONE_ACTION', AGGR);
     },
 
@@ -690,8 +690,10 @@ function getAiKeyForPhone(text, wang_token, pageId, recipient, token, res, AGGR)
 
     console.log('AGGREGATION OBJECT >>>>>>>>>>>>>>>> ', text);
     // get_tracking_id(param, recipient, text);
+    var agr = AGGR.replace('AGGREGATION_object=', '');
+    agr = agr.replace('&', '%26')
 
-    var url = 'http://aileadsbooster.com/Backend/query?q=' + encodeURI(text.replace('+', '')) + '&access_token=' + wang_token + '&aggregation=' + AGGR.replace('AGGREGATION_object=','').replace('&', '%26');
+    var url = 'http://aileadsbooster.com/Backend/query?q=' + encodeURI(text.replace('+', '')) + '&access_token=' + wang_token + '&aggregation=' + agr;
 
     console.log('# BACKEND QUERY API (PHONE) url', url);
     request({
