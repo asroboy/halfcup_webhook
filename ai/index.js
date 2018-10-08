@@ -952,7 +952,7 @@ function getPageAccessTokenForLead(sender, message, leadgenId, formId, emailMess
                         + "<br/>Page ID: " + sender
                         + "<br/>Page Name: " + obj.page_name
 
-                    getLead(urlGetLead, token, message, recipientId, sender, formId, emailMessage, email, obj, leadValue, agenMobile, restaurant_name);
+                    getLead(urlGetLead, token, message, recipientId, sender, formId, emailMessage, email, obj, leadValue, agenMobile, obj.restaurant_name);
                     return token;
 
                 }
