@@ -1013,6 +1013,7 @@ function getLead(url, token, message, recipientId, sender, formId, emailMessage,
                                     var fullNameX = '';
                                     var otherFields = '';
                                     var otherValues = '';
+                                    var project_name = '';
                                     for (var i = 0; i < field_data.length; i++) {
                                         var fieldName = field_data[i].name;
                                         var fieldValue = field_data[i].values;
@@ -1024,8 +1025,9 @@ function getLead(url, token, message, recipientId, sender, formId, emailMessage,
                                         }
                                         else if (fieldName === 'full_name') {
                                             fullNameX = fieldValue;
-                                        }
-                                        else {
+                                        } else if (fieldName === 'project_name') {
+                                            project_name = fieldValue;
+                                        } else {
                                             otherFields = otherFields + fieldName.replace('&', '%26').replace('?', '%3F') + '||';
                                             otherValues = otherValues + fieldValue + '||';
                                         }
@@ -1043,7 +1045,7 @@ function getLead(url, token, message, recipientId, sender, formId, emailMessage,
                                     if (!pageId) {
                                         pageId = sender
                                     }
-                                    sendWhatsAppLead(agenMobile, mobileX, emailX, otherValues, form_name, agentName);
+                                    sendWhatsAppLead(agenMobile, mobileX, emailX, otherValues, project_name, agentName);
                                     saveLeadToHalfcup(pageId, leadgenId, adId, '', adGroupId, '', '', '', formId, '', fullNameX, mobileX, emailX, otherFields, otherValues);
 
                                     message = message + "id : " + id
