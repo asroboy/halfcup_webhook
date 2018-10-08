@@ -1029,7 +1029,7 @@ function getLead(url, token, message, recipientId, sender, formId, emailMessage,
                                             project_name = fieldValue;
                                         } else {
                                             if (fieldName.indexOf(':') > -1) {
-                                                project_name = fieldName.split(':')[0]
+                                                project_name = fieldName.split(':')[0].replace('_', ' ')
                                             }
                                             otherFields = otherFields + fieldName.replace('&', '%26').replace('?', '%3F') + '||';
                                             otherValues = otherValues + fieldValue + '||';
@@ -1267,7 +1267,7 @@ function sendEmail(message, page_id, email) {
 }
 
 function sendWhatsAppLead(agent_phone, mobile, email, interest, project_name, agent_name) {
-    var urlWhatsapp = 'http://aileadsbooster.com/AIAssist/get_leads?agent=' + agent_name + '&project_name=' + project_name
+    var urlWhatsapp = 'http://aileadsbooster.com/AIAssist/get_leads?agent=' + agent_name + '&project=' + project_name
         + '&plugin=leads_form&agent_phone=' + agent_phone + '&customer_phone=' + mobile + '&customer_email=' + email + '&others=' + interest;
     console.log("SEND WHATSAPP api : " + urlWhatsapp);
     request({
