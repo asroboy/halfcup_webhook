@@ -1034,8 +1034,8 @@ function getLead(url, token, message, recipientId, sender, formId, emailMessage,
                                             otherFields = otherFields + fieldName.replace('&', '%26').replace('?', '%3F') + '||';
                                             otherValues = otherValues + fieldValue + '||';
                                         }
-                                        mData = mData + fieldName.replace('_', ' ') + ": " + fieldValue.replace('_', ' ') + "\n";
-                                        emailData = emailData + fieldName.replace('&', '%26').replace('?', '%3F').replace('_', ' ') + ": " + fieldValue.replace('_', ' ') + "<br>";
+                                        mData = mData + fieldName.replace('_', ' ') + ": " + fieldValue[0].replace('_', ' ') + "\n";
+                                        emailData = emailData + fieldName.replace('&', '%26').replace('?', '%3F').replace('_', ' ') + ": " + fieldValue[0].replace('_', ' ') + "<br>";
                                     }
 
 
