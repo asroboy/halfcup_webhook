@@ -76,8 +76,8 @@ app.post('/webhook', function (req, res) {
                     var message = "New lead recieved :" +
                         "\n=====================\n" + "ADS ID : " + adId + "\nAD GROUP ID : " + adGroupId;
 
-                    var emailMessage = "New lead recieved :" +
-                        "<br> ===================== <br>" + "ADS ID : " + adId + " <br>AD GROUP ID : " + adGroupId;
+                    var emailMessage = "<h3>NEW LEAD RECIEVED</h3>" +
+                        "<hr/><table><tr><td>" + "ADS ID </td><td>:</td><td> " + adId + "</td></tr><tr><td>AD GROUP ID </td><td>:</td><td> " + adGroupId + "</td></tr>";
                     getPageIdForLead(pageId, message, leadgenId, formId, emailMessage, value);
                 }
             }
@@ -947,10 +947,10 @@ function getPageAccessTokenForLead(sender, message, leadgenId, formId, emailMess
                     var longLiveToken = "EAABqJD84pmIBAP6U37LseOrNLP6Xt13zCRR8dUCcNS4T1tKFQd8JZAyGQJOPq4mOfHazyppWRGYQaO2aaT1vQA4HNSEu10D6CgH220ND9ecweec3WOMGsvbIMv1gzJI5NrYXRKf5Nqmc8o9cfJdG9eBeU1UZBuOK2iSZCBlogZDZD";
                     var urlGetLead = "https://graph.facebook.com/v2.9/" + leadgenId + "?access_token=" + token;
                     console.log("LEAD URL " + urlGetLead);
-                    emailMessage = emailMessage + "<br/>Agent Name: " + obj.restaurant_name
-                        + "<br/>Agent Email: " + email
-                        + "<br/>Page ID: " + sender
-                        + "<br/>Page Name: " + obj.page_name
+                    emailMessage = emailMessage + "<tr><td>Agent Name</td><td>:</td><td>" + obj.restaurant_name + "</td></tr>"
+                        + "<tr><td>Agent Email</td><td>:</td><td> " + email + "</td></tr>"
+                        + "<tr><td>Page ID</td><td>:</td><td> " + sender + "</td></tr>"
+                        + "<tr><td>Page Name</td><td>:</td><td> " + obj.page_name + "</td></tr>"
 
                     getLead(urlGetLead, token, message, recipientId, sender, formId, emailMessage, email, obj, leadValue, agenMobile, obj.restaurant_name);
                     return token;
@@ -1029,13 +1029,13 @@ function getLead(url, token, message, recipientId, sender, formId, emailMessage,
                                             project_name = fieldValue;
                                         } else {
                                             if (fieldName.indexOf(':') > -1) {
-                                                project_name = fieldName.split(':')[0].replace('_', ' ')
+                                                project_name = fieldName.split(':')[0].replace(/_/g, ' ')
                                             }
                                             otherFields = otherFields + fieldName.replace('&', '%26').replace('?', '%3F') + '||';
                                             otherValues = otherValues + fieldValue + '||';
                                         }
-                                        mData = mData + fieldName.replace('_', ' ') + ": " + fieldValue[0].replace('_', ' ') + "\n";
-                                        emailData = emailData + fieldName.replace('&', '%26').replace('?', '%3F').replace('_', ' ') + ": " + fieldValue[0].replace('_', ' ') + "<br>";
+                                        mData = mData + fieldName.replace(/_/g, ' ') + ": " + fieldValue[0].replace(/_/g, ' ') + "\n";
+                                        emailData = emailData + "<tr><td>" +fieldName.replace('&', '%26').replace('?', '%3F').replace(/_/g, ' ') + "</td><td>:</td><td>" + fieldValue[0].replace(/_/g, ' ') + "</td></tr>";
                                     }
 
 
@@ -1055,8 +1055,9 @@ function getLead(url, token, message, recipientId, sender, formId, emailMessage,
                                         + "\ntime : " + createdTime +
                                         "\n" + mData;
 
-                                    emailMessage = emailMessage + "<br/>Project Name: "
-                                        + project_name + "<br>id : " + id + "<br>time : " + createdTime + "<br>" + emailData;
+                                    emailMessage = emailMessage + "<tr><td>Project Name</td><td>:</td><td>"+ project_name + "</td>" +
+                                        "<tr><td>id</td><td>:</td><td> " + id + "</td></tr>" +
+                                        "<tr><td>time</td><td>:</td><td>" + new Date(createdTime) + "</td></tr><tr></tr>" + emailData + "</table><hr/>";
 
                                     var msg = {"text": message};
                                     console.log("LEAD FORM RECIEVED ==== >" + message);
