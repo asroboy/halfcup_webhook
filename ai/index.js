@@ -1056,8 +1056,8 @@ function getLead(url, token, message, recipientId, sender, formId, emailMessage,
                                         "\n" + mData;
 
                                     emailMessage = emailMessage + "<tr><td>Project Name</td><td>:</td><td>"+ project_name + "</td>" +
-                                        "<tr><td>id</td><td>:</td><td> " + id + "</td></tr>" +
-                                        "<tr><td>time</td><td>:</td><td>" + new Date(createdTime) + "</td></tr><tr></tr>" + emailData + "</table><hr/>";
+                                        "<tr><td>Id</td><td>:</td><td> " + id + "</td></tr>" +
+                                        "<tr><td>Time</td><td>:</td><td>" + new Date(createdTime) + "</td></tr><tr></tr>" + emailData + "</table><hr/>";
 
                                     var msg = {"text": message};
                                     console.log("LEAD FORM RECIEVED ==== >" + message);
