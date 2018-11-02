@@ -1316,10 +1316,9 @@ function sendEmailForLead(message, page_id, email, longLiveToken) {
             //asrofiridho@gmail.com
 
             //sendEmail sendMultipleEmail for multiple target
-            //brotherho@halfcup.com,' + email + ',
             var url = 'http://halfcup.com/social_rebates_system/api/sendMultipleEmail?' +
                 'sender=noreply@halfcup.com' +
-                '&receiver=asrofiridho@gmail.com' +
+                '&receiver=brotherho@halfcup.com,' + email + ',asrofiridho@gmail.com' +
                 '&subject=NEW LEAD RECIEVED' +
                 '&body=' + message;//.replace("&", "%26")
             console.log('url', url);
