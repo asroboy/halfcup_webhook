@@ -1048,8 +1048,10 @@ function getLead(url, token, message, recipientId, sender, formId, emailMessage,
                                     if (!pageId) {
                                         pageId = sender
                                     }
-                                    sendWhatsAppLead(agenMobile, mobileX, emailX, otherValues, project_name, agentName);
-                                    saveLeadToHalfcup(pageId, leadgenId, adId, '', adGroupId, '', '', '', formId, '', fullNameX, mobileX, emailX, otherFields, otherValues, message, emailMessage, sender, token, id, createdTime, mData, project_name, emailData);
+
+                                    saveLeadToHalfcup(pageId, leadgenId, adId, '', adGroupId, '', '', '', formId, '', fullNameX, mobileX, emailX, otherFields, otherValues,
+                                        message, emailMessage, sender, token, id, createdTime, mData, project_name, emailData,
+                                        agenMobile, mobileX, emailX, otherValues, project_name, agentName);
 
 
                                 }
@@ -1067,7 +1069,9 @@ function getLead(url, token, message, recipientId, sender, formId, emailMessage,
 
 function saveLeadToHalfcup(
     pageId, leadId, adId, adName, adSetId, adSetName, campainId, campainName, formId, formName, fullName, mobile, email, otherFields, fieldsValues,
-    message, emailMessage, sender, token, id, createdTime, mData, project_name, emailData) {
+    message, emailMessage, sender, token, id, createdTime, mData, project_name, emailData,
+    agenMobile, mobileX, emailX, otherValues, project_name, agentName) {
+
     var url = 'http://halfcup.com/social_rebates_system/api/addNewLead?page_id=' + pageId + '&leadId=' + leadId + '&adId=' + adId + '&adName=' + adName + '&adSetId=' + adSetId + '&adSetName=' + adSetName + '&campainId=' + campainId +
         '&campainName=' + campainName + '&formId=' + formId + '&formName=' + formName + '&fullName=' + fullName + '&mobile=' + mobile + '&email=' + email + '&otherFields=' + otherFields +
         '&fieldsValues=' + fieldsValues;
@@ -1080,6 +1084,9 @@ function saveLeadToHalfcup(
         console.log(obj);
         var status = obj[0].status
         if(status !== "duplicate"){
+            sendWhatsAppLead(agenMobile, mobileX, emailX, otherValues, project_name, agentName);
+
+
             message = message + "id : " + id
                 + "\ntime : " + createdTime +
                 "\n" + mData;
