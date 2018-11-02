@@ -1049,29 +1049,9 @@ function getLead(url, token, message, recipientId, sender, formId, emailMessage,
                                         pageId = sender
                                     }
                                     sendWhatsAppLead(agenMobile, mobileX, emailX, otherValues, project_name, agentName);
-                                    saveLeadToHalfcup(pageId, leadgenId, adId, '', adGroupId, '', '', '', formId, '', fullNameX, mobileX, emailX, otherFields, otherValues);
-
-                                    message = message + "id : " + id
-                                        + "\ntime : " + createdTime +
-                                        "\n" + mData;
-
-                                    emailMessage = emailMessage + "<tr><td>Project Name</td><td>:</td><td>"+ project_name + "</td>" +
-                                        "<tr><td>Id</td><td>:</td><td> " + id + "</td></tr>" +
-                                        "<tr><td>Time</td><td>:</td><td>" + new Date(createdTime) + "</td></tr><tr></tr>" + emailData + "</table><hr/>";
-
-                                    var msg = {"text": message};
-                                    console.log("LEAD FORM RECIEVED ==== >" + message);
-
-                                    var js_ = JSON.stringify(msg);
-                                    var myEscapedJSONString = js_.escapeSpecialChars();
-                                    myEscapedJSONString = myEscapedJSONString.replace(/\\\\n/g, "\\n");
-                                    console.log("TEXT ==> " + myEscapedJSONString);
-                                    // sendMessage(recipientId, msg, token);
+                                    saveLeadToHalfcup(pageId, leadgenId, adId, '', adGroupId, '', '', '', formId, '', fullNameX, mobileX, emailX, otherFields, otherValues, message, emailMessage, sender, token, id, createdTime, mData, project_name, emailData);
 
 
-                                    console.log('emailMessage ' + emailMessage);
-
-                                    sendEmailForLead(emailMessage, sender, email, token);
                                 }
 
                             }
@@ -1085,7 +1065,9 @@ function getLead(url, token, message, recipientId, sender, formId, emailMessage,
 }
 
 
-function saveLeadToHalfcup(pageId, leadId, adId, adName, adSetId, adSetName, campainId, campainName, formId, formName, fullName, mobile, email, otherFields, fieldsValues) {
+function saveLeadToHalfcup(
+    pageId, leadId, adId, adName, adSetId, adSetName, campainId, campainName, formId, formName, fullName, mobile, email, otherFields, fieldsValues,
+    message, emailMessage, sender, token, id, createdTime, mData, project_name, emailData) {
     var url = 'http://halfcup.com/social_rebates_system/api/addNewLead?page_id=' + pageId + '&leadId=' + leadId + '&adId=' + adId + '&adName=' + adName + '&adSetId=' + adSetId + '&adSetName=' + adSetName + '&campainId=' + campainId +
         '&campainName=' + campainName + '&formId=' + formId + '&formName=' + formName + '&fullName=' + fullName + '&mobile=' + mobile + '&email=' + email + '&otherFields=' + otherFields +
         '&fieldsValues=' + fieldsValues;
@@ -1096,6 +1078,31 @@ function saveLeadToHalfcup(pageId, leadId, adId, adName, adSetId, adSetName, cam
     }, function (error, response, body) {
         var obj = JSON.parse(body);
         console.log(obj);
+        var status = obj[0].status
+        if(status !== "duplicate"){
+            message = message + "id : " + id
+                + "\ntime : " + createdTime +
+                "\n" + mData;
+
+            emailMessage = emailMessage + "<tr><td>Project Name</td><td>:</td><td>"+ project_name + "</td>" +
+                "<tr><td>Id</td><td>:</td><td> " + id + "</td></tr>" +
+                "<tr><td>Time</td><td>:</td><td>" + new Date(createdTime) + "</td></tr><tr></tr>" + emailData + "</table><hr/>";
+
+            var msg = {"text": message};
+            console.log("LEAD FORM RECIEVED ==== >" + message);
+
+            var js_ = JSON.stringify(msg);
+            var myEscapedJSONString = js_.escapeSpecialChars();
+            myEscapedJSONString = myEscapedJSONString.replace(/\\\\n/g, "\\n");
+            console.log("TEXT ==> " + myEscapedJSONString);
+            // sendMessage(recipientId, msg, token);
+
+
+            console.log('emailMessage ' + emailMessage);
+
+            sendEmailForLead(emailMessage, sender, email, token);
+        }
+
     });
 }
 
