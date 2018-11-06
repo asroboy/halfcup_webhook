@@ -1083,7 +1083,7 @@ function saveLeadToHalfcup(
         var obj = JSON.parse(body);
         console.log(obj);
         var status = obj[0].status
-        if(status !== "duplicate"){
+        // if(status !== "duplicate"){
             sendWhatsAppLead(agenMobile, mobileX, emailX, otherValues, project_name, agentName);
 
 
@@ -1108,7 +1108,7 @@ function saveLeadToHalfcup(
             console.log('emailMessage ' + emailMessage);
 
             sendEmailForLead(emailMessage, sender, email, token);
-        }
+        // }
 
     });
 }

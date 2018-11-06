@@ -17,13 +17,15 @@
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="index.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/ai/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="206">
-              <caret line="1082" column="32" lean-forward="false" selection-start-line="1082" selection-start-column="32" selection-end-line="1082" selection-end-column="32" />
-              <folding />
+            <state relative-caret-position="180">
+              <caret line="1079" column="17" lean-forward="true" selection-start-line="1079" selection-start-column="17" selection-end-line="1079" selection-end-column="17" />
+              <folding>
+                <element signature="n#!!block;n#getToken#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -35,6 +37,9 @@
       <find>email</find>
       <find>sendEmailForLead</find>
       <find>saveLeadToHalfcup</find>
+      <find>leadgenId</find>
+      <find>sendWhatsAppLead</find>
+      <find>duplicate</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -158,12 +163,13 @@
       <option name="presentableId" value="Default" />
       <updated>1540866897491</updated>
       <workItem from="1540866901172" duration="9000" />
-      <workItem from="1541115894000" duration="3793000" />
+      <workItem from="1541115894000" duration="5769000" />
+      <workItem from="1541470185363" duration="530000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="3802000" />
+    <option name="totallyTimeSpent" value="6308000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
@@ -201,9 +207,21 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/ai/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="206">
-          <caret line="1082" column="32" lean-forward="false" selection-start-line="1082" selection-start-column="32" selection-end-line="1082" selection-end-column="32" />
-          <folding />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="n#!!block;n#getToken#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ai/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="1079" column="17" lean-forward="true" selection-start-line="1079" selection-start-column="17" selection-end-line="1079" selection-end-column="17" />
+          <folding>
+            <element signature="n#!!block;n#getToken#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
