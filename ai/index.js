@@ -940,19 +940,19 @@ function getPageAccessTokenForLead(sender, message, leadgenId, formId, emailMess
                 var code = obj.code;
                 if (code == 1) {
                     var token = obj.messenger_data.pageAccessToken;
-                    var email = obj.email;
+                    var agentEmail = obj.email;
                     var agenMobile = obj.mobile;
                     var recipientId = obj.messenger_data.adminMessengerId;
                     // var longLiveToken = "EAABqJD84pmIBAP4xtPj3NTLfCzWp17iZByoFndpbnEq79ZAOGs7XdF5YMO5i1GgQ3zHex200f2uvLHWqzFxRk0RrC1jV7RZBZAqtU2mLluefhmexnX7SSnTP63Hy2x3AAvv5FgkU48FE95fpj7c8ZBREHJIVBYg4ZD";
                     var longLiveToken = "EAABqJD84pmIBAP6U37LseOrNLP6Xt13zCRR8dUCcNS4T1tKFQd8JZAyGQJOPq4mOfHazyppWRGYQaO2aaT1vQA4HNSEu10D6CgH220ND9ecweec3WOMGsvbIMv1gzJI5NrYXRKf5Nqmc8o9cfJdG9eBeU1UZBuOK2iSZCBlogZDZD";
                     var urlGetLead = "https://graph.facebook.com/v2.9/" + leadgenId + "?access_token=" + token;
-                    console.log("LEAD URL " + urlGetLead);
+                    // console.log("LEAD URL " + urlGetLead);
                     emailMessage = emailMessage + "<tr><td>Agent Name</td><td>:</td><td>" + obj.restaurant_name + "</td></tr>"
-                        + "<tr><td>Agent Email</td><td>:</td><td> " + email + "</td></tr>"
+                        + "<tr><td>Agent Email</td><td>:</td><td> " + agentEmail + "</td></tr>"
                         + "<tr><td>Page ID</td><td>:</td><td> " + sender + "</td></tr>"
                         + "<tr><td>Page Name</td><td>:</td><td> " + obj.page_name + "</td></tr>"
 
-                    getLead(urlGetLead, token, message, recipientId, sender, formId, emailMessage, email, obj, leadValue, agenMobile, obj.restaurant_name);
+                    getLead(urlGetLead, token, message, recipientId, sender, formId, emailMessage, agentEmail, obj, leadValue, agenMobile, obj.restaurant_name);
                     return token;
 
                 }
@@ -967,7 +967,7 @@ function getPageAccessTokenForLead(sender, message, leadgenId, formId, emailMess
 }
 
 
-function getLead(url, token, message, recipientId, sender, formId, emailMessage, email, objData, leadValue, agenMobile, agentName) {
+function getLead(url, token, message, recipientId, sender, formId, emailMessage, agentEmail, objData, leadValue, agenMobile, agentName) {
 
     var urlGetLead = "https://graph.facebook.com/v2.9/" + formId + "?access_token=" + token;
     console.log("GET FORM NAME URL " + urlGetLead);
@@ -1049,7 +1049,7 @@ function getLead(url, token, message, recipientId, sender, formId, emailMessage,
                                         pageId = sender
                                     }
 
-                                    saveLeadToHalfcup(pageId, leadgenId, adId, '', adGroupId, '', '', '', formId, '', fullNameX, mobileX, emailX, otherFields, otherValues,
+                                    saveLeadToHalfcup(pageId, leadgenId, adId, '', adGroupId, '', '', '', formId, '', fullNameX, mobileX, agentEmail, otherFields, otherValues,
                                         message, emailMessage, sender, token, id, createdTime, mData, project_name, emailData,
                                         agenMobile, mobileX, emailX, otherValues, project_name, agentName);
 
@@ -1068,12 +1068,12 @@ function getLead(url, token, message, recipientId, sender, formId, emailMessage,
 
 
 function saveLeadToHalfcup(
-    pageId, leadId, adId, adName, adSetId, adSetName, campainId, campainName, formId, formName, fullName, mobile, email, otherFields, fieldsValues,
+    pageId, leadId, adId, adName, adSetId, adSetName, campainId, campainName, formId, formName, fullName, mobile,  agentEmail, otherFields, fieldsValues,
     message, emailMessage, sender, token, id, createdTime, mData, project_name, emailData,
     agenMobile, mobileX, emailX, otherValues, project_name, agentName) {
 
     var url = 'http://halfcup.com/social_rebates_system/api/addNewLead?page_id=' + pageId + '&leadId=' + leadId + '&adId=' + adId + '&adName=' + adName + '&adSetId=' + adSetId + '&adSetName=' + adSetName + '&campainId=' + campainId +
-        '&campainName=' + campainName + '&formId=' + formId + '&formName=' + formName + '&fullName=' + fullName + '&mobile=' + mobile + '&email=' + email + '&otherFields=' + otherFields +
+        '&campainName=' + campainName + '&formId=' + formId + '&formName=' + formName + '&fullName=' + fullName + '&mobile=' + mobile + '&email=' + emailX + '&otherFields=' + otherFields +
         '&fieldsValues=' + fieldsValues;
     console.log('url', url);
     request({
@@ -1107,7 +1107,7 @@ function saveLeadToHalfcup(
 
             console.log('emailMessage ' + emailMessage);
 
-            sendEmailForLead(emailMessage, sender, email, token);
+            sendEmailForLead(emailMessage, sender, agentEmail, token);
         // }
 
     });
@@ -1297,7 +1297,7 @@ function sendWhatsAppLead(agent_phone, mobile, email, interest, project_name, ag
     });
 }
 
-function sendEmailForLead(message, page_id, email, longLiveToken) {
+function sendEmailForLead(message, page_id, agentEmail, longLiveToken) {
     // var longLiveToken = "EAABqJD84pmIBAP6U37LseOrNLP6Xt13zCRR8dUCcNS4T1tKFQd8JZAyGQJOPq4mOfHazyppWRGYQaO2aaT1vQA4HNSEu10D6CgH220ND9ecweec3WOMGsvbIMv1gzJI5NrYXRKf5Nqmc8o9cfJdG9eBeU1UZBuOK2iSZCBlogZDZD";
     var graphUrl = "https://graph.facebook.com/v2.10/" + page_id + "?access_token=" + longLiveToken;
     request({
@@ -1325,7 +1325,7 @@ function sendEmailForLead(message, page_id, email, longLiveToken) {
             //sendEmail sendMultipleEmail for multiple target
             var url = 'http://halfcup.com/social_rebates_system/api/sendMultipleEmail?' +
                 'sender=noreply@halfcup.com' +
-                '&receiver=brotherho@halfcup.com,' + email + ',asrofiridho@gmail.com' +
+                '&receiver=brotherho@halfcup.com,' + agentEmail + ',asrofiridho@gmail.com' +
                 '&subject=NEW LEAD RECIEVED' +
                 '&body=' + message;//.replace("&", "%26")
             console.log('url', url);
