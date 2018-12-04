@@ -1084,7 +1084,7 @@ function saveLeadToHalfcup(
         // console.log(obj);
         // var status = obj[0].status
         // if(status !== "duplicate"){
-            sendWhatsAppLead(agenMobile, mobileX, emailX, otherValues, project_name, agentName);
+        //     sendWhatsAppLead(agenMobile, mobileX, emailX, otherValues, project_name, agentName);
 
 
             message = message + "id : " + id
