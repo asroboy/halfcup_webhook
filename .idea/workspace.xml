@@ -19,7 +19,7 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/ai/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="232">
+            <state relative-caret-position="37">
               <caret line="1287" column="13" lean-forward="true" selection-start-line="1287" selection-start-column="13" selection-end-line="1287" selection-end-column="13" />
               <folding>
                 <element signature="e#63478#65917#0" />
@@ -175,16 +175,15 @@
       <workItem from="1543061454509" duration="7000" />
       <workItem from="1543225500610" duration="597000" />
       <workItem from="1543818986382" duration="3532000" />
-      <workItem from="1543944104801" duration="184000" />
+      <workItem from="1543944104801" duration="600000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="29775000" />
+    <option name="totallyTimeSpent" value="30191000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" weight="0.25" />
       <window_info id="Structure" order="1" weight="0.25" />
@@ -198,7 +197,7 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info anchor="bottom" id="Terminal" order="8" weight="0.69292605" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="8" visible="true" weight="0.69292605" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Docker" order="10" show_stripe_button="false" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
@@ -212,7 +211,7 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/ai/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="232">
+        <state relative-caret-position="37">
           <caret line="1287" column="13" lean-forward="true" selection-start-line="1287" selection-start-column="13" selection-end-line="1287" selection-end-column="13" />
           <folding>
             <element signature="e#63478#65917#0" />
