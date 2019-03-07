@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d9e6c34e-7c69-4fc0-81db-8dd6b04239a0" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ai/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/ai/index.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -18,8 +19,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/ai/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="181">
-              <caret line="1031" column="104" selection-start-line="1031" selection-start-column="104" selection-end-line="1031" selection-end-column="104" />
+            <state relative-caret-position="76">
+              <caret line="1006" column="88" selection-start-line="1006" selection-start-column="88" selection-end-line="1006" selection-end-column="88" />
             </state>
           </provider>
         </entry>
@@ -86,12 +87,12 @@
       <find>Send email</find>
       <find>email</find>
       <find>saveLeadToHalfcup</find>
-      <find>getLead</find>
       <find>aileadsbooster</find>
       <find>aileadsbooster.com</find>
       <find>sendWhatsAppLead</find>
       <find>sendEmailForLead</find>
       <find>sendWhatsAppReportLead</find>
+      <find>getLead</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -219,12 +220,12 @@
       <workItem from="1543944104801" duration="600000" />
       <workItem from="1551772610131" duration="1198000" />
       <workItem from="1551919825475" duration="3727000" />
-      <workItem from="1551925230222" duration="2171000" />
+      <workItem from="1551925230222" duration="2655000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="37287000" />
+    <option name="totallyTimeSpent" value="37771000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
@@ -256,8 +257,8 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/ai/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="181">
-          <caret line="1031" column="104" selection-start-line="1031" selection-start-column="104" selection-end-line="1031" selection-end-column="104" />
+        <state relative-caret-position="76">
+          <caret line="1006" column="88" selection-start-line="1006" selection-start-column="88" selection-end-line="1006" selection-end-column="88" />
         </state>
       </provider>
     </entry>

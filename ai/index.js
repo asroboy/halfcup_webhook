@@ -1004,9 +1004,9 @@ function getLead(url, token, message, recipientId, sender, formId, emailMessage,
                                         var fieldName = field_data[i].name;
                                         var fieldValue = field_data[i].values;
                                         if (fieldName === 'mobile') {
-                                            mobileX = fieldValue.replace(/\+/g, "");
+                                            mobileX =  fieldValue[0].replace(/\+/g, "");
                                         } else if (fieldName === 'phone_number') {
-                                            mobileX = fieldValue.replace(/\+/g, "");
+                                            mobileX = fieldValue[0].replace(/\+/g, "");
                                         } else if (fieldName === 'email') {
                                             emailX = fieldValue;
                                         } else if (fieldName === 'full_name') {
