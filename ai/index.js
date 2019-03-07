@@ -1299,31 +1299,48 @@ function sendWhatsAppReportLead(admin_phone, customer_phone, agent_1_phone, agen
     // urlWhatsapp = urlWhatsapp + '&whatsapp_message =' + whatsapp_message ;
     // urlWhatsapp = urlWhatsapp + '&whatsapp_image_url=' + encodeURIComponent(whatsapp_image_url);
     console.log("SEND REPORT LEAD api : " + urlWhatsapp);
-
-    var request = require("request");
-
     var options = { method: 'POST',
         url: 'https://aileadsbooster.com/Engine/reportLeads',
         headers:
-            { 'Postman-Token': '380cebf0-3b01-4f25-8d08-f150ed291cd9',
-                'cache-control': 'no-cache',
-                'Content-Type': 'application/json' },
-        body:
+            {
+                'Content-Type': 'application/json',
+                'content-type': 'multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW' },
+        formData:
             {
                 admin : admin_phone,
-                customer : customer_phone,
-                agent_1 : agent_1_phone,
-                agent_2 : agent_2_phone,
-                whatsapp_message : whatsapp_message,
-                whatsapp_image_url : encodeURIComponent(whatsapp_image_url)
-            },
-        json: true };
+                customer: customer_phone,
+                agent_1: agent_1_phone,
+                agent_2: agent_2_phone,
+                whatsapp_message: whatsapp_message,
+                whatsapp_image_url: encodeURIComponent(whatsapp_image_url)
+            } };
 
     request(options, function (error, response, body) {
         if (error) throw new Error(error);
 
         console.log(body);
     });
+    // var request = require("request");
+    // var options = { method: 'POST',
+    //     url: 'https://aileadsbooster.com/Engine/reportLeads',
+    //     headers:
+    //         { 'Content-Type': 'application/json' },
+    //     body:
+    //         {
+    //             admin : admin_phone,
+    //             customer : customer_phone,
+    //             agent_1 : agent_1_phone,
+    //             agent_2 : agent_2_phone,
+    //             whatsapp_message : whatsapp_message,
+    //             whatsapp_image_url : encodeURIComponent(whatsapp_image_url)
+    //         },
+    //     json: true };
+    //
+    // request(options, function (error, response, body) {
+    //     if (error) throw new Error(error);
+    //
+    //     console.log(body);
+    // });
 
 
     // request({

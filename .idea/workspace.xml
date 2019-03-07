@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="d9e6c34e-7c69-4fc0-81db-8dd6b04239a0" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/ai/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/ai/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_develop.js" beforeDir="false" afterPath="$PROJECT_DIR$/test_develop.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -18,16 +19,23 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/ai/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="16">
-              <caret line="1293" column="7" lean-forward="true" selection-start-line="1293" selection-start-column="7" selection-end-line="1293" selection-end-column="7" />
+            <state relative-caret-position="237">
+              <caret line="1313" column="51" lean-forward="true" selection-start-line="1313" selection-start-column="51" selection-end-line="1313" selection-end-column="51" />
             </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-153" />
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/nlp.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3417">
+            <state relative-caret-position="181">
               <caret line="201" column="40" selection-start-line="201" selection-start-column="22" selection-end-line="201" selection-end-column="40" />
             </state>
           </provider>
@@ -36,7 +44,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="25721">
+            <state relative-caret-position="186">
               <caret line="1513" column="21" selection-start-line="1513" selection-start-column="21" selection-end-line="1513" selection-end-column="21" />
             </state>
           </provider>
@@ -45,7 +53,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/new_nlp.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4556">
+            <state relative-caret-position="17">
               <caret line="268" column="40" selection-start-line="268" selection-start-column="22" selection-end-line="268" selection-end-column="40" />
             </state>
           </provider>
@@ -54,8 +62,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test_develop.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="20" column="10" selection-start-line="20" selection-start-column="10" selection-end-line="20" selection-end-column="10" />
+            <state relative-caret-position="45">
+              <caret line="31" lean-forward="true" selection-start-line="31" selection-end-line="31" />
               <folding>
                 <element signature="e#0#41#0" />
               </folding>
@@ -163,7 +171,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Node.js.Unnamed">
+  <component name="RunManager" selected="Node.js.test_develop.js">
     <configuration name="Unnamed" type="NodeJSConfigurationType" path-to-node="C:/Program Files/nodejs/node" working-dir="$PROJECT_DIR$">
       <method v="2" />
     </configuration>
@@ -219,12 +227,12 @@
       <workItem from="1543944104801" duration="600000" />
       <workItem from="1551772610131" duration="1198000" />
       <workItem from="1551919825475" duration="3727000" />
-      <workItem from="1551925230222" duration="3961000" />
+      <workItem from="1551925230222" duration="6463000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="39077000" />
+    <option name="totallyTimeSpent" value="41579000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
@@ -236,7 +244,7 @@
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.70257235" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -254,41 +262,46 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/ai/index.js">
+    <entry file="file://$PROJECT_DIR$/test.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="16">
-          <caret line="1293" column="7" lean-forward="true" selection-start-line="1293" selection-start-column="7" selection-end-line="1293" selection-end-column="7" />
+        <state relative-caret-position="-153" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="186">
+          <caret line="1513" column="21" selection-start-line="1513" selection-start-column="21" selection-end-line="1513" selection-end-column="21" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/nlp.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3417">
+        <state relative-caret-position="181">
           <caret line="201" column="40" selection-start-line="201" selection-start-column="22" selection-end-line="201" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="25721">
-          <caret line="1513" column="21" selection-start-line="1513" selection-start-column="21" selection-end-line="1513" selection-end-column="21" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/new_nlp.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4556">
+        <state relative-caret-position="17">
           <caret line="268" column="40" selection-start-line="268" selection-start-column="22" selection-end-line="268" selection-end-column="40" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/test_develop.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="20" column="10" selection-start-line="20" selection-start-column="10" selection-end-line="20" selection-end-column="10" />
+        <state relative-caret-position="45">
+          <caret line="31" lean-forward="true" selection-start-line="31" selection-end-line="31" />
           <folding>
             <element signature="e#0#41#0" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ai/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="237">
+          <caret line="1313" column="51" lean-forward="true" selection-start-line="1313" selection-start-column="51" selection-end-line="1313" selection-end-column="51" />
         </state>
       </provider>
     </entry>
