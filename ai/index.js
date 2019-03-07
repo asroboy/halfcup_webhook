@@ -114,8 +114,7 @@ app.post('/webhook', function (req, res) {
                                                 // saveParamAi(messaging.recipient.id, messaging.sender.id, '', code);
                                                 new_nlp.getChatBot(messaging.referral.ref, messaging.recipient.id, messaging.sender.id, res);
                                             }
-                                        }
-                                        else if (messaging.referral.ref.indexOf('|param|') > -1) {
+                                        } else if (messaging.referral.ref.indexOf('|param|') > -1) {
                                             clearAiKey(messaging.recipient.id);
                                             var code = messaging.referral.ref.split('\|param\|')[1];
                                             var text = messaging.referral.ref.split('\|param\|')[0];
@@ -250,9 +249,7 @@ app.post('/webhook', function (req, res) {
                                                 console.log("Payload ", messaging.message.quick_reply.payload);
                                                 pixel('QuickReply', messaging.message.text, messaging.message.quick_reply.payload, messaging.sender.id, messaging.recipient.id);
                                                 getResponseToUser(messaging.message.quick_reply.payload, messaging.sender.id, messaging.recipient.id);
-                                            }
-
-                                            else if (payload_prefix === 'CUSTOM') {
+                                            } else if (payload_prefix === 'CUSTOM') {
                                                 console.log('call new_nlp CUSTOM');
                                                 new_nlp.getChatBot(messaging.message.quick_reply.payload, messaging.recipient.id, messaging.sender.id, res)
                                             }
@@ -325,14 +322,11 @@ app.post('/webhook', function (req, res) {
                                             //messaging.message.quick_reply.payload.indexOf('AGGREGATION_') > -1
                                             else if (payload_prefix === 'AGGREGATION') {
                                                 new_nlp.getChatBot(messaging.message.quick_reply.payload, messaging.recipient.id, messaging.sender.id, res);
-                                            }
-                                            else if ((find_prefix[0] === "TRUE") && (find_prefix[1] === "MONEY")) {
+                                            } else if ((find_prefix[0] === "TRUE") && (find_prefix[1] === "MONEY")) {
                                                 var keyword = messaging.message.quick_reply.payload.replace("TRUE_MONEY_", "");
                                                 console.log("keyword " + keyword);
                                                 true_money.postbackHandler(messaging, keyword);
-                                            }
-
-                                            else {
+                                            } else {
                                                 console.log("QuickReply ", messaging.message.quick_reply.payload);
                                                 var page_id = messaging.recipient.id;
                                                 if (page_id === '474086889694869') {
@@ -485,8 +479,7 @@ app.post('/webhook', function (req, res) {
                                             getToken(ref, messaging.recipient.id, messaging.sender.id, true);
                                             // }
                                         }
-                                    }
-                                    else {
+                                    } else {
 
                                         var find_prefix = messaging.postback.payload.split('_');
                                         var payload_prefix = find_prefix[0];
@@ -504,8 +497,7 @@ app.post('/webhook', function (req, res) {
                                                 pixel('PostBack', payloads[i], payloads[i], messaging.sender.id, messaging.recipient.id);
                                                 getResponseToUser(payloads[i], messaging.sender.id, messaging.recipient.id);
                                             }
-                                        }
-                                        else if ((messaging.postback.payload.indexOf("|") > -1) && payload_prefix !== 'AGGREGATION' && !(find_prefix[0] === "TRUE" && find_prefix[1] === "MONEY")) {
+                                        } else if ((messaging.postback.payload.indexOf("|") > -1) && payload_prefix !== 'AGGREGATION' && !(find_prefix[0] === "TRUE" && find_prefix[1] === "MONEY")) {
                                             console.log("payload_prefix contains \| sign");
                                             if (messaging.postback.payload.indexOf('|param|') > -1) {
                                                 console.log("payload_prefix has \|param\|");
@@ -516,17 +508,14 @@ app.post('/webhook', function (req, res) {
                                                 new_nlp.getChatBot(text, messaging.recipient.id, messaging.sender.id, res);
                                             }
 
-                                        }
-                                        else if (payload_prefix === 'AGGREGATION') {
+                                        } else if (payload_prefix === 'AGGREGATION') {
                                             console.log('call new_nlp AGGREGATION');
                                             // saveParamAi(messaging.recipient.id, messaging.sender.id, '', ####);
                                             new_nlp.getChatBot(messaging.postback.payload, messaging.recipient.id, messaging.sender.id, res)
-                                        }
-                                        else if (payload_prefix === 'LIVE') {
+                                        } else if (payload_prefix === 'LIVE') {
                                             console.log('call new_nlp LIVE');
                                             new_nlp.getChatBot(messaging.postback.payload, messaging.recipient.id, messaging.sender.id, res)
-                                        }
-                                        else if (payload_prefix === 'CUSTOM') {
+                                        } else if (payload_prefix === 'CUSTOM') {
                                             console.log('call new_nlp CUSTOM');
                                             new_nlp.getChatBot(messaging.postback.payload, messaging.recipient.id, messaging.sender.id, res)
                                         }
@@ -566,17 +555,14 @@ app.post('/webhook', function (req, res) {
                                         else if (messaging.postback.payload === "USER_DEFINED_PAYLOAD") {
                                             pixel('PostBack', "Get Started", messaging.postback.payload, messaging.sender.id, messaging.recipient.id);
                                             getResponseToUser(messaging.postback.payload, messaging.sender.id, messaging.recipient.id);
-                                        }
-                                        else if (messaging.postback.payload.indexOf("{{") > -1) {
+                                        } else if (messaging.postback.payload.indexOf("{{") > -1) {
                                             console.log('call new_nlp messaging.postback.payload {{');
                                             new_nlp.getChatBot(messaging.postback.payload, messaging.recipient.id, messaging.sender.id, res);
-                                        }
-                                        else if ((find_prefix[0] === "TRUE") && (find_prefix[1] === "MONEY")) {
+                                        } else if ((find_prefix[0] === "TRUE") && (find_prefix[1] === "MONEY")) {
                                             var keyword = messaging.postback.payload.replace("TRUE_MONEY_", "");
                                             console.log("keyword " + keyword);
                                             true_money.postbackHandler(messaging, keyword);
-                                        }
-                                        else {
+                                        } else {
                                             pixel('PostBack', messaging.postback.payload, messaging.postback.payload, messaging.sender.id, messaging.recipient.id);
                                             getResponseToUserForPostback(messaging.postback.payload, messaging.sender.id, messaging.recipient.id);
                                         }
@@ -620,8 +606,7 @@ app.post('/webhook', function (req, res) {
 
                                 }
                             }
-                        }
-                        else {
+                        } else {
                             console.log('Messaging from PAGE to USER');
                         }
 
@@ -1035,7 +1020,7 @@ function getLead(url, token, message, recipientId, sender, formId, emailMessage,
                                             otherValues = otherValues + fieldValue + '||';
                                         }
                                         mData = mData + fieldName.replace(/_/g, ' ') + ": " + fieldValue[0].replace(/_/g, ' ') + "\n";
-                                        emailData = emailData + "<tr><td>" +fieldName.replace('&', '%26').replace('?', '%3F').replace(/_/g, ' ') + "</td><td>:</td><td>" + fieldValue[0].replace(/_/g, ' ') + "</td></tr>";
+                                        emailData = emailData + "<tr><td>" + fieldName.replace('&', '%26').replace('?', '%3F').replace(/_/g, ' ') + "</td><td>:</td><td>" + fieldValue[0].replace(/_/g, ' ') + "</td></tr>";
                                     }
 
 
@@ -1068,7 +1053,7 @@ function getLead(url, token, message, recipientId, sender, formId, emailMessage,
 
 
 function saveLeadToHalfcup(
-    pageId, leadId, adId, adName, adSetId, adSetName, campainId, campainName, formId, formName, fullName, mobile,  agentEmail, otherFields, fieldsValues,
+    pageId, leadId, adId, adName, adSetId, adSetName, campainId, campainName, formId, formName, fullName, mobile, agentEmail, otherFields, fieldsValues,
     message, emailMessage, sender, token, id, createdTime, mData, project_name, emailData,
     agenMobile, mobileX, emailX, otherValues, project_name, agentName) {
 
@@ -1085,29 +1070,29 @@ function saveLeadToHalfcup(
         // var status = obj[0].status
         // if(status !== "duplicate"){
         //     sendWhatsAppLead(agenMobile, mobileX, emailX, otherValues, project_name, agentName);
+        sendWhatsAppReportLead("6590996758", mobileX, agenMobile, agenMobile, "", otherValues)
+
+        message = message + "id : " + id
+            + "\ntime : " + createdTime +
+            "\n" + mData;
+
+        emailMessage = emailMessage + "<tr><td>Project Name</td><td>:</td><td>" + project_name + "</td>" +
+            "<tr><td>Id</td><td>:</td><td> " + id + "</td></tr>" +
+            "<tr><td>Time</td><td>:</td><td>" + new Date(createdTime) + "</td></tr><tr></tr>" + emailData + "</table><hr/>";
+
+        var msg = {"text": message};
+        console.log("LEAD FORM RECIEVED ==== >" + message);
+
+        var js_ = JSON.stringify(msg);
+        var myEscapedJSONString = js_.escapeSpecialChars();
+        myEscapedJSONString = myEscapedJSONString.replace(/\\\\n/g, "\\n");
+        console.log("TEXT ==> " + myEscapedJSONString);
+        // sendMessage(recipientId, msg, token);
 
 
-            message = message + "id : " + id
-                + "\ntime : " + createdTime +
-                "\n" + mData;
+        console.log('emailMessage ' + emailMessage);
 
-            emailMessage = emailMessage + "<tr><td>Project Name</td><td>:</td><td>"+ project_name + "</td>" +
-                "<tr><td>Id</td><td>:</td><td> " + id + "</td></tr>" +
-                "<tr><td>Time</td><td>:</td><td>" + new Date(createdTime) + "</td></tr><tr></tr>" + emailData + "</table><hr/>";
-
-            var msg = {"text": message};
-            console.log("LEAD FORM RECIEVED ==== >" + message);
-
-            var js_ = JSON.stringify(msg);
-            var myEscapedJSONString = js_.escapeSpecialChars();
-            myEscapedJSONString = myEscapedJSONString.replace(/\\\\n/g, "\\n");
-            console.log("TEXT ==> " + myEscapedJSONString);
-            // sendMessage(recipientId, msg, token);
-
-
-            console.log('emailMessage ' + emailMessage);
-
-            sendEmailForLead(emailMessage, sender, agentEmail, token);
+        sendEmailForLead(emailMessage, sender, agentEmail, token);
         // }
 
     });
@@ -1296,6 +1281,29 @@ function sendWhatsAppLead(agent_phone, mobile, email, interest, project_name, ag
         }
     });
 }
+
+
+function sendWhatsAppReportLead(admin_phone, customer_phone, agent_1_phone, agent_2_phone, whatsapp_image_url, whatsapp_message ) {
+    var urlWhatsapp = 'https://aileadsbooster.com/Engine/reportLeads?'
+    urlWhatsapp = urlWhatsapp + 'admin=' + admin_phone;
+    urlWhatsapp = urlWhatsapp + '&customer=' + customer_phone;
+    urlWhatsapp = urlWhatsapp + '&agent_1=' + agent_1_phone;
+    urlWhatsapp = urlWhatsapp + '&agent_2=' + agent_2_phone;
+    urlWhatsapp = urlWhatsapp + '&whatsapp_message =' + whatsapp_message ;
+    urlWhatsapp = urlWhatsapp + '&whatsapp_image_url=' + encodeURIComponent(whatsapp_image_url);
+    console.log("SEND REPORT LEAD api : " + urlWhatsapp);
+    request({
+        url: urlWhatsapp,
+        method: 'GET'
+    }, function (error, response, body) {
+        if (!error) {
+            console.log(body);
+        } else {
+            console.log("Error send whatsapp api");
+        }
+    });
+}
+
 
 function sendEmailForLead(message, page_id, agentEmail, longLiveToken) {
     // var longLiveToken = "EAABqJD84pmIBAP6U37LseOrNLP6Xt13zCRR8dUCcNS4T1tKFQd8JZAyGQJOPq4mOfHazyppWRGYQaO2aaT1vQA4HNSEu10D6CgH220ND9ecweec3WOMGsvbIMv1gzJI5NrYXRKf5Nqmc8o9cfJdG9eBeU1UZBuOK2iSZCBlogZDZD";

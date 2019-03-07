@@ -19,11 +19,23 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/ai/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="37">
-              <caret line="1287" column="13" lean-forward="true" selection-start-line="1287" selection-start-column="13" selection-end-line="1287" selection-end-column="13" />
+            <state relative-caret-position="104">
+              <caret line="1072" column="76" selection-start-line="1072" selection-start-column="76" selection-end-line="1072" selection-end-column="76" />
               <folding>
-                <element signature="e#63478#65917#0" />
+                <element signature="e#63481#65920#0" />
+                <element signature="e#65979#67211#0" />
+                <element signature="e#67272#68506#0" />
+                <element signature="e#68552#70328#0" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/nlp.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="181">
+              <caret line="201" column="40" selection-start-line="201" selection-start-column="22" selection-end-line="201" selection-end-column="40" />
             </state>
           </provider>
         </entry>
@@ -31,8 +43,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="26044">
-              <caret line="1532" column="45" selection-start-line="1527" selection-start-column="3" selection-end-line="1532" selection-end-column="59" />
+            <state relative-caret-position="186">
+              <caret line="1513" column="21" lean-forward="true" selection-start-line="1513" selection-start-column="21" selection-end-line="1513" selection-end-column="21" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/new_nlp.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-6092">
+              <caret line="268" column="40" selection-start-line="268" selection-start-column="22" selection-end-line="268" selection-end-column="40" />
             </state>
           </provider>
         </entry>
@@ -72,10 +93,11 @@
       <find>Send email</find>
       <find>email</find>
       <find>sendEmailForLead</find>
-      <find>sendWhatsAppLead</find>
       <find>saveLeadToHalfcup</find>
       <find>getLead</find>
       <find>aileadsbooster</find>
+      <find>aileadsbooster.com</find>
+      <find>sendWhatsAppLead</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -101,7 +123,32 @@
     </navigator>
     <panes>
       <pane id="Scope" />
-      <pane id="ProjectPane" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="halfcup-secret-spire-55522" type="b2602c69:ProjectViewProjectNode" />
+              <item name="halfcup-secret-spire-55522" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="halfcup-secret-spire-55522" type="b2602c69:ProjectViewProjectNode" />
+              <item name="halfcup-secret-spire-55522" type="462c0819:PsiDirectoryNode" />
+              <item name="ai" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="halfcup-secret-spire-55522" type="b2602c69:ProjectViewProjectNode" />
+              <item name="halfcup-secret-spire-55522" type="462c0819:PsiDirectoryNode" />
+              <item name="page_msg_subs" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="halfcup-secret-spire-55522" type="b2602c69:ProjectViewProjectNode" />
+              <item name="halfcup-secret-spire-55522" type="462c0819:PsiDirectoryNode" />
+              <item name="true_money" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -176,16 +223,19 @@
       <workItem from="1543225500610" duration="597000" />
       <workItem from="1543818986382" duration="3532000" />
       <workItem from="1543944104801" duration="600000" />
+      <workItem from="1551772610131" duration="1198000" />
+      <workItem from="1551919825475" duration="1831000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="30191000" />
+    <option name="totallyTimeSpent" value="33220000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.25" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.15252976" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -197,7 +247,7 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="8" visible="true" weight="0.69292605" />
+      <window_info anchor="bottom" id="Terminal" order="8" weight="0.69292605" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Docker" order="10" show_stripe_button="false" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
@@ -209,29 +259,46 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/ai/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="37">
-          <caret line="1287" column="13" lean-forward="true" selection-start-line="1287" selection-start-column="13" selection-end-line="1287" selection-end-column="13" />
-          <folding>
-            <element signature="e#63478#65917#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="26044">
-          <caret line="1532" column="45" selection-start-line="1527" selection-start-column="3" selection-end-line="1532" selection-end-column="59" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/test_develop.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
           <caret line="20" column="10" selection-start-line="20" selection-start-column="10" selection-end-line="20" selection-end-column="10" />
           <folding>
             <element signature="e#0#41#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/nlp.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="181">
+          <caret line="201" column="40" selection-start-line="201" selection-start-column="22" selection-end-line="201" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="186">
+          <caret line="1513" column="21" lean-forward="true" selection-start-line="1513" selection-start-column="21" selection-end-line="1513" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/new_nlp.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-6092">
+          <caret line="268" column="40" selection-start-line="268" selection-start-column="22" selection-end-line="268" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ai/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="104">
+          <caret line="1072" column="76" selection-start-line="1072" selection-start-column="76" selection-end-line="1072" selection-end-column="76" />
+          <folding>
+            <element signature="e#63481#65920#0" />
+            <element signature="e#65979#67211#0" />
+            <element signature="e#67272#68506#0" />
+            <element signature="e#68552#70328#0" />
           </folding>
         </state>
       </provider>
