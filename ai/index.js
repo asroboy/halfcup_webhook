@@ -1023,7 +1023,7 @@ function getLead(url, token, message, recipientId, sender, formId, emailMessage,
                                         emailData = emailData + "<tr><td>" + fieldName.replace('&', '%26').replace('?', '%3F').replace(/_/g, ' ') + "</td><td>:</td><td>" + fieldValue[0].replace(/_/g, ' ') + "</td></tr>";
                                     }
 
-                                    sendWhatsAppReportLead("6590996758", mobileX.replace("+", ""), agenMobile.replace("+", ""), agenMobile.replace("+", ""), "", otherValues)
+                                    sendWhatsAppReportLead("6590996758", mobileX.replace(/\+/g, ''), agenMobile.replace(/\+/g, ''), agenMobile.replace(/\+/g, ''), "", otherValues)
 
                                     var adId = leadValue.ad_id;
                                     var formId = leadValue.form_id;

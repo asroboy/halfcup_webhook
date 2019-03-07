@@ -19,14 +19,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/ai/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="373">
-              <caret line="1025" column="97" selection-start-line="1025" selection-start-column="97" selection-end-line="1025" selection-end-column="97" />
-              <folding>
-                <element signature="e#63481#65920#0" />
-                <element signature="e#65979#67211#0" />
-                <element signature="e#67272#68506#0" />
-                <element signature="e#68552#70328#0" />
-              </folding>
+            <state relative-caret-position="496">
+              <caret line="1025" column="161" selection-start-line="1025" selection-start-column="161" selection-end-line="1025" selection-end-column="161" />
             </state>
           </provider>
         </entry>
@@ -34,7 +28,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/nlp.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="181">
+            <state relative-caret-position="3417">
               <caret line="201" column="40" selection-start-line="201" selection-start-column="22" selection-end-line="201" selection-end-column="40" />
             </state>
           </provider>
@@ -43,8 +37,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="186">
-              <caret line="1513" column="21" lean-forward="true" selection-start-line="1513" selection-start-column="21" selection-end-line="1513" selection-end-column="21" />
+            <state relative-caret-position="25721">
+              <caret line="1513" column="21" selection-start-line="1513" selection-start-column="21" selection-end-line="1513" selection-end-column="21" />
             </state>
           </provider>
         </entry>
@@ -52,7 +46,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/new_nlp.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-6092">
+            <state relative-caret-position="4556">
               <caret line="268" column="40" selection-start-line="268" selection-start-column="22" selection-end-line="268" selection-end-column="40" />
             </state>
           </provider>
@@ -122,7 +116,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -149,6 +142,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -224,12 +218,13 @@
       <workItem from="1543818986382" duration="3532000" />
       <workItem from="1543944104801" duration="600000" />
       <workItem from="1551772610131" duration="1198000" />
-      <workItem from="1551919825475" duration="3022000" />
+      <workItem from="1551919825475" duration="3727000" />
+      <workItem from="1551925230222" duration="415000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="34411000" />
+    <option name="totallyTimeSpent" value="35531000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
@@ -259,46 +254,40 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/test_develop.js">
+    <entry file="file://$PROJECT_DIR$/ai/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="20" column="10" selection-start-line="20" selection-start-column="10" selection-end-line="20" selection-end-column="10" />
-          <folding>
-            <element signature="e#0#41#0" />
-          </folding>
+        <state relative-caret-position="496">
+          <caret line="1025" column="161" selection-start-line="1025" selection-start-column="161" selection-end-line="1025" selection-end-column="161" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/nlp.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="181">
+        <state relative-caret-position="3417">
           <caret line="201" column="40" selection-start-line="201" selection-start-column="22" selection-end-line="201" selection-end-column="40" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="186">
-          <caret line="1513" column="21" lean-forward="true" selection-start-line="1513" selection-start-column="21" selection-end-line="1513" selection-end-column="21" />
+        <state relative-caret-position="25721">
+          <caret line="1513" column="21" selection-start-line="1513" selection-start-column="21" selection-end-line="1513" selection-end-column="21" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/new_nlp.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-6092">
+        <state relative-caret-position="4556">
           <caret line="268" column="40" selection-start-line="268" selection-start-column="22" selection-end-line="268" selection-end-column="40" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ai/index.js">
+    <entry file="file://$PROJECT_DIR$/test_develop.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="373">
-          <caret line="1025" column="97" selection-start-line="1025" selection-start-column="97" selection-end-line="1025" selection-end-column="97" />
+        <state relative-caret-position="306">
+          <caret line="20" column="10" selection-start-line="20" selection-start-column="10" selection-end-line="20" selection-end-column="10" />
           <folding>
-            <element signature="e#63481#65920#0" />
-            <element signature="e#65979#67211#0" />
-            <element signature="e#67272#68506#0" />
-            <element signature="e#68552#70328#0" />
+            <element signature="e#0#41#0" />
           </folding>
         </state>
       </provider>
