@@ -1031,7 +1031,7 @@ function getLead(url, token, message, recipientId, sender, formId, emailMessage,
                                     console.log('mobileX' + mobileX);
                                     console.log('agenMobile' + agenMobile);
                                     console.log('otherValues' + otherValues_wa);
-                                    sendWhatsAppReportLead("6590996758", mobileX, agenMobile1, agenMobile, imageUrl, otherValues_wa)
+                                    // sendWhatsAppReportLead("6590996758", mobileX, agenMobile1, agenMobile, imageUrl, otherValues_wa)
 
                                     var adId = leadValue.ad_id;
                                     var formId = leadValue.form_id;
