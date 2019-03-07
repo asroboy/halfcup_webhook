@@ -19,8 +19,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/ai/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="104">
-              <caret line="1072" column="76" selection-start-line="1072" selection-start-column="76" selection-end-line="1072" selection-end-column="76" />
+            <state relative-caret-position="373">
+              <caret line="1025" column="97" selection-start-line="1025" selection-start-column="97" selection-end-line="1025" selection-end-column="97" />
               <folding>
                 <element signature="e#63481#65920#0" />
                 <element signature="e#65979#67211#0" />
@@ -92,12 +92,12 @@
       <find>urlGetLead</find>
       <find>Send email</find>
       <find>email</find>
-      <find>sendEmailForLead</find>
       <find>saveLeadToHalfcup</find>
       <find>getLead</find>
       <find>aileadsbooster</find>
       <find>aileadsbooster.com</find>
       <find>sendWhatsAppLead</find>
+      <find>sendEmailForLead</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -224,18 +224,18 @@
       <workItem from="1543818986382" duration="3532000" />
       <workItem from="1543944104801" duration="600000" />
       <workItem from="1551772610131" duration="1198000" />
-      <workItem from="1551919825475" duration="1831000" />
+      <workItem from="1551919825475" duration="3022000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="33220000" />
+    <option name="totallyTimeSpent" value="34411000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.15252976" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.15252976" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -292,8 +292,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/ai/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="104">
-          <caret line="1072" column="76" selection-start-line="1072" selection-start-column="76" selection-end-line="1072" selection-end-column="76" />
+        <state relative-caret-position="373">
+          <caret line="1025" column="97" selection-start-line="1025" selection-start-column="97" selection-end-line="1025" selection-end-column="97" />
           <folding>
             <element signature="e#63481#65920#0" />
             <element signature="e#65979#67211#0" />
