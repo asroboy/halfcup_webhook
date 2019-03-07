@@ -927,7 +927,7 @@ function getPageAccessTokenForLead(sender, message, leadgenId, formId, emailMess
                     var token = obj.messenger_data.pageAccessToken;
                     var agentEmail = obj.email;
                     var agenMobile1 = "65" + obj.mobile1;
-                    var imageUrl =  obj.images_url;
+                    var imageUrl = obj.images_url;
                     var agenMobile = "65" + obj.mobile;
                     var recipientId = obj.messenger_data.adminMessengerId;
                     // var longLiveToken = "EAABqJD84pmIBAP4xtPj3NTLfCzWp17iZByoFndpbnEq79ZAOGs7XdF5YMO5i1GgQ3zHex200f2uvLHWqzFxRk0RrC1jV7RZBZAqtU2mLluefhmexnX7SSnTP63Hy2x3AAvv5FgkU48FE95fpj7c8ZBREHJIVBYg4ZD";
@@ -939,7 +939,7 @@ function getPageAccessTokenForLead(sender, message, leadgenId, formId, emailMess
                         + "<tr><td>Page ID</td><td>:</td><td> " + sender + "</td></tr>"
                         + "<tr><td>Page Name</td><td>:</td><td> " + obj.page_name + "</td></tr>"
 
-                    getLead(urlGetLead, token, message, recipientId, sender, formId, emailMessage, agentEmail, obj, leadValue, agenMobile1,agenMobile, imageUrl, obj.restaurant_name);
+                    getLead(urlGetLead, token, message, recipientId, sender, formId, emailMessage, agentEmail, obj, leadValue, agenMobile1, agenMobile, imageUrl, obj.restaurant_name);
                     return token;
 
                 }
@@ -954,7 +954,7 @@ function getPageAccessTokenForLead(sender, message, leadgenId, formId, emailMess
 }
 
 
-function getLead(url, token, message, recipientId, sender, formId, emailMessage, agentEmail, objData, leadValue, agenMobile1,agenMobile, imageUrl, agentName) {
+function getLead(url, token, message, recipientId, sender, formId, emailMessage, agentEmail, objData, leadValue, agenMobile1, agenMobile, imageUrl, agentName) {
 
     var urlGetLead = "https://graph.facebook.com/v2.9/" + formId + "?access_token=" + token;
     console.log("GET FORM NAME URL " + urlGetLead);
@@ -1006,7 +1006,7 @@ function getLead(url, token, message, recipientId, sender, formId, emailMessage,
                                         var fieldName = field_data[i].name;
                                         var fieldValue = field_data[i].values;
                                         if (fieldName === 'mobile') {
-                                            mobileX =  fieldValue[0].replace(/\+/g, "");
+                                            mobileX = fieldValue[0].replace(/\+/g, "");
                                         } else if (fieldName === 'phone_number') {
                                             mobileX = fieldValue[0].replace(/\+/g, "");
                                         } else if (fieldName === 'email') {
@@ -1292,7 +1292,7 @@ function sendWhatsAppLead(agent_phone, mobile, email, interest, project_name, ag
 }
 
 
-function sendWhatsAppReportLead(admin_phone, customer_phone, agent_1_phone, agent_2_phone, whatsapp_image_url, whatsapp_message ) {
+function sendWhatsAppReportLead(admin_phone, customer_phone, agent_1_phone, agent_2_phone, whatsapp_image_url, whatsapp_message) {
     var urlWhatsapp = 'https://aileadsbooster.com/Engine/reportLeads'
     // urlWhatsapp = urlWhatsapp + 'admin=' + admin_phone;
     // urlWhatsapp = urlWhatsapp + '&customer=' + customer_phone;
@@ -1301,21 +1301,27 @@ function sendWhatsAppReportLead(admin_phone, customer_phone, agent_1_phone, agen
     // urlWhatsapp = urlWhatsapp + '&whatsapp_message =' + whatsapp_message ;
     // urlWhatsapp = urlWhatsapp + '&whatsapp_image_url=' + encodeURIComponent(whatsapp_image_url);
     console.log("SEND REPORT LEAD api : " + urlWhatsapp);
-    var options = { method: 'POST',
+
+    var form_data = {
+        admin: admin_phone,
+        customer: customer_phone,
+        agent_1: agent_1_phone,
+        agent_2: agent_2_phone,
+        whatsapp_message: whatsapp_message,
+        whatsapp_image_url: encodeURIComponent(whatsapp_image_url)
+    };
+
+    console.log(form_data);
+    var options = {
+        method: 'POST',
         url: 'https://aileadsbooster.com/Engine/reportLeads',
         headers:
             {
                 'cache-control': 'no-cache',
-                'content-type': 'multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW' },
-        formData:
-            {
-                admin : admin_phone,
-                customer: customer_phone,
-                agent_1: agent_1_phone,
-                agent_2: agent_2_phone,
-                whatsapp_message: whatsapp_message,
-                whatsapp_image_url: encodeURIComponent(whatsapp_image_url)
-            } };
+                'content-type': 'multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW'
+            },
+        formData: form_data
+    };
 
     request(options, function (error, response, body) {
         if (error) throw new Error(error);
