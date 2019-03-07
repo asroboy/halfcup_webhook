@@ -1308,7 +1308,7 @@ function sendWhatsAppReportLead(admin_phone, customer_phone, agent_1_phone, agen
         agent_1: agent_1_phone,
         agent_2: agent_2_phone,
         whatsapp_message: whatsapp_message,
-        whatsapp_image_url: encodeURIComponent(whatsapp_image_url)
+        whatsapp_image_url: whatsapp_image_url
     };
 
     console.log(form_data);
