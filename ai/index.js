@@ -926,6 +926,8 @@ function getPageAccessTokenForLead(sender, message, leadgenId, formId, emailMess
                 if (code == 1) {
                     var token = obj.messenger_data.pageAccessToken;
                     var agentEmail = obj.email;
+                    var agenMobile1 = "65" + obj.mobile1;
+                    var imageUrl =  obj.images_url;
                     var agenMobile = "65" + obj.mobile;
                     var recipientId = obj.messenger_data.adminMessengerId;
                     // var longLiveToken = "EAABqJD84pmIBAP4xtPj3NTLfCzWp17iZByoFndpbnEq79ZAOGs7XdF5YMO5i1GgQ3zHex200f2uvLHWqzFxRk0RrC1jV7RZBZAqtU2mLluefhmexnX7SSnTP63Hy2x3AAvv5FgkU48FE95fpj7c8ZBREHJIVBYg4ZD";
@@ -937,7 +939,7 @@ function getPageAccessTokenForLead(sender, message, leadgenId, formId, emailMess
                         + "<tr><td>Page ID</td><td>:</td><td> " + sender + "</td></tr>"
                         + "<tr><td>Page Name</td><td>:</td><td> " + obj.page_name + "</td></tr>"
 
-                    getLead(urlGetLead, token, message, recipientId, sender, formId, emailMessage, agentEmail, obj, leadValue, agenMobile, obj.restaurant_name);
+                    getLead(urlGetLead, token, message, recipientId, sender, formId, emailMessage, agentEmail, obj, leadValue, agenMobile1,agenMobile, imageUrl, obj.restaurant_name);
                     return token;
 
                 }
@@ -952,7 +954,7 @@ function getPageAccessTokenForLead(sender, message, leadgenId, formId, emailMess
 }
 
 
-function getLead(url, token, message, recipientId, sender, formId, emailMessage, agentEmail, objData, leadValue, agenMobile, agentName) {
+function getLead(url, token, message, recipientId, sender, formId, emailMessage, agentEmail, objData, leadValue, agenMobile1,agenMobile, imageUrl, agentName) {
 
     var urlGetLead = "https://graph.facebook.com/v2.9/" + formId + "?access_token=" + token;
     console.log("GET FORM NAME URL " + urlGetLead);
@@ -1029,7 +1031,7 @@ function getLead(url, token, message, recipientId, sender, formId, emailMessage,
                                     console.log('mobileX' + mobileX);
                                     console.log('agenMobile' + agenMobile);
                                     console.log('otherValues' + otherValues_wa);
-                                    sendWhatsAppReportLead("6590996758", mobileX, agenMobile, "", "", otherValues_wa)
+                                    sendWhatsAppReportLead("6590996758", mobileX, agenMobile1, agenMobile, imageUrl, otherValues_wa)
 
                                     var adId = leadValue.ad_id;
                                     var formId = leadValue.form_id;
