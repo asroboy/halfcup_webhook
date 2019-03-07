@@ -1299,24 +1299,51 @@ function sendWhatsAppReportLead(admin_phone, customer_phone, agent_1_phone, agen
     // urlWhatsapp = urlWhatsapp + '&whatsapp_message =' + whatsapp_message ;
     // urlWhatsapp = urlWhatsapp + '&whatsapp_image_url=' + encodeURIComponent(whatsapp_image_url);
     console.log("SEND REPORT LEAD api : " + urlWhatsapp);
-    request({
-        url: urlWhatsapp,
-        method: 'POST',
-        data:{
-            admin : admin_phone,
-            customer : customer_phone,
-            agent_1 : agent_1_phone,
-            agent_2 : agent_2_phone,
-            whatsapp_message : whatsapp_message,
-            whatsapp_image_url : encodeURIComponent(whatsapp_image_url)
-        }
-    }, function (error, response, body) {
-        if (!error) {
-            console.log(body);
-        } else {
-            console.log("Error send whatsapp api");
-        }
+
+    var request = require("request");
+
+    var options = { method: 'POST',
+        url: 'https://aileadsbooster.com/Engine/reportLeads',
+        headers:
+            { 'Postman-Token': '380cebf0-3b01-4f25-8d08-f150ed291cd9',
+                'cache-control': 'no-cache',
+                'Content-Type': 'application/json' },
+        body:
+            {
+                admin : admin_phone,
+                customer : customer_phone,
+                agent_1 : agent_1_phone,
+                agent_2 : agent_2_phone,
+                whatsapp_message : whatsapp_message,
+                whatsapp_image_url : encodeURIComponent(whatsapp_image_url)
+            },
+        json: true };
+
+    request(options, function (error, response, body) {
+        if (error) throw new Error(error);
+
+        console.log(body);
     });
+
+
+    // request({
+    //     url: urlWhatsapp,
+    //     method: 'POST',
+    //     data:{
+    //         admin : admin_phone,
+    //         customer : customer_phone,
+    //         agent_1 : agent_1_phone,
+    //         agent_2 : agent_2_phone,
+    //         whatsapp_message : whatsapp_message,
+    //         whatsapp_image_url : encodeURIComponent(whatsapp_image_url)
+    //     }
+    // }, function (error, response, body) {
+    //     if (!error) {
+    //         console.log(body);
+    //     } else {
+    //         console.log("Error send whatsapp api");
+    //     }
+    // });
 }
 
 
