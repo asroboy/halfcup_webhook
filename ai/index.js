@@ -1303,7 +1303,7 @@ function sendWhatsAppReportLead(admin_phone, customer_phone, agent_1_phone, agen
         url: 'https://aileadsbooster.com/Engine/reportLeads',
         headers:
             {
-                'Content-Type': 'application/json',
+                'cache-control': 'no-cache',
                 'content-type': 'multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW' },
         formData:
             {
@@ -1320,47 +1320,6 @@ function sendWhatsAppReportLead(admin_phone, customer_phone, agent_1_phone, agen
 
         console.log(body);
     });
-    // var request = require("request");
-    // var options = { method: 'POST',
-    //     url: 'https://aileadsbooster.com/Engine/reportLeads',
-    //     headers:
-    //         { 'Content-Type': 'application/json' },
-    //     body:
-    //         {
-    //             admin : admin_phone,
-    //             customer : customer_phone,
-    //             agent_1 : agent_1_phone,
-    //             agent_2 : agent_2_phone,
-    //             whatsapp_message : whatsapp_message,
-    //             whatsapp_image_url : encodeURIComponent(whatsapp_image_url)
-    //         },
-    //     json: true };
-    //
-    // request(options, function (error, response, body) {
-    //     if (error) throw new Error(error);
-    //
-    //     console.log(body);
-    // });
-
-
-    // request({
-    //     url: urlWhatsapp,
-    //     method: 'POST',
-    //     data:{
-    //         admin : admin_phone,
-    //         customer : customer_phone,
-    //         agent_1 : agent_1_phone,
-    //         agent_2 : agent_2_phone,
-    //         whatsapp_message : whatsapp_message,
-    //         whatsapp_image_url : encodeURIComponent(whatsapp_image_url)
-    //     }
-    // }, function (error, response, body) {
-    //     if (!error) {
-    //         console.log(body);
-    //     } else {
-    //         console.log("Error send whatsapp api");
-    //     }
-    // });
 }
 
 
