@@ -998,6 +998,7 @@ function getLead(url, token, message, recipientId, sender, formId, emailMessage,
                                     var fullNameX = '';
                                     var otherFields = '';
                                     var otherValues = '';
+                                    var otherValues_wa = '';
                                     var project_name = '';
                                     for (var i = 0; i < field_data.length; i++) {
                                         var fieldName = field_data[i].name;
@@ -1018,16 +1019,17 @@ function getLead(url, token, message, recipientId, sender, formId, emailMessage,
                                             }
                                             otherFields = otherFields + fieldName.replace('&', '%26').replace('?', '%3F') + '||';
                                             otherValues = otherValues + fieldValue + '||';
+                                            otherValues_wa = otherValues_wa + fieldValue + ', ';
                                         }
                                         mData = mData + fieldName.replace(/_/g, ' ') + ": " + fieldValue[0].replace(/_/g, ' ') + "\n";
                                         emailData = emailData + "<tr><td>" + fieldName.replace('&', '%26').replace('?', '%3F').replace(/_/g, ' ') + "</td><td>:</td><td>" + fieldValue[0].replace(/_/g, ' ') + "</td></tr>";
                                     }
 
 
-                                    console.log('agenMobile' + mobileX);
+                                    console.log('mobileX' + mobileX);
                                     console.log('agenMobile' + agenMobile);
-                                    console.log('otherValues' + otherValues);
-                                    sendWhatsAppReportLead("6590996758", mobileX, agenMobile, agenMobile, "", otherValues)
+                                    console.log('otherValues' + otherValues_wa);
+                                    sendWhatsAppReportLead("6590996758", mobileX.replace(/\+/g, ""), agenMobile.replace(/\+/g, ""), agenMobile.replace(/\+/g, ""), "", otherValues_wa)
 
                                     var adId = leadValue.ad_id;
                                     var formId = leadValue.form_id;
