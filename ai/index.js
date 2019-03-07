@@ -1301,7 +1301,7 @@ function sendWhatsAppReportLead(admin_phone, customer_phone, agent_1_phone, agen
     console.log("SEND REPORT LEAD api : " + urlWhatsapp);
     request({
         url: urlWhatsapp,
-        method: 'GET'
+        method: 'POST'
     }, function (error, response, body) {
         if (!error) {
             console.log(body);
