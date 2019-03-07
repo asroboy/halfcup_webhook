@@ -1291,17 +1291,25 @@ function sendWhatsAppLead(agent_phone, mobile, email, interest, project_name, ag
 
 
 function sendWhatsAppReportLead(admin_phone, customer_phone, agent_1_phone, agent_2_phone, whatsapp_image_url, whatsapp_message ) {
-    var urlWhatsapp = 'https://aileadsbooster.com/Engine/reportLeads?'
-    urlWhatsapp = urlWhatsapp + 'admin=' + admin_phone;
-    urlWhatsapp = urlWhatsapp + '&customer=' + customer_phone;
-    urlWhatsapp = urlWhatsapp + '&agent_1=' + agent_1_phone;
-    urlWhatsapp = urlWhatsapp + '&agent_2=' + agent_2_phone;
-    urlWhatsapp = urlWhatsapp + '&whatsapp_message =' + whatsapp_message ;
-    urlWhatsapp = urlWhatsapp + '&whatsapp_image_url=' + encodeURIComponent(whatsapp_image_url);
+    var urlWhatsapp = 'https://aileadsbooster.com/Engine/reportLeads'
+    // urlWhatsapp = urlWhatsapp + 'admin=' + admin_phone;
+    // urlWhatsapp = urlWhatsapp + '&customer=' + customer_phone;
+    // urlWhatsapp = urlWhatsapp + '&agent_1=' + agent_1_phone;
+    // urlWhatsapp = urlWhatsapp + '&agent_2=' + agent_2_phone;
+    // urlWhatsapp = urlWhatsapp + '&whatsapp_message =' + whatsapp_message ;
+    // urlWhatsapp = urlWhatsapp + '&whatsapp_image_url=' + encodeURIComponent(whatsapp_image_url);
     console.log("SEND REPORT LEAD api : " + urlWhatsapp);
     request({
         url: urlWhatsapp,
-        method: 'POST'
+        method: 'POST',
+        data:{
+            admin : admin_phone,
+            customer : customer_phone,
+            agent_1 : agent_1_phone,
+            agent_2 : agent_2_phone,
+            whatsapp_message : whatsapp_message,
+            whatsapp_image_url : encodeURIComponent(whatsapp_image_url)
+        }
     }, function (error, response, body) {
         if (!error) {
             console.log(body);
