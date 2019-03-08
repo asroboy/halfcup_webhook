@@ -927,12 +927,12 @@ function getPageAccessTokenForLead(sender, message, leadgenId, formId, emailMess
                     var token = obj.messenger_data.pageAccessToken;
                     var agentEmail = obj.email;
                     var agenMobile1 = "";
-                    if (obj.mobile1 !== 'null') {
+                    if (obj.mobile1 !== "null") {
                         agenMobile1 = "65" + obj.mobile1;
                     }
                     var imageUrl = obj.images_url;
                     var agenMobile = "";
-                    if (obj.mobile !== 'null') {
+                    if (obj.mobile !== "null") {
                         agenMobile = "65" + obj.mobile;
                     }
 
