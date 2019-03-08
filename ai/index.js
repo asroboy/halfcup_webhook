@@ -1044,7 +1044,7 @@ function getLead(url, token, message, recipientId, sender, formId, emailMessage,
                                     console.log('agenMobile' + agenMobile);
                                     console.log('otherValues' + otherValues_wa);
                                     if(pageId === '226444474757012'){
-                                        sendWhatsAppReportLead("6590996758", mobileX, agenMobile1, agenMobile, imageUrl, otherValues_wa)
+                                        sendWhatsAppReportLead("6590996758", mobileX, agenMobile1, agenMobile, imageUrl, otherValues_wa, project_name)
                                     }
 
 
@@ -1297,7 +1297,7 @@ function sendWhatsAppLead(agent_phone, mobile, email, interest, project_name, ag
 }
 
 
-function sendWhatsAppReportLead(admin_phone, customer_phone, agent_1_phone, agent_2_phone, whatsapp_image_url, whatsapp_message) {
+function sendWhatsAppReportLead(admin_phone, customer_phone, agent_1_phone, agent_2_phone, whatsapp_image_url, whatsapp_message, project_name) {
     var urlWhatsapp = 'https://aileadsbooster.com/Engine/reportLeads'
     // urlWhatsapp = urlWhatsapp + 'admin=' + admin_phone;
     // urlWhatsapp = urlWhatsapp + '&customer=' + customer_phone;
@@ -1313,7 +1313,8 @@ function sendWhatsAppReportLead(admin_phone, customer_phone, agent_1_phone, agen
         agent_1: agent_1_phone,
         agent_2: agent_2_phone,
         whatsapp_message: whatsapp_message,
-        whatsapp_image_url: whatsapp_image_url
+        whatsapp_image_url: whatsapp_image_url,
+        project: project_name
     };
 
     console.log(form_data);
