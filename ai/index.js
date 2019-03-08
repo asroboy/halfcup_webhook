@@ -1049,7 +1049,7 @@ function getLead(url, token, message, recipientId, sender, formId, emailMessage,
                                     console.log('agenMobile' + agenMobile);
                                     console.log('otherValues' + otherValues_wa);
                                     if (pageId === '226444474757012') {
-                                        sendWhatsAppReportLead("6590996758", mobileX, agenMobile1, agenMobile, imageUrl, otherValues_wa, project_name)
+                                        // sendWhatsAppReportLead("6590996758", mobileX, agenMobile1, agenMobile, imageUrl, otherValues_wa, project_name)
                                     }
 
 
