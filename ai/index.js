@@ -926,9 +926,16 @@ function getPageAccessTokenForLead(sender, message, leadgenId, formId, emailMess
                 if (code == 1) {
                     var token = obj.messenger_data.pageAccessToken;
                     var agentEmail = obj.email;
-                    var agenMobile1 = "65" + obj.mobile1;
+                    var agenMobile1 = "";
+                    if (obj.mobile1 !== 'null') {
+                        agenMobile1 = "65" + obj.mobile1;
+                    }
                     var imageUrl = obj.images_url;
-                    var agenMobile = "65" + obj.mobile;
+                    var agenMobile = "";
+                    if (obj.mobile !== 'null') {
+                        agenMobile = "65" + obj.mobile;
+                    }
+
                     var recipientId = obj.messenger_data.adminMessengerId;
                     // var longLiveToken = "EAABqJD84pmIBAP4xtPj3NTLfCzWp17iZByoFndpbnEq79ZAOGs7XdF5YMO5i1GgQ3zHex200f2uvLHWqzFxRk0RrC1jV7RZBZAqtU2mLluefhmexnX7SSnTP63Hy2x3AAvv5FgkU48FE95fpj7c8ZBREHJIVBYg4ZD";
                     var longLiveToken = "EAABqJD84pmIBAP6U37LseOrNLP6Xt13zCRR8dUCcNS4T1tKFQd8JZAyGQJOPq4mOfHazyppWRGYQaO2aaT1vQA4HNSEu10D6CgH220ND9ecweec3WOMGsvbIMv1gzJI5NrYXRKf5Nqmc8o9cfJdG9eBeU1UZBuOK2iSZCBlogZDZD";
@@ -1028,8 +1035,6 @@ function getLead(url, token, message, recipientId, sender, formId, emailMessage,
                                     }
 
 
-
-
                                     var adId = leadValue.ad_id;
                                     var formId = leadValue.form_id;
                                     var leadgenId = leadValue.leadgen_id;
@@ -1043,7 +1048,7 @@ function getLead(url, token, message, recipientId, sender, formId, emailMessage,
                                     console.log('mobileX' + mobileX);
                                     console.log('agenMobile' + agenMobile);
                                     console.log('otherValues' + otherValues_wa);
-                                    if(pageId === '226444474757012'){
+                                    if (pageId === '226444474757012') {
                                         sendWhatsAppReportLead("6590996758", mobileX, agenMobile1, agenMobile, imageUrl, otherValues_wa, project_name)
                                     }
 
