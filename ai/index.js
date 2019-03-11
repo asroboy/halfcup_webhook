@@ -933,7 +933,7 @@ function getPageAccessTokenForLead(sender, message, leadgenId, formId, emailMess
                     }
                     var imageUrl = obj.images_url;
                     var privateMessage = obj.message;
-                    var groupMessage = obj.groupMessage;
+                    var groupMessage = obj.group_message;
                     var agenMobile = "";
                     if (obj.mobile !== "null" && obj.mobile !== null) {
                         agenMobile = "65" + obj.mobile;
