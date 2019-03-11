@@ -932,6 +932,8 @@ function getPageAccessTokenForLead(sender, message, leadgenId, formId, emailMess
                         agenMobile1 = "65" + obj.mobile1;
                     }
                     var imageUrl = obj.images_url;
+                    var privateMessage = obj.message;
+                    var groupMessage = obj.groupMessage;
                     var agenMobile = "";
                     if (obj.mobile !== "null" && obj.mobile !== null) {
                         agenMobile = "65" + obj.mobile;
@@ -947,7 +949,7 @@ function getPageAccessTokenForLead(sender, message, leadgenId, formId, emailMess
                         + "<tr><td>Page ID</td><td>:</td><td> " + sender + "</td></tr>"
                         + "<tr><td>Page Name</td><td>:</td><td> " + obj.page_name + "</td></tr>"
 
-                    getLead(urlGetLead, token, message, recipientId, sender, formId, emailMessage, agentEmail, obj, leadValue, agenMobile1, agenMobile, imageUrl, obj.restaurant_name, agentId);
+                    getLead(urlGetLead, token, message, recipientId, sender, formId, emailMessage, agentEmail, obj, leadValue, agenMobile1, agenMobile, imageUrl, obj.restaurant_name, agentId, privateMessage, groupMessage);
                     return token;
 
                 }
@@ -962,7 +964,7 @@ function getPageAccessTokenForLead(sender, message, leadgenId, formId, emailMess
 }
 
 
-function getLead(url, token, message, recipientId, sender, formId, emailMessage, agentEmail, objData, leadValue, agenMobile1, agenMobile, imageUrl, agentName, agentId) {
+function getLead(url, token, message, recipientId, sender, formId, emailMessage, agentEmail, objData, leadValue, agenMobile1, agenMobile, imageUrl, agentName, agentId, privateMessage, groupMessage) {
 
     var urlGetLead = "https://graph.facebook.com/v2.9/" + formId + "?access_token=" + token;
     console.log("GET FORM NAME URL " + urlGetLead);
@@ -1050,7 +1052,7 @@ function getLead(url, token, message, recipientId, sender, formId, emailMessage,
                                     console.log('agenMobile' + agenMobile);
                                     console.log('otherValues' + otherValues_wa);
                                     if (pageId === '1965520413734063' || pageId === '409295783204800' || pageId === '228431964255924') {
-                                        sendWhatsAppReportLead("6590996758", mobileX, agenMobile1, agenMobile, imageUrl, otherValues_wa, project_name, agentId)
+                                        sendWhatsAppReportLead("6590996758", mobileX, agenMobile1, agenMobile, imageUrl, otherValues_wa, project_name, agentId, privateMessage, groupMessage)
                                     }
 
 
@@ -1303,7 +1305,7 @@ function sendWhatsAppLead(agent_phone, mobile, email, interest, project_name, ag
 }
 
 
-function sendWhatsAppReportLead(admin_phone, customer_phone, agent_1_phone, agent_2_phone, whatsapp_image_url, whatsapp_message, project_name, agentId) {
+function sendWhatsAppReportLeadsendWhatsAppReportLead(admin_phone, customer_phone, agent_1_phone, agent_2_phone, whatsapp_image_url, whatsapp_message, project_name, agentId, privateMessage, groupMessage) {
     var urlWhatsapp = 'https://aileadsbooster.com/Engine/reportLeads'
     // urlWhatsapp = urlWhatsapp + 'admin=' + admin_phone;
     // urlWhatsapp = urlWhatsapp + '&customer=' + customer_phone;
@@ -1321,7 +1323,9 @@ function sendWhatsAppReportLead(admin_phone, customer_phone, agent_1_phone, agen
         whatsapp_message: whatsapp_message,
         whatsapp_image_url: whatsapp_image_url,
         project: project_name.trim(),
-        agent_id : agentId
+        agent_id : agentId,
+        message: privateMessage,
+        group_message : groupMessage
     };
 
     console.log(form_data);
