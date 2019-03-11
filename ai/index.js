@@ -1052,7 +1052,7 @@ function getLead(url, token, message, recipientId, sender, formId, emailMessage,
                                     console.log('agenMobile' + agenMobile);
                                     console.log('otherValues' + otherValues_wa);
                                     if (pageId === '1965520413734063' || pageId === '409295783204800' || pageId === '228431964255924') {
-                                        sendWhatsAppReportLead("6590996758", mobileX, agenMobile1, agenMobile, imageUrl, otherValues_wa, project_name, agentId, privateMessage, groupMessage)
+                                        sendWhatsAppReportLead("6590996758", mobileX, agenMobile1, agenMobile, imageUrl, otherValues_wa, project_name, agentId, privateMessage, groupMessage, agentName)
                                     }
 
 
@@ -1305,7 +1305,7 @@ function sendWhatsAppLead(agent_phone, mobile, email, interest, project_name, ag
 }
 
 
-function sendWhatsAppReportLead(admin_phone, customer_phone, agent_1_phone, agent_2_phone, whatsapp_image_url, whatsapp_message, project_name, agentId, privateMessage, groupMessage) {
+function sendWhatsAppReportLead(admin_phone, customer_phone, agent_1_phone, agent_2_phone, whatsapp_image_url, whatsapp_message, project_name, agentId, privateMessage, groupMessage, agentName) {
     var urlWhatsapp = 'https://aileadsbooster.com/Engine/reportLeads'
     // urlWhatsapp = urlWhatsapp + 'admin=' + admin_phone;
     // urlWhatsapp = urlWhatsapp + '&customer=' + customer_phone;
@@ -1314,6 +1314,14 @@ function sendWhatsAppReportLead(admin_phone, customer_phone, agent_1_phone, agen
     // urlWhatsapp = urlWhatsapp + '&whatsapp_message =' + whatsapp_message ;
     // urlWhatsapp = urlWhatsapp + '&whatsapp_image_url=' + encodeURIComponent(whatsapp_image_url);
     console.log("SEND REPORT LEAD api : " + urlWhatsapp);
+    privateMessage = privateMessage.replace("{agent_name}", agentName);
+    privateMessage = privateMessage.replace("{project}",  project_name.trim());
+    privateMessage = privateMessage.replace("{buyer_name}",  "");
+
+    groupMessage = groupMessage.replace("{agent_name}", agentName);
+    groupMessage = groupMessage.replace("{project}",  project_name.trim());
+    groupMessage = groupMessage.replace("{photo_of_agent}",  whatsapp_image_url);
+    groupMessage = groupMessage.replace("{buyer_name}",  "");
 
     var form_data = {
         admin: admin_phone.trim(),
