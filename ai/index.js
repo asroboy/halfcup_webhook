@@ -925,6 +925,7 @@ function getPageAccessTokenForLead(sender, message, leadgenId, formId, emailMess
                 var code = obj.code;
                 if (code == 1) {
                     var token = obj.messenger_data.pageAccessToken;
+                    var agentId = obj.messenger_data.restaurant.id;
                     var agentEmail = obj.email;
                     var agenMobile1 = "";
                     if (obj.mobile1 !== "null" && obj.mobile1 !== null) {
@@ -946,7 +947,7 @@ function getPageAccessTokenForLead(sender, message, leadgenId, formId, emailMess
                         + "<tr><td>Page ID</td><td>:</td><td> " + sender + "</td></tr>"
                         + "<tr><td>Page Name</td><td>:</td><td> " + obj.page_name + "</td></tr>"
 
-                    getLead(urlGetLead, token, message, recipientId, sender, formId, emailMessage, agentEmail, obj, leadValue, agenMobile1, agenMobile, imageUrl, obj.restaurant_name);
+                    getLead(urlGetLead, token, message, recipientId, sender, formId, emailMessage, agentEmail, obj, leadValue, agenMobile1, agenMobile, imageUrl, obj.restaurant_name, agentId);
                     return token;
 
                 }
@@ -961,7 +962,7 @@ function getPageAccessTokenForLead(sender, message, leadgenId, formId, emailMess
 }
 
 
-function getLead(url, token, message, recipientId, sender, formId, emailMessage, agentEmail, objData, leadValue, agenMobile1, agenMobile, imageUrl, agentName) {
+function getLead(url, token, message, recipientId, sender, formId, emailMessage, agentEmail, objData, leadValue, agenMobile1, agenMobile, imageUrl, agentName, agentId) {
 
     var urlGetLead = "https://graph.facebook.com/v2.9/" + formId + "?access_token=" + token;
     console.log("GET FORM NAME URL " + urlGetLead);
@@ -1049,7 +1050,7 @@ function getLead(url, token, message, recipientId, sender, formId, emailMessage,
                                     console.log('agenMobile' + agenMobile);
                                     console.log('otherValues' + otherValues_wa);
                                     if (pageId === '1965520413734063' || pageId === '409295783204800' || pageId === '228431964255924') {
-                                        sendWhatsAppReportLead("6590996758", mobileX, agenMobile1, agenMobile, imageUrl, otherValues_wa, project_name)
+                                        sendWhatsAppReportLead("6590996758", mobileX, agenMobile1, agenMobile, imageUrl, otherValues_wa, project_name, agentId)
                                     }
 
 
@@ -1302,7 +1303,7 @@ function sendWhatsAppLead(agent_phone, mobile, email, interest, project_name, ag
 }
 
 
-function sendWhatsAppReportLead(admin_phone, customer_phone, agent_1_phone, agent_2_phone, whatsapp_image_url, whatsapp_message, project_name) {
+function sendWhatsAppReportLead(admin_phone, customer_phone, agent_1_phone, agent_2_phone, whatsapp_image_url, whatsapp_message, project_name, agentId) {
     var urlWhatsapp = 'https://aileadsbooster.com/Engine/reportLeads'
     // urlWhatsapp = urlWhatsapp + 'admin=' + admin_phone;
     // urlWhatsapp = urlWhatsapp + '&customer=' + customer_phone;
@@ -1319,7 +1320,8 @@ function sendWhatsAppReportLead(admin_phone, customer_phone, agent_1_phone, agen
         agent_2: agent_2_phone,
         whatsapp_message: whatsapp_message,
         whatsapp_image_url: whatsapp_image_url,
-        project: project_name
+        project: project_name,
+        agent_id : agentId
     };
 
     console.log(form_data);
