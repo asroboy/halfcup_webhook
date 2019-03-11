@@ -934,6 +934,7 @@ function getPageAccessTokenForLead(sender, message, leadgenId, formId, emailMess
                     var imageUrl = obj.images_url;
                     var privateMessage = obj.message;
                     var groupMessage = obj.group_message;
+                    var is_whatsapp = obj.is_whatsapp;
                     var agenMobile = "";
                     if (obj.mobile !== "null" && obj.mobile !== null) {
                         agenMobile = "65" + obj.mobile;
@@ -949,7 +950,7 @@ function getPageAccessTokenForLead(sender, message, leadgenId, formId, emailMess
                         + "<tr><td>Page ID</td><td>:</td><td> " + sender + "</td></tr>"
                         + "<tr><td>Page Name</td><td>:</td><td> " + obj.page_name + "</td></tr>"
 
-                    getLead(urlGetLead, token, message, recipientId, sender, formId, emailMessage, agentEmail, obj, leadValue, agenMobile1, agenMobile, imageUrl, obj.restaurant_name, agentId, privateMessage, groupMessage);
+                    getLead(urlGetLead, token, message, recipientId, sender, formId, emailMessage, agentEmail, obj, leadValue, agenMobile1, agenMobile, imageUrl, obj.restaurant_name, agentId, privateMessage, groupMessage, is_whatsapp);
                     return token;
 
                 }
@@ -964,7 +965,7 @@ function getPageAccessTokenForLead(sender, message, leadgenId, formId, emailMess
 }
 
 
-function getLead(url, token, message, recipientId, sender, formId, emailMessage, agentEmail, objData, leadValue, agenMobile1, agenMobile, imageUrl, agentName, agentId, privateMessage, groupMessage) {
+function getLead(url, token, message, recipientId, sender, formId, emailMessage, agentEmail, objData, leadValue, agenMobile1, agenMobile, imageUrl, agentName, agentId, privateMessage, groupMessage, is_whatsapp) {
 
     var urlGetLead = "https://graph.facebook.com/v2.9/" + formId + "?access_token=" + token;
     console.log("GET FORM NAME URL " + urlGetLead);
@@ -1051,7 +1052,8 @@ function getLead(url, token, message, recipientId, sender, formId, emailMessage,
                                     console.log('mobileX' + mobileX);
                                     console.log('agenMobile' + agenMobile);
                                     console.log('otherValues' + otherValues_wa);
-                                    if (pageId === '1965520413734063' || pageId === '409295783204800' || pageId === '228431964255924') {
+                                    // if (pageId === '1965520413734063' || pageId === '409295783204800' || pageId === '228431964255924') {
+                                    if (is_whatsapp) {
                                         sendWhatsAppReportLead("6590996758", mobileX, agenMobile1, agenMobile, imageUrl, otherValues_wa, project_name, agentId, privateMessage, groupMessage, agentName, fullNameX)
                                     }
 

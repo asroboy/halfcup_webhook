@@ -18,8 +18,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/ai/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="453">
-              <caret line="1323" column="66" selection-start-line="1323" selection-start-column="66" selection-end-line="1323" selection-end-column="66" />
+            <state relative-caret-position="351">
+              <caret line="1057" column="37" lean-forward="true" selection-start-line="1057" selection-start-column="37" selection-end-line="1057" selection-end-column="37" />
             </state>
           </provider>
         </entry>
@@ -56,6 +56,7 @@
       <find>replace</find>
       <find>sendWhatsAppReportLead</find>
       <find>getLead</find>
+      <find>if</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -184,12 +185,12 @@
       <workItem from="1551919825475" duration="3727000" />
       <workItem from="1551925230222" duration="13543000" />
       <workItem from="1552008844281" duration="11964000" />
-      <workItem from="1552265874459" duration="7523000" />
+      <workItem from="1552265874459" duration="8991000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="68146000" />
+    <option name="totallyTimeSpent" value="69614000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
@@ -257,8 +258,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/ai/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="453">
-          <caret line="1323" column="66" selection-start-line="1323" selection-start-column="66" selection-end-line="1323" selection-end-column="66" />
+        <state relative-caret-position="351">
+          <caret line="1057" column="37" lean-forward="true" selection-start-line="1057" selection-start-column="37" selection-end-line="1057" selection-end-column="37" />
         </state>
       </provider>
     </entry>
