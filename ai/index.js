@@ -1314,13 +1314,13 @@ function sendWhatsAppReportLead(admin_phone, customer_phone, agent_1_phone, agen
     console.log("SEND REPORT LEAD api : " + urlWhatsapp);
 
     var form_data = {
-        admin: admin_phone,
-        customer: customer_phone,
-        agent_1: agent_1_phone,
-        agent_2: agent_2_phone,
+        admin: admin_phone.trim(),
+        customer: customer_phone.trim(),
+        agent_1: agent_1_phone.trim(),
+        agent_2: agent_2_phone.trim(),
         whatsapp_message: whatsapp_message,
         whatsapp_image_url: whatsapp_image_url,
-        project: project_name,
+        project: project_name.trim(),
         agent_id : agentId
     };
 
