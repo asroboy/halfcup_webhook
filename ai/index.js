@@ -1053,18 +1053,16 @@ function getLead(url, token, message, recipientId, sender, formId, emailMessage,
                                     console.log('agenMobile' + agenMobile);
                                     console.log('otherValues' + otherValues_wa);
                                     // if (pageId === '1965520413734063' || pageId === '409295783204800' || pageId === '228431964255924') {
-                                    
-                                    if (pageId !== '409295783204800') {
-                                        if (is_whatsapp) {
-                                            sendWhatsAppReportLead("6590996758", mobileX, agenMobile1, agenMobile, imageUrl, otherValues_wa, project_name, agentId, privateMessage, groupMessage, agentName, fullNameX)
-                                        }
-
-
-                                        saveLeadToHalfcup(pageId, leadgenId, adId, '', adGroupId, '', '', '', formId, '', fullNameX, mobileX, agentEmail, otherFields, otherValues,
-                                            message, emailMessage, sender, token, id, createdTime, mData, project_name, emailData,
-                                            agenMobile, mobileX, emailX, otherValues, project_name, agentName);
+                                    // if (pageId !== '409295783204800') {
+                                    if (is_whatsapp) {
+                                        sendWhatsAppReportLead("6590996758", mobileX, agenMobile1, agenMobile, imageUrl, otherValues_wa, project_name, agentId, privateMessage, groupMessage, agentName, fullNameX)
                                     }
 
+
+                                    saveLeadToHalfcup(pageId, leadgenId, adId, '', adGroupId, '', '', '', formId, '', fullNameX, mobileX, agentEmail, otherFields, otherValues,
+                                        message, emailMessage, sender, token, id, createdTime, mData, project_name, emailData,
+                                        agenMobile, mobileX, emailX, otherValues, project_name, agentName);
+                                    // }
 
 
                                 }
@@ -1321,14 +1319,14 @@ function sendWhatsAppReportLead(admin_phone, customer_phone, agent_1_phone, agen
     // urlWhatsapp = urlWhatsapp + '&whatsapp_image_url=' + encodeURIComponent(whatsapp_image_url);
     console.log("SEND REPORT LEAD api : " + urlWhatsapp);
     privateMessage = privateMessage.replace("{agent_name}", agentName);
-    privateMessage = privateMessage.replace("{project}",  project_name.trim());
-    privateMessage = privateMessage.replace("{buyer_name}",  fullNameX);
+    privateMessage = privateMessage.replace("{project}", project_name.trim());
+    privateMessage = privateMessage.replace("{buyer_name}", fullNameX);
 
     groupMessage = groupMessage.replace("{agent_name}", agentName);
-    groupMessage = groupMessage.replace("{project}",  project_name.trim());
-    groupMessage = groupMessage.replace("{photo_of_agent}",  whatsapp_image_url);
-    groupMessage = groupMessage.replace("{buyer_name}",  fullNameX);
-    groupMessage = groupMessage.replace(" {agent mobile 1}",  agent_1_phone);
+    groupMessage = groupMessage.replace("{project}", project_name.trim());
+    groupMessage = groupMessage.replace("{photo_of_agent}", whatsapp_image_url);
+    groupMessage = groupMessage.replace("{buyer_name}", fullNameX);
+    groupMessage = groupMessage.replace(" {agent mobile 1}", agent_1_phone);
 
     var form_data = {
         admin: admin_phone.trim(),
@@ -1338,9 +1336,9 @@ function sendWhatsAppReportLead(admin_phone, customer_phone, agent_1_phone, agen
         whatsapp_message: whatsapp_message,
         whatsapp_image_url: whatsapp_image_url,
         project: project_name.trim(),
-        agent_id : agentId,
+        agent_id: agentId,
         message: privateMessage,
-        group_message : groupMessage
+        group_message: groupMessage
     };
 
     console.log(form_data);
