@@ -18,8 +18,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/ai/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="470">
-              <caret line="1326" column="75" selection-start-line="1326" selection-start-column="75" selection-end-line="1326" selection-end-column="75" />
+            <state relative-caret-position="351">
+              <caret line="1064" column="111" selection-start-line="1064" selection-start-column="111" selection-end-line="1064" selection-end-column="111" />
             </state>
           </provider>
         </entry>
@@ -55,8 +55,9 @@
       <find>setting_up_push</find>
       <find>replace</find>
       <find>if</find>
-      <find>sendWhatsAppReportLead</find>
       <find>getLead</find>
+      <find>=======EVENT CHECK=======</find>
+      <find>sendWhatsAppReportLead</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -185,12 +186,12 @@
       <workItem from="1551919825475" duration="3727000" />
       <workItem from="1551925230222" duration="13543000" />
       <workItem from="1552008844281" duration="11964000" />
-      <workItem from="1552265874459" duration="10413000" />
+      <workItem from="1552265874459" duration="14669000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="71036000" />
+    <option name="totallyTimeSpent" value="75292000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
@@ -258,8 +259,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/ai/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="470">
-          <caret line="1326" column="75" selection-start-line="1326" selection-start-column="75" selection-end-line="1326" selection-end-column="75" />
+        <state relative-caret-position="351">
+          <caret line="1064" column="111" selection-start-line="1064" selection-start-column="111" selection-end-line="1064" selection-end-column="111" />
         </state>
       </provider>
     </entry>
