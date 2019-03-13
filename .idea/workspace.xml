@@ -18,8 +18,20 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/ai/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="445">
-              <caret line="1066" lean-forward="true" selection-start-line="1066" selection-end-line="1066" />
+            <state relative-caret-position="419">
+              <caret line="1065" lean-forward="true" selection-start-line="1065" selection-end-line="1065" />
+              <folding>
+                <element signature="e#1935#3146#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/new_nlp.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1462">
+              <caret line="268" column="40" selection-start-line="268" selection-start-column="22" selection-end-line="268" selection-end-column="40" />
             </state>
           </provider>
         </entry>
@@ -55,9 +67,11 @@
       <find>setting_up_push</find>
       <find>replace</find>
       <find>if</find>
-      <find>getLead</find>
       <find>=======EVENT CHECK=======</find>
       <find>sendWhatsAppReportLead</find>
+      <find>getLead</find>
+      <find>getPageAccessTokenForLead</find>
+      <find>getPageIdForLead</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -186,12 +200,12 @@
       <workItem from="1551919825475" duration="3727000" />
       <workItem from="1551925230222" duration="13543000" />
       <workItem from="1552008844281" duration="11964000" />
-      <workItem from="1552265874459" duration="15441000" />
+      <workItem from="1552265874459" duration="17629000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="76064000" />
+    <option name="totallyTimeSpent" value="78252000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
@@ -202,7 +216,7 @@
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.329582" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.70257235" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
@@ -240,13 +254,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/new_nlp.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="268" column="40" selection-start-line="268" selection-start-column="22" selection-end-line="268" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/test_develop.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="595">
@@ -257,10 +264,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/new_nlp.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1462">
+          <caret line="268" column="40" selection-start-line="268" selection-start-column="22" selection-end-line="268" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/ai/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="445">
-          <caret line="1066" lean-forward="true" selection-start-line="1066" selection-end-line="1066" />
+        <state relative-caret-position="419">
+          <caret line="1065" lean-forward="true" selection-start-line="1065" selection-end-line="1065" />
+          <folding>
+            <element signature="e#1935#3146#0" />
+          </folding>
         </state>
       </provider>
     </entry>
