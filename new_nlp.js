@@ -90,7 +90,7 @@ function getToken(text, sender, recipient, isMessageUs, res, action_name, AGGR) 
                             sendMessage(sender, recipient, myEscapedJSONString, token);
 
                             var message = 'Hi, someone asking for Live Inquiries in messenger, <br>Thanks';
-                            sendEmailForAi('LIVE Inquiries'.message, recipient, key.split('=')[1]);
+                            sendEmailForAi('LIVE Inquiries'.message, recipient, key.split('=')[1], token, recipient);
                             // getEmail('Someone asking for LIVE Inquiries in chatroom', recipient);
                         } else if (text.indexOf('CUSTOM') > -1) {
                             var key = text.replace("CUSTOM_", "");
@@ -98,7 +98,7 @@ function getToken(text, sender, recipient, isMessageUs, res, action_name, AGGR) 
                             getChatBot(key, sender, recipient, token, res);
                             var message = 'Hi, someone clicked on Fengsui Brows Photos, <br>Thanks';
                             //audreychen531@yahoo.com.sg
-                            sendEmailForAi('LIVE Inquiries', message, recipient, 'brotherho@halfcup.com');
+                            sendEmailForAi('LIVE Inquiries', message, recipient, 'brotherho@halfcup.com', token, recipient);
                         }
                         else {
                             if (action_name !== 'PHONE_ACTION') {
@@ -1185,7 +1185,7 @@ function sendMessage(page_id, recipientId, message, token) {
 
 
 // generic function sending messages
-function getEmail(message, page_id) {
+function getEmail(message, page_id, token, recipient) {
     var url = 'http://halfcup.com/social_rebates_system/apix?page_id=' + page_id;
     request({
         url: url,
@@ -1198,12 +1198,12 @@ function getEmail(message, page_id) {
             hideLoading(token, recipient);
             console.log('Error: ', response.body.error);
         } else {
-            sendEmailForAi('LIVE Inquiries', message, page_id, 'brotherho@halfcup.com');
+            sendEmailForAi('LIVE Inquiries', message, page_id, 'brotherho@halfcup.com', token, recipient);
         }
     });
 };
 
-function sendEmailForAi(title, message, page_id, email) {
+function sendEmailForAi(title, message, page_id, email, token, recipient) {
 
     var result = "Page ID " + page_id + "<br/>";
     result = result + message;
@@ -1241,10 +1241,10 @@ function check_attachment_uploaded(page_id, recipientId, message, token) {
         method: 'GET'
     }, function (error, response, body) {
         if (error) {
-            hideLoading(token, recipient);
+            hideLoading(token, recipientId);
             console.log('Error : ', error);
         } else if (response.body.error) {
-            hideLoading(token, recipient);
+            hideLoading(token, recipientId);
             console.log('Error: ', response.body.error);
         } else {
             var obj = JSON.parse(body);
@@ -1273,10 +1273,10 @@ function save_uploaded_attachmentid_m(attachment_id, page_id, recipientId, messa
         method: 'GET'
     }, function (error, response, body) {
         if (error) {
-            hideLoading(token, recipient);
+            hideLoading(token, recipientId);
             console.log('Error : ', error);
         } else if (response.body.error) {
-            hideLoading(token, recipient);
+            hideLoading(token, recipientId);
             console.log('Error: ', response.body.error);
         } else {
             var obj = JSON.parse(body);
@@ -1299,10 +1299,10 @@ function save_uploaded_attachmentid(attachment_id, page_id, recipientId, message
         method: 'GET'
     }, function (error, response, body) {
         if (error) {
-            hideLoading(token, recipient);
+            hideLoading(token, recipientId);
             console.log('Error : ', error);
         } else if (response.body.error) {
-            hideLoading(token, recipient);
+            hideLoading(token, recipientId);
             console.log('Error: ', response.body.error);
         } else {
             var obj = JSON.parse(body);
@@ -1371,7 +1371,7 @@ function start_tracking(aggregation, messenger_id, email) {
     var data_agent = data_.split('||');
     var project_id = null;
     var agent_id = null;
-    for (i = 0; i < data_agent.length; i++) {
+    for (var i = 0; i < data_agent.length; i++) {
         if (data_agent[i].includes('project_id')) {
             project_id = data_agent[i].split('=')[1];
         }
