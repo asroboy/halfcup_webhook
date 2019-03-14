@@ -10,6 +10,8 @@ var new_nlp = require('./new_nlp');
 var test = require('./test');
 var ai_webhook = require('./ai/index');
 
+var autotask = require('./autotask/index');
+
 
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
