@@ -274,7 +274,7 @@ app.post('/webhook', function (req, res) {
                                      */
                                     else if ((payload_prefix === 'BOT' || payload_prefix === 'SHARE') && event.message.quick_reply.payload.indexOf(",") !== -1) {
                                         var payloads = event.message.quick_reply.payload.split(",");
-                                        for (i = 0; i < payloads.length; i++) {
+                                        for (var i = 0; i < payloads.length; i++) {
                                             console.log("Payload " + i, payloads[i]);
                                             pixel('QuickReply', event.message.text, payloads[i], event.sender.id, event.recipient.id);
                                             getResponseToUser(payloads[i], event.sender.id, event.recipient.id);
@@ -483,7 +483,7 @@ app.post('/webhook', function (req, res) {
                                 // console.log("Index of , " + event.postback.payload.indexOf(","));
                                 if ((payload_prefix === 'BOT' || payload_prefix === 'SHARE') && (event.postback.payload.indexOf(",") > -1)) {
                                     var payloads = event.postback.payload.split(",");
-                                    for (i = 0; i < payloads.length; i++) {
+                                    for (var i = 0; i < payloads.length; i++) {
                                         console.log("Payload " + i, payloads[i]);
                                         pixel('PostBack', payloads[i], payloads[i], event.sender.id, event.recipient.id);
                                         getResponseToUser(payloads[i], event.sender.id, event.recipient.id);
@@ -683,7 +683,7 @@ function keyIndexAction(key, event, action_name, event_name) {
             var p_prefix = prefix[0];
             if ((p_prefix === 'BOT' || p_prefix === 'SHARE') && key.indexOf(",") > -1) {
                 var payloads = key.split(",");
-                for (i = 0; i < payloads.length; i++) {
+                for (var i = 0; i < payloads.length; i++) {
                     console.log("Payload " + i, payloads[i]);
                     pixel(event_name, action_name, payloads[i], event.sender.id, event.recipient.id);
                     if (event_name === "PostBack") {
@@ -1351,7 +1351,7 @@ app.get('/send_multiple', function (req, res) {
     var messages = req.query.message; // $_GET["id"]
     //'1193481570735913'
     var token = req.query.token;
-    for (i = 0; i < recipientIds.length; i++) {
+    for (var i = 0; i < recipientIds.length; i++) {
         sendMessage(recipientIds[i], messages, token);
     }
     res.send('OK, Sent to :' + req.query.user_ids);
