@@ -85,7 +85,7 @@ app.post('/webhook', function (req, res) {
             }
 
             if (events) {
-                for (i = 0; i < events.length; i++) {
+                for (var i = 0; i < events.length; i++) {
                     var event = events[i];
                     console.log("=======EVENT CHECK=======");
                     //console.log('Sender ID: ', event.sender.id);
@@ -274,7 +274,7 @@ app.post('/webhook', function (req, res) {
                                      */
                                     else if ((payload_prefix === 'BOT' || payload_prefix === 'SHARE') && event.message.quick_reply.payload.indexOf(",") !== -1) {
                                         var payloads = event.message.quick_reply.payload.split(",");
-                                        for (i = 0; i < payloads.length; i++) {
+                                        for (var i = 0; i < payloads.length; i++) {
                                             console.log("Payload " + i, payloads[i]);
                                             pixel('QuickReply', event.message.text, payloads[i], event.sender.id, event.recipient.id);
                                             getResponseToUser(payloads[i], event.sender.id, event.recipient.id);
@@ -304,17 +304,17 @@ app.post('/webhook', function (req, res) {
 
 
                                             if (keys.length == 2) {
-                                                keyIndexAction(keys[1], event, action_name, "QuickReply");
+                                                keyIndexAction(keys[1], event, action_name, "QuickReply", res);
                                             }
                                             if (keys.length == 3) {
-                                                keyIndexAction(keys[1], event, action_name, "QuickReply");
-                                                keyIndexAction(keys[2], event, action_name, "QuickReply");
+                                                keyIndexAction(keys[1], event, action_name, "QuickReply", res);
+                                                keyIndexAction(keys[2], event, action_name, "QuickReply", res);
                                             }
 
                                             if (keys.length == 4) {
-                                                keyIndexAction(keys[1], event, action_name, "QuickReply");
-                                                keyIndexAction(keys[2], event, action_name, "QuickReply");
-                                                keyIndexAction(keys[3], event, action_name, "QuickReply");
+                                                keyIndexAction(keys[1], event, action_name, "QuickReply", res);
+                                                keyIndexAction(keys[2], event, action_name, "QuickReply", res);
+                                                keyIndexAction(keys[3], event, action_name, "QuickReply", res);
 
                                             }
                                         }
@@ -483,7 +483,7 @@ app.post('/webhook', function (req, res) {
                                 // console.log("Index of , " + event.postback.payload.indexOf(","));
                                 if ((payload_prefix === 'BOT' || payload_prefix === 'SHARE') && (event.postback.payload.indexOf(",") > -1)) {
                                     var payloads = event.postback.payload.split(",");
-                                    for (i = 0; i < payloads.length; i++) {
+                                    for (var i = 0; i < payloads.length; i++) {
                                         console.log("Payload " + i, payloads[i]);
                                         pixel('PostBack', payloads[i], payloads[i], event.sender.id, event.recipient.id);
                                         getResponseToUser(payloads[i], event.sender.id, event.recipient.id);
@@ -532,16 +532,16 @@ app.post('/webhook', function (req, res) {
                                     action_name = action_name.replace("]", "");
 
                                     if (keys.length == 2) {
-                                        keyIndexAction(keys[1], event, action_name, "PostBack");
+                                        keyIndexAction(keys[1], event, action_name, "PostBack", res);
                                     }
                                     if (keys.length == 3) {
-                                        keyIndexAction(keys[1], event, action_name, "PostBack");
-                                        keyIndexAction(keys[2], event, action_name, "PostBack");
+                                        keyIndexAction(keys[1], event, action_name, "PostBack", res);
+                                        keyIndexAction(keys[2], event, action_name, "PostBack", res);
                                     }
                                     if (keys.length == 4) {
-                                        keyIndexAction(keys[1], event, action_name, "PostBack");
-                                        keyIndexAction(keys[2], event, action_name, "PostBack");
-                                        keyIndexAction(keys[3], event, action_name, "PostBack");
+                                        keyIndexAction(keys[1], event, action_name, "PostBack", res);
+                                        keyIndexAction(keys[2], event, action_name, "PostBack", res);
+                                        keyIndexAction(keys[3], event, action_name, "PostBack", res);
                                         // index_1_action(action_name, reply_text_or_bot_key, keys[2], "PostBack", event);
                                     }
                                 }
@@ -636,7 +636,7 @@ function saveMessengerAdmin(sender, recipient) {
     );
 }
 
-function keyIndexAction(key, event, action_name, event_name) {
+function keyIndexAction(key, event, action_name, event_name, res) {
     // var key_1 = keys[1]; //reply text or maybe bot key  INDEX 1
     if (key.indexOf("]") > -1) {
 
@@ -648,7 +648,7 @@ function keyIndexAction(key, event, action_name, event_name) {
             var p_prefix = prefix[0];
             if ((p_prefix === 'BOT' || p_prefix === 'SHARE') && reply_text.indexOf(",") > -1) {
                 var payloads = reply_text.split(",");
-                for (i = 0; i < payloads.length; i++) {
+                for (var i = 0; i < payloads.length; i++) {
                     console.log("Payload " + i, payloads[i]);
                     pixel(event_name, action_name, payloads[i], event.sender.id, event.recipient.id);
                     if (event_name === "PostBack") {
@@ -683,7 +683,7 @@ function keyIndexAction(key, event, action_name, event_name) {
             var p_prefix = prefix[0];
             if ((p_prefix === 'BOT' || p_prefix === 'SHARE') && key.indexOf(",") > -1) {
                 var payloads = key.split(",");
-                for (i = 0; i < payloads.length; i++) {
+                for (var i = 0; i < payloads.length; i++) {
                     console.log("Payload " + i, payloads[i]);
                     pixel(event_name, action_name, payloads[i], event.sender.id, event.recipient.id);
                     if (event_name === "PostBack") {
@@ -842,7 +842,7 @@ function logAction(event_name, name, key, messenger_id, page_id) {
     });
 }
 
-function getUserInfo(user_msg_id, page_token) {
+function getUserInfo(user_msg_id, page_token, m_payload, recipient) {
     var url = 'https://graph.facebook.com/v2.6/' + user_msg_id + '?fields=first_name,last_name,profile_pic,locale,timezone,gender&access_token=' + page_token;
     console.log('url', url);
     request({
@@ -1351,7 +1351,7 @@ app.get('/send_multiple', function (req, res) {
     var messages = req.query.message; // $_GET["id"]
     //'1193481570735913'
     var token = req.query.token;
-    for (i = 0; i < recipientIds.length; i++) {
+    for (var i = 0; i < recipientIds.length; i++) {
         sendMessage(recipientIds[i], messages, token);
     }
     res.send('OK, Sent to :' + req.query.user_ids);
