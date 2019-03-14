@@ -85,7 +85,7 @@ app.post('/webhook', function (req, res) {
             }
 
             if (events) {
-                for (i = 0; i < events.length; i++) {
+                for (var i = 0; i < events.length; i++) {
                     var event = events[i];
                     console.log("=======EVENT CHECK=======");
                     //console.log('Sender ID: ', event.sender.id);
@@ -648,7 +648,7 @@ function keyIndexAction(key, event, action_name, event_name) {
             var p_prefix = prefix[0];
             if ((p_prefix === 'BOT' || p_prefix === 'SHARE') && reply_text.indexOf(",") > -1) {
                 var payloads = reply_text.split(",");
-                for (i = 0; i < payloads.length; i++) {
+                for (var i = 0; i < payloads.length; i++) {
                     console.log("Payload " + i, payloads[i]);
                     pixel(event_name, action_name, payloads[i], event.sender.id, event.recipient.id);
                     if (event_name === "PostBack") {
@@ -725,15 +725,15 @@ function validateSamples(key) {
     }, function (error, response, body) {
         if (error) {
             console.log('Error sending message: ', error);
-            result = "error";
+            var result = "error";
             return result;
         } else if (response.body.error) {
             console.log('Error: ', response.body.error);
-            result = "error";
+            var result = "error";
             return result;
         } else {
             console.log(body);
-            result = "oke";
+            var result = "oke";
             return result;
         }
     });
