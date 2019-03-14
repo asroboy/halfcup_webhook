@@ -36,7 +36,7 @@ app.get('/nlp', function (req, res) {
 });
 
 // Facebook autotask
-app.get('/autotask', function (req, res) {
+app.get('/autotask/index', function (req, res) {
     autotask.foo(res);
 });
 

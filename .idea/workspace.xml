@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="d9e6c34e-7c69-4fc0-81db-8dd6b04239a0" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ai/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/ai/index.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -18,8 +19,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/ai/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3">
-              <caret line="1065" selection-start-line="1065" selection-end-line="1065" />
+            <state relative-caret-position="68">
+              <caret line="4" column="42" lean-forward="true" selection-start-line="4" selection-start-column="42" selection-end-line="4" selection-end-column="42" />
               <folding>
                 <element signature="e#1935#3146#0" />
               </folding>
@@ -201,15 +202,16 @@
       <workItem from="1551925230222" duration="13543000" />
       <workItem from="1552008844281" duration="11964000" />
       <workItem from="1552265874459" duration="18729000" />
-      <workItem from="1552530568132" duration="338000" />
+      <workItem from="1552530568132" duration="2149000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="79690000" />
+    <option name="totallyTimeSpent" value="81501000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.15252976" />
       <window_info id="Structure" order="1" weight="0.25" />
@@ -223,7 +225,7 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.329582" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="8" visible="true" weight="0.8569132" />
+      <window_info anchor="bottom" id="Terminal" order="8" weight="0.8569132" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Docker" order="10" show_stripe_button="false" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
@@ -266,8 +268,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/ai/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3">
-          <caret line="1065" selection-start-line="1065" selection-end-line="1065" />
+        <state relative-caret-position="68">
+          <caret line="4" column="42" lean-forward="true" selection-start-line="4" selection-start-column="42" selection-end-line="4" selection-end-column="42" />
           <folding>
             <element signature="e#1935#3146#0" />
           </folding>
