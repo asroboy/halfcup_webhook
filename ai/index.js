@@ -297,17 +297,17 @@ app.post('/webhook', function (req, res) {
 
 
                                                     if (keys.length == 2) {
-                                                        keyIndexAction(keys[1], messaging, action_name, "QuickReply");
+                                                        keyIndexAction(keys[1], messaging, action_name, "QuickReply", res);
                                                     }
                                                     if (keys.length == 3) {
-                                                        keyIndexAction(keys[1], messaging, action_name, "QuickReply");
-                                                        keyIndexAction(keys[2], messaging, action_name, "QuickReply");
+                                                        keyIndexAction(keys[1], messaging, action_name, "QuickReply", res);
+                                                        keyIndexAction(keys[2], messaging, action_name, "QuickReply", res);
                                                     }
 
                                                     if (keys.length == 4) {
-                                                        keyIndexAction(keys[1], messaging, action_name, "QuickReply");
-                                                        keyIndexAction(keys[2], messaging, action_name, "QuickReply");
-                                                        keyIndexAction(keys[3], messaging, action_name, "QuickReply");
+                                                        keyIndexAction(keys[1], messaging, action_name, "QuickReply", res);
+                                                        keyIndexAction(keys[2], messaging, action_name, "QuickReply", res);
+                                                        keyIndexAction(keys[3], messaging, action_name, "QuickReply", res);
 
                                                     }
                                                 }
@@ -539,16 +539,16 @@ app.post('/webhook', function (req, res) {
                                             action_name = action_name.replace("]", "");
 
                                             if (keys.length == 2) {
-                                                keyIndexAction(keys[1], messaging, action_name, "PostBack");
+                                                keyIndexAction(keys[1], messaging, action_name, "PostBack", res);
                                             }
                                             if (keys.length == 3) {
-                                                keyIndexAction(keys[1], messaging, action_name, "PostBack");
-                                                keyIndexAction(keys[2], messaging, action_name, "PostBack");
+                                                keyIndexAction(keys[1], messaging, action_name, "PostBack", res);
+                                                keyIndexAction(keys[2], messaging, action_name, "PostBack", res);
                                             }
                                             if (keys.length == 4) {
-                                                keyIndexAction(keys[1], messaging, action_name, "PostBack");
-                                                keyIndexAction(keys[2], messaging, action_name, "PostBack");
-                                                keyIndexAction(keys[3], messaging, action_name, "PostBack");
+                                                keyIndexAction(keys[1], messaging, action_name, "PostBack", res);
+                                                keyIndexAction(keys[2], messaging, action_name, "PostBack", res);
+                                                keyIndexAction(keys[3], messaging, action_name, "PostBack", res);
                                                 // index_1_action(action_name, reply_text_or_bot_key, keys[2], "PostBack", messaging);
                                             }
                                         }
@@ -645,7 +645,7 @@ function saveMessengerAdmin(sender, recipient) {
     );
 }
 
-function keyIndexAction(key, messaging, action_name, event_name) {
+function keyIndexAction(key, messaging, action_name, event_name, res) {
     // var key_1 = keys[1]; //reply text or maybe bot key  INDEX 1
     if (key.indexOf("]") > -1) {
 
@@ -724,6 +724,7 @@ function keyIndexAction(key, messaging, action_name, event_name) {
 }
 
 function validateSamples(key) {
+    var result = "";
     request({
         url: 'https://api.wit.ai/samples?v=20170307&q=' + key,
         method: 'GET',
