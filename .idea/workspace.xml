@@ -18,8 +18,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/ai/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="44">
-              <caret line="853" column="66" selection-start-line="853" selection-start-column="66" selection-end-line="853" selection-end-column="66" />
+            <state relative-caret-position="266">
+              <caret line="1330" column="142" selection-start-line="1330" selection-start-column="142" selection-end-line="1330" selection-end-column="142" />
             </state>
           </provider>
         </entry>
@@ -35,6 +35,7 @@
       <find>saveLeadToHalfc</find>
       <find>saveLeadToHalfcup</find>
       <find>for</find>
+      <find>keyIndexAction</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -104,12 +105,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1552538353282</updated>
-      <workItem from="1552538354448" duration="2857000" />
+      <workItem from="1552538354448" duration="4533000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2857000" />
+    <option name="totallyTimeSpent" value="4533000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -172,8 +173,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/ai/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="44">
-          <caret line="853" column="66" selection-start-line="853" selection-start-column="66" selection-end-line="853" selection-end-column="66" />
+        <state relative-caret-position="266">
+          <caret line="1330" column="142" selection-start-line="1330" selection-start-column="142" selection-end-line="1330" selection-end-column="142" />
         </state>
       </provider>
     </entry>
