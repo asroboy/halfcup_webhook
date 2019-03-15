@@ -851,7 +851,7 @@ function logAction(event_name, name, key, messenger_id, page_id) {
     });
 }
 
-function getUserInfo(user_msg_id, page_token) {
+function getUserInfo(user_msg_id, page_token, m_payload, recipient) {
     var url = 'https://graph.facebook.com/v2.8/' + user_msg_id + '?fields=first_name,last_name,profile_pic,locale,timezone,gender&access_token=' + page_token;
     console.log('url', url);
     request({
