@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4f570aeb-f412-4b70-ad7a-8312f582a668" name="Default Changelist" comment="" />
+    <list default="true" id="4f570aeb-f412-4b70-ad7a-8312f582a668" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ai/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/ai/index.js" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -14,10 +17,10 @@
   <component name="FileEditorManager">
     <leaf>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/index.js">
+        <entry file="file://$PROJECT_DIR$/ai/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-431">
-              <caret line="939" column="9" selection-start-line="939" selection-start-column="9" selection-end-line="939" selection-end-column="9" />
+            <state relative-caret-position="-391">
+              <caret line="91" column="29" selection-start-line="91" selection-start-column="29" selection-end-line="91" selection-end-column="29" />
             </state>
           </provider>
         </entry>
@@ -30,6 +33,9 @@
       <find>sendEmailForAi</find>
       <find>getUserInfo</find>
       <find>for</find>
+      <find>getPageMessengerToken</find>
+      <find>saveLeadToHalfc</find>
+      <find>saveLeadToHalfcup</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -40,6 +46,7 @@
       <list>
         <option value="$PROJECT_DIR$/index.js" />
         <option value="$PROJECT_DIR$/new_nlp.js" />
+        <option value="$PROJECT_DIR$/ai/index.js" />
       </list>
     </option>
   </component>
@@ -58,6 +65,11 @@
             <path>
               <item name="asroboy-halfcup-webhook-1" type="b2602c69:ProjectViewProjectNode" />
               <item name="asroboy-halfcup-webhook-1" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="asroboy-halfcup-webhook-1" type="b2602c69:ProjectViewProjectNode" />
+              <item name="asroboy-halfcup-webhook-1" type="462c0819:PsiDirectoryNode" />
+              <item name="ai" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -93,12 +105,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1552538353282</updated>
-      <workItem from="1552538354448" duration="1541000" />
+      <workItem from="1552538354448" duration="2441000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1541000" />
+    <option name="totallyTimeSpent" value="2441000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -154,8 +166,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-431">
+        <state relative-caret-position="-278">
           <caret line="939" column="9" selection-start-line="939" selection-start-column="9" selection-end-line="939" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ai/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-391">
+          <caret line="91" column="29" selection-start-line="91" selection-start-column="29" selection-end-line="91" selection-end-column="29" />
         </state>
       </provider>
     </entry>

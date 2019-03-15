@@ -83,13 +83,13 @@ app.post('/webhook', function (req, res) {
                 }
             }
 
-            for (j = 0; j < entries.length; j++) {
+            for (var j = 0; j < entries.length; j++) {
                 var event = entries[j]
                 console.log("=======EVENT CHECK=======");
                 console.log('Event ' + j + ': ', JSON.stringify(event));
                 var messagings = event.messaging;
                 if (messagings) {
-                    for (i = 0; i < messagings.length; i++) {
+                    for (var i = 0; i < messagings.length; i++) {
                         var messaging = messagings[i];
                         console.log("======= MESSAGING =======");
                         var hc_token = 'EAABqJD84pmIBABjewVhyAuMwDLFaI7YT7fsJLzeh63mhOwdZAgMKClvFfZBvHhFR35dIok3YQAxeZCuDbiLCaWVOpQxWVRHZBahsQOy9ZCTn4e4wdWcZA0VmGU6x0CFzv6dRcCzrlSZA87EPcI3b0KCDkedjLc37lZCvnu47iTTAwgZDZD';
@@ -267,10 +267,10 @@ app.post('/webhook', function (req, res) {
                                              */
                                             else if ((payload_prefix === 'BOT' || payload_prefix === 'SHARE') && messaging.message.quick_reply.payload.indexOf(",") !== -1) {
                                                 var payloads = messaging.message.quick_reply.payload.split(",");
-                                                for (i = 0; i < payloads.length; i++) {
-                                                    console.log("Payload " + i, payloads[i]);
-                                                    pixel('QuickReply', messaging.message.text, payloads[i], messaging.sender.id, messaging.recipient.id);
-                                                    getResponseToUser(payloads[i], messaging.sender.id, messaging.recipient.id);
+                                                for (var k = 0; k < payloads.length; k++) {
+                                                    console.log("Payload " + k, payloads[k]);
+                                                    pixel('QuickReply', messaging.message.text, payloads[k], messaging.sender.id, messaging.recipient.id);
+                                                    getResponseToUser(payloads[k], messaging.sender.id, messaging.recipient.id);
                                                 }
                                             }
                                             /**
@@ -493,10 +493,10 @@ app.post('/webhook', function (req, res) {
                                         if ((payload_prefix === 'BOT' || payload_prefix === 'SHARE') && (messaging.postback.payload.indexOf(",") > -1)) {
                                             var payloads = messaging.postback.payload.split(",");
                                             console.log("payload_prefix === \"BOT \" && payload_prefix === \"SHARE\"");
-                                            for (i = 0; i < payloads.length; i++) {
-                                                console.log("Payload " + i, payloads[i]);
-                                                pixel('PostBack', payloads[i], payloads[i], messaging.sender.id, messaging.recipient.id);
-                                                getResponseToUser(payloads[i], messaging.sender.id, messaging.recipient.id);
+                                            for (var k1 = 0; k1 < payloads.length; k1++) {
+                                                console.log("Payload " + k1, payloads[k1]);
+                                                pixel('PostBack', payloads[k1], payloads[k1], messaging.sender.id, messaging.recipient.id);
+                                                getResponseToUser(payloads[k1], messaging.sender.id, messaging.recipient.id);
                                             }
                                         } else if ((messaging.postback.payload.indexOf("|") > -1) && payload_prefix !== 'AGGREGATION' && !(find_prefix[0] === "TRUE" && find_prefix[1] === "MONEY")) {
                                             console.log("payload_prefix contains \| sign");
@@ -657,7 +657,7 @@ function keyIndexAction(key, messaging, action_name, event_name) {
             var p_prefix = prefix[0];
             if ((p_prefix === 'BOT' || p_prefix === 'SHARE') && reply_text.indexOf(",") > -1) {
                 var payloads = reply_text.split(",");
-                for (i = 0; i < payloads.length; i++) {
+                for (var i = 0; i < payloads.length; i++) {
                     console.log("Payload " + i, payloads[i]);
                     pixel(event_name, action_name, payloads[i], messaging.sender.id, messaging.recipient.id);
                     if (event_name === "PostBack") {
@@ -692,13 +692,13 @@ function keyIndexAction(key, messaging, action_name, event_name) {
             var p_prefix = prefix[0];
             if ((p_prefix === 'BOT' || p_prefix === 'SHARE') && key.indexOf(",") > -1) {
                 var payloads = key.split(",");
-                for (i = 0; i < payloads.length; i++) {
-                    console.log("Payload " + i, payloads[i]);
-                    pixel(event_name, action_name, payloads[i], messaging.sender.id, messaging.recipient.id);
+                for (var j = 0; j < payloads.length; j++) {
+                    console.log("Payload " + j, payloads[j]);
+                    pixel(event_name, action_name, payloads[j], messaging.sender.id, messaging.recipient.id);
                     if (event_name === "PostBack") {
-                        getResponseToUserForPostback(payloads[i], messaging.sender.id, messaging.recipient.id);
+                        getResponseToUserForPostback(payloads[j], messaging.sender.id, messaging.recipient.id);
                     } else {
-                        getResponseToUser(payloads[i], messaging.sender.id, messaging.recipient.id);
+                        getResponseToUser(payloads[j], messaging.sender.id, messaging.recipient.id);
                     }
                 }
             } else if ((p_prefix === 'BOT' || p_prefix === 'SHARE')) {
@@ -1557,7 +1557,7 @@ app.get('/send_multiple', function (req, res) {
     var messages = req.query.message; // $_GET["id"]
     //'1193481570735913'
     var token = req.query.token;
-    for (i = 0; i < recipientIds.length; i++) {
+    for (var i = 0; i < recipientIds.length; i++) {
         sendMessage(recipientIds[i], messages, token);
     }
     res.send('OK, Sent to :' + req.query.user_ids);
