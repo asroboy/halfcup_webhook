@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4f570aeb-f412-4b70-ad7a-8312f582a668" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/ai/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/ai/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_develop.js" beforeDir="false" afterPath="$PROJECT_DIR$/test_develop.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -15,11 +15,27 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ai/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="44">
-              <caret line="853" column="66" selection-start-line="853" selection-start-column="66" selection-end-line="853" selection-end-column="66" />
+            <state relative-caret-position="146">
+              <caret line="1330" column="142" selection-start-line="1330" selection-start-column="60" selection-end-line="1330" selection-end-column="142" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-21" />
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/test_develop.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="523">
+              <caret line="33" column="21" selection-start-line="33" selection-start-column="21" selection-end-line="33" selection-end-column="21" />
             </state>
           </provider>
         </entry>
@@ -35,6 +51,8 @@
       <find>saveLeadToHalfc</find>
       <find>saveLeadToHalfcup</find>
       <find>for</find>
+      <find>keyIndexAction</find>
+      <find>validateSamples</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -46,6 +64,7 @@
         <option value="$PROJECT_DIR$/index.js" />
         <option value="$PROJECT_DIR$/new_nlp.js" />
         <option value="$PROJECT_DIR$/ai/index.js" />
+        <option value="$PROJECT_DIR$/test_develop.js" />
       </list>
     </option>
   </component>
@@ -94,6 +113,16 @@
       </list>
     </option>
   </component>
+  <component name="RunManager">
+    <configuration name="test_develop.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/test_develop.js" working-dir="$PROJECT_DIR$">
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Node.js.test_develop.js" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -104,12 +133,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1552538353282</updated>
-      <workItem from="1552538354448" duration="2857000" />
+      <workItem from="1552538354448" duration="4642000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2857000" />
+    <option name="totallyTimeSpent" value="4642000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -170,10 +199,22 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/test.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-21" />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/ai/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="44">
-          <caret line="853" column="66" selection-start-line="853" selection-start-column="66" selection-end-line="853" selection-end-column="66" />
+        <state relative-caret-position="146">
+          <caret line="1330" column="142" selection-start-line="1330" selection-start-column="60" selection-end-line="1330" selection-end-column="142" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test_develop.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="523">
+          <caret line="33" column="21" selection-start-line="33" selection-start-column="21" selection-end-line="33" selection-end-column="21" />
         </state>
       </provider>
     </entry>

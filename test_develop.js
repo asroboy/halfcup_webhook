@@ -29,27 +29,30 @@ http.createServer(function (req, res) {
         //     }
         // });
 
+        var agent_1_phone = '65123456';
+        var r = agent_1_phone.indexOf('65') == 0 ? agent_1_phone.replace('65', "") : agent_1_phone;
+        console.log(r)
 
 
-        var options = { method: 'POST',
-            url: 'https://aileadsbooster.com/Engine/reportLeads',
-            headers:
-                { 'Postman-Token': '0790c760-9c4f-4962-9f6b-44329fce714c',
-                    'cache-control': 'no-cache',
-                    'content-type': 'multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW' },
-            formData:
-                {   admin: '6590996758',
-                    customer: '6590996758',
-                    agent_1: '6596215071',
-                    agent_2: '',
-                    whatsapp_message: '3_bedroom',
-                    whatsapp_image_url: '' } };
-
-        request(options, function (error, response, body) {
-            if (error) throw new Error(error);
-
-            console.log(body);
-        });
+        // var options = { method: 'POST',
+        //     url: 'https://aileadsbooster.com/Engine/reportLeads',
+        //     headers:
+        //         { 'Postman-Token': '0790c760-9c4f-4962-9f6b-44329fce714c',
+        //             'cache-control': 'no-cache',
+        //             'content-type': 'multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW' },
+        //     formData:
+        //         {   admin: '6590996758',
+        //             customer: '6590996758',
+        //             agent_1: '6596215071',
+        //             agent_2: '',
+        //             whatsapp_message: '3_bedroom',
+        //             whatsapp_image_url: '' } };
+        //
+        // request(options, function (error, response, body) {
+        //     if (error) throw new Error(error);
+        //
+        //     console.log(body);
+        // });
 
     }
     call();

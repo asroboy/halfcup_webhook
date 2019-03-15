@@ -1328,7 +1328,7 @@ function sendWhatsAppReportLead(admin_phone, customer_phone, agent_1_phone, agen
     groupMessage = groupMessage.replace("{project}", project_name.trim());
     groupMessage = groupMessage.replace("{photo_of_agent}", whatsapp_image_url);
     groupMessage = groupMessage.replace("{buyer_name}", fullNameX);
-    groupMessage = groupMessage.replace(" {agent mobile 1}", agent_1_phone);
+    groupMessage = groupMessage.replace("{agent mobile 1}", agent_1_phone.indexOf('65') == 0 ? agent_1_phone.replace('65', "") : agent_1_phone);
 
     var form_data = {
         admin: admin_phone.trim(),
