@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4f570aeb-f412-4b70-ad7a-8312f582a668" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/test_develop.js" beforeDir="false" afterPath="$PROJECT_DIR$/test_develop.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ai/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/ai/index.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -14,27 +15,25 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file pinned="false" current-in-tab="false">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/ai/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="146">
-              <caret line="1330" column="142" selection-start-line="1330" selection-start-column="60" selection-end-line="1330" selection-end-column="142" />
+            <state relative-caret-position="283">
+              <caret line="941" column="21" selection-start-line="941" selection-start-column="21" selection-end-line="941" selection-end-column="21" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-21" />
-          </provider>
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test_develop.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="523">
+            <state relative-caret-position="561">
               <caret line="33" column="21" selection-start-line="33" selection-start-column="21" selection-end-line="33" selection-end-column="21" />
             </state>
           </provider>
@@ -53,6 +52,8 @@
       <find>for</find>
       <find>keyIndexAction</find>
       <find>validateSamples</find>
+      <find>sendWhatsAppReportLead</find>
+      <find>getLead</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -63,8 +64,8 @@
       <list>
         <option value="$PROJECT_DIR$/index.js" />
         <option value="$PROJECT_DIR$/new_nlp.js" />
-        <option value="$PROJECT_DIR$/ai/index.js" />
         <option value="$PROJECT_DIR$/test_develop.js" />
+        <option value="$PROJECT_DIR$/ai/index.js" />
       </list>
     </option>
   </component>
@@ -133,12 +134,15 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1552538353282</updated>
-      <workItem from="1552538354448" duration="4642000" />
+      <workItem from="1552538354448" duration="6642000" />
+      <workItem from="1553055835447" duration="599000" />
+      <workItem from="1553260538586" duration="1201000" />
+      <workItem from="1553467772499" duration="1217000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="4642000" />
+    <option name="totallyTimeSpent" value="9659000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -153,14 +157,10 @@
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="npm" side_tool="true" />
-      <window_info id="Favorites" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" />
-      <window_info anchor="bottom" id="Terminal" weight="0.6607717" />
-      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info id="npm" order="2" side_tool="true" />
+      <window_info id="Favorites" order="3" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.329582" />
@@ -168,6 +168,10 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.329582" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="8" />
+      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
+      <window_info anchor="bottom" id="Terminal" order="10" weight="0.6607717" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -199,21 +203,19 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-21" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ai/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="146">
-          <caret line="1330" column="142" selection-start-line="1330" selection-start-column="60" selection-end-line="1330" selection-end-column="142" />
+        <state relative-caret-position="283">
+          <caret line="941" column="21" selection-start-line="941" selection-start-column="21" selection-end-line="941" selection-end-column="21" />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/test.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/test_develop.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="523">
+        <state relative-caret-position="561">
           <caret line="33" column="21" selection-start-line="33" selection-start-column="21" selection-end-line="33" selection-end-column="21" />
         </state>
       </provider>
