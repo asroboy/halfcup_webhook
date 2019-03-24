@@ -616,7 +616,6 @@ app.post('/webhook', function (req, res) {
                 }
             }
 
-
             res.sendStatus(200);
         } catch (error) {
             console.log("Error catched ==>", error);
@@ -937,6 +936,10 @@ function getPageAccessTokenForLead(sender, message, leadgenId, formId, emailMess
                     var privateMessage = obj.message;
                     var groupMessage = obj.group_message;
                     var is_whatsapp = obj.is_whatsapp;
+                    var agent2Name = "";
+                    if (obj.agent_2_name !== "null" && obj.agent_2_name !== null) {
+                        agent2Name = obj.agent_2_name;
+                    }
                     var agenMobile = "";
                     if (obj.mobile !== "null" && obj.mobile !== null) {
                         agenMobile = "65" + obj.mobile;
@@ -952,7 +955,7 @@ function getPageAccessTokenForLead(sender, message, leadgenId, formId, emailMess
                         + "<tr><td>Page ID</td><td>:</td><td> " + sender + "</td></tr>"
                         + "<tr><td>Page Name</td><td>:</td><td> " + obj.page_name + "</td></tr>"
 
-                    getLead(urlGetLead, token, message, recipientId, sender, formId, emailMessage, agentEmail, obj, leadValue, agenMobile1, agenMobile, imageUrl, obj.restaurant_name, agentId, privateMessage, groupMessage, is_whatsapp);
+                    getLead(urlGetLead, token, message, recipientId, sender, formId, emailMessage, agentEmail, obj, leadValue, agenMobile1, agenMobile, imageUrl, obj.restaurant_name, agentId, privateMessage, groupMessage, is_whatsapp, agent2Name);
                     return token;
 
                 }
@@ -967,7 +970,7 @@ function getPageAccessTokenForLead(sender, message, leadgenId, formId, emailMess
 }
 
 
-function getLead(url, token, message, recipientId, sender, formId, emailMessage, agentEmail, objData, leadValue, agenMobile1, agenMobile, imageUrl, agentName, agentId, privateMessage, groupMessage, is_whatsapp) {
+function getLead(url, token, message, recipientId, sender, formId, emailMessage, agentEmail, objData, leadValue, agenMobile1, agenMobile, imageUrl, agentName, agentId, privateMessage, groupMessage, is_whatsapp, agent2Name) {
 
     var urlGetLead = "https://graph.facebook.com/v2.9/" + formId + "?access_token=" + token;
     console.log("GET FORM NAME URL " + urlGetLead);
@@ -1057,14 +1060,14 @@ function getLead(url, token, message, recipientId, sender, formId, emailMessage,
                                     // if (pageId === '1965520413734063' || pageId === '409295783204800' || pageId === '228431964255924') {
                                     // if (pageId !== '409295783204800') {
                                     if (is_whatsapp) {
-                                        sendWhatsAppReportLead("6590996758", mobileX, agenMobile1, agenMobile, imageUrl, otherValues_wa, project_name, agentId, privateMessage, groupMessage, agentName, fullNameX)
+                                        sendWhatsAppReportLead("6590996758", mobileX, agenMobile1, agenMobile, imageUrl, otherValues_wa, project_name, agentId, privateMessage, groupMessage, agentName, fullNameX, agent2Name)
                                     }
 
 
                                     saveLeadToHalfcup(pageId, leadgenId, adId, '', adGroupId, '', '', '', formId, '', fullNameX, mobileX, agentEmail, otherFields, otherValues,
                                         message, emailMessage, sender, token, id, createdTime, mData, project_name, emailData,
                                         agenMobile, mobileX, emailX, otherValues, agentName);
-                                    }
+                                }
 
 
                                 // }
@@ -1311,7 +1314,7 @@ function sendWhatsAppLead(agent_phone, mobile, email, interest, project_name, ag
 }
 
 
-function sendWhatsAppReportLead(admin_phone, customer_phone, agent_1_phone, agent_2_phone, whatsapp_image_url, whatsapp_message, project_name, agentId, privateMessage, groupMessage, agentName, fullNameX) {
+function sendWhatsAppReportLead(admin_phone, customer_phone, agent_1_phone, agent_2_phone, whatsapp_image_url, whatsapp_message, project_name, agentId, privateMessage, groupMessage, agentName, fullNameX, agent2Name) {
     var urlWhatsapp = 'https://aileadsbooster.com/Engine/reportLeads'
     // urlWhatsapp = urlWhatsapp + 'admin=' + admin_phone;
     // urlWhatsapp = urlWhatsapp + '&customer=' + customer_phone;
@@ -1340,7 +1343,10 @@ function sendWhatsAppReportLead(admin_phone, customer_phone, agent_1_phone, agen
         project: project_name.trim(),
         agent_id: agentId,
         message: privateMessage,
-        group_message: groupMessage
+        group_message: groupMessage,
+        agent_1_name: agentName,
+        agent_2_name: agent2Name,
+        customer_name: fullNameX,
     };
 
     console.log(form_data);
