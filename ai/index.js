@@ -1333,6 +1333,7 @@ function sendWhatsAppReportLead(admin_phone, customer_phone, agent_1_phone, agen
     groupMessage = groupMessage.replace("{buyer_name}", fullNameX);
     groupMessage = groupMessage.replace("{agent mobile 1}", agent_1_phone.indexOf('65') == 0 ? agent_1_phone.replace('65', "") : agent_1_phone);
 
+    var customer_name = fullNameX;
     var form_data = {
         admin: admin_phone.trim(),
         customer: customer_phone.trim(),
@@ -1346,7 +1347,7 @@ function sendWhatsAppReportLead(admin_phone, customer_phone, agent_1_phone, agen
         group_message: groupMessage,
         agent_1_name: agentName,
         agent_2_name: agent2Name,
-        customer_name: fullNameX,
+        customer_name: customer_name
     };
 
     console.log(form_data);
