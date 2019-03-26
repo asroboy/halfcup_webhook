@@ -1058,7 +1058,7 @@ function getLead(url, token, message, recipientId, sender, formId, emailMessage,
                                     console.log('agenMobile' + agenMobile);
                                     console.log('otherValues' + otherValues_wa);
                                     // if (pageId === '1965520413734063' || pageId === '409295783204800' || pageId === '228431964255924') {
-                                    // if (pageId !== '409295783204800') {
+                                    if (pageId !== '1780065218933068') {
                                     if (is_whatsapp) {
                                         sendWhatsAppReportLead("6590996758", mobileX, agenMobile1, agenMobile, imageUrl, otherValues_wa, project_name, agentId, privateMessage, groupMessage, agentName, fullNameX, agent2Name)
                                     }
@@ -1067,6 +1067,7 @@ function getLead(url, token, message, recipientId, sender, formId, emailMessage,
                                     saveLeadToHalfcup(pageId, leadgenId, adId, '', adGroupId, '', '', '', formId, '', fullNameX, mobileX, agentEmail, otherFields, otherValues,
                                         message, emailMessage, sender, token, id, createdTime, mData, project_name, emailData,
                                         agenMobile, mobileX, emailX, otherValues, agentName);
+                                    }
                                 }
 
 
