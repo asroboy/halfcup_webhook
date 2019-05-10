@@ -1330,6 +1330,9 @@ function sendWhatsAppReportLead(admin_phone, customer_phone, agent_1_phone, agen
     groupMessage = groupMessage.replace("{agent mobile 1}", agent_1_phone.indexOf('65') == 0 ? agent_1_phone.replace('65', "") : agent_1_phone);
 
     var customer_name = fullNameX[0];
+   if(whatsapp_image_url === null){
+     whatsapp_image_url = "";
+   }
     var form_data = {
         admin: admin_phone.trim(),
         customer: customer_phone.trim(),
@@ -1359,8 +1362,10 @@ function sendWhatsAppReportLead(admin_phone, customer_phone, agent_1_phone, agen
     };
 
     request(options, function (error, response, body) {
-        if (error) throw new Error(error);
-
+        //if (error) throw new Error(error);
+        if (error) {
+                    console.log('Error sending message: ', error);
+        }
         //console.log(body);
     });
 }
