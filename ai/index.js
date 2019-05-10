@@ -1351,7 +1351,7 @@ function sendWhatsAppReportLead(admin_phone, customer_phone, agent_1_phone, agen
         customer_name: customer_name
     };
 
-    console.log(form_data);
+    //console.log(form_data);
     var options = {
         method: 'POST',
         url: 'https://aileadsbooster.com/Engine/reportLeads',
