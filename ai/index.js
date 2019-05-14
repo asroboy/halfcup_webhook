@@ -1364,9 +1364,11 @@ function sendWhatsAppReportLead(admin_phone, customer_phone, agent_1_phone, agen
     request(options, function (error, response, body) {
         //if (error) throw new Error(error);
         if (error) {
-                    console.log('Error sending message: ', error);
+          console.log('Error sending message: ', error);
+        }else{
+           console.log(body);
         }
-        //console.log(body);
+        
     });
 }
 
