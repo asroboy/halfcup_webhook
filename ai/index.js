@@ -1045,7 +1045,15 @@ function getLead(url, token, message, recipientId, sender, formId, emailMessage,
                                             otherValues = otherValues + fieldValue + '||';
                                             otherValues_wa = otherValues_wa + fieldValue + ', ';
                                         }
-                                        mData = mData + fieldName.replace(/_/g, ' ') + ": " + fieldValue[0].replace(/_/g, ' ') + "\n";
+                                      
+                                      var fv = fieldValue[0].replace(/_/g, ' ');
+                                      var fn = fieldName.replace(/_/g, ' ')
+                                        if(fn === "full_name"){
+                                          fv = fullNameX;
+                                        }else if(fn === "phone_number"){
+                                          fv = mobileX;
+                                        }
+                                        mData = mData +  fn + ": " + fv + "\n";
                                         emailData = emailData + "<tr><td>" + fieldName.replace('&', '%26').replace('?', '%3F').replace(/_/g, ' ') + "</td><td>:</td><td>" + fieldValue[0].replace(/_/g, ' ') + "</td></tr>";
                                     }
 
