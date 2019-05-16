@@ -47,7 +47,8 @@ app.get('/new_nlp', function (req, res) {
 
 // Facebook Webhook
 app.get('/test', function (req, res) {
-    test.foo(res)
+    //test.foo(res)
+  res.send("OK SIP " + new Date());
 });
 
 // handler receiving messages
