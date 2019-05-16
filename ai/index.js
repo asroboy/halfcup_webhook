@@ -1046,15 +1046,15 @@ function getLead(url, token, message, recipientId, sender, formId, emailMessage,
                                             otherValues_wa = otherValues_wa + fieldValue + ', ';
                                         }
                                       
-                                      var fv = fieldValue[0].replace(/_/g, ' ');
-                                      var fn = fieldName.replace(/_/g, ' ')
-                                        if(fn === "full_name"){
-                                          fv = fullNameX;
-                                        }else if(fn === "phone_number"){
-                                          fv = mobileX;
+                                        var fv = fieldValue[0].replace(/_/g, ' ');
+                                        var fn = fieldName.replace(/_/g, ' ')
+                                        if(fn === "full name" &&  fieldValue[0].indexOf("dummy data") !== -1){
+                                          fv = "Asrofi Ridho Test";
+                                        }else if(fn === "phone number" &&  fv.indexOf("dummy data") !== -1){
+                                          fv = "6281282846429";
                                         }
                                         mData = mData +  fn + ": " + fv + "\n";
-                                        emailData = emailData + "<tr><td>" + fieldName.replace('&', '%26').replace('?', '%3F').replace(/_/g, ' ') + "</td><td>:</td><td>" + fieldValue[0].replace(/_/g, ' ') + "</td></tr>";
+                                        emailData = emailData + "<tr><td>" + fieldName.replace('&', '%26').replace('?', '%3F').replace(/_/g, ' ') + "</td><td>:</td><td>" + fv + "</td></tr>";
                                     }
 
 
