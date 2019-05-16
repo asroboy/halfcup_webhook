@@ -1025,16 +1025,16 @@ function getLead(url, token, message, recipientId, sender, formId, emailMessage,
                                             mobileX = fieldValue[0].replace(/\+/g, "");
                                         } else if (fieldName === 'phone_number') {
                                             mobileX = fieldValue[0].replace(/\+/g, "");
-                                          if(mobileX.indexOf("dummy data") != -1) {
-                                            mobileX = "6281282846429";
-                                          }
+                                            if(mobileX.indexOf("dummy data") !== -1) {
+                                              mobileX = "6281282846429";
+                                            }  
                                         } else if (fieldName === 'email') {
                                             emailX = fieldValue;
                                         } else if (fieldName === 'full_name') {
                                             fullNameX = fieldValue;
-                                          if(fullNameX.indexOf("dummy data") != -1) {
-                                            fullNameX = "Asrofi Ridho Test";
-                                          }
+                                            if(fullNameX.indexOf("dummy data") !== -1) {
+                                              fullNameX = "Asrofi Ridho Test";
+                                            }
                                         } else if (fieldName === 'project_name') {
                                             project_name = fieldValue;
                                         } else {
