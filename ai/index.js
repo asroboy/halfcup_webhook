@@ -14,7 +14,8 @@ var page_subscription = require('../page_msg_subs/index');
 
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
-app.listen((process.env.PORT || 3000));
+app.listen((process.env.PORT || 3000), function () {
+});
 const my_token = 'EAABqJD84pmIBABnOZBN1ekuimZAJTZAA5jMhKy6JTEoSZChGmdZBkZBhbEi7Wwhj25b4p0pzV1eEkHXnm0H9oRax4Gp0sjdFSED2xHmh8UyvigEClHm4vonwpBtAC4hwlBIOKayycMtdPqlxJqhfgNdiJGqfUij0jZA7RdZBtUWZAZCQZDZD';
 
 
@@ -47,8 +48,8 @@ app.get('/new_nlp', function (req, res) {
 
 // Facebook Webhook
 app.get('/test', function (req, res) {
-  //test.foo(res)
-  res.send("OK SIP " + new Date());
+    //test.foo(res)
+    res.send("OK SIP " + new Date());
 });
 
 // handler receiving messages
@@ -57,7 +58,10 @@ app.post('/webhook', function (req, res) {
             var entries = req.body.entry;
             var changes = req.body.entry[0].changes;
             // console.log("POST WEBHOOK");
+            var log_string = "";
             console.log("REQ", JSON.stringify(req.body));
+            log_string += "FB REQ COMING: " +  JSON.stringify(req.body);
+            log_string += "\nTIME : " +  new Date();
             if (changes) {
                 var field = req.body.entry[0].changes[0].field;
                 if (field == "leadgen") {
@@ -80,7 +84,7 @@ app.post('/webhook', function (req, res) {
 
                     var emailMessage = "<h3>NEW LEAD RECIEVED</h3>" +
                         "<hr/><table><tr><td>" + "ADS ID </td><td>:</td><td> " + adId + "</td></tr><tr><td>AD GROUP ID </td><td>:</td><td> " + adGroupId + "</td></tr>";
-                    getPageIdForLead(pageId, message, leadgenId, formId, emailMessage, value);
+                    getPageIdForLead(pageId, message, leadgenId, formId, emailMessage, value, log_string);
                 }
             }
 
@@ -879,9 +883,10 @@ function getUserInfo(user_msg_id, page_token, m_payload, recipient) {
     });
 }
 
-function getPageIdForLead(pageId, message, leadgenId, formId, emailMessage, leadValue) {
+function getPageIdForLead(pageId, message, leadgenId, formId, emailMessage, leadValue, log_string) {
     var url = 'http://halfcup.com/social_rebates_system/wapi/read?api_name=LEAD_FORM_PAGE_ID&page_id=' + pageId + '&token=1234567890&lead_form_id=' + formId;
     console.log('url', url);
+    log_string += '\nurl : ' + url;
 
     request({
             url: url,
@@ -894,9 +899,10 @@ function getPageIdForLead(pageId, message, leadgenId, formId, emailMessage, lead
             } else {
                 var obj = JSON.parse(body);
                 console.log('json: ', obj);
+                log_string += '\njson: '+ JSON.stringify(obj);
                 var code = obj.code;
                 if (code == 1) {
-                    getPageAccessTokenForLead(obj.pageId, message, leadgenId, formId, emailMessage, leadValue)
+                    getPageAccessTokenForLead(obj.pageId, message, leadgenId, formId, emailMessage, leadValue, log_string)
                 }
                 if (code == 0) {
                     console.log('TOKEN NOT FOUND');
@@ -909,10 +915,10 @@ function getPageIdForLead(pageId, message, leadgenId, formId, emailMessage, lead
 }
 
 
-function getPageAccessTokenForLead(sender, message, leadgenId, formId, emailMessage, leadValue) {
+function getPageAccessTokenForLead(sender, message, leadgenId, formId, emailMessage, leadValue, log_string) {
     var url = 'http://halfcup.com/social_rebates_system/api/getPageMessengerToken?messenger_id=' + sender;
     console.log('url', url);
-
+    log_string += '\nurl: '+ url;
     request({
             url: url,
             method: 'GET'
@@ -924,6 +930,7 @@ function getPageAccessTokenForLead(sender, message, leadgenId, formId, emailMess
             } else {
                 var obj = JSON.parse(body);
                 console.log('json: ', obj);
+                log_string += '\njson: '+ JSON.stringify(obj);
                 var code = obj.code;
                 if (code == 1) {
                     var token = obj.messenger_data.pageAccessToken;
@@ -956,7 +963,7 @@ function getPageAccessTokenForLead(sender, message, leadgenId, formId, emailMess
                         + "<tr><td>Page ID</td><td>:</td><td> " + sender + "</td></tr>"
                         + "<tr><td>Page Name</td><td>:</td><td> " + obj.page_name + "</td></tr>"
 
-                    getLead(urlGetLead, token, message, recipientId, sender, formId, emailMessage, agentEmail, obj, leadValue, agenMobile1, agenMobile, imageUrl, obj.restaurant_name, agentId, privateMessage, groupMessage, is_whatsapp, agent2Name);
+                    getLead(urlGetLead, token, message, recipientId, sender, formId, emailMessage, agentEmail, obj, leadValue, agenMobile1, agenMobile, imageUrl, obj.restaurant_name, agentId, privateMessage, groupMessage, is_whatsapp, agent2Name, log_string);
                     return token;
 
                 }
@@ -971,10 +978,11 @@ function getPageAccessTokenForLead(sender, message, leadgenId, formId, emailMess
 }
 
 
-function getLead(url, token, message, recipientId, sender, formId, emailMessage, agentEmail, objData, leadValue, agenMobile1, agenMobile, imageUrl, agentName, agentId, privateMessage, groupMessage, is_whatsapp, agent2Name) {
+function getLead(url, token, message, recipientId, sender, formId, emailMessage, agentEmail, objData, leadValue, agenMobile1, agenMobile, imageUrl, agentName, agentId, privateMessage, groupMessage, is_whatsapp, agent2Name, log_string) {
 
     var urlGetLead = "https://graph.facebook.com/v2.9/" + formId + "?access_token=" + token;
     console.log("GET FORM NAME URL " + urlGetLead);
+    log_string += "\nGET FORM NAME URL " + urlGetLead;
     request({
             url: urlGetLead,
             method: 'GET'
@@ -986,11 +994,13 @@ function getLead(url, token, message, recipientId, sender, formId, emailMessage,
             } else {
                 var obj = JSON.parse(body);
                 console.log('json: ', JSON.stringify(obj));
+                log_string += "\njson : " +  JSON.stringify(obj);
                 if (!obj.error) {
                     var form_name = obj.name
                     emailMessage = emailMessage + "<br>Form Name : " + form_name;
 
                     console.log("get lead url : " + url);
+                    log_string += "\nget lead url : " + url;
                     request({
                             url: url,
                             method: 'GET'
@@ -1002,6 +1012,7 @@ function getLead(url, token, message, recipientId, sender, formId, emailMessage,
                             } else {
                                 var obj = JSON.parse(body);
                                 console.log('json: ', JSON.stringify(obj));
+                                log_string += "\njson : " + JSON.stringify(obj);
                                 if (!obj.error) {
                                     var createdTime = obj.created_time
                                     if (createdTime) {
@@ -1026,15 +1037,15 @@ function getLead(url, token, message, recipientId, sender, formId, emailMessage,
                                             mobileX = fieldValue[0].replace(/\+/g, "");
                                         } else if (fieldName === 'phone_number') {
                                             mobileX = fieldValue[0].replace(/\+/g, "");
-                                            if(mobileX.indexOf("dummy data") !== -1) {
-                                              mobileX = "6281282846429";
-                                            }  
+                                            if (mobileX.indexOf("dummy data") !== -1) {
+                                                mobileX = "6281282846429";
+                                            }
                                         } else if (fieldName === 'email') {
                                             emailX = fieldValue[0];
                                         } else if (fieldName === 'full_name') {
                                             fullNameX = fieldValue[0];
-                                            if(fullNameX.indexOf("dummy data") !== -1) {
-                                              fullNameX = "Asrofi Ridho Test";
+                                            if (fullNameX.indexOf("dummy data") !== -1) {
+                                                fullNameX = "Asrofi Ridho Test";
                                             }
                                         } else if (fieldName === 'project_name') {
                                             project_name = fieldValue;
@@ -1046,15 +1057,15 @@ function getLead(url, token, message, recipientId, sender, formId, emailMessage,
                                             otherValues = otherValues + fieldValue + '||';
                                             otherValues_wa = otherValues_wa + fieldValue + ', ';
                                         }
-                                      
+
                                         var fv = fieldValue[0].replace(/_/g, ' ');
                                         var fn = fieldName.replace(/_/g, ' ')
-                                        if(fn === "full name" &&  fieldValue[0].indexOf("dummy data") !== -1){
-                                          fv = "Asrofi Ridho Test";
-                                        }else if(fn === "phone number" &&  fv.indexOf("dummy data") !== -1){
-                                          fv = "6281282846429";
+                                        if (fn === "full name" && fieldValue[0].indexOf("dummy data") !== -1) {
+                                            fv = "Asrofi Ridho Test";
+                                        } else if (fn === "phone number" && fv.indexOf("dummy data") !== -1) {
+                                            fv = "6281282846429";
                                         }
-                                        mData = mData +  fn + ": " + fv + "\n";
+                                        mData = mData + fn + ": " + fv + "\n";
                                         emailData = emailData + "<tr><td>" + fieldName.replace('&', '%26').replace('?', '%3F').replace(/_/g, ' ') + "</td><td>:</td><td>" + fv + "</td></tr>";
                                     }
 
@@ -1075,14 +1086,14 @@ function getLead(url, token, message, recipientId, sender, formId, emailMessage,
                                     // if (pageId === '1965520413734063' || pageId === '409295783204800' || pageId === '228431964255924') {
                                     // if (pageId !== '1780065218933068') {
                                     if (is_whatsapp) {
-                                        sendWhatsAppReportLead("6590996758", mobileX, agenMobile1, agenMobile, imageUrl, otherValues_wa, project_name, agentId, privateMessage, groupMessage, agentName, fullNameX, agent2Name)
+                                        log_string += sendWhatsAppReportLead("6590996758", mobileX, agenMobile1, agenMobile, imageUrl, otherValues_wa, project_name, agentId, privateMessage, groupMessage, agentName, fullNameX, agent2Name, log_string)
                                     }
 
 
                                     saveLeadToHalfcup(pageId, leadgenId, adId, '', adGroupId, '', '', '', formId, '', fullNameX, mobileX, agentEmail, otherFields, otherValues,
                                         message, emailMessage, sender, token, id, createdTime, mData, project_name, emailData,
-                                        agenMobile, mobileX, emailX, otherValues, agentName);
-                                    
+                                        agenMobile, mobileX, emailX, otherValues, agentName, log_string);
+
                                 }
 
 
@@ -1102,12 +1113,13 @@ function getLead(url, token, message, recipientId, sender, formId, emailMessage,
 function saveLeadToHalfcup(
     pageId, leadId, adId, adName, adSetId, adSetName, campainId, campainName, formId, formName, fullName, mobile, agentEmail, otherFields, fieldsValues,
     message, emailMessage, sender, token, id, createdTime, mData, project_name, emailData,
-    agenMobile, mobileX, emailX, otherValues, agentName) {
+    agenMobile, mobileX, emailX, otherValues, agentName, log_string) {
 
     var url = 'http://halfcup.com/social_rebates_system/api/addNewLead?page_id=' + pageId + '&leadId=' + leadId + '&adId=' + adId + '&adName=' + adName + '&adSetId=' + adSetId + '&adSetName=' + adSetName + '&campainId=' + campainId +
         '&campainName=' + campainName + '&formId=' + formId + '&formName=' + formName + '&fullName=' + fullName + '&mobile=' + mobile + '&email=' + emailX + '&otherFields=' + otherFields +
         '&fieldsValues=' + fieldsValues;
     console.log('url', url);
+    log_string += "\nurl : " +url;
     request({
         url: url,
         method: 'GET'
@@ -1130,6 +1142,8 @@ function saveLeadToHalfcup(
         var msg = {"text": message};
         console.log("LEAD FORM RECIEVED ==== >" + message);
 
+        log_string += "\nLEAD FORM RECIEVED ==== >" + message;
+
         var js_ = JSON.stringify(msg);
         var myEscapedJSONString = js_.escapeSpecialChars();
         myEscapedJSONString = myEscapedJSONString.replace(/\\\\n/g, "\\n");
@@ -1138,6 +1152,8 @@ function saveLeadToHalfcup(
 
 
         console.log('emailMessage ' + emailMessage);
+        log_string += '\nemailMessage ' + emailMessage;
+        saveLog(log_string);
 
         sendEmailForLead(emailMessage, sender, agentEmail, token);
         // }
@@ -1330,10 +1346,11 @@ function sendWhatsAppLead(agent_phone, mobile, email, interest, project_name, ag
 }
 
 
-function sendWhatsAppReportLead(admin_phone, customer_phone, agent_1_phone, agent_2_phone, whatsapp_image_url, whatsapp_message, project_name, agentId, privateMessage, groupMessage, agentName, fullNameX, agent2Name) {
+function sendWhatsAppReportLead(admin_phone, customer_phone, agent_1_phone, agent_2_phone, whatsapp_image_url, whatsapp_message, project_name, agentId, privateMessage, groupMessage, agentName, fullNameX, agent2Name, log_string) {
     var urlWhatsapp = 'https://aileadsbooster.com/Engine/reportLeads'
 
     console.log("SEND REPORT LEAD api : " + urlWhatsapp);
+    log_string += "\nSEND REPORT LEAD api : " + urlWhatsapp;
     privateMessage = privateMessage.replace("{agent_name}", agentName);
     privateMessage = privateMessage.replace("{project}", project_name.trim());
     privateMessage = privateMessage.replace("{buyer_name}", fullNameX);
@@ -1345,9 +1362,9 @@ function sendWhatsAppReportLead(admin_phone, customer_phone, agent_1_phone, agen
     groupMessage = groupMessage.replace("{agent mobile 1}", agent_1_phone.indexOf('65') == 0 ? agent_1_phone.replace('65', "") : agent_1_phone);
 
     var customer_name = fullNameX;
-   if(whatsapp_image_url === null){
-     whatsapp_image_url = "";
-   }
+    if (whatsapp_image_url === null) {
+        whatsapp_image_url = "";
+    }
     var form_data = {
         admin: admin_phone.trim(),
         customer: customer_phone.trim(),
@@ -1365,6 +1382,11 @@ function sendWhatsAppReportLead(admin_phone, customer_phone, agent_1_phone, agen
     };
 
     console.log(form_data);
+    log_string += "\nWHATSAPP DATA : " + JSON.stringify(form_data);
+
+    // console.log("=====================LOG STRING========================");
+    // console.log(log_string);
+    // console.log("=====================END LOG STRING========================");
     var options = {
         method: 'POST',
         url: 'https://aileadsbooster.com/Engine/reportLeads',
@@ -1375,18 +1397,47 @@ function sendWhatsAppReportLead(admin_phone, customer_phone, agent_1_phone, agen
             },
         formData: form_data
     };
-
     request(options, function (error, response, body) {
         //if (error) throw new Error(error);
         if (error) {
-          console.log('Error sending message: ', error);
-        }else{
-           console.log(body);
+            console.log('Error sending message: ', error);
+            log_string += "Error sending message: " + error;
+        } else {
+            console.log(body);
+            log_string += "Success: " + body;
         }
-        
+
     });
+
+    // saveLog(log_string);
+    return log_string;
 }
 
+
+function saveLog(message){
+    var form_data = {
+        log_message: message
+    }
+    var options = {
+        method: 'POST',
+        url: 'http://halfcup.com/social_rebates_system/webhookLog/save',
+        headers:
+            {
+                'cache-control': 'no-cache',
+                'content-type': 'multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW'
+            },
+        formData: form_data
+    };
+    request(options, function (error, response, body) {
+        //if (error) throw new Error(error);
+        if (error) {
+            console.log('Error sending message: ', error);
+        } else {
+            console.log(body);
+        }
+
+    });
+}
 
 function sendEmailForLead(message, page_id, agentEmail, longLiveToken) {
     // var longLiveToken = "EAABqJD84pmIBAP6U37LseOrNLP6Xt13zCRR8dUCcNS4T1tKFQd8JZAyGQJOPq4mOfHazyppWRGYQaO2aaT1vQA4HNSEu10D6CgH220ND9ecweec3WOMGsvbIMv1gzJI5NrYXRKf5Nqmc8o9cfJdG9eBeU1UZBuOK2iSZCBlogZDZD";
