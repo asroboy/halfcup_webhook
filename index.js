@@ -304,17 +304,17 @@ app.post('/webhook', function (req, res) {
 
 
                                             if (keys.length == 2) {
-                                                keyIndexAction(keys[1], event, action_name, "QuickReply");
+                                                keyIndexAction(keys[1], event, action_name, "QuickReply", res);
                                             }
                                             if (keys.length == 3) {
-                                                keyIndexAction(keys[1], event, action_name, "QuickReply");
-                                                keyIndexAction(keys[2], event, action_name, "QuickReply");
+                                                keyIndexAction(keys[1], event, action_name, "QuickReply", res);
+                                                keyIndexAction(keys[2], event, action_name, "QuickReply", res);
                                             }
 
                                             if (keys.length == 4) {
-                                                keyIndexAction(keys[1], event, action_name, "QuickReply");
-                                                keyIndexAction(keys[2], event, action_name, "QuickReply");
-                                                keyIndexAction(keys[3], event, action_name, "QuickReply");
+                                                keyIndexAction(keys[1], event, action_name, "QuickReply", res);
+                                                keyIndexAction(keys[2], event, action_name, "QuickReply", res);
+                                                keyIndexAction(keys[3], event, action_name, "QuickReply", res);
 
                                             }
                                         }
@@ -532,16 +532,16 @@ app.post('/webhook', function (req, res) {
                                     action_name = action_name.replace("]", "");
 
                                     if (keys.length == 2) {
-                                        keyIndexAction(keys[1], event, action_name, "PostBack");
+                                        keyIndexAction(keys[1], event, action_name, "PostBack", res);
                                     }
                                     if (keys.length == 3) {
-                                        keyIndexAction(keys[1], event, action_name, "PostBack");
-                                        keyIndexAction(keys[2], event, action_name, "PostBack");
+                                        keyIndexAction(keys[1], event, action_name, "PostBack", res);
+                                        keyIndexAction(keys[2], event, action_name, "PostBack", res);
                                     }
                                     if (keys.length == 4) {
-                                        keyIndexAction(keys[1], event, action_name, "PostBack");
-                                        keyIndexAction(keys[2], event, action_name, "PostBack");
-                                        keyIndexAction(keys[3], event, action_name, "PostBack");
+                                        keyIndexAction(keys[1], event, action_name, "PostBack", res);
+                                        keyIndexAction(keys[2], event, action_name, "PostBack", res);
+                                        keyIndexAction(keys[3], event, action_name, "PostBack", res);
                                         // index_1_action(action_name, reply_text_or_bot_key, keys[2], "PostBack", event);
                                     }
                                 }
@@ -636,7 +636,7 @@ function saveMessengerAdmin(sender, recipient) {
     );
 }
 
-function keyIndexAction(key, event, action_name, event_name) {
+function keyIndexAction(key, event, action_name, event_name, res) {
     // var key_1 = keys[1]; //reply text or maybe bot key  INDEX 1
     if (key.indexOf("]") > -1) {
 
@@ -842,7 +842,7 @@ function logAction(event_name, name, key, messenger_id, page_id) {
     });
 }
 
-function getUserInfo(user_msg_id, page_token) {
+function getUserInfo(user_msg_id, page_token, m_payload, recipient) {
     var url = 'https://graph.facebook.com/v2.6/' + user_msg_id + '?fields=first_name,last_name,profile_pic,locale,timezone,gender&access_token=' + page_token;
     console.log('url', url);
     request({
