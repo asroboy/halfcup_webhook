@@ -15,6 +15,7 @@ var page_subscription = require('../page_msg_subs/index');
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 app.listen((process.env.PORT || 3000), function () {
+    console.log('Server running at http://127.0.0.1:' + (process.env.PORT || 3000) + "/");
 });
 const my_token = 'EAABqJD84pmIBABnOZBN1ekuimZAJTZAA5jMhKy6JTEoSZChGmdZBkZBhbEi7Wwhj25b4p0pzV1eEkHXnm0H9oRax4Gp0sjdFSED2xHmh8UyvigEClHm4vonwpBtAC4hwlBIOKayycMtdPqlxJqhfgNdiJGqfUij0jZA7RdZBtUWZAZCQZDZD';
 
@@ -60,8 +61,8 @@ app.post('/webhook', function (req, res) {
             // console.log("POST WEBHOOK");
             var log_string = "";
             console.log("REQ", JSON.stringify(req.body));
-            log_string += "FB REQ COMING: " +  JSON.stringify(req.body);
-            log_string += "\nTIME : " +  new Date();
+            log_string += "FB REQ COMING: " + JSON.stringify(req.body);
+            log_string += "\nTIME : " + new Date();
             if (changes) {
                 var field = req.body.entry[0].changes[0].field;
                 if (field == "leadgen") {
@@ -899,7 +900,7 @@ function getPageIdForLead(pageId, message, leadgenId, formId, emailMessage, lead
             } else {
                 var obj = JSON.parse(body);
                 console.log('json: ', obj);
-                log_string += '\njson: '+ JSON.stringify(obj);
+                log_string += '\njson: ' + JSON.stringify(obj);
                 var code = obj.code;
                 if (code == 1) {
                     getPageAccessTokenForLead(obj.pageId, message, leadgenId, formId, emailMessage, leadValue, log_string)
@@ -918,7 +919,7 @@ function getPageIdForLead(pageId, message, leadgenId, formId, emailMessage, lead
 function getPageAccessTokenForLead(sender, message, leadgenId, formId, emailMessage, leadValue, log_string) {
     var url = 'http://halfcup.com/social_rebates_system/api/getPageMessengerToken?messenger_id=' + sender;
     console.log('url', url);
-    log_string += '\nurl: '+ url;
+    log_string += '\nurl: ' + url;
     request({
             url: url,
             method: 'GET'
@@ -930,7 +931,7 @@ function getPageAccessTokenForLead(sender, message, leadgenId, formId, emailMess
             } else {
                 var obj = JSON.parse(body);
                 console.log('json: ', obj);
-                log_string += '\njson: '+ JSON.stringify(obj);
+                log_string += '\njson: ' + JSON.stringify(obj);
                 var code = obj.code;
                 if (code == 1) {
                     var token = obj.messenger_data.pageAccessToken;
@@ -994,7 +995,7 @@ function getLead(url, token, message, recipientId, sender, formId, emailMessage,
             } else {
                 var obj = JSON.parse(body);
                 console.log('json: ', JSON.stringify(obj));
-                log_string += "\njson : " +  JSON.stringify(obj);
+                log_string += "\njson : " + JSON.stringify(obj);
                 if (!obj.error) {
                     var form_name = obj.name
                     emailMessage = emailMessage + "<br>Form Name : " + form_name;
@@ -1080,11 +1081,13 @@ function getLead(url, token, message, recipientId, sender, formId, emailMessage,
                                         pageId = sender
                                     }
 
-                                    console.log('mobileX' + mobileX);
-                                    console.log('agenMobile' + agenMobile);
-                                    console.log('otherValues' + otherValues_wa);
+                                    mobileX = checkPrefixNumber(mobileX);
+                                    console.log('mobileX : ' + mobileX);
+                                    console.log('agenMobile : ' + agenMobile);
+                                    console.log('otherValues : ' + otherValues_wa);
                                     // if (pageId === '1965520413734063' || pageId === '409295783204800' || pageId === '228431964255924') {
                                     // if (pageId !== '1780065218933068') {
+
                                     if (is_whatsapp) {
                                         log_string += sendWhatsAppReportLead("6590996758", mobileX, agenMobile1, agenMobile, imageUrl, otherValues_wa, project_name, agentId, privateMessage, groupMessage, agentName, fullNameX, agent2Name, log_string)
                                     }
@@ -1119,7 +1122,7 @@ function saveLeadToHalfcup(
         '&campainName=' + campainName + '&formId=' + formId + '&formName=' + formName + '&fullName=' + fullName + '&mobile=' + mobile + '&email=' + emailX + '&otherFields=' + otherFields +
         '&fieldsValues=' + fieldsValues;
     console.log('url', url);
-    log_string += "\nurl : " +url;
+    log_string += "\nurl : " + url;
     request({
         url: url,
         method: 'GET'
@@ -1409,12 +1412,11 @@ function sendWhatsAppReportLead(admin_phone, customer_phone, agent_1_phone, agen
 
     });
 
-    // saveLog(log_string);
     return log_string;
 }
 
 
-function saveLog(message){
+function saveLog(message) {
     var form_data = {
         log_message: message
     }
@@ -1897,4 +1899,18 @@ function isPhoneNumber(phone) {
     }
 }
 
+
+function checkPrefixNumber(customer_phone) {
+    if (customer_phone.indexOf("65") == 0) {
+        return customer_phone;
+    } else if (customer_phone.indexOf("+65") == 0) {
+        return customer_phone.replace("+", "");
+    } else if(customer_phone === "6281282846429"){
+        return customer_phone;
+    }else if (customer_phone.indexOf("+") == 0) {
+        return customer_phone.replace("+", "");
+    }else {
+        return "65" + customer_phone;
+    }
+}
 
