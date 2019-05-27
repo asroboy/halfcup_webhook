@@ -1092,7 +1092,7 @@ function getLead(url, token, message, recipientId, sender, formId, emailMessage,
                                         agenMobile, mobileX, emailX, otherValues, agentName, log_string, function(status, log_string){
                                             console.log('STATUS =====> ' + status);
                                             console.log('is_whatsapp =====> ' + is_whatsapp);
-                                            log_string += '\nSTATUS =====> ' + statuse;
+                                            log_string += '\nSTATUS =====> ' + statue;
                                             log_string += '\nis_whatsapp =====> ' + is_whatsapp;
                                             if (is_whatsapp && status == 'success') {
                                                 console.log('Send Whatsapp');
