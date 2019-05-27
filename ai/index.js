@@ -980,7 +980,6 @@ function getPageAccessTokenForLead(sender, message, leadgenId, formId, emailMess
 
 
 function getLead(url, token, message, recipientId, sender, formId, emailMessage, agentEmail, objData, leadValue, agenMobile1, agenMobile, imageUrl, agentName, agentId, privateMessage, groupMessage, is_whatsapp, agent2Name, log_string) {
-
     var urlGetLead = "https://graph.facebook.com/v2.9/" + formId + "?access_token=" + token;
     console.log("GET FORM NAME URL " + urlGetLead);
     log_string += "\nGET FORM NAME URL " + urlGetLead;
@@ -1088,20 +1087,20 @@ function getLead(url, token, message, recipientId, sender, formId, emailMessage,
                                     // if (pageId === '1965520413734063' || pageId === '409295783204800' || pageId === '228431964255924') {
                                     // if (pageId !== '1780065218933068') {
 
-                                    if (is_whatsapp) {
-                                        log_string += sendWhatsAppReportLead("6590996758", mobileX, agenMobile1, agenMobile, imageUrl, otherValues_wa, project_name, agentId, privateMessage, groupMessage, agentName, fullNameX, agent2Name, log_string)
-                                    }
-
-
                                     saveLeadToHalfcup(pageId, leadgenId, adId, '', adGroupId, '', '', '', formId, '', fullNameX, mobileX, agentEmail, otherFields, otherValues,
                                         message, emailMessage, sender, token, id, createdTime, mData, project_name, emailData,
-                                        agenMobile, mobileX, emailX, otherValues, agentName, log_string);
-
+                                        agenMobile, mobileX, emailX, otherValues, agentName, log_string, function(status, log_string){
+                                            console.log('STATUS =====> ' + status);
+                                            console.log('is_whatsapp =====> ' + is_whatsapp);
+                                            log_string += '\nSTATUS =====> ' + statuse;
+                                            log_string += '\nis_whatsapp =====> ' + is_whatsapp;
+                                            if (is_whatsapp && status == 'success') {
+                                                console.log('Send Whatsapp');
+                                                log_string += sendWhatsAppReportLead("6590996758", mobileX, agenMobile1, agenMobile, imageUrl, otherValues_wa, project_name, agentId, privateMessage, groupMessage, agentName, fullNameX, agent2Name, log_string)
+                                            }
+                                            saveLog(log_string);
+                                        });
                                 }
-
-
-                                // }
-
                             }
                         }
                     );
@@ -1116,7 +1115,8 @@ function getLead(url, token, message, recipientId, sender, formId, emailMessage,
 function saveLeadToHalfcup(
     pageId, leadId, adId, adName, adSetId, adSetName, campainId, campainName, formId, formName, fullName, mobile, agentEmail, otherFields, fieldsValues,
     message, emailMessage, sender, token, id, createdTime, mData, project_name, emailData,
-    agenMobile, mobileX, emailX, otherValues, agentName, log_string) {
+    agenMobile, mobileX, emailX, otherValues, agentName, log_string, callback) {
+;
 
     var url = 'http://halfcup.com/social_rebates_system/api/addNewLead?page_id=' + pageId + '&leadId=' + leadId + '&adId=' + adId + '&adName=' + adName + '&adSetId=' + adSetId + '&adSetName=' + adSetName + '&campainId=' + campainId +
         '&campainName=' + campainName + '&formId=' + formId + '&formName=' + formName + '&fullName=' + fullName + '&mobile=' + mobile + '&email=' + emailX + '&otherFields=' + otherFields +
@@ -1127,41 +1127,38 @@ function saveLeadToHalfcup(
         url: url,
         method: 'GET'
     }, function (error, response, body) {
-        // var obj = JSON.parse(body);
-        // console.log(obj);
-        // var status = obj[0].status
-        // if(status !== "duplicate"){
-        //     sendWhatsAppLead(agenMobile, mobileX, emailX, otherValues, project_name, agentName);
+        var obj = JSON.parse(body);
+        console.log(obj);
+        var status = obj[0].status;
+        if (status !== "duplicate") {
+            message = message + "id : " + id
+                + "\ntime : " + createdTime +
+                "\n" + mData;
 
+            emailMessage = emailMessage + "<tr><td>Project Name</td><td>:</td><td>" + project_name + "</td>" +
+                "<tr><td>Id</td><td>:</td><td> " + id + "</td></tr>" +
+                "<tr><td>Time</td><td>:</td><td>" + new Date(createdTime) + "</td></tr><tr></tr>" + emailData + "</table><hr/>";
 
-        message = message + "id : " + id
-            + "\ntime : " + createdTime +
-            "\n" + mData;
+            var msg = {"text": message};
+            console.log("LEAD FORM RECIEVED ==== >" + message);
 
-        emailMessage = emailMessage + "<tr><td>Project Name</td><td>:</td><td>" + project_name + "</td>" +
-            "<tr><td>Id</td><td>:</td><td> " + id + "</td></tr>" +
-            "<tr><td>Time</td><td>:</td><td>" + new Date(createdTime) + "</td></tr><tr></tr>" + emailData + "</table><hr/>";
+            log_string += "\nLEAD FORM RECIEVED ==== >" + message;
 
-        var msg = {"text": message};
-        console.log("LEAD FORM RECIEVED ==== >" + message);
+            var js_ = JSON.stringify(msg);
+            var myEscapedJSONString = js_.escapeSpecialChars();
+            myEscapedJSONString = myEscapedJSONString.replace(/\\\\n/g, "\\n");
+            console.log("TEXT ==> " + myEscapedJSONString);
+            // sendMessage(recipientId, msg, token);
 
-        log_string += "\nLEAD FORM RECIEVED ==== >" + message;
+            console.log('emailMessage ' + emailMessage);
+            log_string += '\nemailMessage ' + emailMessage;
 
-        var js_ = JSON.stringify(msg);
-        var myEscapedJSONString = js_.escapeSpecialChars();
-        myEscapedJSONString = myEscapedJSONString.replace(/\\\\n/g, "\\n");
-        console.log("TEXT ==> " + myEscapedJSONString);
-        // sendMessage(recipientId, msg, token);
-
-
-        console.log('emailMessage ' + emailMessage);
-        log_string += '\nemailMessage ' + emailMessage;
-        saveLog(log_string);
-
-        sendEmailForLead(emailMessage, sender, agentEmail, token);
-        // }
-
+            // sendEmailForLead(emailMessage, sender, agentEmail, token);
+        }
+        return callback(status, log_string);
     });
+
+
 }
 
 
@@ -1220,40 +1217,6 @@ function getToken(m_payload, sender, recipient, isMessageUs) {
     );
 }
 
-function getAdsResponseToUser(recipient, sender, ads_id) {
-
-    var result = "";
-    var url = 'http://halfcup.com/social_rebates_system/api/getBotAdsResponseMessage?messenger_id=' + sender + '&ads_id=' + ads_id + '&messenger_uid=' + recipient;
-    console.log('url', url);
-    request({
-        url: url,
-        method: 'GET'
-    }, function (error, response, body) {
-        if (error) {
-            console.log('Error sending message: ', error);
-            result = 'Error sending message: ' + error;
-            return result;
-        } else if (response.body.error) {
-            console.log('Error: ', response.body.error);
-        } else {
-            var obj = JSON.parse(body);
-            console.log('json: ', obj);
-            var code = obj.code;
-            if (code == 1) {
-                var token = obj.messenger_data.pageAccessToken;
-                result = sendMessage(recipient, obj.data.jsonData, token);
-                return result;
-            }
-            if (code == 0) {
-                var token = obj.messenger_data.pageAccessToken;
-                //sendMessage(recipient, {"text" : "Sorry I don't understand what do you want"}, token);
-                result = JSON.stringify(response);
-                return result;
-            }
-
-        }
-    });
-}
 
 function getResponseToUser(request_key, recipient, sender) {
     var result = "";
@@ -1332,21 +1295,6 @@ function sendEmail(message, page_id, email) {
     });
 }
 
-function sendWhatsAppLead(agent_phone, mobile, email, interest, project_name, agent_name) {
-    var urlWhatsapp = 'http://aileadsbooster.com/AIAssist/get_leads?agent=' + agent_name + '&project=' + project_name
-        + '&plugin=leads_form&agent_phone=' + agent_phone + '&customer_phone=' + mobile + '&customer_email=' + email + '&others=' + interest;
-    console.log("SEND WHATSAPP api : " + urlWhatsapp);
-    request({
-        url: urlWhatsapp,
-        method: 'GET'
-    }, function (error, response, body) {
-        if (!error) {
-            console.log(body);
-        } else {
-            console.log("Error send whatsapp api");
-        }
-    });
-}
 
 
 function sendWhatsAppReportLead(admin_phone, customer_phone, agent_1_phone, agent_2_phone, whatsapp_image_url, whatsapp_message, project_name, agentId, privateMessage, groupMessage, agentName, fullNameX, agent2Name, log_string) {
@@ -1698,26 +1646,6 @@ function sendMessageUserRef(recipientId, message, token) {
     });
 };
 
-// generic function sending messages
-function sendMessagePostback(recipientId, message, token) {
-    //console.log(process); process.env.PAGE_ACCESS_TOKEN
-    request({
-        url: 'https://graph.facebook.com/v2.8/me/messaging_postbacks',
-        qs: {access_token: token},
-        method: 'POST',
-        json: {
-            recipient: {id: recipientId},
-            message: message,
-        }
-    }, function (error, response, body) {
-        if (error) {
-            console.log('Error sending message: ', error);
-        } else if (response.body.error) {
-            console.log('Error: ', response.body.error);
-        }
-    });
-};
-
 
 function saveParamAi(page_id, reciever, prm, code) {
     console.log("SAVE PARAM AI");
@@ -1739,33 +1667,8 @@ function saveParamAi(page_id, reciever, prm, code) {
     );
 }
 
-function getParamZ(emailContent, pageId, recipient) {
-    var url = 'http://halfcup.com/social_rebates_system/wapi/read?token=1234567890&api_name=PARAMS_AI&user_msg_id=' + recipient + '&page_id=' + pageId;
-    console.log('url', url);
-    request({
-            url: url,
-            method: 'GET'
-        }, function (error, response, body) {
-            if (error) {
-                console.log('Error sending message: ', error);
-            } else if (response.body.error) {
-                console.log('Error: ', response.body.error);
-            } else {
-                var obj = JSON.parse(body);
-                console.log('getChatBot RESULT: ', obj);
-                if (obj.data !== null) {
-                    var param = obj.data.prm;
-                    // get###AggregationObject(key, sender, recipient, token, res, param);
-                    sendEmail(emailContent, pageId, param.split("=")[1]);
-                }
-
-            }
-        }
-    );
-}
 
 function clearAiKey(sender) {
-    // http://localhost:8080/social_rebates_system/wapi/delete?token=1234567890&api_name=AI_PREV_KEYS_CLEAR&page_id=111
     var url = 'http://halfcup.com/social_rebates_system/wapi/delete?token=1234567890&api_name=AI_PREV_KEYS_CLEAR&page_id=' + sender;
     console.log('url', url);
     request({
@@ -1905,11 +1808,11 @@ function checkPrefixNumber(customer_phone) {
         return customer_phone;
     } else if (customer_phone.indexOf("+65") == 0) {
         return customer_phone.replace("+", "");
-    } else if(customer_phone === "6281282846429"){
+    } else if (customer_phone === "6281282846429") {
         return customer_phone;
-    }else if (customer_phone.indexOf("+") == 0) {
+    } else if (customer_phone.indexOf("+") == 0) {
         return customer_phone.replace("+", "");
-    }else {
+    } else {
         return "65" + customer_phone;
     }
 }
