@@ -1153,7 +1153,7 @@ function saveLeadToHalfcup(
             console.log('emailMessage ' + emailMessage);
             log_string += '\nemailMessage ' + emailMessage;
 
-            // sendEmailForLead(emailMessage, sender, agentEmail, token);
+            sendEmailForLead(emailMessage, sender, agentEmail, token);
         }
         return callback(status, log_string);
     });
