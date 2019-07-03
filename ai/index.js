@@ -941,7 +941,7 @@ function getPageAccessTokenForLead(sender, message, leadgenId, formId, emailMess
                     if (obj.mobile1 !== "null" && obj.mobile1 !== null) {
                         agenMobile1 = "65" + obj.mobile1;
                     }
-                    var imageUrl = obj.images_url;
+                    var imageUrl = obj.images_url.replace("wablasts.com", "leadsboosters.com");
                     var privateMessage = obj.message;
                     var groupMessage = obj.group_message;
                     var is_whatsapp = obj.is_whatsapp;
