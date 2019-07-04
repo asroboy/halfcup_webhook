@@ -959,10 +959,10 @@ function getPageAccessTokenForLead(sender, message, leadgenId, formId, emailMess
                     var longLiveToken = "EAABqJD84pmIBAP6U37LseOrNLP6Xt13zCRR8dUCcNS4T1tKFQd8JZAyGQJOPq4mOfHazyppWRGYQaO2aaT1vQA4HNSEu10D6CgH220ND9ecweec3WOMGsvbIMv1gzJI5NrYXRKf5Nqmc8o9cfJdG9eBeU1UZBuOK2iSZCBlogZDZD";
                     var urlGetLead = "https://graph.facebook.com/v2.9/" + leadgenId + "?access_token=" + token;
                     // console.log("LEAD URL " + urlGetLead);
-                    emailMessage = emailMessage + "<tr><td>Agent Name</td><td>:</td><td>" + obj.restaurant_name + "</td></tr>"
+                    emailMessage = emailMessage + "<tr><td>Agent Name</td><td>:</td><td>" + obj.restaurant_name.replace("&", "%26") + "</td></tr>"
                         + "<tr><td>Agent Email</td><td>:</td><td> " + agentEmail + "</td></tr>"
                         + "<tr><td>Page ID</td><td>:</td><td> " + sender + "</td></tr>"
-                        + "<tr><td>Page Name</td><td>:</td><td> " + obj.page_name + "</td></tr>"
+                        + "<tr><td>Page Name</td><td>:</td><td> " + obj.page_name.replace("&", "%26") + "</td></tr>"
 
                     getLead(urlGetLead, token, message, recipientId, sender, formId, emailMessage, agentEmail, obj, leadValue, agenMobile1, agenMobile, imageUrl, obj.restaurant_name, agentId, privateMessage, groupMessage, is_whatsapp, agent2Name, log_string);
                     return token;
@@ -1135,7 +1135,7 @@ function saveLeadToHalfcup(
                 + "\ntime : " + createdTime +
                 "\n" + mData;
 
-            emailMessage = emailMessage + "<tr><td>Project Name</td><td>:</td><td>" + project_name + "</td>" +
+            emailMessage = emailMessage + "<tr><td>Project Name</td><td>:</td><td>" + project_name.replace("&", "%26") + "</td>" +
                 "<tr><td>Id</td><td>:</td><td> " + id + "</td></tr>" +
                 "<tr><td>Time</td><td>:</td><td>" + new Date(createdTime) + "</td></tr><tr></tr>" + emailData + "</table><hr/>";
 
