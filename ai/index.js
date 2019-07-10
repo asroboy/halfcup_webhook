@@ -858,7 +858,7 @@ function logAction(event_name, name, key, messenger_id, page_id) {
 }
 
 function getUserInfo(user_msg_id, page_token, m_payload, recipient) {
-    var url = 'https://graph.facebook.com/v2.8/' + user_msg_id + '?fields=first_name,last_name,profile_pic,locale,timezone,gender&access_token=' + page_token;
+    var url = 'https://graph.facebook.com/v3.3/' + user_msg_id + '?fields=first_name,last_name,profile_pic,locale,timezone,gender&access_token=' + page_token;
     console.log('url', url);
     request({
         url: url,
@@ -957,7 +957,7 @@ function getPageAccessTokenForLead(sender, message, leadgenId, formId, emailMess
                     var recipientId = obj.messenger_data.adminMessengerId;
                     // var longLiveToken = "EAABqJD84pmIBAP4xtPj3NTLfCzWp17iZByoFndpbnEq79ZAOGs7XdF5YMO5i1GgQ3zHex200f2uvLHWqzFxRk0RrC1jV7RZBZAqtU2mLluefhmexnX7SSnTP63Hy2x3AAvv5FgkU48FE95fpj7c8ZBREHJIVBYg4ZD";
                     var longLiveToken = "EAABqJD84pmIBAP6U37LseOrNLP6Xt13zCRR8dUCcNS4T1tKFQd8JZAyGQJOPq4mOfHazyppWRGYQaO2aaT1vQA4HNSEu10D6CgH220ND9ecweec3WOMGsvbIMv1gzJI5NrYXRKf5Nqmc8o9cfJdG9eBeU1UZBuOK2iSZCBlogZDZD";
-                    var urlGetLead = "https://graph.facebook.com/v2.9/" + leadgenId + "?access_token=" + token;
+                    var urlGetLead = "https://graph.facebook.com/v3.3/" + leadgenId + "?access_token=" + token;
                     // console.log("LEAD URL " + urlGetLead);
                     emailMessage = emailMessage + "<tr><td>Agent Name</td><td>:</td><td>" + obj.restaurant_name.replace("&", "%26") + "</td></tr>"
                         + "<tr><td>Agent Email</td><td>:</td><td> " + agentEmail + "</td></tr>"
@@ -980,7 +980,7 @@ function getPageAccessTokenForLead(sender, message, leadgenId, formId, emailMess
 
 
 function getLead(url, token, message, recipientId, sender, formId, emailMessage, agentEmail, objData, leadValue, agenMobile1, agenMobile, imageUrl, agentName, agentId, privateMessage, groupMessage, is_whatsapp, agent2Name, log_string) {
-    var urlGetLead = "https://graph.facebook.com/v2.9/" + formId + "?access_token=" + token;
+    var urlGetLead = "https://graph.facebook.com/v3.3/" + formId + "?access_token=" + token;
     console.log("GET FORM NAME URL " + urlGetLead);
     log_string += "\nGET FORM NAME URL " + urlGetLead;
     request({
@@ -1252,7 +1252,7 @@ function getResponseToUser(request_key, recipient, sender) {
 
 function sendEmail(message, page_id, email) {
     var longLiveToken = "EAABqJD84pmIBAP6U37LseOrNLP6Xt13zCRR8dUCcNS4T1tKFQd8JZAyGQJOPq4mOfHazyppWRGYQaO2aaT1vQA4HNSEu10D6CgH220ND9ecweec3WOMGsvbIMv1gzJI5NrYXRKf5Nqmc8o9cfJdG9eBeU1UZBuOK2iSZCBlogZDZD";
-    var graphUrl = "https://graph.facebook.com/v2.10/" + page_id + "?access_token=" + longLiveToken;
+    var graphUrl = "https://graph.facebook.com/v3.3/" + page_id + "?access_token=" + longLiveToken;
     request({
         url: graphUrl,
         method: 'GET'
@@ -1391,7 +1391,7 @@ function saveLog(message) {
 
 function sendEmailForLead(message, page_id, agentEmail, longLiveToken) {
     // var longLiveToken = "EAABqJD84pmIBAP6U37LseOrNLP6Xt13zCRR8dUCcNS4T1tKFQd8JZAyGQJOPq4mOfHazyppWRGYQaO2aaT1vQA4HNSEu10D6CgH220ND9ecweec3WOMGsvbIMv1gzJI5NrYXRKf5Nqmc8o9cfJdG9eBeU1UZBuOK2iSZCBlogZDZD";
-    var graphUrl = "https://graph.facebook.com/v2.10/" + page_id + "?access_token=" + longLiveToken;
+    var graphUrl = "https://graph.facebook.com/v3.3/" + page_id + "?access_token=" + longLiveToken;
     request({
         url: graphUrl,
         method: 'GET'
@@ -1602,7 +1602,7 @@ function sendMessage(recipientId, message, token) {
 
     var result = "";
     request({
-        url: 'https://graph.facebook.com/v2.8/me/messages',
+        url: 'https://graph.facebook.com/v3.3/me/messages',
         qs: {access_token: token},
         method: 'POST',
         json: {
@@ -1630,7 +1630,7 @@ function sendMessage(recipientId, message, token) {
 function sendMessageUserRef(recipientId, message, token) {
     //console.log(process); process.env.PAGE_ACCESS_TOKEN
     request({
-        url: 'https://graph.facebook.com/v2.8/me/messages',
+        url: 'https://graph.facebook.com/v3.3/me/messages',
         qs: {access_token: token},
         method: 'POST',
         json: {
